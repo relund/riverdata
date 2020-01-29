@@ -1,8 +1,7 @@
-## Script to run
-#write.table(cars, "data.csv", append = T, row.names = F, sep=";", col.names = F)
 library(rvest)
 library(jsonlite)
 library(tidyverse)
+library(lubridate)
 
 url <- 'http://hyde.dk/Sflow/default_flow.asp'
 webpage <- read_html(url)
