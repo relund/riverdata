@@ -1,7 +1,6 @@
 name: Run R script
 
 on: 
-  push:
   schedule: 
     - cron: '0 * * * *'  # every hour
 
