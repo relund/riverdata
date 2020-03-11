@@ -24,7 +24,7 @@ flow <- fromJSON(flow)$data
 # flow
 
 if (length(dates)==length(flow)) {
-  fn <- "data_skjern_flow_lock.csv"
+  fn <- "data/data_skjern_flow_lock.csv"
   dat <- tibble(dates = dmy_hm(dates, tz = "CET"), flow = flow)
   if (!file.exists(fn)) {
     write_csv2(dat, fn)

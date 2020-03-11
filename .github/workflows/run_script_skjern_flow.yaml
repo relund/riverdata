@@ -15,8 +15,8 @@ jobs:
       - name: Install packages
         run: Rscript install.R
       - name: Run R script
-        run: Rscript script.R
+        run: Rscript script_skjern.R
       - name: Commit results
         run: |
-          git commit data_flow_sluse.csv --allow-empty -m 'gHA build: ${{github.run_number}}' || echo "No changes to commit"
+          git commit data/data_skjern_flow_lock.csv --allow-empty -m 'gHA build: ${{github.run_number}}' || echo "No changes to commit"
           git push https://${{github.actor}}:${{secrets.token}}@github.com/${{github.repository}}.git HEAD:${{ github.ref }} || echo "No changes to commit"
