@@ -3,8 +3,6 @@ library(jsonlite)
 library(tidyverse)
 library(lubridate)
 
-conflict_prefer("filter", "dplyr")
-
 ### Get a prelim dataset 2003-2019 (data_karup_catch_seatrout_2003-2019.csv)
 ### --------------------------------------------------------------------------------------------
 # ## data from 2019 to today
@@ -68,7 +66,7 @@ conflict_prefer("filter", "dplyr")
 # unique(dat4$Place)
 # 
 # ## Save to file
-# dat4 <- dat4 %>% filter(year(Date)<2020) %>% arrange(Date)
+# dat4 <- dat4 %>% dplyr::filter(year(Date)<2020) %>% arrange(Date)
 # fn <- "data/data_karup_catch_seatrout_2003-2019.csv"
 # write_csv(dat4,fn)
 # # write_delim(dat4, fn, delim = ",")
@@ -98,7 +96,7 @@ dat2 <- dat1 %>% transmute(Date, Length = Længde, Weight = Vægt, Name = Navn, 
 dat2 <- type_convert(dat2)
 
 ## Merge and tidy
-dat4 <- dat2 %>% filter(year(Date)>2019)
+dat4 <- dat2 %>% dplyr::filter(year(Date)>2019)
 dat4 <- dat4 %>% mutate(Weight = if_else(Length >= 40, Weight, NA_real_))
 # remove outliers
 dat5 <- dplyr::filter(dat4, Length > 39 & Killed)
