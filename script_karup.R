@@ -69,7 +69,7 @@ conflict_prefer("filter", "dplyr")
 # 
 # ## Save to file
 # dat4 <- dat4 %>% filter(year(Date)<2020) %>% arrange(Date)
-# fn <- "data_karup_catch_seatrout_2003-2019.csv"
+# fn <- "data/data_karup_catch_seatrout_2003-2019.csv"
 # write_csv2(dat4, fn)
 ### --------------------------------------------------------------------------------------------
 
@@ -130,7 +130,7 @@ dat4 <- dat4 %>% mutate(Place = str_replace_all(Place, c("Mellem.*" = "Mellem", 
 unique(dat4$Place)
 
 ## Save to file
-fn <- "data_karup_catch_seatrout_2020-.csv"
+fn <- "data/data_karup_catch_seatrout_2020-.csv"
 write_csv2(dat4, fn)
 ### --------------------------------------------------------------------------------------------
 
