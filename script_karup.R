@@ -16,7 +16,7 @@ conflict_prefer("filter", "dplyr")
 # dat1 <- t(map_dfc(rows, ~ .x))
 # colnames(dat1) <- cols$label
 # dat1 <- as_tibble(dat1)
-# dateStr <- dat1$Dato %>% str_extract_all("(?<=\\().+?(?=\\))", simplify = T) %>% 
+# dateStr <- dat1$Dato %>% str_extract_all("(?<=\\().+?(?=\\))", simplify = T) %>%
 #   str_split(",", simplify = TRUE) %>% as_tibble(.name_repair = "minimal")
 # colnames(dateStr) <- c("Year", "Month", "Day")
 # dateStr <- type_convert(dateStr)
@@ -25,7 +25,7 @@ conflict_prefer("filter", "dplyr")
 # dat1 <- bind_cols(Date=dateStr, dat1)
 # dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Havørred"))
 # # tail(dat1)
-# dat1 <- dat1[-c(nrow(dat1)-1,nrow(dat1)),]  # remove last 2 row since error in date
+# # dat1 <- dat1[-c(nrow(dat1)-1,nrow(dat1)),]  # remove last 2 row since error in date
 # dat2 <- dat1 %>% transmute(Date, Length = Længde, Weight = Vægt, Name = Navn, Place = Zone, Method = Agn, Cut = FALSE, Foto = Foto, Killed = !as.logical(Genudsat), Sex = Køn)
 # dat2 <- type_convert(dat2)
 # 
@@ -46,14 +46,14 @@ conflict_prefer("filter", "dplyr")
 # lim <- 1:max(dat5$Length)
 # res <- predict(mod1, data.frame(Length = lim), interval='prediction', level=0.95)
 # res <- exp(res)
-# res <- res %>% as_tibble() 
+# res <- res %>% as_tibble()
 # res <- res %>% add_column(Length = lim, .before = T)
 # colnames(res) <- c("Length", "Avg", "Lower", "Upper")
 # res <- res %>% mutate(Upper = Upper + 1.75, Lower = if_else(Lower - 1.75 > 0, Lower - 1.75, 0))
 # dat4 <- dat4 %>% mutate(Weight = ifelse(Weight >= res$Lower[round(Length)] & Weight <= res$Upper[round(Length)], Weight, NA))
 # # res <- pivot_longer(res, 2:4)
-# # ggplot(dat4, aes(x = Length, y = Weight)) + geom_point(na.rm = T) + 
-# #   geom_line(aes(x = Length, y = value, colour = name), data = res) 
+# # ggplot(dat4, aes(x = Length, y = Weight)) + geom_point(na.rm = T) +
+# #   geom_line(aes(x = Length, y = value, colour = name), data = res)
 # dat4$Length <- as.numeric(dat4$Length)
 # dat4$Weight<- as.numeric(dat4$Weight)
 # dat4 <- dat4 %>% mutate(Fulton = Weight*100000/Length^3)
@@ -62,7 +62,7 @@ conflict_prefer("filter", "dplyr")
 # unique(dat4$Method)
 # dat4 <- dat4 %>% mutate(Sex = str_replace_all(Sex, c("Han" = "Male", "Hun" = "Female", "Ved ikke" = NA)))
 # unique(dat4$Sex)
-# dat4 <- dat4 %>% mutate(Name = str_to_title(str_replace_all(Name, c("Ikke oplyst" = NA, "Mogens Styhr Rasmussen" = "Mogens Styhr", "Ikke Oplyst" = NA, "Poul Godt Godt" = "Poul Godt", "KÅS [0-9 ]* " = "", "Kås [0-9 ]* " = "", ", Vridsted, 2017123" = "", "Xx Yy" = NA)))) 
+# dat4 <- dat4 %>% mutate(Name = str_to_title(str_replace_all(Name, c("Ikke oplyst" = NA, "Mogens Styhr Rasmussen" = "Mogens Styhr", "Ikke Oplyst" = NA, "Poul Godt Godt" = "Poul Godt", "KÅS [0-9 ]* " = "", "Kås [0-9 ]* " = "", ", Vridsted, 2017123" = "", "Xx Yy" = NA))))
 # dat4 <- dat4 %>% mutate(Name = str_replace(Name, fixed("**********"), NA)) %>% mutate(Name = str_replace(Name, "Xx Yy", NA_character_))
 # dat4 <- dat4 %>% mutate(Place = str_replace_all(Place, c("Mellem.*" = "Mellem", "Øvre.*" = "Øvre", "Nedre.*" = "Nedre")))
 # unique(dat4$Place)
@@ -70,7 +70,7 @@ conflict_prefer("filter", "dplyr")
 # ## Save to file
 # dat4 <- dat4 %>% filter(year(Date)<2020) %>% arrange(Date)
 # fn <- "data/data_karup_catch_seatrout_2003-2019.csv"
-# write_csv2(dat4, fn)
+# write_delim(dat4, fn, delim = ";")
 ### --------------------------------------------------------------------------------------------
 
 
@@ -131,7 +131,7 @@ unique(dat4$Place)
 
 ## Save to file
 fn <- "data/data_karup_catch_seatrout_2020-.csv"
-write_csv2(dat4, fn)
+write_delim(dat4, fn, delim = ";")
 ### --------------------------------------------------------------------------------------------
 
 
