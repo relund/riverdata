@@ -35,6 +35,7 @@ if (length(dates)==length(flow)) {
     write_csv2(dat, fn)
   }
 }
+# ggplot(dat, aes(x = dates, y = flow)) + geom_line() + labs(x = "Dato", y = "Flow (m3/s)", title = "Sluseflow Hvide Sande")
 
 # ## Wind, water levet etc at Hvide Sande
 # url <- 'http://hyde.dk/'
