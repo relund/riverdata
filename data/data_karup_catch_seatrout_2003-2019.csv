@@ -1370,7 +1370,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2007-05-17,64,3.09415349013908,NA,Øvre,Flue,FALSE,NA,TRUE,NA,1.18032588582576
 2007-05-18,84,7.6,Jesper Nielsen,Nedre,Orm,FALSE,NA,TRUE,NA,1.2822589353201599
 2007-05-18,42,0.874479842290589,NA,Øvre,Flue,FALSE,NA,TRUE,NA,1.18032588582576
-2007-05-20,49,NA,Michael Skov,Øvre,Spin,FALSE,NA,NA,NA,NA
+2007-05-20,49,NA,Michael Skov,Øvre,Spin,FALSE,NA,TRUE,NA,NA
 2007-05-21,73.5,4.5,Jan Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,1.1333146336418782
 2007-05-21,79,6,NA,Nedre,Spin,FALSE,NA,TRUE,NA,1.2169422702869348
 2007-05-22,77,6.1,Ole Rohde,Nedre,Spin,FALSE,NA,TRUE,NA,1.3361575176383744
@@ -11796,7 +11796,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2016-03-05,68,2.25,Ole Hansen,Nedre,Orm,FALSE,NA,TRUE,NA,0.7155760227966619
 2016-03-05,62,1.906624,Ole Hansen,Nedre,Orm,FALSE,NA,TRUE,NA,0.8
 2016-03-06,61,1.9,Henrik Kanstorf,Nedre,Flue,FALSE,NA,TRUE,NA,0.8370744687881364
-2016-03-06,90,NA,Lars Uhrebruun,Nedre,Spin,FALSE,NA,NA,NA,NA
+2016-03-06,90,NA,Lars Uhrebruun,Nedre,Spin,FALSE,NA,TRUE,NA,NA
 2016-03-06,40,0.512,Bent Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA,0.8
 2016-03-06,40,0.512,Paw Pedersen,Nedre,Orm,FALSE,NA,TRUE,NA,0.8
 2016-03-06,45,0.729,Thomas Sigh Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA,0.8
@@ -13437,65 +13437,65 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2016-10-31,62,2.15,Lilly Lægsgaard,Mellem,Spin,FALSE,NA,TRUE,NA,0.9021180893558457
 2016-10-31,57,2.1858809177373,Uffe Hansen,Nedre,Flue,FALSE,NA,TRUE,NA,1.1803258858257601
 2016-10-31,64,3.09415349013908,Allan Bay,Mellem,Spin,FALSE,NA,TRUE,NA,1.18032588582576
-2019-03-01,58,NA,Boye Pedersen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-03-01,41,NA,Tove Ankersen,Nedre,Orm,FALSE,NA,NA,NA,NA
+2019-03-01,58,0,Boye Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-03-01,41,0,Tove Ankersen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
 2019-03-01,42,0,Klaudi Sigaard,Øvre,Spin,FALSE,NA,FALSE,NA,NA
-2019-03-01,44,NA,Bent Kristensen,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-03-01,44,0,Bent Kristensen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-03-01,54,1.7,Kaj O. Christensen,Øvre,Spin,FALSE,NA,TRUE,NA,1.0796118477874308
-2019-03-01,55,NA,Karsten Mikaelsen,Nedre,Orm,FALSE,NA,NA,NA,NA
-2019-03-01,40,NA,Bo Ankersen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-03-01,55,0,Karsten Mikaelsen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2019-03-01,40,0,Bo Ankersen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-03-02,45,1,Knud Tørnqvist,Nedre,Spin,FALSE,NA,TRUE,NA,1.0973936899862826
 2019-03-02,42,0.9,Jannik Kanstorf,Nedre,Flue,FALSE,NA,TRUE,NA,1.2147716229348882
 2019-03-04,73,4.5,Henrik Johansen,Nedre,Orm,FALSE,NA,TRUE,NA,1.1567617867599616
-2019-03-06,42,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-03-06,42,0,Knud Tørnqvist,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-03-10,40,0.8,Kurt Hornshøj Riisgaard,Nedre,Orm,FALSE,NA,TRUE,NA,1.25
 2019-03-10,42,0.9,Kurt Hornshøj Riisgaard,Nedre,Orm,FALSE,NA,TRUE,NA,1.2147716229348882
-2019-03-10,55,NA,Jacob Søndergård,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-03-21,43,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-03-21,NA,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-03-21,41,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-03-21,41,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-03-10,55,0,Jacob Søndergård,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-03-21,43,0,Knud Tørnqvist,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-03-21,NA,0,Knud Tørnqvist,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-03-21,41,0,Knud Tørnqvist,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-03-21,41,0,Knud Tørnqvist,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-03-23,40,0,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
 2019-03-26,76,5.7,NA,Nedre,Flue,FALSE,NA,TRUE,NA,1.298476454293629
-2019-03-26,42,NA,Bent Kristensen,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-03-28,43,NA,Eigil Amlund,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-03-26,42,0,Bent Kristensen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-03-28,43,0,Eigil Amlund,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-03-30,48,1,Erik Just Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,0.9042245370370371
 2019-03-30,41,0.7,Knud Tørnqvist,Nedre,Spin,FALSE,NA,TRUE,NA,1.0156556056934751
-2019-03-30,40,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-04-01,40,NA,Bent Kristensen,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-04-07,50,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-03-30,40,0,Knud Tørnqvist,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-04-01,40,0,Bent Kristensen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-04-07,50,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-04-15,79,6,Emir Adžemović,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A732867CDB96A6C0C12583DD00569677.jpg,TRUE,Female,1.2169422702869348
-2019-04-15,41,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-04-15,41,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-04-27,64,3.3,Mogens Skaarup,Nedre,Spin,FALSE,NA,TRUE,Female,1.25885009765625
 2019-05-04,75,4.6,René Lassen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/9E992052287FEE7CC12583F00057A5AA.jpg,TRUE,NA,1.0903703703703702
 2019-05-05,83,6.3,Mogens Skaarup,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/758403FEBD0FB91FC12583F5001DD679.jpg,TRUE,Male,1.1018088903735133
 2019-05-05,76,4.7,Per Steen Stengaard Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,1.0706735675754484
-2019-05-09,38,NA,Jan Konstantin Rosenby,Nedre,Flue,FALSE,NA,NA,Male,NA
-2019-05-10,68,NA,Kim Petersen,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-05-09,38,0,Jan Konstantin Rosenby,Nedre,Flue,FALSE,NA,FALSE,Male,NA
+2019-05-10,68,NA,Kim Petersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
 2019-05-10,73,4.4,Georg Christensen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/15F88D48DEA79AD4C12583F60033CE0E.jpg,TRUE,Female,1.131055969276407
-2019-05-10,47,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-05-10,47,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-05-12,72,4.6,Mogens Styhr,Nedre,Flue,FALSE,NA,TRUE,NA,1.2324245541838132
 2019-05-12,71,4.6,Preben Falkeøje Pilgaard,Nedre,Spin,FALSE,NA,TRUE,Female,1.285235715024126
 2019-05-17,73,4.8,Einer Olesen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/0831822911590E2CC12583FD0033439E.jpg,TRUE,NA,1.2338792392106257
 2019-05-18,71,4.6,Flemming Abel Olesen,Nedre,Orm,FALSE,NA,TRUE,Female,1.285235715024126
 2019-05-23,73,5,Karsten Mikaelsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.2852908741777351
-2019-05-24,65,NA,Henrik Johansen,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-05-24,65,0,Henrik Johansen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-05-24,91,8.7,Ole Jakobsen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/C5D5F8A6B2E325ACC12584050042622C.jpg,TRUE,Male,1.154503026257645
 2019-05-24,70,4,Benny Amstrup,Nedre,Orm,FALSE,NA,TRUE,Female,1.1661807580174928
 2019-05-25,78,5.75,Henrik Krog,Nedre,Flue,FALSE,NA,TRUE,Male,1.2116691110773952
 2019-05-25,78,6.5,Poul Lauridsen,Nedre,Spin,FALSE,NA,TRUE,Male,1.3697129081744466
-2019-05-26,47,NA,Ole Hansen,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-05-27,75,NA,Børge Jensen,Mellem,Flue,FALSE,NA,NA,Female,NA
+2019-05-26,47,0,Ole Hansen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-05-27,75,NA,Børge Jensen,Mellem,Flue,FALSE,NA,TRUE,Female,NA
 2019-05-27,77,6.2,Mogens Styhr,Nedre,Flue,FALSE,NA,TRUE,Female,1.3580617392390035
 2019-05-29,85,7.3,NA,Nedre,Flue,FALSE,NA,TRUE,NA,1.1886830856910238
 2019-05-29,71,3.8,Henrik Johansen,Nedre,Spin,FALSE,NA,TRUE,NA,1.0617164602373215
-2019-05-29,69,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-05-29,69,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
 2019-05-30,75,5,Heinrich Frølund,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/D4B61D1BEC7A69E7C125840B007DB28F.jpg,TRUE,NA,1.1851851851851851
-2019-05-30,56,NA,Uffe Hansen,Mellem,Flue,FALSE,NA,NA,NA,NA
+2019-05-30,56,0,Uffe Hansen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
 2019-05-30,66,3,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,Female,1.043492779029969
 2019-05-31,69,4,Tom Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.21762265265183
 2019-06-01,72,4.3,Allan Rosendahl,Øvre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/4899E12B9A08AE9EC125841400706DCE.jpg,TRUE,Female,1.1520490397805212
-2019-06-01,48,NA,Henrik Johansen,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-06-01,48,0,Henrik Johansen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-06-01,75,4.8,Ole Bernth,Nedre,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/372E304FF4670F8CC125840D001F934A.jpg,TRUE,NA,1.1377777777777778
 2019-06-02,91,10.2,Bruno Broberg,Mellem,Spin,FALSE,NA,TRUE,Male,1.3535552721641357
 2019-06-03,85,8,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.3026663952778343
@@ -13513,7 +13513,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-06-09,54,1.7,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,Female,1.0796118477874308
 2019-06-09,66,3.9,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,Female,1.3565406127389599
 2019-06-10,67,3.2,NA,Nedre,Spin,FALSE,NA,TRUE,NA,1.0639606600545946
-2019-06-10,59,NA,NA,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-06-10,59,0,NA,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-06-11,83,7.4,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,Female,1.2941882204387298
 2019-06-12,47,1.3,Bo Eskesen,Nedre,Orm,FALSE,NA,TRUE,NA,1.252131030696474
 2019-06-12,42,1,Bo Eskesen,Nedre,Orm,FALSE,NA,TRUE,NA,1.3497462477054314
@@ -13523,57 +13523,57 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-06-15,69,4,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,Female,1.21762265265183
 2019-06-15,80,6.6,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,Female,1.2890625
 2019-06-16,52,2,Oluf Cramer,Nedre,Flue,FALSE,NA,TRUE,Female,1.4223941738734638
-2019-06-16,43,NA,Karsten Simonsen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-06-16,55,NA,Niels Klausen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/9DACBC313178BF06C125841B003720D3.jpg,NA,Male,NA
-2019-06-16,45,NA,Johan Lynderup,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-06-16,43,0,Karsten Simonsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-06-16,55,NA,Niels Klausen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/9DACBC313178BF06C125841B003720D3.jpg,TRUE,Male,NA
+2019-06-16,45,0,Johan Lynderup,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-06-17,43,0,Peder Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-06-19,44,1.31,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,Female,1.537847483095417
 2019-06-20,69,4.7,Jesper Stenfeldt,Nedre,Flue,FALSE,NA,TRUE,Female,1.4307066168659002
-2019-06-20,42,NA,Preben Falkeøje Pilgaard,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-06-20,43,NA,Johnny Pedersen,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-06-21,50,NA,Jørgen Lauritsen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-06-20,42,NA,Preben Falkeøje Pilgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2019-06-20,43,0,Johnny Pedersen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-06-21,50,NA,Jørgen Lauritsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
 2019-06-22,45,0,Peder Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-06-22,43,1,Benny Larsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.2577508898587546
 2019-06-23,69,3.5,Jens Lønberg,Nedre,Orm,FALSE,NA,TRUE,Male,1.0654198210703512
 2019-06-24,69,3.6,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,Female,1.095860387386647
 2019-06-24,65,3.1,Karsten Simonsen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/138CCDF8881ED3F5C12584240060DBFA.jpg,TRUE,NA,1.128812016385981
 2019-06-25,75,5.7,Maritn Schack,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/EAAC32049D8A8A64C125842400019769.jpg,TRUE,Female,1.3511111111111112
-2019-06-26,45,NA,Benny Amstrup,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-06-26,45,0,Benny Amstrup,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-06-26,47,1.5,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,Male,1.4447665738805466
 2019-06-26,45,0,Peder Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-06-26,65,0,Børge Jensen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
 2019-06-26,52,1.6,Kim Petersen,Mellem,Spin,FALSE,NA,TRUE,NA,1.137915339098771
-2019-06-27,43,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-06-27,43,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2019-06-27,46,1,Eigil Amlund,Mellem,Flue,FALSE,NA,TRUE,NA,1.0273691131749816
-2019-06-28,49,NA,Per Pedersen,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-06-28,49,NA,Per Pedersen,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2019-06-28,89,8.5,Flemming Sparvath,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8C01819D16B4EF99C1258428002C2697.jpg,TRUE,Male,1.2057267766384054
 2019-06-29,48,1.4,Benny Amstrup,Nedre,Spin,FALSE,NA,TRUE,NA,1.2659143518518519
-2019-06-30,48,NA,Robert Pedersen,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-06-30,48,NA,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2019-06-30,58,2.12,Ole Sørensen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/5DA8B919A99E1F6BC125842F003ECDB4.jpg,TRUE,NA,1.0865554143261307
-2019-07-01,61,NA,Ole Lenler-Eriksen,Mellem,Spin,FALSE,NA,NA,Female,NA
-2019-07-01,42,NA,Peder Lundsgaard,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-07-01,61,NA,Ole Lenler-Eriksen,Mellem,Spin,FALSE,NA,TRUE,Female,NA
+2019-07-01,42,0,Peder Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-07-01,46,1.2,Ole Maach,Nedre,Spin,FALSE,NA,TRUE,Male,1.2328429358099777
 2019-07-01,71,4.09,Hans-Jørn Christensen,Nedre,Spin,FALSE,NA,TRUE,Female,1.1427421900975383
 2019-07-01,50,1.4,Torben Smedegaard,Nedre,Spin,FALSE,NA,TRUE,Female,1.12
-2019-07-01,45,NA,Bruno Broberg,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-07-01,50,NA,Heinrich Frølund,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-01,45,0,Bruno Broberg,Nedre,Spin,FALSE,NA,FALSE,Female,NA
+2019-07-01,50,0,Heinrich Frølund,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-07-01,65,3.4,Rasmus Wølck,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/0E9A2D81FFC89E88C125842B002F5907.jpg,TRUE,Female,1.238051888939463
 2019-07-02,73,4.3,Kristian S Andersen,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A35B9AC638ED3689C125842D002CCF19.jpg,TRUE,Female,1.1053501517928523
 2019-07-02,56,2.3,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,Female,1.3096756559766762
 2019-07-02,76,5.5,Nils Munkgaard,Nedre,Spin,FALSE,NA,TRUE,Female,1.2529158769499926
 2019-07-02,44,1.2,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,Female,1.4087152516904582
-2019-07-02,42,NA,Thomas Høgh,Mellem,Spin,FALSE,NA,NA,NA,NA
+2019-07-02,42,0,Thomas Høgh,Mellem,Spin,FALSE,NA,FALSE,NA,NA
 2019-07-02,43,1,Flemming Lund Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.2577508898587546
-2019-07-02,48,NA,Flemming Lund Madsen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-02,48,NA,Flemming Lund Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
 2019-07-02,48,1.4,Brita Broberg,Nedre,Orm,FALSE,NA,TRUE,Female,1.2659143518518519
 2019-07-02,52,1.8,Jens Peder Madsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.2801547564861175
-2019-07-02,47,NA,Ole Lenler-Eriksen,Mellem,Spin,FALSE,NA,NA,Male,NA
-2019-07-02,43,NA,Kristian S Andersen,Mellem,Spin,FALSE,NA,NA,Male,NA
+2019-07-02,47,NA,Ole Lenler-Eriksen,Mellem,Spin,FALSE,NA,TRUE,Male,NA
+2019-07-02,43,0,Kristian S Andersen,Mellem,Spin,FALSE,NA,FALSE,Male,NA
 2019-07-03,66,4,Morten Agersnap,Mellem,Flue,FALSE,NA,TRUE,Female,1.391323705373292
 2019-07-03,44,0.93,Allan Jacobsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.0917543200601052
 2019-07-03,74,4.7,Ole Rohde,Nedre,Spin,FALSE,NA,TRUE,Female,1.1598523285886324
-2019-07-03,48,NA,Hening Larsen,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-07-03,50,NA,Lars Nørgaard,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-07-03,48,NA,Hening Larsen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
+2019-07-03,50,0,Lars Nørgaard,Nedre,Spin,FALSE,NA,FALSE,Female,NA
 2019-07-03,54,1.7,Johnny Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,1.0796118477874308
 2019-07-03,46,1.1,Ole Rohde,Nedre,Spin,FALSE,NA,TRUE,Female,1.1301060244924799
 2019-07-03,45,1.08,Allan Jacobsen,Nedre,Spin,FALSE,NA,TRUE,Male,1.1851851851851851
@@ -13589,17 +13589,17 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-07-05,52,1.55,Henning Andersen,Nedre,Flue,FALSE,NA,TRUE,NA,1.1023554847519346
 2019-07-05,57,2.1,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,Female,1.1339521472193874
 2019-07-05,53,1.7,Steen Bork Larsen,Nedre,Flue,FALSE,NA,TRUE,Male,1.1418822249239304
-2019-07-05,48,NA,Poul Erik Hansen,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-07-05,50,NA,Jan Kjær,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-05,48,NA,Poul Erik Hansen,Nedre,Flue,FALSE,NA,TRUE,Female,NA
+2019-07-05,50,0,Jan Kjær,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-07-05,45,1.2,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,Male,1.316872427983539
-2019-07-05,45,NA,Bo Østergaard,Mellem,Flue,FALSE,NA,NA,NA,NA
+2019-07-05,45,NA,Bo Østergaard,Mellem,Flue,FALSE,NA,TRUE,NA,NA
 2019-07-05,44,1.02,Ole Sørensen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/444665FFE951D700C125842F003F7750.jpg,TRUE,NA,1.1974079639368895
 2019-07-05,68,4.3,Lars Relund,Nedre,Flue,FALSE,NA,TRUE,NA,1.3675452880113983
 2019-07-05,45,1.2,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,Male,1.316872427983539
-2019-07-05,50,NA,Jan Kjær,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-05,50,0,Jan Kjær,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-07-06,42,0.8,Finn Godsk Madsen,Nedre,Spin,FALSE,NA,TRUE,NA,1.0797969981643452
-2019-07-06,42,NA,Robert Pedersen,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-07-06,50,NA,Lars Nørgaard,Nedre,Spin,FALSE,NA,NA,Male,NA
+2019-07-06,42,0,Robert Pedersen,Nedre,Spin,FALSE,NA,FALSE,Female,NA
+2019-07-06,50,0,Lars Nørgaard,Nedre,Spin,FALSE,NA,FALSE,Male,NA
 2019-07-06,49,1.4,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.1899803653239722
 2019-07-06,74,4.55,Christian Christensen,Nedre,Flue,FALSE,NA,TRUE,NA,1.1228357649102718
 2019-07-06,56,2.4,Lars Relund,Nedre,Flue,FALSE,NA,TRUE,Female,1.3666180758017492
@@ -13613,7 +13613,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-07-07,65,3.7,Benny Larsen,Nedre,Spin,FALSE,NA,TRUE,Male,1.347291761492945
 2019-07-07,53,1.9,Bruno Broberg,Mellem,Orm,FALSE,NA,TRUE,Female,1.2762213102090987
 2019-07-07,52,1.5,Carsten Nielsen,Nedre,Orm,FALSE,NA,TRUE,Female,1.0667956304050978
-2019-07-08,41,NA,Karsten Simonsen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-08,41,0,Karsten Simonsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-08,45,0,Asbjørn Schlosser,Nedre,Spin,FALSE,NA,FALSE,Female,NA
 2019-07-08,49,1.5,Karsten Simonsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.274978962847113
 2019-07-08,45,1,Mikael Rønsholdt,Nedre,Spin,FALSE,NA,TRUE,Female,1.0973936899862826
@@ -13621,16 +13621,16 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-07-08,86,8.2,Peter Bjerregaard,Haderup Å,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/1E43B9B1E0E7A283C1258431006F322B.jpg,TRUE,Male,1.2891946621052233
 2019-07-08,71,4.2,Allan Rosendahl,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/BEBBC8DA242DD076C1258432005A8B2D.jpg,TRUE,Female,1.1734760876307238
 2019-07-09,54,1.9,Jens Henry Hede,Nedre,Spin,FALSE,NA,TRUE,NA,1.2066250063506578
-2019-07-09,58,NA,Jann Kønig,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-09,58,0,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-07-09,50,1.4,Jørgen Klokker,Nedre,Flue,FALSE,NA,TRUE,Female,1.12
 2019-07-09,83,7.8,Jens Henry Hede Jensen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/3458711727F08061C1258432003F19C2.jpg,TRUE,Male,1.364144340462445
 2019-07-09,81,6.2,Preben K. Jensen,Nedre,Flue,FALSE,NA,TRUE,Female,1.1666393823585308
 2019-07-10,78,5.1,Torben Kristensen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/C86736D61A5AA158C125843400053DE1.jpg,TRUE,Female,1.0746978202599504
 2019-07-10,47,1.1,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,Female,1.059495487512401
-2019-07-10,40,NA,Frederik Taylor,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-07-10,51,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-10,40,0,Frederik Taylor,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-07-10,51,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-11,46,1.2,Mads Christensen,Nedre,Flue,FALSE,NA,TRUE,NA,1.2328429358099777
-2019-07-11,48,NA,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-07-11,48,0,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-07-11,45,1.1,Arne Østergård,Nedre,Flue,FALSE,NA,TRUE,Male,1.207133058984911
 2019-07-11,73,4.5,Preben Pilgaard,Mellem,Flue,FALSE,NA,TRUE,Female,1.1567617867599616
 2019-07-11,49,1.25,Arne Østergård,Nedre,Flue,FALSE,NA,TRUE,Male,1.062482469039261
@@ -13643,86 +13643,86 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-07-12,48,1.2,Karl-Ole Frandsen,Mellem,Flue,FALSE,NA,TRUE,Male,1.0850694444444444
 2019-07-12,84,7.5,Karsten Mikaelsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.2653871072238418
 2019-07-12,73,5.2,Bruno Broberg,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/F2DF7F1E2FD75B67C1258436003A504C.jpg,TRUE,Female,1.3367025091448446
-2019-07-12,45,NA,Steen Bork-Larsen,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-12,45,0,Steen Bork-Larsen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-07-12,72,5.6,Ole,Nedre,Flue,FALSE,NA,TRUE,Male,1.5003429355281208
 2019-07-12,57,2,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,Female,1.079954425923226
 2019-07-12,43,0.98,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.2325958720615795
 2019-07-12,52,1.5,Finn Vestergård Jensen,Nedre,Spin,FALSE,NA,TRUE,Female,1.0667956304050978
 2019-07-12,51,1.4,Ole Hansen,Nedre,Flue,FALSE,NA,TRUE,NA,1.0554010146926898
-2019-07-12,50,NA,Ikke Oplyst,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-12,50,NA,Ikke Oplyst,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2019-07-12,76,5,Ikke Oplyst,Nedre,Flue,FALSE,NA,TRUE,Male,1.1390144335909025
 2019-07-12,85,7.2,Preben Brøndsted,Nedre,Flue,FALSE,NA,TRUE,NA,1.172399755750051
 2019-07-12,52,1.2,Lars Eriksen,Nedre,Flue,FALSE,NA,TRUE,Female,0.8534365043240782
-2019-07-12,47,NA,Peter Søndergaard,Nedre,Orm,FALSE,NA,NA,Female,NA
+2019-07-12,47,NA,Peter Søndergaard,Nedre,Orm,FALSE,NA,TRUE,Female,NA
 2019-07-13,52,1.6,Bent Nielsen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A2A7682930E75FADC1258436006269FE.jpg,TRUE,NA,1.137915339098771
 2019-07-13,56,2.3,Anders Larsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.3096756559766762
 2019-07-13,75,5,Anders Larsen,Nedre,Flue,FALSE,NA,TRUE,Male,1.1851851851851851
-2019-07-13,53,NA,Jann Kønig,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-13,53,0,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-07-13,78,5.8,NA,Nedre,Flue,FALSE,NA,TRUE,Female,1.2222053642171986
 2019-07-13,53,1.9,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,NA,1.2762213102090987
 2019-07-13,82,7.3,Ole Dich,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/7935FE3EAA73EA7EC12584380076C4BE.jpg,TRUE,Male,1.3239796288504229
-2019-07-13,68,NA,Per Simonsen,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-07-13,50,NA,Tommy Lisbjerg,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-07-13,44,NA,Jann Kønig,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-13,68,NA,Per Simonsen,Nedre,Flue,FALSE,NA,TRUE,Female,NA
+2019-07-13,50,0,Tommy Lisbjerg,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-07-13,44,0,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-07-13,75,5,NA,Nedre,Flue,FALSE,NA,TRUE,Male,1.1851851851851851
-2019-07-14,56,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-07-14,42,NA,Ole Hansen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-14,56,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-07-14,42,0,Ole Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-14,58,2.5,Carsten Nielsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.2813153470827012
-2019-07-14,70,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-07-14,48,NA,Finn Vestergård Jensen,Nedre,Orm,FALSE,NA,NA,Female,NA
+2019-07-14,70,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2019-07-14,48,0,Finn Vestergård Jensen,Nedre,Orm,FALSE,NA,FALSE,Female,NA
 2019-07-15,52,1.8,Poul E Andersen,Nedre,Orm,FALSE,NA,TRUE,Female,1.2801547564861175
-2019-07-15,47,NA,Erik Andersen,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-07-15,47,NA,Erik Andersen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2019-07-15,57,2.1,Christian Jørgensen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/7E789FA88044D268C1258438007F3F7D.jpg,TRUE,Female,1.1339521472193874
 2019-07-15,45,1.1,Lasse Laursen,Nedre,Spin,FALSE,NA,TRUE,Male,1.207133058984911
-2019-07-15,47,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-15,47,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-15,76,5.2,Kim Sørensen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/F74A55F5D036FF73C12584380025AB37.jpg,TRUE,Female,1.1845750109345385
 2019-07-15,72,4.9,Robert Pedersen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8261A564C869B1C5C1258438004142F5.jpg,TRUE,Female,1.3128000685871057
 2019-07-15,45,1.5,Kenneth Østergaard Jensen,Nedre,Flue,FALSE,NA,TRUE,Female,1.646090534979424
 2019-07-15,54,1.95,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,Male,1.2383782959914647
 2019-07-15,64,2.75,Poul Christian Hansen,Nedre,Flue,FALSE,NA,TRUE,Female,1.049041748046875
 2019-07-15,91,10.4,Lasse Laursen,Nedre,Spin,FALSE,NA,TRUE,Male,1.3800955716183345
-2019-07-16,58,NA,Jann Kønig,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-07-16,50,NA,Lars Nørgaard,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-07-16,58,0,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-07-16,50,0,Lars Nørgaard,Nedre,Flue,FALSE,NA,FALSE,Male,NA
 2019-07-16,47,1.2,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,Female,1.1558132591044374
-2019-07-16,47,NA,Andreas Haugstrup,Haderup Å,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/19660C61C8B763A5C125843C0052A55C.jpg,NA,Female,NA
+2019-07-16,47,NA,Andreas Haugstrup,Haderup Å,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/19660C61C8B763A5C125843C0052A55C.jpg,TRUE,Female,NA
 2019-07-16,56,2.3,Carsten Nielsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.3096756559766762
 2019-07-16,53,1.85,Tommy Frank Hoelgaard,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/5F1F01302036E162C125843800832009.jpg,TRUE,Female,1.2426365388878067
 2019-07-17,70,4.5,NA,Haderup Å,Orm,FALSE,NA,TRUE,Male,1.3119533527696794
 2019-07-17,77,5.4,Simon Jørgensen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/1B1C19C2AF4BEAC0C125843B005F1D59.jpg,TRUE,Female,1.182827966433971
 2019-07-17,70,5.1,Robert Pedersen,Øvre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/BBFFB9AC3795E3DFC125843A0037D8FC.jpg,TRUE,Female,1.486880466472303
 2019-07-17,58,2.3,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,Male,1.178810119316085
-2019-07-17,50,NA,Finn Vestergård Jensen,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-07-17,50,0,Finn Vestergård Jensen,Nedre,Spin,FALSE,NA,FALSE,Female,NA
 2019-07-17,56,2.2,Kim Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA,1.2527332361516037
-2019-07-17,47,NA,Bruno Broberg,Haderup Å,Flue,FALSE,NA,NA,Female,NA
+2019-07-17,47,0,Bruno Broberg,Haderup Å,Flue,FALSE,NA,FALSE,Female,NA
 2019-07-17,50,0,Brian Størup,Haderup Å,Flue,FALSE,NA,FALSE,NA,NA
-2019-07-18,70,NA,Brian Størup,Mellem,Flue,FALSE,NA,NA,NA,NA
+2019-07-18,70,0,Brian Størup,Mellem,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-18,47,1.1,Vagn Sandfeld,Mellem,Spin,FALSE,NA,TRUE,Male,1.059495487512401
 2019-07-18,72,4.6,Lennart Jensen,Nedre,Flue,FALSE,NA,TRUE,Female,1.2324245541838132
-2019-07-18,42,NA,Orla Bertram-Nielsen,Mellem,Flue,FALSE,NA,NA,Female,NA
-2019-07-19,50,NA,Anders Dalgaard,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-18,42,0,Orla Bertram-Nielsen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
+2019-07-19,50,0,Anders Dalgaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-19,50,1.4,Daniel Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA,1.12
 2019-07-19,44,1.2,Robert Pedersen,Haderup Å,Spin,FALSE,NA,TRUE,Male,1.4087152516904582
 2019-07-19,50,1.5,Knud Tørnqvist,Nedre,Spin,FALSE,NA,TRUE,NA,1.2
 2019-07-19,78,6,Peter Hønholt,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/FEFDDB2EDFA7E9D4C125843C007F3CF0.jpg,TRUE,Male,1.2643503767764124
-2019-07-19,41,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-07-19,47,NA,Peter Skov Johansen,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-07-19,41,0,Lars Ligaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-07-19,47,NA,Peter Skov Johansen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
 2019-07-19,76,5.25,Jørgen Skov,Mellem,Spin,FALSE,NA,TRUE,Male,1.1959651552704476
-2019-07-19,47,NA,Anders Dalgaard,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-19,47,0,Anders Dalgaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-20,51,1.7,Erik Mikkelsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.2815583749839805
-2019-07-20,48,NA,Rasmus Pedersen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/19C2D64B90CB2EE0C125844000564BE9.jpg,NA,NA,NA
+2019-07-20,48,NA,Rasmus Pedersen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/19C2D64B90CB2EE0C125844000564BE9.jpg,TRUE,NA,NA
 2019-07-20,76,5.8,Bo Jensen,Haderup Å,Flue,FALSE,NA,TRUE,Male,1.321256742965447
-2019-07-20,47,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-20,47,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
 2019-07-20,70,3.67,Poul B. Oddershede,Mellem,Flue,FALSE,NA,TRUE,Female,1.0699708454810495
-2019-07-20,50,NA,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-07-20,45,NA,Henrik Bønnelykke,Mellem,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/AFD9E05896728135C125843D0044D416.jpg,NA,NA,NA
-2019-07-20,42,NA,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-07-20,42,NA,Henrik Bønnelykke,Mellem,Orm,FALSE,NA,NA,NA,NA
+2019-07-20,50,0,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-07-20,45,0,Henrik Bønnelykke,Mellem,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/AFD9E05896728135C125843D0044D416.jpg,FALSE,NA,NA
+2019-07-20,42,0,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-07-20,42,0,Henrik Bønnelykke,Mellem,Orm,FALSE,NA,FALSE,NA,NA
 2019-07-20,48,1.3,Lars Nørgaard,Nedre,Flue,FALSE,NA,TRUE,Female,1.1754918981481481
 2019-07-20,51,1.7,Jakob B Jensen,Haderup Å,Flue,FALSE,NA,TRUE,NA,1.2815583749839805
-2019-07-20,43,NA,Jan Kjær,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-20,43,0,Jan Kjær,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-07-21,83,7.4,Gunther Grossmann,Nedre,Flue,FALSE,NA,TRUE,NA,1.2941882204387298
 2019-07-21,49,1.3,Gunther Grossmann,Nedre,Flue,FALSE,NA,TRUE,NA,1.1049817678008313
-2019-07-21,50,NA,Lars Nørgaard,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-21,50,0,Lars Nørgaard,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-07-21,75,5.2,Poulerik Simonsen,Nedre,Flue,FALSE,NA,TRUE,Male,1.2325925925925927
 2019-07-21,71,4.6,Gunther Grossmann,Nedre,Flue,FALSE,NA,TRUE,NA,1.285235715024126
 2019-07-21,50,1.5,Poul E Andersen,Nedre,Orm,FALSE,NA,TRUE,Female,1.2
@@ -13730,59 +13730,59 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-07-21,61,2.8,Kristian S Andersen,Haderup Å,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B62898FED3D89C8CC125844000503125.jpg,TRUE,Female,1.23358342768778
 2019-07-21,44,0.93,Hans-Jørn Christensen,Nedre,Orm,FALSE,NA,TRUE,NA,1.0917543200601052
 2019-07-21,76,6,Henrik Olsen,Øvre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/030D2725A1DB8645C125843E003F8BED.jpg,TRUE,Male,1.366817320309083
-2019-07-21,47,NA,Christian Christensen,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-07-21,40,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-07-21,42,NA,Tove Ankersen,Nedre,Orm,FALSE,NA,NA,Female,NA
+2019-07-21,47,NA,Christian Christensen,Nedre,Flue,FALSE,NA,TRUE,Female,NA
+2019-07-21,40,0,Rasmus Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-07-21,42,NA,Tove Ankersen,Nedre,Orm,FALSE,NA,TRUE,Female,NA
 2019-07-21,74,5.25,Allan Nørskov Johansen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/E14AFB281E8C710BC125843E004E17F3.jpg,TRUE,Female,1.2955797287426214
 2019-07-21,60,2.75,Preben Falkeøje Pilgaard,Haderup Å,Flue,FALSE,NA,TRUE,Female,1.2731481481481481
 2019-07-21,58,2.1,Gunther Grossmann,Nedre,Flue,FALSE,NA,TRUE,NA,1.076304891549469
-2019-07-21,44,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-21,44,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
 2019-07-21,52,1.5,Jesper Stenfeldt,Nedre,Flue,FALSE,NA,TRUE,NA,1.0667956304050978
-2019-07-21,46,NA,Bo Ankersen,Nedre,Spin,FALSE,NA,NA,Male,NA
-2019-07-21,51,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-07-22,55,NA,Lars Nørgaard,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-07-21,46,NA,Bo Ankersen,Nedre,Spin,FALSE,NA,TRUE,Male,NA
+2019-07-21,51,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-07-22,55,NA,Lars Nørgaard,Nedre,Flue,FALSE,NA,TRUE,Male,NA
 2019-07-22,70,4,Peder Skødt Lundsgaard,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/700A23F2F4060429C125843F00355A80.jpg,TRUE,Female,1.1661807580174928
 2019-07-22,50,1.5,Rasmus Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,1.2
 2019-07-22,62,2.8,Rasmus Pedersen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/9C6DE3E50B300E42C1258440005739A6.jpg,TRUE,NA,1.174851465207613
 2019-07-22,92,7.1,Peter Skov Johansen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/0652A578339E13D1C125843F00333D8A.jpg,TRUE,Male,0.911790087942796
 2019-07-22,78,6.3,Johan Gadegaard,Nedre,Flue,FALSE,NA,TRUE,Female,1.3275678956152328
-2019-07-22,45,NA,Finn Vestergård Jensen,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-07-22,48,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-07-22,35,NA,Johan Gadegaard,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-22,45,0,Finn Vestergård Jensen,Nedre,Spin,FALSE,NA,FALSE,Female,NA
+2019-07-22,48,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2019-07-22,35,0,Johan Gadegaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-22,54,1.8,Einar Bendix,Nedre,Flue,FALSE,NA,TRUE,Female,1.1431184270690444
 2019-07-22,72,5.4,Morten Rasmussen,Nedre,Spin,FALSE,NA,TRUE,Female,1.4467592592592593
 2019-07-22,52,1.7,Jens Peder Madsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.2090350477924443
-2019-07-22,55,NA,Lars Uldum,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-07-22,40,NA,Henning Voergaard,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-22,55,0,Lars Uldum,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-07-22,40,0,Henning Voergaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-22,58,2.4,Ib Christoffersen,Nedre,Flue,FALSE,NA,TRUE,NA,1.2300627331993932
-2019-07-22,49,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-22,49,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
 2019-07-22,49,1.5,Vagn Riis-Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,1.274978962847113
 2019-07-22,52,1.8,Finn Vestergård Jensen,Nedre,Spin,FALSE,NA,TRUE,Male,1.2801547564861175
-2019-07-22,42,NA,Vagn Riis-Jensen,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-07-22,55,NA,Lars Uldum,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/2E7E295441C137B9C12584420041E86D.jpg,NA,NA,NA
+2019-07-22,42,0,Vagn Riis-Jensen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-07-22,55,0,Lars Uldum,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/2E7E295441C137B9C12584420041E86D.jpg,FALSE,NA,NA
 2019-07-22,47,1.41,Henning Voergaard,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/4EA4B59D4AC6C51BC125844000395337.jpg,TRUE,NA,1.358080579447714
 2019-07-22,56,2.2,Jan Palmgren Nielsen,Haderup Å,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/E4A40A00BCA334F2C125843F0022AB29.jpg,TRUE,Male,1.2527332361516037
 2019-07-22,43,1,Jens Henry Hede Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,1.2577508898587546
-2019-07-23,47,NA,Jann Kønig,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-23,47,0,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-07-23,60,2.6,Vagn Riis-Jensen,Nedre,Spin,FALSE,NA,TRUE,Male,1.2037037037037037
-2019-07-23,51,NA,Flemming Madsen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-23,51,NA,Flemming Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
 2019-07-23,52,1.7,Morten Rasmussen,Nedre,Spin,FALSE,NA,TRUE,Female,1.2090350477924443
 2019-07-23,50,0,Leif Lund.,Nedre,Spin,FALSE,NA,FALSE,Female,NA
 2019-07-23,68,3.9,Ole Termøhlen Madsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.2403317728475474
-2019-07-23,46,NA,Kenneth Klokker,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-07-23,46,NA,Kenneth Klokker,Nedre,Flue,FALSE,NA,TRUE,Male,NA
 2019-07-23,55,2.1,Rasmus Pedersen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/CC4ED21416427BC7C125844000585530.jpg,TRUE,NA,1.2622088655146506
-2019-07-23,53,NA,Jann Kønig,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-23,53,0,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-07-23,70,4.1,Gunther Grossmann,Nedre,Flue,FALSE,NA,TRUE,NA,1.19533527696793
 2019-07-24,48,1.1,Einar Bendix,Nedre,Flue,FALSE,NA,TRUE,Male,0.9946469907407409
 2019-07-24,53,1.6,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,Male,1.0747126822813464
 2019-07-24,46,1.1,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.1301060244924799
-2019-07-24,45,NA,Philip Berthel,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-24,45,0,Philip Berthel,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-07-24,63,2.6,Einar Bendix,Nedre,Flue,FALSE,NA,TRUE,Female,1.039804516750851
-2019-07-24,47,NA,Peter Skov Johansen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/7040F1D14E0C73EBC1258441002627A3.jpg,NA,NA,NA
+2019-07-24,47,0,Peter Skov Johansen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/7040F1D14E0C73EBC1258441002627A3.jpg,FALSE,NA,NA
 2019-07-25,45,1.06,Holger Riis-Jensen,Nedre,Flue,FALSE,NA,TRUE,Female,1.1632373113854595
-2019-07-25,43,NA,Philip Berthel,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-25,43,0,Philip Berthel,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-25,53,1.7,Mogens Skaarup,Nedre,Flue,FALSE,NA,TRUE,Female,1.1418822249239304
-2019-07-25,55,NA,Rasmus,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-25,55,0,Rasmus,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-07-25,50,1.6,Henrik Søndergård,Nedre,Flue,FALSE,NA,TRUE,Male,1.28
 2019-07-25,72,4.62,Finn Højgaard Pedersen,Mellem,Flue,FALSE,NA,TRUE,Female,1.2377829218106995
 2019-07-25,78,5.6,Kim Birkeholm,Nedre,Flue,FALSE,NA,TRUE,Female,1.1800603516579848
@@ -13790,89 +13790,89 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-07-25,58,2.3,Henrik Søndergård,Nedre,Flue,FALSE,NA,TRUE,Male,1.178810119316085
 2019-07-26,76,4.6,Kim Birkeholm,Nedre,Flue,FALSE,NA,TRUE,Female,1.0478932789036302
 2019-07-26,74,5.3,Bruno Broberg,Nedre,Flue,FALSE,NA,TRUE,Male,1.307918583302075
-2019-07-26,48,NA,Bruno Broberg,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-07-26,48,0,Bruno Broberg,Nedre,Flue,FALSE,NA,FALSE,Male,NA
 2019-07-26,71,3.7,Kim Birkeholm,Nedre,Flue,FALSE,NA,TRUE,Female,1.033776553388971
 2019-07-26,46,1.1,Hans-Jørn Christensen,Mellem,Orm,FALSE,NA,TRUE,Female,1.1301060244924799
 2019-07-27,82,7.3,Kenneth Kjeldsen Nielsen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/26AE55CE55C60874C1258446005F393B.jpg,TRUE,Male,1.3239796288504229
-2019-07-27,43,NA,Karsten Simonsen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-27,43,0,Karsten Simonsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-27,54,1.8,Henrik Søndergård,Nedre,Flue,FALSE,NA,TRUE,Male,1.1431184270690444
 2019-07-28,61,2.7,Jens Kolding,Nedre,Flue,FALSE,NA,TRUE,Female,1.1895268766989306
 2019-07-28,48,1.3,NA,Nedre,Flue,FALSE,NA,TRUE,NA,1.1754918981481481
-2019-07-28,44,NA,René Sølvberg,Mellem,Flue,FALSE,NA,NA,NA,NA
+2019-07-28,44,NA,René Sølvberg,Mellem,Flue,FALSE,NA,TRUE,NA,NA
 2019-07-28,45,1.1,Svend Overby,Nedre,Spin,FALSE,NA,TRUE,Male,1.207133058984911
-2019-07-28,44,NA,Karsten Simonsen,NA,Flue,FALSE,NA,NA,NA,NA
-2019-07-28,NA,NA,Niels Gudiksen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A70B3A64222F666AC1258445005A2417.jpg,NA,Male,NA
-2019-07-28,50,NA,Johnny Olesen,Nedre,Orm,FALSE,NA,NA,NA,NA
-2019-07-28,47,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-07-28,39,NA,René Sølvberg,Mellem,Flue,FALSE,NA,NA,NA,NA
+2019-07-28,44,0,Karsten Simonsen,NA,Flue,FALSE,NA,FALSE,NA,NA
+2019-07-28,NA,NA,Niels Gudiksen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A70B3A64222F666AC1258445005A2417.jpg,TRUE,Male,NA
+2019-07-28,50,NA,Johnny Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2019-07-28,47,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-07-28,39,0,René Sølvberg,Mellem,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-29,55,2.1,Vagn Nielsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.2622088655146506
 2019-07-29,45,1,Kurt Granat,Mellem,Flue,FALSE,NA,TRUE,Female,1.0973936899862826
 2019-07-29,63,3,Patrick Boel,Nedre,Flue,FALSE,NA,TRUE,Female,1.199774442404828
-2019-07-29,35,NA,Per Lundvig,Mellem,Flue,FALSE,NA,NA,NA,NA
+2019-07-29,35,0,Per Lundvig,Mellem,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-29,40,0,Peter Brokær,Haderup Å,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-29,76,5.3,Johnny Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,1.2073552996063566
 2019-07-29,80,6.2,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,Male,1.2109375
-2019-07-29,42,NA,Peder Riisgaard,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-07-30,49,NA,Lars Ager,Nedre,Orm,FALSE,NA,NA,Female,NA
-2019-07-30,50,NA,Per Lundvig,Mellem,Flue,FALSE,NA,NA,NA,NA
-2019-07-30,50,NA,Per Pedersen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-29,42,0,Peder Riisgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-07-30,49,NA,Lars Ager,Nedre,Orm,FALSE,NA,TRUE,Female,NA
+2019-07-30,50,0,Per Lundvig,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2019-07-30,50,0,Per Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-30,51,1.4,Kaj Danielsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.0554010146926898
-2019-07-30,50,NA,Per Pedersen,Mellem,Flue,FALSE,NA,NA,Male,NA
+2019-07-30,50,NA,Per Pedersen,Mellem,Flue,FALSE,NA,TRUE,Male,NA
 2019-07-30,47,1.2,Kurt Granat,Mellem,Flue,FALSE,NA,TRUE,Female,1.1558132591044374
-2019-07-31,49,NA,Jan Karnøe,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-07-31,52,NA,Kim Sørensen,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-07-31,49,NA,Jan Karnøe,Nedre,Spin,FALSE,NA,TRUE,Female,NA
+2019-07-31,52,0,Kim Sørensen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-07-31,47,1.2,NA,Nedre,Flue,FALSE,NA,TRUE,NA,1.1558132591044374
 2019-07-31,45,1.3,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.4266117969821674
 2019-07-31,57,2,Michael Schwennesen,Nedre,Flue,FALSE,NA,TRUE,Female,1.079954425923226
 2019-07-31,49,1.3,Jan Karnøe,Nedre,Spin,FALSE,NA,TRUE,Female,1.1049817678008313
 2019-07-31,49,1.4,Brian Jensen,Nedre,Flue,FALSE,NA,TRUE,Female,1.1899803653239722
-2019-07-31,47,NA,Kim Snejbjerg,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-31,47,NA,Kim Snejbjerg,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2019-07-31,45,0,Carsten Nielsen,Nedre,Spin,FALSE,NA,FALSE,Female,NA
 2019-07-31,45,1.1,Wilfred Hansen,Nedre,Flue,FALSE,NA,TRUE,Male,1.207133058984911
 2019-07-31,75,4.75,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.125925925925926
 2019-07-31,50,1.4,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.12
 2019-07-31,53,1.8,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,Male,1.2090517675665147
-2019-07-31,40,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-07-31,40,0,Lars Ligaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-07-31,70,4.1,Johnny Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,1.19533527696793
 2019-07-31,45,1,Jens Henry Hede Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,1.0973936899862826
 2019-07-31,70,4,Jesper Klausen,Nedre,Flue,FALSE,NA,TRUE,Male,1.1661807580174928
-2019-07-31,30,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-07-31,30,NA,Georg Christensen,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2019-07-31,51,1.55,Brian Jensen,Nedre,Flue,FALSE,NA,TRUE,Female,1.1684796948383351
-2019-07-31,45,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-08-01,38,NA,Per Lundvig,Mellem,Flue,FALSE,NA,NA,NA,NA
-2019-08-01,50,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-01,42,NA,Jerk Sönnichsen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-01,55,NA,Peter Mejlhede,Haderup Å,Spin,FALSE,NA,NA,Female,NA
+2019-07-31,45,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,TRUE,Female,NA
+2019-08-01,38,0,Per Lundvig,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-01,50,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-01,42,0,Jerk Sönnichsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-01,55,NA,Peter Mejlhede,Haderup Å,Spin,FALSE,NA,TRUE,Female,NA
 2019-08-01,57,2.4,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.2959453111078711
-2019-08-01,43,NA,Jerk Sönnichsen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-01,50,NA,Torben Kristensen,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-08-01,43,0,Jerk Sönnichsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-01,50,0,Torben Kristensen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-08-01,61,2.7,Allan Nørskov Johansen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/11BC7184495D20FCC125844A0048B8A2.jpg,TRUE,Female,1.1895268766989306
-2019-08-01,45,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-01,45,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-01,55,1.5,Hans Thougård Pedersen,Nedre,Spin,FALSE,NA,TRUE,Female,0.9015777610818934
-2019-08-01,30,NA,Jerk Sönnichsen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-01,47,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-01,30,0,Jerk Sönnichsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-01,47,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-01,40,0,Tommy Frank Hoelgaard,Mellem,Spin,FALSE,NA,FALSE,NA,NA
-2019-08-01,57,NA,Jacob Lorentsen,Mellem,Flue,FALSE,NA,NA,Female,NA
+2019-08-01,57,NA,Jacob Lorentsen,Mellem,Flue,FALSE,NA,TRUE,Female,NA
 2019-08-01,49,1.3,Kurt Granat,Mellem,Flue,FALSE,NA,TRUE,Female,1.1049817678008313
 2019-08-01,47,1.41,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.358080579447714
 2019-08-01,42,0.9,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,NA,1.2147716229348882
 2019-08-01,47,1.4,Gustav Setnik,Nedre,Spin,FALSE,NA,TRUE,Female,1.3484488022885102
-2019-08-01,43,NA,Jerk Sönnichsen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-01,40,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-01,43,0,Jerk Sönnichsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-01,40,0,Lars Ligaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-02,51,1.61,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.2137111668965934
-2019-08-02,36,NA,Daniel Sørensen,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-08-02,36,0,Daniel Sørensen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-08-02,45,1.1,Arne Østergård,Nedre,Spin,FALSE,NA,TRUE,Male,1.207133058984911
 2019-08-02,47,1.4,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.3484488022885102
 2019-08-02,56,2,Allan Nørskov Johansen,Nedre,Flue,FALSE,NA,TRUE,Female,1.1388483965014577
 2019-08-02,44,1.1,Niels Laursen,Mellem,Flue,FALSE,NA,TRUE,Male,1.2913223140495869
-2019-08-02,44,NA,Bruno Broberg,Mellem,Flue,FALSE,NA,NA,Female,NA
-2019-08-02,45,NA,Rasmus Wølck,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-08-02,44,NA,Johnny Olesen,Nedre,Orm,FALSE,NA,NA,NA,NA
+2019-08-02,44,0,Bruno Broberg,Mellem,Flue,FALSE,NA,FALSE,Female,NA
+2019-08-02,45,0,Rasmus Wølck,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-08-02,44,NA,Johnny Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
 2019-08-02,52,1.6,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,Female,1.137915339098771
 2019-08-02,56,2.2,Brian Jensen,Mellem,Flue,FALSE,NA,TRUE,Female,1.2527332361516037
 2019-08-03,47,1.22,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.1750768134228446
-2019-08-03,45,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,NA,NA,NA
-2019-08-03,49,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-03,45,0,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-03,49,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
 2019-08-03,75,5.4,Brian Jensen,Mellem,Flue,FALSE,NA,TRUE,Female,1.28
 2019-08-03,52,1.8,Michael Schwennesem,Nedre,Flue,FALSE,NA,TRUE,Female,1.2801547564861175
 2019-08-03,50,1.92,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,Female,1.536
@@ -13881,50 +13881,50 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-08-04,60,2.6,Mikael Rønsholdt,Nedre,Flue,FALSE,NA,TRUE,Female,1.2037037037037037
 2019-08-04,50,1.5,Emir Adžemović,Nedre,Spin,FALSE,NA,TRUE,Female,1.2
 2019-08-04,73,5.2,Tom Johannesen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/811BBBE3BD60E611C125844C00310062.jpg,TRUE,Female,1.3367025091448446
-2019-08-04,32,NA,Daniel Sørensen,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-08-04,32,0,Daniel Sørensen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-08-04,40,0,Mikael Rønsholdt,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-04,60,2.5,Rafal Wysocki,Nedre,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/15059525B722ABF0C125844D006FD6EC.jpg,TRUE,NA,1.1574074074074074
 2019-08-04,40,0,Karl-Ole Frandsen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
 2019-08-04,59,2.6,Bruno Broberg,Nedre,Flue,FALSE,NA,TRUE,Male,1.2659522151729241
-2019-08-04,46,NA,Rafal Wysocki,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-08-04,52,NA,Kristian S Andersen,Haderup Å,Spin,FALSE,NA,NA,NA,NA
+2019-08-04,46,0,Rafal Wysocki,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-08-04,52,0,Kristian S Andersen,Haderup Å,Spin,FALSE,NA,FALSE,NA,NA
 2019-08-04,71,4,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,Female,1.1175962739340226
-2019-08-04,57,NA,Kristian S Andersen,Haderup Å,Spin,FALSE,NA,NA,NA,NA
+2019-08-04,57,0,Kristian S Andersen,Haderup Å,Spin,FALSE,NA,FALSE,NA,NA
 2019-08-04,47,1.1,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,NA,1.059495487512401
 2019-08-05,50,1.4,Robert Pedersen,Haderup Å,Spin,FALSE,NA,TRUE,Male,1.12
-2019-08-05,50,NA,John Ziegler,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-08-05,50,NA,John Ziegler,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2019-08-05,44,1.03,Ole Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,1.2091472577009768
 2019-08-05,48,0,Børge Jensen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
-2019-08-05,42,NA,Peder Riisgaard,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-08-05,47,NA,Daniel Andersen,Nedre,Flue,FALSE,NA,NA,Male,NA
-2019-08-05,50,NA,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-08-05,42,NA,Daniel Andersen,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-08-05,42,0,Peder Riisgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-08-05,47,NA,Daniel Andersen,Nedre,Flue,FALSE,NA,TRUE,Male,NA
+2019-08-05,50,0,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,Female,NA
+2019-08-05,42,0,Daniel Andersen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-08-05,75,5.3,Peter Mejlhede,Mellem,Spin,FALSE,NA,TRUE,NA,1.2562962962962962
-2019-08-05,48,NA,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,NA,Male,NA
+2019-08-05,48,0,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,Male,NA
 2019-08-06,50,1.3,Lars Relund,Nedre,Flue,FALSE,NA,TRUE,NA,1.04
 2019-08-06,61,3,Michael Schwennesen,Nedre,Flue,FALSE,NA,TRUE,Male,1.3216965296654786
-2019-08-06,48,NA,Willy Risgaard,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-08-06,48,NA,Willy Risgaard,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2019-08-06,53,1.6,Søren Fisker,Mellem,Flue,FALSE,NA,TRUE,Female,1.0747126822813464
 2019-08-06,50,1.5,Michael Schwennesen,Nedre,Flue,FALSE,NA,TRUE,Male,1.2
-2019-08-06,42,NA,Gorm Hald,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-06,42,0,Gorm Hald,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-07,63,3.5,Jørgen Lauritsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.3997368494722993
 2019-08-07,49,1.2,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,Male,1.0199831702776905
 2019-08-07,60,2.3,Michael Bækdal,Nedre,Flue,FALSE,NA,TRUE,Female,1.0648148148148147
 2019-08-07,62,2.6,Kenneth Klokker,Mellem,Flue,FALSE,NA,TRUE,Male,1.0909335034070693
-2019-08-07,50,NA,Søren Nordmand,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-07,45,NA,Michael Bækdal,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-07,62,NA,Finn Lajgaard,Nedre,Flue,FALSE,NA,NA,Male,NA
-2019-08-07,44,NA,Peter Skov Johansen,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-08-07,50,0,Søren Nordmand,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-07,45,0,Michael Bækdal,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-07,62,NA,Finn Lajgaard,Nedre,Flue,FALSE,NA,TRUE,Male,NA
+2019-08-07,44,0,Peter Skov Johansen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-08-07,55,2.2,Gustav Setnik,Mellem,Flue,FALSE,NA,TRUE,Female,1.3223140495867771
 2019-08-07,73,5.1,Henrik Søndergård,Nedre,Flue,FALSE,NA,TRUE,Male,1.3109966916612896
-2019-08-07,49,NA,Søren Søes,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-07,47,NA,Jan Kjær,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-08-07,49,NA,Søren Søes,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2019-08-07,47,0,Jan Kjær,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-08-08,55,2,Ole Andresen,Nedre,Flue,FALSE,NA,TRUE,Female,1.2021036814425243
-2019-08-08,48,NA,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-08-08,48,0,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,Female,NA
 2019-08-08,52,1.4,Peter Skov Johansen,Nedre,Spin,FALSE,NA,TRUE,NA,0.9956759217114247
 2019-08-08,63,3.4,Tommy Frank Hoelgaard,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8EC26EDA6D2133D0C12584500076C993.jpg,TRUE,Male,1.359744368058805
 2019-08-08,40,0,Tommy Frank Hoelgaard,Mellem,Spin,FALSE,NA,FALSE,NA,NA
-2019-08-08,48,NA,Robert Fischer,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-08,48,0,Robert Fischer,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-09,47,1.25,Philip Marturin Knudsen,Nedre,Spin,FALSE,NA,TRUE,Male,1.2039721449004557
 2019-08-09,50,1.41,Morten Jørgensen,Øvre,Spin,FALSE,NA,TRUE,Female,1.128
 2019-08-09,80,6.45,Carsten Loof,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/99FEE693C4FEFC66C12584510057374A.jpg,TRUE,Male,1.259765625
@@ -13934,7 +13934,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-08-09,44,0.95,Rafal Wysocki,Nedre,Orm,FALSE,NA,TRUE,Female,1.1152329075882794
 2019-08-09,43,0.86,Torben Frost,Nedre,Orm,FALSE,NA,TRUE,Female,1.0816657652785289
 2019-08-09,45,0.93,Jens Kolding,Nedre,Spin,FALSE,NA,TRUE,Female,1.0205761316872428
-2019-08-09,45,NA,Per Lundvig,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-08-09,45,NA,Per Lundvig,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2019-08-09,46,1.25,Phillip Knudsen,Nedre,Spin,FALSE,NA,TRUE,Male,1.284211391468727
 2019-08-09,43,1.02,Edhem Salkic Edo,Nedre,Spin,FALSE,NA,TRUE,Female,1.2829059076559297
 2019-08-09,63,3.19,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,Male,1.275760157090467
@@ -13945,26 +13945,26 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-08-10,41,0.68,Jesper Carstensen,Nedre,Spin,FALSE,NA,TRUE,Female,0.986636874102233
 2019-08-10,55,1.85,Patrick Boel,Nedre,Flue,FALSE,NA,TRUE,Male,1.111945905334335
 2019-08-10,45,1.13,Jesper Glud Andersen,Nedre,Spin,FALSE,NA,TRUE,NA,1.240054869684499
-2019-08-10,18,NA,Leif Lund,Øvre,Spin,FALSE,NA,NA,Female,NA
+2019-08-10,18,NA,Leif Lund,Øvre,Spin,FALSE,NA,TRUE,Female,NA
 2019-08-10,49,1.56,Jesper Glud Andersen,Nedre,Spin,FALSE,NA,TRUE,Female,1.3259781213609976
 2019-08-10,47,1.36,Lars Hjernø,Nedre,Flue,FALSE,NA,TRUE,Female,1.3099216936516958
 2019-08-10,47,2.22,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,Male,2.1382545293432096
-2019-08-10,48,NA,Peter Skov Johansen,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-08-10,48,NA,Peter Skov Johansen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
 2019-08-10,55,1.97,Jørgen Liin Rasmussen,Nedre,Spin,FALSE,NA,TRUE,Female,1.1840721262208866
 2019-08-10,43,0.86,Niels Erik Holbøl Jensen,Nedre,Flue,FALSE,NA,TRUE,Female,1.0816657652785289
 2019-08-10,68,3.83,Daniel Sørensen,Nedre,Spin,FALSE,NA,TRUE,Female,1.2180694076938734
 2019-08-10,61,2.95,Ole T. Madsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.299668254171054
 2019-08-10,44,1.1,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.2913223140495869
 2019-08-10,46,1.06,Anders Bækmand,Nedre,Spin,FALSE,NA,TRUE,Female,1.0890112599654804
-2019-08-10,49,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-08-10,49,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,TRUE,NA,NA
 2019-08-10,57,2.09,Ole Rasmussen,Nedre,Flue,FALSE,NA,TRUE,Male,1.1285523750897712
 2019-08-10,51,1.88,Claus Etbøl,Nedre,Spin,FALSE,NA,TRUE,Female,1.417252791158755
 2019-08-10,44,0.9,Brian Hansen,Nedre,Spin,FALSE,NA,TRUE,Male,1.0565364387678438
 2019-08-10,69,3.82,Bo Breinbjerg,Nedre,Flue,FALSE,NA,TRUE,Female,1.1628296332824977
-2019-08-10,40,NA,Per Lundvig,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-10,40,0,Per Lundvig,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-10,45,1.06,Peter Skov Johansen,Øvre,Spin,FALSE,NA,TRUE,Female,1.1632373113854595
-2019-08-10,41,NA,Philip Berthel,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-10,48,NA,Simon Jørgensen,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-08-10,41,0,Philip Berthel,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-10,48,0,Simon Jørgensen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-08-10,56,2.22,Troels Storm,Nedre,Orm,FALSE,NA,TRUE,Female,1.2641217201166182
 2019-08-10,47,1.19,Sten Larsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.1461814819452336
 2019-08-11,69,4.68,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,Female,1.424618503602641
@@ -13983,46 +13983,46 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-08-11,52,1.72,Jens Peder Madsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.223258989531179
 2019-08-11,42,0.82,Bo Ankersen,Nedre,Spin,FALSE,NA,TRUE,Female,1.1067919231184538
 2019-08-11,43,0.94,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.1822858364672293
-2019-08-12,40,NA,Daniel Andersen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-12,40,NA,Daniel Andersen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-12,48,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-12,40,0,Daniel Andersen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-12,40,0,Daniel Andersen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-12,48,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-12,55,0,Allan Nørskov Johansen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
-2019-08-12,30,NA,Allan Nørskov Johansen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-12,30,0,Allan Nørskov Johansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-12,46,1.1,Knud Erik  Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.1301060244924799
-2019-08-13,48,NA,Erik D. Andersen,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-08-13,50,NA,Torben Smedegaard,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-08-13,48,NA,Erik D. Andersen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
+2019-08-13,50,0,Torben Smedegaard,Nedre,Spin,FALSE,NA,FALSE,Female,NA
 2019-08-13,40,0,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
-2019-08-13,48,NA,Torben Smedegaard,Nedre,Spin,FALSE,NA,NA,Male,NA
+2019-08-13,48,0,Torben Smedegaard,Nedre,Spin,FALSE,NA,FALSE,Male,NA
 2019-08-13,64,3,Bo Østergaard,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/460DED81D042FF6FC12584560028A9C4.jpg,TRUE,NA,1.1444091796875
 2019-08-13,68,3.3,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,Female,1.0495115001017707
 2019-08-13,57,2.1,Bo Jensen,Haderup Å,Flue,FALSE,NA,TRUE,Male,1.1339521472193874
 2019-08-13,44,1,Osman Bejtovic,Nedre,Flue,FALSE,NA,TRUE,Male,1.1739293764087153
-2019-08-13,47,NA,Gert Schjønning,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-08-13,45,NA,Bo Jensen,Haderup Å,Flue,FALSE,NA,NA,NA,NA
+2019-08-13,47,NA,Gert Schjønning,Nedre,Flue,FALSE,NA,TRUE,Female,NA
+2019-08-13,45,0,Bo Jensen,Haderup Å,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-13,81,7,Allan Nørskov Johansen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/EFACFF356996CA55C12584560001A8DE.jpg,TRUE,Male,1.3171734962112445
 2019-08-13,50,1.46,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,Male,1.168
-2019-08-13,40,NA,Gorm Hald,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-13,40,0,Gorm Hald,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-13,51,1.49,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,Male,1.123248222780077
-2019-08-13,40,NA,Henning Voergaard,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-14,52,NA,Peter Bjerregaard,Mellem,Orm,FALSE,NA,NA,Female,NA
+2019-08-13,40,0,Henning Voergaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-14,52,NA,Peter Bjerregaard,Mellem,Orm,FALSE,NA,TRUE,Female,NA
 2019-08-14,52,0,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
-2019-08-14,43,NA,Peter Bjerregaard,Haderup Å,Spin,FALSE,NA,NA,Female,NA
+2019-08-14,43,0,Peter Bjerregaard,Haderup Å,Spin,FALSE,NA,FALSE,Female,NA
 2019-08-14,77,5.8,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,Female,1.2704448528364871
-2019-08-14,52,NA,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-08-14,43,NA,Ole Eskesen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-14,44,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-08-14,52,0,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,Female,NA
+2019-08-14,43,0,Ole Eskesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-14,44,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2019-08-14,58,2.6,Peter Bjerregaard,Haderup Å,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/1878BDC3A581CF34C125845600587502.jpg,TRUE,Female,1.3325679609660093
-2019-08-14,35,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,NA,Female,NA
-2019-08-14,47,NA,Osman Bejtovic,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-14,35,0,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
+2019-08-14,47,0,Osman Bejtovic,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-14,53,1.7,Peter Bjerregaard,Mellem,Orm,FALSE,NA,TRUE,Male,1.1418822249239304
-2019-08-14,52,NA,Heinrich Frølund,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-08-14,52,0,Heinrich Frølund,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-08-15,47,1.2,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,Female,1.1558132591044374
-2019-08-15,53,NA,Bent Agerskov Sørensen,Mellem,Spin,FALSE,NA,NA,Female,NA
+2019-08-15,53,NA,Bent Agerskov Sørensen,Mellem,Spin,FALSE,NA,TRUE,Female,NA
 2019-08-15,73,5.1,Osman Bejtovic,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/81ABD1E051EA1C7EC12584570077C4E3.jpg,TRUE,Male,1.3109966916612896
 2019-08-15,47,1,Philip Marturin Knudsen,Nedre,Spin,FALSE,NA,TRUE,Female,0.9631777159203645
 2019-08-15,61,3,Niels Vestermark,Mellem,Flue,FALSE,NA,TRUE,Female,1.3216965296654786
 2019-08-15,73,5.4,David Efraim Poulsen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/7BB68557D2A68DDAC1258458004416C9.jpg,TRUE,Male,1.388114144111954
-2019-08-15,50,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-15,50,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-15,72,4.5,Ole Dich,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8B0C000B33A89DADC1258458002FC228.jpg,TRUE,Male,1.2056327160493827
 2019-08-15,61,3,Steen Bork Larsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.3216965296654786
 2019-08-15,48,1.41,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,Male,1.2749565972222223
@@ -14032,89 +14032,89 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-08-15,62,2.5,NA,Nedre,Flue,FALSE,NA,TRUE,Female,1.0489745225067975
 2019-08-15,60,2.9,Steen Bork Larsen,Nedre,Flue,FALSE,NA,TRUE,Male,1.3425925925925926
 2019-08-15,54,1.6,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,1.0161052685058172
-2019-08-16,42,NA,Torben Smedegaard,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-08-16,50,NA,Torben Smedegaard,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-08-16,42,0,Torben Smedegaard,Nedre,Spin,FALSE,NA,FALSE,Female,NA
+2019-08-16,50,0,Torben Smedegaard,Nedre,Spin,FALSE,NA,FALSE,Female,NA
 2019-08-16,51,1.2,Torben Smedegaard,Nedre,Spin,FALSE,NA,TRUE,Female,0.9046294411651628
-2019-08-16,45,NA,Vagn Riis-Jensen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-16,45,0,Vagn Riis-Jensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-16,56,1.6,Torben Smedegaard,Nedre,Spin,FALSE,NA,TRUE,Male,0.9110787172011662
 2019-08-16,60,2.5,Ole Dich,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/7EB21805A26FA2D5C1258458003089F2.jpg,TRUE,Male,1.1574074074074074
 2019-08-16,47,1.2,Emir Adžemović,Nedre,Spin,FALSE,NA,TRUE,Female,1.1558132591044374
-2019-08-16,47,NA,Torben Smedegaard,Nedre,Spin,FALSE,NA,NA,Male,NA
-2019-08-16,71,NA,Kenneth Kjeldsen Nielsen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/E06D4F222D7F0E17C12584630026EDC2.jpg,NA,Male,NA
+2019-08-16,47,0,Torben Smedegaard,Nedre,Spin,FALSE,NA,FALSE,Male,NA
+2019-08-16,71,NA,Kenneth Kjeldsen Nielsen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/E06D4F222D7F0E17C12584630026EDC2.jpg,TRUE,Male,NA
 2019-08-16,51,1.5,Frank Bach,Nedre,Flue,FALSE,NA,TRUE,Female,1.1307868014564535
 2019-08-16,40,0,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
 2019-08-16,43,0.8,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,Male,1.0062007118870036
-2019-08-16,47,NA,Lars Relund,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-08-16,50,NA,Emir Adžemović,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-08-16,47,NA,Lars Relund,Nedre,Flue,FALSE,NA,TRUE,Female,NA
+2019-08-16,50,NA,Emir Adžemović,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2019-08-16,52,1.6,Jan Behrmann,Nedre,Flue,FALSE,NA,TRUE,Male,1.137915339098771
-2019-08-16,40,NA,Sigfred Madsen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-16,56,NA,Jann Kønig,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-08-16,48,NA,Lars Relund,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-08-16,40,0,Sigfred Madsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-16,56,0,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-08-16,48,0,Lars Relund,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-08-16,45,1.4,Jørgen Abildgaard,Nedre,Flue,FALSE,NA,TRUE,NA,1.5363511659807956
-2019-08-16,35,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,NA,NA,NA
+2019-08-16,35,0,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-16,51,1.3,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,Male,0.9800152279289263
-2019-08-17,48,NA,Jann Kønig,Nedre,Flue,FALSE,NA,NA,Male,NA
-2019-08-17,56,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-17,44,NA,Jakob Larsen,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-08-17,48,0,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,Male,NA
+2019-08-17,56,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-17,44,0,Jakob Larsen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-08-17,66,3.3,Preben Pilgaard,Mellem,Flue,FALSE,NA,TRUE,Female,1.147842056932966
 2019-08-17,73,5,Johnny Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA,1.2852908741777351
-2019-08-17,49,NA,Jann Kønig,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-08-17,65,NA,Jakob B Jensen,Haderup Å,Flue,FALSE,NA,NA,NA,NA
-2019-08-17,46,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-17,58,NA,Claus Bertelsen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A74202CE4B47A31EC125845A000C44CB.jpg,NA,NA,NA
+2019-08-17,49,0,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-08-17,65,0,Jakob B Jensen,Haderup Å,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-17,46,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-17,58,0,Claus Bertelsen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A74202CE4B47A31EC125845A000C44CB.jpg,FALSE,NA,NA
 2019-08-17,57,2.3,Jørgen Lauritsen,Nedre,Flue,FALSE,NA,TRUE,Male,1.2419475898117098
-2019-08-17,50,NA,Sigfred Madsen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-17,50,0,Sigfred Madsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-17,58,2.4,Jakob B Jensen,Haderup Å,Flue,FALSE,NA,TRUE,NA,1.2300627331993932
-2019-08-17,45,NA,Johan Lynderup,Mellem,Flue,FALSE,NA,NA,Female,NA
-2019-08-18,46,NA,Paw Pedersen,Nedre,Orm,FALSE,NA,NA,Male,NA
-2019-08-18,58,NA,Michael Bækdal,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-08-17,45,0,Johan Lynderup,Mellem,Flue,FALSE,NA,FALSE,Female,NA
+2019-08-18,46,0,Paw Pedersen,Nedre,Orm,FALSE,NA,FALSE,Male,NA
+2019-08-18,58,0,Michael Bækdal,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-08-18,57,2.17,Johan Lynderup,Nedre,Flue,FALSE,NA,TRUE,Male,1.1717505521267002
-2019-08-18,46,NA,Jan Gylling,Mellem,Flue,FALSE,NA,NA,Female,NA
+2019-08-18,46,0,Jan Gylling,Mellem,Flue,FALSE,NA,FALSE,Female,NA
 2019-08-18,52,1.55,Michael Bækdal,Nedre,Flue,FALSE,NA,TRUE,Female,1.1023554847519346
 2019-08-18,48,1.4,Bent Jensen,Nedre,Spin,FALSE,NA,TRUE,Female,1.2659143518518519
 2019-08-18,44,1,Michael Bækdal,Nedre,Flue,FALSE,NA,TRUE,Male,1.1739293764087153
-2019-08-18,50,NA,Michael Bækdal,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-08-18,50,0,Michael Bækdal,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-08-18,49,1.3,Thomas Pasgaard Henriksen,Nedre,Flue,FALSE,NA,TRUE,Male,1.1049817678008313
 2019-08-18,43,0.95,Paw Pedersen,Nedre,Orm,FALSE,NA,TRUE,Female,1.1948633453658168
-2019-08-19,71,NA,Jan Gylling,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/33144505B0521660C1258460007550C3.jpg,NA,Female,NA
+2019-08-19,71,NA,Jan Gylling,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/33144505B0521660C1258460007550C3.jpg,TRUE,Female,NA
 2019-08-19,47,1.3,Knud Tørnqvist,Nedre,Spin,FALSE,NA,TRUE,NA,1.252131030696474
-2019-08-19,57,NA,Torben Smedegaard,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-08-19,57,0,Torben Smedegaard,Nedre,Spin,FALSE,NA,FALSE,Female,NA
 2019-08-19,48,1.3,Knud Tørnqvist,Nedre,Spin,FALSE,NA,TRUE,NA,1.1754918981481481
 2019-08-19,57,1.91,Paw Pedersen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/2B24D4F062989772C125845B00733A3D.jpg,TRUE,Female,1.031356476756681
-2019-08-19,54,NA,Peter Mejlhede,Haderup Å,Spin,FALSE,NA,NA,Female,NA
-2019-08-19,67,NA,Peter Bjerregaard,Haderup Å,Orm,FALSE,NA,NA,Male,NA
+2019-08-19,54,NA,Peter Mejlhede,Haderup Å,Spin,FALSE,NA,TRUE,Female,NA
+2019-08-19,67,NA,Peter Bjerregaard,Haderup Å,Orm,FALSE,NA,TRUE,Male,NA
 2019-08-19,60,1.6,Jens Henry Hede Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,0.7407407407407407
-2019-08-19,60,NA,Peter Bjerregaard,Haderup Å,Orm,FALSE,NA,NA,Female,NA
+2019-08-19,60,NA,Peter Bjerregaard,Haderup Å,Orm,FALSE,NA,TRUE,Female,NA
 2019-08-20,84,0,Allan Nørskov Johansen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/77024C1FDC8E923BC125845F002B4CC7.jpg,FALSE,Male,NA
-2019-08-20,47,NA,Poul Erik Hansen,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-08-20,47,NA,Poul Erik Hansen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2019-08-20,47,1.2,Emir Adžemović,Nedre,Spin,FALSE,NA,TRUE,Female,1.1558132591044374
 2019-08-20,47,1.04,Poul B. Oddershede,Mellem,Flue,FALSE,NA,TRUE,Male,1.0017048245571791
-2019-08-20,44,NA,Gorm Hald,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-08-20,44,0,Gorm Hald,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-08-20,87,7.2,Allan Rosendahl,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8382F76396C6BA2EC125845D003DDA1B.jpg,TRUE,Male,1.0933890961772383
 2019-08-20,48,1,Philip Marturin Knudsen,Nedre,Spin,FALSE,NA,TRUE,Male,0.9042245370370371
 2019-08-20,45,1,Rolf Christiansen,Nedre,Flue,FALSE,NA,TRUE,Male,1.0973936899862826
 2019-08-20,50,1.32,Philip Marturin Knudsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.056
 2019-08-20,67,3.4,Søren Søes,Nedre,Flue,FALSE,NA,TRUE,Male,1.1304582013080067
-2019-08-20,40,NA,Tommy Frank Hoelgaard,Mellem,Spin,FALSE,NA,NA,NA,NA
+2019-08-20,40,0,Tommy Frank Hoelgaard,Mellem,Spin,FALSE,NA,FALSE,NA,NA
 2019-08-20,61,2.359,Henning Larsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.0392940378269546
 2019-08-21,48,1.2,Bent Agerskov Sørensen,Mellem,Spin,FALSE,NA,TRUE,Male,1.0850694444444444
-2019-08-21,48,NA,Gorm Hald,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-21,48,0,Gorm Hald,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-21,48,1.2,Bent Kristensen,Nedre,Spin,FALSE,NA,TRUE,Male,1.0850694444444444
 2019-08-21,42,1,Leif Gindesgaard,Nedre,Flue,FALSE,NA,TRUE,Male,1.3497462477054314
-2019-08-21,53,NA,Søren Søes,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-21,53,NA,Søren Søes,Nedre,Flue,FALSE,NA,TRUE,NA,NA
 2019-08-21,61,2.7,Nils Munkgaard,Nedre,Spin,FALSE,NA,TRUE,Male,1.1895268766989306
 2019-08-21,60,2.5,Kim Lundkvist,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/00D03DE8E44E8558C125845E002718AA.jpg,TRUE,Male,1.1574074074074074
 2019-08-21,62,2.3,Gorm Hald,Nedre,Flue,FALSE,NA,TRUE,NA,0.9650565607062535
 2019-08-21,72,4,Bo Fomsgaard,Mellem,Flue,FALSE,NA,TRUE,NA,1.0716735253772292
 2019-08-21,44,1,Bent Agerskov Sørensen,Mellem,Spin,FALSE,NA,TRUE,Male,1.1739293764087153
 2019-08-21,49,1.2,Gorm Hald,Nedre,Flue,FALSE,NA,TRUE,NA,1.0199831702776905
-2019-08-22,63,NA,Ole Brix Nielsen,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-08-22,63,NA,Ole Brix Nielsen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2019-08-22,49,1.25,Bent Kristensen,Nedre,Spin,FALSE,NA,TRUE,NA,1.062482469039261
 2019-08-22,46,1.1,Tom Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.1301060244924799
 2019-08-22,50,1.5,Palle Høyberg,Haderup Å,Flue,FALSE,NA,TRUE,Female,1.2
-2019-08-22,37,NA,Jesper Moesgaard,Mellem,Spin,FALSE,NA,NA,NA,NA
+2019-08-22,37,0,Jesper Moesgaard,Mellem,Spin,FALSE,NA,FALSE,NA,NA
 2019-08-22,74,4.55,Kim Birkeholm,Nedre,Flue,FALSE,NA,TRUE,Female,1.1228357649102718
-2019-08-22,42,NA,Søren Peter Larsen,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-08-22,42,NA,Søren Peter Larsen,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2019-08-22,46,1.2,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,Female,1.2328429358099777
 2019-08-22,59,2.5,Tommy Frank Hoelgaard,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/18AD665EB94413FEC125845E007C94BE.jpg,TRUE,Male,1.217261745358581
 2019-08-22,49,1.35,Ole Brix Nielsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.1474810665624018
@@ -14123,166 +14123,166 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-08-22,50,1.3,Finn Vestergård Jensen,Nedre,Spin,FALSE,NA,TRUE,Male,1.04
 2019-08-22,53,1.6,Lars Relund,Nedre,Flue,FALSE,NA,TRUE,Female,1.0747126822813464
 2019-08-23,76,5.2,Jens Corvinius,Mellem,Flue,FALSE,NA,TRUE,Female,1.1845750109345385
-2019-08-23,46,NA,Bo Østergaard,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A557682C258A2CFAC1258461003648E5.jpg,NA,NA,NA
-2019-08-23,40,NA,Tom Sørensen,Mellem,Spin,FALSE,NA,NA,NA,NA
+2019-08-23,46,NA,Bo Østergaard,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A557682C258A2CFAC1258461003648E5.jpg,TRUE,NA,NA
+2019-08-23,40,0,Tom Sørensen,Mellem,Spin,FALSE,NA,FALSE,NA,NA
 2019-08-23,69,3.8,Tom Larsen,Mellem,Flue,FALSE,NA,TRUE,Female,1.1567415200192384
-2019-08-23,45,NA,Tom Sørensen,Mellem,Spin,FALSE,NA,NA,NA,NA
+2019-08-23,45,0,Tom Sørensen,Mellem,Spin,FALSE,NA,FALSE,NA,NA
 2019-08-23,65,3,Lars Petersen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/46BE83755B0CFE39C1258461005825BE.jpg,TRUE,Female,1.0923987255348202
 2019-08-24,53,1.5,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,Male,1.0075431396387622
 2019-08-24,52,1.55,Brian Jensen,Nedre,Flue,FALSE,NA,TRUE,Male,1.1023554847519346
-2019-08-24,45,NA,Søren Nordmand,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-24,45,0,Søren Nordmand,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-24,56,2.2,René Sølvberg,Mellem,Flue,FALSE,NA,TRUE,Male,1.2527332361516037
 2019-08-24,45,1,Daniel Pinkawa,Haderup Å,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/1DAB624F491EF2EDC1258460003F276C.jpg,TRUE,Female,1.0973936899862826
 2019-08-24,50,1.5,Bo Fomsgaard,Mellem,Flue,FALSE,NA,TRUE,NA,1.2
-2019-08-24,47,NA,Michael Marquardt,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-25,45,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-24,47,0,Michael Marquardt,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-25,45,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
 2019-08-26,75,4.9,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,Female,1.1614814814814816
 2019-08-26,51,1.5,Morten Agersnap,Mellem,Flue,FALSE,NA,TRUE,Male,1.1307868014564535
 2019-08-27,50,1.3,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,Male,1.04
-2019-08-27,45,NA,Jan Behrmann,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-27,45,0,Jan Behrmann,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-27,50,1.4,Emir Adžemović,Nedre,Spin,FALSE,NA,TRUE,Female,1.12
 2019-08-27,47,1.2,Jan Behrmann,Nedre,Flue,FALSE,NA,TRUE,NA,1.1558132591044374
 2019-08-27,49,1.2,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.0199831702776905
 2019-08-28,52,1.4,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,0.9956759217114247
-2019-08-28,50,NA,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-08-28,50,0,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-08-28,44,1.2,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.4087152516904582
-2019-08-28,45,NA,Jan Behrmann,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-28,45,0,Jan Behrmann,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-28,46,1.3,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.335579847127476
-2019-08-28,48,NA,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-08-28,48,0,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-08-29,48,1.1,Jan Behrmann,Nedre,Flue,FALSE,NA,TRUE,NA,0.9946469907407409
 2019-08-29,54,1.7,Ole Sørensen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/4929DA88CE94AB62C1258466001F4C78.jpg,TRUE,NA,1.0796118477874308
 2019-08-29,46,1.3,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,Male,1.335579847127476
-2019-08-29,54,NA,Ole Lenler-Eriksen,Mellem,Flue,FALSE,NA,NA,Male,NA
+2019-08-29,54,NA,Ole Lenler-Eriksen,Mellem,Flue,FALSE,NA,TRUE,Male,NA
 2019-08-30,55,1.9,Mogens Skaarup,Haderup Å,Flue,FALSE,NA,TRUE,Female,1.1419984973703983
-2019-08-30,62,NA,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-08-30,62,0,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,Female,NA
 2019-08-30,68,4.44,Allan Rosendahl,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/0A125C56162BDE7AC1258467005FF0DF.jpg,TRUE,Male,1.4120700183187465
-2019-08-30,50,NA,Sigfred Madsen,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-08-30,50,0,Sigfred Madsen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-08-30,60,2.3,Werner Jensen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/53755C29166EC9C4C125846A0045459F.jpg,TRUE,Male,1.0648148148148147
 2019-08-30,56,1.8,Knud Tørnqvist,Nedre,Spin,FALSE,NA,TRUE,Female,1.024963556851312
-2019-08-30,45,NA,Kenneth Klokker,Nedre,Flue,FALSE,NA,NA,Male,NA
-2019-08-30,50,NA,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-08-30,43,NA,Jan Snejbjerg,Mellem,Flue,FALSE,NA,NA,NA,NA
-2019-08-30,44,NA,Kristian S Andersen,Mellem,Spin,FALSE,NA,NA,NA,NA
-2019-08-30,45,NA,Jan Snejbjerg,Mellem,Flue,FALSE,NA,NA,NA,NA
+2019-08-30,45,NA,Kenneth Klokker,Nedre,Flue,FALSE,NA,TRUE,Male,NA
+2019-08-30,50,0,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,Female,NA
+2019-08-30,43,0,Jan Snejbjerg,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-30,44,0,Kristian S Andersen,Mellem,Spin,FALSE,NA,FALSE,NA,NA
+2019-08-30,45,0,Jan Snejbjerg,Mellem,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-31,66,2.5,Leif M. Nielsen,Nedre,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B1326929A6501086C1258468002F321E.jpg,TRUE,Male,0.8695773158583076
 2019-08-31,54,2,Preben Falkeøje Pilgaard,Haderup Å,Flue,FALSE,NA,TRUE,Female,1.2701315856322715
-2019-08-31,40,NA,Jakob Larsen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-31,43,NA,Jan Palmgren Nielsen,Nedre,Flue,FALSE,NA,NA,Male,NA
-2019-08-31,35,NA,Jan Karnøe,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-08-31,40,0,Jakob Larsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-31,43,0,Jan Palmgren Nielsen,Nedre,Flue,FALSE,NA,FALSE,Male,NA
+2019-08-31,35,0,Jan Karnøe,Nedre,Flue,FALSE,NA,FALSE,Male,NA
 2019-08-31,51,1.4,Jan Behrmann,Nedre,Flue,FALSE,NA,TRUE,NA,1.0554010146926898
-2019-08-31,50,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-08-31,50,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-08-31,79,6,Flemming Sparvath,Mellem,Flue,FALSE,NA,TRUE,Female,1.2169422702869348
-2019-08-31,52,NA,Kristian S Andersen,Haderup Å,Spin,FALSE,NA,NA,NA,NA
+2019-08-31,52,NA,Kristian S Andersen,Haderup Å,Spin,FALSE,NA,TRUE,NA,NA
 2019-08-31,55,1.7,Arne Gjørret,Nedre,Flue,FALSE,NA,TRUE,Male,1.0217881292261457
-2019-08-31,45,NA,Sigfred Madsen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-08-31,48,NA,Kristian S Andersen,Haderup Å,Spin,FALSE,NA,NA,NA,NA
-2019-09-01,70,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-09-01,40,NA,Sigfred Madsen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-01,45,NA,Jan Palmgren Nielsen,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-08-31,45,0,Sigfred Madsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-08-31,48,0,Kristian S Andersen,Haderup Å,Spin,FALSE,NA,FALSE,NA,NA
+2019-09-01,70,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-09-01,40,0,Sigfred Madsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-01,45,0,Jan Palmgren Nielsen,Nedre,Flue,FALSE,NA,FALSE,Male,NA
 2019-09-01,59,2.7,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,Male,1.3146426849872674
-2019-09-01,55,NA,Bo Ankersen,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-09-01,55,NA,Bo Ankersen,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2019-09-01,53,1.6,Jan Palmgren Nielsen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/860D3AC744686BCDC1258468007472B4.jpg,TRUE,Female,1.0747126822813464
 2019-09-02,60,2.8,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,Female,1.2962962962962963
-2019-09-02,42,NA,Lars Relund,Øvre,Flue,FALSE,NA,NA,NA,NA
-2019-09-02,43,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-02,50,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-03,35,NA,Jesper Moesgaard,Mellem,Spin,FALSE,NA,NA,NA,NA
-2019-09-03,44,NA,Peder Riisgaard,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-09-03,50,NA,Henrik Bønnelykke,Mellem,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/3088E42B441C60B4C125846A00695DB7.jpg,NA,Male,NA
+2019-09-02,42,0,Lars Relund,Øvre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-02,43,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-02,50,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-03,35,0,Jesper Moesgaard,Mellem,Spin,FALSE,NA,FALSE,NA,NA
+2019-09-03,44,0,Peder Riisgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-09-03,50,0,Henrik Bønnelykke,Mellem,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/3088E42B441C60B4C125846A00695DB7.jpg,FALSE,Male,NA
 2019-09-03,49,1.4,Kim Lundkvist,Nedre,Flue,FALSE,NA,TRUE,Male,1.1899803653239722
-2019-09-03,45,NA,Hans-Jørn Christensen,Mellem,Orm,FALSE,NA,NA,NA,NA
+2019-09-03,45,0,Hans-Jørn Christensen,Mellem,Orm,FALSE,NA,FALSE,NA,NA
 2019-09-04,63,2.5,Emir Adžemović,Nedre,Spin,FALSE,NA,TRUE,Female,0.9998120353373566
-2019-09-04,52,NA,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-09-04,50,NA,Sigfred Madsen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-04,48,NA,Sigfred Madsen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-04,57,NA,Peter Nyhuus,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-09-04,52,0,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,Female,NA
+2019-09-04,50,0,Sigfred Madsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-04,48,0,Sigfred Madsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-04,57,0,Peter Nyhuus,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-09-04,77,6.2,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,Male,1.3580617392390035
 2019-09-05,79,5.9,Ole Lenler-Eriksen,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/BBA45E35047CB6C4C1258472005883EA.jpg,TRUE,Male,1.1966598991154858
 2019-09-05,60,2.2,René Ronge Nielsen,Mellem,Flue,FALSE,NA,TRUE,Male,1.0185185185185186
-2019-09-06,43,NA,Holger Riis-Jensen,Nedre,Spin,FALSE,NA,NA,Male,NA
+2019-09-06,43,NA,Holger Riis-Jensen,Nedre,Spin,FALSE,NA,TRUE,Male,NA
 2019-09-06,75,4.5,Philip Marturin Knudsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.0666666666666667
-2019-09-06,43,NA,Bent Riis-Jensen,Øvre,Spin,FALSE,NA,NA,Female,NA
+2019-09-06,43,NA,Bent Riis-Jensen,Øvre,Spin,FALSE,NA,TRUE,Female,NA
 2019-09-06,46,1,Philip Marturin Knudsen,Nedre,Spin,FALSE,NA,TRUE,Male,1.0273691131749816
-2019-09-07,47,NA,Ib Kloster,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-09-07,47,0,Ib Kloster,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-09-07,51,1.5,Emir Adžemović,Nedre,Flue,FALSE,NA,TRUE,Male,1.1307868014564535
 2019-09-07,64,2.8,Morten Olsen,Mellem,Spin,FALSE,NA,TRUE,NA,1.068115234375
 2019-09-07,45,1.2,Finn Jørgensen,Mellem,Flue,FALSE,NA,TRUE,Male,1.316872427983539
-2019-09-08,43,NA,Henning Voergaard,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-09-08,43,0,Henning Voergaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-09-08,73,4.5,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,Female,1.1567617867599616
 2019-09-08,82,7.45,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,Male,1.3511846897172124
 2019-09-08,66,3,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,Female,1.043492779029969
 2019-09-09,64,2.4,Hans-Rudolph Lenler-Eriksen,Haderup Å,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/0524F0E5BCF1A9CFC1258470005E973A.jpg,TRUE,Female,0.91552734375
-2019-09-09,55,NA,Nils Munkgaard,Nedre,Spin,FALSE,NA,NA,Male,NA
+2019-09-09,55,0,Nils Munkgaard,Nedre,Spin,FALSE,NA,FALSE,Male,NA
 2019-09-09,46,1.02,Steen D Hessel,Nedre,Orm,FALSE,NA,TRUE,Male,1.0479164954384812
 2019-09-09,44,0.94,Steen D Hessel,Nedre,Orm,FALSE,NA,TRUE,Male,1.1034936138241924
-2019-09-11,73,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-11,48,NA,Thorkild Olesen,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-09-11,73,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-11,48,0,Thorkild Olesen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-09-11,84,7.3,Tom Johannesen,Nedre,Flue,FALSE,NA,TRUE,Male,1.2316434510312062
 2019-09-11,42,0,Erik Søndergaard,Nedre,Orm,FALSE,NA,FALSE,Male,NA
 2019-09-11,48,0,Erik Søndergaard,Nedre,Orm,FALSE,NA,FALSE,Male,NA
 2019-09-11,70,5,Osman Viba Bejtovic,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/112C930BA331ED39C1258472006BD435.jpg,TRUE,Female,1.4577259475218658
 2019-09-11,58,2.2,Johnny Jeppesen,Nedre,Flue,FALSE,NA,TRUE,Male,1.1275575054327773
-2019-09-11,68,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-11,61,NA,Thorkild Olesen,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-09-12,45,NA,Nils Munkgaard,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-09-12,57,NA,Finn Lajgaard,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-09-11,68,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-11,61,NA,Thorkild Olesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2019-09-12,45,NA,Nils Munkgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2019-09-12,57,0,Finn Lajgaard,Nedre,Flue,FALSE,NA,FALSE,Male,NA
 2019-09-12,74,4.25,Henning Voergaard,Nedre,Flue,FALSE,NA,TRUE,NA,1.0488026375535506
-2019-09-12,36,NA,Flemming Neergaard,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-09-12,52,NA,Finn Lajgaard,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-09-12,49,NA,Jann Kønig,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-09-12,52,NA,Jann Kønig,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-09-12,60,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-09-12,36,0,Flemming Neergaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-09-12,52,NA,Finn Lajgaard,Nedre,Flue,FALSE,NA,TRUE,Female,NA
+2019-09-12,49,0,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-09-12,52,0,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-09-12,60,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-09-12,50,1.2,Eigil Amlund,Nedre,Flue,FALSE,NA,TRUE,NA,0.96
-2019-09-12,47,NA,Finn Lajgaard,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-09-12,48,NA,Jørgen Klokker,Nedre,Flue,FALSE,NA,NA,Male,NA
-2019-09-12,42,NA,Ole Hansen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-12,48,NA,Flemming Neergaard,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-09-12,47,0,Finn Lajgaard,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-09-12,48,NA,Jørgen Klokker,Nedre,Flue,FALSE,NA,TRUE,Male,NA
+2019-09-12,42,0,Ole Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-12,48,NA,Flemming Neergaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
 2019-09-12,57,0,Tom Johannesen,Nedre,Flue,FALSE,NA,FALSE,Male,NA
-2019-09-12,45,NA,Finn Lajgaard,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-09-12,45,0,Finn Lajgaard,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-09-13,77,6.7,Carsten Hermann,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/72616D6DB18DFE7AC1258477002EE84E.jpg,TRUE,Male,1.467582847242149
-2019-09-13,46,NA,Jørgen Klokker,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-09-13,46,0,Jørgen Klokker,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-09-13,50,1.2,Kurt Jøhnson Granat,Mellem,Flue,FALSE,NA,TRUE,Female,0.96
-2019-09-14,47,NA,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-09-14,47,0,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-09-14,67,3,Jan Heldgaard Pedersen,Haderup Å,Orm,FALSE,NA,TRUE,Male,0.9974631188011823
 2019-09-14,45,0.9,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,0.9876543209876543
-2019-09-14,43,NA,Henning Voergaard,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-14,48,NA,Jann Kønig,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-09-14,44,NA,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-09-14,44,NA,Sigfred Madsen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-09-14,43,0,Henning Voergaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-14,48,0,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-09-14,44,0,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-09-14,44,0,Sigfred Madsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-09-14,56,1.6,Kurt Jøhnson Granat,Mellem,Flue,FALSE,NA,TRUE,Male,0.9110787172011662
 2019-09-14,60,3,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,Male,1.3888888888888888
 2019-09-14,60,0,Edhem Salkic,Nedre,Spin,FALSE,NA,FALSE,Male,NA
-2019-09-15,46,NA,Tommy Frank Hoelgaard,Haderup Å,Spin,FALSE,NA,NA,Male,NA
+2019-09-15,46,NA,Tommy Frank Hoelgaard,Haderup Å,Spin,FALSE,NA,TRUE,Male,NA
 2019-09-15,56,2,Henning Voergaard,Nedre,Flue,FALSE,NA,TRUE,NA,1.1388483965014577
-2019-09-15,40,NA,Henning Voergaard,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-09-15,40,0,Henning Voergaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-09-15,73,4,Claus Andersen,Mellem,Spin,FALSE,NA,TRUE,Female,1.0282326993421882
 2019-09-15,53,1.7,Niels Peder Larsen,Nedre,Spin,FALSE,NA,TRUE,Male,1.1418822249239304
 2019-09-15,65,2.5,Lars Pedersen,Øvre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/3C46C1B92B1C281EC125847600528E6B.jpg,TRUE,NA,0.9103322712790168
-2019-09-15,53,NA,Jesper Moesgaard,Mellem,Spin,FALSE,NA,NA,Female,NA
-2019-09-15,43,NA,Henning Voergaard,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-15,43,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-15,48,NA,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-09-15,53,0,Jesper Moesgaard,Mellem,Spin,FALSE,NA,FALSE,Female,NA
+2019-09-15,43,0,Henning Voergaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-15,43,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-15,48,0,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-09-16,75,5.6,Patrick Boel,Nedre,Flue,FALSE,NA,TRUE,Female,1.3274074074074074
 2019-09-16,54,0,Tom Johannesen,Nedre,Flue,FALSE,NA,FALSE,Male,NA
-2019-09-16,60,NA,Patrick Boel,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-09-16,60,NA,Patrick Boel,Nedre,Flue,FALSE,NA,TRUE,Male,NA
 2019-09-16,75,5.1,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,Male,1.2088888888888887
 2019-09-17,52,1.5,Dieter Weihser,Nedre,Spin,FALSE,NA,TRUE,Female,1.0667956304050978
-2019-09-18,42,NA,Oluf Cramer,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-09-18,42,NA,Oluf Cramer,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2019-09-18,51,1.35,Tommy Frank Hoelgaard,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/13198B84DC3CC5E0C125847A0072446B.jpg,TRUE,Male,1.0177081213108081
-2019-09-18,62,NA,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-09-18,62,0,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-09-18,47,1.3,Poul Borglykke,Mellem,Flue,FALSE,NA,TRUE,Female,1.252131030696474
-2019-09-18,59,NA,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,NA,Male,NA
-2019-09-18,57,NA,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-09-18,59,0,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,FALSE,Male,NA
+2019-09-18,57,0,Peder Skødt Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,Female,NA
 2019-09-18,48,1.5,Poul Borglykke,Mellem,Flue,FALSE,NA,TRUE,Male,1.3563368055555556
-2019-09-19,50,NA,Jerk Sönnichsen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-19,47,NA,Jesper Moesgaard,Mellem,Spin,FALSE,NA,NA,NA,NA
+2019-09-19,50,0,Jerk Sönnichsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-19,47,0,Jesper Moesgaard,Mellem,Spin,FALSE,NA,FALSE,NA,NA
 2019-09-19,60,2.6,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,Male,1.2037037037037037
 2019-09-19,57,2,Benny Amstrup,Nedre,Orm,FALSE,NA,TRUE,Male,1.079954425923226
 2019-09-19,47,0,Peter Hønholt,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B2C9F538DF5E18BEC125847B006A7B6F.jpg,FALSE,Male,NA
-2019-09-20,41,NA,Johannes Nielsen,Mellem,Orm,FALSE,NA,NA,NA,NA
+2019-09-20,41,0,Johannes Nielsen,Mellem,Orm,FALSE,NA,FALSE,NA,NA
 2019-09-20,65,3,Preben Falkeøje Pilgaard,Haderup Å,Flue,FALSE,NA,TRUE,Female,1.0923987255348202
-2019-09-20,35,NA,Stig Pedersen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-20,30,NA,Stig Pedersen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-09-20,35,0,Stig Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-20,30,0,Stig Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-09-20,57,2,Johannes Nielsen,Mellem,Orm,FALSE,NA,TRUE,NA,1.079954425923226
 2019-09-20,45,0.8,Stig Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,0.877914951989026
 2019-09-20,69,3.8,Arne Gjørret,Nedre,Flue,FALSE,NA,TRUE,Female,1.1567415200192384
@@ -14294,91 +14294,91 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-09-22,49,1.15,Magnus Kranker Rosenlund,Nedre,Flue,FALSE,NA,TRUE,Female,0.9774838715161198
 2019-09-22,60,2.5,Niels Peder Larsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.1574074074074074
 2019-09-22,63,3,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,Female,1.199774442404828
-2019-09-22,44,NA,Jerk Sönnichsen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-23,64,NA,Bent A. Sørensen,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/E14096395DA8F845C125847E006D0AE2.jpg,NA,Male,NA
-2019-09-23,46,NA,Søren Hedman,Mellem,Orm,FALSE,NA,NA,NA,NA
-2019-09-23,47,NA,Arne Gjørret,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-09-23,52,NA,Peder Skødt Lundsgaard,Mellem,Spin,FALSE,NA,NA,NA,NA
+2019-09-22,44,0,Jerk Sönnichsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-23,64,NA,Bent A. Sørensen,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/E14096395DA8F845C125847E006D0AE2.jpg,TRUE,Male,NA
+2019-09-23,46,0,Søren Hedman,Mellem,Orm,FALSE,NA,FALSE,NA,NA
+2019-09-23,47,0,Arne Gjørret,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-09-23,52,0,Peder Skødt Lundsgaard,Mellem,Spin,FALSE,NA,FALSE,NA,NA
 2019-09-24,57,2.4,T. Mygind,Mellem,Spin,FALSE,NA,TRUE,Female,1.2959453111078711
 2019-09-24,45,1,Poul B. Oddershede,Mellem,Spin,FALSE,NA,TRUE,Female,1.0973936899862826
 2019-09-24,56,2.2,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,Female,1.2527332361516037
 2019-09-25,50,1.2,Gustav Setnik,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/C6FC948C5B7DDB5CC1258484004BC957.jpg,TRUE,Male,0.96
-2019-09-25,NA,NA,Johann Kahrs,Nedre,Flue,FALSE,NA,NA,Male,NA
-2019-09-26,40,NA,Tommy Frank Hoelgaard,Mellem,Spin,FALSE,NA,NA,NA,NA
+2019-09-25,NA,NA,Johann Kahrs,Nedre,Flue,FALSE,NA,TRUE,Male,NA
+2019-09-26,40,0,Tommy Frank Hoelgaard,Mellem,Spin,FALSE,NA,FALSE,NA,NA
 2019-09-26,57,2.5,Tommy Frank Hoelgaard,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/919647311EF9C822C1258481006EB135.jpg,TRUE,Female,1.3499430324040325
 2019-09-26,60,2.5,Per Simonsen,Mellem,Spin,FALSE,NA,TRUE,Male,1.1574074074074074
-2019-09-26,50,NA,Tommy Frank Hoelgaard,Mellem,Spin,FALSE,NA,NA,Female,NA
+2019-09-26,50,0,Tommy Frank Hoelgaard,Mellem,Spin,FALSE,NA,FALSE,Female,NA
 2019-09-26,59,2.7,Tommy Frank Hoelgaard,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/C531284A8EAA9BE7C1258481006D94C0.jpg,TRUE,Male,1.3146426849872674
 2019-09-26,81,5.6,Ib Christoffersen,Nedre,Flue,FALSE,NA,TRUE,Male,1.0537387969689955
 2019-09-26,55,2.1,Einer Olesen,Mellem,Flue,FALSE,NA,TRUE,Male,1.2622088655146506
-2019-09-26,60,NA,Allan Bay,Mellem,Flue,FALSE,NA,NA,Female,NA
-2019-09-27,54,NA,Hilmar Nielsen,Haderup Å,Flue,FALSE,NA,NA,Female,NA
-2019-09-27,57,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,Male,NA
-2019-09-28,54,NA,Tage Gamborg Holm,Nedre,Spin,FALSE,NA,NA,Female,NA
+2019-09-26,60,0,Allan Bay,Mellem,Flue,FALSE,NA,FALSE,Female,NA
+2019-09-27,54,NA,Hilmar Nielsen,Haderup Å,Flue,FALSE,NA,TRUE,Female,NA
+2019-09-27,57,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,Male,NA
+2019-09-28,54,NA,Tage Gamborg Holm,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2019-09-28,63,3,Johnny Jeppesen,Nedre,Flue,FALSE,NA,TRUE,Male,1.199774442404828
 2019-09-28,46,1,André Ritter,Mellem,Spin,FALSE,NA,TRUE,Female,1.0273691131749816
 2019-09-28,53,2,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,Male,1.343390852851683
-2019-09-29,45,NA,Bo Vork Nielsen,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-09-29,41,NA,Frederik Lindhardt Clausen,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/38BBFDCB0AF71A64C12584840027007F.jpg,NA,NA,NA
-2019-09-29,38,NA,Heiko Hagen,Mellem,Spin,FALSE,NA,NA,Male,NA
-2019-09-30,40,NA,Daniel Sørensen,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-10-01,35,NA,Helge Kristensen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-10-01,47,NA,Henrik Bønnelykke,Nedre,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/F42DC59A02CC936FC12584860052B2A1.jpg,NA,Female,NA
-2019-10-01,35,NA,Helge Kristensen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-10-01,35,NA,Tommy Frank Hoelgaard,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/934A631DA63DEABBC1258486006AE3EF.jpg,NA,NA,NA
+2019-09-29,45,NA,Bo Vork Nielsen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
+2019-09-29,41,0,Frederik Lindhardt Clausen,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/38BBFDCB0AF71A64C12584840027007F.jpg,FALSE,NA,NA
+2019-09-29,38,0,Heiko Hagen,Mellem,Spin,FALSE,NA,FALSE,Male,NA
+2019-09-30,40,0,Daniel Sørensen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-10-01,35,0,Helge Kristensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-10-01,47,NA,Henrik Bønnelykke,Nedre,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/F42DC59A02CC936FC12584860052B2A1.jpg,TRUE,Female,NA
+2019-10-01,35,0,Helge Kristensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-10-01,35,0,Tommy Frank Hoelgaard,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/934A631DA63DEABBC1258486006AE3EF.jpg,FALSE,NA,NA
 2019-10-02,47,1,Vagn Nielsen,Nedre,Flue,FALSE,NA,TRUE,Male,0.9631777159203645
 2019-10-02,74,5,Vagn Nielsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.2338854559453536
-2019-10-02,46,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-10-02,46,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-10-02,48,1,Allan Weng,Nedre,Spin,FALSE,NA,TRUE,Female,0.9042245370370371
 2019-10-02,48,0.9,Allan Weng,Nedre,Spin,FALSE,NA,TRUE,Female,0.8138020833333334
-2019-10-02,42,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-10-02,42,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-10-03,82,7.1,Jeppe Bender Jørgensen,Nedre,Flue,FALSE,NA,TRUE,Male,1.2877062143613702
 2019-10-04,48,1.2,Eigil Amlund,Nedre,Flue,FALSE,NA,TRUE,NA,1.0850694444444444
-2019-10-04,55,NA,Peder Skødt Lundsgaard,Mellem,Spin,FALSE,NA,NA,Male,NA
+2019-10-04,55,0,Peder Skødt Lundsgaard,Mellem,Spin,FALSE,NA,FALSE,Male,NA
 2019-10-04,58,2.1,Anders Pedersen,Nedre,Spin,FALSE,NA,TRUE,Female,1.076304891549469
-2019-10-04,53,NA,Ole Hansen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-10-04,44,NA,Henning Voergaard,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-10-04,53,0,Ole Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-10-04,44,0,Henning Voergaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-10-04,65,2.95,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,Male,1.07419208010924
-2019-10-04,60,NA,Peder Skødt Lundsgaard,Mellem,Spin,FALSE,NA,NA,Female,NA
+2019-10-04,60,0,Peder Skødt Lundsgaard,Mellem,Spin,FALSE,NA,FALSE,Female,NA
 2019-10-04,50,1.4,Eigil Amlund,Nedre,Flue,FALSE,NA,TRUE,NA,1.12
 2019-10-05,57,2.1,Ole Asmussen,Mellem,Flue,FALSE,NA,TRUE,Male,1.1339521472193874
 2019-10-05,52,1.6,Jess Larsen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/7F3DC8EF289E0E22C125848A00559E60.jpg,TRUE,Male,1.137915339098771
-2019-10-05,40,NA,Heinrich Frølund,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-10-05,40,NA,Gary Taylor,Mellem,Flue,FALSE,NA,NA,NA,NA
+2019-10-05,40,0,Heinrich Frølund,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-10-05,40,0,Gary Taylor,Mellem,Flue,FALSE,NA,FALSE,NA,NA
 2019-10-05,58,2.4,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,Female,1.2300627331993932
-2019-10-05,52,NA,Knud Tørnqvist,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-10-06,35,NA,Jeppe Bender Jørgensen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-10-07,45,NA,Thomas Erdmann,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-10-07,57,NA,Knud Tørnqvist,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-10-05,52,NA,Knud Tørnqvist,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2019-10-06,35,0,Jeppe Bender Jørgensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-10-07,45,0,Thomas Erdmann,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-10-07,57,NA,Knud Tørnqvist,Nedre,Flue,FALSE,NA,TRUE,Male,NA
 2019-10-07,82,6.8,Rami Azzam,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/9AC394283AC499B2C12584950074736A.jpg,TRUE,Male,1.2332960926277912
 2019-10-07,64,2.8,Thomas Erdmann,Nedre,Flue,FALSE,NA,TRUE,Male,1.068115234375
 2019-10-08,48,1.5,Stig Degn Hansen,Nedre,Orm,FALSE,NA,TRUE,Female,1.3563368055555556
 2019-10-08,87,8.3,Stig Degn Hansen,Nedre,Orm,FALSE,NA,TRUE,Female,1.26043465253765
-2019-10-08,44,NA,Finn Lajgaard,Mellem,Flue,FALSE,NA,NA,Female,NA
+2019-10-08,44,0,Finn Lajgaard,Mellem,Flue,FALSE,NA,FALSE,Female,NA
 2019-10-09,48,1.1,Poul Petersen,Nedre,Flue,FALSE,NA,TRUE,Female,0.9946469907407409
 2019-10-09,52,1.5,Jannik Kanstorf,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/599C387C17A55AB6C125848E006A6BDB.jpg,TRUE,Female,1.0667956304050978
-2019-10-09,48,NA,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-10-09,44,NA,Peder Riisgaard,Nedre,Spin,FALSE,NA,NA,Male,NA
-2019-10-09,41,NA,Michael Jäckel,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-10-09,48,0,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-10-09,44,0,Peder Riisgaard,Nedre,Spin,FALSE,NA,FALSE,Male,NA
+2019-10-09,41,0,Michael Jäckel,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-10-09,50,1.5,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA,1.2
-2019-10-09,57,NA,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-10-09,57,0,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-10-09,50,1.3,Jannik Kanstorf,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/42AC88AFC34C7351C125848E006ACB9C.jpg,TRUE,Male,1.04
-2019-10-09,40,NA,Kurt Hornshøj Riisgaard,Nedre,Orm,FALSE,NA,NA,Male,NA
-2019-10-10,50,NA,Lars Nørgaard,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-10-09,40,0,Kurt Hornshøj Riisgaard,Nedre,Orm,FALSE,NA,FALSE,Male,NA
+2019-10-10,50,0,Lars Nørgaard,Nedre,Flue,FALSE,NA,FALSE,Male,NA
 2019-10-10,58,2.3,Karsten Mikaelsen,Mellem,Orm,FALSE,NA,TRUE,Male,1.178810119316085
-2019-10-10,77,NA,H.j. Christiansen,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-10-10,77,NA,H.j. Christiansen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
 2019-10-10,72,4.8,Ralf Kanstorf,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/4EC9BFCAA27BD3D4C125848F006C1829.jpg,TRUE,Female,1.286008230452675
 2019-10-10,60,2.5,Karsten Mikaelsen,Mellem,Orm,FALSE,NA,TRUE,Male,1.1574074074074074
 2019-10-10,79,6,Jørgen Lauritsen,Mellem,Flue,FALSE,NA,TRUE,Female,1.2169422702869348
-2019-10-11,46,NA,Ralf Kanstorf,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/6EC8B6306F403E6FC1258490006C7579.jpg,NA,Female,NA
+2019-10-11,46,0,Ralf Kanstorf,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/6EC8B6306F403E6FC1258490006C7579.jpg,FALSE,Female,NA
 2019-10-11,51,1.5,Søren Chr Olesen,Nedre,Orm,FALSE,NA,TRUE,Male,1.1307868014564535
-2019-10-11,43,NA,Søren Chr Olesen,Nedre,Orm,FALSE,NA,NA,Female,NA
+2019-10-11,43,0,Søren Chr Olesen,Nedre,Orm,FALSE,NA,FALSE,Female,NA
 2019-10-12,70,4.1,Poul Godt,Mellem,Spin,FALSE,NA,TRUE,Female,1.19533527696793
 2019-10-12,55,2,Carl Baes,Nedre,Flue,FALSE,NA,TRUE,Female,1.2021036814425243
-2019-10-12,NA,NA,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,NA,Male,NA
-2019-10-12,50,NA,Stig Lindholm,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-10-12,51,NA,Henning Voergaard,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-10-13,56,NA,Henning Voergaard,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-10-12,NA,0,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,FALSE,Male,NA
+2019-10-12,50,NA,Stig Lindholm,Nedre,Spin,FALSE,NA,TRUE,Female,NA
+2019-10-12,51,0,Henning Voergaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-10-13,56,0,Henning Voergaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-10-13,63,3.2,Henning Voergaard,Nedre,Flue,FALSE,NA,TRUE,NA,1.2797594052318164
 2019-10-13,59,2.4,Emil Ninn,Nedre,Spin,FALSE,NA,TRUE,Female,1.1685712755442377
 2019-10-13,55,2,Benny Larsen,Mellem,Spin,FALSE,NA,TRUE,Female,1.2021036814425243
@@ -14389,96 +14389,96 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-10-14,56,1.5,Flemming Sparvath,Øvre,Spin,FALSE,NA,TRUE,Male,0.8541362973760933
 2019-10-14,53,1.9,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,Male,1.2762213102090987
 2019-10-15,48,1.1,Søren Chr Olesen,Nedre,Orm,FALSE,NA,TRUE,Male,0.9946469907407409
-2019-10-15,36,NA,Jesper Moesgaard,Mellem,Spin,FALSE,NA,NA,NA,NA
+2019-10-15,36,0,Jesper Moesgaard,Mellem,Spin,FALSE,NA,FALSE,NA,NA
 2019-10-15,67,3.4,Mikael Rønsholdt,Nedre,Spin,FALSE,NA,TRUE,NA,1.1304582013080067
-2019-10-15,45,NA,Ole W. Knudsen,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-10-15,40,NA,Mikael Rønsholdt,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-10-15,56,NA,Ole W. Knudsen,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-10-16,50,NA,Ole Eskesen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-10-15,45,0,Ole W. Knudsen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-10-15,40,0,Mikael Rønsholdt,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-10-15,56,0,Ole W. Knudsen,Nedre,Spin,FALSE,NA,FALSE,Female,NA
+2019-10-16,50,0,Ole Eskesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-10-16,51,1.34,Hans-Rudolph Lenler-Eriksen,Mellem,Spin,FALSE,NA,TRUE,Female,1.0101695426344317
 2019-10-17,52,1.5,Poul Godt,Nedre,Spin,FALSE,NA,TRUE,Female,1.0667956304050978
 2019-10-17,45,0,Hans-Rudolph Lenler-Eriksen,Øvre,Spin,FALSE,NA,FALSE,Female,NA
 2019-10-17,78,5,Bent Laursen,Mellem,Flue,FALSE,NA,TRUE,Male,1.0536253139803435
 2019-10-17,52,1.5,Eigil Amlund,Nedre,Flue,FALSE,NA,TRUE,NA,1.0667956304050978
-2019-10-17,60,NA,Lars Nørgaard,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-10-17,60,0,Lars Nørgaard,Nedre,Flue,FALSE,NA,FALSE,Male,NA
 2019-10-17,65,3,Anders Toft Andersen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/629DA2A4183E91E0C125849600552C39.jpg,TRUE,Female,1.0923987255348202
-2019-10-17,55,NA,Henrik Olsen,Mellem,Flue,FALSE,NA,NA,Female,NA
+2019-10-17,55,0,Henrik Olsen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
 2019-10-17,54,1.6,André Godt,Mellem,Spin,FALSE,NA,TRUE,Female,1.0161052685058172
-2019-10-17,42,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-10-17,36,NA,Finn Borum,Mellem,Flue,FALSE,NA,NA,NA,NA
-2019-10-18,51,NA,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-10-17,42,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-10-17,36,0,Finn Borum,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2019-10-18,51,0,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-10-18,44,0.9,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,Female,1.0565364387678438
-2019-10-18,47,NA,Benny Larsen,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-10-18,46,NA,Jesper Moesgaard,Mellem,Spin,FALSE,NA,NA,NA,NA
+2019-10-18,47,0,Benny Larsen,Nedre,Spin,FALSE,NA,FALSE,Female,NA
+2019-10-18,46,0,Jesper Moesgaard,Mellem,Spin,FALSE,NA,FALSE,NA,NA
 2019-10-18,78,6.2,Poul Godt,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/DE20A46A66D3C303C1258497003683C0.jpg,TRUE,Male,1.306495389335626
-2019-10-18,49,NA,Poul Erik Hansen,Nedre,Flue,FALSE,NA,NA,Male,NA
-2019-10-18,40,NA,Poul Godt,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-10-18,45,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-10-18,49,NA,Poul Erik Hansen,Nedre,Flue,FALSE,NA,TRUE,Male,NA
+2019-10-18,40,0,Poul Godt,Nedre,Spin,FALSE,NA,FALSE,Female,NA
+2019-10-18,45,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-10-19,57,1.85,Lars Uhre Bruun,Nedre,Spin,FALSE,NA,TRUE,Male,0.9989578439789841
 2019-10-19,56,1.65,Lars Uhre Bruun,Nedre,Spin,FALSE,NA,TRUE,Male,0.9395499271137027
-2019-10-19,47,NA,Daniel Andersen,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-10-19,40,NA,Daniel Andersen,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-10-19,44,NA,Daniel Andersen,Nedre,Spin,FALSE,NA,NA,NA,NA
-2019-10-19,48,NA,Jeppe Bender Jørgensen,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-10-19,47,NA,Daniel Andersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2019-10-19,40,0,Daniel Andersen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2019-10-19,44,NA,Daniel Andersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2019-10-19,48,0,Jeppe Bender Jørgensen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-10-20,81,5.8,Jan Antonsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.091372325432174
-2019-10-20,43,NA,Henning Voergaard,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-10-20,43,0,Henning Voergaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-10-20,74,3.7,Georg Christensen,Nedre,Flue,FALSE,NA,TRUE,Male,0.9130752373995618
-2019-10-20,70,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-10-20,44,NA,Leif Lund,Nedre,Spin,FALSE,NA,NA,Female,NA
-2019-10-20,40,NA,Henning Voergaard,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-10-20,51,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-10-20,70,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-10-20,44,0,Leif Lund,Nedre,Spin,FALSE,NA,FALSE,Female,NA
+2019-10-20,40,0,Henning Voergaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-10-20,51,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,Male,NA
 2019-10-20,66,3,Lars Uhre Bruun,Nedre,Spin,FALSE,NA,TRUE,Male,1.043492779029969
-2019-10-20,41,NA,Henning Voergaard,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-10-21,45,NA,Bent Agerskov Sørensen,Mellem,Spin,FALSE,NA,NA,Female,NA
+2019-10-20,41,0,Henning Voergaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-10-21,45,NA,Bent Agerskov Sørensen,Mellem,Spin,FALSE,NA,TRUE,Female,NA
 2019-10-21,59,2.3,Johnny Jeppesen,Nedre,Flue,FALSE,NA,TRUE,Female,1.1198808057298943
 2019-10-21,56,1.5,H.j. Christiansen,Nedre,Spin,FALSE,NA,TRUE,Male,0.8541362973760933
-2019-10-22,50,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-10-22,50,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-10-22,55,1.8,Jens Peder Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.081893313298272
-2019-10-22,61,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-10-22,61,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,TRUE,Male,NA
 2019-10-22,77,4.93,Johnny Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA,1.079878124911014
 2019-10-22,59,2.1,Poul Erik Hansen,Nedre,Flue,FALSE,NA,TRUE,Male,1.022499866101208
 2019-10-22,77,5.6,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA,1.226636409635229
-2019-10-22,37,NA,Gorm Hald,Nedre,Flue,FALSE,NA,NA,Male,NA
-2019-10-22,55,NA,Johnny Petersen,Nedre,Flue,FALSE,NA,NA,Male,NA
-2019-10-22,46,NA,Finn Lauge-Simonsen,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-10-22,37,0,Gorm Hald,Nedre,Flue,FALSE,NA,FALSE,Male,NA
+2019-10-22,55,0,Johnny Petersen,Nedre,Flue,FALSE,NA,FALSE,Male,NA
+2019-10-22,46,0,Finn Lauge-Simonsen,Nedre,Flue,FALSE,NA,FALSE,Male,NA
 2019-10-22,62,2.3,Asbjørn Schlosser,Nedre,Spin,FALSE,NA,TRUE,Male,0.9650565607062535
-2019-10-22,50,NA,Finn Lauge-Simonsen,Nedre,Flue,FALSE,NA,NA,Male,NA
+2019-10-22,50,0,Finn Lauge-Simonsen,Nedre,Flue,FALSE,NA,FALSE,Male,NA
 2019-10-22,58,2,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,Female,1.025052277666161
-2019-10-23,41,NA,Georg Christensen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-10-23,47,NA,Uffe Hansen,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-10-23,61,NA,Johnny Jeppesen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-10-23,41,NA,Georg Christensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2019-10-23,47,0,Uffe Hansen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-10-23,61,0,Johnny Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-10-23,56,1.9,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,Female,1.0819059766763848
-2019-10-23,43,NA,Uffe Hansen,Nedre,Flue,FALSE,NA,NA,NA,NA
-2019-10-24,81,NA,Uffe Hansen,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-10-24,60,NA,Kristian S Andersen,Haderup Å,Spin,FALSE,NA,NA,Female,NA
+2019-10-23,43,0,Uffe Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2019-10-24,81,0,Uffe Hansen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-10-24,60,0,Kristian S Andersen,Haderup Å,Spin,FALSE,NA,FALSE,Female,NA
 2019-10-24,50,1.6,Henning Voergaard,Nedre,Flue,FALSE,NA,TRUE,NA,1.28
-2019-10-24,60,NA,Johnny Petersen,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-10-24,50,NA,Kristian S Andersen,Haderup Å,Spin,FALSE,NA,NA,Female,NA
+2019-10-24,60,0,Johnny Petersen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
+2019-10-24,50,0,Kristian S Andersen,Haderup Å,Spin,FALSE,NA,FALSE,Female,NA
 2019-10-24,65,3.8,Tom Johannesen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/CF8EEBA341A974E9C125849D0060BACC.jpg,TRUE,Female,1.3837050523441057
-2019-10-24,62,NA,Peder Skødt Lundsgaard,Mellem,Spin,FALSE,NA,NA,Female,NA
+2019-10-24,62,0,Peder Skødt Lundsgaard,Mellem,Spin,FALSE,NA,FALSE,Female,NA
 2019-10-25,59,2.4,Lars Uhre Bruun,Nedre,Spin,FALSE,NA,TRUE,Male,1.1685712755442377
 2019-10-25,54,1.95,Lars Uhre Bruun,Nedre,Spin,FALSE,NA,TRUE,Male,1.2383782959914647
-2019-10-25,60,NA,Erik D. Andersen,Nedre,Spin,FALSE,NA,NA,Male,NA
+2019-10-25,60,NA,Erik D. Andersen,Nedre,Spin,FALSE,NA,TRUE,Male,NA
 2019-10-27,88,8.5,Ole Dich,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B0E1A481F475EBF0C12584A00078A9EC.jpg,TRUE,Female,1.24729996243426
 2019-10-27,64,2.5,Henning Nielsen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/EE823251B6EA25ABC12584A10047F71B.jpg,TRUE,Female,0.95367431640625
 2019-10-27,68,2.7,Anders Børresen,Nedre,Flue,FALSE,NA,TRUE,Female,0.8586912273559943
 2019-10-27,43,0.855,Morten Kjeld Ebbesen,Nedre,Spin,FALSE,NA,TRUE,Male,1.075377010829235
-2019-10-27,45,NA,Ole Hansen,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-10-27,45,0,Ole Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-10-27,79,6.9,Jan Nors,Mellem,Spin,FALSE,NA,TRUE,Male,1.3994836108299749
 2019-10-27,89,8.46,Carsten Keis Fomsgård,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/D66F06D83124B162C12584A2002B4919.jpg,TRUE,Male,1.2000527682777542
-2019-10-28,57,NA,Jens Østergaard Petersen,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-10-28,57,NA,Jens Østergaard Petersen,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2019-10-28,72,4.1,Henrik Johansen,Nedre,Orm,FALSE,NA,TRUE,Male,1.0984653635116597
 2019-10-28,53,1.4,John Kristensen,Nedre,Spin,FALSE,NA,TRUE,Female,0.9403735969961781
 2019-10-28,49,1.2,Sigurd Kramer Hansen,Nedre,Flue,FALSE,NA,TRUE,Female,1.0199831702776905
-2019-10-29,67,NA,Bent Pedersen,Mellem,Spin,FALSE,NA,NA,Male,NA
+2019-10-29,67,0,Bent Pedersen,Mellem,Spin,FALSE,NA,FALSE,Male,NA
 2019-10-29,53,1.6,Bent Agerskov Sørensen,Mellem,Spin,FALSE,NA,TRUE,Male,1.0747126822813464
 2019-10-29,52,1.45,Arne Kjølhede,Mellem,Spin,FALSE,NA,TRUE,Male,1.0312357760582613
 2019-10-29,50,0,Eigil Amlund,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2019-10-29,56,1.7,Bent Pedersen,Mellem,Spin,FALSE,NA,TRUE,Female,0.968021137026239
-2019-10-29,49,NA,John Simonsen,Nedre,Spin,FALSE,NA,NA,NA,NA
+2019-10-29,49,0,John Simonsen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2019-10-29,46,1,Arne Kjølhede,Mellem,Spin,FALSE,NA,TRUE,Female,1.0273691131749816
-2019-10-30,45,NA,Gorm Hald,Nedre,Flue,FALSE,NA,NA,Female,NA
-2019-10-30,44,NA,Arne Gjørret,Nedre,Flue,FALSE,NA,NA,NA,NA
+2019-10-30,45,NA,Gorm Hald,Nedre,Flue,FALSE,NA,TRUE,Female,NA
+2019-10-30,44,0,Arne Gjørret,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2019-10-30,51,1.6,Bent A. Sørensen,Mellem,Spin,FALSE,NA,TRUE,Male,1.206172588220217
 2019-10-30,61,2.1,Anders Toft Andersen,Mellem,Flue,FALSE,NA,TRUE,Female,0.925187570765835
 2019-10-30,64,2.9,Poul Godt,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/2603FFCEB4895751C12584A30043CF99.jpg,TRUE,Male,1.10626220703125
@@ -14487,4 +14487,4 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2019-10-31,57,1.9,Thomas Høgh,Haderup Å,Spin,FALSE,NA,TRUE,Female,1.0259567046270648
 2019-10-31,65,0,Hans J. Jensen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
 2019-10-31,86,7,Per S Nielsen,Mellem,Spin,FALSE,NA,TRUE,Male,1.1005320286264102
-2019-10-31,70,NA,NA,Nedre,Flue,FALSE,NA,NA,Female,NA
+2019-10-31,70,0,NA,Nedre,Flue,FALSE,NA,FALSE,Female,NA
