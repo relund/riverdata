@@ -38,7 +38,7 @@ conflict_prefer("filter", "dplyr")
 # 
 # ## Merge and tidy
 # dat4 <- bind_rows(dat3,dat2)
-# dat4 <- dat4 %>% mutate(Weight = ifelse(Length >= 40, Weight, NA))
+# dat4 <- dat4 %>% mutate(Weight = if_else(Length >= 40, Weight, NA_real_))
 # # remove outliers
 # dat5 <- dplyr::filter(dat4, Length > 39 & Killed)
 # mod1 <- lm(log(Weight) ~ log(Length), dat5)
@@ -50,14 +50,14 @@ conflict_prefer("filter", "dplyr")
 # res <- res %>% add_column(Length = lim, .before = T)
 # colnames(res) <- c("Length", "Avg", "Lower", "Upper")
 # res <- res %>% mutate(Upper = Upper + 1.75, Lower = if_else(Lower - 1.75 > 0, Lower - 1.75, 0))
-# dat4 <- dat4 %>% mutate(Weight = ifelse(Weight >= res$Lower[round(Length)] & Weight <= res$Upper[round(Length)], Weight, NA))
+# dat4 <- dat4 %>% mutate(Weight = if_else(Weight >= res$Lower[round(Length)] & Weight <= res$Upper[round(Length)], Weight, NA_real_))
 # # res <- pivot_longer(res, 2:4)
 # # ggplot(dat4, aes(x = Length, y = Weight)) + geom_point(na.rm = T) +
 # #   geom_line(aes(x = Length, y = value, colour = name), data = res)
 # dat4$Length <- as.numeric(dat4$Length)
 # dat4$Weight<- as.numeric(dat4$Weight)
 # dat4 <- dat4 %>% mutate(Fulton = Weight*100000/Length^3)
-# dat4 <- dat4 %>% mutate(Killed = if_else(Fulton < 0.2, FALSE, Killed)) %>% mutate(Fulton = ifelse(!Killed, NA, Fulton), Weight = ifelse(!Killed, 0, Weight))
+# dat4 <- dat4 %>% mutate(Killed = if_else(Fulton < 0.2, FALSE, Killed, Killed)) %>% mutate(Fulton = if_else(!Killed, NA_real_, Fulton), Weight = if_else(!Killed, 0, Weight))
 # dat4 <- dat4 %>% mutate(Method = str_replace_all(Method, c("Wobler" = "Spin", "Blink" = "Spin", "Spinner" = "Spin", "Jig" = "Spin", "Bombarda med flue" = "Spin", "Tørflue" = "Flue", "Pirk/Pilk" = "Spin", "Mede" = "Orm", "Spinflue" = "Spin")))
 # unique(dat4$Method)
 # dat4 <- dat4 %>% mutate(Sex = str_replace_all(Sex, c("Han" = "Male", "Hun" = "Female", "Ved ikke" = NA)))
@@ -70,7 +70,8 @@ conflict_prefer("filter", "dplyr")
 # ## Save to file
 # dat4 <- dat4 %>% filter(year(Date)<2020) %>% arrange(Date)
 # fn <- "data/data_karup_catch_seatrout_2003-2019.csv"
-# write_delim(dat4, fn, delim = ";")
+# write_csv(dat4,fn)
+# # write_delim(dat4, fn, delim = ",")
 ### --------------------------------------------------------------------------------------------
 
 
@@ -93,14 +94,12 @@ dateStr <- mutate(dateStr, Month = Month + 1)
 dateStr <- str_c(dateStr$Year, "-", str_pad(dateStr$Month, 2, "left", pad="0"), "-", str_pad(dateStr$Day, 2, "left", pad="0"))
 dat1 <- bind_cols(Date=dateStr, dat1)
 dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Havørred"))
-# tail(dat1)
-dat1 <- dat1[-c(nrow(dat1)-1,nrow(dat1)),]  # remove last 2 row since error in date
 dat2 <- dat1 %>% transmute(Date, Length = Længde, Weight = Vægt, Name = Navn, Place = Zone, Method = Agn, Cut = FALSE, Foto = Foto, Killed = !as.logical(Genudsat), Sex = Køn)
 dat2 <- type_convert(dat2)
 
 ## Merge and tidy
 dat4 <- dat2 %>% filter(year(Date)>2019)
-dat4 <- dat4 %>% mutate(Weight = ifelse(Length >= 40, Weight, NA))
+dat4 <- dat4 %>% mutate(Weight = if_else(Length >= 40, Weight, NA_real_))
 # remove outliers
 dat5 <- dplyr::filter(dat4, Length > 39 & Killed)
 mod1 <- lm(log(Weight) ~ log(Length), dat5)
@@ -112,14 +111,14 @@ res <- res %>% as_tibble()
 res <- res %>% add_column(Length = lim, .before = T)
 colnames(res) <- c("Length", "Avg", "Lower", "Upper")
 res <- res %>% mutate(Upper = Upper + 1.75, Lower = if_else(Lower - 1.75 > 0, Lower - 1.75, 0))
-dat4 <- dat4 %>% mutate(Weight = ifelse(Weight >= res$Lower[round(Length)] & Weight <= res$Upper[round(Length)], Weight, NA))
+dat4 <- dat4 %>% mutate(Weight = if_else(Weight >= res$Lower[round(Length)] & Weight <= res$Upper[round(Length)], Weight, NA_real_))
 # res <- pivot_longer(res, 2:4)
 # ggplot(dat4, aes(x = Length, y = Weight)) + geom_point(na.rm = T) +
 #   geom_line(aes(x = Length, y = value, colour = name), data = res)
 dat4$Length <- as.numeric(dat4$Length)
 dat4$Weight<- as.numeric(dat4$Weight)
 dat4 <- dat4 %>% mutate(Fulton = Weight*100000/Length^3)
-dat4 <- dat4 %>% mutate(Killed = if_else(Fulton < 0.2, FALSE, Killed)) %>% mutate(Fulton = ifelse(!Killed, NA, Fulton), Weight = ifelse(!Killed, 0, Weight))
+dat4 <- dat4 %>% mutate(Killed = if_else(Fulton < 0.2, FALSE, Killed, Killed)) %>% mutate(Fulton = if_else(!Killed, NA_real_, Fulton, NA_real_), Weight = if_else(!Killed, 0, Weight))
 dat4 <- dat4 %>% mutate(Method = str_replace_all(Method, c("Wobler" = "Spin", "Blink" = "Spin", "Spinner" = "Spin", "Jig" = "Spin", "Bombarda med flue" = "Spin", "Tørflue" = "Flue", "Pirk/Pilk" = "Spin", "Mede" = "Orm", "Spinflue" = "Spin")))
 unique(dat4$Method)
 dat4 <- dat4 %>% mutate(Sex = str_replace_all(Sex, c("Han" = "Male", "Hun" = "Female", "Ved ikke" = NA)))
@@ -131,7 +130,7 @@ unique(dat4$Place)
 
 ## Save to file
 fn <- "data/data_karup_catch_seatrout_2020-.csv"
-write_delim(dat4, fn, delim = ";")
+write_csv(dat4, fn)
 ### --------------------------------------------------------------------------------------------
 
 
