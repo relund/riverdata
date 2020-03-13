@@ -131,7 +131,7 @@ write_csv(dat4, fn)
 
 #### Get prelim data set for waterlevel (data_karup_waterlevel_[year].csv) ####
 # stations <- tibble(id = c("054764", "001762", "001767"), place = c("Karup By", "Hagebro", "Nørkærbro"))
-# for (y in 2013:2019) {
+# for (y in 2013:2013) {
 #   fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
 #   dat <- NULL
 #   iso <- format(date(paste0(y+1, "-01-14")), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
@@ -150,10 +150,28 @@ write_csv(dat4, fn)
 #     }
 #   }
 #   dat$Date <- ymd_hms(dat$Date, tz = "UTC") %>% with_tz("CET") # from UTC to CET
-#   dat <- dat %>% dplyr::filter(year(Date) == y) %>% arrange(Date) 
+#   dat <- dat %>% dplyr::filter(year(Date) == y) %>% arrange(Date)
 #   write_csv(dat, fn)
 #   print(range(dat$Date))
 # }
+
+
+#### Tidy prelim dataset ####
+readWLevels <- function(years) {
+  dat <- NULL
+  for (y in years) {
+    fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
+    dat <- bind_rows(dat, read_csv(fn, col_types = colT))
+  }
+  return(dat)
+}
+dat <- readWLevels(2013:2020)
+datL <- dat2 %>% pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level')
+datS <- datL %>% dplyr::filter(year(Date)>2013)
+ggplot(data = datS, aes(x = Date, y = Level)) + geom_line(aes(color = Group), show.legend = T)
+
+
+
 
 
 
@@ -187,6 +205,50 @@ print(range(dat$Date))
 
 
 
+#### Calc average waterlevels over all years ####
+colT <- cols(
+  Date = col_datetime(format = ""),
+  'Karup By (054764)' = col_double(),
+  'Hagebro (001762)' = col_double(),
+  'Nørkærbro (001767)' = col_double()
+)
+
+readWLevels <- function(years) {
+  dat <- NULL
+  for (y in years) {
+    fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
+    dat <- bind_rows(dat, read_csv(fn, col_types = colT))
+  }
+  return(dat)
+}
+dat <- readWLevels(2013:2013)
+
+
+y <- year(now())
+fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
+if (file.exists(fn)) datOld <- read_csv(fn) else datOld <- NULL
+stations <- tibble(id = c("054764", "001762", "001767"), place = c("Karup By", "Hagebro", "Nørkærbro"))
+iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
+dat <- NULL
+for (i in 1:nrow(stations)) {
+  id <- stations$id[i]
+  place <- stations$place[i]
+  tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=1&pw=100000000&inclraw=true"))
+  offset <- as.numeric(tmp$tsh$Offset)
+  tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
+  tmp$V <- tmp$V - rep(offset, length(tmp$V))
+  colnames(tmp) <- c("Date", paste0(place, " (", id, ")"))
+  if (is.null(dat)) {
+    dat <- tmp
+  } else {
+    dat <- full_join(dat,tmp, by = "Date")
+  }
+}
+dat$Date <- ymd_hms(dat$Date, tz = "UTC") %>% with_tz("CET") # from UTC to CET
+dat <- bind_rows(datOld, dat) 
+dat <- dat %>% dplyr::filter(year(Date) == y) %>% arrange() %>% distinct(Date, .keep_all = T)
+write_csv(dat, fn)
+print(range(dat$Date))
 
 
 
