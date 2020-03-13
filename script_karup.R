@@ -251,28 +251,6 @@ write_csv(dat4, fn)
 # write_csv(rMeans, fn)
 
 
-# dat1 <- mutate_if(dat, is.numeric, movAvg) 
-# dat2 <- dat1 %>% mutate_if(is.numeric, rollmean, k = 96*30, fill = "extend")
-# colnames(dat2)[2:4] = paste0(colnames(dat)[2:4]," avg")
-dat2 <- left_join(dat1, rMeans)
-# par(mfrow = c(1, 2))
-# boxplot(x)
-# boxplot(y)
-datL <- dat2 %>% pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level')
-datS <- datL %>% dplyr::filter(year(Date)>2013)
-ggplot(data = datS, aes(x = Date, y = Level)) + geom_line(aes(color = Group), show.legend = T)
-
-
-
-
-movAvg <- function(x, days = 90){ # 96 obs per day
-  n <- days
-  stats::filter(x, rep(1 / n, n), sides = 2, circular = T)
-}
-
-
-
-
 
 
 #### Get waterlevel for current year ####
