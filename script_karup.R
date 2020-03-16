@@ -33,6 +33,11 @@ library(zoo)
 # dat3$Name <- str_c(dat3$Name)
 # dat3$Place <- str_c(dat3$Place)
 # dat3 <- as_tibble(dat3) %>% type_convert()
+
+
+
+
+
 # 
 # ## Merge and tidy
 # dat4 <- bind_rows(dat3,dat2)

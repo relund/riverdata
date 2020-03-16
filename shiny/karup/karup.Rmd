@@ -1,0 +1,294 @@
+---
+title: "Karup Å"
+author: ''
+resource_files:
+- c_and_r.gif
+output:
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    social: menu
+    source_code: embed
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(ggplot2)
+library(plotly)
+# library(plyr)
+library(flexdashboard)
+library(tidyverse)
+library(lubridate)
+library(shiny)
+library(DT)
+# library(zoo) 
+```
+
+```{r global, include=FALSE}  
+# load data in 'global' chunk so it can be shared by all users of the dashboard
+addResourcePath('www', paste0(getwd(), "/www"))
+prefix <- "https://raw.githubusercontent.com/relund/skjern/master/data/"
+
+## Catch records
+readGHCatch <- function(file) {
+  colT <- cols(
+    Date = col_date(format = ""),
+    Length = col_double(),
+    Weight = col_double(),
+    Name = col_character(),
+    Place = col_character(),
+    Method = col_character(),
+    Cut = col_logical(),
+    Foto = col_character(),
+    Killed = col_logical(),
+    Sex = col_character(),
+    Fulton = col_double()
+  )
+  read_csv(paste0(prefix, file), col_types = colT)
+}
+datCatch <- readGHCatch("data_karup_catch_seatrout_2003-2019.csv")
+tmp <- readGHCatch("data_karup_catch_seatrout_2020-.csv")
+datCatch <- bind_rows(datCatch, tmp) 
+tmp <- transmute(datCatch, 
+                  K = if_else(!Killed, '<img src="www/c_and_r.gif" alt="C&R">', "", ""),
+                  M = if_else(Sex == 'Male', '<img src="www/boy.gif" alt="Han">', "", ""),
+                  F = if_else(Sex == 'Female', '<img src="www/girl.gif" alt="Hun">', "", ""),
+                  C = if_else(!is.na(Foto), paste0('<a href="', Foto, '"><img src="www/foto.gif" alt="Foto"></a>'), "", "")
+                  ) %>% transmute(Misc = paste0('<span>',K,M,F,C,'</span>'))
+datCatch <- bind_cols(datCatch, tmp) %>% select(Date, Name, Length, Weight, Method, Place, Fulton, Misc)
+
+readGHWLevels <- function(years) {
+  colT <- cols(
+    Date = col_datetime(format = ""),
+    'Karup By (054764)' = col_double(),
+    'Hagebro (001762)' = col_double(),
+    'Nørkærbro (001767)' = col_double()
+  )
+  dat <- NULL
+  for (y in years) {
+    fn <- paste0(prefix, "data_karup_waterlevel_", y, ".csv")
+    dat <- bind_rows(dat, read_csv(fn, col_types = colT))
+  }
+  return(dat)
+}
+datWLevel <- readGHWLevels(2013:2020)
+# datL <- dat %>% pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level')
+# datS <- datL %>% dplyr::filter(year(Date)>2013)
+# pWRaw <- ggplot(data = datS, aes(x = Date, y = Level)) + geom_line(aes(color = Group), show.legend = T)
+rMeans <- read_csv(paste0(prefix,"data_karup_waterlevel_avg90.csv"))
+datWLevel <- datWLevel %>% mutate(Day = yday(Date)) 
+datWLevel <- left_join(datWLevel, rMeans)
+datWLevelL <- datWLevel %>% 
+  pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level') %>% 
+  mutate(Sted = case_when(
+    grepl("Karup", Group, fixed = T) ~ "Karup By",
+    grepl("Nør", Group, fixed = T) ~ "Nørkærbro",
+    grepl("Hage", Group, fixed = T) ~ "Hagebro",
+    TRUE ~ "??"),
+    Type = if_else(grepl("Avg", Group, fixed = T), "gens", "måling")
+  ) 
+```
+
+Fangster
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+```{r}
+DT::renderDataTable(
+  DT::datatable(
+    datCatch,
+    colnames = c('Dato', 'Navn', 'Længde', 'Vægt', 'Metode', 'Sted', 'Fulton', 'Diverse'),
+    class = 'stripe row-border order-column nowrap', # nowrap display compact
+    rownames = FALSE,
+    # filter = 'bottom',
+    escape = FALSE,
+    options = list(pageLength = 15, order = list(list(0, 'desc')), 
+                   # autoWidth = TRUE,
+                   columnDefs = list(list(className = 'dt-center', targets = 2:7),
+                                     list(targets = 7, render = JS(
+                                       "function(data, type, row, meta) {",
+                                       "return data;",
+                                       "}"))
+                                     # list(width = '70px', targets = c(2,3,6,7))
+                                ),
+                   fixedHeader = TRUE, 
+                   rowGroup = list(dataSrc = 0, startRender = JS("function(rows, group) {",
+                                                                 "var res = group.split('-');",
+                                                                 "res = res[2] + '/' + res[1] + '/' + res[0];",
+                                                                 "return res + ' (' + rows.count() + ')';}"))
+              ),
+    extensions = c('Responsive','FixedHeader','RowGroup')
+  ) %>% 
+    formatDate('Date', 'toLocaleDateString') %>% 
+    formatCurrency(c('Length','Weight','Fulton'), digits = c(0,1,2), currency = "") 
+)
+```
+
+
+Vandstand
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Vandstand i Karup Å (rullende gennemsnit er beregnet over 90 dage)
+
+```{r Waterlevel}
+renderPlot({
+  datS <- datWLevelL %>% dplyr::filter(Date > now() - days(14)) 
+  pWMA <- ggplot(data = datS, aes(x = Date, y = Level, color = Type)) +
+    geom_line(aes(), na.rm = T) +
+    facet_grid(rows = vars(Sted), scales = "free") +
+    # labs(title = "Vandstand i Karup Å",
+    #      subtitle = "Gennemsnit er beregnet over 90 dage (givet data for alle år)") +
+    theme(legend.position="bottom") +
+    ylab("Vandstand (m)") + xlab("Dato") 
+    # scale_color_discrete(name = "", labels = c("Hagebro", "Hagebro (gens)",
+    #                                            "Karup By", "Karup By (gens)",
+    #                                            "Nørkærbro", "Nørkærbro (gens)"))
+  pWMA
+})
+# renderPlotly(ggplotly(pWMA) %>%  layout(legend = list(orientation = "h", x = 0.3, y = -0.4)))
+```
+
+
+### Relativ vandstand i forhold til gennemsnit (rullende over 90 dage)
+
+```{r Normilize to moving avg}
+renderPlot({
+  datS <- datWLevel %>% dplyr::filter(Date > now() - days(14))
+  datWLevelN <- datS %>% mutate(`Karup By` = `Karup By (054764)` - `Karup By (054764) rAvg90`, 
+                          `Hagebro` = `Hagebro (001762)` - `Hagebro (001762) rAvg90`,
+                          `Nørkærbro` = `Nørkærbro (001767)` - `Nørkærbro (001767) rAvg90`) %>% 
+    select(Date, `Karup By`, `Hagebro`, `Nørkærbro`)
+  datS <- datWLevelN %>% pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level')
+  pWN <- ggplot(data = datS, aes(x = Date, y = Level)) + 
+    geom_hline(yintercept = 0, colour="black") +
+    # geom_smooth(aes(group = Group), na.rm = T, method = lm, formula = y ~ splines::bs(x, 40), 
+    #             se = FALSE, color = "grey", lwd=0.5) +
+    geom_line(na.rm = T, colour = "#00AFBB") + 
+    facet_grid(rows = vars(Group)) +
+    # labs(title = "Relativ vandstand i Karup Å", 
+    #      subtitle = "Vandstand relativ i forhold til gennemsnit over 90 dage") +
+    ylab("Relativ vandstand (m)") + xlab("Dato") +
+    theme(legend.position="bottom") 
+  pWN
+})
+# renderPlotly(ggplotly(pWMA) %>%  layout(legend = list(orientation = "h", x = 0.3, y = -0.4)))
+```
+
+Row
+-----------------------------------------------------------------------
+
+### Vandstand over år
+
+```{r Vandstand årlig}
+renderPlot({
+  pWMAY <- ggplot(data = datWLevelL, aes(x = Date, y = Level, color = Type)) +
+    geom_line(aes(), na.rm = T) +
+    facet_grid(rows = vars(Sted), scales = "free") +
+    # labs(title = "Vandstand i Karup Å",
+    #      subtitle = "Gennemsnit er beregnet over 90 dage (givet data for alle år)") +
+    theme(legend.position="bottom") +
+    ylab("Vandstand (m)") + xlab("Dato") 
+    # scale_color_discrete(name = "", labels = c("Hagebro", "Hagebro (gens)",
+    #                                            "Karup By", "Karup By (gens)",
+    #                                            "Nørkærbro", "Nørkærbro (gens)"))
+  pWMAY
+})
+# renderPlotly(ggplotly(pWMA) %>%  layout(legend = list(orientation = "h", x = 0.3, y = -0.4)))
+```
+
+
+
+Statistik
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### stat_density Example
+
+```{r, eval=FALSE}
+dfGamma = data.frame(nu75 = rgamma(100, 0.75),
+           nu1 = rgamma(100, 1),
+           nu2 = rgamma(100, 2))
+
+dfGamma = stack(dfGamma)
+
+p <- ggplot(dfGamma, aes(x = values)) +
+            stat_density(aes(group = ind, color = ind),position="identity",geom="line")
+ggplotly(p)
+```
+
+### Add Conditional Density Curves to Plot
+
+```{r, eval=FALSE}
+dim1 <- c(rnorm(100, mean=1), rnorm(100, mean=4))
+dim2 <- rnorm(200, mean=1)
+cat <- factor(c(rep("a", 100), rep("b", 100)))
+mydf <- data.frame(cbind(dim2, dim1, cat))
+p <- ggplot(data=mydf, aes(x=dim1, y=dim2, colour=as.factor(cat))) +
+  geom_point() +
+  stat_density(aes(x=dim1, y=(-2+(..scaled..))),
+               position="identity", geom="line")
+
+stuff <- ggplot_build(p)
+xrange <- stuff[[2]]$ranges[[1]]$x.range  # extract the x range to make the
+                                          # new densities align with y-axis
+
+## Get densities of dim2
+ds <- do.call(rbind, lapply(unique(mydf$cat), function(lev) {
+    dens <- with(mydf, density(dim2[cat==lev]))
+    data.frame(x=dens$y+xrange[1], y=dens$x, cat=lev)
+}))
+
+p <- p + geom_path(data=ds, aes(x=x, y=y, color=factor(cat)))
+
+ggplotly(p)
+```
+
+Row
+-----------------------------------------------------------------------
+
+### geom_density and facet_wrap Together
+
+```{r, eval=FALSE}
+dd<-data.frame(matrix(rnorm(144, mean=2, sd=2),72,2),c(rep("A",24),rep("B",24),rep("C",24)))
+colnames(dd) <- c("x_value", "Predicted_value",  "State_CD")
+
+dd <- data.frame(
+  predicted = rnorm(72, mean = 2, sd = 2),
+  state = rep(c("A", "B", "C"), each = 24)
+)
+
+grid <- with(dd, seq(min(predicted), max(predicted), length = 100))
+normaldens <- ddply(dd, "state", function(df) {
+  data.frame(
+    predicted = grid,
+    density = dnorm(grid, mean(df$predicted), sd(df$predicted))
+  )
+})
+
+p <- ggplot(dd, aes(predicted))  +
+            geom_density() +
+            geom_line(aes(y = density), data = normaldens, colour = "red") +
+            facet_wrap(~ state)
+ggplotly(p)
+```
+
+### Density and Scatterplot Overlay Using geom_density
+
+```{r, eval=FALSE}
+df <- data.frame(x <- rchisq(1000, 10, 10),
+                 y <- rnorm(1000))
+
+p <- ggplot(df, aes(x, y)) + 
+     geom_point(alpha = 0.5) + 
+     geom_density_2d() + 
+     theme(panel.background = element_rect(fill = '#ffffff'))
+
+ggplotly(p)
+```
