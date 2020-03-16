@@ -1,0 +1,248 @@
+---
+title: "Data for Skjern Å"
+author: "Lars Relund Nielsen"
+date: "24/2/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(rvest)
+library(jsonlite)
+library(tidyverse)
+library(lubridate)
+```
+
+Dette repository indeholer data relevant for Skjern Å fra diverse kilder. 
+
+## Sluseaktivitet
+
+[Sluseaktivitet](http://hyde.dk/Sflow/default_flow.asp) gemmes i filen `data_flow_sluse.csv`. Indstrøm registreres som en positiv værdi. For mere info se [slusepraksis](https://hvidesandehavn.dk/om-havnen/saltdata/). Bemærk, at der er altid 2 porte åben på 1 meter for at sikre en lokkestrøm og passage af fisk.
+
+```{r flow}
+url <- 'http://hyde.dk/Sflow/default_flow.asp'
+webpage <- read_html(url)
+dat <- html_nodes(webpage, xpath = "/html/body/div[2]/div[3]/script/text()")
+dat <- html_text(dat)
+dat <- str_replace_all(dat, "[\r\n\t]", "")
+
+dates <- str_replace(dat, "^.*labels:", "{\n'labels' :")
+dates <- str_replace(dates, "].*$", "]\n}")
+dates <- str_replace_all(dates, "'", '"')
+dates <- fromJSON(dates)$labels
+head(dates)
+
+flow <- str_replace(dat, "^.*data:", "{\n'data' :")
+flow <- str_replace(flow, "].*$", "]\n}")
+flow <- str_replace_all(flow, "'", '"')
+flow <- fromJSON(flow)$data
+head(flow)
+
+if (length(dates)==length(flow)) {
+  fn <- "data_flow_sluse.csv"
+  dat <- tibble(dates = dmy_hm(dates, tz = "CET"), flow = flow)
+  if (!file.exists(fn)) {
+    write_csv2(dat, fn)
+  } else {
+    datOld <- read_csv2(fn, col_types = "Ti", locale = locale(tz = "CET"))
+    dat <- bind_rows(datOld,dat)
+    dat <- distinct(dat)
+    write_csv2(dat, fn)
+  }
+}
+```
+
+
+
+
+## Laksefangster
+
+[Laksefangster](http://skjernaasam.dk/catchreport/?species=salmon) gemmes i filen `data_catch_salmon.csv`
+
+```{r salmon scrape old years, include=F, eval=FALSE}
+curY <- as.numeric(format(Sys.time(), "%Y"))
+dat <- NULL
+for (y in 2004:curY) {
+  url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=salmon")
+  page <- read_html(url)
+  x <- html_node(page, xpath = '//*[@id="report-list"]')
+  tmp <- html_table(x, header = T, trim = T, fill = T) %>% as_tibble()
+  dat <- bind_rows(tmp, dat)
+}
+colnames(dat) <- c("Date", "Length", "Weight", "Name", "Place", "Method", "Cut", "Foto")
+dat <- dat %>% mutate(killed = str_detect(dat$Date, fixed("*")))
+dat$Date <- dat$Date %>% str_replace(coll(" *"), "")
+dat$Length <- dat$Length %>% str_replace_all(c(".cm" = "", "Ukendt" = "")) 
+dat$Weight <- dat$Weight %>% str_replace_all(c(".kg" = "", "Ukendt" = "")) 
+dat$Cut <- dat$Cut %>% str_replace_all(c("Ja" = "T", "Nej" = "F", "Ukendt" = "F", ".*pelvic" = "T", 
+                                         "tail" = "T", "pectoral" = "T", "anal" = "T"))
+dat$Foto <- dat$Foto %>% str_replace_all(c("ja" = "TRUE", "nej" = "FALSE", "Ukendt" = ""))
+dat$Place <- dat$Place %>% str_replace_all(c(".*Fjord.*" = "Nedre", ".*Opstrøms Tarp bro.*" = "Øvre", ".*Vorgod Å.*" = "Vorgod Å", "Skjern Å: Borris Krog bro.*" = "Mellem", "Omme Å.*" = "Omme Å", "Skjern Å: Skarrild" = "Øvre", "Ukendt" = ""))
+dat <- type_convert(dat)
+dat$Length <- as.numeric(dat$Length)
+dat$Weight<- as.numeric(dat$Weight)
+dat <- dat %>% mutate(Fulton = Weight*100000/Length^3)
+fn <- "data_catch_salmon.csv"
+write_csv2(dat, fn)
+```
+
+```{r salmon scrape}
+curY <- as.numeric(format(Sys.time(), "%Y"))
+url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", curY, "&species=salmon")
+page <- read_html(url)
+x <- html_node(page, xpath = '//*[@id="report-list"]')
+dat <- html_table(x, header = T, trim = T, fill = T) %>% as_tibble()
+colnames(dat) <- c("Date", "Length", "Weight", "Name", "Place", "Method", "Cut", "Foto")
+dat <- dat %>% mutate(Killed = str_detect(dat$Date, fixed("*")))
+dat$Date <- dat$Date %>% str_replace(coll(" *"), "")
+dat$Length <- dat$Length %>% str_replace_all(c(".cm" = "", "Ukendt" = "")) 
+dat$Weight <- dat$Weight %>% str_replace_all(c(".kg" = "", "Ukendt" = "")) 
+dat$Cut <- dat$Cut %>% str_replace_all(c("Ja" = "T", "Nej" = "F", "Ukendt" = "F", ".*pelvic" = "T", 
+                                         "tail" = "T", "pectoral" = "T", "anal" = "T"))
+dat$Foto <- dat$Foto %>% str_replace_all(c("ja" = "TRUE", "nej" = "FALSE", "Ukendt" = ""))
+dat$Place <- dat$Place %>% str_replace_all(c(".*Fjord.*" = "Nedre", ".*Opstrøms Tarp bro.*" = "Øvre", ".*Vorgod Å.*" = "Vorgod Å", "Skjern Å: Borris Krog bro.*" = "Mellem", "Omme Å.*" = "Omme Å", "Skjern Å: Skarrild" = "Øvre", "Ukendt" = ""))
+dat <- type_convert(dat)
+dat$Length <- as.numeric(dat$Length)
+dat$Weight<- as.numeric(dat$Weight)
+dat <- dat %>% mutate(Fulton = Weight*100000/Length^3)
+dat
+
+fn <- "data_catch_salmon.csv"
+if (!file.exists(fn)) {
+  write_csv2(dat, fn)
+} else {
+  datOld <- read_csv2(fn)
+  dat <- bind_rows(datOld,dat)
+  dat <- distinct(dat)
+  write_csv2(dat, fn)
+}
+```
+
+Givet alle fangster af ikke genudsatte fisk, kan vi estimere [vægt som en funktion af længde](https://en.wikipedia.org/wiki/Standard_weight_in_fish):
+
+```{r salmon weigth estimate}
+dat1 <- dplyr::filter(dat, Length > 39 & Length < 141 & Killed)
+mod1 <- lm(log(Weight) ~ log(Length), dat1)
+summary(mod1)
+lim <- 40:max(dat1$Length)
+res <- predict(mod1, data.frame(Length = lim), interval='prediction', level=0.95)
+res <- exp(res)
+res <- res %>% as_tibble() 
+res <- res %>% add_column(Length = lim, .before = T)
+colnames(res) <- c("Length", "Avg", "Upper", "Lower")
+res <- pivot_longer(res, 2:4)
+ggplot(dat1, aes(x = Length, y = Weight)) + geom_point(na.rm = T) + 
+  geom_line(aes(x = Length, y = value, colour = name), data = res) 
+```
+
+Formlen for vægten ($v$) af en laks som en funtion af længde ($l$) bliver:
+
+$$ v = `r round(exp(mod1$coefficients[1]),8)` \cdot l^{`r round(mod1$coefficients[2],2)`}$$
+
+
+
+## Havørredfangster
+
+[Havørredfangster](http://skjernaasam.dk/catchreport/?species=trout) gemmes i filen `data_catch_seatrout.csv`
+
+```{r seatrout scrape old years, include=F, eval=FALSE}
+curY <- as.numeric(format(Sys.time(), "%Y"))
+dat <- NULL
+for (y in 2004:curY) {
+  url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=trout")
+  page <- read_html(url)
+  x <- html_node(page, xpath = '//*[@id="report-list"]')
+  tmp <- html_table(x, header = T, trim = T, fill = T) %>% as_tibble()
+  dat <- bind_rows(tmp, dat)
+}
+colnames(dat) <- c("Date", "Length", "Weight", "Name", "Place", "Method", "Cut", "Foto")
+dat <- dat %>% mutate(Killed = str_detect(dat$Date, fixed("*")))
+dat$Date <- dat$Date %>% str_replace(coll(" *"), "")
+dat$Length <- dat$Length %>% str_replace_all(c(".cm" = "", "Ukendt" = "")) 
+dat$Weight <- dat$Weight %>% str_replace_all(c(".kg" = "", "Ukendt" = "")) 
+dat$Cut <- dat$Cut %>% str_replace_all(c("Ja" = "T", "Nej" = "F", "Ukendt" = "F", ".*pelvic" = "T", 
+                                         "tail" = "T", "pectoral" = "T", "anal" = "T"))
+dat$Foto <- dat$Foto %>% str_replace_all(c("ja" = "TRUE", "nej" = "FALSE", "Ukendt" = ""))
+dat$Place <- dat$Place %>% str_replace_all(c(".*Fjord.*" = "Nedre", ".*Opstrøms Tarp bro.*" = "Øvre", ".*Vorgod Å.*" = "Vorgod Å", "Skjern Å: Borris Krog bro.*" = "Mellem", "Omme Å.*" = "Omme Å", "Skjern Å: Skarrild" = "Øvre", "Ukendt" = ""))
+dat <- type_convert(dat)
+dat$Length <- as.numeric(dat$Length)
+dat$Weight<- as.numeric(dat$Weight)
+dat <- dat %>% mutate(Fulton = Weight*100000/Length^3)
+fn <- "data_catch_seatrout.csv"
+write_csv2(dat, fn)
+```
+
+```{r seatrout scrape}
+curY <- as.numeric(format(Sys.time(), "%Y"))
+url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", curY, "&species=trout")
+page <- read_html(url)
+x <- html_node(page, xpath = '//*[@id="report-list"]')
+dat <- html_table(x, header = T, trim = T, fill = T) %>% as_tibble()
+colnames(dat) <- c("Date", "Length", "Weight", "Name", "Place", "Method", "Cut", "Foto")
+dat <- dat %>% mutate(Killed = str_detect(dat$Date, fixed("*")))
+dat$Date <- dat$Date %>% str_replace(coll(" *"), "")
+dat$Length <- dat$Length %>% str_replace_all(c(".cm" = "", "Ukendt" = "")) 
+dat$Weight <- dat$Weight %>% str_replace_all(c(".kg" = "", "Ukendt" = "")) 
+dat$Cut <- dat$Cut %>% str_replace_all(c("Ja" = "T", "Nej" = "F", "Ukendt" = "F", ".*pelvic" = "T", 
+                                         "tail" = "T", "pectoral" = "T", "anal" = "T"))
+dat$Foto <- dat$Foto %>% str_replace_all(c("ja" = "TRUE", "nej" = "FALSE", "Ukendt" = ""))
+dat$Place <- dat$Place %>% str_replace_all(c(".*Fjord.*" = "Nedre", ".*Opstrøms Tarp bro.*" = "Øvre", ".*Vorgod Å.*" = "Vorgod Å", "Skjern Å: Borris Krog bro.*" = "Mellem", "Omme Å.*" = "Omme Å", "Skjern Å: Skarrild" = "Øvre", "Ukendt" = ""))
+dat <- type_convert(dat)
+dat$Length <- as.numeric(dat$Length)
+dat$Weight<- as.numeric(dat$Weight)
+dat <- dat %>% mutate(Fulton = Weight*100000/Length^3)
+dat
+
+fn <- "data_catch_seatrout.csv"
+if (!file.exists(fn)) {
+  write_csv2(dat, fn)
+} else {
+  datOld <- read_csv2(fn)
+  dat <- bind_rows(datOld,dat)
+  dat <- distinct(dat)
+  write_csv2(dat, fn)
+}
+```
+
+Givet alle fangster af ikke genudsatte fisk, kan vi estimere [vægt som en funktion af længde](https://en.wikipedia.org/wiki/Standard_weight_in_fish):
+
+```{r seatrout weigth estimate}
+dat1 <- dplyr::filter(dat, Length > 39 & Length < 110 & Killed)
+mod1 <- lm(log(Weight) ~ log(Length), dat1)
+summary(mod1)
+lim <- 40:max(dat1$Length)
+res <- predict(mod1, data.frame(Length = lim), interval='prediction', level=0.95)
+res <- exp(res)
+res <- res %>% as_tibble() 
+res <- res %>% add_column(Length = lim, .before = T)
+colnames(res) <- c("Length", "Avg", "Upper", "Lower")
+res <- pivot_longer(res, 2:4)
+ggplot(dat1, aes(x = Length, y = Weight)) + geom_point(na.rm = T) + 
+  geom_line(aes(x = Length, y = value, colour = name), data = res) 
+```
+
+Formlen for vægten ($v$) af en havørred som en funtion af længde ($l$) bliver:
+
+$$ v = `r round(exp(mod1$coefficients[1]),8)` \cdot l^{`r round(mod1$coefficients[2],2)`}$$
+
+
+## Vandstand
+
+```{r, include=FALSE, eval=FALSE}
+# Hacked fra http://hydrometri.azurewebsites.net/Scripts/azureplot_new.js
+# 
+# 017898: Gjaldbæk bro
+# 001862: Alergård
+# 055414: Sandfeldvej
+# 054757: Rind å, bro ved Arnborg kirke
+# 
+# 054764: Karup By
+# 001762: Hagebro
+# 001767: Nørkærbro
+# 
+# Ahlergaard:
+# http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=001862&enddate=2020-02-26T22:59:00.000Z&days=7&pw=992
+# bruger toISOString()
+```
+
