@@ -117,7 +117,7 @@ dat <- NULL
 for (i in 1:nrow(stations)) {
   id <- stations$id[i]
   place <- stations$place[i]
-  tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=5&pw=100000000&inclraw=true"))
+  tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=7&pw=100000000&inclraw=true"))
   offset <- as.numeric(tmp$tsh$Offset)
   tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
   tmp$V <- tmp$V - rep(offset, length(tmp$V))
@@ -128,9 +128,9 @@ for (i in 1:nrow(stations)) {
     dat <- full_join(dat,tmp, by = "Date")
   }
 }
-dat$Date <- ymd_hms(dat$Date, tz = "UTC") %>% with_tz("CET") # from UTC to CET
+dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
 dat <- bind_rows(datOld, dat) 
-dat <- dat %>% dplyr::filter(year(Date) == y) %>% arrange() %>% distinct(Date, .keep_all = T)
+dat <- dat %>% dplyr::filter(year(Date) == y) %>% arrange_all() %>% distinct(Date, `Karup By (054764)`, .keep_all = T)
 write_csv(dat, fn)
 print(range(dat$Date))
 
