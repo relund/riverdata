@@ -64,7 +64,7 @@ datCatch <- datCatch %>%
   )) 
 datCKilled <- dplyr::filter(datCatch, Length > 39 & Killed) 
 mod <- lm(log(Weight) ~ Period*log(Length), datCKilled)
-datP <- expand_grid(Length = 40:max(dat$Length), Period = unique(dat$Period))
+datP <- expand_grid(Length = 40:max(datCKilled$Length), Period = unique(datCKilled$Period))
 res <- predict(mod, datP, interval='prediction', level=0.95) 
 res <- exp(res)
 res <- res %>% as_tibble() 
