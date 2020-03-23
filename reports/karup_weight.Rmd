@@ -1,0 +1,324 @@
+---
+title: "Estimation of seatrout weight in Karup Å"
+author: "Lars Relund Nielsen"
+date: "19/3/2020"
+output: 
+  html_document:
+    self_contained: true
+    theme: united
+    highlight: tango
+    df_print: paged
+    code_folding: show
+    toc: true
+    toc_float: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(tidyverse)
+library(lubridate)
+library(shiny)
+library(DT)
+# library(zoo) 
+
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning=FALSE, message=FALSE, 
+  include = TRUE, echo = FALSE, 
+  cache = TRUE, autodep = TRUE,
+  out.width = "99%", fig.width = 8, fig.align = "center", fig.asp = 0.62
+)
+
+readGHCatch <- function(file) {
+  prefix <- "https://raw.githubusercontent.com/relund/skjern/master/data/"
+  colT <- cols(
+    Date = col_date(format = ""),
+    Length = col_double(),
+    Weight = col_double(),
+    Name = col_character(),
+    Place = col_character(),
+    Method = col_character(),
+    Cut = col_logical(),
+    Foto = col_character(),
+    Killed = col_logical(),
+    Sex = col_character(),
+    Fulton = col_double()
+  )
+  read_csv(paste0(prefix, file), col_types = colT)
+}
+```
+
+```{r Read data}
+datCatch <- readGHCatch("data_karup_catch_seatrout_2003-2019.csv")
+tmp <- readGHCatch("data_karup_catch_seatrout_2020-.csv")
+datCatch <- bind_rows(datCatch, tmp) %>% mutate(Month = month(Date, label = T), Quarter = paste0("Q",quarter(Date)))
+dat <- dplyr::filter(datCatch, Length > 39 & !is.na(Weight) & Killed)
+```
+
+We consider catch records from Karup Å in years 2003-2020 with both weight and length numbers. A total of `r nrow(dat)` observations.
+
+## Model 1: log(Weight) ~ log(Length)
+
+Let us first try a simple model with [weight as function of length](https://en.wikipedia.org/wiki/Standard_weight_in_fish):
+
+```{r Model 1: log(Weight) ~ log(Length)}
+mod1 <- lm(log(Weight) ~ log(Length), dat)
+summary(mod1)
+lim <- 40:max(dat$Length)
+res1 <- predict(mod1, data.frame(Length = lim), interval='prediction', level=0.95)
+res1 <- exp(res1)
+res1 <- res1 %>% as_tibble() 
+res1 <- res1 %>% add_column(Length = lim, .before = T)
+colnames(res1) <- c("Length", "Avg", "Lower", "Upper")
+res1 <- res1 %>% mutate(Fulton = Avg*100000/Length^3)
+res1L <- pivot_longer(res1, 2:4)
+pW <- ggplot(dat, aes(x = Length, y = Weight)) + 
+  geom_point(aes(color = Quarter), na.rm = T) + 
+  geom_line(aes(x = Length, y = value, linetype = name), data = res1L)  +
+  # guides(color=guide_legend(override.aes = list(shape=NA))) +
+  # scale_color_gradientn(colours = rainbow(4)) +
+  labs(title = "Model 1: log(Weight) ~ log(Length)", linetype = "Estimates") +
+  theme(legend.position="bottom") 
+pW
+```
+
+The estimated formula for weight ($w$) of a seatrout as a funtion of length ($l$) becomes:
+
+$$ v = `r round(exp(mod1$coefficients[1]),8)` \cdot l^{`r round(mod1$coefficients[2],2)`}$$
+
+Estimates with 95% confidence intervals are:
+
+```{r}
+DT::datatable(
+    res1,
+    class = 'stripe row-border order-column nowrap', # nowrap display compact
+    rownames = FALSE,
+    options = list(pageLength = 15),
+    extensions = c('Responsive')
+  ) %>% 
+  formatCurrency(c('Avg','Lower','Upper'), digits = c(2,2,2), currency = " kg", before = F) %>% 
+  formatCurrency(c('Fulton'), digits = c(2), currency = "")
+```
+
+Note that the condition factor for average weight value is quite constanct ([`r str_c(range(round(res1$Fulton,2)), collapse = ",")`]) and increasing with lenght. Moreover, the weights in the plot of the first quarter (Q1) seem to be lower. This holds with the biology of the trout. In March the may still be kelts in the river. 
+
+## Model 2: lm(log(Weight) ~ Month*log(Length)
+
+Let us have a closer look at the data:
+```{r}
+res <- dat %>% mutate(Length = round(Length)) %>% group_by(Month, Length) %>% summarise(`Mean weight` = mean(Weight)) %>% arrange(Length)
+ggplot(res, aes(x = Month, y = `Mean weight`)) + 
+  geom_line(aes(group = factor(Length), color = factor(Length)), na.rm = T) +
+  labs(title = "Mean weight over months", color = "Length") 
+```
+
+For medium lengths, weight goes up, peak and goes down again as expected. In March/April we still have kelts in the river and then fresh fish arrives (best condition/weight) which loose weight at they stay in the river. Note for small lengths (up to 50 cm) the difference is small; because, small fish may have other reasons than spawning for staying in the river (e.g. feeding or bad conditions in the fjord). 
+
+We fit a model taking month into account:
+
+```{r Model 2: log(Weight) ~ Month*log(Length)}
+dat <- dat %>% mutate(MonthM2 = Month)
+mod2 <- lm(log(Weight) ~ MonthM2*log(Length), dat)
+summary(mod2)
+datP <- expand.grid(Length = 40:max(dat$Length), MonthM2 = unique(dat$MonthM2))
+res2 <- predict(mod2, datP, interval='prediction', level=0.95)
+res2 <- exp(res2)
+res2 <- res2 %>% as_tibble()
+res2 <- bind_cols(datP, res2) %>% as_tibble()
+colnames(res2) <- c("Length", "Month", "Avg", "Lower", "Upper")
+ggplot(res2, aes(x = Length, y = Avg)) + 
+  geom_line(aes(group = Month, color = Month)) +
+  labs(title = "Model 2: log(Weight) ~ Month*log(Length)") +
+  ylab("Weight") + theme(legend.position="bottom") + 
+  scale_color_brewer(palette = "Set1")
+```
+
+As expected mean weight decrease with the days the trout has been in the river (seems that April is the first month). We compare the two models:
+
+```{r}
+print(anova(mod1,mod2))
+```
+ 
+Model 2 provides a better fit. Note that the model here consider `Month` as ordinal data. 
+
+## Model 3: log(Weight) ~ factor(Month, ordered = F)*log(Length)
+
+We try to fit a model where `Month` is a non-ordered factor. 
+
+```{r Model 3}
+dat <- dat %>% mutate(MonthM3 = factor(Month, ordered = F))
+mod3 <- lm(log(Weight) ~ MonthM3*log(Length), dat)
+summary(mod3)
+datP <- expand.grid(Length = 40:max(dat$Length), MonthM3 = unique(dat$MonthM3))
+res3 <- predict(mod3, datP, interval='prediction', level=0.95)
+res3 <- exp(res3)
+res3 <- res3 %>% as_tibble()
+res3 <- bind_cols(datP, res3) %>% as_tibble()
+colnames(res3) <- c("Length", "Month", "Avg", "Lower", "Upper")
+ggplot(res3, aes(x = Length, y = Avg)) + 
+  geom_line(aes(group = Month, color = Month)) + 
+  scale_color_brewer(palette = "Set1")
+```
+
+Since the degrees of freedom is the same we cannot use `anova`. Let us try to plot the two models:
+
+```{r, results='asis'}
+res21 <- res2 %>% transmute(Model = "M2", Length, Month, Weight = Avg) 
+res31 <- res3 %>% transmute(Model = "M3", Length, Month, Weight = Avg) 
+res <- bind_rows(res21, res31)
+ggplot(res, aes(x = jitter(Length), y = jitter(Weight))) + 
+  geom_line(aes(group = paste0(Model,Month), color = Month, linetype = Model)) + 
+  scale_color_brewer(palette = "Set1")
+```
+
+Its the same model, just formulated differently.
+
+
+## Model 4: log(Weight) ~ MonthM*log(Length)
+
+We may reorder the months so April is the first and then use `Month` as a numeric variable:
+
+```{r Model 4}
+dat <- dat %>% mutate(MonthM4 = as.integer(fct_shift(Month, 3)))
+mod4 <- lm(log(Weight) ~ MonthM4*log(Length), dat)
+summary(mod4)
+datP <- dat %>% distinct(Length, MonthM4, .keep_all = T) %>% arrange(Length, MonthM4)
+# datP <- expand.grid(Length = 40:max(dat$Length), MonthM = unique(dat$MonthM))
+res4 <- predict(mod4, datP, interval='prediction', level=0.95)
+res4 <- exp(res4)
+res4 <- res4 %>% as_tibble()
+res4 <- bind_cols(datP, res4) %>% as_tibble()
+colnames(res4)[(ncol(res4)-2):ncol(res4)] <- c("Avg", "Lower", "Upper")
+ggplot(res4, aes(x = Length, y = Avg)) + 
+  geom_line(aes(group = Month, color = Month)) + 
+  scale_color_brewer(palette = "Set1")
+```
+
+```{r}
+print(anova(mod2,mod4))
+```
+
+Model 4 provides a better fit compared to Model 2. I guess this is mainly due to the number of explanable variables in much lower (Df = -12). However, not all seatrouts arrive on April, but also May, June etc. We may try to join some months.
+
+## Reducing Months
+
+Since the trout may arrive to the river in different months, we may try to group some of the months. We test different models both with month as numeric and factor. 
+
+```{r Model 5, echo = TRUE}
+dat <- dat %>% 
+  mutate(MonthM5 = case_when(
+    Month == "apr" ~ 1,
+    Month == "maj" ~ 1,
+    Month == "jun" ~ 1,
+    Month == "jul" ~ 1,
+    Month == "aug" ~ 1,
+    Month == "sep" ~ 2,
+    Month == "okt" ~ 2,
+    Month == "mar" ~ 3,
+  )) %>% 
+  mutate(MonthM6 = case_when(
+    Month == "apr" ~ 1,
+    Month == "maj" ~ 1,
+    Month == "jun" ~ 1,
+    Month == "jul" ~ 1,
+    Month == "aug" ~ 1,
+    Month == "sep" ~ 2,
+    Month == "okt" ~ 2,
+    Month == "mar" ~ 4,
+  )) %>% 
+  mutate(MonthM7 = case_when(
+    Month == "apr" ~ 1,
+    Month == "maj" ~ 1,
+    Month == "jun" ~ 1,
+    Month == "jul" ~ 1,
+    Month == "aug" ~ 1,
+    Month == "sep" ~ 2,
+    Month == "okt" ~ 2,
+    Month == "mar" ~ 5,
+  )) %>% 
+  mutate(MonthM8 = case_when(
+    Month == "apr" ~ "P1",
+    Month == "maj" ~ "P1",
+    Month == "jun" ~ "P1",
+    Month == "jul" ~ "P1",
+    Month == "aug" ~ "P1",
+    Month == "sep" ~ "P2",
+    Month == "okt" ~ "P2",
+    Month == "mar" ~ "P3",
+  )) %>% 
+  mutate(MonthM9 = case_when(
+    Month == "apr" ~ "P1",
+    Month == "maj" ~ "P1",
+    Month == "jun" ~ "P1",
+    Month == "jul" ~ "P1",
+    Month == "aug" ~ "P2",
+    Month == "sep" ~ "P2",
+    Month == "okt" ~ "P2",
+    Month == "mar" ~ "P3",
+  )) 
+  
+testM <- function(mA, mB) {
+  mAN <- paste0("MonthM",mA)
+  mBN <- paste0("MonthM",mB)
+  modA <- eval(substitute(lm(log(Weight) ~ variable*log(Length), dat), list(variable = as.name(mAN))))
+  modB <- eval(substitute(lm(log(Weight) ~ variable*log(Length), dat), list(variable = as.name(mBN))))
+  # print(summary(modA))
+  # print(summary(modB))
+  print(anova(modA, modB))
+
+  datP <- expand_grid(Length = 40:max(dat$Length), unique(dat[[mAN]]))
+  colnames(datP) = c("Length", mAN)
+  resA <- predict(modA, datP, interval='prediction', level=0.95) 
+  resA <- exp(resA)
+  resA <- resA %>% as_tibble() %>% mutate(Model = paste0("M",mA), ModelP = paste0("M",mA,"-",pull(datP[,2]))) 
+  resA <- bind_cols(datP, resA) %>% select(- !! mAN)
+  colnames(resA)[(ncol(resA)-4):(ncol(resA)-2)] <- c("Avg", "Lower", "Upper")
+  
+  datP <- expand_grid(Length = 40:max(dat$Length), unique(dat[[mBN]]))
+  colnames(datP) = c("Length", mBN)
+  resB <- predict(modB, datP, interval='prediction', level=0.95) 
+  resB <- exp(resB)
+  resB <- resB %>% as_tibble() %>% mutate(Model = paste0("M",mB), ModelP = paste0("M",mB,"-",pull(datP[,2]))) 
+  resB <- bind_cols(datP, resB) %>% select(- !! mBN)
+  colnames(resB)[(ncol(resB)-4):(ncol(resB)-2)] <- c("Avg", "Lower", "Upper")
+
+  res <- bind_rows(resA, resB)
+  ggplot(res, aes(x = Length, y = Avg)) + 
+    geom_line(aes(group = ModelP, color = ModelP, linetype = Model)) 
+}
+```
+
+We test the models against each other:
+
+```{r, echo = TRUE}
+for (i in 3:8) testM(i,i+1)
+```
+
+Model 8 and 9 seems to be best.
+
+```{r}
+testM(8,9)
+```
+
+Note the only difference are which group August is added to. In August the are both new and old fish in the river.
+
+
+
+## Arrival over years
+
+Have the arrival of the trout changed over years? We use mean weight as a indicator.
+
+```{r}
+res <- dat %>% mutate(Year = year(Date)) %>% group_by(Month, Year) %>% summarise(`Mean weight` = mean(Weight))
+ggplot(res, aes(x = Month, y = `Mean weight`)) + 
+  geom_line(aes(group = Year, color = factor(Year)), na.rm = T) +
+  labs(title = "Mean weight over months", color = "Length") 
+ggplot(res, aes(x = Year, y = `Mean weight`)) + 
+  geom_line(aes(group = Month, color = Month), na.rm = T) +
+  labs(title = "Mean weight over years", color = "Length") 
+```
+
+Based on the plots there don't seem to be a relation.
