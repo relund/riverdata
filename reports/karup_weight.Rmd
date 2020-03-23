@@ -258,6 +258,16 @@ dat <- dat %>%
     Month == "sep" ~ "P2",
     Month == "okt" ~ "P2",
     Month == "mar" ~ "P3",
+  )) %>% 
+  mutate(MonthM10 = case_when(
+    Month == "apr" ~ "P1",
+    Month == "maj" ~ "P1",
+    Month == "jun" ~ "P1",
+    Month == "jul" ~ "P2",
+    Month == "aug" ~ "P2",
+    Month == "sep" ~ "P3",
+    Month == "okt" ~ "P3",
+    Month == "mar" ~ "P4",
   )) 
   
 testM <- function(mA, mB) {
@@ -294,16 +304,17 @@ testM <- function(mA, mB) {
 We test the models against each other:
 
 ```{r, echo = TRUE}
-for (i in 3:8) testM(i,i+1)
+for (i in 3:9) testM(i,i+1)
 ```
 
-Model 8 and 9 seems to be best.
+Model 10 seems to be best.
 
 ```{r}
-testM(8,9)
+testM(3,8)
+testM(8,10)
 ```
 
-Note the only difference are which group August is added to. In August the are both new and old fish in the river.
+Note the only difference are which group August is added to a middle period. In August the are both new and old fish in the river.
 
 
 
@@ -322,3 +333,5 @@ ggplot(res, aes(x = Year, y = `Mean weight`)) +
 ```
 
 Based on the plots there don't seem to be a relation.
+
+
