@@ -1,26 +1,24 @@
 ---
 title: "Karup Å"
 author: ''
-resource_files:
-- c_and_r.gif
 output:
   flexdashboard::flex_dashboard:
     orientation: rows
-    social: menu
-    source_code: embed
 runtime: shiny
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
 library(knitr)
 library(ggplot2)
 library(plotly)
-# library(plyr)
 library(flexdashboard)
 library(tidyverse)
 library(lubridate)
 library(shiny)
 library(DT)
+library(formattable)
 # library(zoo) 
 ```
 
@@ -29,7 +27,7 @@ library(DT)
 addResourcePath('www', paste0(getwd(), "/www"))
 prefix <- "https://raw.githubusercontent.com/relund/skjern/master/data/"
 
-## Catch records
+#### Catch records ####
 readGHCatch <- function(file) {
   colT <- cols(
     Date = col_date(format = ""),
@@ -48,15 +46,45 @@ readGHCatch <- function(file) {
 }
 datCatch <- readGHCatch("data_karup_catch_seatrout_2003-2019.csv")
 tmp <- readGHCatch("data_karup_catch_seatrout_2020-.csv")
-datCatch <- bind_rows(datCatch, tmp) 
-tmp <- transmute(datCatch, 
+datCatch <- bind_rows(datCatch, tmp) %>% mutate(Weight = if_else(Killed, Weight, NA_real_))
+
+
+#### Weight ####
+datCatch <- datCatch %>% 
+  mutate(Length = round(Length), Weight = round(Weight,1), Month = month(Date, label = T)) %>% 
+  mutate(Period = case_when(
+    Month == "apr" ~ "Forår/Som",
+    Month == "maj" ~ "Forår/Som",
+    Month == "jun" ~ "Forår/Som",
+    Month == "jul" ~ "Som",
+    Month == "aug" ~ "Som",
+    Month == "sep" ~ "Efterår",
+    Month == "okt" ~ "Efterår",
+    Month == "mar" ~ "Vinter",
+  )) 
+datCKilled <- dplyr::filter(datCatch, Length > 39 & Killed) 
+mod <- lm(log(Weight) ~ Period*log(Length), datCKilled)
+datP <- expand_grid(Length = 40:max(dat$Length), Period = unique(dat$Period))
+res <- predict(mod, datP, interval='prediction', level=0.95) 
+res <- exp(res)
+res <- res %>% as_tibble() 
+res <- bind_cols(datP, res) %>% group_by(Period) #%>% select(Length:Avg)
+colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
+tabCatch <- left_join(datCatch, res, by = c("Length", "Period")) %>% 
+  mutate(NoWeight = is.na(Weight), Weight = if_else(is.na(Weight), Avg, Weight)) %>% 
+  mutate(Fulton = Weight*100000/Length^3)
+tmp <- transmute(tabCatch, 
                   K = if_else(!Killed, '<img src="www/c_and_r.gif" alt="C&R">', "", ""),
                   M = if_else(Sex == 'Male', '<img src="www/boy.gif" alt="Han">', "", ""),
                   F = if_else(Sex == 'Female', '<img src="www/girl.gif" alt="Hun">', "", ""),
-                  C = if_else(!is.na(Foto), paste0('<a href="', Foto, '"><img src="www/foto.gif" alt="Foto"></a>'), "", "")
+                  C = if_else(!is.na(Foto), paste0('<a href="', Foto, '", target="_blank"><img src="www/foto.gif" alt="Foto"></a>'), "", "")
                   ) %>% transmute(Misc = paste0('<span>',K,M,F,C,'</span>'))
-datCatch <- bind_cols(datCatch, tmp) %>% select(Date, Name, Length, Weight, Method, Place, Fulton, Misc)
+tabCatch <- bind_cols(tabCatch, tmp) %>% 
+  select(Date, Name, Length, Weight, Method, Place, Fulton, Misc, NoWeight) %>% 
+  mutate(Weight = round(Weight,1))
 
+
+#### Waterlevels ####
 readGHWLevels <- function(years) {
   colT <- cols(
     Date = col_datetime(format = ""),
@@ -95,34 +123,109 @@ Fangster
 Row
 -----------------------------------------------------------------------
 
+### Fangster seneste syv dage {.value-box}
+
 ```{r}
-DT::renderDataTable(
-  DT::datatable(
-    datCatch,
+renderValueBox({
+  valueBox(
+    value = datCatch %>% dplyr::filter(Date > now() - days(7)) %>% nrow(),
+    icon = "fa-chart-line",
+    color = "primary"
+  )
+})
+```
+
+### Fangster i år {.value-box}
+
+```{r}
+renderValueBox({
+  valueBox(
+    value = datCatch %>% dplyr::filter(year(Date) == year(now())) %>% nrow(),
+    icon = "fa-fish",
+    color = "warning"
+  )
+})
+```
+
+### Største havørred i år {.value-box}
+
+```{r}
+renderValueBox({
+  ct <- datCatch %>% dplyr::filter(year(Date) == year(now())) %>% 
+    dplyr::filter(Weight == max(Weight, na.rm = T)) %>% arrange(Weight, Length)
+  valueBox(
+    caption = paste("Største havørred i år fanget af", ct$Name[1]),
+    value = paste(ct$Weight[1], "kg og", ct$Length[1], "cm"),
+    icon = "fa-trophy",
+    color = "success"
+  )
+})
+```
+
+
+Row
+-----------------------------------------------------------------------
+
+```{r Catches table}
+  DT::renderDataTable(
+    as.datatable(
+    formattable(tabCatch, 
+      list(NoWeight = FALSE, 
+           Weight = formatter("span", style = ~ formattable::style(color = ifelse(NoWeight, "grey", "black"))))), 
     colnames = c('Dato', 'Navn', 'Længde', 'Vægt', 'Metode', 'Sted', 'Fulton', 'Diverse'),
     class = 'stripe row-border order-column nowrap', # nowrap display compact
     rownames = FALSE,
-    # filter = 'bottom',
     escape = FALSE,
     options = list(pageLength = 15, order = list(list(0, 'desc')), 
-                   # autoWidth = TRUE,
-                   columnDefs = list(list(className = 'dt-center', targets = 2:7),
-                                     list(targets = 7, render = JS(
-                                       "function(data, type, row, meta) {",
-                                       "return data;",
-                                       "}"))
-                                     # list(width = '70px', targets = c(2,3,6,7))
-                                ),
-                   fixedHeader = TRUE, 
-                   rowGroup = list(dataSrc = 0, startRender = JS("function(rows, group) {",
-                                                                 "var res = group.split('-');",
-                                                                 "res = res[2] + '/' + res[1] + '/' + res[0];",
-                                                                 "return res + ' (' + rows.count() + ')';}"))
-              ),
-    extensions = c('Responsive','FixedHeader','RowGroup')
+                 # autoWidth = TRUE,
+                 columnDefs = list(list(className = 'dt-center', targets = 2:7),
+                                   list(targets = 7, render = JS(
+                                     "function(data, type, row, meta) {",
+                                     "return data;",
+                                     "}"))
+                                   # list(targets = 3, render = JS(
+                                   #   "function(data, type, row, meta) {",
+                                   #   "return 'test';",
+                                   #   "}"))
+                                   # list(width = '70px', targets = c(2,3,6,7))
+                              ),
+                 fixedHeader = TRUE, 
+                 rowGroup = list(dataSrc = 0, startRender = JS("function(rows, group) {",
+                                                               "var res = group.split('-');",
+                                                               "res = res[2] + '/' + res[1] + '/' + res[0];",
+                                                               "return res + ' (' + rows.count() + ')';}"))
+            ),
+      extensions = c('Responsive','FixedHeader','RowGroup')
   ) %>% 
-    formatDate('Date', 'toLocaleDateString') %>% 
-    formatCurrency(c('Length','Weight','Fulton'), digits = c(0,1,2), currency = "") 
+  formatDate('Date', 'toLocaleDateString') %>% 
+  formatCurrency(c('Length','Fulton'), digits = c(0,2), currency = "")
+  # DT::datatable(
+  #   tabCatch,
+  #   colnames = c('Dato', 'Navn', 'Længde', 'Vægt', 'Metode', 'Sted', 'Fulton', 'Diverse'),
+  #   class = 'stripe row-border order-column nowrap', # nowrap display compact
+  #   rownames = FALSE,
+  #   # filter = 'bottom',
+  #   escape = FALSE,
+  #   options = list(pageLength = 15, order = list(list(0, 'desc')), 
+  #                  list(visible=FALSE, targets="NoWeight"),
+  #                  # autoWidth = TRUE,
+  #                  columnDefs = list(list(className = 'dt-center', targets = 2:7),
+  #                                    list(targets = 7, render = JS(
+  #                                      "function(data, type, row, meta) {",
+  #                                      "return data;",
+  #                                      "}"))
+  #                                    # list(width = '70px', targets = c(2,3,6,7))
+  #                               ),
+  #                  fixedHeader = TRUE, 
+  #                  rowGroup = list(dataSrc = 0, startRender = JS("function(rows, group) {",
+  #                                                                "var res = group.split('-');",
+  #                                                                "res = res[2] + '/' + res[1] + '/' + res[0];",
+  #                                                                "return res + ' (' + rows.count() + ')';}"))
+  #             ),
+  #   extensions = c('Responsive','FixedHeader','RowGroup')
+  # ) %>% 
+  #   formatDate('Date', 'toLocaleDateString') %>% 
+  #   formatCurrency(c('Length','Weight','Fulton'), digits = c(0,1,2), currency = "") 
 )
 ```
 
@@ -203,92 +306,144 @@ renderPlot({
 
 
 
-Statistik
+Vejrudsigt
+=======================================================================
+
+<a class="weatherwidget-io" href="https://forecast7.com/da/56d319d17/karup/" data-label_1="KARUP" data-font="Ubuntu" data-days="5" data-theme="original" >KARUP</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+
+<a class="weatherwidget-io" href="https://forecast7.com/da/56d399d00/haderup/" data-label_1="HAGEBRO" data-font="Ubuntu" data-days="5" data-theme="gray" >HAGEBRO</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+
+<a class="weatherwidget-io" href="https://forecast7.com/da/56d579d03/skive/" data-label_1="SKIVE" data-font="Ubuntu" data-days="5" data-theme="original" >SKIVE</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+
+<div
+data-windywidget="forecast"
+data-lat="56.407980"
+data-lng="9.011550"
+data-appid="f10a0ad36b5f5fb14d30b7f35ac95343">
+</div>
+<script async="true" data-cfasync="false" type="text/javascript" src="https://windy.app/widget/windy_forecast_async.js"></script>
+
+
+Windy Map
+=======================================================================
+
+```{r}
+tags$iframe(width="100%", height="100%", seamless = NA,  src="https://embed.windy.com/embed2.html?lat=56.385&lon=9.005&zoom=11&level=surface&overlay=wind&menu=&message=true&marker=true&calendar=now&pressure=&type=map&location=coordinates&detail=true&detailLat=56.408&detailLon=9.009&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1")
+```
+
+
+Vægt
 =======================================================================
 
 Row
 -----------------------------------------------------------------------
 
-### stat_density Example
+### Estimat at vægt givet længde
 
-```{r, eval=FALSE}
-dfGamma = data.frame(nu75 = rgamma(100, 0.75),
-           nu1 = rgamma(100, 1),
-           nu2 = rgamma(100, 2))
-
-dfGamma = stack(dfGamma)
-
-p <- ggplot(dfGamma, aes(x = values)) +
-            stat_density(aes(group = ind, color = ind),position="identity",geom="line")
-ggplotly(p)
-```
-
-### Add Conditional Density Curves to Plot
-
-```{r, eval=FALSE}
-dim1 <- c(rnorm(100, mean=1), rnorm(100, mean=4))
-dim2 <- rnorm(200, mean=1)
-cat <- factor(c(rep("a", 100), rep("b", 100)))
-mydf <- data.frame(cbind(dim2, dim1, cat))
-p <- ggplot(data=mydf, aes(x=dim1, y=dim2, colour=as.factor(cat))) +
-  geom_point() +
-  stat_density(aes(x=dim1, y=(-2+(..scaled..))),
-               position="identity", geom="line")
-
-stuff <- ggplot_build(p)
-xrange <- stuff[[2]]$ranges[[1]]$x.range  # extract the x range to make the
-                                          # new densities align with y-axis
-
-## Get densities of dim2
-ds <- do.call(rbind, lapply(unique(mydf$cat), function(lev) {
-    dens <- with(mydf, density(dim2[cat==lev]))
-    data.frame(x=dens$y+xrange[1], y=dens$x, cat=lev)
-}))
-
-p <- p + geom_path(data=ds, aes(x=x, y=y, color=factor(cat)))
-
-ggplotly(p)
-```
-
-Row
------------------------------------------------------------------------
-
-### geom_density and facet_wrap Together
-
-```{r, eval=FALSE}
-dd<-data.frame(matrix(rnorm(144, mean=2, sd=2),72,2),c(rep("A",24),rep("B",24),rep("C",24)))
-colnames(dd) <- c("x_value", "Predicted_value",  "State_CD")
-
-dd <- data.frame(
-  predicted = rnorm(72, mean = 2, sd = 2),
-  state = rep(c("A", "B", "C"), each = 24)
-)
-
-grid <- with(dd, seq(min(predicted), max(predicted), length = 100))
-normaldens <- ddply(dd, "state", function(df) {
-  data.frame(
-    predicted = grid,
-    density = dnorm(grid, mean(df$predicted), sd(df$predicted))
-  )
+```{r seatrout weight estimate}
+# dat <- datCatch %>% 
+#   mutate(Month = month(Date, label = T), Quarter = quarter(Date)) %>% 
+#   mutate(Period = case_when(
+#     Month == "apr" ~ "Forår/Som",
+#     Month == "maj" ~ "Forår/Som",
+#     Month == "jun" ~ "Forår/Som",
+#     Month == "jul" ~ "Som",
+#     Month == "aug" ~ "Som",
+#     Month == "sep" ~ "Efterår",
+#     Month == "okt" ~ "Efterår",
+#     Month == "mar" ~ "Vinter",
+#   )) 
+# dat <- dplyr::filter(dat, Length > 39 & Killed) 
+# mod <- lm(log(Weight) ~ Period*log(Length), dat)
+# # summary(mod1)  
+# datP <- expand_grid(Length = 40:max(dat$Length), Period = unique(dat$Period))
+# res <- predict(mod, datP, interval='prediction', level=0.95) 
+# res <- exp(res)
+# res <- res %>% as_tibble() 
+# res <- bind_cols(datP, res) %>% group_by(Period)
+# colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
+# res <- res %>% mutate(Fulton = Avg*100000/Length^3) 
+# summarise(res, min = min(Fulton), max = max(Fulton))
+renderPlot({
+  # res <- pivot_longer(res, 3:5)
+  ggplot(res, aes(x = Length, y = Avg)) + 
+    geom_line(aes(group = Period, color = Period)) +
+    labs(title = "Vægt som en funktion af længde", color = "Periode") +
+    ylab("Vægt") + theme(legend.position="bottom") + 
+    scale_color_brewer(palette = "Set1")
 })
 
-p <- ggplot(dd, aes(predicted))  +
-            geom_density() +
-            geom_line(aes(y = density), data = normaldens, colour = "red") +
-            facet_wrap(~ state)
-ggplotly(p)
+# 
+# datCatch <- readGHCatch("data_karup_catch_seatrout_2003-2019.csv")
+# tmp <- readGHCatch("data_karup_catch_seatrout_2020-.csv")
+# datCatch <- bind_rows(datCatch, tmp) %>% mutate(Month = month(Date), Quarter = quarter(Date))
+# dat <- dplyr::filter(datCatch, Length > 39 & Killed)
+# dplyr::filter(dat, Month == "jan")
+# View(dplyr::filter(dat, Month %in% c(1,2,11,12)))  # ser ud til at Herning data er vendt forkert!!
+# ggplot(dat, aes(x = Length, y = Weight)) + geom_point(na.rm = T) + facet_grid(rows = vars(Month))
+# 
+# 
+# mod1 <- lm(log(Weight) ~ log(Length), dat)
+# # summary(mod1)
+# lim <- 40:max(dat$Length)
+# res <- predict(mod1, data.frame(Length = lim), interval='prediction', level=0.95)
+# res <- exp(res)
+# res <- res %>% as_tibble() 
+# res <- res %>% add_column(Length = lim, .before = T)
+# colnames(res) <- c("Length", "Avg", "Lower", "Upper")
+# renderPlot({
+#   res <- pivot_longer(res, 2:4)
+#   pW <- ggplot(dat, aes(x = Length, y = Weight)) + geom_point(na.rm = T) + 
+#     geom_line(aes(x = Length, y = value, colour = name), data = res) 
+#   pW
+# })
 ```
 
-### Density and Scatterplot Overlay Using geom_density
+<!-- ### Beregningsgrundlag -->
 
-```{r, eval=FALSE}
-df <- data.frame(x <- rchisq(1000, 10, 10),
-                 y <- rnorm(1000))
+<!-- Givet alle fangster af ikke genudsatte fisk, kan vi estimere [vægt som en funktion af længde](https://en.wikipedia.org/wiki/Standard_weight_in_fish). Formlen for vægten ($v$) af en havørred som en funtion af længde ($l$) bliver: -->
 
-p <- ggplot(df, aes(x, y)) + 
-     geom_point(alpha = 0.5) + 
-     geom_density_2d() + 
-     theme(panel.background = element_rect(fill = '#ffffff'))
+<!-- $$ v = `r round(exp(mod$coefficients[1]),8)` \cdot l^{`r round(mod$coefficients[2],2)`}$$ -->
+<!-- Estimaterne med et 95% konfidensinterval bliver: -->
 
-ggplotly(p)
+### Estimat at vægt givet længde
+
+```{r}
+tab <- bind_cols(dplyr::filter(res, Period == "Forår/Som"),
+                 dplyr::filter(res, Period == "Som"), 
+                 dplyr::filter(res, Period == "Efterår"), 
+                 dplyr::filter(res, Period == "Vinter")) %>% ungroup()
+tab <- tab %>% 
+  transmute('Længde' = Length, 
+            'Forår/Som' = str_c(format(round(Avg,1), 1), " [",format(round(Lower,1), digits = 1),",",format(round(Upper,1), digits = 1),"]"),
+            'Som' = str_c(format(round(Avg1,1), 1), " [",format(round(Lower1,1), digits = 1),",",format(round(Upper1,1), digits = 1),"]"),
+            'Efterår' = str_c(format(round(Avg2,1), 1), " [",format(round(Lower2,1), digits = 1),",",format(round(Upper2,1), digits = 1),"]"),
+            'Vinter' = str_c(format(round(Avg3,1), 1), " [",format(round(Lower3,1), digits = 1),",",format(round(Upper3,1), digits = 1),"]")
+            ) 
+
+DT::renderDataTable(
+  DT::datatable(
+    tab,
+    colnames = c("Længde", "Forår/Som", "Sommer", "Efterår", "Vinter"),
+    class = 'stripe row-border order-column nowrap', # nowrap display compact
+    rownames = FALSE,
+    # filter = 'bottom',
+    escape = FALSE,
+    options = list(pageLength = 60, 
+                   # autoWidth = TRUE,
+                   fixedHeader = TRUE
+              ),
+    extensions = c('Responsive','FixedHeader','RowGroup')
+  ) 
+)
 ```
+
