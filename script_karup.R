@@ -118,7 +118,7 @@ tabCatch <- bind_cols(tabCatch, tmp) %>%
   mutate(Weight = round(Weight,1)) %>% arrange(desc(Date))
 
 ## Save to file
-fn <- "data/data_karup_web_catch_seatrout.csv"
+fn <- "data/data_karup_catch_seatrout_web.csv"
 write_csv(tabCatch, fn)
 
 
