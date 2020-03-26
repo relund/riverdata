@@ -63,6 +63,66 @@ write_csv(dat4, fn)
 
 
 
+#### Estimate weight given length ####
+prefix <- "https://raw.githubusercontent.com/relund/skjern/master/data/"
+#### Catch records ####
+readGHCatch <- function(file) {
+  colT <- cols(
+    Date = col_date(format = ""),
+    Length = col_double(),
+    Weight = col_double(),
+    Name = col_character(),
+    Place = col_character(),
+    Method = col_character(),
+    Cut = col_logical(),
+    Foto = col_character(),
+    Killed = col_logical(),
+    Sex = col_character(),
+    Fulton = col_double()
+  )
+  read_csv(paste0(prefix, file), col_types = colT)
+}
+datCatch <- readGHCatch("data_karup_catch_seatrout_2003-2019.csv")
+datCatch <- bind_rows(datCatch, dat4) %>% mutate(Weight = if_else(Killed, Weight, NA_real_))
+datCatch <- datCatch %>% 
+  mutate(Length = round(Length), Weight = round(Weight,1), Month = month(Date, label = T)) %>% 
+  mutate(Period = case_when(
+    Month == "apr" ~ "Forår/Som",
+    Month == "maj" ~ "Forår/Som",
+    Month == "jun" ~ "Forår/Som",
+    Month == "jul" ~ "Forår/Som",
+    Month == "aug" ~ "Forår/Som",
+    Month == "sep" ~ "Efterår",
+    Month == "okt" ~ "Efterår",
+    Month == "mar" ~ "Vinter",
+  )) 
+datCKilled <- dplyr::filter(datCatch, Length > 39 & Killed) 
+mod <- lm(log(Weight) ~ Period*log(Length), datCKilled)
+datP <- expand_grid(Length = 40:max(datCKilled$Length), Period = unique(datCKilled$Period))
+res <- predict(mod, datP, interval='prediction', level=0.95) 
+res <- exp(res)
+res <- res %>% as_tibble() 
+res <- bind_cols(datP, res) %>% group_by(Period) #%>% select(Length:Avg)
+colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
+tabCatch <- left_join(datCatch, res, by = c("Length", "Period")) %>% 
+  mutate(NoWeight = is.na(Weight), Weight = if_else(is.na(Weight), Avg, Weight)) %>% 
+  mutate(Fulton = Weight*100000/Length^3)
+tmp <- transmute(tabCatch, 
+                 K = if_else(!Killed, '<img src="www/c_and_r.gif" alt="C&R">', "", ""),
+                 M = if_else(Sex == 'Male', '<img src="www/boy.gif" alt="Han">', "", ""),
+                 F = if_else(Sex == 'Female', '<img src="www/girl.gif" alt="Hun">', "", ""),
+                 C = if_else(!is.na(Foto), paste0('<a href="', Foto, '", target="_blank"><img src="www/foto.gif" alt="Foto"></a>'), "", "")
+) %>% transmute(Misc = paste0('<span>',K,M,F,C,'</span>'))
+tabCatch <- bind_cols(tabCatch, tmp) %>% 
+  select(Date, Name, Length, Weight, Method, Place, Fulton, Misc, NoWeight) %>% 
+  mutate(Weight = round(Weight,1)) %>% arrange(desc(Date))
+
+## Save to file
+fn <- "data/data_karup_web_catch_seatrout.csv"
+write_csv(tabCatch, fn)
+
+
+
 
 
 #### Calc average water level ####
