@@ -130,9 +130,12 @@ for (i in 1:nrow(stations)) {
 }
 dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
 dat <- bind_rows(datOld, dat) 
-dat <- dat %>% dplyr::filter(year(Date) == y) %>% arrange_all() %>% distinct(Date, `Karup By (054764)`, .keep_all = T)
+dat <- dat %>% dplyr::filter(year(Date) == y) %>% 
+  arrange_all(desc) %>% 
+  distinct(Date, `Karup By (054764)`, .keep_all = T)
 write_csv(dat, fn)
-print(range(dat$Date))
+unique(date(dat$Date))
+range(dat$Date)
 
 
 
