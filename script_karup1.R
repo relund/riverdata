@@ -173,7 +173,7 @@ write_csv(rMeans, fn)
 
 
 
-#### Get waterlevel for current year ####
+#### Update data for waterlevel in current year ####
 y <- year(now())
 fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
 if (file.exists(fn)) datOld <- read_csv(fn) else datOld <- NULL
@@ -199,9 +199,29 @@ dat <- bind_rows(datOld, dat)
 dat <- dat %>% dplyr::filter(year(Date) == y) %>% 
   arrange_all(desc) %>% 
   distinct(Date, `Karup By (054764)`, .keep_all = T)
+
+## write to file
 write_csv(dat, fn)
 unique(date(dat$Date))
 range(dat$Date)
+
+
+
+#### Relative water level datasets ####
+datWLevel <- readWLevels(2013:year(now()))
+rMeans <- read_csv(paste0(prefix,"data_karup_waterlevel_avg90.csv"))
+datWLevel <- datWLevel %>% mutate(Day = yday(Date))
+datWLevel <- left_join(datWLevel, rMeans)
+datS <- datWLevel %>% dplyr::filter(Date > now() - days(14))
+datWLevel <- datWLevel %>% mutate(`Karup By` = `Karup By (054764)` - `Karup By (054764) rAvg90`, 
+                              `Hagebro` = `Hagebro (001762)` - `Hagebro (001762) rAvg90`,
+                              `Nørkærbro` = `Nørkærbro (001767)` - `Nørkærbro (001767) rAvg90`) %>% 
+  select(Date, `Karup By`, `Hagebro`, `Nørkærbro`)
+datWLevel <- datWLevel %>% pivot_longer(cols = contains(c('K','H')), names_to = 'Place', values_to = 'Level')
+for (y in 2013:year(now())) {
+  fn <- paste0("data/data_karup_waterlevel_relative_long_", y, ".csv")
+  write_csv(dplyr::filter(datWLevel, year(Date) == y), fn)
+}
 
 
 
