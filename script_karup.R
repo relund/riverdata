@@ -4,7 +4,7 @@ library(tidyverse)
 library(lubridate)
 library(zoo) 
 
-#### Get current catches (data_karup_catch_seatrout_2020-.csv) ####
+#### Get current catches ####
 ## data to today
 dat <- fromJSON("https://fangstjournalen.dtu.dk/fangst.nsf/service.xsp?open&assoc=49F1767931B31CD0C1258398007953C0&type=1")
 cols <- dat$data$cols
