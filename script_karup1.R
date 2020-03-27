@@ -87,14 +87,14 @@ datCatch <- bind_rows(datCatch, dat4) %>% mutate(Weight = if_else(Killed, Weight
 datCatch <- datCatch %>% 
   mutate(Length = round(Length), Weight = round(Weight,1), Month = month(Date, label = T)) %>% 
   mutate(Period = case_when(
-    Month == "apr" ~ "Forår/Som",
-    Month == "maj" ~ "Forår/Som",
-    Month == "jun" ~ "Forår/Som",
-    Month == "jul" ~ "Forår/Som",
-    Month == "aug" ~ "Forår/Som",
-    Month == "sep" ~ "Efterår",
-    Month == "okt" ~ "Efterår",
-    Month == "mar" ~ "Vinter",
+    Month == "apr" ~ "Apr-Aug",
+    Month == "maj" ~ "Apr-Aug",
+    Month == "jun" ~ "Apr-Aug",
+    Month == "jul" ~ "Apr-Aug",
+    Month == "aug" ~ "Apr-Aug",
+    Month == "sep" ~ "Sep-Okt",
+    Month == "okt" ~ "Sep-Okt",
+    Month == "mar" ~ "Marts",
   )) 
 datCKilled <- dplyr::filter(datCatch, Length > 39 & Killed) 
 mod <- lm(log(Weight) ~ Period*log(Length), datCKilled)
@@ -105,22 +105,9 @@ res <- res %>% as_tibble()
 res <- bind_cols(datP, res) %>% group_by(Period) #%>% select(Length:Avg)
 colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
 
-#### Save weight estimates for web ####
-tab <- bind_cols(dplyr::filter(res, Period == "Forår/Som"),
-                 # dplyr::filter(res, Period == "Som"), 
-                 dplyr::filter(res, Period == "Efterår"), 
-                 dplyr::filter(res, Period == "Vinter")) %>% ungroup()
-tab <- tab %>% #arrange(desc(Length)) %>% 
-  transmute('Længde' = Length, 
-            'Apr-Aug' = str_c(format(round(Avg,4), 1), " [",format(round(Lower,4), digits = 1, trim = T),",",format(round(Upper,4), digits = 1),"]"),
-            # 'Som' = str_c(format(round(Avg1,4), 1), " [",format(round(Lower1,4), digits = 1),",",format(round(Upper1,4), digits = 1),"]"),
-            'Sep-Okt' = str_c(format(round(Avg1,4), 1), " [",format(round(Lower1,4), digits = 1, trim = T),",",format(round(Upper1,4), digits = 1),"]"),
-            'Marts' = str_c(format(round(Avg2,4), 1), " [",format(round(Lower2,4), digits = 1, trim = T),",",format(round(Upper2,4), digits = 1),"]")) 
-
 ## Save to file
-fn <- "data/data_karup_weight_seatrout_web.csv"
-write_csv(tab, fn)
-
+fn <- "data/data_karup_weight_seatrout.csv"
+write_csv(res, fn)
 
 
 #### Save catches for web ####
