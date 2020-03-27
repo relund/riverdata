@@ -1,4 +1,4 @@
-name: Run R script Skjern
+name: R script Skjern 1
 
 on: 
   schedule: 
@@ -15,7 +15,7 @@ jobs:
       - name: Install packages
         run: Rscript install.R
       - name: Run R script
-        run: Rscript script_skjern.R
+        run: Rscript script_skjern1.R
       - name: Commit results
         run: |
           git commit data/data_skjern_flow_lock.csv --allow-empty -m 'gHA build: ${{github.run_number}}' || echo "No changes to commit"
