@@ -11,7 +11,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2020-03-04,Benny Amstrup,58,2.1,Orm,Nedre,1.076304891549469,"<span><img src=""www/girl.gif"" alt=""Hun""></span>",FALSE
 2020-03-04,Michael Broberg,56,1.6,Spin,Mellem,0.8935904943110844,"<span><img src=""www/c_and_r.gif"" alt=""C&R""><img src=""www/boy.gif"" alt=""Han""></span>",TRUE
 2020-03-02,Benny Amstrup,60,2.3,Orm,Nedre,1.0648148148148147,<span></span>,FALSE
-2020-03-02,Henrik Svejborg,35,NA,Flue,Nedre,NA,"<span><img src=""www/c_and_r.gif"" alt=""C&R""><img src=""www/girl.gif"" alt=""Hun""></span>",TRUE
 2020-03-02,Kurt Hornshøj Riisgaard,60,1.5,Orm,Nedre,0.6944444444444444,"<span><img src=""www/girl.gif"" alt=""Hun""></span>",FALSE
 2020-03-02,Peter Wittrup,65,2.4,Spin,Mellem,0.8818722810093336,"<span><img src=""www/c_and_r.gif"" alt=""C&R""><img src=""www/boy.gif"" alt=""Han""></span>",TRUE
 2020-03-01,Michael Bækdal,63,2.9,Flue,Nedre,1.1597819609913336,"<span><img src=""www/girl.gif"" alt=""Hun""></span>",FALSE
@@ -3171,7 +3170,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2016-09-11,Allan Klokker,81,6.1,Flue,Nedre,1.1478226181269418,<span></span>,FALSE
 2016-09-11,Hans-Rudolph Lenler-Eriksen,60,2,Spin,Mellem,0.9259259259259259,<span></span>,FALSE
 2016-09-11,Hans J. Jacobsen,69,3.6,Flue,Nedre,1.095860387386647,<span></span>,FALSE
-2016-09-11,Jesper Moesgaard,38,NA,Spin,Øvre,NA,<span></span>,TRUE
 2016-09-11,Peter Espersen,45,1.1,Flue,Nedre,1.207133058984911,<span></span>,FALSE
 2016-09-11,Peter Nyhuus,55,2,Flue,Mellem,1.2021036814425243,<span></span>,FALSE
 2016-09-10,Frank Holdt Olsen,73,4.4,Spin,Øvre,1.131055969276407,<span></span>,FALSE
@@ -3516,7 +3514,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2016-08-09,Phil Bra,63,3,Flue,Nedre,1.199774442404828,<span></span>,FALSE
 2016-08-09,Poul B. Oddershede,50,1.5,Spin,Mellem,1.2,<span></span>,FALSE
 2016-08-09,Povl Jakobsen,62,3.1,Flue,Mellem,1.3007284079084287,<span></span>,FALSE
-2016-08-09,Semsudin Mujcinovic,35,NA,Spin,Øvre,NA,<span></span>,TRUE
 2016-08-09,Torben Smedegaard,50,1.5,Spin,Nedre,1.2,<span></span>,FALSE
 2016-08-09,Torben Smedegaard,57,2.2,Spin,Nedre,1.1879498685155487,<span></span>,FALSE
 2016-08-09,Torben Smedegaard,60,2.5,Spin,Nedre,1.1574074074074074,<span></span>,FALSE
@@ -3797,7 +3794,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2016-07-24,Jacob Hansen,65,3.1,Spin,Øvre,1.128812016385981,<span></span>,FALSE
 2016-07-24,Kenneth K. Nielsen,62,2.8,Flue,Mellem,1.174851465207613,<span></span>,FALSE
 2016-07-24,Kristian S Andersen,60,2.9,Flue,Mellem,1.3425925925925926,<span></span>,FALSE
-2016-07-24,Lasse Frandsen,35,NA,Flue,Øvre,NA,<span></span>,TRUE
 2016-07-24,Mikael Rønsholdt,56,2.1,Flue,Nedre,1.1957908163265305,<span></span>,FALSE
 2016-07-24,Mogens Skaarup,62,2.8,Flue,Mellem,1.174851465207613,<span></span>,FALSE
 2016-07-24,Ole Lenler-Eriksen,81,6.6,Spin,Øvre,1.2419064392848878,<span></span>,FALSE
@@ -3996,7 +3992,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2016-07-14,Henrik Johansen,56,2.1,Spin,Nedre,1.1957908163265305,<span></span>,FALSE
 2016-07-14,Henrik Ravn,58,2.4,Flue,Mellem,1.2300627331993932,<span></span>,FALSE
 2016-07-14,Henrik Ravn,74,5,Flue,Nedre,1.2338854559453536,<span></span>,FALSE
-2016-07-14,Morten Kirkeby Hansen,NA,NA,Flue,Øvre,NA,<span></span>,TRUE
 2016-07-14,Morten Petersen,63,2.5,Flue,Mellem,0.9998120353373566,<span></span>,FALSE
 2016-07-14,Nils Munkgaard,62,3,Spin,Nedre,1.2587694270081569,<span></span>,FALSE
 2016-07-14,Nils Munkgaard,77,5.7,Spin,Nedre,1.248540631235858,<span></span>,FALSE
@@ -4441,7 +4436,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2016-06-18,Finn Vestergård Jensen,47,1.3,Spin,Nedre,1.252131030696474,<span></span>,FALSE
 2016-06-17,Claus Andersen,81,7.2,Flue,Nedre,1.354807024674423,<span></span>,FALSE
 2016-06-17,Lars Bill Nielsen,57,2,Spin,Mellem,1.079954425923226,<span></span>,FALSE
-2016-06-17,Morten Kirkeby Hansen,NA,NA,Spin,Øvre,NA,<span></span>,TRUE
 2016-06-17,Niels J Jensen,42,1,Orm,Nedre,1.3497462477054314,<span></span>,FALSE
 2016-06-17,Patrick Boel,72,4.4,Flue,Nedre,1.1788408779149522,<span></span>,FALSE
 2016-06-17,Peter Østergaard Jensen,76,5.5,Flue,Mellem,1.2529158769499926,<span></span>,FALSE
@@ -4472,7 +4466,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2016-06-12,Poul Lauridsen,73,5.1,Orm,Nedre,1.3109966916612896,<span></span>,FALSE
 2016-06-12,Rasmus Therkelsen,63,3.3,Flue,Nedre,1.3197518866453106,<span></span>,FALSE
 2016-06-11,Bjarne Petersen,65,3.4,Flue,Mellem,1.238051888939463,<span></span>,FALSE
-2016-06-11,Leon Nielsen,38,NA,Spin,Øvre,NA,<span></span>,TRUE
 2016-06-11,Morten Lillelund,69,3.9,Spin,Nedre,1.1871820863355342,<span></span>,FALSE
 2016-06-11,Niels Peder Larsen,47,1.3,Spin,Nedre,1.252131030696474,<span></span>,FALSE
 2016-06-11,Peder Kjeldgaard,45,1.4,Spin,Nedre,1.5363511659807956,<span></span>,FALSE
@@ -5110,7 +5103,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2015-09-21,Jens Kristensen,63,3.2,Flue,Nedre,1.2797594052318164,<span></span>,FALSE
 2015-09-21,Jim Thaysen,55,2,Spin,Mellem,1.2021036814425243,<span></span>,FALSE
 2015-09-21,Jim Thaysen,55,1.9,Spin,Øvre,1.1243030454247107,<span></span>,TRUE
-2015-09-21,Per Laursen,38,NA,Flue,Øvre,NA,<span></span>,TRUE
 2015-09-21,Torben Smedegaard,50,1.5,Spin,Nedre,1.2,<span></span>,FALSE
 2015-09-21,NA,68,3.7,Orm,Nedre,1.176725015265622,<span></span>,FALSE
 2015-09-20,Edhem Salkic,49,1.5,Spin,Nedre,1.274978962847113,<span></span>,FALSE
@@ -6112,7 +6104,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2015-07-29,Søren Andersen,51,1.5,Orm,Nedre,1.1307868014564535,<span></span>,FALSE
 2015-07-29,Thoni Pedersen,52,1.5,Spin,Nedre,1.0667956304050978,<span></span>,FALSE
 2015-07-29,Veit Wiese,64,3.1,Spin,Mellem,1.18255615234375,<span></span>,FALSE
-2015-07-29,Villy Hedegaard,NA,NA,Flue,Øvre,NA,<span></span>,TRUE
 2015-07-29,NA,50,1.5,Flue,Nedre,1.2,<span></span>,FALSE
 2015-07-29,NA,50,1.7,Flue,Nedre,1.36,<span></span>,FALSE
 2015-07-29,NA,65,3.2,Flue,Nedre,1.1652253072371415,<span></span>,FALSE
@@ -7122,7 +7113,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2015-03-01,Erik D,44,1,Orm,Nedre,1.1739293764087153,<span></span>,FALSE
 2015-03-01,Erik D. Andersen,41,0.7,Orm,Nedre,1.0156556056934751,<span></span>,FALSE
 2015-03-01,Erik D. Andersen,52,1.1,Orm,Nedre,0.7823167956304052,<span></span>,FALSE
-2015-03-01,Finn Højgaard Pedersen,38,NA,Flue,Øvre,NA,<span></span>,TRUE
 2015-03-01,Hans-Jørn Christensen,63,2,Orm,Nedre,0.7998496282698853,<span></span>,FALSE
 2015-03-01,Hans Henrik Jørgensen,71,2.9,Orm,Nedre,0.8102572986021664,<span></span>,FALSE
 2015-03-01,Hans Henrik Jørgensen,73,3.1,Orm,Nedre,0.7968803419901958,<span></span>,FALSE
@@ -7605,7 +7595,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2014-08-29,Finn Lajgaard,45,1.1,Flue,Nedre,1.207133058984911,<span></span>,FALSE
 2014-08-29,Frank Bach,65,2.9,Flue,Mellem,1.0559854346836595,<span></span>,FALSE
 2014-08-29,Jan Andreasen,45,1.1,Flue,Øvre,1.207133058984911,<span></span>,FALSE
-2014-08-29,Jan Andreasen,35,NA,Flue,Øvre,NA,<span></span>,TRUE
 2014-08-29,Mogens Skaarup,54,1.6,Flue,Nedre,1.0161052685058172,<span></span>,FALSE
 2014-08-29,Per Laursen,75,4.8,Flue,Mellem,1.1377777777777778,<span></span>,FALSE
 2014-08-29,Per Laursen,75,4.8,Flue,Øvre,1.1377777777777778,<span></span>,FALSE
@@ -8621,7 +8610,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2014-04-06,Poul Kaergaard Pedersen,73,4.3,Spin,Nedre,1.1053501517928523,<span></span>,FALSE
 2014-04-05,Johan Lynderup,71,4.7,Flue,Nedre,1.3131756218724766,<span></span>,FALSE
 2014-04-04,Benny Amstrup,73,5.1,Orm,Nedre,1.3109966916612896,<span></span>,FALSE
-2014-04-03,Kurt Helstrup Jensen,30,NA,Orm,Øvre,NA,<span></span>,TRUE
 2014-03-31,Jesper Olesen,73,5.3,Flue,Nedre,1.3624083266283993,<span></span>,FALSE
 2014-03-30,Allan Bay,83,8.2,Flue,Nedre,1.4341004604861598,<span></span>,FALSE
 2014-03-30,Jimmy B. Jeppesen,55,1.3,Orm,Nedre,0.7813673929376409,<span></span>,FALSE
@@ -8719,7 +8707,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2014-03-01,Patrick Boel,60,1.7,Spin,Mellem,0.7870370370370371,<span></span>,FALSE
 2014-03-01,Per Dolleris Knudsen,40,0.5,Spin,Mellem,0.78125,<span></span>,FALSE
 2014-03-01,Peter Hønholt,40,0.5,Orm,Nedre,0.78125,<span></span>,FALSE
-2014-03-01,Poul Erik D. Langhoff,28,NA,Flue,Øvre,NA,<span></span>,TRUE
 2014-03-01,Poul Lauridsen,70,2.7,Orm,Nedre,0.7871720116618076,<span></span>,FALSE
 2014-03-01,Semsudin Mujcinovic,73,3,Flue,Øvre,0.7711745245066411,<span></span>,FALSE
 2014-03-01,Torben Kristensen,47,1.1,Spin,Nedre,1.059495487512401,<span></span>,FALSE
@@ -9636,7 +9623,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2013-06-29,Sebastian Olesen,54,1.9,Flue,Nedre,1.2066250063506578,<span></span>,FALSE
 2013-06-29,Sigfred Madsen,48,1.7,Flue,Nedre,1.537181712962963,<span></span>,FALSE
 2013-06-28,Arne Gjørret,74,5.1,Spin,Nedre,1.2585631650642606,<span></span>,FALSE
-2013-06-28,Benny Sørensen,NA,NA,Flue,Øvre,NA,<span></span>,TRUE
 2013-06-28,Bent Kristensen,47,1.4,Spin,Nedre,1.3484488022885102,<span></span>,FALSE
 2013-06-28,Chan Nguyen,70,4.2,Flue,Nedre,1.2244897959183674,<span></span>,FALSE
 2013-06-28,Tommy Rasmussen,64,2.8,Spin,Mellem,1.068115234375,<span></span>,FALSE
@@ -10026,7 +10012,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2012-10-18,Johnny Jeppesen,68,3.7,Flue,Mellem,1.176725015265622,<span></span>,FALSE
 2012-10-18,Johnny Jeppesen,84,7,Flue,Mellem,1.1810279667422525,<span></span>,FALSE
 2012-10-18,Jørgen Brinch Hansen,59,2,Spin,Øvre,0.9738093962868648,<span></span>,FALSE
-2012-10-18,Jørgen Brinch Hansen,25,NA,Spin,Øvre,NA,<span></span>,TRUE
 2012-10-18,Mikael Rønsholdt,65,3.2,Spin,Nedre,1.1652253072371415,<span></span>,FALSE
 2012-10-18,Mikael Rønsholdt,69,3.9,Spin,Nedre,1.1871820863355342,<span></span>,FALSE
 2012-10-18,Poul Erik Andersen,47,1.2,Spin,Mellem,1.1558132591044374,<span></span>,FALSE
@@ -10080,7 +10065,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2012-10-12,Per Kønig,65,2,Spin,Nedre,0.7282658170232135,<span></span>,FALSE
 2012-10-12,Tagw Gamborg Holm,55,1.6,Flue,Mellem,0.9616829451540195,<span></span>,FALSE
 2012-10-11,Jens Christensen,60,2.5,Flue,Øvre,1.1574074074074074,<span></span>,FALSE
-2012-10-11,Jens Christensen,NA,NA,Flue,Øvre,NA,<span></span>,TRUE
 2012-10-11,Margrethe Hansen,55,1.8,Spin,Nedre,1.081893313298272,<span></span>,FALSE
 2012-10-11,Margrethe Hansen,58,2.2,Spin,Nedre,1.1275575054327773,<span></span>,FALSE
 2012-10-11,Per Simonsen,63,2.9,Flue,Mellem,1.1597819609913336,<span></span>,FALSE
@@ -11545,9 +11529,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2011-10-02,Osman Bejtovic Viba,59,2.5,Flue,Nedre,1.217261745358581,<span></span>,FALSE
 2011-10-02,Peder Lundsgaard,56,1.9,Spin,Nedre,1.0819059766763848,<span></span>,FALSE
 2011-10-02,Per Pedersen,55,2.6,Spin,Nedre,1.5627347858752818,<span></span>,FALSE
-2011-10-02,Peter Jessen,20,NA,Flue,Øvre,NA,<span></span>,TRUE
-2011-10-02,Peter Jessen,25,NA,Flue,Øvre,NA,<span></span>,TRUE
-2011-10-02,Peter Jessen,35,NA,Flue,Øvre,NA,<span></span>,TRUE
 2011-10-02,Vagn Nielsen,65,3.3,Flue,Nedre,1.2016385980883022,<span></span>,FALSE
 2011-10-01,Benny  Larsen,44,1,Spin,Nedre,1.1739293764087153,<span></span>,FALSE
 2011-10-01,Emir Adzemovic,42,0.8,Flue,Nedre,1.0797969981643452,<span></span>,FALSE
@@ -11797,7 +11778,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2011-09-01,Per Dolleris Knudsen,73,4.7,Spin,Mellem,1.208173421727071,<span></span>,FALSE
 2011-09-01,Tommy F Hoelgaard,74,4.1,Spin,Mellem,1.0117860738751898,<span></span>,FALSE
 2011-09-01,Tommy Frank Hoelgaard,74,4.1,Flue,Øvre,1.0117860738751898,<span></span>,FALSE
-2011-09-01,Tommy Frank Hoelgaard,35,NA,Flue,Øvre,NA,<span></span>,TRUE
 2011-09-01,NA,62,2.8,Flue,Nedre,1.174851465207613,<span></span>,FALSE
 2011-09-01,NA,70,4.4,Spin,Mellem,1.2827988338192422,<span></span>,FALSE
 2011-08-31,Elvin Frølund,84,7.2,Flue,Nedre,1.2147716229348882,<span></span>,FALSE
@@ -12573,7 +12553,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2010-10-08,Holger Jakobsen,68,3.2,Flue,Mellem,1.0177081213108081,<span></span>,FALSE
 2010-10-08,Jan Heldgaard,44,1,Orm,Øvre,1.1739293764087153,<span></span>,FALSE
 2010-10-08,Kurt Jensen,63,2.8,Spin,Mellem,1.1197894795778394,<span></span>,FALSE
-2010-10-08,Lasse Frandsen,38,NA,Flue,Øvre,NA,<span></span>,TRUE
 2010-10-08,Thomas Høgh,64,3,Orm,Mellem,1.1444091796875,<span></span>,FALSE
 2010-10-08,Uffe Hansen,53,1.8,Flue,Nedre,1.2090517675665147,<span></span>,FALSE
 2010-10-08,NA,50,1.5,Flue,Nedre,1.2,<span></span>,FALSE
@@ -12675,7 +12654,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2010-09-26,Ole Rohde,57,2.2,Spin,Mellem,1.1879498685155487,<span></span>,FALSE
 2010-09-26,Ole Rohde,58,2.3,Spin,Mellem,1.178810119316085,<span></span>,FALSE
 2010-09-26,Poul Lauridsen,76,5.1,Orm,Nedre,1.1617947222627203,<span></span>,FALSE
-2010-09-26,Tommy Frank Hoelgaard,37,NA,Spin,Øvre,NA,<span></span>,TRUE
 2010-09-26,NA,59,2.4,Spin,Mellem,1.1685712755442377,<span></span>,FALSE
 2010-09-25,Einer Olsen,86,8.7,Flue,Nedre,1.3678040927213955,<span></span>,FALSE
 2010-09-25,Emir Adzemovic,48,1.2,Flue,Nedre,1.0850694444444444,<span></span>,FALSE
@@ -13062,11 +13040,9 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2010-08-20,Henrik Hviid Nymann,61,2.2,Spin,Mellem,0.9692441217546844,<span></span>,FALSE
 2010-08-20,Jim Thaysen,53,1.4,Flue,Mellem,0.9403735969961781,<span></span>,FALSE
 2010-08-20,Jim Thaysen,53,1.4,Flue,Øvre,0.9403735969961781,<span></span>,FALSE
-2010-08-20,Jim Thaysen,38,NA,Spin,Øvre,NA,<span></span>,TRUE
 2010-08-20,John Hansen,62,2.7,Spin,Mellem,1.1328924843073411,<span></span>,FALSE
 2010-08-20,Mikael Rønsholdt,55,1.9,Spin,Nedre,1.1419984973703983,<span></span>,FALSE
 2010-08-20,Mikael Rønsholdt,58,2.4,Spin,Nedre,1.2300627331993932,<span></span>,FALSE
-2010-08-20,Mikkel Nagy,30,NA,Flue,Øvre,NA,<span></span>,TRUE
 2010-08-20,Mogens Vestergaard Jensen,76,5.5,Spin,Nedre,1.2529158769499926,<span></span>,FALSE
 2010-08-20,Nicholaj Pedersen,75,4.8,Flue,Mellem,1.1377777777777778,<span></span>,FALSE
 2010-08-20,P:h:christensen,65,3.2,Spin,Nedre,1.1652253072371415,<span></span>,FALSE
@@ -13382,7 +13358,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2010-07-19,Jan Struwe Nørrum,79,4.2,Flue,Mellem,0.8518595892008543,<span></span>,FALSE
 2010-07-19,Nils Sørensen,43,1.1,Spin,Mellem,1.3835259788446301,<span></span>,FALSE
 2010-07-19,NA,73,4.9,Spin,Nedre,1.2595850566941806,<span></span>,FALSE
-2010-07-18,Anders Fabrin,32,NA,Flue,Øvre,NA,<span></span>,TRUE
 2010-07-18,Einer Olsen,77,7,Flue,Nedre,1.5332955120440364,<span></span>,FALSE
 2010-07-18,Frank Bach,46,1.3,Flue,Nedre,1.335579847127476,<span></span>,FALSE
 2010-07-18,Tommy D Knudsen,82,6.9,Spin,Mellem,1.2514327998723176,<span></span>,FALSE
@@ -13467,7 +13442,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2010-07-04,Jeppe Jensen,78,6,Orm,Nedre,1.2643503767764124,<span></span>,FALSE
 2010-07-04,Ronald Sørensen,42,0.9,Flue,Nedre,1.2147716229348882,<span></span>,FALSE
 2010-07-04,Ronald Sørensen,45,1.1,Flue,Nedre,1.207133058984911,<span></span>,FALSE
-2010-07-04,Simon,20,NA,Flue,Øvre,NA,<span></span>,TRUE
 2010-07-03,Jan Struwe Nørrum,65,2.5,Flue,Nedre,0.9103322712790168,<span></span>,FALSE
 2010-07-02,Anders Dalgaard,44,1.1,Flue,Nedre,1.2913223140495869,<span></span>,FALSE
 2010-07-02,Flemming Andersen,51,1.8,Flue,Øvre,1.356944161747744,<span></span>,FALSE
@@ -13493,7 +13467,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2010-06-26,Poul Godt,44,1.1,Spin,Nedre,1.2913223140495869,<span></span>,FALSE
 2010-06-25,Jesper Rasmussen,50,1.4,Flue,Nedre,1.12,<span></span>,FALSE
 2010-06-24,Henning Rehnberg,42,1.1,Spin,Mellem,1.4847208724759746,<span></span>,FALSE
-2010-06-23,Anders Fabrin,35,NA,Flue,Øvre,NA,<span></span>,TRUE
 2010-06-23,Kent Rehnberg,52,2,Orm,Nedre,1.4223941738734638,<span></span>,FALSE
 2010-06-23,Per Laursen,45,1,Flue,Øvre,1.0973936899862826,<span></span>,FALSE
 2010-06-22,Lars Erik Hansen,72,4,Orm,Nedre,1.0716735253772292,<span></span>,FALSE
@@ -13562,7 +13535,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2010-05-12,Preben Olson,76,5,Spin,Nedre,1.1390144335909025,<span></span>,FALSE
 2010-05-10,Per Hollesen,82,8.7,Spin,Nedre,1.5778935302737915,<span></span>,FALSE
 2010-05-09,Edward Mullins,78,5.7,Orm,Nedre,1.2011328579375917,<span></span>,FALSE
-2010-05-08,Anders Fabrin,35,NA,Flue,Øvre,NA,<span></span>,TRUE
 2010-05-05,Britta Broberg,74,5.5,Orm,Nedre,1.357274001539889,<span></span>,FALSE
 2010-05-01,Tove Ankersen,66,3.3,Orm,Nedre,1.147842056932966,<span></span>,FALSE
 2010-04-29,Bruno Broberg,65,3.7,Flue,Nedre,1.347291761492945,<span></span>,FALSE
@@ -13644,7 +13616,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2009-10-25,Frank Bach,51,1.3,Flue,Øvre,0.9800152279289263,<span></span>,FALSE
 2009-10-25,Jakob Larsen,87,7.6,Flue,Mellem,1.1541329348537517,<span></span>,FALSE
 2009-10-25,Palle Raun,80,6,Spin,Nedre,1.171875,<span></span>,FALSE
-2009-10-24,Esben Ludvigsen,34,NA,Flue,Øvre,NA,<span></span>,TRUE
 2009-10-24,Jan Andreasen,60,2,Flue,Øvre,0.9259259259259259,<span></span>,FALSE
 2009-10-24,John Toft,52,1.7,Spin,Øvre,1.2090350477924443,<span></span>,FALSE
 2009-10-22,Bo Fomsgaard,75,5,Flue,Øvre,1.1851851851851851,<span></span>,FALSE
@@ -14125,7 +14096,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2008-10-25,Frank Bach,52,1.7,Flue,Nedre,1.2090350477924443,<span></span>,FALSE
 2008-10-25,Niels Vestermark,66,2.7,Spin,Mellem,0.9391435011269722,<span></span>,FALSE
 2008-10-25,Peder Lundsgaard,70,4,Spin,Nedre,1.1661807580174928,<span></span>,FALSE
-2008-10-24,Dennis Bakke,35,NA,Spin,Øvre,NA,<span></span>,TRUE
 2008-10-24,Svend Mørk,75,5,Flue,Øvre,1.1851851851851851,<span></span>,FALSE
 2008-10-24,Sønderjyden (Uldhuen),70,4,Spin,Nedre,1.1661807580174928,<span></span>,FALSE
 2008-10-24,NA,48,1.2,Flue,Nedre,1.0850694444444444,<span></span>,FALSE
@@ -14139,7 +14109,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2008-10-19,Per Laursen,67,3.5,Flue,Øvre,1.1637069719347126,<span></span>,FALSE
 2008-10-19,Peter Johnsen,54,1.6,Flue,Nedre,1.0161052685058172,<span></span>,FALSE
 2008-10-19,NA,76,5.1,Flue,Mellem,1.1617947222627203,<span></span>,FALSE
-2008-10-18,Bo Fomsgaard,35,NA,Flue,Øvre,NA,<span></span>,TRUE
 2008-10-17,Hans-Rudolph Lenler-Eriksen,66,3.3,Spin,Øvre,1.147842056932966,<span></span>,FALSE
 2008-10-17,Mogens Skoven Nielsen,58,2,Flue,Mellem,1.025052277666161,<span></span>,FALSE
 2008-10-17,Simon Nielsen,62,2.5,Flue,Mellem,1.0489745225067975,<span></span>,FALSE
@@ -14206,7 +14175,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2008-09-24,Poul Kærgård Pedersen,51,1.3,Flue,Mellem,0.9800152279289263,<span></span>,FALSE
 2008-09-24,Poul Kærgård Pedersen,52,1.3,Spin,Nedre,0.9245562130177515,<span></span>,FALSE
 2008-09-22,Bo Jensen,65,3,Spin,Mellem,1.0923987255348202,<span></span>,FALSE
-2008-09-21,Bo Fomsgaard,35,NA,Flue,Øvre,NA,<span></span>,TRUE
 2008-09-21,Flemming Andersen,69,3.6,Flue,Øvre,1.095860387386647,<span></span>,FALSE
 2008-09-21,Per Dolleris Knudsen,66,3.8,Spin,Mellem,1.3217575201046274,<span></span>,FALSE
 2008-09-21,Sønderjyden (Uldhuen),59,2.2,Spin,Mellem,1.0711903359155515,<span></span>,FALSE
@@ -14247,7 +14215,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2008-09-08,Bo Fomsgaard,68,3.5,Flue,Øvre,1.1131182576836962,<span></span>,FALSE
 2008-09-08,F. Jensen,58,2.3,Flue,Mellem,1.178810119316085,<span></span>,FALSE
 2008-09-07,Bo Fomsgaard,48,1,Flue,Øvre,0.9042245370370371,<span></span>,FALSE
-2008-09-07,Christian Skovgård,20,NA,Spin,Øvre,NA,<span></span>,TRUE
 2008-09-07,Helge Jakobsen,76,5.1,Spin,Nedre,1.1617947222627203,<span></span>,FALSE
 2008-09-07,Jan Andreasen,64,2.6,Flue,Øvre,0.9918212890625,<span></span>,FALSE
 2008-09-06,Jens Peter Hartung,68,2.7,Flue,Mellem,0.8586912273559943,<span></span>,FALSE
@@ -14482,7 +14449,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2008-07-19,Helge Jakobsen,65,3.3,Spin,Nedre,1.2016385980883022,<span></span>,FALSE
 2008-07-19,Jan Nors,78,7.4,Flue,Nedre,1.5593654646909085,<span></span>,FALSE
 2008-07-19,Jan Nors,83,8,Flue,Nedre,1.3991224004743026,<span></span>,FALSE
-2008-07-19,Kenneth,20,NA,Flue,Øvre,NA,<span></span>,TRUE
 2008-07-19,P.b. Oddershede,66,3.1,Flue,Mellem,1.0782758716643015,<span></span>,FALSE
 2008-07-19,Poul Godt,50,1.5,Orm,Nedre,1.2,<span></span>,FALSE
 2008-07-19,Steen Hessel,59,2.3,Orm,Øvre,1.1198808057298943,<span></span>,FALSE
@@ -14703,12 +14669,8 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2008-04-06,Jørn Henriksen,90,7,Spin,Øvre,0.9602194787379973,<span></span>,FALSE
 2008-04-02,NA,40,0.5,Spin,Nedre,0.78125,<span></span>,FALSE
 2008-04-01,Jørgen Carlsen,65,3.2,Spin,Nedre,1.1652253072371415,<span></span>,FALSE
-2008-03-31,Esben Ludvigsen,20,NA,Flue,Øvre,NA,<span></span>,TRUE
 2008-03-27,Per Fredskild,40,0.5,Spin,Nedre,0.78125,<span></span>,FALSE
 2008-03-21,Bent A. Sørensen,58,1.6,Spin,Mellem,0.8200418221329288,<span></span>,FALSE
-2008-03-16,Bent Skytte,22,NA,Flue,Øvre,NA,<span></span>,TRUE
-2008-03-16,Bent Skytte,30,NA,Flue,Øvre,NA,<span></span>,TRUE
-2008-03-16,Bent Skytte,38,NA,Flue,Øvre,NA,<span></span>,TRUE
 2008-03-16,Jens Peter Kragh,57,1.8,Flue,Nedre,0.9719589833309035,<span></span>,FALSE
 2008-03-12,Olaf Solberg,40,0.5,Flue,Nedre,0.78125,<span></span>,FALSE
 2008-03-11,Per Fredskild,41,0.7,Spin,Nedre,1.0156556056934751,<span></span>,FALSE
@@ -14801,7 +14763,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2007-09-28,NA,60,2,Flue,Mellem,0.9259259259259259,<span></span>,FALSE
 2007-09-28,NA,60,2,Flue,Øvre,0.9259259259259259,<span></span>,FALSE
 2007-09-28,NA,57,2.2,Flue,Øvre,1.1879498685155487,<span></span>,FALSE
-2007-09-28,NA,NA,NA,Flue,Øvre,NA,<span></span>,TRUE
 2007-09-27,Flemming Hosbjerg,63,3.2,Flue,Mellem,1.2797594052318164,<span></span>,FALSE
 2007-09-27,Gunnar Sahl,79,6.6,Spin,Mellem,1.3386364973156282,<span></span>,FALSE
 2007-09-27,Tommy Hoelgaard,66,3.5,Flue,Mellem,1.2174082422016306,<span></span>,FALSE
@@ -14967,7 +14928,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2007-07-30,Martin Jensen,66,3.3,Spin,Nedre,1.147842056932966,<span></span>,FALSE
 2007-07-30,NA,44,1,Flue,Øvre,1.1739293764087153,<span></span>,FALSE
 2007-07-30,NA,78,5.9,Flue,Mellem,1.2432778704968055,<span></span>,FALSE
-2007-07-30,NA,NA,NA,Flue,Øvre,NA,<span></span>,TRUE
 2007-07-29,Ole Lenler-Eriksen,95,10.9,Spin,Mellem,1.2713223501968216,<span></span>,FALSE
 2007-07-29,Ole Lenler-Eriksen,95,10.9,Spin,Øvre,1.2713223501968216,<span></span>,FALSE
 2007-07-29,Steen Roslev,43,1.2,Spin,Nedre,1.5093010678305054,<span></span>,FALSE
@@ -14983,7 +14943,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2007-07-27,Sønderjyden (Uldhuen),61,2.8,Flue,Nedre,1.23358342768778,<span></span>,FALSE
 2007-07-27,NA,47,1.2,Flue,Øvre,1.1558132591044374,<span></span>,FALSE
 2007-07-26,Asbjørn Schlosser,50,1.5,Spin,Mellem,1.2,<span></span>,FALSE
-2007-07-26,Bo Fomsgaard,38,NA,Flue,Øvre,NA,<span></span>,TRUE
 2007-07-26,Mogens V. Jensen,65,3.5,Spin,Mellem,1.2744651797906237,<span></span>,FALSE
 2007-07-26,Ole Lenler-Eriksen,86,8,Spin,Øvre,1.2577508898587546,<span></span>,FALSE
 2007-07-26,Tommy Hoelgaard,43,1.1,Flue,Mellem,1.3835259788446301,<span></span>,FALSE
@@ -15595,7 +15554,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2005-10-01,NA,65,3.2,Spin,Mellem,1.1652253072371415,<span></span>,FALSE
 2005-10-01,NA,70,3.5,Flue,Mellem,1.0204081632653061,<span></span>,FALSE
 2005-10-01,NA,90,9,Flue,Nedre,1.2345679012345678,<span></span>,FALSE
-2005-10-01,NA,32,NA,Orm,Øvre,NA,<span></span>,TRUE
 2005-09-30,Michael Pedersen,71,4.2,Flue,Mellem,1.1734760876307238,<span></span>,FALSE
 2005-09-29,Michael Pedersen,58,2.2,Flue,Mellem,1.1275575054327773,<span></span>,FALSE
 2005-09-29,NA,49,1.5,Flue,Mellem,1.274978962847113,<span></span>,FALSE
@@ -15782,7 +15740,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2005-07-19,Skovbjerg Eg,54,1.4,Flue,Nedre,0.88909210994259,<span></span>,FALSE
 2005-07-19,Stille Kl. 22:35,77,6.4,Flue,Øvre,1.4018701824402617,<span></span>,FALSE
 2005-07-19,NA,77,6.4,Flue,Mellem,1.4018701824402617,<span></span>,FALSE
-2005-07-19,NA,35,NA,Spin,Øvre,NA,<span></span>,TRUE
 2005-07-18,Jannie Jensen,67,3.2,Flue,Nedre,1.0639606600545946,<span></span>,FALSE
 2005-07-18,Per Svolgaard,55,2,Spin,Nedre,1.2021036814425243,<span></span>,FALSE
 2005-07-18,NA,46,1.4,Flue,Nedre,1.438316758444974,<span></span>,FALSE
@@ -15833,8 +15790,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2005-06-24,NA,55,2,Spin,Nedre,1.2021036814425243,<span></span>,FALSE
 2005-06-22,Mikael Rønsholdt,85,7,Flue,Nedre,1.139833095868105,<span></span>,FALSE
 2005-06-22,NA,70,4.2,Flue,Nedre,1.2244897959183674,<span></span>,FALSE
-2005-06-19,NA,30,NA,Spin,Øvre,NA,<span></span>,TRUE
-2005-06-19,NA,32,NA,Spin,Øvre,NA,<span></span>,TRUE
 2005-06-18,Anders Larsen,76,4.8,Flue,Nedre,1.0934538562472664,<span></span>,FALSE
 2005-06-17,NA,75,5,Flue,Nedre,1.1851851851851851,<span></span>,FALSE
 2005-06-17,NA,86,6.4,Flue,Nedre,1.0062007118870036,<span></span>,FALSE
@@ -15964,7 +15919,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2004-10-25,NA,63,3,Flue,Mellem,1.199774442404828,<span></span>,FALSE
 2004-10-25,NA,63,3,Flue,Øvre,1.199774442404828,<span></span>,FALSE
 2004-10-25,NA,78,4.9,Spin,Mellem,1.0325528077007369,<span></span>,FALSE
-2004-10-25,NA,NA,NA,Flue,Øvre,NA,<span></span>,TRUE
 2004-10-24,Carsten Zaar,64,3,Flue,Mellem,1.1444091796875,<span></span>,FALSE
 2004-10-24,Erik Kragh,73,4.4,Spin,Mellem,1.131055969276407,<span></span>,FALSE
 2004-10-24,Per Knudsen,62,2.5,Flue,Mellem,1.0489745225067975,<span></span>,FALSE
@@ -16438,7 +16392,6 @@ Date,Name,Length,Weight,Method,Place,Fulton,Misc,NoWeight
 2004-03-01,NA,66,2.4,Spin,Mellem,0.8347942232239753,<span></span>,FALSE
 2004-03-01,NA,75,3.1,Flue,Øvre,0.7348148148148148,<span></span>,FALSE
 2004-03-01,NA,75,3.4,Flue,Øvre,0.8059259259259259,<span></span>,FALSE
-2004-03-01,NA,NA,NA,Flue,Øvre,NA,<span></span>,TRUE
 2003-10-31,K. Oddershede,54,1.7,Spin,Mellem,1.0796118477874308,<span></span>,FALSE
 2003-10-30,Harald Moesgård,59,2.1,Orm,Nedre,1.022499866101208,<span></span>,FALSE
 2003-10-30,Jeppe Greve,74,5,Flue,Mellem,1.2338854559453536,<span></span>,FALSE
