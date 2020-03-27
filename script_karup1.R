@@ -65,7 +65,6 @@ write_csv(dat4, fn)
 
 #### Estimate weight given length ####
 prefix <- "https://raw.githubusercontent.com/relund/skjern/master/data/"
-#### Catch records ####
 readGHCatch <- function(file) {
   colT <- cols(
     Date = col_date(format = ""),
@@ -133,43 +132,43 @@ write_csv(tabCatch, fn)
 
 
 #### Calc average water level ####
-# readWLevels <- function(years) {
-#   colT <- cols(
-#     Date = col_datetime(format = ""),
-#     'Karup By (054764)' = col_double(),
-#     'Hagebro (001762)' = col_double(),
-#     'Nørkærbro (001767)' = col_double()
-#   )
-#   dat <- NULL
-#   for (y in years) {
-#     fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
-#     dat <- bind_rows(dat, read_csv(fn, col_types = colT))
-#   }
-#   return(dat)
-# }
-# dat <- readWLevels(2013:2020)
-# 
-# ## Average water leves given day
-# dat1 <- dat %>% mutate(Day = yday(Date)) %>% group_by(Day)
-# means <- dat1 %>% summarise_if(is.numeric, mean, na.rm = TRUE) 
-# means[366,c(2,4)] <- means[365,c(2,4)] 
-# colnames(means)[2:4] = paste0(colnames(dat)[2:4]," avg")
-# 
-# ## Moving average
-# movAvg <- function(x, days = 90){ # 96 obs per day
-#   n <- days
-#   stats::filter(x, rep(1 / n, n), sides = 2, circular = T)
-# }
-# # rMeans <- mutate_at(means, vars(contains(c('K','H'))), rollmean, k = 30, fill = NA, align = "right")
-# rMeans <- mutate_at(means, vars(contains(c('K','H'))), movAvg)
-# colnames(rMeans)[2:4] = paste0(colnames(dat)[2:4]," rAvg90")
+readWLevels <- function(years) {
+  colT <- cols(
+    Date = col_datetime(format = ""),
+    'Karup By (054764)' = col_double(),
+    'Hagebro (001762)' = col_double(),
+    'Nørkærbro (001767)' = col_double()
+  )
+  dat <- NULL
+  for (y in years) {
+    fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
+    dat <- bind_rows(dat, read_csv(fn, col_types = colT))
+  }
+  return(dat)
+}
+dat <- readWLevels(2013:year(now()))
+
+## Average water leves given day
+dat1 <- dat %>% mutate(Day = yday(Date)) %>% group_by(Day)
+means <- dat1 %>% summarise_if(is.numeric, mean, na.rm = TRUE)
+means[366,c(2,4)] <- means[365,c(2,4)]
+colnames(means)[2:4] = paste0(colnames(dat)[2:4]," avg")
+
+## Moving average
+movAvg <- function(x, days = 90){ # 96 obs per day
+  n <- days
+  stats::filter(x, rep(1 / n, n), sides = 2, circular = T)
+}
+# rMeans <- mutate_at(means, vars(contains(c('K','H'))), rollmean, k = 30, fill = NA, align = "right")
+rMeans <- mutate_at(means, vars(contains(c('K','H'))), movAvg)
+colnames(rMeans)[2:4] = paste0(colnames(dat)[2:4]," rAvg90")
 # means <- full_join(means, rMeans)
 # meansL <- means %>% pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level')
 # ggplot(data = meansL, aes(x = Day, y = Level)) + geom_line(aes(color = Group), show.legend = T)
-# 
-# ## Save moving average
-# fn <- "data/data_karup_waterlevel_avg90.csv"
-# write_csv(rMeans, fn)
+
+## Save moving average
+fn <- "data/data_karup_waterlevel_avg90.csv"
+write_csv(rMeans, fn)
 
 
 
