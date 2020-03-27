@@ -112,10 +112,10 @@ tab <- bind_cols(dplyr::filter(res, Period == "Forår/Som"),
                  dplyr::filter(res, Period == "Vinter")) %>% ungroup()
 tab <- tab %>% #arrange(desc(Length)) %>% 
   transmute('Længde' = Length, 
-            'Forår/Som' = str_c(format(round(Avg,1), 1), " [",format(round(Lower,1), digits = 1),",",format(round(Upper,1), digits = 1),"]"),
-            # 'Som' = str_c(format(round(Avg1,1), 1), " [",format(round(Lower1,1), digits = 1),",",format(round(Upper1,1), digits = 1),"]"),
-            'Efterår' = str_c(format(round(Avg1,1), 1), " [",format(round(Lower1,1), digits = 1),",",format(round(Upper1,1), digits = 1),"]"),
-            'Vinter' = str_c(format(round(Avg2,1), 1), " [",format(round(Lower2,1), digits = 1),",",format(round(Upper2,1), digits = 1),"]")) 
+            'Apr-Aug' = str_c(format(round(Avg,4), 1), " [",format(round(Lower,4), digits = 1, trim = T),",",format(round(Upper,4), digits = 1),"]"),
+            # 'Som' = str_c(format(round(Avg1,4), 1), " [",format(round(Lower1,4), digits = 1),",",format(round(Upper1,4), digits = 1),"]"),
+            'Sep-Okt' = str_c(format(round(Avg1,4), 1), " [",format(round(Lower1,4), digits = 1, trim = T),",",format(round(Upper1,4), digits = 1),"]"),
+            'Marts' = str_c(format(round(Avg2,4), 1), " [",format(round(Lower2,4), digits = 1, trim = T),",",format(round(Upper2,4), digits = 1),"]")) 
 
 ## Save to file
 fn <- "data/data_karup_weight_seatrout_web.csv"
