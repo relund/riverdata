@@ -4,7 +4,7 @@ library(tidyverse)
 library(lubridate)
 library(zoo) 
 
-#### Get current catches ####
+#### Save catches 2020- ####
 ## data to today
 dat <- fromJSON("https://fangstjournalen.dtu.dk/fangst.nsf/service.xsp?open&assoc=49F1767931B31CD0C1258398007953C0&type=1")
 cols <- dat$data$cols
@@ -104,6 +104,26 @@ res <- exp(res)
 res <- res %>% as_tibble() 
 res <- bind_cols(datP, res) %>% group_by(Period) #%>% select(Length:Avg)
 colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
+
+#### Save weight estimates for web ####
+tab <- bind_cols(dplyr::filter(res, Period == "Forår/Som"),
+                 # dplyr::filter(res, Period == "Som"), 
+                 dplyr::filter(res, Period == "Efterår"), 
+                 dplyr::filter(res, Period == "Vinter")) %>% ungroup()
+tab <- tab %>% #arrange(desc(Length)) %>% 
+  transmute('Længde' = Length, 
+            'Forår/Som' = str_c(format(round(Avg,1), 1), " [",format(round(Lower,1), digits = 1),",",format(round(Upper,1), digits = 1),"]"),
+            # 'Som' = str_c(format(round(Avg1,1), 1), " [",format(round(Lower1,1), digits = 1),",",format(round(Upper1,1), digits = 1),"]"),
+            'Efterår' = str_c(format(round(Avg1,1), 1), " [",format(round(Lower1,1), digits = 1),",",format(round(Upper1,1), digits = 1),"]"),
+            'Vinter' = str_c(format(round(Avg2,1), 1), " [",format(round(Lower2,1), digits = 1),",",format(round(Upper2,1), digits = 1),"]")) 
+
+## Save to file
+fn <- "data/data_karup_weight_seatrout_web.csv"
+write_csv(tab, fn)
+
+
+
+#### Save catches for web ####
 tabCatch <- left_join(datCatch, res, by = c("Length", "Period")) %>% 
   mutate(NoWeight = is.na(Weight), Weight = if_else(is.na(Weight), Avg, Weight)) %>% 
   mutate(Fulton = Weight*100000/Length^3)
@@ -113,7 +133,7 @@ tmp <- transmute(tabCatch,
                  F = if_else(Sex == 'Female', '<img src="www/girl.gif" alt="Hun">', "", ""),
                  C = if_else(!is.na(Foto), paste0('<a href="', Foto, '", target="_blank"><img src="www/foto.gif" alt="Foto"></a>'), "", "")
 ) %>% transmute(Misc = paste0('<span>',K,M,F,C,'</span>'))
-tabCatch <- bind_cols(tabCatch, tmp) %>% 
+tabCatch <- bind_cols(tabCatch, tmp) %>% dplyr::filter(Length > 39) %>% 
   select(Date, Name, Length, Weight, Method, Place, Fulton, Misc, NoWeight) %>% 
   mutate(Weight = round(Weight,1)) %>% arrange(desc(Date))
 
