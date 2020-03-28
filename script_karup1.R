@@ -23,7 +23,7 @@ dateStr <- mutate(dateStr, Month = Month + 1)
 dateStr <- str_c(dateStr$Year, "-", str_pad(dateStr$Month, 2, "left", pad="0"), "-", str_pad(dateStr$Day, 2, "left", pad="0"))
 dat1 <- bind_cols(Date=dateStr, dat1)
 dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Havørred"))
-dat2 <- dat1 %>% transmute(Date, Length = `Længde`, Weight = `Vægt`, Name = Navn, Place = Zone, Method = Agn, Cut = FALSE, Foto = Foto, Killed = !as.logical(Genudsat), Sex = Køn)
+dat2 <- dat1 %>% transmute(Date, Length = `Længde`, Weight = `Vægt`, Name = Navn, Place = Zone, Method = Agn, Cut = FALSE, Foto = Foto, Killed = !as.logical(Genudsat), Sex = `Køn`)
 dat2 <- type_convert(dat2)
 
 
