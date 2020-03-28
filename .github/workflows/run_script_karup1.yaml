@@ -4,9 +4,6 @@ on:
   schedule: 
     - cron: '0 * * * *'  # every hour
     
-#git commit 'data/data_karup_catch_seatrout_web.csv' --allow-empty -m 'gHA build: ${{github.run_number}}' || echo "No changes to commit"
-#git commit 'data/data_karup_catch_seatrout_2020-.csv' --allow-empty -m 'gHA build: ${{github.run_number}}' || echo "No changes to commit"
-
 jobs:
   render:
     name: Run script_karup1.R
