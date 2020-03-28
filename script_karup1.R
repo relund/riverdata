@@ -5,9 +5,6 @@ library(tidyverse)
 library(lubridate)
 library(zoo) 
 
-Sys.getlocale()
-Sys.setlocale("LC_ALL","English")
-
 #### Save catches 2020- ####
 ## data to today
 dat <- fromJSON("https://fangstjournalen.dtu.dk/fangst.nsf/service.xsp?open&assoc=49F1767931B31CD0C1258398007953C0&type=1")
@@ -18,6 +15,7 @@ rows <- lapply(rows, FUN = function(x) {x[,1]})
 dat1 <- t(map_dfc(rows, ~ .x))
 colnames(dat1) <- cols$label
 dat1 <- as_tibble(dat1)
+dat1
 dateStr <- dat1$Dato %>% str_extract_all("(?<=\\().+?(?=\\))", simplify = T) %>%
   str_split(",", simplify = TRUE) %>% as_tibble(.name_repair = "minimal")
 colnames(dateStr) <- c("Year", "Month", "Day")
@@ -26,8 +24,9 @@ dateStr <- mutate(dateStr, Month = Month + 1)
 dateStr <- str_c(dateStr$Year, "-", str_pad(dateStr$Month, 2, "left", pad="0"), "-", str_pad(dateStr$Day, 2, "left", pad="0"))
 dat1 <- bind_cols(Date=dateStr, dat1)
 dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Havørred"))
+dat1
 dat2 <- dat1 %>% transmute(Date, Length = `Længde`, Weight = `Vægt`, Name = Navn, Place = Zone, Method = Agn, Cut = FALSE, Foto = Foto, Killed = !as.logical(Genudsat), Sex = `Køn`)
-print(dat2)
+dat2
 dat2 <- type_convert(dat2)
 
 
