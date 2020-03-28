@@ -5,6 +5,8 @@ library(tidyverse)
 library(lubridate)
 library(zoo) 
 
+Sys.setlocale("LC_ALL", "Danish")
+
 #### Save catches 2020- ####
 ## data to today
 dat <- fromJSON("https://fangstjournalen.dtu.dk/fangst.nsf/service.xsp?open&assoc=49F1767931B31CD0C1258398007953C0&type=1")
