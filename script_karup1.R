@@ -26,6 +26,7 @@ dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Havørred"))
 dat2 <- dat1 %>% transmute(Date, Length = `Længde`, Weight = `Vægt`, Name = Navn, Place = Zone, Method = Agn, Cut = FALSE, Foto = Foto, Killed = !as.logical(Genudsat), Sex = Køn)
 dat2 <- type_convert(dat2)
 
+
 ## Merge and tidy
 dat4 <- dat2 %>% dplyr::filter(year(Date)>2019)
 dat4 <- dat4 %>% mutate(Weight = if_else(Length >= 40, Weight, NA_real_))
