@@ -17,7 +17,7 @@ cols$label[is.na(cols$label)] <- "Unknown"
 rows <- dat$data$rows$c
 rows <- lapply(rows, FUN = function(x) {x[,1]})
 dat1 <- t(map_dfc(rows, ~ .x))
-colnames(dat1) <- cols$label
+colnames(dat1) <- enc2utf8(cols$label)
 dat1 <- as_tibble(dat1)
 dat1
 dateStr <- dat1$Dato %>% str_extract_all("(?<=\\().+?(?=\\))", simplify = T) %>%
