@@ -6,6 +6,8 @@ library(lubridate)
 library(zoo) 
 
 sessionInfo()
+Sys.setlocale(locale = "Danish")
+sessionInfo()
 
 #### Save catches 2020- ####
 ## data to today
