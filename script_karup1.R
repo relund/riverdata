@@ -5,7 +5,7 @@ library(tidyverse)
 library(lubridate)
 library(zoo) 
 
-Sys.setlocale("LC_ALL", "Danish")
+sessionInfo()
 
 #### Save catches 2020- ####
 ## data to today
