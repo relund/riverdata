@@ -1,6 +1,10 @@
 name: R script Skjern 1
 
 on: 
+  push:
+    paths:
+      - .github/run_script_skjern1.yaml
+      - script_skjern1.R
   schedule: 
     - cron: '0 * * * *'  # every hour
 
