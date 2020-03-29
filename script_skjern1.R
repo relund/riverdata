@@ -25,16 +25,19 @@ flow <- fromJSON(flow)$data
 
 if (length(dates)==length(flow)) {
   fn <- "data/data_skjern_flow_lock.csv"
-  dat <- tibble(dates = dmy_hm(dates, tz = "CET"), flow = flow)
+  dat <- tibble(dates = dmy_hm(dates, tz = "CET"), flow = flow)  %>% 
+    arrange_all(desc) %>% distinct()
   if (!file.exists(fn)) {
     write_csv2(dat, fn)
+    dat
   } else {
     datOld <- read_csv2(fn, col_types = "Ti", locale = locale(tz = "CET"))
-    dat <- bind_rows(datOld,dat)
-    dat <- distinct(dat)
+    dat <- bind_rows(datOld,dat) %>% arrange_all(desc) %>% distinct()
+    dat
     write_csv2(dat, fn)
   }
 }
+
 # ggplot(dat, aes(x = dates, y = flow)) + geom_line() + labs(x = "Dato", y = "Flow (m3/s)", title = "Sluseflow Hvide Sande")
 
 # ## Wind, water levet etc at Hvide Sande
