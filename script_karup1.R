@@ -175,7 +175,7 @@ datStat <- datStat %>%
 
 ## Save to file
 fn <- "data/data_karup_catch_seatrout_stat.csv"
-write_csv(tabCatch, fn)
+write_csv(datStat, fn)
 
 
 
