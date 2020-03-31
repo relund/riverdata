@@ -19,7 +19,7 @@ jobs:
       - name: Install packages
         run: Rscript install.R
       - name: Run R script
-        run: Rscript script_karup1.R
+        run: Rscript --verbose script_karup1.R
       - name: Commit results
         run: |
           git commit --allow-empty -am 'gHA build: ${{github.run_number}}' || echo "No changes to commit"
