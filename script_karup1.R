@@ -4,6 +4,7 @@ library(jsonlite)
 library(tidyverse)
 library(lubridate)
 library(zoo) 
+library(flextable)
 
 # sessionInfo()
 
@@ -130,6 +131,52 @@ tabCatch <- bind_cols(tabCatch, tmp) %>% dplyr::filter(Length > 39) %>%
 ## Save to file
 fn <- "data/data_karup_catch_seatrout_web.csv"
 write_csv(tabCatch, fn)
+
+
+
+#### Save yearly statistics ####
+datStat <- datCatch %>% mutate(Year = year(Date)) %>% group_by(Year) %>% nest() %>% 
+  mutate(
+    TotalStat = map(data, function(df) {
+      summarise(df, Total = n(), 
+                Female = sum(Sex == "Female", na.rm = T), 
+                Male = sum(Sex == "Male", na.rm = T),
+                SexUnknown = Total - Female - Male,
+                Released = sum(!Killed, na.rm = T),
+                Killed = Total - Released,
+                LengthAvg = mean(Length, na.rm = T), 
+                LengthMax = max(Length, na.rm = T),
+                WeightAvg = mean(Weight, na.rm = T), 
+                WeightMax = max(Weight, na.rm = T),
+                Kg = sum(Weight, na.rm = T),
+                FultonAvg = mean(Fulton, na.rm = T), 
+                FultonMax = max(Fulton, na.rm = T)
+      )
+    }),
+    PlaceStat = 
+      map(data, 
+          function(df) {
+            df %>% 
+            group_by(Place) %>% 
+            summarize(TotalPlace = n())}) 
+  )
+
+datStat <- datStat %>% 
+  mutate(PlaceStat = 
+    map(PlaceStat,
+       function(df) {
+         tibble(Upper = ifelse(sum(df[,1]=="Øvre", na.rm = T) > 0, df[df[,1]=="Øvre",2], 0),
+                Middle = ifelse(sum(df[,1]=="Mellem", na.rm = T) > 0, df[df[,1]=="Mellem",2], 0),
+                Lower = ifelse(sum(df[,1]=="Nedre", na.rm = T) > 0, df[df[,1]=="Nedre",2], 0),
+                Haderis = ifelse(sum(df[,1]=="Haderup Å", na.rm = T) > 0, df[df[,1]=="Haderup Å",2], 0)) %>% 
+                #Ukendt = ifelse(sum(is.na(df[,1]))>0, df[is.na(df[,1]),2], 0)) %>%
+           unnest(cols = c(Upper, Middle, Lower, Haderis))})) %>% 
+  unnest(cols = c(TotalStat, PlaceStat)) %>% select(-data)
+
+## Save to file
+fn <- "data/data_karup_catch_seatrout_stat.csv"
+write_csv(tabCatch, fn)
+
 
 
 
