@@ -161,9 +161,15 @@ dat4 %>% dplyr::filter(month(Date) %in% c(1,2,11,12))
 
 dat4 <- bind_rows(dat2016, dat4)
 
+## Set Place to Nedre if NA
+dat4 %>% dplyr::filter(is.na(Place))
+dat4 <- dat4 %>% mutate(Place = if_else(is.na(Place), 'Nedre', Place))
+dat4 %>% dplyr::filter(is.na(Place))
+
 ## Save to file
 dat4 <- dat4 %>% arrange(Date, Name, Weight, Length, Place) %>% 
   dplyr::filter(year(Date)<2020) 
+
 fn <- "../../data/data_karup_catch_seatrout_2003-2019.csv"
 write_csv(dat4,fn)
 
