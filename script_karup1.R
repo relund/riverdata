@@ -4,7 +4,6 @@ library(jsonlite)
 library(tidyverse)
 library(lubridate)
 library(zoo) 
-library(flextable)
 
 # sessionInfo()
 
