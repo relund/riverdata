@@ -161,25 +161,30 @@ datStat <- datCatch %>% mutate(Year = year(Date)) %>% group_by(Year) %>% nest() 
             summarize(TotalPlace = n())}) 
   )
 
-datStat
+datStat <- datStat %>% 
+  mutate(PlaceStat = 
+           map(PlaceStat, function(df) {  
+             pivot_wider(df, names_from = Place, values_from = TotalPlace)})) %>% 
+  unnest(cols = c(TotalStat, PlaceStat)) %>% select(-data) %>% rename(Lower = Nedre, Middle = Mellem, Upper = `Øvre`, Haderis = `Haderup Å`) %>% replace_na(list(Middle = 0, Upper = 0, Lower = 0, Haderis = 0))
 
-datStat <- datStat %>%
-  mutate(PlaceStat =
-    map(PlaceStat,
-       function(df) {
-         tibble(Upper = ifelse(sum(df[,1]=="Øvre", na.rm = T) > 0, df[df[,1]=="Øvre",2], 0),
-                Middle = ifelse(sum(df[,1]=="Mellem", na.rm = T) > 0, df[df[,1]=="Mellem",2], 0),
-                Lower = ifelse(sum(df[,1]=="Nedre", na.rm = T) > 0, df[df[,1]=="Nedre",2], 0),
-                Haderis = ifelse(sum(df[,1]=="Haderup Å", na.rm = T) > 0, df[df[,1]=="Haderup Å",2], 0)) %>%
-                #Ukendt = ifelse(sum(is.na(df[,1]))>0, df[is.na(df[,1]),2], 0)) %>%
-           unnest(cols = c(Upper, Middle, Lower, Haderis))})) %>%
-  unnest(cols = c(TotalStat, PlaceStat)) %>% select(-data)
 
-datStat
+# datStat <- datStat %>%
+#   mutate(PlaceStat =
+#     map(PlaceStat,
+#        function(df) {
+#          tibble(Upper = ifelse(sum(df[,1]=="Øvre", na.rm = T) > 0, df[df[,1]=="Øvre",2], 0),
+#                 Middle = ifelse(sum(df[,1]=="Mellem", na.rm = T) > 0, df[df[,1]=="Mellem",2], 0),
+#                 Lower = ifelse(sum(df[,1]=="Nedre", na.rm = T) > 0, df[df[,1]=="Nedre",2], 0),
+#                 Haderis = ifelse(sum(df[,1]=="Haderup Å", na.rm = T) > 0, df[df[,1]=="Haderup Å",2], 0)) %>%
+#                 #Ukendt = ifelse(sum(is.na(df[,1]))>0, df[is.na(df[,1]),2], 0)) %>%
+#            unnest(cols = c(Upper, Middle, Lower, Haderis))})) %>%
+#   unnest(cols = c(TotalStat, PlaceStat)) %>% select(-data)
+# 
+# datStat
 
-# ## Save to file
-# fn <- "data/data_karup_catch_seatrout_stat.csv"
-# write_csv(datStat, fn)
+## Save to file
+fn <- "data/data_karup_catch_seatrout_stat.csv"
+write_csv(datStat, fn)
 
 
 
