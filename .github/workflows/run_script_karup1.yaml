@@ -3,7 +3,7 @@ name: R script Karup 1
 on: 
   push:
     paths:
-      - .github/run_script_karup1.yaml
+      - .github/workflows/run_script_karup1.yaml
       - script_karup1.R
   schedule: 
     - cron: '0 * * * *'  # every hour
