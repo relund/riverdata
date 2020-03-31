@@ -182,97 +182,97 @@ write_csv(datStat, fn)
 
 
 
-#### Calc average water level ####
-readWLevels <- function(years) {
-  colT <- cols(
-    Date = col_datetime(format = ""),
-    'Karup By (054764)' = col_double(),
-    'Hagebro (001762)' = col_double(),
-    'Nørkærbro (001767)' = col_double()
-  )
-  dat <- NULL
-  for (y in years) {
-    fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
-    dat <- bind_rows(dat, read_csv(fn, col_types = colT))
-  }
-  return(dat)
-}
-dat <- readWLevels(2013:year(now()))
-
-## Average water leves given day
-dat1 <- dat %>% mutate(Day = yday(Date)) %>% group_by(Day)
-means <- dat1 %>% summarise_if(is.numeric, mean, na.rm = TRUE)
-means[366,c(2,4)] <- means[365,c(2,4)]
-colnames(means)[2:4] = paste0(colnames(dat)[2:4]," avg")
-
-## Moving average
-movAvg <- function(x, days = 90){ # 96 obs per day
-  n <- days
-  stats::filter(x, rep(1 / n, n), sides = 2, circular = T)
-}
-# rMeans <- mutate_at(means, vars(contains(c('K','H'))), rollmean, k = 30, fill = NA, align = "right")
-rMeans <- mutate_at(means, vars(contains(c('K','H'))), movAvg)
-colnames(rMeans)[2:4] = paste0(colnames(dat)[2:4]," rAvg90")
-# means <- full_join(means, rMeans)
-# meansL <- means %>% pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level')
-# ggplot(data = meansL, aes(x = Day, y = Level)) + geom_line(aes(color = Group), show.legend = T)
-
-## Save moving average
-fn <- "data/data_karup_waterlevel_avg90.csv"
-write_csv(rMeans, fn)
-
-
-
-
-#### Update data for waterlevel in current year ####
-y <- year(now())
-fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
-if (file.exists(fn)) datOld <- read_csv(fn) else datOld <- NULL
-stations <- tibble(id = c("054764", "001762", "001767"), place = c("Karup By", "Hagebro", "Nørkærbro"))
-iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
-dat <- NULL
-for (i in 1:nrow(stations)) {
-  id <- stations$id[i]
-  place <- stations$place[i]
-  tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=7&pw=100000000&inclraw=true"))
-  offset <- as.numeric(tmp$tsh$Offset)
-  tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
-  tmp$V <- tmp$V - rep(offset, length(tmp$V))
-  colnames(tmp) <- c("Date", paste0(place, " (", id, ")"))
-  if (is.null(dat)) {
-    dat <- tmp
-  } else {
-    dat <- full_join(dat,tmp, by = "Date")
-  }
-}
-dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
-dat <- bind_rows(datOld, dat) 
-dat <- dat %>% dplyr::filter(year(Date) == y) %>% 
-  arrange_all(desc) %>% 
-  distinct(Date, `Karup By (054764)`, .keep_all = T)
-
-## write to file
-write_csv(dat, fn)
-unique(date(dat$Date))
-range(dat$Date)
-
-
-
-#### Relative water level datasets ####
-datWLevel <- readWLevels(2013:year(now()))
-rMeans <- read_csv(paste0(prefix,"data_karup_waterlevel_avg90.csv"))
-datWLevel <- datWLevel %>% mutate(Day = yday(Date))
-datWLevel <- left_join(datWLevel, rMeans)
-datS <- datWLevel %>% dplyr::filter(Date > now() - days(14))
-datWLevel <- datWLevel %>% mutate(`Karup By` = `Karup By (054764)` - `Karup By (054764) rAvg90`, 
-                              `Hagebro` = `Hagebro (001762)` - `Hagebro (001762) rAvg90`,
-                              `Nørkærbro` = `Nørkærbro (001767)` - `Nørkærbro (001767) rAvg90`) %>% 
-  select(Date, `Karup By`, `Hagebro`, `Nørkærbro`)
-datWLevel <- datWLevel %>% pivot_longer(cols = contains(c('K','H')), names_to = 'Place', values_to = 'Level')
-for (y in 2013:year(now())) {
-  fn <- paste0("data/data_karup_waterlevel_relative_long_", y, ".csv")
-  write_csv(dplyr::filter(datWLevel, year(Date) == y), fn)
-}
-
-
-
+# #### Calc average water level ####
+# readWLevels <- function(years) {
+#   colT <- cols(
+#     Date = col_datetime(format = ""),
+#     'Karup By (054764)' = col_double(),
+#     'Hagebro (001762)' = col_double(),
+#     'Nørkærbro (001767)' = col_double()
+#   )
+#   dat <- NULL
+#   for (y in years) {
+#     fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
+#     dat <- bind_rows(dat, read_csv(fn, col_types = colT))
+#   }
+#   return(dat)
+# }
+# dat <- readWLevels(2013:year(now()))
+# 
+# ## Average water leves given day
+# dat1 <- dat %>% mutate(Day = yday(Date)) %>% group_by(Day)
+# means <- dat1 %>% summarise_if(is.numeric, mean, na.rm = TRUE)
+# means[366,c(2,4)] <- means[365,c(2,4)]
+# colnames(means)[2:4] = paste0(colnames(dat)[2:4]," avg")
+# 
+# ## Moving average
+# movAvg <- function(x, days = 90){ # 96 obs per day
+#   n <- days
+#   stats::filter(x, rep(1 / n, n), sides = 2, circular = T)
+# }
+# # rMeans <- mutate_at(means, vars(contains(c('K','H'))), rollmean, k = 30, fill = NA, align = "right")
+# rMeans <- mutate_at(means, vars(contains(c('K','H'))), movAvg)
+# colnames(rMeans)[2:4] = paste0(colnames(dat)[2:4]," rAvg90")
+# # means <- full_join(means, rMeans)
+# # meansL <- means %>% pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level')
+# # ggplot(data = meansL, aes(x = Day, y = Level)) + geom_line(aes(color = Group), show.legend = T)
+# 
+# ## Save moving average
+# fn <- "data/data_karup_waterlevel_avg90.csv"
+# write_csv(rMeans, fn)
+# 
+# 
+# 
+# 
+# #### Update data for waterlevel in current year ####
+# y <- year(now())
+# fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
+# if (file.exists(fn)) datOld <- read_csv(fn) else datOld <- NULL
+# stations <- tibble(id = c("054764", "001762", "001767"), place = c("Karup By", "Hagebro", "Nørkærbro"))
+# iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
+# dat <- NULL
+# for (i in 1:nrow(stations)) {
+#   id <- stations$id[i]
+#   place <- stations$place[i]
+#   tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=7&pw=100000000&inclraw=true"))
+#   offset <- as.numeric(tmp$tsh$Offset)
+#   tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
+#   tmp$V <- tmp$V - rep(offset, length(tmp$V))
+#   colnames(tmp) <- c("Date", paste0(place, " (", id, ")"))
+#   if (is.null(dat)) {
+#     dat <- tmp
+#   } else {
+#     dat <- full_join(dat,tmp, by = "Date")
+#   }
+# }
+# dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
+# dat <- bind_rows(datOld, dat) 
+# dat <- dat %>% dplyr::filter(year(Date) == y) %>% 
+#   arrange_all(desc) %>% 
+#   distinct(Date, `Karup By (054764)`, .keep_all = T)
+# 
+# ## write to file
+# write_csv(dat, fn)
+# unique(date(dat$Date))
+# range(dat$Date)
+# 
+# 
+# 
+# #### Relative water level datasets ####
+# datWLevel <- readWLevels(2013:year(now()))
+# rMeans <- read_csv(paste0(prefix,"data_karup_waterlevel_avg90.csv"))
+# datWLevel <- datWLevel %>% mutate(Day = yday(Date))
+# datWLevel <- left_join(datWLevel, rMeans)
+# datS <- datWLevel %>% dplyr::filter(Date > now() - days(14))
+# datWLevel <- datWLevel %>% mutate(`Karup By` = `Karup By (054764)` - `Karup By (054764) rAvg90`, 
+#                               `Hagebro` = `Hagebro (001762)` - `Hagebro (001762) rAvg90`,
+#                               `Nørkærbro` = `Nørkærbro (001767)` - `Nørkærbro (001767) rAvg90`) %>% 
+#   select(Date, `Karup By`, `Hagebro`, `Nørkærbro`)
+# datWLevel <- datWLevel %>% pivot_longer(cols = contains(c('K','H')), names_to = 'Place', values_to = 'Level')
+# for (y in 2013:year(now())) {
+#   fn <- paste0("data/data_karup_waterlevel_relative_long_", y, ".csv")
+#   write_csv(dplyr::filter(datWLevel, year(Date) == y), fn)
+# }
+# 
+# 
+# 
