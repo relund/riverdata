@@ -133,8 +133,10 @@ write_csv(tabCatch, fn)
 
 
 
-#### Save yearly statistics ####
-datStat <- datCatch %>% mutate(Year = year(Date)) %>% group_by(Year) %>% nest() %>% 
+#### Save montly statistics for current year ####
+datStat <- datCatch %>% 
+  dplyr::filter(year(Date) == year(now()), Length > 39) %>% 
+  group_by(Month) %>% nest() %>% 
   mutate(
     TotalStat = map(data, function(df) {
       summarise(df, Total = n(), 
@@ -165,27 +167,72 @@ datStat <- datStat %>%
   mutate(PlaceStat = 
            map(PlaceStat, function(df) {  
              pivot_wider(df, names_from = Place, values_from = TotalPlace)})) %>% 
-  unnest(cols = c(TotalStat, PlaceStat)) %>% select(-data) %>% rename(Lower = Nedre, Middle = Mellem, Upper = `Øvre`, Haderis = `Haderup Å`) %>% replace_na(list(Middle = 0, Upper = 0, Lower = 0, Haderis = 0))
-
-
-# datStat <- datStat %>%
-#   mutate(PlaceStat =
-#     map(PlaceStat,
-#        function(df) {
-#          tibble(Upper = ifelse(sum(df[,1]=="Øvre", na.rm = T) > 0, df[df[,1]=="Øvre",2], 0),
-#                 Middle = ifelse(sum(df[,1]=="Mellem", na.rm = T) > 0, df[df[,1]=="Mellem",2], 0),
-#                 Lower = ifelse(sum(df[,1]=="Nedre", na.rm = T) > 0, df[df[,1]=="Nedre",2], 0),
-#                 Haderis = ifelse(sum(df[,1]=="Haderup Å", na.rm = T) > 0, df[df[,1]=="Haderup Å",2], 0)) %>%
-#                 #Ukendt = ifelse(sum(is.na(df[,1]))>0, df[is.na(df[,1]),2], 0)) %>%
-#            unnest(cols = c(Upper, Middle, Lower, Haderis))})) %>%
-#   unnest(cols = c(TotalStat, PlaceStat)) %>% select(-data)
-# 
-# datStat
+  unnest(cols = c(TotalStat, PlaceStat)) %>% select(-data) %>% 
+  rename_at(vars(contains(c("Nedre","Mellem","Øvre","Haderup Å"))), 
+    function(x) {
+      case_when(
+        x == "Nedre" ~ "Lower",
+        x == "Mellem" ~ "Middle",
+        x == "Øvre" ~ "Upper",
+        x == "Haderup Å" ~ "Haderis",
+        TRUE ~ "FEJL"
+      )
+    })
 
 ## Save to file
-fn <- "data/data_karup_catch_seatrout_stat.csv"
+fn <- "data/data_karup_catch_seatrout_stat_month.csv"
 write_csv(datStat, fn)
 
+
+
+
+#### Save yearly statistics ####
+datStat <- datCatch %>% mutate(Year = year(Date)) %>% group_by(Year) %>% nest() %>% 
+  mutate(
+    TotalStat = map(data, function(df) {
+      summarise(df, Total = n(), 
+                Female = sum(Sex == "Female", na.rm = T), 
+                Male = sum(Sex == "Male", na.rm = T),
+                SexUnknown = Total - Female - Male,
+                Released = sum(!Killed, na.rm = T),
+                Killed = sum(Killed, na.rm = T),
+                KilledUnknown = Total - Released - Killed,
+                LengthAvg = mean(Length, na.rm = T), 
+                LengthMax = max(Length, na.rm = T),
+                WeightAvg = mean(Weight, na.rm = T), 
+                WeightMax = max(Weight, na.rm = T),
+                Kg = sum(Weight, na.rm = T),
+                FultonAvg = mean(Fulton, na.rm = T), 
+                FultonMax = max(Fulton, na.rm = T)
+      )
+    }),
+    PlaceStat = 
+      map(data, 
+          function(df) {
+            df %>% 
+              group_by(Place) %>% 
+              summarize(TotalPlace = n())}) 
+  )
+
+datStat <- datStat %>% 
+  mutate(PlaceStat = 
+           map(PlaceStat, function(df) {  
+             pivot_wider(df, names_from = Place, values_from = TotalPlace)})) %>% 
+  unnest(cols = c(TotalStat, PlaceStat)) %>% select(-data) %>% 
+  rename_at(vars(contains(c("Nedre","Mellem","Øvre","Haderup Å"))), 
+            function(x) {
+              case_when(
+                x == "Nedre" ~ "Lower",
+                x == "Mellem" ~ "Middle",
+                x == "Øvre" ~ "Upper",
+                x == "Haderup Å" ~ "Haderis",
+                TRUE ~ "FEJL"
+              )
+            })
+
+## Save to file
+fn <- "data/data_karup_catch_seatrout_stat_year.csv"
+write_csv(datStat, fn)
 
 
 
