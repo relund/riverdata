@@ -177,7 +177,8 @@ datStat <- datStat %>%
         x == "Haderup Å" ~ "Haderis",
         TRUE ~ "FEJL"
       )
-    })
+    }) %>% 
+  replace(., is.na(.), 0)
 
 ## Save to file
 fn <- "data/data_karup_catch_seatrout_stat_month.csv"
@@ -228,7 +229,8 @@ datStat <- datStat %>%
                 x == "Haderup Å" ~ "Haderis",
                 TRUE ~ "FEJL"
               )
-            })
+            }) %>% 
+  replace(., is.na(.), 0)
 
 ## Save to file
 fn <- "data/data_karup_catch_seatrout_stat_year.csv"
