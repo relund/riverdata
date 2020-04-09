@@ -28,13 +28,13 @@ if (length(dates)==length(flow)) {
   dat <- tibble(dates = dmy_hm(dates, tz = "CET"), flow = flow)  %>% 
     arrange_all(desc) %>% distinct()
   if (!file.exists(fn)) {
-    write_csv2(dat, fn)
+    write_csv(dat, fn)
     dat
   } else {
-    datOld <- read_csv2(fn, col_types = "Ti", locale = locale(tz = "CET"))
+    datOld <- read_csv(fn, col_types = "Ti", locale = locale(tz = "CET"))
     dat <- bind_rows(datOld,dat) %>% arrange_all(desc) %>% distinct()
     dat
-    write_csv2(dat, fn)
+    write_csv(dat, fn)
   }
 }
 
