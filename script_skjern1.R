@@ -25,7 +25,7 @@ flow <- fromJSON(flow)$data
 
 if (length(dates)==length(flow)) {
   fn <- "data/data_skjern_flow_lock.csv"
-  dat <- tibble(dates = dmy_hm(dates, tz = "CET"), flow = flow)  %>% 
+  dat <- tibble(Date = dmy_hm(dates, tz = "CET"), Flow = flow)  %>% 
     arrange_all(desc) %>% distinct()
   if (!file.exists(fn)) {
     write_csv(dat, fn)
@@ -37,8 +37,6 @@ if (length(dates)==length(flow)) {
     write_csv(dat, fn)
   }
 }
-
-# ggplot(dat, aes(x = dates, y = flow)) + geom_line() + labs(x = "Dato", y = "Flow (m3/s)", title = "Sluseflow Hvide Sande")
 
 # ## Wind, water levet etc at Hvide Sande
 # url <- 'http://hyde.dk/'
