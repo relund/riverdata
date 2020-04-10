@@ -1,0 +1,847 @@
+---
+title: "Dashboard for Skjern Å"
+author: ''
+output:
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+    theme: paper # cosmo flatly lumen bootstrap
+    favicon: favicon.png
+    css: style.css
+runtime: shiny
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+#profvis({rmarkdown::run("karup.Rmd", shiny_args = list(host="0.0.0.0", port=5050))})
+library(knitr)
+library(ggplot2)
+# library(plotly)
+library(flexdashboard)
+library(tidyverse)
+library(lubridate)
+library(shiny)
+library(DT)
+library(formattable)
+library(flextable)
+library(shinyBS)
+library(kableExtra)
+# library(zoo) 
+```
+
+```{r global, include=FALSE}  
+faIcon <- function (name, class = "", title = "", lib = "font-awesome") 
+{
+    prefixes <- list(`font-awesome` = "fa", glyphicon = "glyphicon")
+    prefix <- prefixes[[lib]]
+    if (is.null(prefix)) {
+        stop("Unknown font library '", lib, "' specified. Must be one of ", 
+            paste0("\"", names(prefixes), "\"", collapse = ", "))
+    }
+    if (class != "") class = paste0(" ", class)
+    prefix_class <- prefix
+    if (prefix_class == "fa" && name %in% shiny:::font_awesome_brands) {
+        prefix_class <- "fab"
+    } else if (prefix_class == "fa") prefix_class <- "fas"
+    iconClass <- paste0(prefix_class, " ", prefix, "-", name, class)
+    iconTag <- tags$i(class = iconClass, title = title)
+    htmltools::htmlDependencies(iconTag) <- htmltools::htmlDependency("font-awesome", 
+        "5.3.1", "www/shared/fontawesome", package = "shiny", 
+        stylesheet = c("css/all.min.css", "css/v4-shims.min.css"))
+    htmltools::browsable(iconTag)
+}
+
+
+# load data in 'global' chunk so it can be shared by all users of the dashboard
+addResourcePath('www', paste0(getwd(), "/www"))
+prefix <- "https://raw.githubusercontent.com/relund/skjern/master/data/"
+
+#### Catch records ####
+datCatchSalmon <- read_csv(paste0(prefix, "data_skjern_catch_salmon.csv")) %>% 
+  mutate(Month = month(Date, label = T), Week = week(Date), Year = year(Date)) 
+datStatYear <- read_csv(paste0(prefix, "data_karup_catch_seatrout_stat_year.csv"))
+datStatMonth <- read_csv(paste0(prefix, "data_karup_catch_seatrout_stat_month.csv")) 
+# 
+# 
+# readGHCatch <- function(file) {
+#   colT <- cols(
+#     Date = col_date(format = ""),
+#     Length = col_double(),
+#     Weight = col_double(),
+#     Name = col_character(),
+#     Place = col_character(),
+#     Method = col_character(),
+#     Cut = col_logical(),
+#     Foto = col_character(),
+#     Killed = col_logical(),
+#     Sex = col_character(),
+#     Fulton = col_double()
+#   )
+#   read_csv(paste0(prefix, file), col_types = colT)
+# }
+# datCatch <- readGHCatch("data_karup_catch_seatrout_2003-2019.csv")
+# tmp <- readGHCatch("data_karup_catch_seatrout_2020-.csv")
+# datCatch <- bind_rows(datCatch, tmp) %>% mutate(Weight = if_else(Killed, Weight, NA_real_))
+# 
+# 
+#### Weight ####
+datWeight <- read_csv(paste0(prefix, "data_karup_weight_seatrout.csv"))
+
+# datCatch <- datCatch %>% 
+#   mutate(Length = round(Length), Weight = round(Weight,1), Month = month(Date, label = T)) %>% 
+#   mutate(Period = case_when(
+#     Month == "apr" ~ "Forår/Som",
+#     Month == "maj" ~ "Forår/Som",
+#     Month == "jun" ~ "Forår/Som",
+#     Month == "jul" ~ "Forår/Som",
+#     Month == "aug" ~ "Forår/Som",
+#     Month == "sep" ~ "Efterår",
+#     Month == "okt" ~ "Efterår",
+#     Month == "mar" ~ "Vinter",
+#   )) 
+# datCKilled <- dplyr::filter(datCatch, Length > 39 & Killed) 
+# mod <- lm(log(Weight) ~ Period*log(Length), datCKilled)
+# datP <- expand_grid(Length = 40:max(datCKilled$Length), Period = unique(datCKilled$Period))
+# res <- predict(mod, datP, interval='prediction', level=0.95) 
+# res <- exp(res)
+# res <- res %>% as_tibble() 
+# res <- bind_cols(datP, res) %>% group_by(Period) #%>% select(Length:Avg)
+# colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
+# tabCatch <- left_join(datCatch, res, by = c("Length", "Period")) %>% 
+#   mutate(NoWeight = is.na(Weight), Weight = if_else(is.na(Weight), Avg, Weight)) %>% 
+#   mutate(Fulton = Weight*100000/Length^3)
+# tmp <- transmute(tabCatch, 
+#                   K = if_else(!Killed, '<img src="www/c_and_r.gif" alt="C&R">', "", ""),
+#                   M = if_else(Sex == 'Male', '<img src="www/boy.gif" alt="Han">', "", ""),
+#                   F = if_else(Sex == 'Female', '<img src="www/girl.gif" alt="Hun">', "", ""),
+#                   C = if_else(!is.na(Foto), paste0('<a href="', Foto, '", target="_blank"><img src="www/foto.gif" alt="Foto"></a>'), "", "")
+#                   ) %>% transmute(Misc = paste0('<span>',K,M,F,C,'</span>'))
+# tabCatch <- bind_cols(tabCatch, tmp) %>% 
+#   select(Date, Name, Length, Weight, Method, Place, Fulton, Misc, NoWeight) %>% 
+#   mutate(Weight = round(Weight,1))
+# 
+# 
+# #### Waterlevels ####
+datWLevel <- read_csv(paste0(prefix, "data_karup_waterlevel_relative_long_", year(now()), ".csv"))
+
+# readGHWLevels <- function(years) {
+#   colT <- cols(
+#     Date = col_datetime(format = ""),
+#     'Karup By (054764)' = col_double(),
+#     'Hagebro (001762)' = col_double(),
+#     'Nørkærbro (001767)' = col_double()
+#   )
+#   dat <- NULL
+#   for (y in years) {
+#     fn <- paste0(prefix, "data_karup_waterlevel_", y, ".csv")
+#     dat <- bind_rows(dat, read_csv(fn, col_types = colT))
+#   }
+#   return(dat)
+# }
+# datWLevel <- readGHWLevels(2013:2020)
+# # datL <- dat %>% pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level')
+# # datS <- datL %>% dplyr::filter(year(Date)>2013)
+# # pWRaw <- ggplot(data = datS, aes(x = Date, y = Level)) + geom_line(aes(color = Group), show.legend = T)
+# rMeans <- read_csv(paste0(prefix,"data_karup_waterlevel_avg90.csv"))
+# datWLevel <- datWLevel %>% mutate(Day = yday(Date))
+# datWLevel <- left_join(datWLevel, rMeans)
+# datWLevelL <- datWLevel %>%
+#   pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level') %>%
+#   mutate(Sted = case_when(
+#     grepl("Karup", Group, fixed = T) ~ "Karup By",
+#     grepl("Nør", Group, fixed = T) ~ "Nørkærbro",
+#     grepl("Hage", Group, fixed = T) ~ "Hagebro",
+#     TRUE ~ "??"),
+#     Type = if_else(grepl("Avg", Group, fixed = T), "gens", "måling")
+#   )
+
+#### Lock flow ####
+datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock.csv"), locale = locale(tz = "CET"))
+```
+
+Fangster {data-navmenu="Fangster"}
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Fangster seneste syv dage {.value-box}
+
+```{r}
+renderValueBox({
+  valueBox(
+    value = datCatch %>% dplyr::filter(Date > now() - days(7)) %>% nrow(),
+    icon = "fa-chart-line",
+    color = "primary"
+  )
+})
+```
+
+### Fangster i år {.value-box}
+
+```{r}
+renderValueBox({
+  valueBox(
+    value = datCatch %>% dplyr::filter(year(Date) == year(now())) %>% nrow(),
+    icon = "fa-fish",
+    color = "warning"
+  )
+})
+```
+
+### Største havørred i år {.value-box}
+
+```{r}
+renderValueBox({
+  ct <- datCatch %>% dplyr::filter(year(Date) == year(now())) %>% 
+    dplyr::filter(Weight == max(Weight, na.rm = T)) %>% arrange(Weight, Length)
+  valueBox(
+    caption = paste("Største havørred i år fanget af", ct$Name[1]),
+    value = paste(ct$Weight[1], "kg og", ct$Length[1], "cm"),
+    icon = "fa-trophy",
+    color = "success"
+  )
+})
+```
+
+Row 
+-----------------------------------------------------------------------
+
+### Seneste fangster
+```{r Catches table}
+  DT::renderDataTable(
+    as.datatable(
+    formattable(datCatch[,1:9], 
+      list(NoWeight = FALSE, 
+           Weight = formatter("span", style = ~ formattable::style(color = ifelse(NoWeight, "grey", "black"))))), 
+    colnames = c('Dato', 'Navn', 'Længde', 'Vægt', 'Metode', 'Sted', 'Kondition', 'Diverse'),
+    class = 'stripe row-border order-column nowrap compact', # nowrap display compact
+    rownames = FALSE,
+    escape = FALSE,
+    options = list(pageLength = 15, order = list(list(0, 'desc')), 
+                 # autoWidth = TRUE,
+                 columnDefs = list(list(className = 'dt-center', targets = 2:7)
+                                   # list(targets = 7, render = JS(
+                                   #   "function(data, type, row, meta) {",
+                                   #   "return data;",
+                                   #   "}"))
+                                   # list(targets = 3, render = JS(
+                                   #   "function(data, type, row, meta) {",
+                                   #   "return 'test';",
+                                   #   "}"))
+                                   # list(width = '70px', targets = c(2,3,6,7))
+                              )
+                 # fixedHeader = TRUE,
+                 # filter = 'bottom'
+                 # rowGroup = list(dataSrc = 0, startRender = JS("function(rows, group) {",
+                 #                                               "var res = group.split('-');",
+                 #                                               "res = res[2] + '/' + res[1] + '/' + res[0];",
+                 #                                               "return res + ' (' + rows.count() + ')';}"))
+            ),
+      extensions = c('Responsive')  #'RowGroup' ,'FixedHeader'
+  ) %>% 
+  formatDate('Date', 'toLocaleDateString') %>% 
+  formatCurrency(c('Length','Fulton'), digits = c(0,2), currency = "")
+  # DT::datatable(
+  #   tabCatch,
+  #   colnames = c('Dato', 'Navn', 'Længde', 'Vægt', 'Metode', 'Sted', 'Fulton', 'Diverse'),
+  #   class = 'stripe row-border order-column nowrap', # nowrap display compact
+  #   rownames = FALSE,
+  #   # filter = 'bottom',
+  #   escape = FALSE,
+  #   options = list(pageLength = 15, order = list(list(0, 'desc')), 
+  #                  list(visible=FALSE, targets="NoWeight"),
+  #                  # autoWidth = TRUE,
+  #                  columnDefs = list(list(className = 'dt-center', targets = 2:7),
+  #                                    list(targets = 7, render = JS(
+  #                                      "function(data, type, row, meta) {",
+  #                                      "return data;",
+  #                                      "}"))
+  #                                    # list(width = '70px', targets = c(2,3,6,7))
+  #                               ),
+  #                  fixedHeader = TRUE, 
+  #                  rowGroup = list(dataSrc = 0, startRender = JS("function(rows, group) {",
+  #                                                                "var res = group.split('-');",
+  #                                                                "res = res[2] + '/' + res[1] + '/' + res[0];",
+  #                                                                "return res + ' (' + rows.count() + ')';}"))
+  #             ),
+  #   extensions = c('Responsive','FixedHeader','RowGroup')
+  # ) %>% 
+  #   formatDate('Date', 'toLocaleDateString') %>% 
+  #   formatCurrency(c('Length','Weight','Fulton'), digits = c(0,1,2), currency = "") 
+  
+  
+)
+```
+ 
+
+
+
+
+
+Estimat af vægt {data-navmenu="Vægt"}
+=======================================================================
+  
+Row
+-----------------------------------------------------------------------
+  
+### Estimat af vægt (kg) givet længde (cm)
+  
+```{r}
+tab <- bind_cols(dplyr::filter(datWeight, Period == "Apr-Aug"),
+                 # dplyr::filter(datWeight, Period == "Som"), 
+                 dplyr::filter(datWeight, Period == "Sep-Okt"), 
+                 dplyr::filter(datWeight, Period == "Marts")) %>% ungroup()
+tab <- tab %>% #arrange(desc(Length)) %>% 
+  transmute('Længde' = Length, 
+            'Apr-Aug' = str_c(format(round(Avg,1), 1), " [",format(round(Lower,1), digits = 1, trim = T),",",format(round(Upper,1), digits = 1),"]"),
+            # 'Som' = str_c(format(round(Avg1,1), 1), " [",format(round(Lower1,1), digits = 1),",",format(round(Upper1,1), digits = 1),"]"),
+            'Sep-Okt' = str_c(format(round(Avg1,1), 1), " [",format(round(Lower1,1), digits = 1, trim = T),",",format(round(Upper1,1), digits = 1),"]"),
+            'Marts' = str_c(format(round(Avg2,1), 1), " [",format(round(Lower2,1), digits = 1, trim = T),",",format(round(Upper2,1), digits = 1),"]")) 
+
+renderTable(tab, align = 'c', digits = 0)
+# DT::renderDataTable(
+#   DT::datatable(
+#     tab,
+#     # colnames = c("Længde", "Forår/Som", "Sommer", "Efterår", "Vinter"),
+#     colnames = c("Længde", "Forår/Som", "Efterår", "Vinter"),
+#     class = 'stripe row-border order-column nowrap', # nowrap display compact
+#     rownames = FALSE,
+#     # filter = 'bottom',
+#     escape = FALSE,
+#     options = list(pageLength = 50, scrollY = 600,
+#                    # autoWidth = TRUE,
+#                    columnDefs = list(list(className = 'dt-center', targets = 0:3))
+#               ),
+#     extensions = c('Responsive','RowGroup')
+#   ) 
+# )
+```
+
+
+### Plot af vægt givet længde
+  
+```{r seatrout weight estimate}
+renderPlot({
+  ggplot(datWeight, aes(x = Length, y = Avg)) + 
+    geom_line(aes(group = Period, color = Period)) +
+    labs(title = "", color = "") +
+    ylab("Vægt (kg)") + xlab("Længde (cm)") + theme(legend.position="bottom")  
+    # scale_color_brewer(palette = "Set1") +
+    # scale_color_discrete(name = "", labels = c("Sep-Okt", "Marts", "Apr-Aug"))
+})
+
+# 
+# datCatch <- readGHCatch("data_karup_catch_seatrout_2003-2019.csv")
+# tmp <- readGHCatch("data_karup_catch_seatrout_2020-.csv")
+# datCatch <- bind_rows(datCatch, tmp) %>% mutate(Month = month(Date), Quarter = quarter(Date))
+# dat <- dplyr::filter(datCatch, Length > 39 & Killed)
+# dplyr::filter(dat, Month == "jan")
+# View(dplyr::filter(dat, Month %in% c(1,2,11,12)))  # ser ud til at Herning data er vendt forkert!!
+# ggplot(dat, aes(x = Length, y = Weight)) + geom_point(na.rm = T) + facet_grid(rows = vars(Month))
+# 
+# 
+# mod1 <- lm(log(Weight) ~ log(Length), dat)
+# # summary(mod1)
+# lim <- 40:max(dat$Length)
+# res <- predict(mod1, data.frame(Length = lim), interval='prediction', level=0.95)
+# res <- exp(res)
+# res <- res %>% as_tibble() 
+# res <- res %>% add_column(Length = lim, .before = T)
+# colnames(res) <- c("Length", "Avg", "Lower", "Upper")
+# renderPlot({
+#   res <- pivot_longer(res, 2:4)
+#   pW <- ggplot(dat, aes(x = Length, y = Weight)) + geom_point(na.rm = T) + 
+#     geom_line(aes(x = Length, y = value, colour = name), data = res) 
+#   pW
+# })
+```
+
+
+  
+
+  
+
+Nuværende {data-navmenu="Vandstand"}
+=======================================================================
+  
+### Relativ vandstand i forhold til gennemsnit (rullende over 90 dage)
+
+```{r}
+renderPlot({
+  datS <- datWLevel %>% dplyr::filter(Date > now() - days(14))
+  # datWLevelN <- datS %>% mutate(`Karup By` = `Karup By (054764)` - `Karup By (054764) rAvg90`, 
+  #                               `Hagebro` = `Hagebro (001762)` - `Hagebro (001762) rAvg90`,
+  #                               `Nørkærbro` = `Nørkærbro (001767)` - `Nørkærbro (001767) rAvg90`) %>% 
+  #   select(Date, `Karup By`, `Hagebro`, `Nørkærbro`)
+  # datS <- datWLevelN %>% pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level')
+  pWN <- ggplot(data = datS, aes(x = Date, y = Level)) + 
+    geom_hline(yintercept = 0, colour="black") +
+    # geom_smooth(aes(group = Group), na.rm = T, method = lm, formula = y ~ splines::bs(x, 40), 
+    #             se = FALSE, color = "grey", lwd=0.5) +
+    geom_line(na.rm = T, colour = "#00AFBB") + 
+    facet_grid(rows = vars(Place)) +
+    # labs(title = "Relativ vandstand i Karup Å", 
+    #      subtitle = "Vandstand relativ i forhold til gennemsnit over 90 dage") +
+    ylab("Relativ vandstand (m)") + xlab("Dato") +
+    theme(legend.position="bottom") 
+  pWN
+})
+# renderPlotly(ggplotly(pWMA) %>%  layout(legend = list(orientation = "h", x = 0.3, y = -0.4)))
+```
+
+Over år {data-navmenu="Vandstand"}
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+  
+### Vandstand over år
+  
+```{r Vandstand årlig}
+renderPlot({
+  readGHWLevels <- function(years) {
+    colT <- cols(
+      Date = col_datetime(format = ""),
+      'Karup By (054764)' = col_double(),
+      'Hagebro (001762)' = col_double(),
+      'Nørkærbro (001767)' = col_double()
+    )
+    dat <- NULL
+    for (y in years) {
+      fn <- paste0(prefix, "data_karup_waterlevel_", y, ".csv")
+      dat <- bind_rows(dat, read_csv(fn, col_types = colT))
+    }
+    return(dat)
+  }
+  datWLevel <- readGHWLevels(2013:2020)
+  
+  datWLevelL <- datWLevel %>%
+    pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level') %>%
+    mutate(Sted = case_when(
+      grepl("Karup", Group, fixed = T) ~ "Karup By",
+      grepl("Nør", Group, fixed = T) ~ "Nørkærbro",
+      grepl("Hage", Group, fixed = T) ~ "Hagebro",
+      TRUE ~ "??"),
+      Type = if_else(grepl("Avg", Group, fixed = T), "gens", "måling")
+    )
+  pWMAY <- ggplot(data = datWLevelL, aes(x = Date, y = Level, color = Type)) +
+    geom_line(aes(), na.rm = T) +
+    facet_grid(rows = vars(Sted), scales = "free") +
+    # labs(title = "Vandstand i Karup Å",
+    #      subtitle = "Gennemsnit er beregnet over 90 dage (givet data for alle år)") +
+    theme(legend.position="bottom") +
+    ylab("Vandstand (m)") + xlab("Dato") 
+  # scale_color_discrete(name = "", labels = c("Hagebro", "Hagebro (gens)",
+  #                                            "Karup By", "Karup By (gens)",
+  #                                            "Nørkærbro", "Nørkærbro (gens)"))
+  pWMAY
+})
+# renderPlotly(ggplotly(pWMA) %>%  layout(legend = list(orientation = "h", x = 0.3, y = -0.4)))
+```
+
+
+
+Statistik `r year(now())` {data-navmenu="Fangster"}
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Opsumering
+
+```{r}
+mthIdx <- month(now())
+mthAbbrv <- levels(month(now(), label = T))
+mth <- mthAbbrv[3:mthIdx]  
+tmp1 <- map(mth, function(x) {
+  if (!(x %in% datStatMonth$Month)) {
+    tmp <- datStatMonth %>% slice(1:1) 
+    tmp[1,1] <- x
+    tmp[1,2:ncol(tmp)] <- 0
+    return(tmp)
+  }  
+})
+datStatMonth <- bind_rows(datStatMonth, tmp1)
+                                                     
+tabStatMonth <- 
+  datStatMonth %>% mutate(Upper = {if ("Upper" %in% names(.)) Upper else 0},
+                          Middle = {if ("Middle" %in% names(.)) Middle else 0},
+                          Lower = {if ("Lower" %in% names(.)) Lower else 0},
+                          Haderis = {if ("Haderis" %in% names(.)) Haderis else 0}) %>% 
+  transmute(Month, Total, 
+         Sex = paste0(format(100*Male/Total, digits = 0, trim = TRUE), "/", 
+                      format(100*Female/Total, digits = 0, trim = TRUE), "/", 
+                      format(100*SexUnknown/Total, digits = 0, trim = TRUE)), 
+         Place = paste0(format(100*Lower/Total, digits = 0, trim = TRUE), "/", 
+                        format(100*Middle/Total, digits = 0, trim = TRUE), "/", 
+                        format(100*Upper/Total, digits = 0, trim = TRUE), "/", 
+                        format(100*Haderis/Total, digits = 0, trim = TRUE)),
+         Released = paste0(round(100*Released/Total, 0), "/", 
+                           round(100*Killed/Total, 0), "/", 
+                           round(100*KilledUnknown/Total, 0)),
+         Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)), 
+         Weight = paste0(round(WeightAvg,1), "/", round(WeightMax,1), "/", round(Kg,0)), 
+         Fulton = paste0(round(FultonAvg,2), "/", round(FultonMax,2))) %>%
+mutate_if(is.character, str_replace_all, pattern = "NaN", replacement = "0")
+
+cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")), 
+   "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
+   paste0(faIcon("mars", title = "Han"),"/",
+          faIcon("venus", title = "Hun"), "/",
+          faIcon("question", title = "Ukendt"), " (%)"),
+   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Haderup Å'>H</span> (%)",
+   paste0(faIcon("sync", title = "C&R"),"/",
+          faIcon("times", title = "Hjemtaget"), "/",
+          faIcon("question", title = "Ukendt"), " (%)"),
+   paste0(faIcon("ruler-horizontal", title="Gens længde"), "/",
+          faIcon("ruler", title="Max længde")),
+   paste0(faIcon("balance-scale", title="Gens. vægt (hjemtaget)"), "/",
+          faIcon("weight-hanging", title="Max vægt (hjemtaget)"),
+          "/<i class=\"fas\" title=\"Total vægt (hjemtaget)\">&#x3A3;</i>"),
+   paste0(faIcon("heart", title="Gens kondition (hjemtaget)"), "/",
+          faIcon("gratipay", title="Max kondition (hjemtaget)"))
+   ) 
+
+tabStatMonth %>% 
+  kable(col.names = cNames, escape = F, align = "c") %>% 
+  kable_styling(fixed_thead = T, font_size = 10,
+                bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+# renderDT(
+#   DT::datatable(
+#     tabStatMonth,
+#     colnames = c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")), 
+#                  "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>", 
+#                  paste0(faIcon("mars", title = "Han"),"/", 
+#                         faIcon("venus", title = "Hun"), "/", 
+#                         "<i class=\"fas\" title=\"Ukendt\">?</i> (%)"),
+#                  "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Haderup Å'>H</span> (%)", 
+#                  paste0(faIcon("sync", title = "C&R"),"/", 
+#                         faIcon("times", title = "Hjemtaget"), "/", 
+#                         "<i class=\"fas\" title=\"Ukendt\">?</i> (%)"),
+#                  paste0(faIcon("ruler-horizontal", title="Gens længde"), "/", 
+#                         faIcon("ruler", title="Max længde")), 
+#                  paste0(faIcon("balance-scale", title="Gens. vægt (hjemtaget)"), "/", 
+#                         faIcon("weight-hanging", title="Max vægt (hjemtaget)"), 
+#                         "/<i class=\"fas\" title=\"Total vægt (hjemtaget)\">&#x3A3;</i>"), 
+#                  paste0(faIcon("heart", title="Gens kondition (hjemtaget)"), "/",
+#                         faIcon("gratipay", title="Max kondition (hjemtaget)")) 
+#                  ),
+#     class = 'nowrap display compact', # nowrap display compact stripe row-border order-column
+#     rownames = FALSE,
+#     escape = FALSE,
+#     fillContainer = TRUE,
+#     selection = "none",
+#     options = list(#autoWidth = TRUE,
+#       paging = FALSE, bSort = FALSE, dom = 'tip', #scrollX = TRUE, scrollY = TRUE, scrollCollapse=TRUE
+#       columnDefs = list(list(className = 'dt-center', targets = 0:7))
+#     ),
+#     extensions = c('Responsive')
+#   )
+# )
+
+```
+
+
+Row
+-----------------------------------------------------------------------
+
+### Fangster den seneste måned
+
+```{r}
+renderPlot({
+  dat <- datCatch %>% 
+    dplyr::filter(Date > now() - days(30)) %>% 
+    select(Date, Place)
+
+  ggplot(data = dat, aes(x = Date)) +
+    geom_bar(aes(fill = Place)) + 
+    scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(date(now()-ddays(30)), date(now()-ddays(1)))) + 
+    labs(fill = "") + xlab("Dato") + ylab("Antal fangster") + 
+    theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
+})
+```
+
+
+Row
+-----------------------------------------------------------------------
+
+### Ugentlige fangster `r year(now())`
+
+```{r}
+renderPlot({
+  dat <- datCatch %>% 
+    dplyr::filter(Date > ymd(paste0(year(now()),"-01-01"))) %>% 
+    select(Week, Place)
+  
+  ggplot(data = dat, aes(x = Week)) +
+    geom_bar(aes(fill = Place)) + 
+    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) +
+    expand_limits(x = week(now())) + 
+    labs(fill = "") + xlab("Uge") + ylab("Antal fangster") + 
+    theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
+})
+```
+
+### Månedlige fangster `r year(now())`
+
+```{r}
+renderPlot({
+  dat <- datCatch %>% 
+    dplyr::filter(Date > ymd(paste0(year(now()),"-01-01"))) %>% 
+    select(Month, Place)
+  
+ggplot(dat, aes(x = Month)) + 
+     geom_bar(aes(fill = Place), stat="count") +
+     geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) +
+     expand_limits(x = month(now(), label = T)) + 
+     labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
+     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
+})
+```
+
+Statistik 2003-`r year(now())` {data-navmenu="Fangster"}
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Statistik for 2003-`r year(now())`
+
+```{r}
+tabStatYear <- 
+  datStatYear %>% mutate(Upper = {if ("Upper" %in% names(.)) Upper else 0},
+                          Middle = {if ("Middle" %in% names(.)) Middle else 0},
+                          Lower = {if ("Lower" %in% names(.)) Lower else 0},
+                          Haderis = {if ("Haderis" %in% names(.)) Haderis else 0}) %>% 
+  transmute(Year, Total, 
+         Sex = paste0(format(100*Male/Total, digits = 0, trim = TRUE), "/", 
+                      format(100*Female/Total, digits = 0, trim = TRUE), "/", 
+                      format(100*SexUnknown/Total, digits = 0, trim = TRUE)), 
+         Place = paste0(format(100*Lower/Total, digits = 0, trim = TRUE), "/", 
+                        format(100*Middle/Total, digits = 0, trim = TRUE), "/", 
+                        format(100*Upper/Total, digits = 0, trim = TRUE), "/", 
+                        format(100*Haderis/Total, digits = 0, trim = TRUE)),
+         Released = paste0(round(100*Released/Total, 0), "/", 
+                           round(100*Killed/Total, 0), "/", 
+                           round(100*KilledUnknown/Total, 0)),
+         Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)), 
+         Weight = paste0(round(WeightAvg,1), "/", round(WeightMax,1), "/", round(Kg,0)), 
+         Fulton = paste0(round(FultonAvg,2), "/", round(FultonMax,2))) %>%
+mutate_if(is.character, str_replace_all, pattern = "NaN|NA", replacement = "0")
+
+cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")), 
+   "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
+   paste0(faIcon("mars", title = "Han"),"/",
+          faIcon("venus", title = "Hun"), "/",
+          faIcon("question", title = "Ukendt"), " (%)"),
+   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Haderup Å'>H</span> (%)",
+   paste0(faIcon("sync", title = "C&R"),"/",
+          faIcon("times", title = "Hjemtaget"), "/",
+          faIcon("question", title = "Ukendt"), " (%)"),
+   paste0(faIcon("ruler-horizontal", title="Gens længde"), "/",
+          faIcon("ruler", title="Max længde")),
+   paste0(faIcon("balance-scale", title="Gens. vægt (hjemtaget)"), "/",
+          faIcon("weight-hanging", title="Max vægt (hjemtaget)"),
+          "/<i class=\"fas\" title=\"Total vægt (hjemtaget)\">&#x3A3;</i>"),
+   paste0(faIcon("heart", title="Gens kondition (hjemtaget)"), "/",
+          faIcon("gratipay", title="Max kondition (hjemtaget)"))
+   ) 
+
+tabStatYear %>% 
+  kable(col.names = cNames, escape = F, align = "c") %>% 
+  kable_styling(fixed_thead = T, font_size = 10,
+                bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+# tabStat <- 
+#   datStatYear %>% 
+#   transmute(Year, Total, 
+#          Sex = paste0(format(100*Male/Total, digits = 0, trim = TRUE), "/", 
+#                       format(100*Female/Total, digits = 0, trim = TRUE), "/", 
+#                       format(100*SexUnknown/Total, digits = 0, trim = TRUE)), 
+#          Place = paste0(format(100*Lower/Total, digits = 0, trim = TRUE), "/", 
+#                         format(100*Middle/Total, digits = 0, trim = TRUE), "/", 
+#                         format(100*Upper/Total, digits = 0, trim = TRUE), "/", 
+#                         format(100*Haderis/Total, digits = 0, trim = TRUE)),
+#          Released = paste0(round(100*Released/Total, 0), "/", 
+#                            round(100*Killed/Total, 0), "/", 
+#                            round(100*KilledUnknown/Total, 0)),
+#          LengthAvg = round(LengthAvg,0), 
+#          LengthMax = round(LengthMax,0), 
+#          WeightAvg = round(WeightAvg,1), 
+#          WeightMax = round(WeightMax,1), 
+#          Kg = round(Kg,0), 
+#          FultonAvg = round(FultonAvg,2)) %>% 
+#   arrange(desc(Year))
+# # names(tabStat) <- c("År", "Total", "Hun/Han/? (%)", "N/M/Ø/H (%)", "C&R (%)", "Hjemtaget (%)", "Gens. længde", "Max længde", "Gens. vægt", "Max vægt", "Total Kg", "Gens. Kondition")
+# 
+# # renderDT(
+#   DT::datatable(
+#     tabStat,
+#     colnames = c("År", "Total", 
+#                  "<img src='www/boy.gif' alt='Han'>/<img src='www/girl.gif' alt='Han'>/? (%)", 
+#                  "N/M/Ø/H (%)", 
+#                  "<img src='www/c_and_r.gif' alt='C&R'>/K (%)", 
+#                  "Gens. længde", 
+#                  "Max længde", "Gens. vægt", "Max vægt", "Total Kg", "Gens. Kondition"),
+#     class = 'nowrap display', # nowrap display compact stripe row-border order-column
+#     rownames = FALSE,
+#     escape = FALSE,
+#     fillContainer = TRUE,
+#     selection = "none",
+#     options = list(#autoWidth = TRUE,
+#       paging = FALSE, bSort = FALSE, dom = 'tip' #scrollX = TRUE, scrollY = TRUE, scrollCollapse=TRUE
+#       # columnDefs = list(list(className = 'dt-center', targets = 2:7))
+#               ),
+#     extensions = c('Responsive')
+#   )
+# )
+```
+
+
+
+
+Row
+-----------------------------------------------------------------------
+
+### Månedlige fangster 2003-`r year(now())`
+
+```{r}
+renderPlot({
+  dat <- datCatch %>% select(Month, Place)
+  
+  ggplot(data = dat, aes(x = Month)) +
+    geom_bar(aes(fill = Place, y = (..count..)/sum(..count..))) + 
+    geom_text(aes(label = scales::percent(round((..count..)/sum(..count..),2)),
+                   y = (..count..)/sum(..count..)), stat= "count", vjust = -.5) +
+    labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
+    scale_y_continuous(labels = scales::percent) + 
+    theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
+})
+```
+
+
+
+Slusen
+=======================================================================
+
+```{r}
+# Find high and lows
+findPeaks <- function (x, m = 2){
+    shape <- diff(sign(diff(x, na.pad = FALSE)))
+    pks <- sapply(which(shape < 0 | shape > 0), FUN = function(i){
+       z <- i - m + 1
+       z <- ifelse(z > 0, z, 1)
+       w <- i + m + 1
+       w <- ifelse(w < length(x), w, length(x))
+       if(all(x[c(z : i, (i + 2) : w)] <= x[i + 1]) | all(x[c(z : i, (i + 2) : w)] >= x[i + 1])) return(i + 1) else return(numeric(0))
+    })
+     pks <- unlist(pks)
+     pks <- unique(c(1, pks, length(x)))
+     pks
+}
+
+setAvgFlow <- function(x) {
+  idx <- findPeaks(x)
+  res <- rep(0, length(x))
+  for (j in 1:(length(idx)-1)) {
+    # cat("j:",j,"i:",idx[j],"x:",x[idx[j]],"j+1:",j+1,"i:",idx[j+1],"x:",x[idx[j+1]],"\n")
+    if (max(x[idx[j]], x[idx[j+1]]) < -100 | 
+        max(x[idx[j]], x[idx[j+1]]) > 100 |
+        min(x[idx[j]], x[idx[j+1]]) > 100 |
+        min(x[idx[j]], x[idx[j+1]]) < -100
+        ) {
+      res[idx[j]:idx[j+1]] <- 2
+      next
+    }
+    if (abs((x[idx[j+1]] - x[idx[j]])/(idx[j+1] - idx[j])) > 0.5 |
+        max(x[idx[j]], x[idx[j+1]]) > 10 |
+        min(x[idx[j]], x[idx[j+1]]) < -10
+        ) {
+      v1 <- res[idx[j]]
+      v2 <- res[idx[j+1]] 
+      res[idx[j]:idx[j+1]] <- 1
+      if (v1 == 2) res[idx[j]] <- 2
+      if (v2 == 2) res[idx[j+1]] <- 2
+      next
+    }
+  }
+  return(res)
+}
+
+datFlow14 <- datFlow %>% 
+  dplyr::filter(DateTime > now() - days(14)) %>% 
+  mutate(Open = setAvgFlow(.$Flow))
+```
+
+Row
+-----------------------------------------------------------------------
+
+### Åben de seneste 7 dage {.value-box}
+
+```{r}
+rate <- datFlow14 %>% 
+  dplyr::filter(DateTime > now() - days(7)) %>% 
+  # summarise(Rate = 100*sum(Open)/(2*n())) %>% 
+  summarise(Rate = 100*sum(Open>0)/(n())) %>% 
+  as.numeric() %>% round(0)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(75, 100), warning = c(25, 75), danger = c(0, 25)
+))
+```
+
+### Åben de seneste 14 dage {.value-box}
+
+```{r}
+rate <- datFlow14 %>% 
+  # summarise(Rate = 100*sum(Open)/(2*n())) %>% 
+  summarise(Rate = 100*sum(Open>0)/(n())) %>% 
+  as.numeric() %>% round(0)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(75, 100), warning = c(25, 75), danger = c(0, 25)
+))
+```
+
+Row
+-----------------------------------------------------------------------
+
+### Sluse flow de seneste 14 dage (strøm ind i fjorden er positiv)
+
+
+
+
+```{r}
+renderPlot({
+  ggplot(datFlow14) + 
+    # geom_bar(aes(x = DateTime, y = 100*Open), stat = "identity") +
+    geom_line(aes(x = DateTime, y = Flow, colour = Open)) + 
+    # scale_colour_gradient2(low = "red", mid = "yellow", high = "green", na.value = NA, midpoint = 1, guide = "legend") +
+    # geom_point(aes(x = DateTime, y = Flow), data = dat[findPeaks(dat$Flow),]) +
+    scale_colour_gradient(low = "red", high = "green", na.value = NA, guide = "legend", breaks = c(0,1,2), name = "", labels = c("Lukket", "Delvis åben", "Åben")) +
+    # guide_coloursteps(even.steps = TRUE, show.limits = NULL, ticks = FALSE) +
+    theme(legend.position="bottom") +
+    labs(x = "Dato", y = "Flow (m3/s)")  #title = "Sluseflow Hvide Sande"
+})
+```
+
+
+
+
+Om siden 
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Info
+
+Dette dashboard er lavet af Lars Relund og giver information omkring fiskeriet i Karup Å. Data er hentet fra forskellige kilder. Fangst data er fra KÅS. Der er data fra 2003. Bemærk, at det er først fra 2019, at der har været obligatorisk fangstrapportering. Kun havørred over mindstemålet vises under fangster. Kondition er beregnet udfra [Fultons formel](http://ulnits.dk/biologi/the-k-factor/).  
+
+Vægten for genudsatte fisk er [estimeret](#estimat-af-vægt) udfra tidligere fangster og givet i grå farve. For mere info se denne [rapport](http://htmlpreview.github.io/?https://github.com/relund/skjern/blob/master/reports/karup_weight.html).
+
+Vandstandsdata er fra [vandløbssiden](http://www.hydrometri.dk/hyd/). Den gennemensnitlige vandstand er estimeret som et rullende gennemsnit over 90 dage (45 dage på hver side af datoen) ved brug tilgængelige data for alle år. Bemærk den gennemsnitlige vandstand siger nødvendigvis ikke noget om en god vandstand for fiskeriet, fx kan den gennemsnitlige vandstand i vinterhalvåret godt være høj.
+
+Forslag til forbedringer kan sendes til lars.relund[at]gmail[dot]com.
+  
