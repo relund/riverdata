@@ -86,7 +86,7 @@ page <- read_html(url)
 x <- html_node(page, xpath = '//*[@id="report-list"]')
 dat <- html_table(x, header = T, trim = T, fill = T) %>% as_tibble()
 colnames(dat) <- c("Date", "Length", "Weight", "Name", "Place", "Method", "Cut", "Foto")
-dat <- dat %>% mutate(killed = str_detect(dat$Date, fixed("*")))
+dat <- dat %>% mutate(Killed = str_detect(dat$Date, fixed("*")))
 dat$Date <- dat$Date %>% str_replace(coll(" *"), "")
 dat$Length <- dat$Length %>% str_replace_all(c(".cm" = "", "Ukendt" = ""))
 dat$Weight <- dat$Weight %>% str_replace_all(c(".kg" = "", "Ukendt" = ""))
@@ -98,7 +98,7 @@ dat <- type_convert(dat)
 dat$Length <- as.numeric(dat$Length)
 dat$Weight<- as.numeric(dat$Weight)
 dat <- dat %>% mutate(Fulton = Weight*100000/Length^3)
-dat
+dat <- dat %>% select(-Foto)
 
 fn <- "data/data_skjern_catch_salmon.csv"
 if (!file.exists(fn)) {
@@ -126,7 +126,7 @@ page <- read_html(url)
 x <- html_node(page, xpath = '//*[@id="report-list"]')
 dat <- html_table(x, header = T, trim = T, fill = T) %>% as_tibble()
 colnames(dat) <- c("Date", "Length", "Weight", "Name", "Place", "Method", "Cut", "Foto")
-dat <- dat %>% mutate(killed = str_detect(dat$Date, fixed("*")))
+dat <- dat %>% mutate(Killed = str_detect(dat$Date, fixed("*")))
 dat$Date <- dat$Date %>% str_replace(coll(" *"), "")
 dat$Length <- dat$Length %>% str_replace_all(c(".cm" = "", "Ukendt" = ""))
 dat$Weight <- dat$Weight %>% str_replace_all(c(".kg" = "", "Ukendt" = ""))
@@ -138,7 +138,7 @@ dat <- type_convert(dat)
 dat$Length <- as.numeric(dat$Length)
 dat$Weight<- as.numeric(dat$Weight)
 dat <- dat %>% mutate(Fulton = Weight*100000/Length^3)
-dat
+dat <- dat %>% select(-Foto)
 
 fn <- "data/data_skjern_catch_seatrout.csv"
 if (!file.exists(fn)) {
