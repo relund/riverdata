@@ -40,8 +40,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2019-09-29,58,NA,lars Korshøj,Øvre,Spin,FALSE,FALSE,NA
 2019-09-29,54,NA,lars Korshøj,Øvre,Spin,FALSE,FALSE,NA
 2019-09-29,52,NA,lars Korshøj,Øvre,Spin,FALSE,FALSE,NA
-2019-09-29,54,NA,lars Korshøj,Øvre,Spin,FALSE,FALSE,NA
-2019-09-29,52,NA,lars Korshøj,Øvre,Spin,FALSE,FALSE,NA
 2019-09-29,52,NA,lars Korshøj,Øvre,Spin,FALSE,TRUE,NA
 2019-09-28,48,NA,Mads Ole Madsen,Øvre,Fly,FALSE,FALSE,NA
 2019-09-28,69,NA,Patrick Fron,Mellem,Fly,FALSE,FALSE,NA
@@ -126,7 +124,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2019-09-08,63,NA,Carsten Aasted Gad,Mellem,Fly,FALSE,FALSE,NA
 2019-09-08,41,NA,Mogens,Omme Å,Spin,FALSE,FALSE,NA
 2019-09-07,45,NA,Sune Gellert,Nedre,Spin,FALSE,FALSE,NA
-2019-09-07,50,NA,Erik Just Pedersen,Øvre,Fly,FALSE,FALSE,NA
 2019-09-07,50,NA,Erik Just Pedersen,Øvre,Fly,FALSE,FALSE,NA
 2019-09-07,57,NA,Sebastian Nielsen,Øvre,Spin,FALSE,FALSE,NA
 2019-09-07,52,NA,Henrik Mougaard,Mellem,Fly,FALSE,FALSE,NA
@@ -527,7 +524,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2018-09-15,48,NA,Michael mikkelsen,Nedre,Spin,FALSE,TRUE,NA
 2018-09-15,60,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
 2018-09-15,40,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
-2018-09-15,40,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
 2018-09-14,40,NA,Peder kirkegaard,Nedre,Spin,FALSE,FALSE,NA
 2018-09-14,43,NA,Torben Smedegaard,Vorgod Å,Spin,FALSE,FALSE,NA
 2018-09-14,62,NA,Allan bunkenborg,Mellem,Spin,FALSE,FALSE,NA
@@ -559,7 +555,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2018-09-10,53,NA,Jan Thorsted,Mellem,Spin,FALSE,TRUE,NA
 2018-09-10,64,NA,Ole Wisler,Øvre,Fly,FALSE,FALSE,NA
 2018-09-10,42,NA,Bjarne Jakobsen,Øvre,Spin,FALSE,FALSE,NA
-2018-09-09,55,NA,Jesper Ottosen,Øvre,Fly,FALSE,FALSE,NA
 2018-09-09,55,NA,Jesper Ottosen,Øvre,Fly,FALSE,FALSE,NA
 2018-09-09,47,NA,Poul Erik Kristiansen,Nedre,Spin,FALSE,FALSE,NA
 2018-09-09,48,NA,Nicolai Just Jakobsen,Øvre,Spin,FALSE,FALSE,NA
@@ -625,7 +620,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2018-08-19,45,NA,Kim Mogensen,Mellem,Spin,FALSE,FALSE,NA
 2018-08-19,45,NA,BrianJuhler,Øvre,Fly,FALSE,FALSE,NA
 2018-08-19,55,NA,Gert Hartvigsen,Mellem,Spin,FALSE,TRUE,NA
-2018-08-19,45,NA,BrianJuhler,Øvre,Fly,FALSE,FALSE,NA
 2018-08-18,45,NA,Søren Dalager,Øvre,Spin,FALSE,FALSE,NA
 2018-08-18,40,NA,Bo Østergaard,Øvre,Fly,FALSE,FALSE,NA
 2018-08-18,53,NA,Tobias park,Nedre,Fly,FALSE,FALSE,NA
@@ -695,8 +689,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2018-08-13,55,NA,jes barbesgaard,Mellem,Spin,FALSE,FALSE,NA
 2018-08-13,48,NA,Jens Rasmussen,Mellem,Fly,FALSE,FALSE,NA
 2018-08-13,37,NA,Mogens Skoven Nielsen,Øvre,Fly,FALSE,FALSE,NA
-2018-08-13,45,NA,Senja furbo,Mellem,Spin,FALSE,FALSE,NA
-2018-08-13,45,NA,Senja furbo,Mellem,Spin,FALSE,FALSE,NA
 2018-08-13,45,NA,Senja furbo,Mellem,Spin,FALSE,FALSE,NA
 2018-08-13,47,NA,Bruno Stamm,Øvre,Fly,FALSE,FALSE,NA
 2018-08-13,60,NA,per lundvig,Øvre,Fly,FALSE,FALSE,NA
@@ -840,7 +832,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2018-06-17,45,NA,René Sørup,Øvre,Fly,FALSE,FALSE,NA
 2018-06-17,51,NA,Thomas mosgaard,Nedre,Spin,FALSE,FALSE,NA
 2018-06-17,40,NA,Ole Andreasen,Nedre,Spin,FALSE,FALSE,NA
-2018-06-17,40,NA,Ole Andreasen,Nedre,Spin,FALSE,FALSE,NA
 2018-06-17,80,7.2,Poul Erik Kristiansen,Nedre,Spin,FALSE,TRUE,1.40625
 2018-06-17,52,NA,Ronald Otto,Vorgod Å,Fly,FALSE,FALSE,NA
 2018-06-17,51,NA,Kristian Ehlern,Nedre,Fly,FALSE,TRUE,NA
@@ -850,10 +841,8 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2018-06-16,45,NA,per lundvig,Øvre,Fly,FALSE,FALSE,NA
 2018-06-16,45,NA,Søren Præst,Mellem,Fly,FALSE,FALSE,NA
 2018-06-16,40,NA,Klaus Lietzen,Nedre,Spin,FALSE,FALSE,NA
-2018-06-16,40,NA,Klaus Lietzen,Nedre,Spin,FALSE,FALSE,NA
 2018-06-16,40,NA,Mogens Dyhre Hansen,Nedre,Spin,FALSE,FALSE,NA
 2018-06-16,45,NA,Jesper Ottosen,Nedre,Spin,FALSE,FALSE,NA
-2018-06-16,65,3.5,Poul Mortensen,Nedre,Fly,FALSE,TRUE,1.2744651797906237
 2018-06-16,65,3.5,Poul Mortensen,Nedre,Fly,FALSE,TRUE,1.2744651797906237
 2018-06-16,54,NA,Peter Bilgrav Sørensen,Vorgod Å,Spin,FALSE,FALSE,NA
 2018-06-16,40,NA,Erling. Pedersen,Nedre,Fly,FALSE,FALSE,NA
@@ -1058,7 +1047,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2017-09-22,45,NA,Mirel Balinisteanu,Vorgod Å,Spin,FALSE,FALSE,NA
 2017-09-22,45,NA,Klaus Lietzen,Mellem,Spin,FALSE,FALSE,NA
 2017-09-22,54,NA,Frederik Pedersen,Nedre,Spin,FALSE,TRUE,NA
-2017-09-22,54,NA,Frederik Pedersen,Nedre,Spin,FALSE,TRUE,NA
 2017-09-22,66,NA,Frederik Pedersen,Nedre,Spin,FALSE,FALSE,NA
 2017-09-22,45,NA,Kristian Jørgensen,Mellem,Spin,FALSE,FALSE,NA
 2017-09-21,55,NA,Thomas Mosgaard,Nedre,Fly,FALSE,FALSE,NA
@@ -1220,8 +1208,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2017-08-13,45,NA,Jesper Moldaschl,Øvre,Fly,FALSE,FALSE,NA
 2017-08-13,57,NA,Aase Faaborg,Nedre,Spin,FALSE,FALSE,NA
 2017-08-13,55,NA,Michael christensen,Øvre,Fly,FALSE,TRUE,NA
-2017-08-13,55,NA,Michael christensen,Øvre,Fly,FALSE,TRUE,NA
-2017-08-12,50,NA,Kim Mathiasen,Mellem,Fly,FALSE,FALSE,NA
 2017-08-12,50,NA,Kim Mathiasen,Mellem,Fly,FALSE,FALSE,NA
 2017-08-12,72,NA,Frank M Larsen,Nedre,Spin,FALSE,TRUE,NA
 2017-08-12,63,3.3,Tom Pedersen,Nedre,Fly,FALSE,TRUE,1.3197518866453106
@@ -1244,7 +1230,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2017-08-08,50,NA,henning bak,Øvre,Spin,FALSE,FALSE,NA
 2017-08-08,73,3.9,jørgen poulsen,Nedre,Spin,FALSE,TRUE,1.0025268818586335
 2017-08-08,50,NA,Sebastian Kotz,Mellem,Fly,FALSE,FALSE,NA
-2017-08-08,50,NA,Sebastian Kotz,Mellem,Fly,FALSE,FALSE,NA
 2017-08-07,45,NA,Keld Eriksen,Nedre,Spin,FALSE,FALSE,NA
 2017-08-07,65,NA,Jesper Berg Jensen,Nedre,Fly,FALSE,FALSE,NA
 2017-08-07,68,3.6,Uwe Hüls,Nedre,Spin,FALSE,TRUE,1.144921636474659
@@ -1266,7 +1251,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2017-08-02,51,NA,Mathies Baum,Mellem,Fly,FALSE,FALSE,NA
 2017-08-02,52,NA,Ole Wisler,Mellem,Fly,FALSE,TRUE,NA
 2017-08-01,70,NA,Frank thygesen,Nedre,Spin,FALSE,FALSE,NA
-2017-08-01,45,NA,Jørn Andersen,Mellem,Fly,FALSE,FALSE,NA
 2017-08-01,45,NA,Jørn Andersen,Mellem,Fly,FALSE,FALSE,NA
 2017-08-01,67,NA,Lars Fabrin,Nedre,Fly,FALSE,FALSE,NA
 2017-08-01,50,NA,Michael Holm Sørensen,Nedre,Fly,FALSE,FALSE,NA
@@ -1405,7 +1389,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2016-10-10,51,NA,Henning M Pedersen,Omme Å,Spin,FALSE,FALSE,NA
 2016-10-10,62,NA,Peter Nissen,Nedre,Fly,FALSE,FALSE,NA
 2016-10-10,60,2.2,Volker Hindenburg,Nedre,Spin,FALSE,TRUE,1.0185185185185186
-2016-10-10,65,NA,Bo Nielsen,Mellem,Fly,FALSE,FALSE,NA
 2016-10-10,65,NA,Bo Nielsen,Mellem,Fly,FALSE,FALSE,NA
 2016-10-10,63,NA,Steen Mortensen,Mellem,Fly,FALSE,FALSE,NA
 2016-10-10,57,2,Kent ullerup,Øvre,Fly,FALSE,TRUE,1.079954425923226
@@ -1679,7 +1662,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2016-08-05,53,NA,Poul-Erik Winther,Mellem,Fly,FALSE,TRUE,NA
 2016-08-05,66,NA,Mikkel Holm thomsen,Nedre,Fly,FALSE,FALSE,NA
 2016-08-04,NA,NA,Jasper van der Beek,Mellem,Fly,FALSE,FALSE,NA
-2016-08-04,NA,NA,Jasper van der Beek,Mellem,Fly,FALSE,FALSE,NA
 2016-08-04,55,NA,bo fomsgaard,Mellem,Fly,FALSE,FALSE,NA
 2016-08-04,58,NA,bo fomsgaard,Mellem,Fly,FALSE,FALSE,NA
 2016-08-04,65,NA,bo fomsgaard,Mellem,Fly,FALSE,FALSE,NA
@@ -1735,9 +1717,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2016-07-28,52,1.6,Jens Svenningsen,Nedre,Fly,FALSE,TRUE,1.137915339098771
 2016-07-28,63,2.9,Leif -Milan Jacobsen,Mellem,Fly,FALSE,FALSE,1.1597819609913336
 2016-07-28,80,6.5,Svend Erik Øgendahl,Nedre,Fly,FALSE,FALSE,1.26953125
-2016-07-28,57,NA,Ole Jørgensen,Vorgod Å,Spin,FALSE,FALSE,NA
-2016-07-28,57,NA,Ole Jørgensen,Vorgod Å,Spin,FALSE,FALSE,NA
-2016-07-28,57,NA,Ole Jørgensen,Vorgod Å,Spin,FALSE,FALSE,NA
 2016-07-28,57,NA,Ole Jørgensen,Vorgod Å,Spin,FALSE,FALSE,NA
 2016-07-28,50,NA,Jesper Ottosen,Mellem,Spin,FALSE,FALSE,NA
 2016-07-27,65,NA,Jonas Patuel,Nedre,Spin,FALSE,FALSE,NA
@@ -1981,7 +1960,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2016-06-16,55,NA,Bue Poulsen,Nedre,Fly,FALSE,FALSE,NA
 2016-06-15,51,NA,Thomas mosgaard,Nedre,Fly,FALSE,FALSE,NA
 2016-06-15,70,4.1,Thomas Torpe,Nedre,Fly,FALSE,TRUE,1.19533527696793
-2016-06-15,50,NA,Frederik Iversen,Mellem,Spin,FALSE,FALSE,NA
 2016-06-15,50,NA,Frederik Iversen,Mellem,Spin,FALSE,FALSE,NA
 2016-06-15,60,NA,Frederik Iversen,Mellem,Spin,FALSE,FALSE,NA
 2016-06-15,55,NA,Jimmy nielsen,Mellem,Spin,FALSE,FALSE,NA
@@ -2496,7 +2474,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-09-12,55,NA,Jesper Moldaschl,Mellem,Fly,FALSE,FALSE,NA
 2015-09-12,50,1.6,Leo Mejlholm,Mellem,Fly,FALSE,TRUE,1.28
 2015-09-12,56,NA,Ryan van der Eijk,Nedre,Fly,FALSE,FALSE,NA
-2015-09-12,56,NA,Ryan van der Eijk,Nedre,Fly,FALSE,FALSE,NA
 2015-09-12,58,NA,Ingemann Michaelsen,Vorgod Å,Fly,FALSE,FALSE,NA
 2015-09-12,50,1.5,Henrik Klockmann,Nedre,Fly,FALSE,FALSE,1.2
 2015-09-12,58,2.4,Niels Rasmussen,Øvre,Fly,FALSE,TRUE,1.2300627331993932
@@ -2514,7 +2491,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-09-10,41,1,Kristian A. Pedersen,NA,Spin,FALSE,FALSE,1.4509365795621074
 2015-09-10,46,1.5,Kristian a. Pedersen,Omme Å,Spin,FALSE,FALSE,1.5410536697624722
 2015-09-10,50,NA,Erling Pedersen,Vorgod Å,Fly,FALSE,FALSE,NA
-2015-09-10,45,NA,Erling Pedersen,Vorgod Å,Fly,FALSE,FALSE,NA
 2015-09-10,45,NA,Erling Pedersen,Vorgod Å,Fly,FALSE,FALSE,NA
 2015-09-10,50,NA,Finn Meldgård,Nedre,Spin,FALSE,FALSE,NA
 2015-09-10,65,NA,Michael Standor,Mellem,Fly,FALSE,FALSE,NA
@@ -2548,7 +2524,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-09-07,51,1.5,Henrik Andersen,Øvre,Fly,TRUE,FALSE,1.1307868014564535
 2015-09-07,53,1.6,Henrik Andersen,Øvre,Fly,TRUE,FALSE,1.0747126822813464
 2015-09-07,50,NA,Bert Vermaas,Nedre,Fly,FALSE,FALSE,NA
-2015-09-07,62,NA,Ole Nielsen,Nedre,Fly,FALSE,FALSE,NA
 2015-09-07,62,NA,Ole Nielsen,Nedre,Fly,FALSE,FALSE,NA
 2015-09-07,50,NA,Kim Andersen,Mellem,Spin,FALSE,FALSE,NA
 2015-09-06,58,NA,Ole Søndergård Pedersen,Nedre,Spin,FALSE,TRUE,NA
@@ -2633,7 +2608,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-08-30,50,NA,Tommy Frank Hoelgaard,Mellem,Fly,FALSE,FALSE,NA
 2015-08-30,55,1.8,Thomas Andersen,Øvre,Fly,FALSE,TRUE,1.081893313298272
 2015-08-30,50,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
-2015-08-30,50,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
 2015-08-29,60,NA,Chris Mikkelsen,Nedre,Fly,FALSE,FALSE,NA
 2015-08-29,55,NA,Ole Kragholm,Nedre,Fly,FALSE,FALSE,NA
 2015-08-29,55,NA,michael holm sørensen,Vorgod Å,Fly,FALSE,FALSE,NA
@@ -2708,14 +2682,12 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-08-21,45,NA,Erling Pedersen,Vorgod Å,Fly,FALSE,FALSE,NA
 2015-08-21,60,NA,erik Dønvig,Nedre,Fly,FALSE,FALSE,NA
 2015-08-21,58,NA,Frederik Iversen,Mellem,Fly,FALSE,FALSE,NA
-2015-08-21,58,NA,Frederik Iversen,Mellem,Fly,FALSE,FALSE,NA
 2015-08-21,55,NA,Per Laursen,Mellem,Fly,FALSE,FALSE,NA
 2015-08-21,62,3,Per Laursen,Mellem,Fly,FALSE,TRUE,1.2587694270081569
 2015-08-21,55,NA,bo fomsgaard,Mellem,Fly,FALSE,FALSE,NA
 2015-08-21,72,4.6,jack Christiansen,Nedre,Spin,FALSE,TRUE,1.2324245541838132
 2015-08-21,58,2.4,Fritz Nielsen,Nedre,Fly,FALSE,TRUE,1.2300627331993932
 2015-08-21,45,NA,bo fomsgaard,Mellem,Fly,FALSE,FALSE,NA
-2015-08-21,55,NA,bo fomsgaard,Mellem,Fly,FALSE,FALSE,NA
 2015-08-20,49,NA,Kai jørgensen,Nedre,Spin,FALSE,FALSE,NA
 2015-08-20,53,NA,Henning Thomsen,Mellem,Fly,FALSE,FALSE,NA
 2015-08-20,54,NA,Heinz Fauken,Øvre,Fly,FALSE,FALSE,NA
@@ -2888,7 +2860,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-08-02,52,NA,Keld Eriksen,Nedre,Spin,FALSE,FALSE,NA
 2015-08-02,60,NA,Willy Pedersen,Nedre,Spin,FALSE,FALSE,NA
 2015-08-02,53,NA,Poul Thude,Mellem,Spin,FALSE,TRUE,NA
-2015-08-02,52,NA,Keld Eriksen,Nedre,Spin,FALSE,FALSE,NA
 2015-08-02,42,NA,Jørn N. Kristensen,Nedre,Fly,FALSE,FALSE,NA
 2015-08-02,65,NA,Erling Pedersen,Mellem,Fly,FALSE,FALSE,NA
 2015-08-02,50,NA,Lasse Fjeldsted,Mellem,Fly,FALSE,FALSE,NA
@@ -2946,7 +2917,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-07-30,66,3.3,Kenneth Bjerg,Nedre,Fly,FALSE,TRUE,1.147842056932966
 2015-07-30,53,NA,letecia Jensen,Nedre,Spin,FALSE,FALSE,NA
 2015-07-30,50,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
-2015-07-30,55,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
 2015-07-30,55,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
 2015-07-30,46,NA,Oliver Bronz,Mellem,Fly,FALSE,FALSE,NA
 2015-07-29,46,NA,Brian vemmelund,Mellem,Spin,FALSE,FALSE,NA
@@ -3094,8 +3064,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-07-20,65,3.4,Mads Kæseler,Vorgod Å,Orm,FALSE,TRUE,1.238051888939463
 2015-07-20,50,NA,Frederik,Mellem,Spin,FALSE,FALSE,NA
 2015-07-20,50,NA,Frederik Iversen,Mellem,Spin,FALSE,FALSE,NA
-2015-07-20,50,NA,Frederik Iversen,Mellem,Spin,FALSE,FALSE,NA
-2015-07-20,50,NA,Frederik Iversen,Mellem,Spin,FALSE,FALSE,NA
 2015-07-20,60,NA,Frederik Iversen,Mellem,Spin,FALSE,FALSE,NA
 2015-07-20,NA,NA,Preben Jensen,Nedre,Spin,FALSE,FALSE,NA
 2015-07-20,52,2.1,Kenneth Birler,Nedre,Fly,FALSE,TRUE,1.493513882567137
@@ -3133,7 +3101,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-07-17,62,NA,Erik Odderskjær,Mellem,Fly,FALSE,FALSE,NA
 2015-07-17,45,NA,Erling Pedersen,Mellem,Fly,FALSE,FALSE,NA
 2015-07-17,50,NA,Erling Pedersen,Mellem,Fly,FALSE,FALSE,NA
-2015-07-17,45,NA,Erling Pedersen,Mellem,Fly,FALSE,FALSE,NA
 2015-07-17,55,NA,Jesper Ottosen,Nedre,Spin,FALSE,FALSE,NA
 2015-07-17,50,NA,Michael Rousau,Mellem,Fly,FALSE,FALSE,NA
 2015-07-17,48,NA,Niels J Holmgaard,Nedre,Spin,FALSE,FALSE,NA
@@ -3143,7 +3110,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-07-17,53,NA,Brian Vemmelund,Mellem,Spin,FALSE,FALSE,NA
 2015-07-17,56,NA,Brian Vemmelund,Mellem,Spin,FALSE,FALSE,NA
 2015-07-17,58,NA,Brian Vemmelund,Mellem,Spin,FALSE,FALSE,NA
-2015-07-17,50,NA,Anders Kronborg Jensen,Nedre,Fly,FALSE,FALSE,NA
 2015-07-17,50,NA,Anders Kronborg Jensen,Nedre,Fly,FALSE,FALSE,NA
 2015-07-17,55,NA,Anders Kronborg Jensen,Nedre,Fly,FALSE,FALSE,NA
 2015-07-16,57,NA,Per Ottosen,Nedre,Fly,FALSE,FALSE,NA
@@ -3241,7 +3207,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-07-11,64,NA,Keld Eriksen,Nedre,Spin,FALSE,FALSE,NA
 2015-07-11,51,NA,Keld Eriksen,Nedre,Spin,FALSE,FALSE,NA
 2015-07-11,52,NA,Keld Eriksen,Nedre,Spin,FALSE,FALSE,NA
-2015-07-11,50,NA,Keld Eriksen,Nedre,Spin,FALSE,FALSE,NA
 2015-07-11,53,NA,Bo Nielsen,Mellem,Fly,FALSE,FALSE,NA
 2015-07-11,35,NA,Birger Hansen,Nedre,Spin,FALSE,FALSE,NA
 2015-07-11,50,NA,Flemming Binnerup,Nedre,Fly,FALSE,FALSE,NA
@@ -3271,13 +3236,11 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-07-10,50,NA,Svend Erik Øgendahl,Mellem,Fly,FALSE,FALSE,NA
 2015-07-10,52,NA,Svend Erik Øgendahl,Mellem,Fly,FALSE,FALSE,NA
 2015-07-10,51,NA,Svend Erik Øgendahl,Mellem,Fly,FALSE,FALSE,NA
-2015-07-10,50,NA,Svend Erik Øgendahl,Mellem,Fly,FALSE,FALSE,NA
 2015-07-10,55,NA,Svend Erik Øgendahl,Mellem,Fly,FALSE,FALSE,NA
 2015-07-10,50,NA,Keld Eriksen,Nedre,Spin,FALSE,FALSE,NA
 2015-07-10,50,NA,Frederik Iversen,Mellem,Spin,FALSE,FALSE,NA
 2015-07-10,60,NA,Ole Jørgensen,Vorgod Å,Spin,FALSE,FALSE,NA
 2015-07-10,55,NA,Kristian Nøreng,Nedre,Fly,FALSE,FALSE,NA
-2015-07-10,45,NA,Ib Baumgardt,Øvre,Spin,FALSE,FALSE,NA
 2015-07-10,45,NA,Ib Baumgardt,Øvre,Spin,FALSE,FALSE,NA
 2015-07-10,NA,NA,"Christian Petersen, Hjerm",Nedre,Fly,FALSE,FALSE,NA
 2015-07-10,54,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
@@ -3287,7 +3250,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-07-09,58,NA,Tommy Olinsson,Nedre,Fly,FALSE,FALSE,NA
 2015-07-09,50,NA,John Gadeberg,Nedre,Fly,FALSE,FALSE,NA
 2015-07-09,47,NA,Ole Eriksen,Nedre,Spin,FALSE,FALSE,NA
-2015-07-09,NA,NA,Thomas Mosgaard,Nedre,Spin,FALSE,FALSE,NA
 2015-07-09,NA,NA,Thomas Mosgaard,Nedre,Spin,FALSE,FALSE,NA
 2015-07-09,55,NA,Torben,Vorgod Å,Spin,FALSE,FALSE,NA
 2015-07-09,50,NA,Torben Sørensen,Vorgod Å,Spin,FALSE,FALSE,NA
@@ -3306,7 +3268,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-07-08,58,NA,Kai Verner Lauridsen,Mellem,Spin,FALSE,FALSE,NA
 2015-07-08,50,NA,Dennis nielsen,Nedre,Spin,FALSE,FALSE,NA
 2015-07-08,60,NA,Dennis nielsen,Mellem,Spin,FALSE,FALSE,NA
-2015-07-08,50,NA,Dennis nielsen,Nedre,Spin,FALSE,FALSE,NA
 2015-07-08,NA,NA,Olaf Solberg,Vorgod Å,Spin,FALSE,FALSE,NA
 2015-07-08,55,NA,jens Meldgård,Nedre,Spin,FALSE,FALSE,NA
 2015-07-08,48,NA,Svend Erik Øgendahl,Nedre,Fly,FALSE,FALSE,NA
@@ -3333,10 +3294,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-07-07,50,NA,Carsten Staal,Mellem,Fly,FALSE,FALSE,NA
 2015-07-07,50,1.5,Olaf Solberg,Vorgod Å,Spin,FALSE,TRUE,1.2
 2015-07-07,NA,NA,Olaf Solberg,Vorgod Å,Spin,FALSE,FALSE,NA
-2015-07-07,NA,NA,Olaf Solberg,Vorgod Å,Spin,FALSE,FALSE,NA
-2015-07-07,NA,NA,Olaf Solberg,Vorgod Å,Spin,FALSE,FALSE,NA
-2015-07-07,NA,NA,Ole Jørgensen,Vorgod Å,Spin,FALSE,FALSE,NA
-2015-07-07,NA,NA,Ole Jørgensen,Vorgod Å,Spin,FALSE,FALSE,NA
 2015-07-07,NA,NA,Ole Jørgensen,Vorgod Å,Spin,FALSE,FALSE,NA
 2015-07-07,55,NA,Peter Sol,Mellem,Fly,FALSE,TRUE,NA
 2015-07-07,56,NA,verner mortensen,Omme Å,Fly,FALSE,FALSE,NA
@@ -3350,7 +3307,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-07-06,52,NA,michael holm sørensen,Nedre,Fly,FALSE,FALSE,NA
 2015-07-06,50,NA,Torben Smedegaard,Mellem,Spin,FALSE,FALSE,NA
 2015-07-06,55,NA,Torben Smedegaard,Mellem,Spin,FALSE,FALSE,NA
-2015-07-06,NA,NA,Olaf Solberg,Vorgod Å,Spin,FALSE,FALSE,NA
 2015-07-06,NA,NA,Olaf Solberg,Vorgod Å,Spin,FALSE,FALSE,NA
 2015-07-06,NA,NA,Ole Jørgensen,Vorgod Å,Spin,FALSE,FALSE,NA
 2015-07-06,53,NA,Jesper Ottosen,Mellem,Spin,FALSE,FALSE,NA
@@ -3518,7 +3474,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2015-04-16,45,NA,Niels Skakke,Øvre,Spin,FALSE,FALSE,NA
 2015-04-16,55,NA,Jesper Baadsgaard,Nedre,Fly,FALSE,FALSE,NA
 2014-10-15,42,NA,henning bak,Øvre,Spin,FALSE,FALSE,NA
-2014-10-15,42,NA,Verner O. Jensen,Mellem,Andet,FALSE,FALSE,NA
 2014-10-15,42,NA,Verner O. Jensen,Mellem,Andet,FALSE,FALSE,NA
 2014-10-15,58,NA,Verner O. Jensen,Mellem,Andet,FALSE,FALSE,NA
 2014-10-15,55,1.6,brian vemmelund,Mellem,Spin,FALSE,TRUE,0.9616829451540195
@@ -3739,7 +3694,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2014-08-25,50,NA,Kasper Emil Nielsen,Øvre,Spin,FALSE,FALSE,NA
 2014-08-25,52,NA,Kasper Emil Nielsen,Øvre,Orm,FALSE,FALSE,NA
 2014-08-25,72,NA,Christer Jensen,Nedre,Spin,FALSE,FALSE,NA
-2014-08-25,45,NA,bo fomsgaard,Mellem,Fly,FALSE,FALSE,NA
 2014-08-24,42,NA,Ole Andreasen,Nedre,Spin,FALSE,FALSE,NA
 2014-08-24,42,NA,Jens Meldgård,Omme Å,Spin,FALSE,FALSE,NA
 2014-08-24,65,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
@@ -3760,7 +3714,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2014-08-22,54,NA,Ole Vedsted,Øvre,Fly,FALSE,FALSE,NA
 2014-08-22,63,3.1,OleVedsted,Øvre,Fly,FALSE,TRUE,1.2397669238183222
 2014-08-22,30,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
-2014-08-22,55,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
 2014-08-22,55,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
 2014-08-22,60,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
 2014-08-22,65,NA,Ole Damgaard,Øvre,Fly,FALSE,FALSE,NA
@@ -4083,8 +4036,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2013-10-11,45,NA,Finn Madsen,Vorgod Å,Spin,FALSE,FALSE,NA
 2013-10-11,50,NA,Finn Madsen,Vorgod Å,Spin,FALSE,FALSE,NA
 2013-10-11,47,1.3,harry andreassen,Øvre,Spin,FALSE,TRUE,1.252131030696474
-2013-10-11,52,NA,karsten brix,Øvre,Fly,FALSE,TRUE,NA
-2013-10-11,52,NA,karsten brix,Øvre,Fly,FALSE,TRUE,NA
 2013-10-11,52,NA,karsten brix,Øvre,Fly,FALSE,TRUE,NA
 2013-10-11,53,NA,Jesper Ottosen,Øvre,Spin,FALSE,FALSE,NA
 2013-10-10,60,NA,Torben Bastrup,Øvre,Fly,FALSE,FALSE,NA
@@ -4459,8 +4410,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2013-07-21,54,NA,Thomas Wiergang,Nedre,Spin,FALSE,FALSE,NA
 2013-07-21,45,NA,Klaus Øgendahl,Nedre,Fly,FALSE,FALSE,NA
 2013-07-20,NA,NA,Bjarne Nielsen,Øvre,Fly,FALSE,FALSE,NA
-2013-07-20,NA,NA,Bjarne Nielsen,Øvre,Fly,FALSE,FALSE,NA
-2013-07-20,NA,NA,Bjarne Nielsen,Øvre,Fly,FALSE,FALSE,NA
 2013-07-20,57,2.7,Bjarne Nielsen,Øvre,Fly,FALSE,TRUE,1.457938474996355
 2013-07-19,48,NA,Svend Øgendahl,Nedre,Fly,FALSE,FALSE,NA
 2013-07-19,64,3.5,hans jørgen husted,Nedre,Spin,FALSE,TRUE,1.33514404296875
@@ -4729,7 +4678,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2012-09-25,63,NA,Ole skaar,Øvre,Fly,FALSE,FALSE,NA
 2012-09-25,48,NA,Rasmus Vemmelund,Mellem,Spin,FALSE,FALSE,NA
 2012-09-25,55,1.9,Casper,Mellem,Spin,FALSE,FALSE,1.1419984973703983
-2012-09-25,55,1.9,Casper,Mellem,Spin,FALSE,FALSE,1.1419984973703983
 2012-09-23,55,1.8,Poul Erik Kristiansen,Nedre,Spin,FALSE,TRUE,1.081893313298272
 2012-09-23,45,NA,henning nielsen,Øvre,Spin,FALSE,FALSE,NA
 2012-09-21,51,NA,Brian Vemmelund,Mellem,Spin,FALSE,FALSE,NA
@@ -4805,10 +4753,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2012-09-01,43,NA,Per Carlsen,Mellem,Fly,FALSE,FALSE,NA
 2012-09-01,63,NA,Jesper Andersen,Nedre,Fly,FALSE,TRUE,NA
 2012-09-01,84,NA,Josua (JOGGE),Nedre,Spin,FALSE,FALSE,NA
-2012-09-01,84,NA,Josua (JOGGE),Nedre,Spin,FALSE,FALSE,NA
-2012-09-01,84,NA,Josua (JOGGE),Nedre,Spin,FALSE,FALSE,NA
-2012-09-01,84,NA,Josua (JOGGE),Nedre,Spin,FALSE,FALSE,NA
-2012-09-01,84,NA,Josua (JOGGE),Nedre,Spin,FALSE,FALSE,NA
 2012-09-01,59,NA,Dierk Köster,Mellem,Fly,FALSE,FALSE,NA
 2012-08-31,57,NA,Thomas Fænø,Nedre,Spin,FALSE,FALSE,NA
 2012-08-31,47,NA,Claus Lysemose,Mellem,Spin,FALSE,FALSE,NA
@@ -4875,7 +4819,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2012-08-08,71,5.1,ejner kaa,Vorgod Å,Spin,FALSE,TRUE,1.424935249265879
 2012-08-08,52,NA,Uwe Hüls,Nedre,Fly,FALSE,FALSE,NA
 2012-08-08,50,1.5,lars løve lund,Mellem,Spin,FALSE,TRUE,1.2
-2012-08-08,50,1.5,lars løve lund,Mellem,Spin,FALSE,TRUE,1.2
 2012-08-08,55,NA,lars nielsen,Nedre,Fly,FALSE,FALSE,NA
 2012-08-08,50,1.5,Lars Løve Lund,Mellem,Spin,FALSE,TRUE,1.2
 2012-08-07,53,NA,Stig Christensen,Nedre,Fly,FALSE,FALSE,NA
@@ -4936,7 +4879,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2012-07-19,46,NA,Mads Balle,Nedre,Fly,FALSE,FALSE,NA
 2012-07-19,67,4,Ole Nees,Nedre,Fly,FALSE,TRUE,1.329950825068243
 2012-07-18,50,NA,Heine Fausing,Omme Å,Fly,FALSE,FALSE,NA
-2012-07-18,50,NA,Heine Fausing,Omme Å,Fly,FALSE,FALSE,NA
 2012-07-18,62,3.3,Peder Langkjær,Nedre,Fly,FALSE,TRUE,1.3846463697089726
 2012-07-18,52,NA,Klaus,Mellem,Fly,FALSE,FALSE,NA
 2012-07-18,53,NA,Anders Møller Nielsen,Nedre,Spin,FALSE,TRUE,NA
@@ -4955,7 +4897,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2012-07-16,42,NA,Morten Petersen,Vorgod Å,Fly,FALSE,FALSE,NA
 2012-07-16,74,6,Helge Kristensen,Nedre,Fly,FALSE,TRUE,1.4806625471344244
 2012-07-16,50,NA,Torben Thinggaard,Nedre,Fly,FALSE,FALSE,NA
-2012-07-16,45,1,Per Sunesen,Nedre,Fly,FALSE,FALSE,1.0973936899862826
 2012-07-16,45,1,Per Sunesen,Nedre,Fly,FALSE,FALSE,1.0973936899862826
 2012-07-16,83,7,Florian Hassenpflug,Nedre,Fly,FALSE,FALSE,1.2242321004150147
 2012-07-15,53,NA,Bruno Stamm,Vorgod Å,Fly,FALSE,FALSE,NA
@@ -4981,17 +4922,14 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2012-07-11,62,NA,Erling  Pedersen,Omme Å,Fly,FALSE,FALSE,NA
 2012-07-11,55,NA,dennis Nielsen,Nedre,Fly,FALSE,FALSE,NA
 2012-07-11,50,NA,lars fabrin,Nedre,Fly,FALSE,FALSE,NA
-2012-07-11,50,NA,lars fabrin,Nedre,Fly,FALSE,FALSE,NA
 2012-07-11,50,NA,Svend Erik Øgendahl,Mellem,Fly,FALSE,FALSE,NA
 2012-07-11,51,1.6,Lars Østergaard Kristensen,Nedre,Spin,FALSE,TRUE,1.206172588220217
 2012-07-11,48,NA,Brian Jakobsen,Øvre,Spin,FALSE,FALSE,NA
 2012-07-10,48,NA,Carsten Pedersen,Nedre,Spin,FALSE,FALSE,NA
 2012-07-10,41,NA,Mads Balle,Mellem,Fly,FALSE,FALSE,NA
 2012-07-10,50,NA,Casper Hansen,Nedre,Fly,FALSE,FALSE,NA
-2012-07-10,50,NA,Casper Hansen,Nedre,Fly,FALSE,FALSE,NA
 2012-07-10,76,NA,jakob skov,Nedre,Fly,FALSE,FALSE,NA
 2012-07-10,45,1.5,Laurids Meldgård,Nedre,Spin,FALSE,TRUE,1.646090534979424
-2012-07-09,60,NA,peter jensen,Nedre,Fly,FALSE,FALSE,NA
 2012-07-09,60,NA,peter jensen,Nedre,Fly,FALSE,FALSE,NA
 2012-07-09,52,NA,Peder Bæk,Nedre,Fly,FALSE,FALSE,NA
 2012-07-09,58,NA,Henrik L. Rasmussen,Nedre,Orm,FALSE,FALSE,NA
@@ -5003,7 +4941,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2012-07-07,65,3.7,henrik laursen,Nedre,Fly,FALSE,TRUE,1.347291761492945
 2012-07-06,54,NA,Svend Erik Øgendahl,Nedre,Fly,FALSE,FALSE,NA
 2012-07-06,53,NA,Erling  Pedersen,Nedre,Fly,FALSE,FALSE,NA
-2012-07-06,55,NA,Susanne jensen,Nedre,Fly,FALSE,FALSE,NA
 2012-07-06,55,NA,Susanne jensen,Nedre,Fly,FALSE,FALSE,NA
 2012-07-04,46,1.2,Arne Egebak,Nedre,Fly,FALSE,TRUE,1.2328429358099777
 2012-07-04,50,NA,Torben Smedegaard,Mellem,Fly,FALSE,FALSE,NA
@@ -5034,7 +4971,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2012-06-16,50,NA,Klaus Øgendahl,Nedre,Fly,FALSE,FALSE,NA
 2012-06-16,74,NA,martin mæhlisen,Nedre,Fly,FALSE,FALSE,NA
 2012-06-16,50,NA,Kim Rasmussen,Nedre,Fly,FALSE,FALSE,NA
-2012-06-15,58,NA,Thomas Torpe,Nedre,Fly,FALSE,FALSE,NA
 2012-06-15,58,NA,Thomas Torpe,Nedre,Fly,FALSE,FALSE,NA
 2012-06-15,65,NA,Thomas Torpe,Nedre,Fly,FALSE,FALSE,NA
 2012-06-14,68,NA,dennis Nielsen,Nedre,Spin,FALSE,FALSE,NA
@@ -5421,8 +5357,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2010-09-19,66,3.2,Michael Gehrt,Skjern Å: Albæk,Fly,FALSE,TRUE,1.1130589642986337
 2010-09-19,55,2,Erik Just Pedersen,Vorgod Å,Spin,FALSE,FALSE,1.2021036814425243
 2010-09-19,62,NA,Poul Lauridsen,Skjern Å: Albæk,Fly,FALSE,TRUE,NA
-2010-09-19,62,NA,Poul Lauridsen,Skjern Å: Albæk,Fly,FALSE,TRUE,NA
-2010-09-19,62,NA,Poul Lauridsen,Skjern Å: Albæk,Fly,FALSE,TRUE,NA
 2010-09-18,55,NA,Gorb Bojsen,Skjern Å: Borris,Spin,FALSE,TRUE,NA
 2010-09-18,52,NA,Kenneth e Jensen,Skjern Å: Borris,Spin,FALSE,FALSE,NA
 2010-09-17,44,NA,Helge Kristensen,Skjern Å: Albæk,Fly,FALSE,FALSE,NA
@@ -5547,7 +5481,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2010-08-06,65,3.6,Stig Nielsen,Skjern Å: Borris,Spin,FALSE,TRUE,1.3108784706417842
 2010-08-05,57,2.5,Kim Johnsen,Skjern Å: Borris,Fly,FALSE,TRUE,1.3499430324040325
 2010-08-05,60,2.6,henning bak,Øvre,Spin,FALSE,TRUE,1.2037037037037037
-2010-08-05,57,2.5,Kim Johnsen,Skjern Å: Borris,Fly,FALSE,TRUE,1.3499430324040325
 2010-08-05,60,2.6,Henning Bak,Øvre,Spin,FALSE,TRUE,1.2037037037037037
 2010-08-04,63,2.9,Morten Petersen,Vorgod Å,Fly,FALSE,TRUE,1.1597819609913336
 2010-08-04,65,3.2,Bo Nielsen,Skjern Å: A11,Fly,FALSE,TRUE,1.1652253072371415
@@ -5590,7 +5523,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2010-07-16,53,2.1,Karl Pedersen,Vorgod Å,Spin,FALSE,TRUE,1.4105603954942671
 2010-07-15,60,3,smekens alfred,Omme Å,Spin,FALSE,TRUE,1.3888888888888888
 2010-07-15,60,2.2,Leo Andersen,Skjern Å: Albæk,Spin,FALSE,TRUE,1.0185185185185186
-2010-07-14,52,2,jacobs alfred,Skjern Å: Borris,Fly,FALSE,TRUE,1.4223941738734638
 2010-07-14,52,2,jacobs alfred,Skjern Å: Borris,Fly,FALSE,TRUE,1.4223941738734638
 2010-07-13,60,2.9,Flemming Binnerup,Skjern Å: Borris,Fly,FALSE,TRUE,1.3425925925925926
 2010-07-13,40,1,Iver Kloster,Vorgod Å,Spin,FALSE,FALSE,1.5625
@@ -5750,7 +5682,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2009-09-09,44,1.5,Keld Lyager,Nedre,Spin,FALSE,TRUE,1.7608940646130729
 2009-09-09,42,0.8,bjarne kjær,Skjern Å: Sdr. Felding,Spin,FALSE,TRUE,1.0797969981643452
 2009-09-09,80,5.9,Poul Erik Petersen,Skjern Å: Sdr. Felding,Andet,FALSE,TRUE,1.15234375
-2009-09-09,80,5.9,Poul Erik Petersen,Skjern Å: Sdr. Felding,Andet,FALSE,TRUE,1.15234375
 2009-09-08,64,3.4,stefan meldgaard,Skjern Å: A11,Fly,FALSE,TRUE,1.2969970703125
 2009-09-08,66,3.2,Bjarne Kristensen,Skjern Å: Albæk,Spin,FALSE,TRUE,1.1130589642986337
 2009-09-08,93,7,smekens alfred,Skjern Å: Albæk,Spin,FALSE,TRUE,0.8702603445982319
@@ -5792,7 +5723,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2009-08-29,52,1.7,Ole Jensen,Omme Å,Spin,FALSE,TRUE,1.2090350477924443
 2009-08-29,52,1.9,Søren Guldager,Omme Å,Orm,FALSE,TRUE,1.3512744651797906
 2009-08-29,53,1.7,Per Møller,Omme Å,Spin,FALSE,TRUE,1.1418822249239304
-2009-08-29,71,5,Per Møller,Omme Å,Spin,FALSE,TRUE,1.3969953424175283
 2009-08-29,71,5,Per Møller,Omme Å,Spin,FALSE,TRUE,1.3969953424175283
 2009-08-29,57,2.1,Brian Søgård,Skjern Å: Borris,Spin,FALSE,TRUE,1.1339521472193874
 2009-08-29,52,1.5,Rene Hermann,Skjern Å: Borris,Orm,FALSE,TRUE,1.0667956304050978
@@ -6073,7 +6003,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2008-08-30,48.5,1.2,Lars Kjøngerskov,Øvre,Spin,FALSE,TRUE,1.0518553742687689
 2008-08-30,45,1.1,Harry Andreasen,Øvre,Spin,FALSE,TRUE,1.207133058984911
 2008-08-30,55.5,1.9,Lennard Wilson,Skjern Å: Albæk,Spin,FALSE,TRUE,1.1114108995774445
-2008-08-30,55.5,1.9,Lennard Wilson,Skjern Å: Albæk,Spin,FALSE,TRUE,1.1114108995774445
 2008-08-30,48,1.3,Sten Lacour,Skjern Å: A11,Spin,FALSE,TRUE,1.1754918981481481
 2008-08-30,58,2.4,Niels Jørgen Plougmann,Skjern Å: Borris,Spin,FALSE,TRUE,1.2300627331993932
 2008-08-30,51,1.4,Jesper Dalgaard-Knudsen,Skjern Å: A11,Orm,FALSE,TRUE,1.0554010146926898
@@ -6142,7 +6071,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2008-08-06,54,1.6,Espen Thinggaard,Nedre,Spin,FALSE,TRUE,1.0161052685058172
 2008-08-06,76,4.5,Henning Kohlhaas,Skjern Å: Albæk,Fly,FALSE,TRUE,1.0251129902318121
 2008-08-06,58,2.3,Henning Bak,Skjern Å: Sdr. Felding,Spin,FALSE,TRUE,1.178810119316085
-2008-08-06,58,2.3,Henning Bak,Skjern Å: Sdr. Felding,Spin,FALSE,TRUE,1.178810119316085
 2008-08-05,53,1.8,Birger Jensen,Skjern Å: Borris,Orm,FALSE,TRUE,1.2090517675665147
 2008-08-05,55,2,hans jørgen husted,Nedre,Fly,FALSE,TRUE,1.2021036814425243
 2008-08-05,45,NA,Poul Lauridsen,Skjern Å: Borris,Fly,FALSE,FALSE,NA
@@ -6158,7 +6086,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2008-08-02,55,1.9,Freddy Hansen,Skjern Å: Albæk,Spin,FALSE,TRUE,1.1419984973703983
 2008-07-30,44,1.4,Niels J. Holmgård Pedersen,Vorgod Å,Spin,FALSE,FALSE,1.6435011269722013
 2008-07-30,54,2,Ib Sommer P.,Skjern Å: Borris,Fly,FALSE,TRUE,1.2701315856322715
-2008-07-30,48,1.3,Henning Bak,Øvre,Spin,FALSE,TRUE,1.1754918981481481
 2008-07-30,48,1.3,Henning Bak,Øvre,Spin,FALSE,TRUE,1.1754918981481481
 2008-07-28,55,2,Steen Mortensen,Skjern Å: Borris,Fly,FALSE,TRUE,1.2021036814425243
 2008-07-28,63,2.5,Jørgen Poulsen,Skjern Å: Albæk,Spin,FALSE,TRUE,0.9998120353373566
@@ -6183,12 +6110,10 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2008-07-20,52,1.4,mogens skoven nielsen,Vorgod Å,Spin,FALSE,TRUE,0.9956759217114247
 2008-07-20,53,1.9,Peter Grønne Christensen,Skjern Å: Borris,Spin,FALSE,TRUE,1.2762213102090987
 2008-07-20,48,1.2,Henning Bak,Skjern Å: Sdr. Felding,Spin,FALSE,TRUE,1.0850694444444444
-2008-07-20,48,1.2,Henning Bak,Skjern Å: Sdr. Felding,Spin,FALSE,TRUE,1.0850694444444444
 2008-07-20,49,1.2,Finn Jensen,Skjern Å: Sdr. Felding,Spin,FALSE,TRUE,1.0199831702776905
 2008-07-18,53,1.5,Helge K Kristensen,Skjern Å: Albæk,Fly,FALSE,TRUE,1.0075431396387622
 2008-07-18,52,1.8,Bent Hygum,Skjern Å: Albæk,Spin,FALSE,TRUE,1.2801547564861175
 2008-07-18,60,NA,per gylling hansen,Skjern Å: Albæk,Fly,FALSE,FALSE,NA
-2008-07-18,52,1.8,Bent Hygum,Skjern Å: Albæk,Spin,FALSE,TRUE,1.2801547564861175
 2008-07-17,43,NA,A.M.Jensen,Skjern Å: Konsortiet,Spin,FALSE,TRUE,NA
 2008-07-17,53,1.5,Thomas Torpe,Skjern Å: Borris,Fly,FALSE,TRUE,1.0075431396387622
 2008-07-17,54,1.7,ANDERS SF JENSEN,Skjern Å: Albæk,Orm,FALSE,TRUE,1.0796118477874308
@@ -6486,7 +6411,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2007-07-22,60,2.8,Finn B. Hansen,Skjern Å: Borris,Fly,FALSE,TRUE,1.2962962962962963
 2007-07-22,48,1.3,Finn Nissen Holdt,Vorgod Å,Andet,FALSE,TRUE,1.1754918981481481
 2007-07-22,80,5.1,Ole Tranholm,Skjern Å: A11,Fly,FALSE,TRUE,0.9960937499999999
-2007-07-22,64,3,Henry Sørensen,Skjern Å: Borris,Fly,FALSE,TRUE,1.1444091796875
 2007-07-22,65,3.5,Leif Mou,Skjern Å: Borris,Spin,FALSE,TRUE,1.2744651797906237
 2007-07-21,60,2.9,Åge Schmidt,Skjern Å: Vinbæk,Fly,FALSE,TRUE,1.3425925925925926
 2007-07-21,56,2,Jakob Sørensen,Skjern Å: Borris,Andet,FALSE,TRUE,1.1388483965014577
@@ -6501,7 +6425,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2007-07-19,48,1.3,Verner Jensen,Skjern Å: Sdr. Felding,Spin,FALSE,TRUE,1.1754918981481481
 2007-07-17,49,1.7,Tom Nielsen,Skjern Å: Konsortiet,Fly,FALSE,TRUE,1.4449761578933948
 2007-07-15,53,2.1,Tom Nielsen,Skjern Å: Konsortiet,Fly,FALSE,TRUE,1.4105603954942671
-2007-07-14,55,1.7,Svend Åge Mortensen,Skjern Å: A11,Spin,FALSE,TRUE,1.0217881292261457
 2007-07-14,55,1.7,Svend Åge Mortensen,Skjern Å: A11,Spin,FALSE,TRUE,1.0217881292261457
 2007-07-14,57,1.8,Erling Willumsgaard,Skjern Å: Borris,Spin,FALSE,TRUE,0.9719589833309035
 2007-07-14,55,1.7,Svend Aage Mortensen,Skjern Å: A11,Spin,FALSE,TRUE,1.0217881292261457
@@ -6709,7 +6632,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2007-04-01,55,NA,Kjeld R. Nielsen,Skjern Å: A11,Spin,FALSE,FALSE,NA
 2007-04-01,46,1.3,Gunnar Sahl,Skjern Å: Sdr. Felding,Spin,FALSE,TRUE,1.335579847127476
 2007-04-01,50,2.2,john erik madsen,Skjern Å: A11,Andet,FALSE,TRUE,1.7600000000000002
-2007-04-01,46,1.3,Karsten Siggaard,Omme Å,Spin,FALSE,TRUE,1.335579847127476
 2007-04-01,54,2.3,John Kaastrup,Skjern Å: Albæk,Orm,FALSE,TRUE,1.4606513234771121
 2007-04-01,46,1,John Kaastrup,Skjern Å: Albæk,Orm,FALSE,TRUE,1.0273691131749816
 2007-04-01,48,1.9,Jørn Wolff,Omme Å,Spin,FALSE,TRUE,1.7180266203703705
@@ -6763,7 +6685,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2006-08-29,73,4.6,Jørgen Klokker,Skjern Å: Borris,Spin,FALSE,TRUE,1.1824676042435163
 2006-08-29,69,3.8,folmer hansen,Skjern Å: A11,Spin,FALSE,TRUE,1.1567415200192384
 2006-08-27,60,2.6,Peter Kolding,Skjern Å: Borris,Fly,FALSE,TRUE,1.2037037037037037
-2006-08-27,50,NA,Poul Lauridsen,Skjern Å: Sdr. Felding,Spin,FALSE,TRUE,NA
 2006-08-27,50,NA,Poul Lauridsen,Skjern Å: Sdr. Felding,Spin,FALSE,TRUE,NA
 2006-08-26,57,1.9,chr.nygaard andersen,Skjern Å: Borris,Orm,FALSE,TRUE,1.0259567046270648
 2006-08-26,58.5,2.4,Karsten Olesen,Skjern Å: Borris,Spin,FALSE,TRUE,1.1987914683509686
@@ -6855,7 +6776,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2006-08-03,78,5.8,Ole Lembcke Pedersen,Skjern Å: Borris,Spin,FALSE,TRUE,1.2222053642171986
 2006-08-03,57,2,Bruno Sørensen,Skjern Å: Borris,Fly,FALSE,TRUE,1.079954425923226
 2006-08-03,78,5.8,ole l pedersen,Skjern Å: Borris,Spin,FALSE,TRUE,1.2222053642171986
-2006-08-03,57,2,Bruno Sørensen,Skjern Å: Borris,Fly,FALSE,TRUE,1.079954425923226
 2006-08-02,51,2.2,svend åge pedersen,Skjern Å: Vinbæk,Spin,FALSE,TRUE,1.6584873088027985
 2006-08-02,48,1.4,Jan Hartvigsen,Skjern Å: Sdr. Felding,Spin,FALSE,TRUE,1.2659143518518519
 2006-08-02,62,2.8,Ib Sommer,Skjern Å: Borris,Fly,FALSE,TRUE,1.174851465207613
@@ -6890,7 +6810,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2006-07-22,70,5,Klaus Øgendahl,Skjern Å: Borris,Spin,FALSE,TRUE,1.4577259475218658
 2006-07-21,53,1.8,Ib Poulsen,Skjern Å: Borris,Fly,FALSE,TRUE,1.2090517675665147
 2006-07-21,58,2.2,Erik Dønvig,Skjern Å: Albæk,Fly,FALSE,TRUE,1.1275575054327773
-2006-07-21,53,1.6,Klaus Øgendahl,Skjern Å: Borris,Spin,FALSE,TRUE,1.0747126822813464
 2006-07-21,53,1.6,Klaus Øgendahl,Skjern Å: Borris,Spin,FALSE,TRUE,1.0747126822813464
 2006-07-19,77,5.4,Karsten Siggaard,Skjern Å: Borris,Orm,FALSE,TRUE,1.182827966433971
 2006-07-19,69,4.6,Birger Dam Jensen,Skjern Å: Albæk,Fly,FALSE,TRUE,1.4002660505496043
@@ -7084,7 +7003,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2005-08-28,56,2.2,bjarne kjær,Skjern Å: Sdr. Felding,Fly,FALSE,TRUE,1.2527332361516037
 2005-08-28,56,2.5,walter Kutschka,Skjern Å: Borris,Fly,FALSE,FALSE,1.4235604956268222
 2005-08-28,60,2.8,Finn Lauridsen,Skjern Å: A11,Fly,FALSE,TRUE,1.2962962962962963
-2005-08-28,60,2.8,Finn Lauridsen,Skjern Å: A11,Fly,FALSE,TRUE,1.2962962962962963
 2005-08-28,58,2.2,Morten Fischer Jørgensen,Skjern Å: Borris,Orm,FALSE,TRUE,1.1275575054327773
 2005-08-27,52,1.8,Mark Højfeldt,Skjern Å: Borris,Spin,FALSE,TRUE,1.2801547564861175
 2005-08-27,NA,NA,Olaf Solberg,Skjern Å: Borris,Spin,FALSE,TRUE,NA
@@ -7128,7 +7046,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2005-08-14,47,1.5,Henning Karlsen,Skjern Å: Borris,Fly,FALSE,FALSE,1.4447665738805466
 2005-08-14,40,1,Per Andersen,Nedre,Fly,FALSE,FALSE,1.5625
 2005-08-14,50,1.5,Anonym,Nedre,Spin,FALSE,TRUE,1.2
-2005-08-14,63,3,Ib Poulsen,Skjern Å: Borris,Fly,FALSE,TRUE,1.199774442404828
 2005-08-13,53,2,Ole Damgaard,Skjern Å: Vinbæk,Andet,FALSE,TRUE,1.343390852851683
 2005-08-12,59,2.9,Bo Nielsen,Skjern Å: Borris,Fly,FALSE,TRUE,1.4120236246159539
 2005-08-12,44,1.3,svend åge pedersen,Vorgod Å,Fly,FALSE,TRUE,1.5261081893313297
@@ -7142,7 +7059,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2005-08-10,62,3.2,Leif Jørgensen,Skjern Å: Borris,Fly,FALSE,TRUE,1.3426873888087005
 2005-08-09,51,1.5,henrik jensen,Skjern Å: Karstoft Å udløb,Fly,FALSE,TRUE,1.1307868014564535
 2005-08-09,62,2.7,Falk Bunde,Skjern Å: Borris,Fly,FALSE,TRUE,1.1328924843073411
-2005-08-09,53,2.2,Karsten Siggård,Skjern Å: Borris,Orm,FALSE,TRUE,1.4777299381368514
 2005-08-09,53,2.2,Karsten Siggård,Skjern Å: Borris,Orm,FALSE,TRUE,1.4777299381368514
 2005-08-09,53,1.7,Jens Ingemann Michaelsen,Skjern Å: Borris,Orm,FALSE,TRUE,1.1418822249239304
 2005-08-08,66,3.6,Preben Wolf,Nedre,Fly,FALSE,TRUE,1.252191334835963
@@ -7177,7 +7093,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2005-08-04,47.5,1.3,Jan holm,Skjern Å: A11,Orm,FALSE,FALSE,1.2130048111969676
 2005-08-04,50,1.5,Jens Henning,Nedre,Spin,FALSE,TRUE,1.2
 2005-08-04,59,2.5,HP Jensen,Omme Å,Spin,FALSE,TRUE,1.217261745358581
-2005-08-04,52,1.7,Michael Johnsen,Skjern Å: Borris,Spin,FALSE,TRUE,1.2090350477924443
 2005-08-03,54,2,Eskild Dam Nielsen,Skjern Å: Konsortiet,Spin,FALSE,TRUE,1.2701315856322715
 2005-08-03,53,1.9,Finn Henriksen,Nedre,Spin,FALSE,TRUE,1.2762213102090987
 2005-08-03,66,3,Klaus Øgendahl,Skjern Å: Albæk,Spin,FALSE,TRUE,1.043492779029969
@@ -7373,7 +7288,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2005-07-15,53,2.1,Anders Hermansen,Skjern Å: Albæk,Spin,FALSE,TRUE,1.4105603954942671
 2005-07-15,50,2.5,Jimmi K Jensen,Skjern Å: Albæk,Spin,FALSE,FALSE,2
 2005-07-15,62,3.1,Henrik D Kjeldsen,Skjern Å: Albæk,Spin,FALSE,TRUE,1.3007284079084287
-2005-07-15,62,3.1,Henrik D Kjeldsen,Skjern Å: Albæk,Spin,FALSE,TRUE,1.3007284079084287
 2005-07-15,55,2,Steen Hedemann,Skjern Å: Borris,Fly,FALSE,TRUE,1.2021036814425243
 2005-07-14,56,2,Jens Frydenlund,Skjern Å: Konsortiet,Spin,FALSE,TRUE,1.1388483965014577
 2005-07-14,67,3.9,bjarne kjær,Skjern Å: Sdr. Felding,Fly,FALSE,TRUE,1.296702054441537
@@ -7562,7 +7476,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2005-04-01,49,1.8,Søren Lysholm Christensen,Skjern Å: Borris,Fly,FALSE,TRUE,1.5299747554165357
 2005-04-01,46,1.2,kaj nielsen,Skjern Å: Albæk,Spin,FALSE,TRUE,1.2328429358099777
 2005-04-01,70,3.2,Jürgen Dora D,Skjern Å: Albæk,Spin,FALSE,TRUE,0.9329446064139941
-2005-04-01,63,3,Ib Poulsen,Skjern Å: Borris,Fly,FALSE,TRUE,1.199774442404828
 2005-04-01,63,3,Ib Poulsen,Skjern Å: Borris,Fly,FALSE,TRUE,1.199774442404828
 2005-04-01,58,2.6,Harald Frandsen,Skjern Å: Borris,Fly,FALSE,TRUE,1.3325679609660093
 2005-04-01,60,3,jimmi lauridsen,Skjern Å: Borris,Fly,FALSE,FALSE,1.3888888888888888
