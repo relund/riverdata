@@ -4,7 +4,7 @@ library(tidyverse)
 library(lubridate)
 
 
-## Flow though lock at Hvide Sande
+#### Flow though lock at Hvide Sande ####
 url <- 'http://hyde.dk/Sflow/default_flow.asp'
 webpage <- read_html(url)
 dat <- html_nodes(webpage, xpath = "/html/body/div[2]/div[3]/script/text()")
@@ -71,44 +71,84 @@ if (length(dates)==length(flow)) {
 # }
 
 
-### Catch records
-# curY <- as.numeric(format(Sys.time(), "%Y"))
-# dat <- NULL
-# # for (y in 2004:curY) {
-# #   url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=salmon")
-# #   page <- read_html(url)
-# #   x <- html_node(page, xpath = '//*[@id="report-list"]')
-# #   tmp <- html_table(x, header = T, trim = T, fill = T) %>% as_tibble()
-# #   dat <- bind_rows(tmp, dat)
-# # }
-# url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", curY, "&species=salmon")
-# page <- read_html(url)
-# x <- html_node(page, xpath = '//*[@id="report-list"]')
-# dat <- html_table(x, header = T, trim = T, fill = T) %>% as_tibble()
-# colnames(dat) <- c("Date", "Length", "Weight", "Name", "Place", "Method", "Cut", "Foto")
-# dat <- dat %>% mutate(killed = str_detect(dat$Date, fixed("*")))
-# dat$Date <- dat$Date %>% str_replace(coll(" *"), "")
-# dat$Length <- dat$Length %>% str_replace_all(c(".cm" = "", "Ukendt" = "")) 
-# dat$Weight <- dat$Weight %>% str_replace_all(c(".kg" = "", "Ukendt" = "")) 
-# dat$Cut <- dat$Cut %>% str_replace_all(c("Ja" = "T", "Nej" = "F", "Ukendt" = "F", ".*pelvic" = "T", 
-#                                          "tail" = "T", "pectoral" = "T", "anal" = "T"))
-# dat$Foto <- dat$Foto %>% str_replace_all(c("ja" = "TRUE", "nej" = "FALSE", "Ukendt" = ""))
-# dat$Place <- dat$Place %>% str_replace_all(c(".*Fjord.*" = "Nedre", ".*Opstrøms Tarp bro.*" = "Øvre", ".*Vorgod Å.*" = "Vorgod Å", "Skjern Å: Borris Krog bro.*" = "Mellem", "Omme Å.*" = "Omme Å", "Skjern Å: Skarrild" = "Øvre", "Ukendt" = ""))
-# dat <- type_convert(dat)
-# dat$Length <- as.numeric(dat$Length)
-# dat$Weight<- as.numeric(dat$Weight)
-# dat <- dat %>% mutate(Fulton = Weight*100000/Length^3)
-# dat
-# 
-# fn <- "data_catch_salmon.csv"
-# if (!file.exists(fn)) {
-#   write_csv2(dat, fn)
-# } else {
-#   datOld <- read_csv2(fn)
-#   dat <- bind_rows(datOld,dat)
-#   dat <- distinct(dat)
-#   write_csv2(dat, fn)
+#### Catch records salmon ####
+curY <- year(now())
+dat <- NULL
+# for (y in 2004:curY) {
+#   url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=salmon")
+#   page <- read_html(url)
+#   x <- html_node(page, xpath = '//*[@id="report-list"]')
+#   tmp <- html_table(x, header = T, trim = T, fill = T) %>% as_tibble()
+#   dat <- bind_rows(tmp, dat)
 # }
+url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", curY, "&species=salmon")
+page <- read_html(url)
+x <- html_node(page, xpath = '//*[@id="report-list"]')
+dat <- html_table(x, header = T, trim = T, fill = T) %>% as_tibble()
+colnames(dat) <- c("Date", "Length", "Weight", "Name", "Place", "Method", "Cut", "Foto")
+dat <- dat %>% mutate(killed = str_detect(dat$Date, fixed("*")))
+dat$Date <- dat$Date %>% str_replace(coll(" *"), "")
+dat$Length <- dat$Length %>% str_replace_all(c(".cm" = "", "Ukendt" = ""))
+dat$Weight <- dat$Weight %>% str_replace_all(c(".kg" = "", "Ukendt" = ""))
+dat$Cut <- dat$Cut %>% str_replace_all(c("Ja" = "T", "Nej" = "F", "Ukendt" = "F", ".*pelvic" = "T",
+                                         "tail" = "T", "pectoral" = "T", "anal" = "T"))
+dat$Foto <- dat$Foto %>% str_replace_all(c("ja" = "TRUE", "nej" = "FALSE", "Ukendt" = ""))
+dat$Place <- dat$Place %>% str_replace_all(c(".*Fjord.*" = "Nedre", ".*Opstrøms Tarp bro.*" = "Øvre", ".*Vorgod Å.*" = "Vorgod Å", "Skjern Å: Borris Krog bro.*" = "Mellem", "Omme Å.*" = "Omme Å", "Skjern Å: Skarrild" = "Øvre", "Ukendt" = ""))
+dat <- type_convert(dat)
+dat$Length <- as.numeric(dat$Length)
+dat$Weight<- as.numeric(dat$Weight)
+dat <- dat %>% mutate(Fulton = Weight*100000/Length^3)
+dat
+
+fn <- "data/data_skjern_catch_salmon.csv"
+if (!file.exists(fn)) {
+  write_csv(dat, fn)
+} else {
+  datOld <- read_csv(fn)
+  dat <- bind_rows(datOld,dat)
+  dat <- distinct(dat)
+  write_csv(dat, fn)
+}
+
+
+#### Catch records seatrout ####
+curY <- year(now())
+dat <- NULL
+# for (y in 2004:curY) {
+#   url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=trout")
+#   page <- read_html(url)
+#   x <- html_node(page, xpath = '//*[@id="report-list"]')
+#   tmp <- html_table(x, header = T, trim = T, fill = T) %>% as_tibble()
+#   dat <- bind_rows(tmp, dat)
+# }
+url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", curY, "&species=trout")
+page <- read_html(url)
+x <- html_node(page, xpath = '//*[@id="report-list"]')
+dat <- html_table(x, header = T, trim = T, fill = T) %>% as_tibble()
+colnames(dat) <- c("Date", "Length", "Weight", "Name", "Place", "Method", "Cut", "Foto")
+dat <- dat %>% mutate(killed = str_detect(dat$Date, fixed("*")))
+dat$Date <- dat$Date %>% str_replace(coll(" *"), "")
+dat$Length <- dat$Length %>% str_replace_all(c(".cm" = "", "Ukendt" = ""))
+dat$Weight <- dat$Weight %>% str_replace_all(c(".kg" = "", "Ukendt" = ""))
+dat$Cut <- dat$Cut %>% str_replace_all(c("Ja" = "T", "Nej" = "F", "Ukendt" = "F", ".*pelvic" = "T",
+                                         "tail" = "T", "pectoral" = "T", "anal" = "T"))
+dat$Foto <- dat$Foto %>% str_replace_all(c("ja" = "TRUE", "nej" = "FALSE", "Ukendt" = ""))
+dat$Place <- dat$Place %>% str_replace_all(c(".*Fjord.*" = "Nedre", ".*Opstrøms Tarp bro.*" = "Øvre", ".*Vorgod Å.*" = "Vorgod Å", "Skjern Å: Borris Krog bro.*" = "Mellem", "Omme Å.*" = "Omme Å", "Skjern Å: Skarrild" = "Øvre", "Ukendt" = ""))
+dat <- type_convert(dat)
+dat$Length <- as.numeric(dat$Length)
+dat$Weight<- as.numeric(dat$Weight)
+dat <- dat %>% mutate(Fulton = Weight*100000/Length^3)
+dat
+
+fn <- "data/data_skjern_catch_seatrout.csv"
+if (!file.exists(fn)) {
+  write_csv(dat, fn)
+} else {
+  datOld <- read_csv(fn)
+  dat <- bind_rows(datOld,dat)
+  dat <- distinct(dat)
+  write_csv(dat, fn)
+}
 
 
 ### Estimate weight based on length
@@ -144,12 +184,6 @@ if (length(dates)==length(flow)) {
 
 
 
-# reformat date 
-# dat$dateStr<-timeToStr(strToTime(dat$dateStr, f = "%d-%m-%Y"))
-# 
-# #dat$unixTime<-unixTime(dat$date)
-# #dat$dateStr<-as.character(dat$date)
-# head(dat)
-# dim(dat)
+
 
 
