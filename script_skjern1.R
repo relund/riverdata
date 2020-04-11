@@ -111,6 +111,25 @@ if (!file.exists(fn)) {
 }
 
 
+#### Salmon - Estimate weight given length ####
+datCKilled <- dat %>% 
+  mutate(Length = round(Length), Weight = round(Weight,1), Month = month(Date, label = T)) %>%
+  mutate(Period = factor(Month, ordered = F)) %>% 
+  dplyr::filter(Length > 39 & Killed) 
+mod <- lm(log(Weight) ~ Period*log(Length), datCKilled)
+datP <- expand_grid(Length = 40:max(datCKilled$Length), Period = unique(datCKilled$Period))
+res <- predict(mod, datP, interval='prediction', level=0.95) 
+res <- exp(res)
+res <- res %>% as_tibble() 
+res <- bind_cols(datP, res) %>% group_by(Period) #%>% select(Length:Avg)
+colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
+
+## Save to file
+fn <- "data/data_skjern_weight_salmon.csv"
+write_csv(res, fn)
+
+
+
 #### Catch records seatrout ####
 curY <- year(now())
 dat <- NULL
@@ -149,6 +168,24 @@ if (!file.exists(fn)) {
   dat <- distinct(dat)
   write_csv(dat, fn)
 }
+
+
+#### Seatrout - Estimate weight given length ####
+datCKilled <- dat %>% 
+  mutate(Length = round(Length), Weight = round(Weight,1), Month = month(Date, label = T)) %>%
+  mutate(Period = factor(Month, ordered = F)) %>% 
+  dplyr::filter(Length > 39 & Killed) 
+mod <- lm(log(Weight) ~ Period*log(Length), datCKilled)
+datP <- expand_grid(Length = 40:max(datCKilled$Length), Period = unique(datCKilled$Period))
+res <- predict(mod, datP, interval='prediction', level=0.95) 
+res <- exp(res)
+res <- res %>% as_tibble() 
+res <- bind_cols(datP, res) %>% group_by(Period) #%>% select(Length:Avg)
+colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
+
+## Save to file
+fn <- "data/data_skjern_weight_seatrout.csv"
+write_csv(res, fn)
 
 
 ### Estimate weight based on length
