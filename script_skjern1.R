@@ -106,7 +106,9 @@ if (!file.exists(fn)) {
 } else {
   datOld <- read_csv(fn)
   dat <- bind_rows(datOld,dat)
-  dat <- distinct(dat) %>% dplyr::filter(Length > 39)
+  dat <- distinct(dat) %>% 
+    dplyr::filter(Length > 39) %>% 
+    arrange(desc(Date))
   write_csv(dat, fn)
 }
 
