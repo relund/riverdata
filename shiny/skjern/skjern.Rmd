@@ -3,13 +3,21 @@ title: "Dashboard for Skjern Å"
 author: ''
 output:
   flexdashboard::flex_dashboard:
-    orientation: rows
-    vertical_layout: fill
-    theme: paper # cosmo flatly lumen bootstrap
-    favicon: favicon.png
     css: style.css
+    favicon: favicon.png
+    orientation: rows
+    theme: paper
+    vertical_layout: fill
+resource_files:
+- www/boy.gif
+- www/c_and_r.gif
+- www/cut.gif
+- www/foto.gif
+- www/girl.gif
+- www/info.png
+- www/net.gif
 runtime: shiny
-editor_options: 
+editor_options:
   chunk_output_type: console
 ---
 
@@ -70,7 +78,7 @@ datCatchSalmon <- read_csv(paste0(prefix, "data_skjern_catch_salmon.csv")) %>%
       if_else(!Killed, "<img src=\"www/c_and_r.gif\" alt=\"C&R\">", "", ""),
       if_else(Cut, "<img src=\"www/cut.gif\" alt=\"Finneklippet\">", "", "")
     ),
-    Month = month(Date, label = T), Week = week(Date), Year = year(Date), NoWeight = is.na(Weight)
+    Month = month(Date, label = T), Week = week(Date), Year = year(Date), NoWeight = 1*is.na(Weight)
   )
 datCatchSalmon <- left_join(datCatchSalmon, datWeightSalmon, by = c("Length", "Month" = "Period")) %>% 
   mutate(Weight = if_else(is.na(Weight), round(Avg,1), Weight)) %>% 
@@ -91,7 +99,7 @@ datCatchTrout <- read_csv(paste0(prefix, "data_skjern_catch_seatrout.csv")) %>%
       if_else(!Killed, "<img src=\"www/c_and_r.gif\" alt=\"C&R\">", "", ""),
       if_else(Cut, "<img src=\"www/cut.gif\" alt=\"Finneklippet\">", "", "")
     ),
-    Month = month(Date, label = T), Week = week(Date), Year = year(Date), NoWeight = is.na(Weight)
+    Month = month(Date, label = T), Week = week(Date), Year = year(Date), NoWeight = 1*is.na(Weight)
   )
 datCatchTrout <- left_join(datCatchTrout, datWeightTrout, by = c("Length", "Month" = "Period")) %>% 
   mutate(Weight = if_else(is.na(Weight), round(Avg,1), Weight)) %>% 
@@ -326,7 +334,7 @@ DT::renderDataTable(
     datCatchSalmon[,c(1:6,9,10,14)],
     class = 'stripe row-border order-column nowrap compact', # nowrap display compact
     rownames = FALSE,
-    # filter = 'bottom',
+    filter = 'bottom',
     escape = FALSE,
     options = list(pageLength = 15, order = list(list(0, 'desc')),
                    list(visible=FALSE, targets="NoWeight"),
@@ -339,11 +347,11 @@ DT::renderDataTable(
     colnames = c('Dato', 'Længde', 'Vægt', 'Navn', 'Sted', 'Metode', 'Kondition', 'Diverse', 'NoWeight'),
     extensions = c('Responsive')  #,'FixedHeader','RowGroup'
   ) %>%
-  formatDate('Date', 'toLocaleDateString') %>%
-  formatStyle('Weight', 'NoWeight', color = styleEqual(c(TRUE, FALSE), c("black","grey"))) %>% 
-  formatRound(c('Length'), digits = 0) %>% 
-  formatRound(c('Weight'), digits = 1) %>% 
-  formatRound(c('Fulton'), digits = 2) 
+  formatStyle(columns = 'Weight', valueColumns = 'NoWeight', color = styleEqual(c(0, 1), c("black","green"))) %>% 
+  formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>%
+  formatRound(c('Length'), digits = 0) %>%
+  formatRound(c('Weight'), digits = 1) %>%
+  formatRound(c('Fulton'), digits = 2)
 )
 ```
  
@@ -386,7 +394,7 @@ renderValueBox({
   ct <- datCatchTrout %>% dplyr::filter(year(Date) == year(now())) %>% 
     dplyr::filter(Weight == max(Weight, na.rm = T)) %>% arrange(Weight, Length)
   valueBox(
-    caption = paste("Største laks i år fanget af", ct$Name[1]),
+    caption = paste("Største havørred i år fanget af", ct$Name[1]),
     value = paste(ct$Weight[1], "kg og", ct$Length[1], "cm"),
     icon = "fa-trophy",
     color = "success"
@@ -400,27 +408,32 @@ Row
 ### Seneste fangster
 ```{r}
   DT::renderDataTable(
-   DT::datatable(
+    DT::datatable(
     datCatchTrout[,c(1:6,9,10,14)],
-    colnames = c('Dato', 'Længde', 'Vægt', 'Navn', 'Sted', 'Metode', 'Kondition', 'Diverse', 'NoWeight'),
     class = 'stripe row-border order-column nowrap compact', # nowrap display compact
     rownames = FALSE,
-    # filter = 'bottom',
+    filter = 'bottom',
     escape = FALSE,
     options = list(pageLength = 15, order = list(list(0, 'desc')),
                    list(visible=FALSE, targets="NoWeight"),
                    # autoWidth = TRUE,
-                   columnDefs = list(list(className = 'dt-center', targets = 0:7),
-                                     list(visible=FALSE, targets=c(8))
-                                )
+                   columnDefs = list(
+                     list(className = 'dt-center', targets = 0:7),
+                     list(visible=FALSE, targets=c(8))
+                   )
               ),
+    colnames = c('Dato', 'Længde', 'Vægt', 'Navn', 'Sted', 'Metode', 'Kondition', 'Diverse', 'NoWeight'),
     extensions = c('Responsive')  #,'FixedHeader','RowGroup'
   ) %>%
-  formatDate('Date', 'toLocaleDateString') %>%
-  formatRound(c('Length','Weight','Fulton'), digits = c(0,1,2)) %>%
-  formatStyle('Weight', 'NoWeight', color = styleEqual(c(TRUE, FALSE), c("black","grey")))
+  formatStyle(columns = 'Weight', valueColumns = 'NoWeight', color = styleEqual(c(0, 1), c("black","green"))) %>% 
+  formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>%
+  formatRound(c('Length'), digits = 0) %>%
+  formatRound(c('Weight'), digits = 1) %>%
+  formatRound(c('Fulton'), digits = 2)
 )
 ```
+
+
 
 
 
@@ -663,14 +676,15 @@ Row
 renderPlot({
   dat <- datCatchSalmon %>% 
     dplyr::filter(Date > now() - days(30)) %>% 
-    select(Date, Place)
+    select(Date, Place) %>% 
+    arrange(desc(Date))
 
   ggplot(data = dat, aes(x = Date)) +
     geom_bar(aes(fill = Place)) + 
-    scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(date(now()-ddays(30)), date(now()-ddays(1)))) + 
+    scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(NA_Date_, date(now()+ddays(1)))) + 
     labs(fill = "") + xlab("Dato") + ylab("Antal fangster") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
-})
+ })
 ```
 
 
@@ -916,9 +930,6 @@ Row
 
 ### Sluse flow de seneste 14 dage (strøm ind i fjorden er positiv)
 
-
-
-
 ```{r}
 renderPlot({
   ggplot(datFlow14) + 
@@ -934,8 +945,6 @@ renderPlot({
 ```
 
 
-
-
 Om siden 
 =======================================================================
 
@@ -944,9 +953,9 @@ Row
 
 ### Info
 
-Dette dashboard er lavet af Lars Relund og giver information omkring fiskeriet i Karup Å. Data er hentet fra forskellige kilder. Fangst data er fra KÅS. Der er data fra 2003. Bemærk, at det er først fra 2019, at der har været obligatorisk fangstrapportering. Kun havørred over mindstemålet vises under fangster. Kondition er beregnet udfra [Fultons formel](http://ulnits.dk/biologi/the-k-factor/).  
+Dette dashboard er lavet af Lars Relund og giver information omkring fiskeriet i Skjern Å. Data er hentet fra forskellige kilder. Fangst data er fra SÅS. Der er data fra 2004. Kun laks og havørred over mindstemålet vises under fangster. Kondition er beregnet udfra [Fultons formel](http://ulnits.dk/biologi/the-k-factor/).  
 
-Vægten for genudsatte fisk er [estimeret](#estimat-af-vægt) udfra tidligere fangster og givet i grå farve. For mere info se denne [rapport](http://htmlpreview.github.io/?https://github.com/relund/skjern/blob/master/reports/karup_weight.html).
+Vægten for genudsatte fisk er [estimeret](#estimat-af-vægt) udfra tidligere fangster og givet i grå farve. For mere info se denne [rapport](http://htmlpreview.github.io/?https://github.com/relund/skjern/blob/master/reports/skjern_weight.html).
 
 Vandstandsdata er fra [vandløbssiden](http://www.hydrometri.dk/hyd/). Den gennemensnitlige vandstand er estimeret som et rullende gennemsnit over 90 dage (45 dage på hver side af datoen) ved brug tilgængelige data for alle år. Bemærk den gennemsnitlige vandstand siger nødvendigvis ikke noget om en god vandstand for fiskeriet, fx kan den gennemsnitlige vandstand i vinterhalvåret godt være høj.
 
