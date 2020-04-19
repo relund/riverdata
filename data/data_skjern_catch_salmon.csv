@@ -1,4 +1,5 @@
 Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
+2020-04-19,78,4.7,Christian Nørregaard,Nedre,Spin,TRUE,TRUE,0.990407795141523
 2020-04-18,90,7,Mustafa Teanjak,Nedre,Fly,FALSE,TRUE,0.9602194787379973
 2020-04-18,92,7.4,Casper Hansen,Nedre,Spin,FALSE,TRUE,0.9503164296868579
 2020-04-18,93,8,Morten Winther,Mellem,Fly,FALSE,TRUE,0.9945832509694079
@@ -7,6 +8,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2020-04-18,91,7.1,Michael Heimann,Nedre,Spin,FALSE,TRUE,0.9421806306240553
 2020-04-18,91,8.2,Bo Bundsbæk,Nedre,Fly,FALSE,TRUE,1.0881522776221482
 2020-04-18,96,9.6,Harry Østergaard Jensen,Nedre,Fly,TRUE,TRUE,1.0850694444444444
+2020-04-18,97,8.6,Børge Thomsen,Vorgod Å,Spin,FALSE,TRUE,0.942287106115772
 2020-04-17,95,7.7,Jonas Patuel,Nedre,Spin,TRUE,TRUE,0.8980901005977547
 2020-04-17,100,8.5,Lindy Madsen,Nedre,Fly,TRUE,TRUE,0.85
 2020-04-17,97,8.3,Anders Meldgaard,Nedre,Spin,FALSE,TRUE,0.9094166256698731
@@ -21,6 +23,9 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2020-04-17,85,7,Morten Mortensen,Mellem,Spin,FALSE,TRUE,1.139833095868105
 2020-04-17,86,7.5,Daniel pedersen,Vorgod Å,Spin,FALSE,TRUE,1.1791414592425824
 2020-04-17,87,6.4,Michael Pedersen,Øvre,Fly,FALSE,TRUE,0.9719014188242119
+2020-04-17,88,6.7,Mads Garde,Omme Å,Spin,TRUE,TRUE,0.9831658527422991
+2020-04-17,97,8.5,John Christensen,Øvre,Fly,FALSE,TRUE,0.9313302793004723
+2020-04-17,86,7.5,Daniel Pedersen,Vorgod Å,Spin,FALSE,TRUE,1.1791414592425824
 2020-04-16,91,7.5,Thomas Torpe,Nedre,Fly,FALSE,TRUE,0.9952612295324528
 2020-04-16,89,7.3,Jimmy Kendra,Nedre,Fly,FALSE,TRUE,1.0355065258188658
 2020-04-16,89,8,Jesper Rasmussen,Mellem,Spin,FALSE,TRUE,1.1348016721302638
@@ -67,6 +72,19 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2020-04-16,93,9,Ivan Nyborg,Mellem,Fly,TRUE,TRUE,1.1189061573405839
 2020-04-16,92,7.6,Svend-Erik Thye,Nedre,Spin,TRUE,TRUE,0.9760006575162324
 2020-04-16,90,7.5,Lars Duedahl Larsen,Nedre,Fly,TRUE,TRUE,1.02880658436214
+2020-04-16,86,NA,Steen Fløe,Nedre,Fly,FALSE,FALSE,NA
+2020-04-16,90,NA,Michael Brill Ebbesen,Øvre,Fly,TRUE,TRUE,NA
+2020-04-16,80,NA,Ralph Eriksen,Nedre,Spin,FALSE,FALSE,NA
+2020-04-16,97,7.5,Peter Kristian Jacobsen,Nedre,Fly,FALSE,TRUE,0.8217620111474756
+2020-04-16,92,NA,Henrik Qvortrup Thygesen,Nedre,Fly,FALSE,TRUE,NA
+2020-04-16,87,7.1,Erik Garde,Omme Å,Spin,FALSE,TRUE,1.0782031365081102
+2020-04-16,97,8.5,Børge Jensen,Øvre,Fly,FALSE,TRUE,0.9313302793004723
+2020-04-16,94,NA,Klaus Kjærgaard,Mellem,Spin,FALSE,FALSE,NA
+2020-04-16,74,NA,Mikkel Bjerg Pedersen,Nedre,Spin,FALSE,TRUE,NA
+2020-04-16,86,7,Lars Libak,Nedre,Fly,TRUE,TRUE,1.1005320286264102
+2020-04-16,90,NA,Jesper Berg Jensen,Nedre,Fly,TRUE,FALSE,NA
+2020-04-16,93,NA,Jan Christiansen,Nedre,Fly,TRUE,TRUE,NA
+2020-04-16,82,NA,Ole Kjær,Nedre,Spin,FALSE,FALSE,NA
 2019-10-15,95,NA,Karsten Dahl,Nedre,Spin,FALSE,FALSE,NA
 2019-10-15,75,NA,Birger Hansen,Nedre,Spin,TRUE,FALSE,NA
 2019-10-15,84,NA,Jimmy Nielsen,Nedre,Spin,TRUE,FALSE,NA
