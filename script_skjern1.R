@@ -97,7 +97,7 @@ dat$Place <- dat$Place %>% str_replace_all(c(".*Fjord.*" = "Nedre", ".*Opstrøms
 dat <- type_convert(dat)
 dat$Length <- as.numeric(dat$Length)
 dat$Weight<- as.numeric(dat$Weight)
-dat <- dat %>% mutate(Fulton = Weight*100000/Length^3)
+dat <- dat %>% mutate(Fulton = Weight*100000/Length^3, Name = str_to_title(Name))
 dat <- dat %>% select(-Foto)
 
 fn <- "data/data_skjern_catch_salmon.csv"
