@@ -104,14 +104,14 @@ fn <- "data/data_skjern_catch_salmon.csv"
 if (!file.exists(fn)) {
   write_csv(dat, fn)
 } else {
-  datOld <- read_csv(fn)
+  datOld <- read_csv(fn) %>% 
+    dplyr::filter(year(Date) < curY)
   dat <- bind_rows(datOld,dat)
-  dat <- distinct(dat) %>% 
+  dat <- dat %>% 
     dplyr::filter(Length > 39) %>% 
     arrange(desc(Date))
   write_csv(dat, fn)
 }
-
 
 #### Salmon - Estimate weight given length ####
 datCKilled <- dat %>% 
