@@ -1,5 +1,6 @@
 Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
-2020-04-23,88,NA,Carsten,Nedre,Fly,TRUE,FALSE,NA
+2020-04-24,90,NA,Peter Tornmark,Mellem,Fly,FALSE,FALSE,NA
+2020-04-23,88,NA,Carsten Johnsen,Nedre,Fly,TRUE,FALSE,NA
 2020-04-23,89,7.2,Carl Knudsen,Øvre,Spin,FALSE,TRUE,1.0213215049172375
 2020-04-23,90,8,Niels Lodberg,Mellem,Spin,TRUE,FALSE,1.0973936899862826
 2020-04-22,96,8.6,Kim Stampe,Mellem,Fly,FALSE,TRUE,0.9720413773148148
@@ -43,7 +44,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Killed,Fulton
 2020-04-18,90,7,Mustafa Teanjak,Nedre,Fly,FALSE,TRUE,0.9602194787379973
 2020-04-18,92,7.4,Casper Hansen,Nedre,Spin,FALSE,TRUE,0.9503164296868579
 2020-04-18,93,8,Morten Winther,Mellem,Fly,FALSE,TRUE,0.9945832509694079
-2020-04-18,97,8.6,Børge Thomsen,Vorgod Å,Spin,FALSE,TRUE,0.942287106115772
 2020-04-18,97,8.6,Børge Thomsen,Vorgod Å,Spin,FALSE,TRUE,0.942287106115772
 2020-04-18,91,7.3,Jonas Weiss,Mellem,Spin,FALSE,TRUE,0.9687209300782541
 2020-04-18,91,7.1,Michael Heimann,Nedre,Spin,FALSE,TRUE,0.9421806306240553
