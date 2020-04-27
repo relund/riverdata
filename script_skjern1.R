@@ -339,7 +339,7 @@ dat <- NULL
 for (i in 1:nrow(stations)) {
   id <- stations$id[i]
   place <- stations$place[i]
-  tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=30&pw=100000000&inclraw=true"))
+  tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=100&pw=100000000&inclraw=true"))
   offset <- as.numeric(tmp$tsh$Offset)
   tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
   tmp$V <- tmp$V - rep(offset, length(tmp$V))
