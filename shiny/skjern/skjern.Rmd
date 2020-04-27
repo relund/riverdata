@@ -78,7 +78,8 @@ datCatchSalmon <- read_csv(paste0(prefix, "data_skjern_catch_salmon.csv")) %>%
       if_else(!Killed, "<img src=\"www/c_and_r.gif\" alt=\"C&R\">", "", ""),
       if_else(Cut, "<img src=\"www/cut.gif\" alt=\"Finneklippet\">", "", "")
     ),
-    Month = month(Date, label = T), Week = week(Date), Year = year(Date), NoWeight = 1*is.na(Weight)
+    Month = month(Date, label = T), Week = week(Date), Year = year(Date), 
+    NoWeight = 1*is.na(Weight), Day = yday(Date), DayStr = format(Date, "%d. %b")
   )
 datCatchSalmon <- left_join(datCatchSalmon, datWeightSalmon, by = c("Length", "Month" = "Period")) %>% 
   mutate(Weight = if_else(is.na(Weight), round(Avg,1), Weight)) %>% 
@@ -99,7 +100,7 @@ datCatchTrout <- read_csv(paste0(prefix, "data_skjern_catch_seatrout.csv")) %>%
       if_else(!Killed, "<img src=\"www/c_and_r.gif\" alt=\"C&R\">", "", ""),
       if_else(Cut, "<img src=\"www/cut.gif\" alt=\"Finneklippet\">", "", "")
     ),
-    Month = month(Date, label = T), Week = week(Date), Year = year(Date), NoWeight = 1*is.na(Weight)
+    Month = month(Date, label = T), Week = week(Date), Year = year(Date), NoWeight = 1*is.na(Weight), Day = yday(Date)
   )
 datCatchTrout <- left_join(datCatchTrout, datWeightTrout, by = c("Length", "Month" = "Period")) %>% 
   mutate(Weight = if_else(is.na(Weight), round(Avg,1), Weight)) %>% 
@@ -297,12 +298,14 @@ renderValueBox({
 })
 ```
 
-### Fangster i år {.value-box}
+### Fangster i år (hjemtaget/genudsat) {.value-box}
 
 ```{r}
 renderValueBox({
+  total <- datCatchSalmon %>% dplyr::filter(year(Date) == year(now())) %>% nrow()
+  killed <- datCatchSalmon %>% dplyr::filter(year(Date) == year(now()), Killed == TRUE) %>% nrow()
   valueBox(
-    value = datCatchSalmon %>% dplyr::filter(year(Date) == year(now())) %>% nrow(),
+    value = str_c(total, " (", format(100*killed/total, digits = 0), "%/", format(100*(total - killed)/total, digits = 0) , "%)"),
     icon = "fa-fish",
     color = "warning"
   )
@@ -845,6 +848,112 @@ renderPlot({
 
 
 
+
+Sammenlign {data-navmenu="Laks"}
+=======================================================================
+
+Row {data-height=350}
+-----------------------------------------------------------------------
+
+### Vælg årstal: 
+```{r}
+sliderInput("iInvYear", label = "",
+            min = 2004, max = year(now()), sep = "",
+            value = c(2016, year(now())), step = 1)
+```
+
+### Vælg dato interval: 
+```{r}
+sliderInput("iInvDay", label = "",
+            min = as.Date("2019-04-01"), max = as.Date("2019-10-31"), 
+            value = c(as.Date("2019-04-01"), as.Date("2019-10-31")), step = 1,
+            timeFormat = "%d %b")
+```
+
+### Vælg enhed på x-aksen: 
+```{r}
+cIXUnit <- c("Dag" = "Day", "Uge" = "Week", "Måned" = "Month", "År" = "Year")
+selectInput("iXUnit", "", cIXUnit, selected = "Year")
+```
+
+### Vælg enhed på y-aksen: 
+```{r}
+cIYUnit <- c("Fisk fanget" = "yVTotal",
+                  "Max længde" = "yVMaxL",
+                  "Gennemsnitlig længde" = "yVAvgL",
+                  "Max vægt" = "yVMaxW",
+                  "Gennemsnitlig vægt" = "yVAvgW")
+selectInput("iYUnit", "", cIYUnit)
+```
+
+### Vælg gruppe inddeling: 
+```{r}
+cIGroup <- c("Område" = "Place",
+                  "Metode" = "Method",
+                  "Ingen" = "None")
+selectInput("iGroup", "", cIGroup, "None")
+```
+
+
+Row {data-height=1000}
+-----------------------------------------------------------------------
+
+### Sammenligning
+
+```{r}
+renderPlot({
+  
+# input <- NULL
+# input$iInvYear <- c(2018,2019)
+# input$iInvDay <- c("2019-04-16", "2019-04-25")
+# input$iXUnit <- "Day"  # Day
+# input$iYUnit <- "yVAvgW"
+# input$iGroup <- "Method"
+
+if (input$iXUnit == "Day") 
+  iXUnit <- "DayStr" 
+else if (input$iXUnit == "Year")
+  iXUnit <- "None"
+else
+  iXUnit <- input$iXUnit
+
+dat <- 
+  datCatchSalmon %>% 
+  dplyr::filter(Year >= input$iInvYear[1], Year <= input$iInvYear[2],
+                  Day >= yday(ymd(str_c(input$iInvYear[1],"-",month(input$iInvDay[1]),"-",day(input$iInvDay[1])))),
+                  Day <= yday(ymd(str_c(input$iInvYear[2],"-",month(input$iInvDay[2]),"-",day(input$iInvDay[2]))))
+                  ) %>% 
+  # select(!!input$iXUnit, Place, Year, Length, Weight, !!iXUnit) %>% 
+  mutate(None = "", xV = str_c(.data[[iXUnit]], " ", Year), grp = .data[[input$iGroup]]) %>% 
+  group_by_at(c("xV", "grp", input$iXUnit)) %>%
+  summarise(yVTotal = n(),
+            yVMaxW = max(Weight, na.rm = T), 
+            yVMaxL = max(Length, na.rm = T),
+            yVAvgW = round(mean(Weight, na.rm = T),1), 
+            yVAvgL = round(mean(Length, na.rm = T),0),
+            ) %>% 
+  mutate(yV = .data[[input$iYUnit]]) %>% 
+  arrange_at(c(input$iXUnit, "xV")) %>% 
+  group_by(xV) %>% 
+  mutate(pct = sum(yVTotal)) %>% 
+  group_by_at(c("xV", "grp", input$iXUnit)) %>% 
+  mutate(label = str_c(round(100*yVTotal/pct, 0), "%"))
+
+if (input$iGroup == "None") dat <- dat %>% mutate(label = yV)
+xLab <- names(cIXUnit)[grep(input$iXUnit, cIXUnit)]
+yLab <- names(cIYUnit)[grep(input$iYUnit, cIYUnit)]
+dat$xV <- factor(dat$xV, levels = unique(dat$xV[order(dat[[input$iXUnit]], dat$xV)]))
+ggplot(data = dat, aes(x = xV, y = yV)) +
+  geom_col(aes(fill = grp), position = position_dodge2(preserve = "single")) +
+  # geom_text(aes(label = yV, y = 1.05*yV), position = position_dodge2(width = 0.9)) + 
+  geom_text(aes(label = label, y = 1.05*yV), position = position_dodge2(width = 0.9), cex = 3)  +  #, vjust = "inward", hjust = "inward"
+  labs(fill = "") + xlab(xLab) + ylab(yLab) +
+  theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
+})
+```
+
+
+
 Slusen
 =======================================================================
 
@@ -945,6 +1054,30 @@ renderPlot({
 ```
 
 
+Vejret
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Vejret
+
+Vejrkort
+
+* [Windfinder](https://www.windfinder.com/#13/55.9251/8.4928/sfc){target="_blank"}
+* [Windy](https://www.windy.com/55.959/8.645?55.925,8.545,13){target="_blank"}
+
+Lokale vejrudsigter
+
+* [Yr Arnborg](https://www.yr.no/sted/Danmark/Midtjylland/Arnborg/){target="_blank"}
+* [DMI Arnborg](https://www.dmi.dk/lokation/show/DK/2624622/Arnborg/){target="_blank"}
+* [Yr Sdr. Felding](https://www.yr.no/sted/Danmark/Midtjylland/S%C3%B8nder_Felding/){target="_blank"}
+* [DMI Sdr. Felding](https://www.dmi.dk/lokation/show/DK/2613064/S%C3%B8nder_Felding/){target="_blank"}
+* [Yr Borris](https://www.yr.no/sted/Danmark/Midtjylland/Borris/){target="_blank"}
+* [DMI Borris](https://www.dmi.dk/lokation/show/DK/2623640/Borris/){target="_blank"}
+* [Yr Skjern](https://www.yr.no/sted/Danmark/Midtjylland/Skjern/){target="_blank"}
+* [DMI Skjern](https://www.dmi.dk/lokation/show/DK/2613715/Skjern/){target="_blank"}
+
 Om siden 
 =======================================================================
 
@@ -953,11 +1086,13 @@ Row
 
 ### Info
 
-Dette dashboard er lavet af Lars Relund og giver information omkring fiskeriet i Skjern Å. Data er hentet fra forskellige kilder. Fangst data er fra SÅS. Der er data fra 2004. Kun laks og havørred over mindstemålet vises under fangster. Kondition er beregnet udfra [Fultons formel](http://ulnits.dk/biologi/the-k-factor/).  
+Dette dashboard er lavet af Lars Relund og giver information omkring fiskeriet i Skjern Å. Data er hentet fra forskellige kilder. Fangst data er fra SÅS. Der er data fra 2004. Kun laks og havørred over mindstemålet vises under fangster. Å systemet er opdelt i zoner Nedre (fra udløbet of opstrøms til Borris Krog bro), Mellem (fra Borris Krog Bro til Tarp Bro), Øvre (Opstrøms Tarp Bro), Vorgod Å, Omme Å samt Andet (andre områder). Kondition er beregnet udfra [Fultons formel](http://ulnits.dk/biologi/the-k-factor/).  
 
-Vægten for genudsatte fisk er [estimeret](#estimat-af-vægt) udfra tidligere fangster og givet i grå farve. For mere info se denne [rapport](http://htmlpreview.github.io/?https://github.com/relund/skjern/blob/master/reports/skjern_weight.html).
+Vægten for genudsatte fisk er [estimeret](#estimat-af-vægt) udfra tidligere fangster og givet i grøn farve. For mere info se denne [rapport](http://htmlpreview.github.io/?https://github.com/relund/skjern/blob/master/reports/skjern_weight.html).
 
-Vandstandsdata er fra [vandløbssiden](http://www.hydrometri.dk/hyd/). Den gennemensnitlige vandstand er estimeret som et rullende gennemsnit over 90 dage (45 dage på hver side af datoen) ved brug tilgængelige data for alle år. Bemærk den gennemsnitlige vandstand siger nødvendigvis ikke noget om en god vandstand for fiskeriet, fx kan den gennemsnitlige vandstand i vinterhalvåret godt være høj.
+Vandstandsdata er fra [vandløbssiden](http://www.hydrometri.dk/hyd/). Den gennemensnitlige vandstand er estimeret som et rullende gennemsnit over 90 dage (45 dage på hver side af datoen) ved brug af tilgængelige data for alle år. Bemærk den gennemsnitlige vandstand siger nødvendigvis ikke noget om en god vandstand for fiskeriet, fx kan den gennemsnitlige vandstand i vinterhalvåret godt være høj.
+
+Sluse data er fra [vejrstationen i Hvide Sande](http://hyde.dk/Sflow/default_flow.asp). Slusen er defineret som "Delvis åben" når flowet er lavt hvilket ofte skyldes få åbne porter.  
 
 Forslag til forbedringer kan sendes til lars.relund[at]gmail[dot]com.
   
