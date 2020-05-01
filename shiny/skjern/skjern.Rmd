@@ -84,14 +84,15 @@ datCatchSalmon <- read_csv(paste0(prefix, "data_skjern_catch_salmon.csv")) %>%
 datCatchSalmon <- left_join(datCatchSalmon, datWeightSalmon, by = c("Length", "Month" = "Period")) %>% 
   mutate(Weight = if_else(is.na(Weight), round(Avg,1), Weight)) %>% 
   mutate(Fulton = Weight*100000/Length^3) %>% 
-  mutate(Month = month(Date, label = T), Place = case_when(
+  mutate(Month = month(Date, label = T), 
+         Place = case_when(
         str_detect(Place, "Øvre|Rind|Karstoft|Vinbæk") ~ "Øvre",
         str_detect(Place, "Mellem|Tarp|Felding|Konsortiet") ~ "Mellem",
         str_detect(Place, "Nedre|A11|Albæk|Borris") ~ "Nedre",
         str_detect(Place, "Vorgod") ~ "Vorgod Å",
         str_detect(Place, "Omme") ~ "Omme Å",
         TRUE ~ "Andet"
-      )) 
+      ))
 
 
 datCatchTrout <- read_csv(paste0(prefix, "data_skjern_catch_seatrout.csv")) %>% 
@@ -179,7 +180,7 @@ datStatYearSalmon <-
                     format(100*`KilledP_Vorgod Å`/Killed, digits = 0, trim = TRUE), "/",
                     format(100*`KilledP_Omme Å`/Killed, digits = 0, trim = TRUE), "/",
                     format(100*`KilledP_Andet`/Killed, digits = 0, trim = TRUE)),
-     Method = paste0(format(100*Fly/Total, digits = 0, trim = TRUE), "/", 
+     Method = paste0(format(100*Flue/Total, digits = 0, trim = TRUE), "/", 
                     format(100*Spin/Total, digits = 0, trim = TRUE), "/", 
                     format(100*Orm/Total, digits = 0, trim = TRUE), "/", 
                     format(100*Andet/Total, digits = 0, trim = TRUE)),
@@ -261,7 +262,7 @@ datStatMonthSalmon <-
                     format(100*`KilledP_Vorgod Å`/Killed, digits = 0, trim = TRUE), "/",
                     format(100*`KilledP_Omme Å`/Killed, digits = 0, trim = TRUE), "/",
                     {if ("KilledP_Andet" %in% names(.)) format(100*`KilledP_Andet`/Total, digits = 0, trim = TRUE) else "0"}),
-     Method = paste0(format(100*Fly/Total, digits = 0, trim = TRUE), "/", 
+     Method = paste0(format(100*Flue/Total, digits = 0, trim = TRUE), "/", 
                     format(100*Spin/Total, digits = 0, trim = TRUE), "/", 
                     format(100*Orm/Total, digits = 0, trim = TRUE), "/", 
                     {if ("Andet" %in% names(.)) format(100*`Andet`/Total, digits = 0, trim = TRUE) else "0"}),
@@ -285,6 +286,18 @@ Fangster {data-navmenu="Laks"}
 
 Row
 -----------------------------------------------------------------------
+
+### Fangster i dag {.value-box}
+
+```{r}
+renderValueBox({
+  valueBox(
+    value = datCatchSalmon %>% dplyr::filter(Date == date(now())) %>% nrow(),
+    icon = "fa-chart-line",
+    color = "primary"
+  )
+})
+```
 
 ### Fangster seneste syv dage {.value-box}
 
@@ -334,7 +347,7 @@ Row
 ```{r Catches table}
 DT::renderDataTable(
   DT::datatable(
-    datCatchSalmon[,c(1:6,9,10,14)],
+    datCatchSalmon %>% select(Date:Method, Fulton, Misc, NoWeight),
     class = 'stripe row-border order-column nowrap compact', # nowrap display compact
     rownames = FALSE,
     filter = 'bottom',
@@ -1064,7 +1077,9 @@ Row
 
 Vejrkort
 
-* [Windfinder](https://www.windfinder.com/#13/55.9251/8.4928/sfc){target="_blank"}
+* [Windfinder nedre](https://www.windfinder.com/#13/55.9251/8.4928/sfc){target="_blank"}
+* [Windfinder mellem](https://www.windfinder.com/#13/55.9376/8.6507/sfc){target="_blank"}
+* [Windfinder øvre](https://www.windfinder.com/#13/55.9652/8.8720/sfc){target="_blank"}
 * [Windy](https://www.windy.com/55.959/8.645?55.925,8.545,13){target="_blank"}
 
 Lokale vejrudsigter
