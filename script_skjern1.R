@@ -190,6 +190,8 @@ if (!is.null(dat)) {
       arrange(desc(Date, ReportDate))
     write_csv(dat, fn)
   }
+} else {
+  dat <- datOld
 }
 
 
