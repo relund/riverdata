@@ -505,3 +505,4 @@ for (y in 2017:year(now())) {
   fn <- paste0("data/data_skjern_waterlevel_relative_long_", y, ".csv")
   write_csv(dplyr::filter(datL, year(Date) == y), fn)
 }
+
