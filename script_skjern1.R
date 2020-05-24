@@ -147,6 +147,7 @@ if (!is.null(dat)) {
              str_detect(Place, "Omme") ~ "Omme Å",
              TRUE ~ "Andet"),
            NetDesc = str_to_sentence(NetDesc),
+           Sex = str_replace_all(Sex, c("Ukendt" = NA_character_)),
            Name = str_to_title(Name),
            Notes = str_to_sentence(Notes)) %>% 
     type_convert(col_types = cols(
@@ -264,7 +265,7 @@ if (!file.exists(fn)) {
 
 curY <- year(now())
 start <- curY
-# dat <- NULL
+dat <- NULL
 for (y in start:curY) {
   cat("Year:", y, "\n")
   url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=trout")
@@ -301,6 +302,7 @@ if (!is.null(dat)) {
              str_detect(Place, "Omme") ~ "Omme Å",
              TRUE ~ "Andet"),
            NetDesc = str_to_sentence(NetDesc),
+           Sex = str_replace_all(Sex, c("Ukendt" = NA_character_)),
            Name = str_to_title(Name),
            Notes = str_to_sentence(Notes)) %>% 
     type_convert(col_types = cols(
