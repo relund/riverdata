@@ -101,102 +101,199 @@ if (length(dates)==length(flow)) {
 # dat <- dat %>% select(-Foto)
 
 ## New method (much slower but more data)
-fn <- "data/data_skjern_catch_salmon.csv"
-if (!file.exists(fn)) {
-  foundId <- NA
-} else {
-  datOld <- read_csv(fn)
-  foundId <- datOld %>% pull(Id)
-}
-
-curY <- year(now())
-start <- curY
-dat <- NULL
-for (y in start:curY) {
-  cat("Year:", y, "\n")
-  url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=salmon")
-  page <- read_html(url)
-  ids <- html_nodes(page, xpath = '//*[@id="report-list"]/tbody/tr/@data-id') %>% 
-    html_text() %>% as.numeric()
-  for (id in ids) {
-    if (id %in% foundId) next
-    url <- str_c("http://skjernaasam.dk/ajax/?action=getcatch&id=", id) 
-    val <- jsonlite::fromJSON(url) 
-    if (is.null(val$imageid)) val$imagefile = ""
-    val <- val %>% unlist()
-    dat <- bind_rows(val, dat)
+updateCatch <- function(fn, species, start = year(now()), reset = F) {
+  foundId <- NULL
+  datOld <- NULL
+  if (file.exists(fn) & !reset) {
+    datOld <- read_csv(fn)
+    foundId <- datOld %>% pull(Id)
   }
-}
-
-if (!is.null(dat)) {
-  dat <- dat %>% select("Id" = id, "Date" = date, "Length" = length_cm, "Weight" = weight_kg, "Sex" = sex, "Place" = location, "Cut" = cut_fin, "Net" = net_injury, "NetDesc" = injury_description, "Killed" = released, "Method" = method, "Notes" = notes, "Kelt" = kelt, "ReportDate" = report_date, "Name" = name, "Foto" = imagefile)
-  dat <- dat %>% 
-    mutate(Killed = if_else(Killed == "Ja", FALSE, TRUE),  # Since represent released
-           Length = str_replace_all(Length, c(".cm" = "", "Ukendt" = NA_character_)),
-           Weight = str_replace_all(Weight, c(".kg" = "", "Ukendt" = NA_character_)),
-           Cut = case_when(
-             Cut %in% c("Ja", "left_pelvic", "right_pelvic", "pelvic", "Fedtfinne", "tail", "pectoral", "anal") ~ TRUE, 
-             Cut == "Nej" ~ FALSE,
-             TRUE ~ NA),
-           Net = if_else(Net == "Ja", TRUE, FALSE),
-           Place = case_when(
-             str_detect(Place, "Øvre|Rind|Karstoft|Vinbæk") ~ "Øvre",
-             str_detect(Place, "Mellem|Tarp|Felding|Konsortiet") ~ "Mellem",
-             str_detect(Place, "Nedre|A11|Albæk|Borris") ~ "Nedre",
-             str_detect(Place, "Vorgod") ~ "Vorgod Å",
-             str_detect(Place, "Omme") ~ "Omme Å",
-             TRUE ~ "Andet"),
-           NetDesc = str_to_sentence(NetDesc),
-           Sex = str_replace_all(Sex, c("Ukendt" = NA_character_)),
-           Name = str_to_title(Name),
-           Notes = str_to_sentence(Notes)) %>% 
-    type_convert(col_types = cols(
-      Date = col_date(format = ""),
-      Length = col_double(),
-      Weight = col_double(),
-      Name = col_character(),
-      Place = col_character(),
-      Method = col_character(),
-      Sex = col_character(),
-      Cut = col_logical(),
-      Killed = col_logical(),
-      Foto = col_character(),
-      Notes = col_character(),
-      Net = col_logical(),
-      NetDesc = col_character(),
-      Kelt = col_character(),
-      ReportDate = col_datetime(format = ""),
-      Id = col_double()
-    )) %>% 
-    select(Date, Length, Weight, Name, Place, Method, Sex, Cut, Killed, Foto, Notes, 
-           Net, NetDesc, Kelt, ReportDate, Id)
   
-  # Try to fix errors
-  dat <- dat %>% mutate(Length = if_else(Length < 40 & Weight > 0.5, NA_real_, Length))
-  # tmp <- dat %>% 
-  #   group_by(Date, Name, Place, Length, Weight, Method, Sex, Killed, Cut) %>% 
-  #   dplyr::filter(n()>1)
-  # # drop 10, 55, 62, 89, 129, 131
-  # tmp$Id[c(10, 55, 62, 89, 129, 131)]
-  # dat %>% dplyr::filter(!(Id %in% c(24764,21457, 19266, 12977,  6419,  4874)))
+  noError <- function(code) {
+    tryCatch(code,
+             error = function(c) TRUE
+    )
+  }
   
-
-  if (!file.exists(fn)) {
-    write_csv(dat, fn)
-  } else {
+  curY <- year(now())
+  dat <- NULL
+  for (y in start:curY) {
+    cat("Year:", y, "\n")
+    url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=", species)
+    page <- read_html(url)
+    ids <- html_nodes(page, xpath = '//*[@id="report-list"]/tbody/tr/@data-id') %>% 
+      html_text() %>% as.numeric()
+    for (id in ids) {
+      if (id %in% foundId & !reset) next
+      url <- str_c("http://skjernaasam.dk/ajax/?action=getcatch&id=", id) 
+      while (TRUE) {
+        val <- noError(jsonlite::fromJSON(url))
+        if (!is.logical(val)) break
+      }
+      if (is.null(val$imageid)) val$imagefile = ""
+      val <- val %>% unlist()
+      dat <- bind_rows(val, dat)
+    }
+  }
+  
+  if (!is.null(dat)) {
+    dat <- dat %>% select("Id" = id, "Date" = date, "Length" = length_cm, "Weight" = weight_kg, "Sex" = sex, "Place" = location, "Cut" = cut_fin, "Net" = net_injury, "NetDesc" = injury_description, "Killed" = released, "Method" = method, "Notes" = notes, "Kelt" = kelt, "ReportDate" = report_date, "Name" = name, "Foto" = imagefile)
+    dat <- dat %>% 
+      mutate(Killed = if_else(Killed == "Ja", FALSE, TRUE),  # Since represent released
+             Length = str_replace_all(Length, c(".cm" = "", "Ukendt" = NA_character_)),
+             Weight = str_replace_all(Weight, c(".kg" = "", "Ukendt" = NA_character_)),
+             Cut = case_when(
+               Cut %in% c("Ja", "left_pelvic", "right_pelvic", "pelvic", "Fedtfinne", "tail", "pectoral", "anal") ~ TRUE, 
+               Cut == "Nej" ~ FALSE,
+               TRUE ~ NA),
+             Net = if_else(Net == "Ja", TRUE, FALSE),
+             Place = case_when(
+               str_detect(Place, "Øvre|Rind|Karstoft|Vinbæk") ~ "Øvre",
+               str_detect(Place, "Mellem|Tarp|Felding|Konsortiet") ~ "Mellem",
+               str_detect(Place, "Nedre|A11|Albæk|Borris") ~ "Nedre",
+               str_detect(Place, "Vorgod") ~ "Vorgod Å",
+               str_detect(Place, "Omme") ~ "Omme Å",
+               TRUE ~ "Andet"),
+             NetDesc = str_to_sentence(NetDesc),
+             Sex = str_replace_all(Sex, c("Ukendt" = NA_character_)),
+             Name = str_to_title(Name),
+             Notes = str_to_sentence(Notes)) %>% 
+      type_convert(col_types = cols(
+        Date = col_date(format = ""),
+        Length = col_double(),
+        Weight = col_double(),
+        Name = col_character(),
+        Place = col_character(),
+        Method = col_character(),
+        Sex = col_character(),
+        Cut = col_logical(),
+        Killed = col_logical(),
+        Foto = col_character(),
+        Notes = col_character(),
+        Net = col_logical(),
+        NetDesc = col_character(),
+        Kelt = col_character(),
+        ReportDate = col_datetime(format = ""),
+        Id = col_double()
+      )) %>% 
+      select(Date, Length, Weight, Name, Place, Method, Sex, Cut, Killed, Foto, Notes, 
+             Net, NetDesc, Kelt, ReportDate, Id)
+    
+    # Try to fix errors
+    dat <- dat %>% mutate(Length = if_else(Length < 40 & Weight > 0.5, NA_real_, Length))
+    # tmp <- dat %>% 
+    #   group_by(Date, Name, Place, Length, Weight, Method, Sex, Killed, Cut) %>% 
+    #   dplyr::filter(n()>1)
+    
     dat <- bind_rows(datOld,dat)
     dat <- dat %>% 
       dplyr::filter(Length > 39 | is.na(Length)) %>% 
       arrange(desc(Date, ReportDate))
     write_csv(dat, fn)
+  } else {
+    dat <- datOld
   }
-} else {
-  dat <- datOld
+  return(dat)
 }
+datCatchSalmon <- updateCatch("data/data_skjern_catch_salmon.csv", species = "salmon", start = 2004, reset = T)
+datCatchSeatrout <- updateCatch("data/data_skjern_catch_seatrout.csv", species = "trout", start = 2004, reset = F)
+
+
+# if (!file.exists(fn)) {
+#   foundId <- NA
+# } else {
+#   datOld <- read_csv(fn)
+#   foundId <- datOld %>% pull(Id)
+# }
+# 
+# curY <- year(now())
+# start <- curY
+# dat <- NULL
+# for (y in start:curY) {
+#   cat("Year:", y, "\n")
+#   url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=salmon")
+#   page <- read_html(url)
+#   ids <- html_nodes(page, xpath = '//*[@id="report-list"]/tbody/tr/@data-id') %>% 
+#     html_text() %>% as.numeric()
+#   for (id in ids) {
+#     if (id %in% foundId) next
+#     url <- str_c("http://skjernaasam.dk/ajax/?action=getcatch&id=", id) 
+#     val <- jsonlite::fromJSON(url) 
+#     if (is.null(val$imageid)) val$imagefile = ""
+#     val <- val %>% unlist()
+#     dat <- bind_rows(val, dat)
+#   }
+# }
+# 
+# if (!is.null(dat)) {
+#   dat <- dat %>% select("Id" = id, "Date" = date, "Length" = length_cm, "Weight" = weight_kg, "Sex" = sex, "Place" = location, "Cut" = cut_fin, "Net" = net_injury, "NetDesc" = injury_description, "Killed" = released, "Method" = method, "Notes" = notes, "Kelt" = kelt, "ReportDate" = report_date, "Name" = name, "Foto" = imagefile)
+#   dat <- dat %>% 
+#     mutate(Killed = if_else(Killed == "Ja", FALSE, TRUE),  # Since represent released
+#            Length = str_replace_all(Length, c(".cm" = "", "Ukendt" = NA_character_)),
+#            Weight = str_replace_all(Weight, c(".kg" = "", "Ukendt" = NA_character_)),
+#            Cut = case_when(
+#              Cut %in% c("Ja", "left_pelvic", "right_pelvic", "pelvic", "Fedtfinne", "tail", "pectoral", "anal") ~ TRUE, 
+#              Cut == "Nej" ~ FALSE,
+#              TRUE ~ NA),
+#            Net = if_else(Net == "Ja", TRUE, FALSE),
+#            Place = case_when(
+#              str_detect(Place, "Øvre|Rind|Karstoft|Vinbæk") ~ "Øvre",
+#              str_detect(Place, "Mellem|Tarp|Felding|Konsortiet") ~ "Mellem",
+#              str_detect(Place, "Nedre|A11|Albæk|Borris") ~ "Nedre",
+#              str_detect(Place, "Vorgod") ~ "Vorgod Å",
+#              str_detect(Place, "Omme") ~ "Omme Å",
+#              TRUE ~ "Andet"),
+#            NetDesc = str_to_sentence(NetDesc),
+#            Sex = str_replace_all(Sex, c("Ukendt" = NA_character_)),
+#            Name = str_to_title(Name),
+#            Notes = str_to_sentence(Notes)) %>% 
+#     type_convert(col_types = cols(
+#       Date = col_date(format = ""),
+#       Length = col_double(),
+#       Weight = col_double(),
+#       Name = col_character(),
+#       Place = col_character(),
+#       Method = col_character(),
+#       Sex = col_character(),
+#       Cut = col_logical(),
+#       Killed = col_logical(),
+#       Foto = col_character(),
+#       Notes = col_character(),
+#       Net = col_logical(),
+#       NetDesc = col_character(),
+#       Kelt = col_character(),
+#       ReportDate = col_datetime(format = ""),
+#       Id = col_double()
+#     )) %>% 
+#     select(Date, Length, Weight, Name, Place, Method, Sex, Cut, Killed, Foto, Notes, 
+#            Net, NetDesc, Kelt, ReportDate, Id)
+#   
+#   # Try to fix errors
+#   dat <- dat %>% mutate(Length = if_else(Length < 40 & Weight > 0.5, NA_real_, Length))
+#   # tmp <- dat %>% 
+#   #   group_by(Date, Name, Place, Length, Weight, Method, Sex, Killed, Cut) %>% 
+#   #   dplyr::filter(n()>1)
+#   # # drop 10, 55, 62, 89, 129, 131
+#   # tmp$Id[c(10, 55, 62, 89, 129, 131)]
+#   # dat %>% dplyr::filter(!(Id %in% c(24764,21457, 19266, 12977,  6419,  4874)))
+#   
+# 
+#   if (!file.exists(fn)) {
+#     write_csv(dat, fn)
+#   } else {
+#     dat <- bind_rows(datOld,dat)
+#     dat <- dat %>% 
+#       dplyr::filter(Length > 39 | is.na(Length)) %>% 
+#       arrange(desc(Date, ReportDate))
+#     write_csv(dat, fn)
+#   }
+# } else {
+#   dat <- datOld
+# }
 
 
 #### Salmon - Estimate weight given length ####
-datCKilled <- dat %>% 
+datCKilled <- datCatchSalmon %>% 
   mutate(Length = round(Length), Weight = round(Weight,1), Month = month(Date, label = T)) %>%
   mutate(Period = factor(Month, ordered = F)) %>% 
   dplyr::filter(Length > 39 & Killed) 
@@ -255,105 +352,105 @@ write_csv(res, fn)
 
 
 ## New method (much slower but more data)
-fn <- "data/data_skjern_catch_seatrout.csv"
-if (!file.exists(fn)) {
-  foundId <- NULL
-} else {
-  datOld <- read_csv(fn)
-  foundId <- datOld %>% pull(Id)
-}
-
-curY <- year(now())
-start <- curY
-dat <- NULL
-for (y in start:curY) {
-  cat("Year:", y, "\n")
-  url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=trout")
-  page <- read_html(url)
-  ids <- html_nodes(page, xpath = '//*[@id="report-list"]/tbody/tr/@data-id') %>% 
-    html_text() %>% as.numeric()
-  for (id in ids) {
-    if (id %in% foundId) next
-    url <- str_c("http://skjernaasam.dk/ajax/?action=getcatch&id=", id) 
-    val <- jsonlite::fromJSON(url) 
-    if (is.null(val$imageid)) val$imagefile = ""
-    val <- val %>% unlist()
-    dat <- bind_rows(val, dat)
-    foundId <- c(foundId, id)
-  }
-}
-
-if (!is.null(dat)) {
-  dat <- dat %>% select("Id" = id, "Date" = date, "Length" = length_cm, "Weight" = weight_kg, "Sex" = sex, "Place" = location, "Cut" = cut_fin, "Net" = net_injury, "NetDesc" = injury_description, "Killed" = released, "Method" = method, "Notes" = notes, "Kelt" = kelt, "ReportDate" = report_date, "Name" = name, "Foto" = imagefile)
-  dat <- dat %>% 
-    mutate(Killed = if_else(Killed == "Ja", FALSE, TRUE),  # Since represent released
-           Length = str_replace_all(Length, c(".cm" = "", "Ukendt" = NA_character_)),
-           Weight = str_replace_all(Weight, c(".kg" = "", "Ukendt" = NA_character_)),
-           Cut = case_when(
-             Cut %in% c("Ja", "left_pelvic", "right_pelvic", "pelvic", "Fedtfinne", "tail", "pectoral", "anal") ~ TRUE, 
-             Cut == "Nej" ~ FALSE,
-             TRUE ~ NA),
-           Net = if_else(Net == "Ja", TRUE, FALSE),
-           Place = case_when(
-             str_detect(Place, "Øvre|Rind|Karstoft|Vinbæk") ~ "Øvre",
-             str_detect(Place, "Mellem|Tarp|Felding|Konsortiet") ~ "Mellem",
-             str_detect(Place, "Nedre|A11|Albæk|Borris") ~ "Nedre",
-             str_detect(Place, "Vorgod") ~ "Vorgod Å",
-             str_detect(Place, "Omme") ~ "Omme Å",
-             TRUE ~ "Andet"),
-           NetDesc = str_to_sentence(NetDesc),
-           Sex = str_replace_all(Sex, c("Ukendt" = NA_character_)),
-           Name = str_to_title(Name),
-           Notes = str_to_sentence(Notes)) %>% 
-    type_convert(col_types = cols(
-      Date = col_date(format = ""),
-      Length = col_double(),
-      Weight = col_double(),
-      Name = col_character(),
-      Place = col_character(),
-      Method = col_character(),
-      Sex = col_character(),
-      Cut = col_logical(),
-      Killed = col_logical(),
-      Foto = col_character(),
-      Notes = col_character(),
-      Net = col_logical(),
-      NetDesc = col_character(),
-      Kelt = col_character(),
-      ReportDate = col_datetime(format = ""),
-      Id = col_double()
-    )) %>% 
-    select(Date, Length, Weight, Name, Place, Method, Sex, Cut, Killed, Foto, Notes, 
-           Net, NetDesc, Kelt, ReportDate, Id)
-  
-  # Try to fix errors
-  dat <- dat %>% mutate(Length = if_else(Length < 40 & Weight > 0.5, NA_real_, Length))
-  # tmp <- dat %>% 
-  #   group_by(Date, Name, Place, Length, Weight, Method, Sex, Killed, Cut) %>% 
-  #   dplyr::filter(n()>1)
-  # # drop 10, 55, 62, 89, 129, 131
-  # tmp$Id[c(10, 55, 62, 89, 129, 131)]
-  # dat %>% dplyr::filter(!(Id %in% c(24764,21457, 19266, 12977,  6419,  4874)))
-  
-  
-  if (!file.exists(fn)) {
-    write_csv(dat, fn)
-  } else {
-    dat <- bind_rows(datOld,dat)
-    dat <- dat %>% 
-      dplyr::filter(Length > 39 | is.na(Length)) %>% 
-      arrange(desc(Date, ReportDate))
-    write_csv(dat, fn)
-  }
-} else {
-  dat <- datOld
-}
+# fn <- "data/data_skjern_catch_seatrout.csv"
+# if (!file.exists(fn)) {
+#   foundId <- NULL
+# } else {
+#   datOld <- read_csv(fn)
+#   foundId <- datOld %>% pull(Id)
+# }
+# 
+# curY <- year(now())
+# start <- curY
+# dat <- NULL
+# for (y in start:curY) {
+#   cat("Year:", y, "\n")
+#   url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=trout")
+#   page <- read_html(url)
+#   ids <- html_nodes(page, xpath = '//*[@id="report-list"]/tbody/tr/@data-id') %>% 
+#     html_text() %>% as.numeric()
+#   for (id in ids) {
+#     if (id %in% foundId) next
+#     url <- str_c("http://skjernaasam.dk/ajax/?action=getcatch&id=", id) 
+#     val <- jsonlite::fromJSON(url) 
+#     if (is.null(val$imageid)) val$imagefile = ""
+#     val <- val %>% unlist()
+#     dat <- bind_rows(val, dat)
+#     foundId <- c(foundId, id)
+#   }
+# }
+# 
+# if (!is.null(dat)) {
+#   dat <- dat %>% select("Id" = id, "Date" = date, "Length" = length_cm, "Weight" = weight_kg, "Sex" = sex, "Place" = location, "Cut" = cut_fin, "Net" = net_injury, "NetDesc" = injury_description, "Killed" = released, "Method" = method, "Notes" = notes, "Kelt" = kelt, "ReportDate" = report_date, "Name" = name, "Foto" = imagefile)
+#   dat <- dat %>% 
+#     mutate(Killed = if_else(Killed == "Ja", FALSE, TRUE),  # Since represent released
+#            Length = str_replace_all(Length, c(".cm" = "", "Ukendt" = NA_character_)),
+#            Weight = str_replace_all(Weight, c(".kg" = "", "Ukendt" = NA_character_)),
+#            Cut = case_when(
+#              Cut %in% c("Ja", "left_pelvic", "right_pelvic", "pelvic", "Fedtfinne", "tail", "pectoral", "anal") ~ TRUE, 
+#              Cut == "Nej" ~ FALSE,
+#              TRUE ~ NA),
+#            Net = if_else(Net == "Ja", TRUE, FALSE),
+#            Place = case_when(
+#              str_detect(Place, "Øvre|Rind|Karstoft|Vinbæk") ~ "Øvre",
+#              str_detect(Place, "Mellem|Tarp|Felding|Konsortiet") ~ "Mellem",
+#              str_detect(Place, "Nedre|A11|Albæk|Borris") ~ "Nedre",
+#              str_detect(Place, "Vorgod") ~ "Vorgod Å",
+#              str_detect(Place, "Omme") ~ "Omme Å",
+#              TRUE ~ "Andet"),
+#            NetDesc = str_to_sentence(NetDesc),
+#            Sex = str_replace_all(Sex, c("Ukendt" = NA_character_)),
+#            Name = str_to_title(Name),
+#            Notes = str_to_sentence(Notes)) %>% 
+#     type_convert(col_types = cols(
+#       Date = col_date(format = ""),
+#       Length = col_double(),
+#       Weight = col_double(),
+#       Name = col_character(),
+#       Place = col_character(),
+#       Method = col_character(),
+#       Sex = col_character(),
+#       Cut = col_logical(),
+#       Killed = col_logical(),
+#       Foto = col_character(),
+#       Notes = col_character(),
+#       Net = col_logical(),
+#       NetDesc = col_character(),
+#       Kelt = col_character(),
+#       ReportDate = col_datetime(format = ""),
+#       Id = col_double()
+#     )) %>% 
+#     select(Date, Length, Weight, Name, Place, Method, Sex, Cut, Killed, Foto, Notes, 
+#            Net, NetDesc, Kelt, ReportDate, Id)
+#   
+#   # Try to fix errors
+#   dat <- dat %>% mutate(Length = if_else(Length < 40 & Weight > 0.5, NA_real_, Length))
+#   # tmp <- dat %>% 
+#   #   group_by(Date, Name, Place, Length, Weight, Method, Sex, Killed, Cut) %>% 
+#   #   dplyr::filter(n()>1)
+#   # # drop 10, 55, 62, 89, 129, 131
+#   # tmp$Id[c(10, 55, 62, 89, 129, 131)]
+#   # dat %>% dplyr::filter(!(Id %in% c(24764,21457, 19266, 12977,  6419,  4874)))
+#   
+#   
+#   if (!file.exists(fn)) {
+#     write_csv(dat, fn)
+#   } else {
+#     dat <- bind_rows(datOld,dat)
+#     dat <- dat %>% 
+#       dplyr::filter(Length > 39 | is.na(Length)) %>% 
+#       arrange(desc(Date, ReportDate))
+#     write_csv(dat, fn)
+#   }
+# } else {
+#   dat <- datOld
+# }
 
 
 
 
 #### Seatrout - Estimate weight given length ####
-datCKilled <- dat %>% 
+datCKilled <- datCatchSeatrout %>% 
   mutate(Length = round(Length), Weight = round(Weight,1), Month = month(Date, label = T)) %>%
   mutate(Period = factor(Month, ordered = F)) %>% 
   dplyr::filter(Length > 39 & Killed) 
