@@ -253,7 +253,6 @@ write_csv(res, fn)
 # }
 
 
-
 ## New method (much slower but more data)
 fn <- "data/data_skjern_catch_seatrout.csv"
 if (!file.exists(fn)) {
@@ -264,7 +263,7 @@ if (!file.exists(fn)) {
 }
 
 curY <- year(now())
-start <- 2015 #curY
+start <- curY
 # dat <- NULL
 for (y in start:curY) {
   cat("Year:", y, "\n")
@@ -347,14 +346,6 @@ if (!is.null(dat)) {
 } else {
   dat <- datOld
 }
-
-
-
-
-
-
-
-
 
 
 
