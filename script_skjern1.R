@@ -195,8 +195,8 @@ updateCatch <- function(fn, species, start = year(now()), reset = F) {
   }
   return(dat)
 }
-datCatchSalmon <- updateCatch("data/data_skjern_catch_salmon.csv", species = "salmon", start = 2004, reset = T)
-datCatchSeatrout <- updateCatch("data/data_skjern_catch_seatrout.csv", species = "trout", start = 2004, reset = F)
+datCatchSalmon <- updateCatch("data/data_skjern_catch_salmon.csv", species = "salmon")
+datCatchSeatrout <- updateCatch("data/data_skjern_catch_seatrout.csv", species = "trout")
 
 
 # if (!file.exists(fn)) {
