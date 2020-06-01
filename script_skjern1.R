@@ -359,9 +359,11 @@ write_csv(rMeans, fn)
 # rMeans <- read_csv(paste0(prefix,"data_skjern_waterlevel_avg90.csv"))
 dat <- dat %>% mutate(Day = yday(Date))
 dat <- left_join(dat, rMeans)
+dat
 tmp <-  map(2:ncol(rMeans),  function(i) {
     return(unlist(dat[, i] - dat[, i + ncol(rMeans)]))
   }) 
+tmp
 names(tmp) <- str_remove_all(colnames(rMeans)[2:ncol(rMeans)], " \\(.*") 
 tmp <- as_tibble(tmp)
 dat <- bind_cols(select(dat, Date), tmp)
