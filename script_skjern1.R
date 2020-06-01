@@ -345,6 +345,7 @@ movAvg <- function(x, days = 90){
 }
 rMeans <- mutate_at(means, 2:ncol(means), movAvg)
 colnames(rMeans)[2:ncol(rMeans)] = paste0(colnames(dat)[2:ncol(rMeans)]," rAvg90")
+rMeans <- rMeans %>% mutate_if(is.numeric, as.numeric)
 # means <- full_join(means, rMeans)
 # meansL <- means %>% pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level')
 # ggplot(data = meansL, aes(x = Day, y = Level)) + geom_line(aes(color = Group), show.legend = T)
@@ -359,7 +360,6 @@ write_csv(rMeans, fn)
 # rMeans <- read_csv(paste0(prefix,"data_skjern_waterlevel_avg90.csv"))
 dat <- dat %>% mutate(Day = yday(Date))
 dat <- left_join(dat, rMeans)
-dat
 tmp <-  map(2:ncol(rMeans),  function(i) {
     return(unlist(dat[, i] - dat[, i + ncol(rMeans)]))
   }) 

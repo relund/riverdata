@@ -16,14 +16,15 @@ resource_files:
 - www/girl.gif
 - www/info.png
 - www/net.gif
-runtime: shiny
+runtime: shiny_prerendered
 editor_options:
   chunk_output_type: console
 ---
 
-```{r setup, include=FALSE}
+```{r, context="setup", include=FALSE}
 #profvis({rmarkdown::run("karup.Rmd", shiny_args = list(host="0.0.0.0", port=5050))})
 library(knitr)
+knitr::opts_chunk$set(echo = FALSE)
 library(ggplot2)
 library(plotly)
 library(flexdashboard)
@@ -36,9 +37,7 @@ library(flextable)
 library(shinyBS)
 library(kableExtra)
 # library(zoo) 
-```
 
-```{r global, include=FALSE}  
 faIcon <- function (name, class = "", title = "", lib = "font-awesome") 
 {
     prefixes <- list(`font-awesome` = "fa", glyphicon = "glyphicon")
@@ -59,12 +58,12 @@ faIcon <- function (name, class = "", title = "", lib = "font-awesome")
         stylesheet = c("css/all.min.css", "css/v4-shims.min.css"))
     htmltools::browsable(iconTag)
 }
-
-
-# load data in 'global' chunk so it can be shared by all users of the dashboard
 addResourcePath('www', paste0(getwd(), "/www"))
-prefix <- "https://raw.githubusercontent.com/relund/skjern/master/data/"
+```
 
+
+```{r, context="data", include=FALSE}  
+prefix <- "https://raw.githubusercontent.com/relund/skjern/master/data/"
 
 #### Weight - Estimates ####
 datWeightTrout <- read_csv(paste0(prefix, "data_skjern_weight_seatrout.csv"))
@@ -76,7 +75,11 @@ datCatchSalmon <- read_csv(paste0(prefix, "data_skjern_catch_salmon.csv")) %>%
   mutate(
     Misc = paste0(
       if_else(!Killed, "<img src=\"www/c_and_r.gif\" alt=\"C&R\">", "", ""),
-      if_else(Cut, "<img src=\"www/cut.gif\" alt=\"Finneklippet\">", "", "")
+      if_else(Cut, "<img src=\"www/cut.gif\" alt=\"Finneklippet\">", "", ""),
+      if_else(Sex == 'Han', '<img src="www/boy.gif" alt="Han">', "", ""),
+      if_else(Sex == 'Hun', '<img src="www/girl.gif" alt="Hun">', "", ""),
+      if_else(Net, '<img src="www/net.gif" alt="Garnskadet">', "", ""),
+      if_else(!is.na(Foto),str_c("<a href=\"", Foto, "\", target=\"_blank\"><img src=\"www/foto.gif\" alt=\"Foto\"></a>"),"", "")
     ),
     Month = month(Date, label = T), Week = week(Date), Year = year(Date), 
     NoWeight = 1*is.na(Weight), Day = yday(Date), DayStr = format(Date, "%d. %b")
@@ -84,44 +87,38 @@ datCatchSalmon <- read_csv(paste0(prefix, "data_skjern_catch_salmon.csv")) %>%
 datCatchSalmon <- left_join(datCatchSalmon, datWeightSalmon, by = c("Length", "Month" = "Period")) %>% 
   mutate(Weight = if_else(is.na(Weight), round(Avg,1), Weight)) %>% 
   mutate(Fulton = Weight*100000/Length^3) %>% 
-  mutate(Month = month(Date, label = T), 
-         Place = case_when(
-        str_detect(Place, "Øvre|Rind|Karstoft|Vinbæk") ~ "Øvre",
-        str_detect(Place, "Mellem|Tarp|Felding|Konsortiet") ~ "Mellem",
-        str_detect(Place, "Nedre|A11|Albæk|Borris") ~ "Nedre",
-        str_detect(Place, "Vorgod") ~ "Vorgod Å",
-        str_detect(Place, "Omme") ~ "Omme Å",
-        TRUE ~ "Andet"
-      ))
+  mutate(Month = month(Date, label = T))
+
 
 
 datCatchTrout <- read_csv(paste0(prefix, "data_skjern_catch_seatrout.csv")) %>% 
   mutate(
     Misc = paste0(
       if_else(!Killed, "<img src=\"www/c_and_r.gif\" alt=\"C&R\">", "", ""),
-      if_else(Cut, "<img src=\"www/cut.gif\" alt=\"Finneklippet\">", "", "")
+      if_else(Cut, "<img src=\"www/cut.gif\" alt=\"Finneklippet\">", "", ""),
+      if_else(Sex == 'Han', '<img src="www/boy.gif" alt="Han">', "", ""),
+      if_else(Sex == 'Hun', '<img src="www/girl.gif" alt="Hun">', "", ""),
+      if_else(Net, '<img src="www/net.gif" alt="Garnskadet">', "", ""),
+      if_else(!is.na(Foto),str_c("<a href=\"", Foto, "\", target=\"_blank\"><img src=\"www/foto.gif\" alt=\"Foto\"></a>"),"", "")
     ),
     Month = month(Date, label = T), Week = week(Date), Year = year(Date), NoWeight = 1*is.na(Weight), Day = yday(Date)
   )
 datCatchTrout <- left_join(datCatchTrout, datWeightTrout, by = c("Length", "Month" = "Period")) %>% 
   mutate(Weight = if_else(is.na(Weight), round(Avg,1), Weight)) %>% 
   mutate(Fulton = Weight*100000/Length^3) %>% 
-  mutate(Month = month(Date, label = T), Place = case_when(
-        str_detect(Place, "Øvre|Rind|Karstoft|Vinbæk") ~ "Øvre",
-        str_detect(Place, "Mellem|Tarp|Felding|Konsortiet") ~ "Mellem",
-        str_detect(Place, "Nedre|A11|Albæk|Borris") ~ "Nedre",
-        str_detect(Place, "Vorgod") ~ "Vorgod Å",
-        str_detect(Place, "Omme") ~ "Omme Å",
-        TRUE ~ "Andet"
-      ))
+  mutate(Month = month(Date, label = T))
 
 
 #### Catch - Yearly statistics ####
-datStatYearSalmon <- datCatchSalmon %>% 
+yearlyStat <- function(datCatch) {
+  dat <- datCatch %>% 
   mutate(Year = year(Date)) %>% group_by(Year) %>% nest() %>% 
   mutate(
     TotalStat = map(data, function(df) {
       summarise(df, Total = n(), 
+                Female = sum(Sex == "Hun", na.rm = T), 
+                Male = sum(Sex == "Han", na.rm = T),
+                SexUnknown = Total - Female - Male,
                 Released = sum(!Killed, na.rm = T),
                 Killed = sum(Killed, na.rm = T),
                 KilledUnknown = Total - Released - Killed,
@@ -146,7 +143,86 @@ datStatYearSalmon <- datCatchSalmon %>%
           function(df) {
             df %>% 
               group_by(Method) %>% 
-              summarize(TotalM = n())}),
+              summarize(TotalM = n())})
+  )
+
+dat <- dat %>% 
+  mutate(PlaceStat = 
+           map(PlaceStat, function(df) {  
+             pivot_wider(df, names_from = Place, values_from = c(TotalP, KilledP))}),
+         MethodStat = 
+           map(MethodStat, function(df) {  
+             pivot_wider(df, names_from = Method, values_from = c(TotalM))})
+         ) %>% 
+  unnest(cols = c(TotalStat, PlaceStat, MethodStat)) %>% select(-data) %>% 
+  replace(., is.na(.), 0)
+
+dat <- 
+  dat  %>% 
+  ungroup() %>% 
+  transmute(Year, Total, 
+     Sex = paste0(format(100*Male/Total, digits = 0, trim = TRUE), "/",
+                  format(100*Female/Total, digits = 0, trim = TRUE), "/",
+                  format(100*SexUnknown/Total, digits = 0, trim = TRUE)),
+     Place = paste0(format(100*TotalP_Nedre/Total, digits = 0, trim = TRUE), "/", 
+                    format(100*TotalP_Mellem/Total, digits = 0, trim = TRUE), "/", 
+                    format(100*`TotalP_Øvre`/Total, digits = 0, trim = TRUE), "/", 
+                    format(100*`TotalP_Vorgod Å`/Total, digits = 0, trim = TRUE), "/",
+                    format(100*`TotalP_Omme Å`/Total, digits = 0, trim = TRUE), "/",
+                    format(100*`TotalP_Andet`/Total, digits = 0, trim = TRUE)),
+     PlaceK = paste0(format(100*KilledP_Nedre/Killed, digits = 0, trim = TRUE), "/", 
+                    format(100*KilledP_Mellem/Killed, digits = 0, trim = TRUE), "/", 
+                    format(100*`KilledP_Øvre`/Killed, digits = 0, trim = TRUE), "/", 
+                    format(100*`KilledP_Vorgod Å`/Killed, digits = 0, trim = TRUE), "/",
+                    format(100*`KilledP_Omme Å`/Killed, digits = 0, trim = TRUE), "/",
+                    format(100*`KilledP_Andet`/Killed, digits = 0, trim = TRUE)),
+     Method = paste0(format(100*Flue/Total, digits = 0, trim = TRUE), "/", 
+                    format(100*Spin/Total, digits = 0, trim = TRUE), "/", 
+                    format(100*Orm/Total, digits = 0, trim = TRUE), "/", 
+                    format(100*Andet/Total, digits = 0, trim = TRUE)),
+     Released = paste0(round(100*Released/Total, 0), "/", 
+                       round(100*Killed/Total, 0)),
+     Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)), 
+     Weight = paste0(round(WeightAvg,1), "/", round(WeightMax,1), "/", round(Kg,0)), 
+     Fulton = paste0(round(FultonAvg,2), "/", round(FultonMax,2))) %>%
+  mutate_if(is.character, str_replace_all, pattern = "NaN|NA", replacement = "0")
+}
+datStatYearSalmon <- yearlyStat(datCatchSalmon)
+
+
+datStatYearSalmon <- datCatchSalmon %>% 
+  mutate(Year = year(Date)) %>% group_by(Year) %>% nest() %>% 
+  mutate(
+    TotalStat = map(data, function(df) {
+      summarise(df, Total = n(), 
+                Female = sum(Sex == "Hun", na.rm = T), 
+                Male = sum(Sex == "Han", na.rm = T),
+                SexUnknown = Total - Female - Male,
+                Released = sum(!Killed, na.rm = T),
+                Killed = sum(Killed, na.rm = T),
+                KilledUnknown = Total - Released - Killed,
+                LengthAvg = mean(Length, na.rm = T), 
+                LengthMax = max(Length, na.rm = T),
+                WeightAvg = mean(Weight, na.rm = T), 
+                WeightMax = max(Weight, na.rm = T),
+                Kg = sum(Weight, na.rm = T),
+                FultonAvg = mean(Fulton, na.rm = T), 
+                FultonMax = max(Fulton, na.rm = T)
+      )
+    }),
+    PlaceStat = 
+      map(data, 
+          function(df) {
+            df %>% 
+              group_by(Place) %>% 
+              summarize(TotalP = n(), 
+                        KilledP = sum(Killed))}),
+    MethodStat = 
+      map(data, 
+          function(df) {
+            df %>% 
+              group_by(Method) %>% 
+              summarize(TotalM = n())})
   )
 
 datStatYearSalmon <- datStatYearSalmon %>% 
@@ -155,7 +231,7 @@ datStatYearSalmon <- datStatYearSalmon %>%
              pivot_wider(df, names_from = Place, values_from = c(TotalP, KilledP))}),
          MethodStat = 
            map(MethodStat, function(df) {  
-             pivot_wider(df, names_from = Method, values_from = c(TotalM))}),
+             pivot_wider(df, names_from = Method, values_from = c(TotalM))})
          ) %>% 
   unnest(cols = c(TotalStat, PlaceStat, MethodStat)) %>% select(-data) %>% 
   replace(., is.na(.), 0)
@@ -165,9 +241,9 @@ datStatYearSalmon <-
   datStatYearSalmon  %>% 
   ungroup() %>% 
   transmute(Year, Total, 
-     # Sex = paste0(format(100*Male/Total, digits = 0, trim = TRUE), "/", 
-     #              format(100*Female/Total, digits = 0, trim = TRUE), "/", 
-     #              format(100*SexUnknown/Total, digits = 0, trim = TRUE)), 
+     Sex = paste0(format(100*Male/Total, digits = 0, trim = TRUE), "/",
+                  format(100*Female/Total, digits = 0, trim = TRUE), "/",
+                  format(100*SexUnknown/Total, digits = 0, trim = TRUE)),
      Place = paste0(format(100*TotalP_Nedre/Total, digits = 0, trim = TRUE), "/", 
                     format(100*TotalP_Mellem/Total, digits = 0, trim = TRUE), "/", 
                     format(100*`TotalP_Øvre`/Total, digits = 0, trim = TRUE), "/", 
@@ -290,7 +366,11 @@ Row
 ### Fangster i dag {.value-box}
 
 ```{r}
-renderValueBox({
+valueBoxOutput("cSalToday")
+```
+
+```{r, context = "server", include=FALSE}
+output$cSalToday <- renderValueBox({
   valueBox(
     value = datCatchSalmon %>% dplyr::filter(Date == date(now())) %>% nrow(),
     icon = "fa-chart-line",
@@ -302,7 +382,11 @@ renderValueBox({
 ### Fangster seneste syv dage {.value-box}
 
 ```{r}
-renderValueBox({
+valueBoxOutput("cSalSeven")
+```
+
+```{r, context = "server", include=FALSE}
+output$cSalSeven <- renderValueBox({
   valueBox(
     value = datCatchSalmon %>% dplyr::filter(Date > now() - days(7)) %>% nrow(),
     icon = "fa-chart-line",
@@ -314,7 +398,11 @@ renderValueBox({
 ### Fangster i år (hjemtaget/genudsat) {.value-box}
 
 ```{r}
-renderValueBox({
+valueBoxOutput("cSalYear")
+```
+
+```{r, context = "server"}
+output$cSalYear <- renderValueBox({
   total <- datCatchSalmon %>% dplyr::filter(year(Date) == year(now())) %>% nrow()
   killed <- datCatchSalmon %>% dplyr::filter(year(Date) == year(now()), Killed == TRUE) %>% nrow()
   valueBox(
@@ -328,7 +416,11 @@ renderValueBox({
 ### Største laks i år {.value-box}
 
 ```{r}
-renderValueBox({
+valueBoxOutput("cSalBig")
+```
+
+```{r, context = "server"}
+output$cSalBig <- renderValueBox({
   ct <- datCatchSalmon %>% dplyr::filter(year(Date) == year(now())) %>% 
     dplyr::filter(Weight == max(Weight, na.rm = T)) %>% arrange(Weight, Length)
   valueBox(
@@ -344,8 +436,13 @@ Row
 -----------------------------------------------------------------------
 
 ### Seneste fangster
-```{r Catches table}
-DT::renderDataTable(
+
+```{r}
+dataTableOutput("dTSalCatch")
+```
+
+```{r Catches table, context = "server"}
+output$dTSalCatch <- DT::renderDataTable(
   DT::datatable(
     datCatchSalmon %>% select(Date:Method, Fulton, Misc, NoWeight),
     class = 'stripe row-border order-column nowrap compact', # nowrap display compact
@@ -382,7 +479,11 @@ Row
 ### Fangster seneste syv dage {.value-box}
 
 ```{r}
-renderValueBox({
+valueBoxOutput("cSeaSeven")
+```
+
+```{r, context = "server"}
+output$cSeaSeven <- renderValueBox({
   valueBox(
     value = datCatchTrout %>% dplyr::filter(Date > now() - days(7)) %>% nrow(),
     icon = "fa-chart-line",
@@ -394,7 +495,11 @@ renderValueBox({
 ### Fangster i år {.value-box}
 
 ```{r}
-renderValueBox({
+valueBoxOutput("cSeaYear")
+```
+
+```{r, context = "server"}
+output$cSeaYear <- renderValueBox({
   valueBox(
     value = datCatchTrout %>% dplyr::filter(year(Date) == year(now())) %>% nrow(),
     icon = "fa-fish",
@@ -406,7 +511,11 @@ renderValueBox({
 ### Største laks i år {.value-box}
 
 ```{r}
-renderValueBox({
+valueBoxOutput("cSeaBig")
+```
+
+```{r, context = "server"}
+output$cSeaBig <- renderValueBox({
   ct <- datCatchTrout %>% dplyr::filter(year(Date) == year(now())) %>% 
     dplyr::filter(Weight == max(Weight, na.rm = T)) %>% arrange(Weight, Length)
   valueBox(
@@ -421,11 +530,15 @@ renderValueBox({
 Row 
 -----------------------------------------------------------------------
 
-### Seneste fangster
 ```{r}
-  DT::renderDataTable(
+dataTableOutput("dTSeaCatch")
+```
+
+### Seneste fangster
+```{r, context = "server"}
+  output$dTSeaCatch <- DT::renderDataTable(
     DT::datatable(
-    datCatchTrout[,c(1:6,9,10,14)],
+    datCatchTrout[,c(Date:Method, Fulton, Misc, NoWeight)],
     class = 'stripe row-border order-column nowrap compact', # nowrap display compact
     rownames = FALSE,
     filter = 'bottom',
@@ -498,23 +611,23 @@ tab %>%
                 bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
-Row
------------------------------------------------------------------------
+<!-- Row -->
+<!-- ----------------------------------------------------------------------- -->
 
-### Plot af vægt givet længde
-  
-```{r salmon weight estimate}
-renderPlot({
-  ggplot(datWeightSalmon, aes(x = Length, y = Avg)) + 
-    geom_line(aes(group = Period, color = Period)) +
-    labs(title = "", color = "") +
-    ylab("Vægt (kg)") + xlab("Længde (cm)") + 
-    guides(col = guide_legend(ncol = 7)) + 
-    theme(legend.position="bottom")  
-    # scale_color_brewer(palette = "Set1") +
-    # scale_color_discrete(name = "", labels = c("Sep-Okt", "Marts", "Apr-Aug"))
-})
-```
+<!-- ### Plot af vægt givet længde -->
+
+<!-- ```{r salmon weight estimate} -->
+<!-- renderPlot({ -->
+<!--   ggplot(datWeightSalmon, aes(x = Length, y = Avg)) +  -->
+<!--     geom_line(aes(group = Period, color = Period)) + -->
+<!--     labs(title = "", color = "") + -->
+<!--     ylab("Vægt (kg)") + xlab("Længde (cm)") +  -->
+<!--     guides(col = guide_legend(ncol = 7)) +  -->
+<!--     theme(legend.position="bottom")   -->
+<!--     # scale_color_brewer(palette = "Set1") + -->
+<!--     # scale_color_discrete(name = "", labels = c("Sep-Okt", "Marts", "Apr-Aug")) -->
+<!-- }) -->
+<!-- ``` -->
 
 
 
@@ -562,23 +675,23 @@ tab %>%
                 bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
-Row
------------------------------------------------------------------------
+<!-- Row -->
+<!-- ----------------------------------------------------------------------- -->
 
-### Plot af vægt givet længde
-  
-```{r seatrout weight estimate}
-renderPlot({
-  ggplot(datWeightTrout, aes(x = Length, y = Avg)) + 
-    geom_line(aes(group = Period, color = Period)) +
-    labs(title = "", color = "") +
-    ylab("Vægt (kg)") + xlab("Længde (cm)") + 
-    guides(col = guide_legend(ncol = 7)) + 
-    theme(legend.position="bottom")  
-    # scale_color_brewer(palette = "Set1") +
-    # scale_color_discrete(name = "", labels = c("Sep-Okt", "Marts", "Apr-Aug"))
-})
-```
+<!-- ### Plot af vægt givet længde -->
+
+<!-- ```{r seatrout weight estimate} -->
+<!-- renderPlot({ -->
+<!--   ggplot(datWeightTrout, aes(x = Length, y = Avg)) +  -->
+<!--     geom_line(aes(group = Period, color = Period)) + -->
+<!--     labs(title = "", color = "") + -->
+<!--     ylab("Vægt (kg)") + xlab("Længde (cm)") +  -->
+<!--     guides(col = guide_legend(ncol = 7)) +  -->
+<!--     theme(legend.position="bottom")   -->
+<!--     # scale_color_brewer(palette = "Set1") + -->
+<!--     # scale_color_discrete(name = "", labels = c("Sep-Okt", "Marts", "Apr-Aug")) -->
+<!-- }) -->
+<!-- ``` -->
   
 
   
@@ -589,6 +702,10 @@ Nuværende {data-navmenu="Vandstand"}
 ### Relativ vandstand i forhold til gennemsnit
 
 ```{r}
+plotlyOutput("plotWLevelPresent")
+```
+
+```{r, context = "server"}
 # renderPlot({
 #   datS <- datWLevel %>% 
 #     dplyr::filter(Date > now() - days(14)) %>% 
@@ -604,7 +721,7 @@ Nuværende {data-navmenu="Vandstand"}
 #     ylab("Relativ vandstand (m)") + xlab("Dato") +
 #     theme(legend.position="bottom") 
 # })
-renderPlotly({
+output$plotWLevelPresent <- renderPlotly({
   loc <- Sys.setlocale("LC_TIME", "Danish")
   on.exit(Sys.setlocale("LC_TIME", loc))
   datS <- datWLevel %>% 
@@ -634,7 +751,11 @@ Row
   
 ### Vandstand over år
   
-```{r Vandstand årlig}
+```{r}
+plotlyOutput("plotWLevelYear")
+```
+
+```{r Vandstand årlig, context = "server"}
 # renderPlot({
 #   readGHWLevels <- function(years) {
 #     dat <- NULL
@@ -663,7 +784,7 @@ Row
 #     theme(legend.position="bottom") +
 #     ylab("Relativ vandstand (m)") + xlab("Dato") 
 # })
-renderPlotly({
+output$plotWLevelYear <- renderPlotly({
   loc <- Sys.setlocale("LC_TIME", "Danish")
   on.exit(Sys.setlocale("LC_TIME", loc))
   readGHWLevels <- function(years) {
@@ -729,7 +850,11 @@ Row
 ### Fangster den seneste måned
 
 ```{r}
-renderPlot({
+plotOutput("plotCatchSalMonth")
+```
+
+```{r, context = "server"}
+output$plotCatchSalMonth <- renderPlot({
   dat <- datCatchSalmon %>% 
     dplyr::filter(Date > now() - days(30)) %>% 
     select(Date, Place) %>% 
@@ -750,7 +875,11 @@ Row
 ### Ugentlige fangster `r year(now())`
 
 ```{r}
-renderPlot({
+plotOutput("plotCatchSalWeek")
+```
+
+```{r, context = "server"}
+output$plotCatchSalWeek <- renderPlot({
   dat <- datCatchSalmon %>% 
     dplyr::filter(Date > ymd(paste0(year(now()),"-01-01"))) %>% 
     select(Week, Place)
@@ -767,7 +896,11 @@ renderPlot({
 ### Månedlige fangster `r year(now())`
 
 ```{r}
-renderPlot({
+plotOutput("plotCatchSalMonthNow")
+```
+
+```{r, context = "server"}
+output$plotCatchSalMonthNow <-  renderPlot({
   dat <- datCatchSalmon %>% 
     dplyr::filter(Date > ymd(paste0(year(now()),"-01-01"))) %>% 
     select(Month, Place)
@@ -789,12 +922,12 @@ Row
 
 ### Statistik over år
 
-```{r}
+```{r, context = "data"}
 cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")), 
    "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
-   # paste0(faIcon("mars", title = "Han"),"/",
-   #        faIcon("venus", title = "Hun"), "/",
-   #        faIcon("question", title = "Ukendt"), " (%)"),
+   paste0(faIcon("mars", title = "Han"),"/",
+          faIcon("venus", title = "Hun"), "/",
+          faIcon("question", title = "Ukendt"), " (%)"),
    "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Andet'>A</span> (%)",
    "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Andet'>A</span> (%)",
    "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Andet'>A</span> (%)",
@@ -868,7 +1001,11 @@ Row
 ### Månedlige fangster givet sted 2004-`r year(now())`
 
 ```{r}
-renderPlot({
+plotOutput("plotCatchSalMonthlyP")
+```
+
+```{r, context = "server"}
+output$plotCatchSalMonthlyP <- renderPlot({
   dat <- datCatchSalmon %>% select(Month, Place)
   
   ggplot(data = dat, aes(x = Month)) +
@@ -885,7 +1022,11 @@ renderPlot({
 ### Månedlige fangster givet metode 2004-`r year(now())`
 
 ```{r}
-renderPlot({
+plotOutput("plotCatchSalMonthlyM")
+```
+
+```{r, context = "server"}
+output$plotCatchSalMonthlyM <- renderPlot({
   dat <- datCatchSalmon %>% select(Month, Method)
   
   ggplot(data = dat, aes(x = Month)) +
@@ -954,7 +1095,11 @@ Row {data-height=1000}
 ### Sammenligning
 
 ```{r}
-renderPlot({
+plotOutput("plotCompare")
+```
+
+```{r, context = "server"}
+output$plotCompare <- renderPlot({
   
 # input <- NULL
 # input$iInvYear <- c(2018,2019)
@@ -1013,7 +1158,7 @@ ggplot(data = dat, aes(x = xV, y = yV)) +
 Slusen
 =======================================================================
 
-```{r}
+```{r, context="data"}
 # Find high and lows
 findPeaks <- function (x, m = 2){
     shape <- diff(sign(diff(x, na.pad = FALSE)))
@@ -1096,7 +1241,11 @@ Row
 ### Sluse flow de seneste 14 dage (strøm ind i fjorden er positiv)
 
 ```{r}
-renderPlot({
+plotOutput("plotLock14")
+```
+
+```{r, context = "server"}
+output$plotLock14 <- renderPlot({
   ggplot(datFlow14) + 
     # geom_bar(aes(x = DateTime, y = 100*Open), stat = "identity") +
     geom_line(aes(x = DateTime, y = Flow, colour = Open)) + 
