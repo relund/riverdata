@@ -1,6 +1,7 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-07-02,46,1.2,Flemming Abel Olesen,Nedre,Orm,FALSE,NA,TRUE,Female,1.2328429358099777
 2020-07-02,48,1.3,Flemming Abel Olesen,Nedre,Orm,FALSE,NA,TRUE,Male,1.1754918981481481
+2020-07-02,59,0,Poulerik Simonsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2020-07-01,58,2.6,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,Female,1.3325679609660093
 2020-07-01,48,1.4,Flemming Neergaard,Nedre,Spin,FALSE,NA,TRUE,Male,1.2659143518518519
 2020-07-01,41,0.8,Erik Just Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,1.160749263649686
@@ -18,6 +19,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-06-26,44,NA,Mogens Skaarup,Mellem,Flue,FALSE,NA,TRUE,Male,NA
 2020-06-26,45,0,Alexander Maus,Nedre,Orm,FALSE,NA,FALSE,NA,NA
 2020-06-26,55,0,Alexander Maus,Nedre,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/03E34153D57674F6C125859500489120.jpg,FALSE,NA,NA
+2020-06-26,NA,0,Poulerik Simonsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2020-06-26,47,1.3,Brita Broberg,Nedre,Orm,FALSE,NA,TRUE,Female,1.252131030696474
 2020-06-26,43,0,Alexander Maus,Nedre,Orm,FALSE,NA,FALSE,NA,NA
 2020-06-25,45,NA,Preben Falkeøje Pilgaard,Mellem,Spin,FALSE,NA,TRUE,NA,NA
