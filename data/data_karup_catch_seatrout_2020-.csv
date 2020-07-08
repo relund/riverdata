@@ -14,6 +14,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-07-08,58,2.6,Georg Christensen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/0C21665A39C60D55C125859F003F91B2.jpg,TRUE,NA,1.3325679609660093
 2020-07-08,67,3.4,Villy Andersen,Øvre,Spin,FALSE,NA,TRUE,NA,1.1304582013080067
 2020-07-08,56,2.3,Carsten Nielsen,Nedre,Spin,FALSE,NA,TRUE,Male,1.3096756559766762
+2020-07-08,58,2.55,Willy W. Risgaard,Nedre,Spin,FALSE,NA,TRUE,Female,1.306941654024355
 2020-07-08,82,6.66,Philip Berthel,Nedre,Flue,FALSE,NA,TRUE,Male,1.2079047024854543
 2020-07-08,67,4,Hans-Jørn Aggerholm Christensen,Nedre,Spin,FALSE,NA,TRUE,Male,1.329950825068243
 2020-07-07,73,4.5,Carl Baes,Nedre,Flue,FALSE,NA,TRUE,Female,1.1567617867599616
@@ -92,14 +93,17 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-07-03,64,3,Johnny Pedersen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/4A5F29D8FD11D63BC125859A0049104D.jpg,TRUE,NA,1.1444091796875
 2020-07-03,41,1,Jannik Kanstorf,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/79B03D3104D861D3C125859A0062E411.jpg,TRUE,Female,1.4509365795621074
 2020-07-03,48,1.3,Flemming Abel Olesen,Nedre,Orm,FALSE,NA,TRUE,Male,1.1754918981481481
+2020-07-03,58,2.2,Rasmus,Nedre,Flue,FALSE,NA,TRUE,NA,1.1275575054327773
 2020-07-02,46,1.2,Flemming Abel Olesen,Nedre,Orm,FALSE,NA,TRUE,Female,1.2328429358099777
 2020-07-02,48,1.3,Flemming Abel Olesen,Nedre,Orm,FALSE,NA,TRUE,Male,1.1754918981481481
 2020-07-02,59,0,Poulerik Simonsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2020-07-02,25,0,Henrik Andersen,Mellem,Spin,FALSE,NA,FALSE,NA,NA
 2020-07-02,48,1.2,Erik Just Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,1.0850694444444444
+2020-07-01,59,2.4,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,Female,1.1685712755442377
 2020-07-01,58,2.6,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,Female,1.3325679609660093
 2020-07-01,48,1.4,Flemming Neergaard,Nedre,Spin,FALSE,NA,TRUE,Male,1.2659143518518519
 2020-07-01,41,0.8,Erik Just Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,1.160749263649686
+2020-07-01,58,2.55,Willy W. Risgaard,Nedre,Spin,FALSE,NA,TRUE,Female,1.306941654024355
 2020-07-01,60,2.4,Johnny Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,1.1111111111111112
 2020-07-01,72,4.8,Hans-Jørn Aggerholm Christensen,Nedre,Spin,FALSE,NA,TRUE,Female,1.286008230452675
 2020-06-30,44,1.28,Ole Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA,1.5026296018031555
