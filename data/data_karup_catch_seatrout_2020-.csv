@@ -1,9 +1,13 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
+2020-07-13,49,1.16,Ole Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,0.985983731268434
 2020-07-13,86,8.9,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,1.3992478649678646
+2020-07-13,58,2.2,Ole W. Knudsen,Nedre,Spin,FALSE,NA,TRUE,Male,1.1275575054327773
 2020-07-12,75,5.2,Johnny Pedersen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/0AAFCAE077876F77C12585A3002FD211.jpg,TRUE,NA,1.2325925925925927
 2020-07-12,69,4,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,Male,1.21762265265183
+2020-07-12,55,2.2,Brita Broberg,Nedre,Orm,FALSE,NA,TRUE,Female,1.3223140495867771
 2020-07-12,58,2.6,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,Male,1.3325679609660093
 2020-07-12,63,NA,Jan Fredslund Nielsen,Nedre,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/C17A36396C49C7DAC12585A30039229C.jpg,TRUE,Female,NA
+2020-07-12,58,2,Flemming Sparvath,Mellem,Flue,FALSE,NA,TRUE,Male,1.025052277666161
 2020-07-12,65,3.6,Jørgen Klokker,Nedre,Flue,FALSE,NA,TRUE,Female,1.3108784706417842
 2020-07-12,51,1.5,Leif Lund,Nedre,Spin,FALSE,NA,TRUE,Female,1.1307868014564535
 2020-07-11,74,5.2,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,Male,1.2832408741831678
@@ -41,6 +45,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-07-10,43,0,Emil Hyldgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2020-07-10,60,2.3,Ole Maach,Nedre,Spin,FALSE,NA,TRUE,Female,1.0648148148148147
 2020-07-10,55,2.3,Brian Vargas Møller-Iversen,Nedre,Spin,FALSE,NA,TRUE,NA,1.382419233658903
+2020-07-10,50,NA,Per S Nielsen,Mellem,Spin,FALSE,NA,TRUE,Male,NA
 2020-07-10,73,4.6,Ole W.knudsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.1824676042435163
 2020-07-10,64,3,Kenneth Klokker,Nedre,Flue,FALSE,NA,TRUE,Female,1.1444091796875
 2020-07-10,62,2.9,Jan Karnøe,Nedre,Flue,FALSE,NA,TRUE,NA,1.216810446107885
