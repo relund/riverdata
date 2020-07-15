@@ -40,6 +40,14 @@ if (length(dates)==length(flow)) {
 
 
 #### Catch records ####
+fixStringErrors <- function(places) {
+  places <- places %>% str_replace("Vorgod �", "Vorgod Å") %>% 
+    str_replace("Omme �", "Omme Å") %>% 
+    str_replace("�vre", "Øvre")
+  return(places)
+}
+
+
 updateCatch <- function(fn, species, start = year(now()), reset = F) {
   foundId <- NULL
   datOld <- NULL
@@ -88,7 +96,7 @@ updateCatch <- function(fn, species, start = year(now()), reset = F) {
              Net = if_else(Net == "Ja", TRUE, FALSE),
              Place = case_when(
                str_detect(Place, "Øvre|Rind|Karstoft|Vinbæk") ~ "Øvre",
-               str_detect(Place, "Mellem|Tarp|Felding|Konsortiet") ~ "Mellem",
+               str_detect(Place, "Mellem|Optrøms Tarp|Felding|Konsortiet") ~ "Mellem",
                str_detect(Place, "Nedre|A11|Albæk|Borris") ~ "Nedre",
                str_detect(Place, "Vorgod") ~ "Vorgod Å",
                str_detect(Place, "Omme") ~ "Omme Å",
@@ -124,9 +132,11 @@ updateCatch <- function(fn, species, start = year(now()), reset = F) {
     #   group_by(Date, Name, Place, Length, Weight, Method, Sex, Killed, Cut) %>% 
     #   dplyr::filter(n()>1)
     
+    if (reset & !is.null(datOld)) datOld <- datOld %>% filter(year(date) < start)
     dat <- bind_rows(datOld,dat)
     dat <- dat %>% 
       dplyr::filter(Length > 39 | is.na(Length)) %>% 
+      mutate(Place = fixStringErrors(Place)) %>% 
       arrange(desc(Date, ReportDate))
     write_csv(dat, fn)
   } else {
@@ -134,7 +144,7 @@ updateCatch <- function(fn, species, start = year(now()), reset = F) {
   }
   return(dat)
 }
-datCatchSalmon <- updateCatch("data/data_skjern_catch_salmon.csv", species = "salmon")
+datCatchSalmon <- updateCatch("data/data_skjern_catch_salmon.csv", species = "salmon", reset = T, start = 2004)
 datCatchSeatrout <- updateCatch("data/data_skjern_catch_seatrout.csv", species = "trout")
 
 
