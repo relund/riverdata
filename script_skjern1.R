@@ -95,9 +95,9 @@ updateCatch <- function(fn, species, start = year(now()), reset = F) {
                TRUE ~ NA),
              Net = if_else(Net == "Ja", TRUE, FALSE),
              Place = case_when(
-               str_detect(Place, "Øvre|Rind|Karstoft|Vinbæk") ~ "Øvre",
-               str_detect(Place, "Mellem|Optrøms Tarp|Felding|Konsortiet") ~ "Mellem",
-               str_detect(Place, "Nedre|A11|Albæk|Borris") ~ "Nedre",
+               str_detect(Place, "Øvre|Rind|Karstoft|Vinbæk|Opstrøms") ~ "Øvre",
+               str_detect(Place, "Mellem|Borris Krog bro til Tarp Bro|Felding|Konsortiet") ~ "Mellem",
+               str_detect(Place, "Nedre|A11|Albæk|Fjord") ~ "Nedre",
                str_detect(Place, "Vorgod") ~ "Vorgod Å",
                str_detect(Place, "Omme") ~ "Omme Å",
                TRUE ~ "Andet"),
@@ -144,7 +144,7 @@ updateCatch <- function(fn, species, start = year(now()), reset = F) {
   }
   return(dat)
 }
-datCatchSalmon <- updateCatch("data/data_skjern_catch_salmon.csv", species = "salmon", reset = T, start = 2004)
+datCatchSalmon <- updateCatch("data/data_skjern_catch_salmon.csv", species = "salmon", reset = T, start = 2004)   #, reset = T, start = 2004
 datCatchSeatrout <- updateCatch("data/data_skjern_catch_seatrout.csv", species = "trout")
 
 
