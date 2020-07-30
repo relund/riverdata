@@ -5,6 +5,7 @@ on:
     paths:
       - .github/workflows/run_script_skjern1.yaml
       - script_skjern1.R
+      - functions.R
   schedule: 
     - cron: '0 * * * *'  # every hour
 

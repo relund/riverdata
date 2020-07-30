@@ -134,6 +134,7 @@ estimateWeight <- function(fn, dat, minLength = 40, maxLength = max(dat$Length, 
 
 
 
+
 #' Update lock data for Hvide Sande
 #'
 #' @param fn The csv file to update
