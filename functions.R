@@ -1,11 +1,13 @@
 ### Functions for scripts
 
 
-fixStringErrors <- function(places) {
-  places <- places %>% str_replace("Vorgod �", "Vorgod Å") %>% 
+fixStringErrors <- function(strings) {
+  strings <- strings %>% str_replace("Vorgod �", "Vorgod Å") %>% 
     str_replace("Omme �", "Omme Å") %>% 
-    str_replace("�vre", "Øvre")
-  return(places)
+    str_replace("�vre", "Øvre") %>% 
+    str_replace("Female", "Hun") %>% 
+    str_replace("Male", "Han")
+  return(strings)
 }
 
 
@@ -102,7 +104,7 @@ updateCatchSkjern <- function(fn, species, start = year(now()), reset = F) {
     dat <- bind_rows(datOld,dat)
     dat <- dat %>% 
       dplyr::filter(Length > 39 | is.na(Length)) %>% 
-      mutate(Place = fixStringErrors(Place), Weight = round(Weight,1), Length = Round(Length)) %>% 
+      mutate(Place = fixStringErrors(Place), Weight = round(Weight,1), Length = round(Length)) %>% 
       arrange(desc(Date, ReportDate))
     write_csv(dat, fn)
   } else {
