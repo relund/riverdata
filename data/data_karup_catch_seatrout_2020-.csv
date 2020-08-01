@@ -2,6 +2,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-07-31,57,2,Kristian Søndergård Andersen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/AD0A3171CED2B3AAC12585B600737026.jpg,TRUE,Female,1.079954425923226
 2020-07-31,54,1.955,Ole W. Knudsen,Nedre,Spin,FALSE,NA,TRUE,Female,1.2415536249555454
 2020-07-31,81,6.2,Tom Johannesen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/94F15EDDB30931DFC12585B6002CA555.jpg,TRUE,Male,1.1666393823585308
+2020-07-31,78,5.1,Allan W K Jensen,Nedre,Spin,FALSE,NA,TRUE,Female,1.0746978202599504
 2020-07-31,67,3.5,Tom Poulsen,Mellem,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/DAAA2D39FDCD76CBC12585B600249E62.jpg,TRUE,Female,1.1637069719347126
 2020-07-31,71,3.8,H. Grønborg-Pedersen,Nedre,Flue,FALSE,NA,TRUE,Male,1.0617164602373215
 2020-07-31,60,2.2,Andreas Jørgensen,Øvre,Flue,FALSE,NA,TRUE,Female,1.0185185185185186
@@ -560,9 +561,12 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-07-01,41,0.8,Erik Just Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,1.160749263649686
 2020-07-01,58,2.55,Willy W. Risgaard,Nedre,Spin,FALSE,NA,TRUE,Female,1.306941654024355
 2020-07-01,72,4.8,Hans-Jørn Aggerholm Christensen,Nedre,Spin,FALSE,NA,TRUE,Female,1.286008230452675
+2020-06-30,65,NA,Søren Madsen,Mellem,Orm,FALSE,NA,TRUE,Male,NA
 2020-06-30,69,3.3,Benny Amstrup,Nedre,Spin,FALSE,NA,TRUE,NA,1.0045386884377596
 2020-06-30,44,1.28,Ole Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA,1.5026296018031555
 2020-06-30,57,2.1,Ole Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,1.1339521472193874
+2020-06-30,60,0,Søren Madsen,Mellem,Orm,FALSE,NA,FALSE,Female,NA
+2020-06-30,64,NA,Søren Madsen,Mellem,Orm,FALSE,NA,TRUE,Male,NA
 2020-06-29,44,0.9,Hans-Jørn Aggerholm Christensen,Nedre,Spin,FALSE,NA,TRUE,Female,1.0565364387678438
 2020-06-29,45,0,Anders Dalgaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2020-06-29,35,0,Peter Wittrup,Mellem,Flue,FALSE,NA,FALSE,Female,NA
