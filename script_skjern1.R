@@ -13,7 +13,7 @@ updateLockSkjern("data/data_skjern_flow_lock.csv")
 
 
 #### Catch records ####
-datCatchSalmon <- updateCatchSkjern("data/data_skjern_catch_salmon.csv", species = "salmon", reset = T, start = 2004)   #, reset = T, start = 2004
+datCatchSalmon <- updateCatchSkjern("data/data_skjern_catch_salmon.csv", species = "salmon")   #, reset = T, start = 2004
 datCatchSeatrout <- updateCatchSkjern("data/data_skjern_catch_seatrout.csv", species = "trout")
 
 
