@@ -2,6 +2,8 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-08-15,47,0,Finn Lajgaard,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2020-08-15,70,3.9,Lars Petersen,Mellem,Flue,FALSE,NA,TRUE,Male,1.1370262390670554
 2020-08-15,69,3.85,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,Male,1.1719618031773864
+2020-08-15,30,0,Tommy Skaalum,Øvre,Flue,FALSE,NA,FALSE,NA,NA
+2020-08-15,61,2.35,Tommy Skaalum,Øvre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/5ea660897a4a4f52ac30cfd629751a83.jpg,TRUE,NA,1.0353289482379582
 2020-08-14,62,2.7,Steen Søgaard Mortensen,Mellem,Flue,FALSE,NA,TRUE,Female,1.1328924843073411
 2020-08-14,55,0,Peder Skødt Lundsgaard,Mellem,Spin,FALSE,NA,FALSE,Male,NA
 2020-08-13,60,2.6,Poul E Andersen,Nedre,Spin,FALSE,NA,TRUE,Male,1.2037037037037037
@@ -145,7 +147,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-07-29,74,0,Knud Tørnqvist,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2020-07-29,58,2.25,Jørn N. Kristensen,Nedre,Flue,FALSE,NA,TRUE,Female,1.1531838123744311
 2020-07-29,53,1.6,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.0747126822813464
-2020-07-29,63,2.4,Tommy Skaalum,Øvre,Flue,FALSE,NA,TRUE,NA,0.9598195539238623
+2020-07-29,63,2.4,Tommy Skaalum,Øvre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/04ec8056ab6c49d4854cba5b9956b83c.jpg,TRUE,NA,0.9598195539238623
 2020-07-29,48,1.1,Jens Lønberg,Nedre,Orm,FALSE,NA,TRUE,NA,0.9946469907407409
 2020-07-28,72,4.1,Knud Tørnqvist,Nedre,Spin,FALSE,NA,TRUE,NA,1.0984653635116597
 2020-07-28,82,6.2,Knud Tørnqvist,Nedre,Spin,FALSE,NA,TRUE,NA,1.1244758491606333
