@@ -1,6 +1,7 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-08-24,62,2.7,Henning Andersen,Nedre,Flue,FALSE,NA,TRUE,Female,1.1328924843073411
 2020-08-24,62,2.8,Erik Mikkelsen,Nedre,Flue,FALSE,NA,TRUE,NA,1.174851465207613
+2020-08-24,56,0,Steen Nørskov Jensen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
 2020-08-23,60,3.5,Stig Møller Lindholm,Nedre,Orm,FALSE,NA,TRUE,Female,1.6203703703703705
 2020-08-23,57,2.1,Steen Søgaard Mortensen,Mellem,Flue,FALSE,NA,TRUE,Male,1.1339521472193874
 2020-08-23,60,0,Einer Olesen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
@@ -177,6 +178,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-07-30,60,3,Lars Relund,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/DFEC821CE0851D84C12585B60038F6C2.jpg,TRUE,NA,1.3888888888888888
 2020-07-30,60,2.8,Poul E Andersen,Nedre,Orm,FALSE,NA,TRUE,Female,1.2962962962962963
 2020-07-30,61,2.8,Flemming Abel Olesen,Nedre,Orm,FALSE,NA,TRUE,Male,1.23358342768778
+2020-07-30,63,2.9,Kurt Simonsen,Nedre,Flue,FALSE,NA,TRUE,Male,1.1597819609913336
 2020-07-30,65,3,Søren Fuglsang,Mellem,Spin,FALSE,NA,TRUE,Male,1.0923987255348202
 2020-07-30,62,2.6,Mads Svane,Nedre,Spin,FALSE,NA,TRUE,Male,1.0909335034070693
 2020-07-30,43,0.9,Søren Chr Olesen,Nedre,Orm,FALSE,NA,TRUE,Female,1.131975800872879
