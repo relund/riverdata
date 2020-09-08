@@ -1,5 +1,6 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-09-08,40,0,Henning Sandager,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2020-09-08,55,2.1,Emir Adžemović,Nedre,Spin,FALSE,NA,TRUE,Female,1.2622088655146506
 2020-09-08,65,2.9,Henning Andersen,Nedre,Flue,FALSE,NA,TRUE,Male,1.0559854346836595
 2020-09-07,48,1.2,Henning Sandager,Mellem,Flue,FALSE,NA,TRUE,NA,1.0850694444444444
 2020-09-07,53,1.65,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,Female,1.1082974536026384
@@ -16,6 +17,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-09-06,58,1.75,Johs. Kjærgaard,Nedre,Spin,FALSE,NA,TRUE,Male,0.8969207429578908
 2020-09-06,58,2.2,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,Female,1.1275575054327773
 2020-09-06,58,2.1,Karl-Ole Frandsen,Mellem,Flue,FALSE,NA,TRUE,Female,1.076304891549469
+2020-09-06,25,0,Janus Bredahl Reedtz,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/474c57f0699e4dd2ad5095b83156836b.jpg,FALSE,NA,NA
 2020-09-06,62,2.5,Klaus Grandahl Jensen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/b1e2663cfef84ecf89c7154d00d74e8d.jpg,TRUE,NA,1.0489745225067975
 2020-09-06,60,0,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
 2020-09-05,66,2.9,Emir Adžemović,Nedre,Spin,FALSE,NA,TRUE,Male,1.0087096863956369
@@ -229,6 +231,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-08-07,63,NA,Rafal Wysocki,Haderup Å,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/72B697DF73A40DB0C12585BF00786BA2.jpg,TRUE,Male,NA
 2020-08-07,60,2.6,Mogens Skaarup,Haderup Å,Spin,FALSE,NA,TRUE,Female,1.2037037037037037
 2020-08-07,55,0,Eric Ottens,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2020-08-07,60,0,Sigfred Madsen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2020-08-07,60,2.3,Vagn Riis-Jensen,Nedre,Flue,FALSE,NA,TRUE,Female,1.0648148148148147
 2020-08-06,63,3,Michael Schwennesen,Nedre,Flue,FALSE,NA,TRUE,Male,1.199774442404828
 2020-08-06,61,2.7,Bruno Broberg,Nedre,Flue,FALSE,NA,TRUE,Female,1.1895268766989306
