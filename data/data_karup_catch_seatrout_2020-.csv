@@ -52,6 +52,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-10-19,62,2.96,Ivan Nielsen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/BEE774DC69EEA667C125860A0041D839.jpg,TRUE,Female,1.2419858346480481
 2020-10-19,65,0,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2020-10-19,70,4.2,Karsten Lorentzen,Nedre,Flue,FALSE,NA,TRUE,Female,1.2244897959183674
+2020-10-19,73,4.5,Per Hollesen,Nedre,Spin,FALSE,NA,TRUE,NA,1.1567617867599616
 2020-10-18,66,NA,Christian Østergaard,Mellem,Spin,FALSE,NA,TRUE,Male,NA
 2020-10-18,60,0,Alex Hjort,Nedre,Spin,FALSE,NA,FALSE,Female,NA
 2020-10-18,64,0,René Sølvberg,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/D916B1E3A171FFA7C125860500429E4C.jpg,FALSE,NA,NA
@@ -189,6 +190,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-09-27,60,0,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
 2020-09-27,81,6.5,Ken Persson,Nedre,Spin,FALSE,NA,TRUE,Male,1.2230896750532985
 2020-09-27,65,3.4,Per Olesen,Øvre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/2dcaa016de994a03a18f93371c897c3d.jpg,TRUE,NA,1.238051888939463
+2020-09-26,76,5.5,Per Hollesen,Nedre,Spin,FALSE,NA,TRUE,NA,1.2529158769499926
 2020-09-26,63,2.8,Mikael Rønsholdt,NA,Flue,FALSE,NA,TRUE,Female,1.1197894795778394
 2020-09-26,42,0,Tom Larsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2020-09-26,60,0,Poul E Andersen,Nedre,Spin,FALSE,NA,FALSE,Female,NA
@@ -461,6 +463,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-08-23,63,3.2,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,Female,1.2797594052318164
 2020-08-23,60,0,Einer Olesen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2020-08-23,63,0,Poul Lauridsen,Mellem,Orm,FALSE,NA,FALSE,Female,NA
+2020-08-23,72,4.6,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA,1.2324245541838132
 2020-08-23,45,0,Jakob B Jensen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
 2020-08-23,55,0,Andreas Jørgensen,Øvre,Flue,FALSE,NA,FALSE,NA,NA
 2020-08-23,60,0,Poul Lauridsen,Mellem,Orm,FALSE,NA,FALSE,Female,NA
@@ -795,6 +798,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-07-22,59,2.9,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA,1.4120236246159539
 2020-07-22,60,2.9,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,1.3425925925925926
 2020-07-22,59,2.4,Brian Thomsen,Haderup Å,Orm,FALSE,NA,TRUE,NA,1.1685712755442377
+2020-07-22,74,5,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA,1.2338854559453536
 2020-07-22,40,0,Kent Rehnberg,Nedre,Orm,FALSE,NA,FALSE,NA,NA
 2020-07-22,55,1.9,Palle Lundholm Pedersen,Nedre,Flue,FALSE,NA,TRUE,Female,1.1419984973703983
 2020-07-21,60,2.8,Ole Maach,Nedre,Spin,FALSE,NA,TRUE,Female,1.2962962962962963
@@ -836,6 +840,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-07-19,52,1.4,René Sølvberg,Nedre,Spin,FALSE,NA,TRUE,NA,0.9956759217114247
 2020-07-19,46,0,Rasmus Bønnelykke,Mellem,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/9F0D02CD6F907F1EC12585AA0051E1BB.jpg,FALSE,Male,NA
 2020-07-19,70,3.67,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,Male,1.0699708454810495
+2020-07-19,55,2,Per Hollesen,Nedre,Maddike,FALSE,NA,TRUE,NA,1.2021036814425243
 2020-07-19,71,4.15,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,Female,1.1595061342065487
 2020-07-19,61,2.8,Henning Voergaard,Nedre,Flue,FALSE,NA,TRUE,NA,1.23358342768778
 2020-07-19,61,3.3,Finn Kristiansen,Nedre,Orm,FALSE,NA,TRUE,Male,1.4538661826320265
@@ -1122,6 +1127,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Fulton
 2020-07-07,61,3.2,Steen D Hessel,Nedre,Orm,FALSE,NA,TRUE,Male,1.4098096316431772
 2020-07-07,65,3.1,John Simonsen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B7FFFFF30AA1CB61C125859E0077EE1E.jpg,TRUE,NA,1.128812016385981
 2020-07-06,72,4.3,Poul Erik Christensen,Nedre,Spin,FALSE,NA,TRUE,Female,1.1520490397805212
+2020-07-06,55,2,Per Hollesen,Nedre,Spin,FALSE,NA,TRUE,NA,1.2021036814425243
 2020-07-06,48,1.4,Johnny Nielsen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/0E16D991C94A51F2C125859D004597C0.jpg,TRUE,Female,1.2659143518518519
 2020-07-06,53,1.9,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,Female,1.2762213102090987
 2020-07-06,56,2.3,Poul Godt,Nedre,Spin,FALSE,NA,TRUE,Male,1.3096756559766762
