@@ -135,8 +135,6 @@ estimateWeight <- function(fn, dat, minLength = 40, maxLength = max(dat$Length, 
 }
 
 
-
-
 #' Update lock data for Hvide Sande
 #'
 #' @param fn The csv file to update
@@ -174,3 +172,165 @@ updateLockSkjern <- function(fn) {
   }
   return(dat)
 }
+
+
+#' Update water level data 
+#'
+#' @param fn File name.
+#' @param stations Stations under consideration.
+#'
+#' @note Stations can be found at http://www.hydrometri.dk/hyd/
+#' @return Range of dates.
+updateWaterLevel <- function(fn, stations) {
+  year <- year(now())
+  if (file.exists(fn)) datOld <- read_csv(fn) else datOld <- NULL
+  iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
+  dat <- NULL
+  for (i in 1:nrow(stations)) {
+    id <- stations$id[i]
+    place <- stations$place[i]
+    # get obs for last 100 days
+    tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=100&pw=100000000&inclraw=true"))
+    offset <- as.numeric(tmp$tsh$Offset)
+    tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
+    tmp$V <- tmp$V - rep(offset, length(tmp$V))
+    colnames(tmp) <- c("Date", paste0(place, " (", id, ")"))
+    if (is.null(dat)) {
+      dat <- tmp
+    } else {
+      dat <- full_join(dat,tmp, by = "Date")
+    }
+  }
+  dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
+  dat <- dat %>% dplyr::filter(year(Date) == year) %>%
+    arrange_all(desc) %>%
+    distinct(Date, .keep_all = T)
+  dat <- dat %>% 
+    pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Level') %>% 
+    filter(!is.na(Level))
+  dat <- bind_rows(datOld, dat)
+  write_csv(dat, fn)
+  range(dat$Date)
+}
+
+
+#' Read water level files
+#'
+#' @param prefix File prefix before year including path.  
+#' @param years Years to load.
+#'
+#' @return The data set in long format.
+readWLevels <- function(prefix, years) {
+  dat <- NULL
+  cat("Read year:")
+  for (y in years) {
+    cat(y, "\n")
+    fn <- paste0(prefix, y, ".csv")
+    dat <- bind_rows(dat, read_csv(fn))
+  }
+  return(dat)
+}
+
+
+#' Calc moving average
+#'
+#' @param dat Water level records.
+#' @param path File name including path.
+#'
+#' @return The data set.
+calcWaterMovAvg <- function(dat, path) {
+  # mov avg function
+  movAvg <- function(x, days = 90){ 
+    n <- days
+    stats::filter(x, rep(1 / n, n), sides = 2, circular = T)
+  }
+  
+  dat %>% 
+    mutate(Day = yday(Date)) %>% 
+    group_by(Day, Place) %>% 
+    summarise_if(is.numeric, mean, na.rm = TRUE) %>% 
+    group_by(Place) %>% 
+    nest() %>% 
+    mutate(data = map(data, function(df) {
+      df %>% mutate(Level = if_else(Day==366, lag(Level), Level)) 
+    })) %>% 
+    mutate(data = map(data, function(df) {
+      df %>% mutate(Level = movAvg(Level)) 
+    })) %>% 
+    unnest(cols = c(data)) %>% 
+    rename(Level_rAvg90 = Level) %>% 
+    write_csv(path)
+}
+
+
+#' Calc relative water levels
+#'
+#' @param dat Water level records.
+#' @param rMeans Average levels.
+#'
+#' @return NULL
+calcWaterLevelRelative <- function(dat, rMeans) {
+  dat <- dat %>% 
+    mutate(Day = yday(Date)) %>% 
+    left_join(rMeans) %>% 
+    mutate(Level = Level - Level_rAvg90) %>% 
+    select(-Level_rAvg90, -Day)
+  for (y in distinct(dat, year(Date)) %>% pull()) {
+    fn <- paste0("data/data_skjern_waterlevel_relative_long_", y, ".csv")
+    write_csv(dplyr::filter(dat, year(Date) == y), fn)
+  }
+  invisible(NULL)
+}
+
+# for (y in 2017:2021) {
+#   fn <- paste0("data/data_skjern_waterlevel_", y, ".csv")
+#   dat <- read_csv(fn) 
+#   print(head(dat))
+#   fn <- paste0("data/data_skjern_waterlevel_long_", y, ".csv")
+#   write_csv(dat, fn)
+# }
+# 
+# for (y in 2017:2021) {
+#   fn <- paste0("data/data_skjern_waterlevel_", y, ".csv")
+#   dat <- read_csv(fn, col_types = cols(
+#     Date = col_datetime(format = ""),
+#     `Vorgod Å - Vandmøllen (055416)` = col_double(),
+#     `Skjern Å - Sandfeldvej (055414)` = col_double(),
+#     `Skjern Å - Alergaard (001862)` = col_double(),
+#     `Skjern Å - Gjaldbæk bro (017898)` = col_double(),
+#     `Rind Å - Arnborg kirke (054757)` = col_double(),
+#     `Omme Å - Sønderskov bro (001855)` = col_double(),
+#     `Fjederholt Å - A18 (052386)` = col_double()
+#   )) %>%
+#     pivot_longer(cols = 2:8, names_to = 'Place', values_to = 'Level') %>%
+#     filter(!is.na(Level))
+#   fn <- paste0("data/data_skjern_waterlevel_long_", y, ".csv")
+#   write_csv(dat, fn)
+# }
+# 
+# 
+# for (y in 2013:2021) {
+#   fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
+#   dat <- read_csv(fn, col_types = cols(
+#       Date = col_datetime(format = ""),
+#       'Karup By (054764)' = col_double(),
+#       'Hagebro (001762)' = col_double(),
+#       'Nørkærbro (001767)' = col_double()
+#     )) %>%
+#     pivot_longer(cols = 2:4, names_to = 'Place', values_to = 'Level') %>%
+#     filter(!is.na(Level))
+#   write_csv(dat, fn)
+# }
+# 
+# 
+# for (y in 2013:2021) {
+#   fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
+#   dat <- read_csv(fn) 
+#   print(head(dat))
+#   fn <- paste0("data/data_karup_waterlevel_long_", y, ".csv")
+#   write_csv(dat, fn)
+# }
+
+
+
+

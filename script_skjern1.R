@@ -4,13 +4,11 @@ library(jsonlite)
 library(tidyverse)
 library(lubridate)
 library(zoo)
-
 source("functions.R")
 
 
 #### Flow though lock at Hvide Sande ####
 updateLockSkjern("data/data_skjern_flow_lock.csv")
-
 
 #### Catch records ####
 datCatchSalmon <- updateCatchSkjern("data/data_skjern_catch_salmon.csv", species = "salmon")   #, reset = T, start = 2004
@@ -61,7 +59,7 @@ datCatchSeatrout <- updateCatchSkjern("data/data_skjern_catch_seatrout.csv", spe
 # write_csv(res, fn)
 
 
-# #### Waterlevel - Prelim data set ####
+#### Waterlevel - Prelim data set ####
 # # Find id using http://hydrometri.azurewebsites.net/Scripts/azureplot_new.js and set a breakpoint
 # stations <- 
 #   tibble(id = c("055416", "055414", "001862", "017898", "054757", "001855", "052386"), 
@@ -155,13 +153,8 @@ datCatchSeatrout <- updateCatchSkjern("data/data_skjern_catch_seatrout.csv", spe
 # }
 
 
-
-
-
 #### Waterlevel - Update data current year ####
-y <- year(now())
-fn <- paste0("data/data_skjern_waterlevel_", y, ".csv")
-if (file.exists(fn)) datOld <- read_csv(fn) else datOld <- NULL
+fn <- paste0("data/data_skjern_waterlevel_long_", year(now()), ".csv")
 stations <- 
   tibble(id = c("055416", "055414", "001862", "017898", "054757", "001855", "052386"), 
          place = c("Vorgod Å - Vandmøllen", 
@@ -171,95 +164,14 @@ stations <-
                    "Rind Å - Arnborg kirke",
                    "Omme Å - Sønderskov bro",
                    "Fjederholt Å - A18"))
-iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
-dat <- NULL
-for (i in 1:nrow(stations)) {
-  id <- stations$id[i]
-  place <- stations$place[i]
-  tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=100&pw=100000000&inclraw=true"))
-  offset <- as.numeric(tmp$tsh$Offset)
-  tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
-  tmp$V <- tmp$V - rep(offset, length(tmp$V))
-  colnames(tmp) <- c("Date", paste0(place, " (", id, ")"))
-  if (is.null(dat)) {
-    dat <- tmp
-  } else {
-    dat <- full_join(dat,tmp, by = "Date")
-  }
-}
-dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
-dat <- bind_rows(datOld, dat)
-dat <- dat %>% dplyr::filter(year(Date) == y) %>%
-  arrange_all(desc) %>%
-  distinct(Date, .keep_all = T)
-
-## write to file
-write_csv(dat, fn)
-range(dat$Date)
+updateWaterLevel(fn, stations)
 
 
-
-#### Waterlevel - Calc average ####
-readWLevels <- function(years) {
-  colT <- cols(
-    Date = col_datetime(format = ""),
-    `Vorgod Å - Vandmøllen (055416)` = col_double(),
-    `Skjern Å - Sandfeldvej (055414)` = col_double(),
-    `Skjern Å - Alergaard (001862)` = col_double(),
-    `Skjern Å - Gjaldbæk bro (017898)` = col_double(),
-    `Rind Å - Arnborg kirke (054757)` = col_double(),
-    `Omme Å - Sønderskov bro (001855)` = col_double(),
-    `Fjederholt Å - A18 (052386)` = col_double()
-  )
-  dat <- NULL
-  cat("Read year:")
-  for (y in years) {
-    cat(y, "\n")
-    fn <- paste0("data/data_skjern_waterlevel_", y, ".csv")
-    dat <- bind_rows(dat, read_csv(fn, col_types = colT))
-  }
-  return(dat)
-}
-dat <- readWLevels(2017:year(now()))
-
-## Average water levels given day
-dat1 <- dat %>% mutate(Day = yday(Date)) %>% group_by(Day)
-means <- dat1 %>% summarise_if(is.numeric, mean, na.rm = TRUE)
-if (nrow(means) == 366) means[366, 2:ncol(means)] <- means[365, 2:ncol(means)]
-colnames(means)[2:ncol(means)] = paste0(colnames(dat)[2:ncol(means)]," avg")
-
-## Moving average
-movAvg <- function(x, days = 90){ 
-  n <- days
-  stats::filter(x, rep(1 / n, n), sides = 2, circular = T)
-}
-rMeans <- mutate_at(means, 2:ncol(means), movAvg)
-colnames(rMeans)[2:ncol(rMeans)] = paste0(colnames(dat)[2:ncol(rMeans)]," rAvg90")
-rMeans <- rMeans %>% mutate_if(is.numeric, as.numeric)
-# means <- full_join(means, rMeans)
-# meansL <- means %>% pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level')
-# ggplot(data = meansL, aes(x = Day, y = Level)) + geom_line(aes(color = Group), show.legend = T)
-
-## Save moving average
-fn <- "data/data_skjern_waterlevel_avg90.csv"
-write_csv(rMeans, fn)
+#### Waterlevel - Calc moving average ####
+dat <- readWLevels("data/data_skjern_waterlevel_long_", 2017:year(now())) 
+rMeans <- calcWaterMovAvg(dat, "data/data_skjern_waterlevel_avg90_long.csv")
 
 
 #### Waterlevel - Relative datasets ####
-# dat <- readWLevels(2017:year(now()))
-# rMeans <- read_csv(paste0(prefix,"data_skjern_waterlevel_avg90.csv"))
-dat <- dat %>% mutate(Day = yday(Date))
-dat <- left_join(dat, rMeans)
-tmp <-  map(2:ncol(rMeans),  function(i) {
-    return(unlist(dat[, i] - dat[, i + ncol(rMeans)]))
-  }) 
-tmp
-names(tmp) <- str_remove_all(colnames(rMeans)[2:ncol(rMeans)], " \\(.*") 
-tmp <- as_tibble(tmp)
-dat <- bind_cols(select(dat, Date), tmp)
-datL <- dat %>% pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Level')
-for (y in 2017:year(now())) {
-  fn <- paste0("data/data_skjern_waterlevel_relative_long_", y, ".csv")
-  write_csv(dplyr::filter(datL, year(Date) == y), fn)
-}
+calcWaterLevelRelative(dat, rMeans)
 
