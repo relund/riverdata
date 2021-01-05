@@ -239,6 +239,41 @@ write_csv(datStat, fn)
 
 
 
+#### Update data for waterlevel in current year ####
+y <- year(now())
+fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
+if (file.exists(fn)) datOld <- read_csv(fn) else datOld <- NULL
+stations <- tibble(id = c("054764", "001762", "001767"), place = c("Karup By", "Hagebro", "Nørkærbro"))
+iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
+dat <- NULL
+for (i in 1:nrow(stations)) {
+  id <- stations$id[i]
+  place <- stations$place[i]
+  tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=60&pw=100000000&inclraw=true"))
+  offset <- as.numeric(tmp$tsh$Offset)
+  tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
+  tmp$V <- tmp$V - rep(offset, length(tmp$V))
+  colnames(tmp) <- c("Date", paste0(place, " (", id, ")"))
+  if (is.null(dat)) {
+    dat <- tmp
+  } else {
+    dat <- full_join(dat,tmp, by = "Date")
+  }
+}
+dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
+dat <- bind_rows(datOld, dat)
+dat <- dat %>% dplyr::filter(year(Date) == y) %>%
+  arrange_all(desc) %>%
+  distinct(Date, .keep_all = T)
+
+## write to file
+write_csv(dat, fn)
+# unique(date(dat$Date))
+range(dat$Date)
+
+
+
+
 
 #### Calc average water level ####
 readWLevels <- function(years) {
@@ -279,40 +314,6 @@ colnames(rMeans)[2:4] = paste0(colnames(dat)[2:4]," rAvg90")
 fn <- "data/data_karup_waterlevel_avg90.csv"
 write_csv(rMeans, fn)
 
-
-
-
-#### Update data for waterlevel in current year ####
-y <- year(now())
-fn <- paste0("data/data_karup_waterlevel_", y, ".csv")
-if (file.exists(fn)) datOld <- read_csv(fn) else datOld <- NULL
-stations <- tibble(id = c("054764", "001762", "001767"), place = c("Karup By", "Hagebro", "Nørkærbro"))
-iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
-dat <- NULL
-for (i in 1:nrow(stations)) {
-  id <- stations$id[i]
-  place <- stations$place[i]
-  tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=60&pw=100000000&inclraw=true"))
-  offset <- as.numeric(tmp$tsh$Offset)
-  tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
-  tmp$V <- tmp$V - rep(offset, length(tmp$V))
-  colnames(tmp) <- c("Date", paste0(place, " (", id, ")"))
-  if (is.null(dat)) {
-    dat <- tmp
-  } else {
-    dat <- full_join(dat,tmp, by = "Date")
-  }
-}
-dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
-dat <- bind_rows(datOld, dat)
-dat <- dat %>% dplyr::filter(year(Date) == y) %>%
-  arrange_all(desc) %>%
-  distinct(Date, .keep_all = T)
-
-## write to file
-write_csv(dat, fn)
-# unique(date(dat$Date))
-range(dat$Date)
 
 
 
