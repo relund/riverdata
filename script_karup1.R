@@ -7,8 +7,7 @@ library(zoo)
 source("functions.R")
 
 #### Catch records ####
-datCatchSeatrout <- writeCatchKarup()
-
+dat4 <- writeCatchKarup()
 
 #### Waterlevel - Update data current year ####
 fn <- paste0("data/data_karup_waterlevel_long_", year(now()), ".csv")
