@@ -274,7 +274,7 @@ calcWaterLevelRelative <- function(dat, rMeans) {
     mutate(Day = yday(Date)) %>% 
     left_join(rMeans) %>% 
     mutate(Level = Level - Level_rAvg90) %>% 
-    select(-Level_rAvg90, -Day)
+    select(-Day)
   for (y in distinct(dat, year(Date)) %>% pull()) {
     fn <- paste0("data/data_skjern_waterlevel_relative_long_", y, ".csv")
     write_csv(dplyr::filter(dat, year(Date) == y), fn)
