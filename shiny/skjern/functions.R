@@ -1,3 +1,12 @@
+#' Merge two lists to one
+#'
+#' @param a First list.
+#' @param b Second list (priority).
+mergeLists <- function (a,b) {
+  c(a[setdiff(names(a), names(b))], b)
+}
+
+
 #' Read and prepare catch records for table
 #'
 #' @param path Full path to csv file.

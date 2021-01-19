@@ -95,6 +95,18 @@ datWLevel <-
 datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock.csv"), locale = locale(tz = "CET"))
 ```
 
+```{r, eval=FALSE}
+verbatimTextOutput("hash")
+query <- getQueryString()
+```
+
+```{r, context = "server", eval=FALSE}
+output$hash <- renderText({
+  query <- getQueryString()
+  URLencode(str_c("?", str_c(names(query), query, sep = "=", collapse="&"), "#section-compare-sal"))
+      })
+```
+
 Fangster {data-navmenu="Laks"}
 =======================================================================
 
@@ -209,7 +221,6 @@ output$dTSalCatch <- DT::renderDataTable(
   formatRound(c('Fulton'), digits = 2)
 )
 ```
- 
 
 
 Fangster {data-navmenu="Havørred"}
@@ -1005,7 +1016,7 @@ output$plotCatchSeaMonthlyM <- renderPlot({
 
 
 
-Sammenlign {data-navmenu="Laks"}
+Sammenlign {data-navmenu="Laks" #compare-sal}
 =======================================================================
 
 Row {data-height=375}
@@ -1062,7 +1073,6 @@ plotOutput("plotCompareSal")
 
 ```{r, context = "server"}
 output$plotCompareSal <- renderPlot({
-  
 # input <- NULL
 # input$iInvYear <- c(2018,2019)
 # input$iInvDay <- c("2019-04-16", "2019-04-25")
@@ -1070,6 +1080,21 @@ output$plotCompareSal <- renderPlot({
 # input$iYUnit <- "yVAvgW"
 # input$iGroup <- "None"
 # input$iData <- "TRUE"
+
+qString <- list(iInvYearSal = input$iInvYearSal,
+                iInvDaySal = input$iInvDaySal,
+                iXUnitSal = input$iXUnitSal,
+                iYUnitSal = input$iYUnitSal,
+                iDataSal = input$iDataSal,
+                iGroupSal = input$iGroupSal)
+query <- getQueryString()
+qString <- mergeLists(qString, query)
+# updateSelectInput(session, "iXUnitSal",
+#  selected = qString$iXUnitSal
+# )
+
+qS <- URLencode(str_c("?", str_c(names(qString), qString, sep = "=", collapse="&"), "#section-compare-sal"))
+updateQueryString(qS, mode = "push")
 
 if (input$iXUnitSal == "Day") {
   iXUnitSal <- "DayStr" 

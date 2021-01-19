@@ -11,9 +11,14 @@ source("functions.R")
 updateLockSkjern("data/data_skjern_flow_lock.csv")
 
 #### Catch records ####
-datCatchSalmon <- updateCatchSkjern("data/data_skjern_catch_salmon.csv", species = "salmon")   #, reset = T, start = 2004
-datCatchSeatrout <- updateCatchSkjern("data/data_skjern_catch_seatrout.csv", species = "trout")
 
+if (day(now()) == 19) {
+  datCatchSalmon <- updateCatchSkjern("data/data_skjern_catch_salmon.csv", species = "salmon", reset = TRUE)   #, reset = T, start = 2004
+  datCatchSeatrout <- updateCatchSkjern("data/data_skjern_catch_seatrout.csv", species = "trout", reset = TRUE) 
+} else {
+  datCatchSalmon <- updateCatchSkjern("data/data_skjern_catch_salmon.csv", species = "salmon") 
+  datCatchSeatrout <- updateCatchSkjern("data/data_skjern_catch_seatrout.csv", species = "trout")
+}
 
 #### Salmon - Estimate weight given length ####
 # dat <- datCatchSalmon %>% 
