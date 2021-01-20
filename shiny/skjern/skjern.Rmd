@@ -3,7 +3,7 @@ title: "Dashboard for Skjern Å"
 author: ''
 output:
   flexdashboard::flex_dashboard:
-    css: style.css
+    css: www/style.css
     favicon: favicon.png
     orientation: rows
     theme: paper
@@ -20,6 +20,10 @@ runtime: shiny_prerendered
 editor_options:
   chunk_output_type: console
 ---
+
+<script>
+$(".selectize-input input").prop('readonly','readonly');
+</script>
 
 ```{r, context="setup", include=FALSE}
 #profvis({rmarkdown::run("karup.Rmd", shiny_args = list(host="0.0.0.0", port=5050))})
@@ -479,22 +483,7 @@ output$plotWeightSea <- renderPlotly({
 Nuværende {data-navmenu="Vandstand"}
 =======================================================================
 
-Row {data-height=200}
------------------------------------------------------------------------
-
-###
-```{r}
-cIPlaceWUnit <- unique(datWLevel$Place)
-selectInput("iPlaceW", "Sted:", cIPlaceWUnit, selected = cIPlaceWUnit[2])
-```
-
-###
-```{r}
-cIScaleWUnit <- c("Relativ" = "LevelRelative", "Absolut" = "Level")
-selectInput("iScaleW", "Vælg enhed på y-aksen:", cIScaleWUnit)
-```
-
-Row {data-height=900}
+Row {data-height=1000}
 -----------------------------------------------------------------------
 
 ### 
@@ -527,6 +516,22 @@ output$plotWLevelPresent <- renderPlotly({
   ggplotly(p, tooltip = c("text")) %>% plotly::layout(legend = list(orientation = "h", x = 0.3, y = -0.4))
 })
 ```
+
+Row {data-height=150}
+-----------------------------------------------------------------------
+
+###
+```{r}
+cIPlaceWUnit <- unique(datWLevel$Place)
+selectInput("iPlaceW", "Sted:", cIPlaceWUnit, selected = cIPlaceWUnit[2], selectize = FALSE)
+```
+
+###
+```{r}
+cIScaleWUnit <- c("Relativ" = "LevelRelative", "Absolut" = "Level")
+selectInput("iScaleW", "Vælg enhed på y-aksen:", cIScaleWUnit, selectize = FALSE)
+```
+
 
 Over år {data-navmenu="Vandstand"}
 =======================================================================
@@ -1019,49 +1024,6 @@ output$plotCatchSeaMonthlyM <- renderPlot({
 Sammenlign {data-navmenu="Laks" #compare-sal}
 =======================================================================
 
-Row {data-height=375}
------------------------------------------------------------------------
-
-### 
-```{r}
-sliderInput("iInvYearSal", label = "Vælg årstal:",
-            min = 2004, max = year(now()), sep = "",
-            value = c(2016, year(now())), step = 1)
-sliderInput("iInvDaySal", label = "Vælg dato interval: ",
-            min = as.Date("2019-04-01"), max = as.Date("2019-10-31"), 
-            value = c(as.Date("2019-04-01"), as.Date("2019-10-31")), step = 1,
-            timeFormat = "%d %b")
-```
-
-### 
-```{r}
-cIXUnit <- c("Dag" = "Day", "Uge" = "Week", "Måned" = "Month", "År" = "Year")
-selectInput("iXUnitSal", "Vælg enhed på x-aksen:", cIXUnit, selected = "Year")
-cIYUnit <- c("Fisk fanget" = "yVTotal",
-             "Gennemsnitlig vægt" = "yVAvgW",
-             "Gennemsnitlig længde" = "yVAvgL",
-             "Max vægt" = "yVMaxW",
-             "Max længde" = "yVMaxL",
-             "Total vægt" = "yVTotalW")
-selectInput("iYUnitSal", "Vælg enhed på y-aksen:", cIYUnit)
-```
-
-### 
-```{r}
-cIData <- c("Alle fangster" = "All",
-            "Hjemtagne fisk" = "KilledTrue",
-            "Genudsatte fisk" = "KilledFalse",
-            "Fangster med vægt angivelse" = "WeightTrue")
-selectInput("iDataSal", "Vælg datasæt:", cIData, "All")
-cIGroup <- c("Område" = "Place",
-            "Metode" = "Method",
-            "Køn" = "Sex",
-            "Hjemtaget" = "Killed",
-            "Ingen" = "None")
-selectInput("iGroupSal", "Vælg gruppe inddeling:", cIGroup, "None")
-```
-
-
 Row {data-height=1000}
 -----------------------------------------------------------------------
 
@@ -1140,20 +1102,15 @@ ggplot(data = dat, aes(x = xV, y = yV)) +
 })
 ```
 
-
-
-Sammenlign {data-navmenu="Havørred"}
-=======================================================================
-
-Row {data-height=375}
+Row {data-height=250}
 -----------------------------------------------------------------------
 
 ### 
 ```{r}
-sliderInput("iInvYearSea", label = "Vælg årstal:",
+sliderInput("iInvYearSal", label = "Vælg årstal:",
             min = 2004, max = year(now()), sep = "",
             value = c(2016, year(now())), step = 1)
-sliderInput("iInvDaySea", label = "Vælg dato interval: ",
+sliderInput("iInvDaySal", label = "Vælg dato interval: ",
             min = as.Date("2019-04-01"), max = as.Date("2019-10-31"), 
             value = c(as.Date("2019-04-01"), as.Date("2019-10-31")), step = 1,
             timeFormat = "%d %b")
@@ -1162,14 +1119,14 @@ sliderInput("iInvDaySea", label = "Vælg dato interval: ",
 ### 
 ```{r}
 cIXUnit <- c("Dag" = "Day", "Uge" = "Week", "Måned" = "Month", "År" = "Year")
-selectInput("iXUnitSea", "Vælg enhed på x-aksen:", cIXUnit, selected = "Year")
+selectInput("iXUnitSal", "Vælg enhed på x-aksen:", cIXUnit, selected = "Year", selectize = FALSE)
 cIYUnit <- c("Fisk fanget" = "yVTotal",
              "Gennemsnitlig vægt" = "yVAvgW",
              "Gennemsnitlig længde" = "yVAvgL",
              "Max vægt" = "yVMaxW",
              "Max længde" = "yVMaxL",
              "Total vægt" = "yVTotalW")
-selectInput("iYUnitSea", "Vælg enhed på y-aksen:", cIYUnit)
+selectInput("iYUnitSal", "Vælg enhed på y-aksen:", cIYUnit, selectize = FALSE)
 ```
 
 ### 
@@ -1178,15 +1135,20 @@ cIData <- c("Alle fangster" = "All",
             "Hjemtagne fisk" = "KilledTrue",
             "Genudsatte fisk" = "KilledFalse",
             "Fangster med vægt angivelse" = "WeightTrue")
-selectInput("iDataSea", "Vælg datasæt:", cIData, "All")
+selectInput("iDataSal", "Vælg datasæt:", cIData, "All", selectize = FALSE)
 cIGroup <- c("Område" = "Place",
             "Metode" = "Method",
             "Køn" = "Sex",
             "Hjemtaget" = "Killed",
             "Ingen" = "None")
-selectInput("iGroupSea", "Vælg gruppe inddeling:", cIGroup, "None")
+selectInput("iGroupSal", "Vælg gruppe inddeling:", cIGroup, "None", selectize = FALSE)
 ```
 
+
+
+
+Sammenlign {data-navmenu="Havørred"}
+=======================================================================
 
 Row {data-height=1000}
 -----------------------------------------------------------------------
@@ -1251,6 +1213,49 @@ ggplot(data = dat, aes(x = xV, y = yV)) +
   theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
 })
 ```
+
+Row {data-height=250}
+-----------------------------------------------------------------------
+
+### 
+```{r}
+sliderInput("iInvYearSea", label = "Vælg årstal:",
+            min = 2004, max = year(now()), sep = "",
+            value = c(2016, year(now())), step = 1)
+sliderInput("iInvDaySea", label = "Vælg dato interval: ",
+            min = as.Date("2019-04-01"), max = as.Date("2019-10-31"), 
+            value = c(as.Date("2019-04-01"), as.Date("2019-10-31")), step = 1,
+            timeFormat = "%d %b")
+```
+
+### 
+```{r}
+cIXUnit <- c("Dag" = "Day", "Uge" = "Week", "Måned" = "Month", "År" = "Year")
+selectInput("iXUnitSea", "Vælg enhed på x-aksen:", cIXUnit, selected = "Year", selectize = FALSE)
+cIYUnit <- c("Fisk fanget" = "yVTotal",
+             "Gennemsnitlig vægt" = "yVAvgW",
+             "Gennemsnitlig længde" = "yVAvgL",
+             "Max vægt" = "yVMaxW",
+             "Max længde" = "yVMaxL",
+             "Total vægt" = "yVTotalW")
+selectInput("iYUnitSea", "Vælg enhed på y-aksen:", cIYUnit, selectize = FALSE)
+```
+
+### 
+```{r}
+cIData <- c("Alle fangster" = "All",
+            "Hjemtagne fisk" = "KilledTrue",
+            "Genudsatte fisk" = "KilledFalse",
+            "Fangster med vægt angivelse" = "WeightTrue")
+selectInput("iDataSea", "Vælg datasæt:", cIData, "All", selectize = FALSE)
+cIGroup <- c("Område" = "Place",
+            "Metode" = "Method",
+            "Køn" = "Sex",
+            "Hjemtaget" = "Killed",
+            "Ingen" = "None")
+selectInput("iGroupSea", "Vælg gruppe inddeling:", cIGroup, "None", selectize = FALSE)
+```
+
 
 
 

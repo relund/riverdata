@@ -1,0 +1,9 @@
+.fa, .fas, .fab {
+    color: #3399ff;
+    font-style: normal;
+    font-weight: 900;
+}
+
+.selectize-dropdown, .selectize-input, .selectize-input input {
+    position: static !important; 
+}
