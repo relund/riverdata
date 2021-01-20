@@ -174,17 +174,26 @@ updateLockSkjern <- function(fn) {
 }
 
 
-#' Update water level data 
+#' Update water level data (both absolute and relative)
 #'
-#' @param fn File name.
 #' @param stations Stations under consideration.
 #'
-#' @note Stations can be found at http://www.hydrometri.dk/hyd/
+#' @note Stations can be found at http://www.hydrometri.dk/hyd/. Get obs for the last 100 days
 #' @return Range of dates.
-updateWaterLevel <- function(fn, stations) {
+updateWaterLevel <- function(stations) {
   year <- year(now())
-  if (file.exists(fn)) datOld <- read_csv(fn) else datOld <- NULL
   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
+  fn <- paste0("data/data_skjern_waterlevel_long_y", year, ".csv")
+  rMeans <-
+    read_csv("data/data_skjern_waterlevel_avg90_long.csv", 
+             col_types = cols(
+               Place = col_character(),
+               Day = col_double(),
+               Level_rAvg90 = col_double()
+             ))
+  message("Waterlevel: Update datasets.")
+  # read data for last 100 days
+  if (file.exists(fn)) datOld <- read_csv(fn) else datOld <- NULL
   dat <- NULL
   for (i in 1:nrow(stations)) {
     id <- stations$id[i]
@@ -198,7 +207,7 @@ updateWaterLevel <- function(fn, stations) {
     if (is.null(dat)) {
       dat <- tmp
     } else {
-      dat <- full_join(dat,tmp, by = "Date")
+      dat <- full_join(dat, tmp, by = "Date")
     }
   }
   dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
@@ -208,8 +217,28 @@ updateWaterLevel <- function(fn, stations) {
   dat <- dat %>% 
     pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Level') %>% 
     filter(!is.na(Level))
-  dat <- bind_rows(datOld, dat)
+  # combine with old data
+  dat <- bind_rows(datOld, dat) %>% 
+    arrange_all(desc) %>%
+    distinct(Date, Place, .keep_all = T)
+  # calc relative
+  dat <- dat %>% 
+    mutate(Day = yday(Date)) %>% 
+    left_join(rMeans, by = c("Place", "Day")) %>% 
+    mutate(LevelRelative = Level - Level_rAvg90) %>% 
+    select(-Day, -Level_rAvg90)
+  # save
+  message("Data saved in ", fn)
   write_csv(dat, fn)
+  return(dat)
+  
+  # for (y in distinct(dat, year(Date)) %>% pull()) {
+  #   fn <- paste0("data/data_skjern_waterlevel_long_y", y, ".csv")
+  #   message("  ... save ", fn)
+  #   write_csv(dplyr::filter(dat, year(Date) == y), fn)
+  # }
+  invisible(NULL)
+  
   range(dat$Date)
 }
 

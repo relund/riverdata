@@ -159,7 +159,6 @@ if (day(now()) == 19) {
 
 
 #### Waterlevel - Update data current year ####
-fn <- paste0("data/data_skjern_waterlevel_long_", year(now()), ".csv")
 stations <- 
   tibble(id = c("055416", "055414", "001862", "017898", "054757", "001855", "052386"), 
          place = c("Vorgod Å - Vandmøllen", 
@@ -169,7 +168,7 @@ stations <-
                    "Rind Å - Arnborg kirke",
                    "Omme Å - Sønderskov bro",
                    "Fjederholt Å - A18"))
-updateWaterLevel(fn, stations)
+updateWaterLevel(stations)
 
 
 #### Waterlevel - Calc moving average ####
