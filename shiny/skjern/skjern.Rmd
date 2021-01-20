@@ -90,7 +90,7 @@ datStatMonthSea <- monthlyStat(datCatchSea, curYear)
 
 # Water levels 
 datWLevel <- 
-  read_csv(paste0(prefix, "data_skjern_waterlevel_relative_long_", year(now()), ".csv")) %>% 
+  read_csv(paste0(prefix, "data_skjern_waterlevel_long_", year(now()), ".csv")) %>% 
   dplyr::filter(Date > now() - days(14)) %>% 
   dplyr::filter(str_detect(Place, "Skjern|Rind")) %>% 
   mutate(Level = Level*100, LevelRelative = 100*LevelRelative)

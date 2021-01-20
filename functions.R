@@ -308,7 +308,7 @@ calcWaterMovAvg <- function(dat) {
 #' @param dat Water level records.
 #' @param rMeans Average levels.
 #'
-#' @return NULL
+#' @return The dataset.
 calcWaterLevelRelative <- function(dat, rMeans) {
   message("Waterlevel: Update relative values.")
   dat <- dat %>% 
@@ -321,8 +321,58 @@ calcWaterLevelRelative <- function(dat, rMeans) {
     message("  Write data to ",fn)
     write_csv(dplyr::filter(dat, year(Date) == y), fn)
   }
-  invisible(NULL)
+  return(dat)
 }
+
+findPeaks <- function (x, thresh = 0) 
+{
+  pks <- which(diff(sign(diff(x, na.pad = FALSE)), na.pad = FALSE) < 0) + 2
+  if (!missing(thresh)) {
+    pks[x[pks - 1] - x[pks] > thresh]
+  }
+  else pks
+}
+
+
+#' Calculate dataset for web
+#'
+#' @param dat Water level data set.
+#' @param fn File name with path.
+#'
+#' @return The data set
+calcWaterLevelsWeb <- function(dat, fn) {
+  dat <- dat %>% 
+    mutate(DaysSince = as.numeric(date(Date)), YDay = yday(Date), PV = FALSE) %>% 
+    group_by(Place) %>% 
+    arrange(desc(Date)) %>% 
+    nest() %>% 
+    mutate(data = 
+             map(data,
+                 function(df) {
+                   tmp <- NULL
+                   for (y in df %>% distinct(year(Date)) %>% pull()) {
+                     dayS <- as.numeric(date(paste0(y, "-", month(now()), "-", day(now()))))
+                     tmp1 <- df %>% filter(DaysSince <= dayS & DaysSince >= dayS - 60) %>% 
+                       arrange(Date) %>% mutate(YGroup = y)  
+                     if (nrow(tmp1) == 0) next
+                     tmp1 <- tmp1 %>% mutate(DaysCtr = 1:nrow(tmp1), PV = ((row_number()-1) %% 16 == 0) )
+                     idx <- unique(findPeaks(tmp1$LevelRelative), findPeaks(tmp1$Level))
+                     tmp1$PV[idx] <- TRUE
+                     tmp <- bind_rows(tmp, tmp1)
+                   } 
+                   return(tmp)
+                 })) %>% 
+    unnest(cols = "data") %>% 
+    filter(PV) %>% # Reduce size of dataset
+    select(-DaysSince, -YDay, -PV) %>% 
+    relocate(Date)
+  write_csv(dat, fn)
+  return(dat)
+}
+
+
+
+
 
 # for (y in 2017:2021) {
 #   fn <- paste0("data/data_skjern_waterlevel_", y, ".csv")
