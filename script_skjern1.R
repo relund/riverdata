@@ -172,8 +172,8 @@ updateWaterLevel(stations)
 
 
 #### Waterlevel - Calc moving average ####
-dat <- readWLevels("data/data_skjern_waterlevel_long_", 2017:year(now())) 
-rMeans <- calcWaterMovAvg(dat, "data/data_skjern_waterlevel_avg90_long.csv")
+dat <- readWLevels("data/data_skjern_waterlevel_long_y", 2017:year(now())) 
+rMeans <- calcWaterMovAvg(dat)
 
 
 #### Waterlevel - Relative datasets ####
