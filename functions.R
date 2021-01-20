@@ -183,7 +183,7 @@ updateLockSkjern <- function(fn) {
 updateWaterLevel <- function(stations) {
   year <- year(now())
   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
-  fn <- paste0("data/data_skjern_waterlevel_long_y", year, ".csv")
+  fn <- paste0("data/data_skjern_waterlevel_long_", year, ".csv")
   rMeans <-
     read_csv("data/data_skjern_waterlevel_avg90_long.csv", 
              col_types = cols(
@@ -317,7 +317,7 @@ calcWaterLevelRelative <- function(dat, rMeans) {
     mutate(LevelRelative = Level - Level_rAvg90) %>% 
     select(-Day, -Level_rAvg90)
   for (y in distinct(dat, year(Date)) %>% pull()) {
-    fn <- paste0("data/data_skjern_waterlevel_long_y", y, ".csv")
+    fn <- paste0("data/data_skjern_waterlevel_long_", y, ".csv")
     message("  Write data to ",fn)
     write_csv(dplyr::filter(dat, year(Date) == y), fn)
   }
