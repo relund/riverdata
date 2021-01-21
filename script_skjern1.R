@@ -13,7 +13,7 @@ updateLockSkjern(prefix)
 
 #### Catch records ####
 
-if (day(now()) == 19) {
+if (day(now()) == 19 & hour(now()) == 4) {
   datCatchSalmon <- updateCatchSkjern(prefix, species = "salmon", reset = TRUE, start = 2020)   #, reset = T, start = 2004
   datCatchSeatrout <- updateCatchSkjern(prefix, species = "trout", reset = TRUE) 
 } else {

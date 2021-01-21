@@ -20,13 +20,13 @@ fixStringErrors <- function(strings) {
 #'
 #' @return The updated catch records appended to the the old records. 
 updateCatchSkjern <- function(prefix, species, start = year(now()), reset = F) {
-  message("Catch records: Update dataset.")
+  message("Catch records: Update dataset for ", species, ".")
   foundId <- NULL
   datOld <- NULL
   if (species == "salmon") fn <- paste0(prefix, "_catch_salmon.csv") 
   if (species == "trout") fn <- paste0(prefix, "_catch_seatrout.csv")
   if (file.exists(fn) & !reset) {
-    datOld <- read_csv(fn)
+    datOld <- read_csv(fn, col_types = "DddccccllcclccTd")
     foundId <- datOld %>% pull(Id)
   }
   
@@ -39,7 +39,6 @@ updateCatchSkjern <- function(prefix, species, start = year(now()), reset = F) {
   curY <- year(now())
   dat <- NULL
   for (y in start:curY) {
-    message("  Year:", y)
     url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=", species)
     page <- read_html(url)
     ids <- html_nodes(page, xpath = '//*[@id="report-list"]/tbody/tr/@data-id') %>% 
@@ -114,7 +113,7 @@ updateCatchSkjern <- function(prefix, species, start = year(now()), reset = F) {
   } else {
     dat <- datOld
   }
-  return(dat)
+  return(invisible(dat))
 }
 
 
@@ -140,7 +139,7 @@ estimateWeight <- function(fn, dat, minLength = 40, maxLength = max(dat$Length, 
   colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
   message("  Write data to ", fn)
   write_csv(res, fn)
-  return(res)
+  return(invisible(res))
 }
 
 
@@ -181,7 +180,7 @@ updateLockSkjern <- function(prefix) {
       write_csv(dat, fn)
     }
   }
-  return(dat)
+  return(invisible(dat))
 }
 
 
@@ -196,7 +195,7 @@ updateWaterLevel <- function(stations, prefix) {
   year <- year(now())
   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
   fn <- paste0(prefix, "_waterlevel_", year, ".csv")
-  fnM <- paste0(prefix, "_avg90.csv")
+  fnM <- paste0(prefix, "_waterlevel_avg90.csv")
   rMeans <-
     read_csv(fnM, 
              col_types = cols(
@@ -245,7 +244,7 @@ updateWaterLevel <- function(stations, prefix) {
   # save
   message("  Write data to ", fn)
   write_csv(dat, fn)
-  return(dat)
+  return(invisible(dat))
   # for (y in distinct(dat, year(Date)) %>% pull()) {
   #   fn <- paste0("data/data_skjern_waterlevel_long_y", y, ".csv")
   #   message("  ... save ", fn)
@@ -325,7 +324,7 @@ calcWaterLevelRelative <- function(dat, rMeans, prefix) {
   dat <- dat %>% 
     mutate(Day = yday(Date)) %>% 
     left_join(rMeans, by = c("Place", "Day")) %>% 
-    mutate(LevelRelative = Level - Level_rAvg90) %>% 
+    mutate(Level = round(Level, 3), LevelRelative = round(Level - Level_rAvg90, 3)) %>% 
     select(-Day, -Level_rAvg90)
   for (y in distinct(dat, year(Date)) %>% pull()) {
     fn <- paste0(prefix, "_waterlevel_", y, ".csv")
