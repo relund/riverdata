@@ -342,7 +342,8 @@ findPeaks <- function (x, thresh = 0)
 #' @return The data set
 calcWaterLevelsWeb <- function(dat, fn) {
   dat <- dat %>% 
-    mutate(DaysSince = as.numeric(date(Date)), YDay = yday(Date), PV = FALSE) %>% 
+    ## data 14 days back for each year
+    mutate(DaysSince = as.numeric(date(Date))) %>% 
     group_by(Place) %>% 
     arrange(desc(Date)) %>% 
     nest() %>% 
@@ -355,17 +356,43 @@ calcWaterLevelsWeb <- function(dat, fn) {
                      tmp1 <- df %>% filter(DaysSince <= dayS & DaysSince >= dayS - 14) %>% 
                        arrange(Date) %>% mutate(YGroup = y)  
                      if (nrow(tmp1) == 0) next
-                     tmp1 <- tmp1 %>% mutate(DaysCtr = 1:nrow(tmp1), PV = ((row_number()-1) %% 16 == 0) )
-                     idx <- unique(findPeaks(tmp1$LevelRelative), findPeaks(tmp1$Level))
-                     tmp1$PV[idx] <- TRUE
                      tmp <- bind_rows(tmp, tmp1)
                    } 
                    return(tmp)
                  })) %>% 
     unnest(cols = "data") %>% 
-    filter(PV) %>% # Reduce size of dataset
-    select(-DaysSince, -YDay, -PV) %>% 
-    relocate(Date)
+    # mean over each hour
+    mutate(Hour = hour(Date), DateDay = date(Date)) %>% 
+    group_by(Hour, Place, DateDay, YGroup) %>% 
+    summarise(Date = median(Date), 
+              Level = round(100*mean(Level),1), 
+              LevelRelative = round(100*mean(LevelRelative),1),
+              .groups = "drop") %>% 
+    # mutate(DaysSince = as.numeric(date(Date)), YDay = yday(Date), PV = FALSE) %>% 
+    # group_by(Place) %>% 
+    # arrange(desc(Date)) %>% 
+    # nest() %>% 
+    # mutate(data = 
+    #          map(data,
+    #              function(df) {
+    #                tmp <- NULL
+    #                for (y in df %>% distinct(year(Date)) %>% pull()) {
+    #                  dayS <- as.numeric(date(paste0(y, "-", month(now()), "-", day(now()))))
+    #                  tmp1 <- df %>% filter(DaysSince <= dayS & DaysSince >= dayS - 14) %>% 
+    #                    arrange(Date) %>% mutate(YGroup = y)  
+    #                  if (nrow(tmp1) == 0) next
+    #                  tmp1 <- tmp1 %>% mutate(DaysCtr = 1:nrow(tmp1), PV = ((row_number()-1) %% 16 == 0) )
+    #                  idx <- unique(findPeaks(tmp1$LevelRelative), findPeaks(tmp1$Level))
+    #                  tmp1$PV[idx] <- TRUE
+    #                  tmp <- bind_rows(tmp, tmp1)
+    #                } 
+    #                return(tmp)
+    #              })) %>% 
+    # unnest(cols = "data") %>% 
+    # filter(PV) %>% # Reduce size of dataset
+    select(-Hour, -DateDay) %>% 
+    relocate(Date) %>% 
+    arrange(Place, Date)
   write_csv(dat, fn)
   return(dat)
 }
