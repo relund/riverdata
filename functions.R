@@ -391,8 +391,10 @@ calcWaterLevelsWeb <- function(dat, fn) {
     # unnest(cols = "data") %>% 
     # filter(PV) %>% # Reduce size of dataset
     select(-Hour, -DateDay) %>% 
+    # set Date to same year
+    mutate(Date = ymd_hms(format(Date, "2020-%m-%d %H-%M-%S"))) %>% 
     relocate(Date) %>% 
-    arrange(Place, Date)
+    arrange(Place, Date) 
   write_csv(dat, fn)
   return(dat)
 }
