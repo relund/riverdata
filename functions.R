@@ -352,7 +352,7 @@ calcWaterLevelsWeb <- function(dat, fn) {
                    tmp <- NULL
                    for (y in df %>% distinct(year(Date)) %>% pull()) {
                      dayS <- as.numeric(date(paste0(y, "-", month(now()), "-", day(now()))))
-                     tmp1 <- df %>% filter(DaysSince <= dayS & DaysSince >= dayS - 60) %>% 
+                     tmp1 <- df %>% filter(DaysSince <= dayS & DaysSince >= dayS - 14) %>% 
                        arrange(Date) %>% mutate(YGroup = y)  
                      if (nrow(tmp1) == 0) next
                      tmp1 <- tmp1 %>% mutate(DaysCtr = 1:nrow(tmp1), PV = ((row_number()-1) %% 16 == 0) )
