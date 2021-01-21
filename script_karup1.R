@@ -7,7 +7,42 @@ library(zoo)
 source("functions.R")
 
 #### Catch records ####
-dat4 <- writeCatchKarup()
+datCatchSeatrout <- writeCatchKarup()
+
+#### Seatrout - Estimate weight given length ####
+# datCKilled <- datCatchSeatrout %>% 
+#   mutate(Length = round(Length), Weight = round(Weight,1), Month = month(Date, label = T)) %>%
+#   mutate(Period = factor(Month, ordered = F)) %>% 
+#   dplyr::filter(Length > 39 & Killed) 
+# mod <- lm(log(Weight) ~ Period*log(Length), datCKilled)
+# datP <- expand_grid(Length = 40:max(datCKilled$Length), Period = unique(datCKilled$Period))
+# res <- predict(mod, datP, interval='prediction', level=0.95) 
+# res <- exp(res)
+# res <- res %>% as_tibble() 
+# res <- bind_cols(datP, res) %>% group_by(Period) #%>% select(Length:Avg)
+# colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
+# 
+# ## Save to file
+# fn <- "data/data_skjern_weight_seatrout.csv"
+# write_csv(res, fn)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### Estimate weight given length ####
 prefix <- "https://raw.githubusercontent.com/relund/skjern/master/data/"

@@ -6,63 +6,24 @@ library(lubridate)
 library(zoo)
 source("functions.R")
 
+prefix <- "data/data_skjern"
 
 #### Flow though lock at Hvide Sande ####
-updateLockSkjern("data/data_skjern_flow_lock.csv")
+updateLockSkjern(prefix)
 
 #### Catch records ####
 
 if (day(now()) == 19) {
-  datCatchSalmon <- updateCatchSkjern("data/data_skjern_catch_salmon.csv", species = "salmon", reset = TRUE)   #, reset = T, start = 2004
-  datCatchSeatrout <- updateCatchSkjern("data/data_skjern_catch_seatrout.csv", species = "trout", reset = TRUE) 
+  datCatchSalmon <- updateCatchSkjern(prefix, species = "salmon", reset = TRUE, start = 2020)   #, reset = T, start = 2004
+  datCatchSeatrout <- updateCatchSkjern(prefix, species = "trout", reset = TRUE) 
 } else {
-  datCatchSalmon <- updateCatchSkjern("data/data_skjern_catch_salmon.csv", species = "salmon") 
-  datCatchSeatrout <- updateCatchSkjern("data/data_skjern_catch_seatrout.csv", species = "trout")
+  datCatchSalmon <- updateCatchSkjern(prefix, species = "salmon") 
+  datCatchSeatrout <- updateCatchSkjern(prefix, species = "trout")
 }
 
-#### Salmon - Estimate weight given length ####
-# dat <- datCatchSalmon %>% 
-#   mutate(Period = factor(month(Date, label = T), ordered = F)) 
-# datWeightSalmon <- estimateWeight("data/data_skjern_weight_salmon.csv", dat, minLength = 40, maxLength = 145)
-# 
-# dat <- datCatchSeatrout %>% 
-#   mutate(Period = factor(month(Date, label = T), ordered = F)) 
-# datWeightSeatrout <- estimateWeight("data/data_skjern_weight_seatrout.csv", dat, minLength = 40)
-
-# datCKilled <- datCatchSalmon %>% 
-#   mutate(Length = round(Length), Month = month(Date, label = T)) %>%
-#   mutate(Period = factor(Month, ordered = F)) %>% 
-#   dplyr::filter(Length > 39 & Killed) 
-# mod <- lm(log(Weight) ~ Period*log(Length), datCKilled)
-# datP <- expand_grid(Length = 40:145, Period = unique(datCKilled$Period))
-# res <- predict(mod, datP, interval='prediction', level=0.95) 
-# res <- exp(res)t
-# res <- res %>% as_tibble() 
-# res <- bind_cols(datP, res) %>% group_by(Period) #%>% select(Length:Avg)
-# colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
-# 
-# ## Save to file
-# fn <- "data/data_skjern_weight_salmon.csv"
-# write_csv(res, fn)
-
-
-#### Seatrout - Estimate weight given length ####
-# datCKilled <- datCatchSeatrout %>% 
-#   mutate(Length = round(Length), Weight = round(Weight,1), Month = month(Date, label = T)) %>%
-#   mutate(Period = factor(Month, ordered = F)) %>% 
-#   dplyr::filter(Length > 39 & Killed) 
-# mod <- lm(log(Weight) ~ Period*log(Length), datCKilled)
-# datP <- expand_grid(Length = 40:max(datCKilled$Length), Period = unique(datCKilled$Period))
-# res <- predict(mod, datP, interval='prediction', level=0.95) 
-# res <- exp(res)
-# res <- res %>% as_tibble() 
-# res <- bind_cols(datP, res) %>% group_by(Period) #%>% select(Length:Avg)
-# colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
-# 
-# ## Save to file
-# fn <- "data/data_skjern_weight_seatrout.csv"
-# write_csv(res, fn)
-
+#### Weight ####
+estimateWeight(paste0(prefix, "_weight_salmon.csv"), datCatchSalmon, minLength =  40, maxLength = 145)
+estimateWeight(paste0(prefix, "_weight_seatrout.csv"), datCatchSeatrout, minLength =  40)
 
 #### Waterlevel - Prelim data set ####
 # # Find id using http://hydrometri.azurewebsites.net/Scripts/azureplot_new.js and set a breakpoint
@@ -168,7 +129,6 @@ stations <-
                    "Rind Å - Arnborg kirke",
                    "Omme Å - Sønderskov bro",
                    "Fjederholt Å - A18"))
-prefix <- "data/data_skjern_waterlevel"
 ## Update data current year
 updateWaterLevel(stations, prefix)    
 
