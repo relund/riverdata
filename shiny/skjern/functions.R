@@ -178,6 +178,8 @@ monthlyStat <- function(datCatch, year) {
     unnest(cols = c(TotalStat, PlaceStat, MethodStat)) %>% select(-data) %>% 
     replace(., is.na(.), 0)
   
+  # check for missing columns
+  if (!("TotalP_Andet" %in% names(dat))) dat <- dat %>% mutate(TotalP_Andet = 0, KilledP_Andet = 0)
   dat <- 
     dat  %>% 
     ungroup() %>% 

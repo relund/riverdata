@@ -96,10 +96,6 @@ datWLevel <-
   #dplyr::filter(Date > now() - days(14)) %>% 
   dplyr::filter(str_detect(Place, "Skjern|Rind"))
 
-datWLevel %>% distinct(YGroup)
-datWLevel %>% filter(YGroup == 2020) %>% distinct(Place)
-
-
 # Lock flow
 datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock.csv"), 
                     locale = locale(tz = "CET"),
