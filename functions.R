@@ -25,7 +25,7 @@ updateCatchSkjern <- function(prefix, species, start = year(now()), reset = F) {
   datOld <- NULL
   if (species == "salmon") fn <- paste0(prefix, "_catch_salmon.csv") 
   if (species == "trout") fn <- paste0(prefix, "_catch_seatrout.csv")
-  if (file.exists(fn) & !reset) {
+  if (file.exists(fn)) {
     datOld <- read_csv(fn, col_types = "DddccccllcclccTd")
     foundId <- datOld %>% pull(Id)
   }
@@ -38,7 +38,9 @@ updateCatchSkjern <- function(prefix, species, start = year(now()), reset = F) {
   
   curY <- year(now())
   dat <- NULL
+  message("  Consider year:", appendLF = F)
   for (y in start:curY) {
+    message(" ", y, appendLF = F)
     url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=", species)
     page <- read_html(url)
     ids <- html_nodes(page, xpath = '//*[@id="report-list"]/tbody/tr/@data-id') %>% 
@@ -55,6 +57,7 @@ updateCatchSkjern <- function(prefix, species, start = year(now()), reset = F) {
       dat <- bind_rows(val, dat)
     }
   }
+  message("")
   
   if (!is.null(dat)) {
     dat <- dat %>% select("Id" = id, "Date" = date, "Length" = length_cm, "Weight" = weight_kg, "Sex" = sex, "Place" = location, "Cut" = cut_fin, "Net" = net_injury, "NetDesc" = injury_description, "Killed" = released, "Method" = method, "Notes" = notes, "Kelt" = kelt, "ReportDate" = report_date, "Name" = name, "Foto" = imagefile)
@@ -102,7 +105,7 @@ updateCatchSkjern <- function(prefix, species, start = year(now()), reset = F) {
     # Try to fix errors
     dat <- dat %>% mutate(Length = if_else(Length < 40 & Weight > 0.5, NA_real_, Length))
 
-    if (reset & !is.null(datOld)) datOld <- datOld %>% filter(year(date) < start)
+    if (reset & !is.null(datOld)) datOld <- datOld %>% filter(year(Date) < start)
     dat <- bind_rows(datOld,dat)
     dat <- dat %>% 
       dplyr::filter(Length > 39 | is.na(Length)) %>% 
