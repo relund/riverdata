@@ -30,6 +30,8 @@ $(".selectize-input input").prop('readonly','readonly');
 library(knitr)
 knitr::opts_chunk$set(echo = FALSE)
 library(ggplot2)
+#library(ggrepel)
+library(directlabels)
 library(plotly)
 library(flexdashboard)
 library(tidyverse)
@@ -92,7 +94,11 @@ datStatMonthSea <- monthlyStat(datCatchSea, curYear)
 datWLevel <- 
   read_csv(paste0(prefix, "data_skjern_waterlevel_web.csv"), col_types = "Tffdd") %>% 
   #dplyr::filter(Date > now() - days(14)) %>% 
-  dplyr::filter(str_detect(Place, "Skjern|Rind")) 
+  dplyr::filter(str_detect(Place, "Skjern|Rind"))
+
+datWLevel %>% distinct(YGroup)
+datWLevel %>% filter(YGroup == 2020) %>% distinct(Place)
+
 
 # Lock flow
 datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock.csv"), 
@@ -481,7 +487,7 @@ output$plotWeightSea <- renderPlotly({
 
 
 
-Nuværende {data-navmenu="Vandstand"}
+Vandstand 
 =======================================================================
 
 Row {data-height=1000}
@@ -507,16 +513,21 @@ output$plotWLevelPresent <- renderPlotly({
   p <- ggplot(
     data = tmp, 
     aes(x = Dato, y = Vandstand, color = Year, size = Size, group = 1,   # group = 1,  must be added for working https://stackoverflow.com/questions/45948926/ggplotly-text-aesthetic-causing-geom-line-to-not-display
-        text = str_c("Dato: ", format(Dato, "%e. %b %H:00"), '<br>Vandstand: ', Vandstand, ' cm'))) + 
+        text = str_c("Dato: ", format(Dato, "%e. %b %H:00"), '<br>Vandstand: ', Vandstand, ' cm'))) 
     # geom_smooth(aes(group = Group), na.rm = T, method = lm, formula = y ~ splines::bs(x, 40), 
     #             se = FALSE, color = "grey", lwd=0.5) +
-    geom_line(na.rm = T) + 
-    ylab(yLab) + xlab("Dato") +
-    #theme(legend.position="bottom") +
-    scale_x_datetime(date_breaks = "1 day", date_labels = "%e. %b") +
-    scale_size_continuous(range = c(0.5, 1))
+  
   if (input$iScaleW == "LevelRelative") p <- p + geom_hline(yintercept = 0, colour="black")
-  ggplotly(p, tooltip = c("text")) %>% plotly::layout(legend = list(orientation = "h"))
+  p <- p +
+    geom_line(na.rm = T) + 
+    geom_text(data = tmp %>% group_by(Year) %>% filter(Dato == max(Dato)), 
+              aes(label = Year, x = max(.data$Dato) + hours(12), y = Vandstand, color = Year), 
+              size = 6) + 
+    ylab(yLab) + xlab("Dato") +
+    theme(legend.position="none") +
+    scale_x_datetime(date_breaks = "1 day", date_labels = "%e. %b") +
+    scale_size_continuous(range = c(0.25, 1))
+  ggplotly(p, tooltip = c("text"))
 })
 ```
 
@@ -534,74 +545,6 @@ selectInput("iPlaceW", "Sted:", cIPlaceWUnit, selected = cIPlaceWUnit[2], select
 cIScaleWUnit <- c("Relativ" = "LevelRelative", "Absolut" = "Level")
 selectInput("iScaleW", "Vælg enhed på y-aksen:", cIScaleWUnit, selectize = FALSE)
 ```
-
-
-Over år {data-navmenu="Vandstand"}
-=======================================================================
-
-Row
------------------------------------------------------------------------
-  
-### Vandstand over år
-  
-```{r}
-plotlyOutput("plotWLevelYear")
-```
-
-```{r Vandstand årlig, context = "server"}
-# renderPlot({
-#   readGHWLevels <- function(years) {
-#     dat <- NULL
-#     for (y in years) {
-#       fn <- paste0(prefix, "data_skjern_waterlevel_relative_long_", y, ".csv")
-#       dat <- bind_rows(dat, read_csv(fn))
-#     }
-#     return(dat)
-#   }
-#   datWLevelAllL <- readGHWLevels(2017:2020)
-#   
-#   # datWLevelL <- datWLevel %>%
-#   #   pivot_longer(cols = contains(c('K','H')), names_to = 'Group', values_to = 'Level') %>%
-#   #   mutate(Sted = case_when(
-#   #     grepl("Karup", Group, fixed = T) ~ "Karup By",
-#   #     grepl("Nør", Group, fixed = T) ~ "Nørkærbro",
-#   #     grepl("Hage", Group, fixed = T) ~ "Hagebro",
-#   #     TRUE ~ "??"),
-#   #     Type = if_else(grepl("Avg", Group, fixed = T), "gens", "måling")
-#   #   )
-#   ggplot(data = datWLevelAllL, aes(x = Date, y = Level)) +
-#     geom_line(aes(), na.rm = T) +
-#     facet_grid(rows = vars(Place), scales = "free") +
-#     # labs(title = "Vandstand i Karup Å",
-#     #      subtitle = "Gennemsnit er beregnet over 90 dage (givet data for alle år)") +
-#     theme(legend.position="bottom") +
-#     ylab("Relativ vandstand (m)") + xlab("Dato") 
-# })
-output$plotWLevelYear <- renderPlotly({
-  loc <- Sys.setlocale("LC_TIME", "Danish")
-  on.exit(Sys.setlocale("LC_TIME", loc))
-  readGHWLevels <- function(years) {
-    dat <- NULL
-    for (y in years) {
-      fn <- paste0(prefix, "data_skjern_waterlevel_relative_long_", y, ".csv")
-      dat <- bind_rows(dat, read_csv(fn))
-    }
-    return(dat)
-  }
-  datWLevelAllL <- readGHWLevels(2017:2020)
-  
-  p <- ggplot(data = datWLevelAllL, aes(x = Date, y = Level, group = 1, 
-        text = str_c("Dato: ", format(Date, "%e. %b %R"), '<br>Vandstand: ', round(Level,2)))) +
-    geom_line(aes(), size = 0.25, na.rm = T) +
-    facet_grid(rows = vars(Place), scales = "free") +
-    theme(legend.position="bottom") +
-    ylab("Relativ vandstand (m)") + xlab("Dato") 
-  ggplotly(p, tooltip = c("text")) %>% plotly::layout(legend = list(orientation = "h", x = 0.3, y = -0.4))
-})
-```
-
-
-
 
 Statistik `r curYear` {data-navmenu="Laks"}
 =======================================================================

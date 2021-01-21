@@ -158,7 +158,7 @@ if (day(now()) == 19) {
 # }
 
 
-#### Waterlevel - Update data current year ####
+#### Waterlevel ####
 stations <- 
   tibble(id = c("055416", "055414", "001862", "017898", "054757", "001855", "052386"), 
          place = c("Vorgod Å - Vandmøllen", 
@@ -168,28 +168,21 @@ stations <-
                    "Rind Å - Arnborg kirke",
                    "Omme Å - Sønderskov bro",
                    "Fjederholt Å - A18"))
-updateWaterLevel(stations)
+prefix <- "data/data_skjern_waterlevel"
+## Update data current year
+updateWaterLevel(stations, prefix)    
+
+## Calc moving average 
+dat <- readWLevels(prefix, 2017:year(now()))
+rMeans <- calcWaterMovAvg(dat, prefix)
+
+## Relative datasets 
+dat <- calcWaterLevelRelative(dat, rMeans, prefix)
+
+## Dataset for web 
+dat <- calcWaterLevelsWeb(dat, prefix)
 
 
-#### Waterlevel - Calc moving average ####
-dat <- readWLevels("data/data_skjern_waterlevel_long_", 2017:year(now())) 
-rMeans <- calcWaterMovAvg(dat)
-
-#### Waterlevel - Relative datasets ####
-dat <- calcWaterLevelRelative(dat, rMeans)
-
-#### Waterlevel - Dataset for web ####
-dat <- calcWaterLevelsWeb(dat, "data/data_skjern_waterlevel_web.csv")
-
-# dat <- dat %>% mutate(Label = str_c(day(Date), ". ", month(Date, label = T)))
-#  
-# tmp <- dat %>% filter(Place == "Vorgod Å - Vandmøllen (055416)")
-# labels <- tmp %>% ungroup() %>% filter(day(Date) %in% c(1,15)) %>% distinct(Label, .keep_all = T)
-# tmp %>% 
-#   ggplot(aes(x = DaysCtr, y = LevelRelative, color = factor(YGroup))) +
-#   geom_line() + 
-#   scale_x_continuous(name = "Dato", breaks = labels$DaysCtr, labels = labels$Label) 
-#   #theme(axis.text.x = element_text(angle = 45, vjust = 0.25))
 
 
 

@@ -177,15 +177,17 @@ updateLockSkjern <- function(fn) {
 #' Update water level data for current year (both absolute and relative)
 #'
 #' @param stations Stations under consideration.
+#' @param prefix Path prefix (e.g. data/data_skjern_waterlevel).
 #'
 #' @note Stations can be found at http://www.hydrometri.dk/hyd/. Get obs for the last 100 days
 #' @return Range of dates.
-updateWaterLevel <- function(stations) {
+updateWaterLevel <- function(stations, prefix) {
   year <- year(now())
   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
-  fn <- paste0("data/data_skjern_waterlevel_long_", year, ".csv")
+  fn <- paste0(prefix, "_", year, ".csv")
+  fnM <- paste0(prefix, "_avg90.csv")
   rMeans <-
-    read_csv("data/data_skjern_waterlevel_avg90_long.csv", 
+    read_csv(fnM, 
              col_types = cols(
                Place = col_character(),
                Day = col_double(),
@@ -233,15 +235,11 @@ updateWaterLevel <- function(stations) {
   message("  Write data to ", fn)
   write_csv(dat, fn)
   return(dat)
-  
   # for (y in distinct(dat, year(Date)) %>% pull()) {
   #   fn <- paste0("data/data_skjern_waterlevel_long_y", y, ".csv")
   #   message("  ... save ", fn)
   #   write_csv(dplyr::filter(dat, year(Date) == y), fn)
   # }
-  invisible(NULL)
-  
-  range(dat$Date)
 }
 
 
@@ -254,7 +252,7 @@ updateWaterLevel <- function(stations) {
 readWLevels <- function(prefix, years) {
   dat <- NULL
   for (y in years) {
-    fn <- paste0(prefix, y, ".csv")
+    fn <- paste0(prefix, "_", y, ".csv")
     dat <- 
       bind_rows(dat, 
                 read_csv(fn, col_types = cols(
@@ -271,11 +269,12 @@ readWLevels <- function(prefix, years) {
 #' Calc moving average
 #'
 #' @param dat Water level records.
+#' @param prefix Path prefix (e.g. data/data_skjern_waterlevel).
 #'
 #' @return The data set.
-calcWaterMovAvg <- function(dat) {
+calcWaterMovAvg <- function(dat, prefix) {
   message("Waterlevel: Update moving averages.")
-  fn <- "data/data_skjern_waterlevel_avg90_long.csv"
+  fn <- paste0(prefix, "_avg90.csv")
   # mov avg function
   movAvg <- function(x, days = 90){ 
     n <- days
@@ -307,9 +306,10 @@ calcWaterMovAvg <- function(dat) {
 #'
 #' @param dat Water level records.
 #' @param rMeans Average levels.
+#' @param prefix Path prefix (e.g. data/data_skjern_waterlevel).
 #'
 #' @return The dataset.
-calcWaterLevelRelative <- function(dat, rMeans) {
+calcWaterLevelRelative <- function(dat, rMeans, prefix) {
   message("Waterlevel: Update relative values.")
   dat <- dat %>% 
     mutate(Day = yday(Date)) %>% 
@@ -317,7 +317,7 @@ calcWaterLevelRelative <- function(dat, rMeans) {
     mutate(LevelRelative = Level - Level_rAvg90) %>% 
     select(-Day, -Level_rAvg90)
   for (y in distinct(dat, year(Date)) %>% pull()) {
-    fn <- paste0("data/data_skjern_waterlevel_long_", y, ".csv")
+    fn <- paste0(prefix, "_", y, ".csv")
     message("  Write data to ",fn)
     write_csv(dplyr::filter(dat, year(Date) == y), fn)
   }
@@ -337,10 +337,12 @@ findPeaks <- function (x, thresh = 0)
 #' Calculate dataset for web
 #'
 #' @param dat Water level data set.
-#' @param fn File name with path.
+#' @param prefix Path prefix (e.g. data/data_skjern_waterlevel).
 #'
 #' @return The data set
-calcWaterLevelsWeb <- function(dat, fn) {
+calcWaterLevelsWeb <- function(dat, prefix) {
+  message("Waterlevel: Calc dataset for web.")
+  fn <- paste0(prefix, "_web.csv")
   dat <- dat %>% 
     ## data 14 days back for each year
     mutate(DaysSince = as.numeric(date(Date))) %>% 
@@ -353,7 +355,7 @@ calcWaterLevelsWeb <- function(dat, fn) {
                    tmp <- NULL
                    for (y in df %>% distinct(year(Date)) %>% pull()) {
                      dayS <- as.numeric(date(paste0(y, "-", month(now()), "-", day(now()))))
-                     tmp1 <- df %>% filter(DaysSince <= dayS & DaysSince >= dayS - 14) %>% 
+                     tmp1 <- df %>% filter(DaysSince <= dayS & DaysSince >= dayS - 15) %>% 
                        arrange(Date) %>% mutate(YGroup = y)  
                      if (nrow(tmp1) == 0) next
                      tmp <- bind_rows(tmp, tmp1)
@@ -395,6 +397,7 @@ calcWaterLevelsWeb <- function(dat, fn) {
     mutate(Date = ymd_hms(format(Date, "2020-%m-%d %H-%M-%S"))) %>% 
     relocate(Date) %>% 
     arrange(Place, YGroup, Date) 
+  message("  Write data to ",fn)
   write_csv(dat, fn)
   return(dat)
 }
