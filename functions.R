@@ -424,7 +424,7 @@ calcWaterLevelsWeb <- function(dat, prefix) {
 #'
 #' @return The data.
 writeCatchKarup <- function() {
-  #### Save catches 2020- ####
+  message("Catch records: Update dataset.")
   ## data to today
   dat <- fromJSON("https://fangstjournalen.dtu.dk/fangst.nsf/service.xsp?open&assoc=49F1767931B31CD0C1258398007953C0&type=1")
   cols <- dat$data$cols
@@ -474,10 +474,12 @@ writeCatchKarup <- function() {
   dat4 <- dat4 %>% mutate(Name = str_to_title(str_replace_all(Name, c("Ikke oplyst" = NA, "Mogens Styhr Rasmussen" = "Mogens Styhr", "Ikke Oplyst" = NA, "Poul Godt Godt" = "Poul Godt", "KÅS [0-9 ]* " = "", "Kås [0-9 ]* " = "", ", Vridsted, 2017123" = "", "Xx Yy" = NA))))
   dat4 <- dat4 %>% mutate(Name = str_replace(Name, fixed("**********"), NA)) %>% mutate(Name = str_replace(Name, "Xx Yy", NA_character_))
   dat4 <- dat4 %>% mutate(Place = str_replace_all(Place, c("Mellem.*" = "Mellem", "Øvre.*" = "Øvre", "Nedre.*" = "Nedre")))
-  unique(dat4$Place)
+  dat4 <- dat4 %>% select(-Fulton)
+  # unique(dat4$Place)
   
   ## Save to file
   fn <- "data/data_karup_catch_seatrout_2020-.csv"
+  message("  Write data to ",fn)
   write_csv(dat4, fn)
   return(dat4)
 }
