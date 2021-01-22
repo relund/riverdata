@@ -610,7 +610,7 @@ sliderInput("iInvYearSea", label = "Vælg årstal:",
             value = c(2016, year(now())), step = 1)
 sliderInput("iInvDaySea", label = "Vælg dato interval: ",
             min = as.Date("2019-03-01"), max = as.Date("2019-10-31"), 
-            value = c(as.Date("2019-04-01"), as.Date("2019-10-31")), step = 1,
+            value = c(as.Date("2019-03-01"), as.Date("2019-10-31")), step = 1,
             timeFormat = "%d %b")
 ```
 

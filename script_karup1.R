@@ -69,7 +69,6 @@ estimateWeight(paste0(prefix, "_weight_seatrout.csv"), datCatchSeatrout, minLeng
 
 #### Waterlevel ####
 stations <- tibble(id = c("054764", "001762", "001767"), place = c("Karup By", "Hagebro", "Nørkærbro"))
-prefix <- "data/data_karup_waterlevel"
 ## Update data current year
 updateWaterLevel(stations, prefix)    
 
