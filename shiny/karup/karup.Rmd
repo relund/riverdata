@@ -488,7 +488,7 @@ datStatYearSea %>%
 Row
 -----------------------------------------------------------------------
 
-### Månedlige fangster givet sted 2004-`r year(now())`
+### Månedlige fangster givet sted 2003-`r year(now())`
 
 ```{r}
 plotOutput("plotCatchSeaMonthlyP")
@@ -509,7 +509,7 @@ output$plotCatchSeaMonthlyP <- renderPlot({
 })
 ```
 
-### Månedlige fangster givet metode 2004-`r year(now())`
+### Månedlige fangster givet metode 2003-`r year(now())`
 
 ```{r}
 plotOutput("plotCatchSeaMonthlyM")
@@ -606,7 +606,7 @@ Row {data-height=250}
 ### 
 ```{r}
 sliderInput("iInvYearSea", label = "Vælg årstal:",
-            min = 2004, max = year(now()), sep = "",
+            min = 2003, max = year(now()), sep = "",
             value = c(2016, year(now())), step = 1)
 sliderInput("iInvDaySea", label = "Vælg dato interval: ",
             min = as.Date("2019-03-01"), max = as.Date("2019-10-31"), 
