@@ -426,7 +426,7 @@ calcWaterTempWeb <- function(dat, rMeans, prefix) {
                    for (y in df %>% distinct(year(Date)) %>% pull()) {
                      dayS <- as.numeric(date(paste0(y, "-", month(now()), "-", day(now()))))
                      tmp1 <- df %>% filter(DaysSince <= dayS & DaysSince >= dayS - 15) %>% 
-                       arrange(Date) %>% mutate(YGroup = y)  
+                       arrange(Date) %>% mutate(YGroup = as.character(y))  
                      if (nrow(tmp1) == 0) next
                      tmp <- bind_rows(tmp, tmp1)
                    } 
@@ -445,6 +445,14 @@ calcWaterTempWeb <- function(dat, rMeans, prefix) {
     mutate(Date = ymd_hms(format(Date, "2020-%m-%d %H-%M-%S"))) %>% 
     relocate(Date) %>% 
     arrange(Place, YGroup, Date) 
+  # add avg as group
+  dat <- dat %>% 
+    bind_rows(dat, 
+              dat %>% 
+                filter(YGroup == year(now())) %>% 
+                group_by(Place) %>% 
+                transmute(Date, YGroup = "Gens", Temp = Avg)) %>% 
+    select(-Avg)
   message("  Write data to ",fn)
   write_csv(dat, fn)
   return(dat)
