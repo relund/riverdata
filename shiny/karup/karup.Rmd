@@ -89,6 +89,10 @@ datStatMonthSea <- monthlyStat(datCatchSea, curYear)
 # Water levels 
 datWLevel <- 
   read_csv(paste0(prefix, "data_karup_waterlevel_web.csv"), col_types = "Tffdd") 
+
+# Water temperature
+datWTemp <- 
+  read_csv(paste0(prefix, "data_karup_watertemp_web.csv"), col_types = "Tffdd") 
 ```
 
 ```{r, eval=FALSE}
@@ -324,7 +328,7 @@ output$plotWLevelPresent <- renderPlotly({
     geom_line(na.rm = T) + 
     geom_text(data = tmp %>% group_by(Year) %>% filter(Dato == max(Dato)), 
               aes(label = Year, x = max(.data$Dato) + hours(12), y = Vandstand, color = Year), 
-              size = 6) + 
+              size = 3) + 
     ylab(yLab) + xlab("Dato") +
     theme(legend.position="none") +
     scale_x_datetime(date_labels = "%e. %b") +
@@ -346,6 +350,45 @@ selectInput("iPlaceW", "Sted:", cIPlaceWUnit, selected = cIPlaceWUnit[2], select
 cIScaleWUnit <- c("Relativ" = "LevelRelative", "Absolut" = "Level")
 selectInput("iScaleW", "Vælg enhed på y-aksen:", cIScaleWUnit, selectize = FALSE)
 ```
+
+
+Vandtemperatur
+=======================================================================
+
+Row 
+-----------------------------------------------------------------------
+
+### 
+```{r}
+plotlyOutput("plotWTempPresent")
+```
+
+```{r, context = "server"}
+
+output$plotWTempPresent <- renderPlotly({
+  loc <- Sys.setlocale("LC_TIME", "da_DK")
+  on.exit(Sys.setlocale("LC_TIME", loc))
+  tmp <- datWTemp %>% 
+      transmute(Date, Temp, Avg, Year = YGroup, Size = if_else(Year == year(now()), 2, 1))
+  p <- ggplot(data = tmp,
+              aes(x = Date, y = Temp, color = Year, size = Size, group = 1, 
+                  text = str_c("Dato: ", format(Date, "%e. %b %H:00"), '<br>Temp: ', Temp, ''))) +
+    geom_smooth(mapping = aes(y = Avg), data = datWTemp, colour="black", size = 0.1, span = 0.5) +
+    geom_line(na.rm = T) + 
+    geom_text(data = tmp %>% group_by(Year) %>% filter(Date == max(Date)), 
+              aes(label = Year, x = max(Date) + hours(12)), 
+              size = 3)  + 
+    ylab("Temperatur") + xlab("Dato") +
+    theme(legend.position="none") +
+    scale_x_datetime(date_labels = "%e. %b") +
+    scale_size_continuous(range = c(0.25, 1))
+  ggplotly(p, tooltip = c("text"))
+})
+```
+
+
+
+
 
 Statistik `r curYear` {data-navmenu="Havørred"}
 =======================================================================
