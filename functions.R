@@ -278,6 +278,22 @@ readWLevels <- function(prefix, years) {
   return(dat)
 }
 
+#' Read water temperature files
+#'
+#' @param prefix Path prefix (e.g. data/data_skjern). 
+#' @param years Years to load.
+#'
+#' @return The data set.
+readWTemp <- function(prefix, years) {
+  dat <- NULL
+  for (y in years) {
+    fn <- paste0(prefix, "_watertemp_", y, ".csv")
+    dat <- 
+      bind_rows(dat, read_csv(fn, col_types = "Tfd"))
+  }
+  return(dat)
+}
+
 
 #' Calc moving average for water level
 #'
@@ -315,6 +331,43 @@ calcWaterMovAvg <- function(dat, prefix) {
 }
 
 
+#' Calc moving average for water temperature
+#'
+#' @param dat Water temperature records.
+#' @param prefix Path prefix (e.g. data/data_skjern).
+#'
+#' @return The data set.
+calcWaterTempMovAvg <- function(dat, prefix) {
+  message("Water temperature: Update moving averages.")
+  fn <- paste0(prefix, "_watertemp_avg30.csv")
+  # mov avg function
+  movAvg <- function(x, days = 30){ 
+    n <- days
+    stats::filter(x, rep(1 / n, n), sides = 2, circular = T)
+  }
+  
+  tmp <- dat %>% 
+    select(Date, Place, Temp) %>% 
+    mutate(Day = yday(Date)) %>% 
+    group_by(Day, Place) %>% 
+    summarise_if(is.numeric, mean, na.rm = TRUE) %>% 
+    group_by(Place) %>% 
+    nest() %>% 
+    mutate(data = map(data, function(df) {
+      df %>% mutate(Temp = if_else(Day==366, lag(Temp), Temp)) 
+    })) %>% 
+    mutate(data = map(data, function(df) {
+      df %>% mutate(Temp = movAvg(Temp)) 
+    })) %>% 
+    unnest(cols = c(data)) %>% 
+    rename(Temp_rAvg90 = Temp) 
+  message("  Write data to ", fn)
+  write_csv(tmp, fn)
+  return(tmp)
+}
+
+
+
 #' Calc relative water levels
 #'
 #' @param dat Water level records.
@@ -344,6 +397,52 @@ findPeaks <- function (x, thresh = 0)
     pks[x[pks - 1] - x[pks] > thresh]
   }
   else pks
+}
+
+
+#' Calculate dataset for web
+#'
+#' @param dat Water level data set.
+#' @param prefix Path prefix (e.g. data/data_skjern).
+#'
+#' @return The data set
+calcWaterTempWeb <- function(dat, prefix) {
+  message("Water temperature: Calc dataset for web.")
+  fn <- paste0(prefix, "_watertemp_web.csv")
+  dat <- dat %>% 
+    ## data 14 days back for each year
+    mutate(DaysSince = as.numeric(date(Date))) %>% 
+    group_by(Place) %>% 
+    arrange(desc(Date)) %>% 
+    nest() %>% 
+    mutate(data = 
+             map(data,
+                 function(df) {
+                   tmp <- NULL
+                   for (y in df %>% distinct(year(Date)) %>% pull()) {
+                     dayS <- as.numeric(date(paste0(y, "-", month(now()), "-", day(now()))))
+                     tmp1 <- df %>% filter(DaysSince <= dayS & DaysSince >= dayS - 15) %>% 
+                       arrange(Date) %>% mutate(YGroup = y)  
+                     if (nrow(tmp1) == 0) next
+                     tmp <- bind_rows(tmp, tmp1)
+                   } 
+                   return(tmp)
+                 })) %>% 
+    unnest(cols = "data") %>% 
+    # mean over each hour
+    mutate(Hour = hour(Date), DateDay = date(Date)) %>% 
+    group_by(Hour, Place, DateDay, YGroup) %>% 
+    summarise(Date = median(Date), 
+              Temp = round(mean(Temp),1), 
+              .groups = "drop") %>% 
+    select(-Hour, -DateDay) %>% 
+    # set Date to same year 
+    mutate(Date = ymd_hms(format(Date, "2020-%m-%d %H-%M-%S"))) %>% 
+    relocate(Date) %>% 
+    arrange(Place, YGroup, Date) 
+  message("  Write data to ",fn)
+  write_csv(dat, fn)
+  return(dat)
 }
 
 
@@ -394,18 +493,18 @@ calcWaterLevelsWeb <- function(dat, prefix) {
     #                for (y in df %>% distinct(year(Date)) %>% pull()) {
     #                  dayS <- as.numeric(date(paste0(y, "-", month(now()), "-", day(now()))))
     #                  tmp1 <- df %>% filter(DaysSince <= dayS & DaysSince >= dayS - 14) %>% 
-    #                    arrange(Date) %>% mutate(YGroup = y)  
-    #                  if (nrow(tmp1) == 0) next
-    #                  tmp1 <- tmp1 %>% mutate(DaysCtr = 1:nrow(tmp1), PV = ((row_number()-1) %% 16 == 0) )
-    #                  idx <- unique(findPeaks(tmp1$LevelRelative), findPeaks(tmp1$Level))
-    #                  tmp1$PV[idx] <- TRUE
-    #                  tmp <- bind_rows(tmp, tmp1)
-    #                } 
-    #                return(tmp)
-    #              })) %>% 
-    # unnest(cols = "data") %>% 
-    # filter(PV) %>% # Reduce size of dataset
-    select(-Hour, -DateDay) %>% 
+  #                    arrange(Date) %>% mutate(YGroup = y)  
+  #                  if (nrow(tmp1) == 0) next
+  #                  tmp1 <- tmp1 %>% mutate(DaysCtr = 1:nrow(tmp1), PV = ((row_number()-1) %% 16 == 0) )
+  #                  idx <- unique(findPeaks(tmp1$LevelRelative), findPeaks(tmp1$Level))
+  #                  tmp1$PV[idx] <- TRUE
+  #                  tmp <- bind_rows(tmp, tmp1)
+  #                } 
+  #                return(tmp)
+  #              })) %>% 
+  # unnest(cols = "data") %>% 
+  # filter(PV) %>% # Reduce size of dataset
+  select(-Hour, -DateDay) %>% 
     # set Date to same year 
     mutate(Date = ymd_hms(format(Date, "2020-%m-%d %H-%M-%S"))) %>% 
     relocate(Date) %>% 
@@ -492,7 +591,7 @@ writeCatchKarup <- function() {
 #' @param prefix Path prefix (e.g. data/data_karup).
 #'
 #' @note Stations can be found at http://www.hydrometri.dk/hyd/. Get obs for the last 100 days
-#' @return Range of dates.
+#' @return The dataset.
 updateWaterTempKarup <- function(stations, prefix) {
   year <- year(now())
   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")

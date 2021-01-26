@@ -89,3 +89,9 @@ stations <- tibble(id = c("59885"), place = c("Hagebro"))
 ## Update data current year
 updateWaterTempKarup(stations, prefix)  
 
+## Calc moving average 
+dat <- readWTemp(prefix, 2020:year(now()))
+calcWaterTempMovAvg(dat, prefix)
+
+## Dataset for web 
+dat <- calcWaterTempWeb(dat, prefix)
