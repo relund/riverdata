@@ -81,3 +81,11 @@ dat <- calcWaterLevelRelative(dat, rMeans, prefix)
 
 ## Dataset for web 
 dat <- calcWaterLevelsWeb(dat, prefix)
+
+
+#### Water temperature ####
+
+stations <- tibble(id = c("59885"), place = c("Hagebro"))
+## Update data current year
+updateWaterTempKarup(stations, prefix)  
+

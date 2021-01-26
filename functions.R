@@ -484,3 +484,53 @@ writeCatchKarup <- function() {
   return(dat4)
 }
 
+
+
+' Update water temperature data for current year 
+#'
+#' @param stations Stations under consideration.
+#' @param prefix Path prefix (e.g. data/data_karup).
+#'
+#' @note Stations can be found at http://www.hydrometri.dk/hyd/. Get obs for the last 100 days
+#' @return Range of dates.
+updateWaterTempKarup <- function(stations, prefix) {
+  year <- year(now())
+  iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
+  fn <- paste0(prefix, "_watertemp_", year, ".csv")
+  message("Water temperature: Update datasets.")
+  # read data for last 100 days
+  if (file.exists(fn)) {
+    datOld <- read_csv(fn, col_types = "Tcdd") 
+  } else datOld <- NULL
+  dat <- NULL
+  for (i in 1:nrow(stations)) {
+    id <- stations$id[i]
+    place <- stations$place[i]
+    # get obs for last 100 days
+    tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=100&pw=100000000&inclraw=true"))
+    offset <- as.numeric(tmp$tsh$Offset)
+    tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
+    tmp$V <- tmp$V - rep(offset, length(tmp$V))
+    colnames(tmp) <- c("Date", paste0(place, " (", id, ")"))
+    if (is.null(dat)) {
+      dat <- tmp
+    } else {
+      dat <- full_join(dat, tmp, by = "Date")
+    }
+  }
+  dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
+  dat <- dat %>% dplyr::filter(year(Date) == year) %>%
+    arrange_all(desc) %>%
+    distinct(Date, .keep_all = T)
+  dat <- dat %>% 
+    pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Temp') %>% 
+    filter(!is.na(Temp))
+  # combine with old data
+  dat <- bind_rows(datOld, dat) %>% 
+    arrange_all(desc) %>%
+    distinct(Date, Place, .keep_all = T)
+  # save
+  message("  Write data to ", fn)
+  write_csv(dat, fn)
+  return(invisible(dat))
+}
