@@ -341,7 +341,7 @@ calcWaterTempMovAvg <- function(dat, prefix) {
   message("Water temperature: Update moving averages.")
   fn <- paste0(prefix, "_watertemp_avg.csv")
   # mov avg function
-  movAvg <- function(x, days = 30){ 
+  movAvg <- function(x, days = 60){ 
     n <- days
     stats::filter(x, rep(1 / n, n), sides = 2, circular = T)
   }
