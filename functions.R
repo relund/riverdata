@@ -339,7 +339,7 @@ calcWaterMovAvg <- function(dat, prefix) {
 #' @return The data set.
 calcWaterTempMovAvg <- function(dat, prefix) {
   message("Water temperature: Update moving averages.")
-  fn <- paste0(prefix, "_watertemp_avg30.csv")
+  fn <- paste0(prefix, "_watertemp_avg.csv")
   # mov avg function
   movAvg <- function(x, days = 30){ 
     n <- days
@@ -360,7 +360,7 @@ calcWaterTempMovAvg <- function(dat, prefix) {
       df %>% mutate(Temp = movAvg(Temp)) 
     })) %>% 
     unnest(cols = c(data)) %>% 
-    rename(Temp_rAvg90 = Temp) 
+    rename(Avg = Temp) 
   message("  Write data to ", fn)
   write_csv(tmp, fn)
   return(tmp)
@@ -406,8 +406,12 @@ findPeaks <- function (x, thresh = 0)
 #' @param prefix Path prefix (e.g. data/data_skjern).
 #'
 #' @return The data set
-calcWaterTempWeb <- function(dat, prefix) {
+calcWaterTempWeb <- function(dat, rMeans, prefix) {
   message("Water temperature: Calc dataset for web.")
+  dat <- dat %>% 
+    mutate(Day = yday(Date)) %>% 
+    left_join(rMeans, by = c("Place", "Day")) %>% 
+    select(-Day)
   fn <- paste0(prefix, "_watertemp_web.csv")
   dat <- dat %>% 
     ## data 14 days back for each year
@@ -434,6 +438,7 @@ calcWaterTempWeb <- function(dat, prefix) {
     group_by(Hour, Place, DateDay, YGroup) %>% 
     summarise(Date = median(Date), 
               Temp = round(mean(Temp),1), 
+              Avg = round(mean(Avg),1), 
               .groups = "drop") %>% 
     select(-Hour, -DateDay) %>% 
     # set Date to same year 
