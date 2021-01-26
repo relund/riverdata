@@ -83,6 +83,7 @@ dat <- calcWaterLevelRelative(dat, rMeans, prefix)
 dat <- calcWaterLevelsWeb(dat, prefix)
 
 
+
 #### Water temperature ####
 stations <- tibble(id = c("59885"), place = c("Hagebro"))
 
