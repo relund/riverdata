@@ -486,10 +486,10 @@ output$plotWeightSea <- renderPlotly({
 Vandstand 
 =======================================================================
 
-Row {data-height=1000}
+Row {data-height=800}
 -----------------------------------------------------------------------
 
-### 
+### Vandstand 
 ```{r}
 plotlyOutput("plotWLevelPresent")
 ```
@@ -518,16 +518,16 @@ output$plotWLevelPresent <- renderPlotly({
     geom_line(na.rm = T) + 
     geom_text(data = tmp %>% group_by(Year) %>% filter(Dato == max(Dato)), 
               aes(label = Year, x = max(.data$Dato) + hours(12), y = Vandstand, color = Year), 
-              size = 6) + 
+              size = 3, hjust = "left") + 
     ylab(yLab) + xlab("Dato") +
     theme(legend.position="none") +
-    scale_x_datetime(date_breaks = "1 day", date_labels = "%e. %b") +
+    scale_x_datetime(date_labels = "%e. %b") + #, limits = c(min(tmp$Dato), max(tmp$Dato) + hours(18))) +
     scale_size_continuous(range = c(0.25, 1))
   ggplotly(p, tooltip = c("text"))
 })
 ```
 
-Row {data-height=150}
+Row {data-height=200}
 -----------------------------------------------------------------------
 
 ###
@@ -536,7 +536,6 @@ cIPlaceWUnit <- unique(datWLevel$Place)
 selectInput("iPlaceW", "Sted:", cIPlaceWUnit, selected = cIPlaceWUnit[2], selectize = FALSE)
 ```
 
-###
 ```{r}
 cIScaleWUnit <- c("Relativ" = "LevelRelative", "Absolut" = "Level")
 selectInput("iScaleW", "Vælg enhed på y-aksen:", cIScaleWUnit, selectize = FALSE)
