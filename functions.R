@@ -438,7 +438,7 @@ calcWaterTempWeb <- function(dat, rMeans, prefix) {
     group_by(Hour, Place, DateDay, YGroup) %>% 
     summarise(Date = median(Date), 
               Temp = round(mean(Temp),1), 
-              Avg = round(mean(Avg),1), 
+              Avg = round(mean(Avg),3), 
               .groups = "drop") %>% 
     select(-Hour, -DateDay) %>% 
     # set Date to same year 

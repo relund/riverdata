@@ -92,7 +92,7 @@ datWLevel <-
 
 # Water temperature
 datWTemp <- 
-  read_csv(paste0(prefix, "data_karup_watertemp_web.csv"), col_types = "Tffdd") 
+  read_csv(paste0(prefix, "data_karup_watertemp_web.csv"), col_types = "Tffd") 
 ```
 
 ```{r, eval=FALSE}
@@ -369,11 +369,14 @@ output$plotWTempPresent <- renderPlotly({
   loc <- Sys.setlocale("LC_TIME", "da_DK")
   on.exit(Sys.setlocale("LC_TIME", loc))
   tmp <- datWTemp %>% 
-      transmute(Date, Temp, Avg, Year = YGroup, Size = if_else(Year == year(now()), 2, 1))
+      transmute(Date, Temp, Year = YGroup, 
+                Size = case_when(
+                  Year == "Gens" ~ 1,
+                  Year == year(now()) ~ 3,  
+                  TRUE ~ 2))
   p <- ggplot(data = tmp,
               aes(x = Date, y = Temp, color = Year, size = Size, group = 1, 
                   text = str_c("Dato: ", format(Date, "%e. %b %H:00"), '<br>Temp: ', Temp, ''))) +
-    geom_smooth(mapping = aes(y = Avg), data = datWTemp, colour="black", size = 0.1, span = 0.5) +
     geom_line(na.rm = T) + 
     geom_text(data = tmp %>% group_by(Year) %>% filter(Date == max(Date)), 
               aes(label = Year, x = max(Date) + hours(12)), 
