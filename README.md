@@ -1,10 +1,17 @@
-# Data relevant for Skjern Å
+# River data from Karup and Skjern river in Denmark
 
-Dette repository indeholder forskellige datasæt samlet fra forskellige websider:
+The repository contains data for river Karup and Skjern. See the data folder for datasets about
 
-1) `data_flow_sluse.csv` - [Sluse aktivitet (indstrøm er
-positiv)](http://hyde.dk/Sflow/default_flow.asp). For mere info se
-[slusepraksis](https://hvidesandehavn.dk/om-havnen/saltdata/). Bemærk, at der er altid 2 porte åben
-på 1 meter for at sikre en lokkestrøm og passage af fisk.
+1) Flow at [lock in Hvide Sande (flow into the fjord is
+positive)](http://hyde.dk/Sflow/default_flow.asp). For info see
+[slusepraksis](https://hvidesandehavn.dk/om-havnen/saltdata/). 
 
-2) `data_catch_salmon.csv` - [Catch of salmon](http://skjernaasam.dk/catchreport/?species=salmon)
+2) Catch data of salmon and seatrout from [river Skjern](https://skjernaasam.dk/) and [river Karup](https://karupaa.dk).
+
+3) Water level data [from different stations](https://www.hydrometri.dk/hyd/).
+
+4) Water temperature from [river Karup](https://www.hydrometri.dk/hyd/) and [river Skjern](https://www.hobolink.com/p/05811e4cdecf4a8832047fadcb59bbaf)
+
+5) Weight estimates calculated from a regression model (see reports folder).
+
+Two shiny dashboards using the data are made (see the shiny folder)
