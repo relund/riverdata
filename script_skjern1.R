@@ -144,6 +144,71 @@ dat <- calcWaterLevelsWeb(dat, prefix)
 
 
 
-
-
+#### Water temperature ####
+# 
+# ## Update data current year
+# updateWaterTempSkjern(stations, prefix)  
+# 
+# library(httr)
+# library(rvest)
+# library(dplyr)
+# res <- POST("https://www.hobolink.com/p/05811e4cdecf4a8832047fadcb59bbaf",
+#             encode="form",
+#             user_agent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.50 Safari/537.36"),
+#             add_headers(`Referer`="https://www.hobolink.com/p/05811e4cdecf4a8832047fadcb59bbaf"),
+#             body=list(
+#               # javax.faces.partial.ajax = "true",
+#               # javax.faces.source = "hobolink-devices-real-time-plots-form:j_idt198:j_idt399",
+#               # javax.faces.partial.execute = "@all",
+#               # javax.faces.partial.render = "hobolink-devices-real-time-plots-form:j_idt198:monthPlot367929",
+#               # `hobolink-devices-real-time-plots-form:j_idt198:j_idt399` = "hobolink-devices-real-time-plots-form:j_idt198:j_idt399",
+#               # `hobolink-devices-real-time-plots-form` = "hobolink-devices-real-time-plots-form",
+#               # `hobolink-devices-real-time-plots-form:j_idt198_activeIndex` = "2",
+#               # javax.faces.ViewState = "5420958408134968228:-5689265068462936229"
+#               
+#               javax.faces.partial.ajax = "true",
+#               javax.faces.source = "hobolink-devices-latest-data-form:latest-query-table-id:0:j_idt309",
+#               javax.faces.partial.execute = "@all",
+#               javax.faces.partial.render = "hobolink-devices-latest-data-form:hiddenDownloadButton",
+#               `hobolink-devices-latest-data-form:latest-query-table-id:0:j_idt309` = "hobolink-devices-latest-data-form:latest-query-table-id:0:j_idt309",
+#               `hobolink-devices-latest-data-form` = "hobolink-devices-latest-data-form",
+#               `hobolink-devices-latest-data-form:j_idt265_collapsed` = "false",
+#               `javax.faces.ViewState` = "1359004840769262366:3886099500288169103"
+#               
+#               # `javax.faces.partial.ajax` = "true",
+#               # `javax.faces.source` = "hobolink-devices-real-time-plots-form:j_idt198",
+#               # `javax.faces.partial.execute` = "hobolink-devices-real-time-plots-form:j_idt198",
+#               # `javax.faces.partial.render` = "hobolink-devices-real-time-plots-form:j_idt198",
+#               # `hobolink-devices-real-time-plots-form:j_idt198` = "hobolink-devices-real-time-plots-form:j_idt198",
+#               # `hobolink-devices-real-time-plots-form:j_idt198_contentLoad` = "true",
+#               # `hobolink-devices-real-time-plots-form:j_idt198_newTab` = "hobolink-devices-real-time-plots-form:j_idt198:month-tab",
+#               # `hobolink-devices-real-time-plots-form:j_idt198_tabindex` = "2",
+#               # `hobolink-devices-real-time-plots-form` = "hobolink-devices-real-time-plots-form",
+#               # `hobolink-devices-real-time-plots-form:j_idt198_activeIndex` = "2",
+#               # `javax.faces.ViewState` = "6311353073065817781:-147379906274328667"              
+#               
+#               
+#               ), verbose())
+# 
+# 
+# 
+# 
+# 
+# res_t <- content(res, as="text")
+# res_h <- paste0(unlist(strsplit(res_t, "\r\n"))[-1], sep="", collapse="\n")
+# 
+# 
+# 
+# monthGraphData367929
+# url <- "https://www.hobolink.com/p/05811e4cdecf4a8832047fadcb59bbaf"
+# page <- read_html(url)
+# ids <- html_nodes(page, 
+#                   xpath = '/html/body/div[4]/div/div[2]/div/div[2]/div[2]/div/form/div/div/div[2]/div/div/div/div[3]/div/div[5]/script') 
+# 
+# ## Calc moving average 
+# dat <- readWTemp(prefix, 2020:year(now()))
+# rMeans <- calcWaterTempMovAvg(dat, prefix)
+# 
+# ## Dataset for web 
+# dat <- calcWaterTempWeb(dat, rMeans, prefix)
 
