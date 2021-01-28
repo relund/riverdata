@@ -11,7 +11,7 @@ on:
     
 jobs:
   render:
-    name: Run script_karup1.R
+    name: Run script for Karup river
     runs-on: macOS-latest
     steps:
       - name: Checkout repo
