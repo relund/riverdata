@@ -43,6 +43,8 @@ library(flextable)
 library(shinyBS)
 library(kableExtra)
 # library(zoo) 
+library(leaflet)
+library(xml2)
 
 source("functions.R")
 
@@ -93,12 +95,25 @@ datWLevel <-
 # Water temperature
 datWTemp <- 
   read_csv(paste0(prefix, "data_karup_watertemp_web.csv"), col_types = "Tffd") 
+
+# Map places
+datPlaces <- read_xml("https://www.google.com/maps/d/u/0/kml?mid=1XJoAUKY_-kbmhZgovPpLgi82Gn8&forcekml=1")
+xml_ns_strip(datPlaces)
+datPlaces <- xml_find_all(datPlaces, "//Placemark")
+datPlaces <- tibble(name = xml_text(xml_find_all(datPlaces, ".//name")), 
+            cord = xml_text(xml_find_all(datPlaces, ".//coordinates"), trim = TRUE) ) %>% 
+  mutate(long = as.numeric(str_split_fixed(cord, ",", 3)[,1]), lat = as.numeric(str_split_fixed(cord, ",", 3)[,2])) %>% 
+  select(-cord)
+
+placeIcon <- makeIcon("www/place.png", iconWidth = 32, iconHeight = 37, iconAnchorX = 16, iconAnchorY = 18) # 
 ```
+
 
 ```{r, eval=FALSE}
 verbatimTextOutput("hash")
 query <- getQueryString()
 ```
+
 
 ```{r, context = "server", eval=FALSE}
 output$hash <- renderText({
@@ -687,6 +702,36 @@ cIGroup <- c("Område" = "Place",
 selectInput("iGroupSea", "Vælg gruppe inddeling:", cIGroup, "None", selectize = FALSE)
 ```
 
+
+Kort
+=======================================================================
+
+```{r}
+leafletOutput("map")
+```
+
+
+```{r, context = "server"}
+output$map <- renderLeaflet({
+  leaflet(data = datPlaces) %>% 
+    # Base groups
+    addTiles(group = "Kort") %>%
+    addProviderTiles('Esri.WorldImagery', group = "Luftfoto") %>% 
+    addProviderTiles("CartoDB.PositronOnlyLabels", group = "Luftfoto") %>% 
+    setView(9.016712672451805, 56.40970340006212,  zoom = 14) %>% 
+    # Overlay groups
+    # add places 
+    addMarkers(~long, ~lat, popup = ~name, label = ~name,
+               icon = placeIcon, 
+               group = "Stednavne") %>% 
+    # Layer control
+    addLayersControl(
+      baseGroups = c("Luftfoto", "Kort"),
+      overlayGroups = c("Stednavne"),
+      options = layersControlOptions(collapsed = FALSE)
+    )
+})
+```
 
 
 
