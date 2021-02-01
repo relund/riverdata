@@ -108,8 +108,8 @@ maplet <- leaflet() %>%
   addTiles(group = "Kort") %>%
   # addProviderTiles('MtbMap', group = "Kort") %>% 
   addProviderTiles('Esri.WorldImagery', group = "Luftfoto") %>% 
-  addProviderTiles("CartoDB.PositronOnlyLabels", group = "Luftfoto") %>% 
-  setView(9.016712672451805, 56.40970340006212,  zoom = 10) 
+  addProviderTiles("CartoDB.PositronOnlyLabels", group = "Luftfoto") 
+  # setView(9.016712672451805, 56.40970340006212,  zoom = 13) 
 # Markers
 maplet <- maplet %>% 
   addMarkers(~long, ~lat, popup = ~Desc, label = ~Desc,
@@ -174,7 +174,7 @@ maplet <- maplet %>%
     overlayGroups = c("Stednavne", "Parkering", "HI-LF (medlem)", "HI-LF (dagkort)", "HI-LF (fiskevand)"),
     options = layersControlOptions(collapsed = FALSE)
   ) %>% 
-  hideGroup(c("Stednavne", "Parkering"))
+  hideGroup(c("Parkering"))
 ```
 
 
