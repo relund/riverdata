@@ -696,3 +696,66 @@ updateWaterTempSkjern <- function(stations, prefix) {
   write_csv(dat, fn)
   return(invisible(dat))
 }
+
+
+
+stripKml <- function(mapId, Club = NA) {
+  kml <- datMarkers <- read_xml(str_c("https://www.google.com/maps/d/u/0/kml?mid=", mapId, "&forcekml=1"))
+  xml_ns_strip(kml)
+  x <- xml_find_all(kml, "//Folder")
+  
+  datMarkers <- NULL
+  if (length(xml_find_all(x, ".//Point")) > 0) {
+    datMarkers <- bind_rows(map(x, function(n) {  # for each Folder
+        folderName <- xml_text(xml_find_all(n, "./name"))  # Folder name
+        y <- xml_find_all(n, "./Placemark[Point]")
+        res <- tibble(Desc = xml_text(xml_find_all(y, "./name")),
+                      cord = xml_text(xml_find_all(y, ".//coordinates"), trim = TRUE) ) %>%
+          mutate(long = as.numeric(str_split_fixed(cord, ",", 3)[,1]), lat = as.numeric(str_split_fixed(cord, ",", 3)[,2])) %>%
+          select(-cord)
+        tibble(Group = folderName, Point = list(res))  
+      })) %>% 
+      filter(map_lgl(Point, function(df) nrow(df) > 0)) %>% 
+      unnest(Point) %>% mutate(Club = Club)
+  }
+
+  datLines <- NULL
+  if (length(xml_find_all(x, ".//LineString")) > 0) {
+    ctr <- 0
+    datLines <- bind_rows(map(x, function(n) {  # for each Folder
+        folderName <- xml_text(xml_find_all(n, "./name"))  # Folder name
+        y <- xml_find_all(n, "./Placemark[LineString]")
+        res <- bind_rows(map(y, function(n) {  # for each Placemark
+          lineName <- xml_text(xml_find_all(n, "./name"))
+          txt <- xml_text(xml_find_all(n, "./LineString/coordinates"))
+          l <- suppressWarnings(
+            read_csv(txt, col_names = c("long", "lat", "h"), col_types = "ddd") %>%
+            select(-h) %>%
+            filter(!is.na(lat)))
+          ctr <<- ctr + 1
+          tibble(Desc = lineName, LineCord = list(l), LineGroupId = ctr)
+        }))
+        tibble(Group = folderName, Line = list(res))
+      })) %>%
+      filter(map_lgl(Line, function(df) nrow(df) > 0)) %>%
+      unnest(col = c(Line)) %>% 
+      unnest(col = c(LineCord)) %>% 
+      mutate(Club = Club)
+  }
+  return(list(datMarkers = datMarkers, datLines = datLines))
+}
+
+
+
+
+calcMapMarkers <- function(prefix) {
+  # Stednavne
+  datMarkers <- read_xml("https://www.google.com/maps/d/u/0/kml?mid=1XJoAUKY_-kbmhZgovPpLgi82Gn8&forcekml=1")
+  xml_ns_strip(datMarkers)
+  x <- xml_find_all(datMarkers, "//Placemark")
+  
+  datMarkers <- tibble(Club = NA, Group = "Stednavne", Desc = xml_text(xml_find_all(x, ".//name")), 
+                       cord = xml_text(xml_find_all(x, ".//coordinates"), trim = TRUE) ) %>% 
+    mutate(long = as.numeric(str_split_fixed(cord, ",", 3)[,1]), lat = as.numeric(str_split_fixed(cord, ",", 3)[,2])) %>% 
+    select(-cord)
+}
