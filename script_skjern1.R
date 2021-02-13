@@ -120,7 +120,7 @@ estimateWeight(paste0(prefix, "_weight_seatrout.csv"), datCatchSeatrout, minLeng
 
 
 #### Waterlevel ####
-stations <- 
+stations <-
   tibble(id = c("055416", "055414", "001862", "017898", "054757", "001855", "052386"), 
          place = c("Vorgod Å - Vandmøllen", 
                    "Skjern Å - Sandfeldvej", 
@@ -129,7 +129,7 @@ stations <-
                    "Rind Å - Arnborg kirke",
                    "Omme Å - Sønderskov bro",
                    "Fjederholt Å - A18"))
-## Update data current year
+## Update and save data current year
 updateWaterLevel(stations, prefix)    
 
 ## Calc moving average 
@@ -141,7 +141,6 @@ dat <- calcWaterLevelRelative(dat, rMeans, prefix)
 
 ## Dataset for web 
 dat <- calcWaterLevelsWeb(dat, prefix)
-
 
 
 #### Water temperature ####

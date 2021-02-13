@@ -187,7 +187,7 @@ updateLockSkjern <- function(prefix) {
 }
 
 
-#' Update water level data for current year (both absolute and relative)
+#' Update and save water level data for current year (both absolute and relative)
 #'
 #' @param stations Stations under consideration.
 #' @param prefix Path prefix (e.g. data/data_skjern).
@@ -199,17 +199,17 @@ updateWaterLevel <- function(stations, prefix) {
   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
   fn <- paste0(prefix, "_waterlevel_", year, ".csv")
   fnM <- paste0(prefix, "_waterlevel_avg90.csv")
-  rMeans <-
-    read_csv(fnM, 
-             col_types = cols(
-               Place = col_character(),
-               Day = col_double(),
-               Level_rAvg90 = col_double()
-             ))
-  message("Waterlevel: Update datasets.")
+  # rMeans <-
+  #   read_csv(fnM, 
+  #            col_types = cols(
+  #              Place = col_character(),
+  #              Day = col_double(),
+  #              Level_rAvg90 = col_double()
+  #            ))
+  message("Waterlevel: Update dataset.")
   # read data for last 100 days
   if (file.exists(fn)) {
-    datOld <- read_csv(fn, col_types = "Tcdd") 
+    datOld <- read_csv(fn, col_types = "Tcd") 
   } else datOld <- NULL
   dat <- NULL
   for (i in 1:nrow(stations)) {
@@ -237,13 +237,14 @@ updateWaterLevel <- function(stations, prefix) {
   # combine with old data
   dat <- bind_rows(datOld, dat) %>% 
     arrange_all(desc) %>%
-    distinct(Date, Place, .keep_all = T)
-  # calc relative
-  dat <- dat %>% 
-    mutate(Day = yday(Date)) %>% 
-    left_join(rMeans, by = c("Place", "Day")) %>% 
-    mutate(LevelRelative = Level - Level_rAvg90) %>% 
-    select(-Day, -Level_rAvg90)
+    distinct(Date, Place, .keep_all = T) %>% 
+    select(Date, Place, Level)
+  # # calc relative
+  # dat <- dat %>% 
+  #   mutate(Day = yday(Date)) %>% 
+  #   left_join(rMeans, by = c("Place", "Day")) %>% 
+  #   mutate(LevelRelative = Level - Level_rAvg90) %>% 
+  #   select(-Day, -Level_rAvg90)
   # save
   message("  Write data to ", fn)
   write_csv(dat, fn)
@@ -271,8 +272,7 @@ readWLevels <- function(prefix, years) {
                 read_csv(fn, col_types = cols(
                   Date = col_datetime(format = ""),
                   Place = col_character(),
-                  Level = col_double(),
-                  LevelRelative = col_double()
+                  Level = col_double()
                 )))
   }
   return(dat)
@@ -295,7 +295,7 @@ readWTemp <- function(prefix, years) {
 }
 
 
-#' Calc moving average for water level
+#' Calc and save moving average for water level
 #'
 #' @param dat Water level records.
 #' @param prefix Path prefix (e.g. data/data_skjern).
@@ -376,17 +376,17 @@ calcWaterTempMovAvg <- function(dat, prefix) {
 #'
 #' @return The dataset.
 calcWaterLevelRelative <- function(dat, rMeans, prefix) {
-  message("Waterlevel: Update relative values.")
+  message("Waterlevel: Calc relative values.")
   dat <- dat %>% 
     mutate(Day = yday(Date)) %>% 
     left_join(rMeans, by = c("Place", "Day")) %>% 
     mutate(Level = round(Level, 3), LevelRelative = round(Level - Level_rAvg90, 3)) %>% 
     select(-Day, -Level_rAvg90)
-  for (y in distinct(dat, year(Date)) %>% pull()) {
-    fn <- paste0(prefix, "_waterlevel_", y, ".csv")
-    message("  Write data to ",fn)
-    write_csv(dplyr::filter(dat, year(Date) == y), fn)
-  }
+  # for (y in distinct(dat, year(Date)) %>% pull()) {
+  #   fn <- paste0(prefix, "_waterlevel_", y, ".csv")
+  #   message("  Write data to ",fn)
+  #   write_csv(dplyr::filter(dat, year(Date) == y), fn)
+  # }
   return(dat)
 }
 
