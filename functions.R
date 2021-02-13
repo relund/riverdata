@@ -487,39 +487,23 @@ calcWaterLevelsWeb <- function(dat, prefix) {
                    } 
                    return(tmp)
                  })) %>% 
-    unnest(cols = "data") %>% 
+    unnest(cols = "data") 
+  datLastObs <- dat %>% group_by(Place) %>% summarize(LastObs = max(dat$Date))
+  dat <- dat %>% 
     # mean over each hour
     mutate(Hour = hour(Date), DateDay = date(Date)) %>% 
     group_by(Hour, Place, DateDay, YGroup) %>% 
-    summarise(Date = median(Date), 
+    summarise(Date = median(Date),
               Level = round(100*mean(Level),1), 
               LevelRelative = round(100*mean(LevelRelative),1),
               .groups = "drop") %>% 
-    # mutate(DaysSince = as.numeric(date(Date)), YDay = yday(Date), PV = FALSE) %>% 
-    # group_by(Place) %>% 
-    # arrange(desc(Date)) %>% 
-    # nest() %>% 
-    # mutate(data = 
-    #          map(data,
-    #              function(df) {
-    #                tmp <- NULL
-    #                for (y in df %>% distinct(year(Date)) %>% pull()) {
-    #                  dayS <- as.numeric(date(paste0(y, "-", month(now()), "-", day(now()))))
-    #                  tmp1 <- df %>% filter(DaysSince <= dayS & DaysSince >= dayS - 14) %>% 
-  #                    arrange(Date) %>% mutate(YGroup = y)  
-  #                  if (nrow(tmp1) == 0) next
-  #                  tmp1 <- tmp1 %>% mutate(DaysCtr = 1:nrow(tmp1), PV = ((row_number()-1) %% 16 == 0) )
-  #                  idx <- unique(findPeaks(tmp1$LevelRelative), findPeaks(tmp1$Level))
-  #                  tmp1$PV[idx] <- TRUE
-  #                  tmp <- bind_rows(tmp, tmp1)
-  #                } 
-  #                return(tmp)
-  #              })) %>% 
-  # unnest(cols = "data") %>% 
-  # filter(PV) %>% # Reduce size of dataset
-  select(-Hour, -DateDay) %>% 
+    select(-Hour, -DateDay) %>% 
+    left_join(datLastObs) %>% 
     # set Date to same year 
-    mutate(Date = ymd_hms(format(Date, "2020-%m-%d %H-%M-%S"))) %>% 
+    mutate(Date = ymd_hms(format(Date, "2020-%m-%d %H-%M-%S")),
+           LastObs = ymd_hms(format(LastObs, "2020-%m-%d %H-%M-%S"))) %>% 
+    filter(Date <= LastObs) %>% 
+    select(-LastObs) %>% 
     relocate(Date) %>% 
     arrange(Place, YGroup, Date) 
   message("  Write data to ",fn)
