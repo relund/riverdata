@@ -4,6 +4,8 @@ library(jsonlite)
 library(tidyverse)
 library(lubridate)
 library(zoo)
+library(forecast)
+library(tsibble)
 source("functions.R")
 
 prefix <- "data/data_skjern"
@@ -130,10 +132,11 @@ stations <-
                    "Omme Å - Sønderskov bro",
                    "Fjederholt Å - A18"))
 ## Update and save data current year
-updateWaterLevel(stations, prefix)    
+updateWaterLevel(stations, prefix)   
+# getWaterLevels(stations, prefix) # if reset
 
 ## Calc moving average 
-dat <- readWLevels(prefix, 2017:year(now()))
+dat <- readWLevels(prefix, 2014:year(now()))
 rMeans <- calcWaterMovAvg(dat, prefix)
 
 ## Relative datasets 
@@ -141,6 +144,31 @@ dat <- calcWaterLevelRelative(dat, rMeans, prefix)
 
 ## Dataset for web 
 dat <- calcWaterLevelsWeb(dat, prefix)
+
+
+# dat %>% 
+#   ggplot(aes(x = Date, y = Level, color = Place)) +
+#   geom_line()
+# 
+# dat %>% group_by(Place) %>% nest()
+# 
+# 
+# library(plotly)
+# tmp <- as_tsibble(dat, key = Place)
+# tmp <- tmp %>%
+#   group_by_key() %>%
+#   mutate(L = tsclean(Level, replace.missing = FALSE))
+# #View(tmp %>% filter(round(Level,1) != round(L,1)))
+# 
+# 
+# tmp <- tmp %>% filter(Place == "Omme Å - Sønderskov bro")
+# 
+# p <- tmp %>% 
+#   ggplot() +
+#   geom_line(aes(x = Date, y = L), color = "black") +
+#   geom_line(aes(x = Date, y = Level), color = "red", alpha = 0.1) 
+# p
+# ggplotly(p)
 
 
 #### Water temperature ####

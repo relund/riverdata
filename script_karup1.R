@@ -3,7 +3,9 @@ library(rvest)
 library(jsonlite)
 library(tidyverse)
 library(lubridate)
-library(zoo) 
+library(zoo)
+library(forecast)
+library(tsibble)
 source("functions.R")
 
 prefix <- "data/data_karup"
@@ -70,7 +72,8 @@ estimateWeight(paste0(prefix, "_weight_seatrout.csv"), datCatchSeatrout, minLeng
 #### Waterlevel ####
 stations <- tibble(id = c("054764", "001762", "001767"), place = c("Karup By", "Hagebro", "Nørkærbro"))
 ## Update data current year
-updateWaterLevel(stations, prefix)    
+updateWaterLevel(stations, prefix)   
+# getWaterLevels(stations, prefix) # if reset
 
 ## Calc moving average 
 dat <- readWLevels(prefix, 2013:year(now()))
