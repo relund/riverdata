@@ -422,11 +422,6 @@ calcWaterLevelRelative <- function(dat, rMeans, prefix) {
     left_join(rMeans, by = c("Place", "Day")) %>% 
     mutate(Level = round(Level, 3), LevelRelative = round(Level - Level_rAvg90, 3)) %>% 
     select(-Day, -Level_rAvg90)
-  # for (y in distinct(dat, year(Date)) %>% pull()) {
-  #   fn <- paste0(prefix, "_waterlevel_", y, ".csv")
-  #   message("  Write data to ",fn)
-  #   write_csv(dplyr::filter(dat, year(Date) == y), fn)
-  # }
   return(dat)
 }
 
