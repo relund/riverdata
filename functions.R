@@ -187,7 +187,7 @@ updateLockSkjern <- function(prefix) {
 }
 
 
-#' Update and save water level data for current year (both absolute and relative)
+#' Update and save water level data for current year
 #'
 #' @param stations Stations under consideration.
 #' @param prefix Path prefix (e.g. data/data_skjern).
@@ -198,14 +198,6 @@ updateWaterLevel <- function(stations, prefix) {
   year <- year(now())
   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
   fn <- paste0(prefix, "_waterlevel_", year, ".csv")
-  fnM <- paste0(prefix, "_waterlevel_avg90.csv")
-  # rMeans <-
-  #   read_csv(fnM, 
-  #            col_types = cols(
-  #              Place = col_character(),
-  #              Day = col_double(),
-  #              Level_rAvg90 = col_double()
-  #            ))
   message("Waterlevel: Update dataset.")
   # read data for last 100 days
   if (file.exists(fn)) {
@@ -239,22 +231,70 @@ updateWaterLevel <- function(stations, prefix) {
     arrange_all(desc) %>%
     distinct(Date, Place, .keep_all = T) %>% 
     select(Date, Place, Level)
-  # # calc relative
-  # dat <- dat %>% 
-  #   mutate(Day = yday(Date)) %>% 
-  #   left_join(rMeans, by = c("Place", "Day")) %>% 
-  #   mutate(LevelRelative = Level - Level_rAvg90) %>% 
-  #   select(-Day, -Level_rAvg90)
+  # remove outliers
+  dat <- as_tsibble(dat, key = Place, index = Date) %>% 
+    group_by_key() %>%
+    mutate(Level = tsclean(Level, replace.missing = FALSE)) %>% 
+    as_tibble()
   # save
   message("  Write data to ", fn)
   write_csv(dat, fn)
   return(invisible(dat))
-  # for (y in distinct(dat, year(Date)) %>% pull()) {
-  #   fn <- paste0("data/data_skjern_waterlevel_long_y", y, ".csv")
-  #   message("  ... save ", fn)
-  #   write_csv(dplyr::filter(dat, year(Date) == y), fn)
-  # }
 }
+
+
+#' Get and save all water level data for 2017 until now
+#'
+#' @param stations Stations under consideration.
+#' @param prefix Path prefix (e.g. data/data_skjern).
+#'
+#' @note Stations can be found at http://www.hydrometri.dk/hyd/. Get obs for the last 50000 days
+#' @return The dataset.
+getWaterLevels <- function(stations, prefix) {
+  iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
+  message("Waterlevel: Get and save datasets.")
+  # read data for last 100 days
+  dat <- NULL
+  for (i in 1:nrow(stations)) {
+    id <- stations$id[i]
+    place <- stations$place[i]
+    # get obs for last 100 days
+    tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=50000&pw=100000000&inclraw=true"))
+    offset <- as.numeric(tmp$tsh$Offset)
+    tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
+    tmp$V <- tmp$V - rep(offset, length(tmp$V))
+    colnames(tmp) <- c("Date", place)
+    if (is.null(dat)) {
+      dat <- tmp
+    } else {
+      dat <- full_join(dat, tmp, by = "Date")
+    }
+  }
+  dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
+  dat <- dat %>% 
+    arrange_all(desc) %>%
+    distinct(Date, .keep_all = T)
+  dat <- dat %>% 
+    pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Level') %>% 
+    filter(!is.na(Level))
+  dat <- dat %>% 
+    arrange_all(desc) %>%
+    distinct(Date, Place, .keep_all = T) %>% 
+    select(Date, Place, Level)
+  # remove outliers
+  dat <- as_tsibble(dat, key = Place, index = Date) %>% 
+    group_by_key() %>%
+    mutate(Level = tsclean(Level, replace.missing = FALSE)) %>% 
+    as_tibble()
+  # save
+  for (y in distinct(dat, year(Date)) %>% pull()) {
+    fn <- paste0("data/data_skjern_waterlevel_", y, ".csv")
+    message("  Write data to ", fn)
+    write_csv(dplyr::filter(dat, year(Date) == y), fn)
+  }
+  return(invisible(dat))
+}
+
 
 
 #' Read water level files
