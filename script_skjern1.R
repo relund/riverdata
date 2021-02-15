@@ -146,7 +146,7 @@ dat <- calcWaterLevelRelative(dat, rMeans, prefix)
 dat <- calcWaterLevelsWeb(dat, prefix)
 
 
-# dat %>% 
+# dat %>%
 #   ggplot(aes(x = Date, y = Level, color = Place)) +
 #   geom_line()
 # 

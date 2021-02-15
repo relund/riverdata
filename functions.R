@@ -212,7 +212,7 @@ updateWaterLevel <- function(stations, prefix) {
     offset <- as.numeric(tmp$tsh$Offset)
     tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
     tmp$V <- tmp$V - rep(offset, length(tmp$V))
-    colnames(tmp) <- c("Date", paste0(place, " (", id, ")"))
+    colnames(tmp) <- c("Date", place)
     if (is.null(dat)) {
       dat <- tmp
     } else {
