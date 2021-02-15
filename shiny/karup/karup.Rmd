@@ -427,7 +427,7 @@ Row {data-height=200}
 ###
 ```{r}
 cIPlaceWUnit <- unique(datWLevel$Place)
-selectInput("iPlaceW", "Sted:", cIPlaceWUnit, selected = cIPlaceWUnit[2], selectize = FALSE)
+selectInput("iPlaceW", "Sted:", cIPlaceWUnit, selected = cIPlaceWUnit[1], selectize = FALSE)
 ```
 
 ```{r}
