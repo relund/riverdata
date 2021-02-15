@@ -12,7 +12,7 @@ prefix <- "data/data_skjern"
 
 #### Flow though lock at Hvide Sande ####
 dat <- updateLockSkjern(prefix)
-dat <- calcLockWeb(dat, prefix)
+calcLockWeb(dat, prefix)
 
 #### Catch records ####
 
