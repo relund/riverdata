@@ -92,14 +92,13 @@ datStatMonthSea <- monthlyStat(datCatchSea, curYear)
 
 # Water levels 
 datWLevel <- 
-  read_csv(paste0(prefix, "data_skjern_waterlevel_web.csv"), col_types = "Tffdd") %>% 
-  #dplyr::filter(Date > now() - days(14)) %>% 
-  dplyr::filter(str_detect(Place, "Skjern|Rind"))
+  read_csv(paste0(prefix, "data_skjern_waterlevel_web.csv"), col_types = "Tffdd") 
+  #dplyr::filter(str_detect(Place, "Skjern|Rind"))
 
 # Lock flow
-datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock.csv"), 
+datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock_web.csv"), 
                     locale = locale(tz = "CET"),
-                    col_types = "Td")
+                    col_types = "Tdd")
 ```
 
 ```{r, eval=FALSE}
@@ -521,7 +520,7 @@ output$plotWLevelPresent <- renderPlotly({
               size = 3, hjust = "left") + 
     ylab(yLab) + xlab("Dato") +
     theme(legend.position="none") +
-    scale_x_datetime(date_labels = "%e. %b") + #, limits = c(min(tmp$Dato), max(tmp$Dato) + hours(18))) +
+    scale_x_datetime(date_labels = "%e. %b", date_breaks = "1 day") + #, limits = c(min(tmp$Dato), max(tmp$Dato) + hours(18))) +
     scale_size_continuous(range = c(0.25, 1))
   ggplotly(p, tooltip = c("text"))
 })
@@ -1203,62 +1202,13 @@ selectInput("iGroupSea", "Vælg gruppe inddeling:", cIGroup, "None", selectize =
 Slusen
 =======================================================================
 
-```{r, context="data"}
-# Find high and lows
-findPeaks <- function (x, m = 2){
-    shape <- diff(sign(diff(x, na.pad = FALSE)))
-    pks <- sapply(which(shape < 0 | shape > 0), FUN = function(i){
-       z <- i - m + 1
-       z <- ifelse(z > 0, z, 1)
-       w <- i + m + 1
-       w <- ifelse(w < length(x), w, length(x))
-       if(all(x[c(z : i, (i + 2) : w)] <= x[i + 1]) | all(x[c(z : i, (i + 2) : w)] >= x[i + 1])) return(i + 1) else return(numeric(0))
-    })
-     pks <- unlist(pks)
-     pks <- unique(c(1, pks, length(x)))
-     pks
-}
-
-setAvgFlow <- function(x) {
-  idx <- findPeaks(x)
-  res <- rep(0, length(x))
-  for (j in 1:(length(idx)-1)) {
-    # cat("j:",j,"i:",idx[j],"x:",x[idx[j]],"j+1:",j+1,"i:",idx[j+1],"x:",x[idx[j+1]],"\n")
-    if (max(x[idx[j]], x[idx[j+1]]) < -100 | 
-        max(x[idx[j]], x[idx[j+1]]) > 100 |
-        min(x[idx[j]], x[idx[j+1]]) > 100 |
-        min(x[idx[j]], x[idx[j+1]]) < -100
-        ) {
-      res[idx[j]:idx[j+1]] <- 2
-      next
-    }
-    if (abs((x[idx[j+1]] - x[idx[j]])/(idx[j+1] - idx[j])) > 0.5 |
-        max(x[idx[j]], x[idx[j+1]]) > 10 |
-        min(x[idx[j]], x[idx[j+1]]) < -10
-        ) {
-      v1 <- res[idx[j]]
-      v2 <- res[idx[j+1]] 
-      res[idx[j]:idx[j+1]] <- 1
-      if (v1 == 2) res[idx[j]] <- 2
-      if (v2 == 2) res[idx[j+1]] <- 2
-      next
-    }
-  }
-  return(res)
-}
-
-datFlow14 <- datFlow %>% 
-  dplyr::filter(DateTime > now() - days(14)) %>% 
-  mutate(Open = setAvgFlow(.$Flow))
-```
-
 Row
 -----------------------------------------------------------------------
 
 ### Åben de seneste 7 dage {.value-box}
 
 ```{r}
-rate <- datFlow14 %>% 
+rate <- datFlow %>% 
   dplyr::filter(DateTime > now() - days(7)) %>% 
   # summarise(Rate = 100*sum(Open)/(2*n())) %>% 
   summarise(Rate = 100*sum(Open>0)/(n())) %>% 
@@ -1271,7 +1221,7 @@ gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
 ### Åben de seneste 14 dage {.value-box}
 
 ```{r}
-rate <- datFlow14 %>% 
+rate <- datFlow %>% 
   # summarise(Rate = 100*sum(Open)/(2*n())) %>% 
   summarise(Rate = 100*sum(Open>0)/(n())) %>% 
   as.numeric() %>% round(0)
@@ -1286,20 +1236,23 @@ Row
 ### Sluse flow de seneste 14 dage (strøm ind i fjorden er positiv)
 
 ```{r}
-plotOutput("plotLock14")
+plotlyOutput("plotLock")
 ```
 
 ```{r, context = "server"}
-output$plotLock14 <- renderPlot({
-  ggplot(datFlow14) + 
+output$plotLock <- renderPlotly({
+  p <- ggplot(datFlow) + 
     # geom_bar(aes(x = DateTime, y = 100*Open), stat = "identity") +
-    geom_line(aes(x = DateTime, y = Flow, colour = Open)) + 
+    geom_hline(yintercept = 0, size = 0.25) + 
+    geom_line(aes(x = DateTime, y = Flow), color = "#3399ff") + #, colour = Open
     # scale_colour_gradient2(low = "red", mid = "yellow", high = "green", na.value = NA, midpoint = 1, guide = "legend") +
     # geom_point(aes(x = DateTime, y = Flow), data = dat[findPeaks(dat$Flow),]) +
-    scale_colour_gradient(low = "red", high = "green", na.value = NA, guide = "legend", breaks = c(0,1,2), name = "", labels = c("Lukket", "Delvis åben", "Åben")) +
+    #scale_colour_gradient(low = "red", high = "green", na.value = NA, guide = "legend", breaks = c(0,1,2), name = "", labels = c("Lukket", "Delvis åben", "Åben")) +
     # guide_coloursteps(even.steps = TRUE, show.limits = NULL, ticks = FALSE) +
     theme(legend.position="bottom") +
+    scale_x_datetime(date_labels = "%e. %b", date_breaks = "1 day") +
     labs(x = "Dato", y = "Flow (m3/s)")  #title = "Sluseflow Hvide Sande"
+  ggplotly(p)
 })
 ```
 
