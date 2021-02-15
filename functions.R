@@ -148,7 +148,7 @@ estimateWeight <- function(fn, dat, minLength = 40, maxLength = max(dat$Length, 
 }
 
 
-#' Update lock data for Hvide Sande
+#' Update and save lock data for Hvide Sande
 #'
 #' @param prefix Path prefix (e.g. data/data_skjern).
 #'
@@ -180,11 +180,73 @@ updateLockSkjern <- function(prefix) {
       dat
     } else {
       datOld <- read_csv(fn, col_types = "Ti", locale = locale(tz = "CET"))
-      dat <- bind_rows(datOld,dat) %>% arrange_all(desc) %>% distinct()
+      dat <- bind_rows(datOld,dat) %>% 
+        arrange_all(desc) %>% 
+        distinct()
       message("  Write data to ", fn)
       write_csv(dat, fn)
     }
   }
+  return(invisible(dat))
+}
+
+
+#' Calc flow dataset for web
+#'
+#' @param dat Flow data.
+#' @param prefix Path prefix (e.g. data/data_skjern).
+#'
+#' @return The dataset with column `Open` equal 0 (closed), 1 (partly open) and 2 (open).
+calcLockWeb <- function(dat, prefix) {
+  message("Lock flow: Update dataset for web.")
+  fn <- paste0(prefix, "_flow_lock_web.csv")
+  findPeaks <- function (x, m = 2){
+    shape <- diff(sign(diff(x, na.pad = FALSE)))
+    pks <- sapply(which(shape < 0 | shape > 0), FUN = function(i){
+      z <- i - m + 1
+      z <- ifelse(z > 0, z, 1)
+      w <- i + m + 1
+      w <- ifelse(w < length(x), w, length(x))
+      if(all(x[c(z : i, (i + 2) : w)] <= x[i + 1]) | all(x[c(z : i, (i + 2) : w)] >= x[i + 1])) return(i + 1) else return(numeric(0))
+    })
+    pks <- unlist(pks)
+    pks <- unique(c(1, pks, length(x)))
+    pks
+  }
+  
+  setAvgFlow <- function(x) {
+    idx <- findPeaks(x)
+    res <- rep(0, length(x))
+    for (j in 1:(length(idx)-1)) {
+      # cat("j:",j,"i:",idx[j],"x:",x[idx[j]],"j+1:",j+1,"i:",idx[j+1],"x:",x[idx[j+1]],"\n")
+      if (max(x[idx[j]], x[idx[j+1]]) < -100 | 
+          max(x[idx[j]], x[idx[j+1]]) > 100 |
+          min(x[idx[j]], x[idx[j+1]]) > 100 |
+          min(x[idx[j]], x[idx[j+1]]) < -100
+      ) {
+        res[idx[j]:idx[j+1]] <- 2
+        next
+      }
+      if (abs((x[idx[j+1]] - x[idx[j]])/(idx[j+1] - idx[j])) > 0.5 |
+          max(x[idx[j]], x[idx[j+1]]) > 10 |
+          min(x[idx[j]], x[idx[j+1]]) < -10
+      ) {
+        v1 <- res[idx[j]]
+        v2 <- res[idx[j+1]] 
+        res[idx[j]:idx[j+1]] <- 1
+        if (v1 == 2) res[idx[j]] <- 2
+        if (v2 == 2) res[idx[j+1]] <- 2
+        next
+      }
+    }
+    return(res)
+  }
+  
+  dat <- dat %>% 
+    dplyr::filter(DateTime > now() - days(14)) %>% 
+    mutate(Open = setAvgFlow(Flow))
+  message("  Write data to ", fn)
+  write_csv(dat, fn)
   return(invisible(dat))
 }
 

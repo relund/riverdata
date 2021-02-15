@@ -11,7 +11,8 @@ source("functions.R")
 prefix <- "data/data_skjern"
 
 #### Flow though lock at Hvide Sande ####
-updateLockSkjern(prefix)
+dat <- updateLockSkjern(prefix)
+dat <- calcLockWeb(dat, prefix)
 
 #### Catch records ####
 
