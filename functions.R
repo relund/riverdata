@@ -782,7 +782,7 @@ updateWaterTempSkjern <- function(stations, prefix) {
 
 
 stripKml <- function(mapId, Club = NA) {
-  kml <- datMarkers <- read_xml(str_c("https://www.google.com/maps/d/u/0/kml?mid=", mapId, "&forcekml=1"))
+  kml <- read_xml(str_c("https://www.google.com/maps/d/u/0/kml?mid=", mapId, "&forcekml=1"))
   xml_ns_strip(kml)
   x <- xml_find_all(kml, "//Folder")
   
@@ -791,14 +791,22 @@ stripKml <- function(mapId, Club = NA) {
     datMarkers <- bind_rows(map(x, function(n) {  # for each Folder
         folderName <- xml_text(xml_find_all(n, "./name"))  # Folder name
         y <- xml_find_all(n, "./Placemark[Point]")
-        res <- tibble(Desc = xml_text(xml_find_all(y, "./name")),
-                      cord = xml_text(xml_find_all(y, ".//coordinates"), trim = TRUE) ) %>%
+        res <- tibble(Desc = xml_text(xml_find_first(y, "./name")),
+                      Text = xml_text(xml_find_first(y, "./description")),
+                      cord = xml_text(xml_find_first(y, ".//coordinates"), trim = TRUE) ) %>%
           mutate(long = as.numeric(str_split_fixed(cord, ",", 3)[,1]), lat = as.numeric(str_split_fixed(cord, ",", 3)[,2])) %>%
           select(-cord)
         tibble(Group = folderName, Point = list(res))  
       })) %>% 
       filter(map_lgl(Point, function(df) nrow(df) > 0)) %>% 
-      unnest(Point) %>% mutate(Club = Club)
+      unnest(Point) %>% mutate(Club = Club) %>% 
+      mutate(Icon = case_when(
+        str_detect(Group, fixed('Parkering', ignore_case=TRUE)) ~ "park.png",
+        str_detect(Group, fixed('Stednavne', ignore_case=TRUE)) ~ "place.png",
+        str_detect(Desc, fixed('hytte', ignore_case=TRUE)) ~ "hut.png",
+        str_detect(Desc, fixed('indhegning', ignore_case=TRUE)) ~ "fence.png",
+        TRUE ~ NA_character_
+      ))
   }
 
   datLines <- NULL

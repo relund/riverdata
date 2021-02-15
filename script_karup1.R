@@ -106,7 +106,8 @@ mapId <- "1XJoAUKY_-kbmhZgovPpLgi82Gn8" # Places
 lst1 <- stripKml(mapId)
 mapId <- "1fzTAHG04McV3WO_IKxuxSPkDIaE" # HI-LF
 lst2 <- stripKml(mapId, Club = "HI-LF")
-datMarkers <- bind_rows(lst1$datMarkers, lst2$datMarkers)
+datMarkers <- bind_rows(lst1$datMarkers, lst2$datMarkers) %>% 
+  filter(!is.na(Icon))
 datLines <- bind_rows(lst1$datLines, lst2$datLines)
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
