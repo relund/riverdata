@@ -489,8 +489,7 @@ calcWaterLevelRelative <- function(dat, rMeans, prefix) {
   return(dat)
 }
 
-findPeaks <- function (x, thresh = 0) 
-{
+findPeaks <- function (x, thresh = 0) {
   pks <- which(diff(sign(diff(x, na.pad = FALSE)), na.pad = FALSE) < 0) + 2
   if (!missing(thresh)) {
     pks[x[pks - 1] - x[pks] > thresh]
@@ -601,8 +600,8 @@ calcWaterLevelsWeb <- function(dat, prefix) {
     # set Date to same year 
     mutate(Date = ymd_hms(format(Date, "2020-%m-%d %H-%M-%S")),
            LastObs = ymd_hms(format(LastObs, "2020-%m-%d %H-%M-%S"))) %>% 
-    #filter(Date <= LastObs) %>% 
-    #select(-LastObs) %>% 
+    filter(Date <= LastObs) %>%
+    select(-LastObs) %>%
     relocate(Date) %>% 
     arrange(Place, YGroup, Date) 
   message("  Write data to ",fn)
