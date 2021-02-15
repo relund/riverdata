@@ -76,7 +76,7 @@ updateWaterLevel(stations, prefix)
 # getWaterLevels(stations, prefix) # if reset
 
 ## Calc moving average 
-dat <- readWLevels(prefix, 2013:year(now()))
+dat <- readWLevels(prefix, 2012:year(now()))
 rMeans <- calcWaterMovAvg(dat, prefix)
 
 ## Relative datasets 

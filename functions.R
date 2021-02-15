@@ -140,6 +140,8 @@ estimateWeight <- function(fn, dat, minLength = 40, maxLength = max(dat$Length, 
   res <- res %>% as_tibble() 
   res <- bind_cols(datP, res) %>% group_by(Period) #%>% select(Length:Avg)
   colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
+  res <- res %>% 
+    mutate(Avg = round(Avg,3), Lower = round(Lower, 3), Upper = round(Upper, 3))
   message("  Write data to ", fn)
   write_csv(res, fn)
   return(invisible(res))
@@ -288,7 +290,7 @@ getWaterLevels <- function(stations, prefix) {
     as_tibble()
   # save
   for (y in distinct(dat, year(Date)) %>% pull()) {
-    fn <- paste0("data/data_skjern_waterlevel_", y, ".csv")
+    fn <- paste0(prefix, "_waterlevel_", y, ".csv")
     message("  Write data to ", fn)
     write_csv(dplyr::filter(dat, year(Date) == y), fn)
   }
