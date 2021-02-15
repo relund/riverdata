@@ -816,14 +816,15 @@ stripKml <- function(mapId, Club = NA) {
         folderName <- xml_text(xml_find_all(n, "./name"))  # Folder name
         y <- xml_find_all(n, "./Placemark[LineString]")
         res <- bind_rows(map(y, function(n) {  # for each Placemark
-          lineName <- xml_text(xml_find_all(n, "./name"))
+          lineName <- xml_text(xml_find_first(n, "./name"))
+          lineText <- xml_text(xml_find_first(n, "./description"))
           txt <- xml_text(xml_find_all(n, "./LineString/coordinates"))
           l <- suppressWarnings(
             read_csv(txt, col_names = c("long", "lat", "h"), col_types = "ddd") %>%
             select(-h) %>%
             filter(!is.na(lat)))
           ctr <<- ctr + 1
-          tibble(Desc = lineName, LineCord = list(l), LineGroupId = ctr)
+          tibble(Desc = lineName, Text = lineText, LineCord = list(l), LineGroupId = ctr)
         }))
         tibble(Group = folderName, Line = list(res))
       })) %>%
