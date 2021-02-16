@@ -7,3 +7,13 @@
 .selectize-dropdown, .selectize-input, .selectize-input input {
     position: static !important; 
 }
+
+.leaflet-tooltip {
+  white-space: normal; 
+  max-width: 150px;
+}
+
+.leaflet-tooltip img {
+  max-width: 150px; 
+  height:auto;
+}
