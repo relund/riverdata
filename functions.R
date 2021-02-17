@@ -844,14 +844,14 @@ stripKml <- function(mapId, Club = NA) {
 
 
 
-calcMapMarkers <- function(prefix) {
-  # Stednavne
-  datMarkers <- read_xml("https://www.google.com/maps/d/u/0/kml?mid=1XJoAUKY_-kbmhZgovPpLgi82Gn8&forcekml=1")
-  xml_ns_strip(datMarkers)
-  x <- xml_find_all(datMarkers, "//Placemark")
-  
-  datMarkers <- tibble(Club = NA, Group = "Stednavne", Desc = xml_text(xml_find_all(x, ".//name")), 
-                       cord = xml_text(xml_find_all(x, ".//coordinates"), trim = TRUE) ) %>% 
-    mutate(long = as.numeric(str_split_fixed(cord, ",", 3)[,1]), lat = as.numeric(str_split_fixed(cord, ",", 3)[,2])) %>% 
-    select(-cord)
-}
+# calcMapMarkers <- function(prefix) {
+#   # Stednavne
+#   datMarkers <- read_xml("https://www.google.com/maps/d/u/0/kml?mid=1XJoAUKY_-kbmhZgovPpLgi82Gn8&forcekml=1")
+#   xml_ns_strip(datMarkers)
+#   x <- xml_find_all(datMarkers, "//Placemark")
+#   
+#   datMarkers <- tibble(Club = NA, Group = "Stednavne", Desc = xml_text(xml_find_all(x, ".//name")), 
+#                        cord = xml_text(xml_find_all(x, ".//coordinates"), trim = TRUE) ) %>% 
+#     mutate(long = as.numeric(str_split_fixed(cord, ",", 3)[,1]), lat = as.numeric(str_split_fixed(cord, ",", 3)[,2])) %>% 
+#     select(-cord)
+# }
