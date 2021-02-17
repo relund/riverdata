@@ -10,7 +10,7 @@
 
 .leaflet-tooltip {
   white-space: normal; 
-  min-width: 100px;
+  min-width: 150px;
   max-width: 250px;
 }
 

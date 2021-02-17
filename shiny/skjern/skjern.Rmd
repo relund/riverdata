@@ -43,6 +43,7 @@ library(flextable)
 library(shinyBS)
 library(kableExtra)
 # library(zoo) 
+library(leaflet)
 
 source("functions.R")
 
@@ -99,6 +100,91 @@ datWLevel <-
 datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock_web.csv"), 
                     locale = locale(tz = "CET"),
                     col_types = "Tdd")
+# Maps data
+datMarkers <- read_csv(paste0(prefix, "data_skjern_mapmarkers.csv"), col_types = "fccddff") %>% 
+  mutate(Desc = str_c(if_else(!is.na(Desc), str_c("<b>", Desc, "</b>"), "", ""), 
+                       if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
+  mutate(Desc = map(Desc, HTML), Icon = str_c("www/", Icon)) %>% 
+  select(-Text) 
+  
+datLines <- read_csv(paste0(prefix, "data_skjern_maplines.csv"), col_types = "fccddif")  %>%  
+  mutate(Desc = str_c(if_else(!is.na(Desc), str_c("<b>", Desc, "</b>"), "", ""), 
+                       if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
+  mutate(Desc = map(Desc, HTML)) %>% 
+  select(-Text) 
+
+# placeIcon <- makeIcon("www/place.png", iconWidth = 32, iconHeight = 37, iconAnchorX = 16, iconAnchorY = 37) 
+# parkIcon <- makeIcon("www/park.png", iconWidth = 32, iconHeight = 37, iconAnchorX = 16, iconAnchorY = 37) 
+# infoIcons <- icons(str_c("www/", datMarkers %>% pull(Icon)),
+#                    iconWidth = 32, iconHeight = 37, iconAnchorX = 16, iconAnchorY = 37)
+
+maplet <- leaflet() %>% 
+  # Base groups
+  addTiles(group = "Kort") %>%
+  # addProviderTiles('MtbMap', group = "Kort") %>% 
+  addProviderTiles('Esri.WorldImagery', group = "Luftfoto") %>% 
+  addProviderTiles("CartoDB.PositronOnlyLabels", group = "Luftfoto") 
+  # setView(9.016712672451805, 56.40970340006212,  zoom = 13) 
+
+# functions
+mapAddMarkers <- function(map, group, data) {
+  map <- map %>% 
+  addMarkers(~long, ~lat, label = ~Desc,
+             icon = ~icons(Icon, iconWidth = 32, iconHeight = 32, iconAnchorX = 16, iconAnchorY = 16), 
+             group = group,
+             clusterOptions = markerClusterOptions(showCoverageOnHover = FALSE),
+             data = data)
+  groups <<- c(groups, group)
+  return(map)
+}
+mapAddLines <- function(map, group, data, color, useClub = TRUE) {
+  dat <- data %>% group_by(LineGroupId, Desc, Club) %>% nest()
+  map(1:nrow(dat), function(i) {
+    group <- if_else(useClub, str_c(dat$Club[i], " (", group, ")"), group)
+    map <<- map %>%
+    addPolylines(~long, ~lat, label = ~Desc,
+                 group = group, color = color, weight = 1.5, opacity = 0.75,
+                 data = dat[i,] %>% unnest(col = c(data)))
+    groups <<- c(groups, group)
+    return(invisible(NULL))
+  })
+  return(map)
+}
+
+groups <- NULL
+# Markers
+maplet <- mapAddMarkers(maplet, "Stednavne", 
+                     datMarkers %>% 
+                       filter(str_detect(Group, regex("Standpladser|Sten|Spang|Bro", ignore_case = T))))
+maplet <- mapAddMarkers(maplet, "Parkering", 
+                        datMarkers %>% 
+                          filter(str_detect(Group, regex("Parkering", ignore_case = T))))
+# Lines
+maplet <- mapAddLines(maplet, group = "Parkering", color = "#000000", useClub = FALSE,
+                      data = datLines %>% 
+                        filter(str_detect(Group, regex("parkering", ignore_case = T))))
+maplet <- mapAddLines(maplet, group = "fiskevand", color = "#3C8AE6",
+                      data = datLines %>% 
+                        filter(str_detect(Group, regex("fiskevand", ignore_case = T))))
+maplet <- mapAddLines(maplet, group = "medlem", color = "#EBE053",
+                      data = datLines %>% 
+                        filter(str_detect(Group, regex("medlem", ignore_case = T))))
+maplet <- mapAddLines(maplet, group = "dagkort", color = "#eb9834",
+                      data = datLines %>% 
+                        filter(str_detect(Group, regex("dagkort", ignore_case = T))))
+maplet <- mapAddLines(maplet, group = "gæstekort", color = "#bf5656",
+                      data = datLines %>% 
+                        filter(str_detect(Group, regex("gæstekort", ignore_case = T))))
+
+maplet <- maplet %>% 
+  # Layer control
+  addLayersControl(
+    baseGroups = c("Luftfoto", "Kort"),
+    overlayGroups = unique(groups),
+    options = layersControlOptions(collapsed = TRUE)
+  ) %>% 
+  hideGroup(groups) %>% 
+  showGroup("Stednavne")
 ```
 
 ```{r, eval=FALSE}
@@ -1251,8 +1337,23 @@ output$plotLock <- renderPlotly({
     # guide_coloursteps(even.steps = TRUE, show.limits = NULL, ticks = FALSE) +
     theme(legend.position="bottom") +
     scale_x_datetime(date_labels = "%e. %b", date_breaks = "1 day") +
-    labs(x = "Dato", y = "Flow (m3/s)")  #title = "Sluseflow Hvide Sande"
+    labs(x = "Dato", y = "Flow (m3/s, udstrøm er negativ)")  #title = "Sluseflow Hvide Sande"
   ggplotly(p)
+})
+```
+
+
+Kort
+=======================================================================
+
+```{r}
+leafletOutput("maplet")
+```
+
+
+```{r, context = "server"}
+output$maplet <- renderLeaflet({
+  maplet
 })
 ```
 
@@ -1291,13 +1392,19 @@ Row
 
 ### Info
 
-Dette dashboard er lavet af Lars Relund og giver information omkring fiskeriet i Skjern Å. Data er hentet fra forskellige kilder. Fangst data er fra SÅS. Der er data fra 2004. Kun laks og havørred over mindstemålet vises under fangster. Å systemet er opdelt i zoner Nedre (fra udløbet of opstrøms til Borris Krog bro), Mellem (fra Borris Krog Bro til Tarp Bro), Øvre (Opstrøms Tarp Bro), Vorgod Å, Omme Å samt Andet (andre områder). Kondition er beregnet udfra [Fultons formel](http://ulnits.dk/biologi/the-k-factor/).  
+Dette dashboard er lavet af Lars Relund og giver information omkring fiskeriet i Skjern Å. Data er hentet fra forskellige kilder. 
 
-Vægten for genudsatte fisk er [estimeret](#estimat-af-vægt) udfra tidligere fangster og givet i grøn farve. For mere info se denne [rapport](http://htmlpreview.github.io/?https://github.com/relund/skjern/blob/master/reports/skjern_weight.html).
+Fangst data er fra SÅS. Der er data fra 2004. Kun laks og havørred over mindstemålet vises under fangster. Å systemet er opdelt i zoner *Nedre* (fra udløbet of opstrøms til Borris Krog bro), *Mellem* (fra Borris Krog Bro til Tarp Bro), *Øvre* (Opstrøms Tarp Bro), *Vorgod Å*, *Omme Å* samt *Andet* (andre områder). Kondition er beregnet udfra [Fultons formel](http://ulnits.dk/biologi/the-k-factor/). Du kan sammenligne de forskellige år under både *Havørred* og *Laks* menuerne.
+
+Vægten for genudsatte fisk er [estimeret](#estimat-af-vægt) udfra tidligere fangster og givet i grøn farve. 
+
+<!-- For mere info se denne [rapport](http://htmlpreview.github.io/?https://github.com/relund/skjern/blob/master/reports/skjern_weight.html). -->
 
 Vandstandsdata er fra [vandløbssiden](http://www.hydrometri.dk/hyd/). Den gennemensnitlige vandstand er estimeret som et rullende gennemsnit over 90 dage (45 dage på hver side af datoen) ved brug af tilgængelige data for alle år. Bemærk den gennemsnitlige vandstand siger nødvendigvis ikke noget om en god vandstand for fiskeriet, fx kan den gennemsnitlige vandstand i vinterhalvåret godt være høj.
 
-Sluse data er fra [vejrstationen i Hvide Sande](http://hyde.dk/Sflow/default_flow.asp). Slusen er defineret som "Delvis åben" når flowet er lavt hvilket ofte skyldes få åbne porter.  
+Sluse data er fra [vejrstationen i Hvide Sande](http://hyde.dk/Sflow/default_flow.asp). Flowet er negativt ved strøm ud af fjorden (udstrøm) og positiv ved indstrøm. 
+
+Kortet indeholder stednavne, parkering og kortoplysninger fra de forskellige foreninger ved åen. Ønsker du som forening at få tilføjet dit kort så er det nemt ([se her](https://github.com/relund/riverdata/tree/master/reports/map.md)).
 
 Forslag til forbedringer kan sendes til lars.relund[at]gmail[dot]com.
   
