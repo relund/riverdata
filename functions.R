@@ -801,14 +801,15 @@ stripKml <- function(mapId, Club = NA) {
       filter(map_lgl(Point, function(df) nrow(df) > 0)) %>% 
       unnest(Point) %>% mutate(Club = Club) %>% 
       mutate(Icon = case_when(
-        str_detect(Group, fixed('Parkering', ignore_case=TRUE)) ~ "park.png",
-        str_detect(Group, fixed('Laksens hus', ignore_case=TRUE)) ~ "house.png",
-        str_detect(Group, regex('Stednavne|Pladser', ignore_case=TRUE)) ~ "fish.png",
-        str_detect(Group, regex('spang|bro', ignore_case=TRUE)) ~ "bridge.png",
+        str_detect(Group, fixed('parkering', ignore_case=TRUE)) ~ "park.png",
+        str_detect(Group, fixed('standpladser', ignore_case=TRUE)) ~ "fish.png",
+        str_detect(Group, fixed('bro', ignore_case=TRUE)) ~ "bridge.png",
+        str_detect(Group, fixed('spang', ignore_case=TRUE)) ~ "footbridge.png",
         str_detect(Group, fixed('shelter', ignore_case=TRUE)) ~ "shelter.png",
-        str_detect(Group, fixed('Sten', ignore_case=TRUE)) ~ "rock.png",
+        str_detect(Group, fixed('sten', ignore_case=TRUE)) ~ "rock.png",
         str_detect(Desc, fixed('hytte', ignore_case=TRUE)) ~ "cottage.png",
         str_detect(Desc, fixed('indhegning', ignore_case=TRUE)) ~ "fence.png",
+        str_detect(Desc, fixed('laksens hus', ignore_case=TRUE)) ~ "house.png",
         TRUE ~ NA_character_
       ))
   }

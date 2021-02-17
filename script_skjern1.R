@@ -240,3 +240,15 @@ dat <- calcWaterLevelsWeb(dat, prefix)
 # ## Dataset for web 
 # dat <- calcWaterTempWeb(dat, rMeans, prefix)
 
+
+
+#### Map ####
+mapId <- "135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ" # Places
+lst1 <- stripKml(mapId)
+mapId <- "1EKI26YR4FQtlIKIQoAbo3Rbooj8" # HI-LF
+lst2 <- stripKml(mapId, Club = "HI-LF")
+datMarkers <- bind_rows(lst1$datMarkers, lst2$datMarkers) %>% 
+  filter(!is.na(Icon))
+datLines <- bind_rows(lst1$datLines, lst2$datLines)
+write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
+write_csv(datLines, str_c(prefix, "_maplines.csv"))
