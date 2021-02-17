@@ -802,8 +802,12 @@ stripKml <- function(mapId, Club = NA) {
       unnest(Point) %>% mutate(Club = Club) %>% 
       mutate(Icon = case_when(
         str_detect(Group, fixed('Parkering', ignore_case=TRUE)) ~ "park.png",
-        str_detect(Group, fixed('Stednavne', ignore_case=TRUE)) ~ "place.png",
-        str_detect(Desc, fixed('hytte', ignore_case=TRUE)) ~ "hut.png",
+        str_detect(Group, fixed('Laksens hus', ignore_case=TRUE)) ~ "house.png",
+        str_detect(Group, regex('Stednavne|Pladser', ignore_case=TRUE)) ~ "fish.png",
+        str_detect(Group, regex('spang|bro', ignore_case=TRUE)) ~ "bridge.png",
+        str_detect(Group, fixed('shelter', ignore_case=TRUE)) ~ "shelter.png",
+        str_detect(Group, fixed('Sten', ignore_case=TRUE)) ~ "rock.png",
+        str_detect(Desc, fixed('hytte', ignore_case=TRUE)) ~ "cottage.png",
         str_detect(Desc, fixed('indhegning', ignore_case=TRUE)) ~ "fence.png",
         TRUE ~ NA_character_
       ))
