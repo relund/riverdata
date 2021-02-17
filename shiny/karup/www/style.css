@@ -10,10 +10,11 @@
 
 .leaflet-tooltip {
   white-space: normal; 
-  max-width: 150px;
+  min-width: 100px;
+  max-width: 250px;
 }
 
 .leaflet-tooltip img {
-  max-width: 150px; 
+  max-width: 240px; 
   height:auto;
 }
