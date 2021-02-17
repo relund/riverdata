@@ -103,8 +103,9 @@ datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock_web.csv"),
 
 # Maps data
 mapAddMarkers <- function(map, group, data) {
+  if (nrow(data) == 0) return(map)
   map <- map %>% 
-    addMarkers(~long, ~lat, label = ~Desc,
+    addMarkers(~long, ~lat, label = ~Desc, popup = ~Desc,
                icon = ~icons(Icon, iconWidth = 32, iconHeight = 32, iconAnchorX = 16, iconAnchorY = 16), 
                group = group,
                clusterOptions = markerClusterOptions(showCoverageOnHover = FALSE),
@@ -112,12 +113,14 @@ mapAddMarkers <- function(map, group, data) {
   groups <<- c(groups, group)
   return(map)
 }
+
 mapAddLines <- function(map, group, data, color, useClub = TRUE) {
+  if (nrow(data) == 0) return(map)
   dat <- data %>% group_by(LineGroupId, Desc, Club) %>% nest()
   map(1:nrow(dat), function(i) {
     group <- if_else(useClub, str_c(dat$Club[i], " (", group, ")"), group)
     map <<- map %>%
-      addPolylines(~long, ~lat, label = ~Desc,
+      addPolylines(~long, ~lat, label = ~Desc, popup = ~Desc,
                    group = group, color = color, weight = 1.5, opacity = 0.75,
                    data = dat[i,] %>% unnest(col = c(data)))
     groups <<- c(groups, group)
@@ -129,12 +132,14 @@ mapAddLines <- function(map, group, data, color, useClub = TRUE) {
 datMarkers <- read_csv(paste0(prefix, "data_skjern_mapmarkers.csv"), col_types = "fccddff") %>% 
   mutate(Desc = str_c(if_else(!is.na(Desc), str_c("<b>", Desc, "</b>"), "", ""), 
                        if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
-  mutate(Desc = map(Desc, HTML), Icon = str_c("www/", Icon)) %>% 
+  mutate(Desc = str_replace(Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>% 
+  mutate(Desc = map(Desc, HTML), Icon = str_c("www/", Icon), Id = 1:n()) %>% 
   select(-Text) 
   
 datLines <- read_csv(paste0(prefix, "data_skjern_maplines.csv"), col_types = "fccddif")  %>%  
   mutate(Desc = str_c(if_else(!is.na(Desc), str_c("<b>", Desc, "</b>"), "", ""), 
                        if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
+  mutate(Desc = str_replace(Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>% 
   mutate(Desc = map(Desc, HTML)) %>% 
   select(-Text) 
 
@@ -148,12 +153,29 @@ maplet <- leaflet() %>%
 
 groups <- NULL
 # Markers
-maplet <- mapAddMarkers(maplet, "Stednavne", 
-                     datMarkers %>% 
-                       filter(str_detect(Group, regex("Standpladser|Sten|Spang|Bro|shelter", ignore_case = T))))
-maplet <- mapAddMarkers(maplet, "Parkering", 
-                        datMarkers %>% 
-                          filter(str_detect(Group, regex("Parkering", ignore_case = T))))
+Ids <- datMarkers %>% 
+  filter(
+    str_detect(Group, regex("Parkering", ignore_case = T)) | 
+      str_detect(Desc, regex("indhegning", ignore_case = T))) %>% 
+  pull(Id)
+maplet <- mapAddMarkers(maplet, "Parkering", datMarkers %>% filter(Id %in% Ids))
+datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+
+Ids <- datMarkers %>% 
+  filter(
+    str_detect(Group, regex("Standpladser|Sten|Spang|Bro|shelter", ignore_case = T)) | 
+      str_detect(Desc, regex("hytte|laksens hus", ignore_case = T))) %>% 
+  pull(Id)
+maplet <- mapAddMarkers(maplet, "Stednavne", datMarkers %>% filter(Id %in% Ids))
+datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+
+Ids <- datMarkers %>% 
+  filter(
+    str_detect(Group, regex("Info", ignore_case = T))) %>% 
+  pull(Id)
+maplet <- mapAddMarkers(maplet, "Info", datMarkers %>% filter(Id %in% Ids))
+datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+
 # Lines
 maplet <- mapAddLines(maplet, group = "Parkering", color = "#000000", useClub = FALSE,
                       data = datLines %>% 
