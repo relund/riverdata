@@ -586,7 +586,7 @@ calcWaterLevelsWeb <- function(dat, prefix) {
                    return(tmp)
                  })) %>% 
     unnest(cols = "data") 
-  datLastObs <- dat %>% group_by(Place) %>% summarize(LastObs = max(Date))
+  datLastObs <- dat %>% group_by(Place) %>% summarize(LastObs = max(Date), .groups = "drop")
   dat <- dat %>% 
     # mean over each hour
     mutate(Hour = hour(Date), DateDay = date(Date)) %>% 
@@ -596,7 +596,7 @@ calcWaterLevelsWeb <- function(dat, prefix) {
               LevelRelative = round(100*mean(LevelRelative),1),
               .groups = "drop") %>% 
     select(-Hour, -DateDay) %>% 
-    left_join(datLastObs) %>% 
+    left_join(datLastObs, by = "Place") %>% 
     # set Date to same year 
     mutate(Date = ymd_hms(format(Date, "2020-%m-%d %H-%M-%S")),
            LastObs = ymd_hms(format(LastObs, "2020-%m-%d %H-%M-%S"))) %>% 
@@ -625,19 +625,19 @@ writeCatchKarup <- function() {
   cols$label[is.na(cols$label)] <- "Unknown"
   rows <- dat$data$rows$c
   rows <- lapply(rows, FUN = function(x) {x[,1]})
-  dat1 <- t(map_dfc(rows, ~ .x))
+  dat1 <-  suppressMessages(t(map_dfc(rows, ~ .x)))
   colnames(dat1) <- cols$label
   dat1 <- as_tibble(dat1)
   dateStr <- dat1$Dato %>% str_extract_all("(?<=\\().+?(?=\\))", simplify = T) %>%
     str_split(",", simplify = TRUE) %>% as_tibble(.name_repair = "minimal")
   colnames(dateStr) <- c("Year", "Month", "Day")
-  dateStr <- type_convert(dateStr)
+  dateStr <- suppressMessages(type_convert(dateStr))
   dateStr <- mutate(dateStr, Month = Month + 1)
   dateStr <- str_c(dateStr$Year, "-", str_pad(dateStr$Month, 2, "left", pad="0"), "-", str_pad(dateStr$Day, 2, "left", pad="0"))
   dat1 <- bind_cols(Date=dateStr, dat1)
   dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Havørred"))
-  dat2 <- dat1 %>% transmute(Date, Length = `Længde`, Weight = `Vægt`, Name = Navn, Place = Zone, Method = Agn, Cut = FALSE, Foto = Foto, Killed = !as.logical(Genudsat), Sex = `Køn`)
-  dat2 <- type_convert(dat2)
+  dat2 <- dat1 %>% transmute(Date, Length = `Længde`, Weight = `Vægt`, Name = Navn, Place = Zone, Method = Agn, Cut = FALSE, Foto = Foto, Killed = (Hjemtaget == "Ja"), Sex = `Køn`)
+  dat2 <- suppressMessages(type_convert(dat2))
   
   ## Merge and tidy
   dat4 <- dat2 %>% dplyr::filter(year(Date)>2019)
@@ -645,7 +645,7 @@ writeCatchKarup <- function() {
   # remove outliers
   dat5 <- dplyr::filter(dat4, Length > 39 & Killed)
   mod1 <- lm(log(Weight) ~ log(Length), dat5)
-  summary(mod1)
+  # summary(mod1)
   lim <- 1:max(dat5$Length)
   res <- predict(mod1, data.frame(Length = lim), interval='prediction', level=0.95)
   res <- exp(res)
@@ -694,7 +694,7 @@ updateWaterTempKarup <- function(stations, prefix) {
   message("Water temperature: Update datasets.")
   # read data for last 100 days
   if (file.exists(fn)) {
-    datOld <- read_csv(fn, col_types = "Tcdd") 
+    datOld <- read_csv(fn, col_types = "Tcd") 
   } else datOld <- NULL
   dat <- NULL
   for (i in 1:nrow(stations)) {
