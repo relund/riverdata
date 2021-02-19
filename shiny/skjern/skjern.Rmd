@@ -371,12 +371,15 @@ output$plotCatchSalWeek <- renderPlot({
     dplyr::filter(Date > ymd(paste0(curYear,"-01-01"))) %>% 
     select(Week, Place)
   
-  ggplot(data = dat, aes(x = Week)) +
+  p <- ggplot(data = dat, aes(x = Week)) +
     geom_bar(aes(fill = Place)) + 
-    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) +
-    expand_limits(x = week(now())) + 
+    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) 
+  if (curYear == year(now())) p <- p + expand_limits(x = week(now())) 
+  p <- p +
+    coord_cartesian(clip = 'off') +
     labs(fill = "") + xlab("Uge") + ylab("Antal fangster") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
+  p
 })
 ```
 
@@ -392,12 +395,15 @@ output$plotCatchSalMonthNow <-  renderPlot({
     dplyr::filter(Date > ymd(paste0(curYear,"-01-01"))) %>% 
     select(Month, Place)
   
-ggplot(dat, aes(x = Month)) + 
-     geom_bar(aes(fill = Place), stat="count") +
-     geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) +
-     #expand_limits(x = month(now(), label = T)) + 
-     labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
-     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
+  p <- ggplot(dat, aes(x = Month)) + 
+    geom_bar(aes(fill = Place)) + 
+    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) 
+  if (curYear == year(now())) p <- p + expand_limits(x = week(now())) 
+  p <- p +
+    coord_cartesian(clip = 'off') +
+    labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
+    theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
+  p
 })
 ```
 
@@ -693,7 +699,7 @@ output$plotWLevelPresent <- renderPlotly({
               aes(label = Year, x = max(.data$Dato) + hours(12), y = Vandstand, color = Year), 
               size = 3, hjust = "left") + 
     ylab(yLab) + xlab("Dato") +
-    theme(legend.position="none") +
+    theme(axis.text.x  = element_text(angle=90, hjust = 1, vjust = 1), legend.position="none") + 
     scale_x_datetime(date_labels = "%e. %b", date_breaks = "1 day") + #, limits = c(min(tmp$Dato), max(tmp$Dato) + hours(18))) +
     scale_size_continuous(range = c(0.25, 1))
   ggplotly(p, tooltip = c("text"))
@@ -1354,7 +1360,7 @@ output$plotLock <- renderPlotly({
     # geom_point(aes(x = DateTime, y = Flow), data = dat[findPeaks(dat$Flow),]) +
     #scale_colour_gradient(low = "red", high = "green", na.value = NA, guide = "legend", breaks = c(0,1,2), name = "", labels = c("Lukket", "Delvis åben", "Åben")) +
     # guide_coloursteps(even.steps = TRUE, show.limits = NULL, ticks = FALSE) +
-    theme(legend.position="bottom") +
+    theme(axis.text.x  = element_text(angle=90, hjust = 1, vjust = 1), legend.position="none") + 
     scale_x_datetime(date_labels = "%e. %b", date_breaks = "1 day") +
     labs(x = "Dato", y = "Flow (m3/s, udstrøm er negativ)")  #title = "Sluseflow Hvide Sande"
   ggplotly(p)

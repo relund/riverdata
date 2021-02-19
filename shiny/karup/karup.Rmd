@@ -369,12 +369,16 @@ output$plotCatchSeaWeek <- renderPlot({
   dat <- datCatchSea %>% 
     dplyr::filter(Date > ymd(paste0(curYear,"-01-01"))) %>% 
     select(Week, Place)
-  ggplot(data = dat, aes(x = Week)) +
+  
+  p <- ggplot(data = dat, aes(x = Week)) +
     geom_bar(aes(fill = Place)) + 
-    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) +
-    expand_limits(x = week(now())) + 
+    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) 
+  if (curYear == year(now())) p <- p + expand_limits(x = week(now())) 
+  p <- p +
+    coord_cartesian(clip = 'off') +
     labs(fill = "") + xlab("Uge") + ylab("Antal fangster") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
+  p
 })
 ```
 
@@ -390,12 +394,15 @@ output$plotCatchSeaMonthNow <- renderPlot({
     dplyr::filter(Date > ymd(paste0(curYear,"-01-01"))) %>% 
     select(Month, Place)
   
-ggplot(dat, aes(x = Month)) + 
-     geom_bar(aes(fill = Place), stat="count") +
-     geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) +
-     #expand_limits(x = month(now(), label = T)) + 
-     labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
-     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
+  p <- ggplot(dat, aes(x = Month)) + 
+    geom_bar(aes(fill = Place)) + 
+    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) 
+  if (curYear == year(now())) p <- p + expand_limits(x = week(now())) 
+  p <- p +
+    coord_cartesian(clip = 'off') +
+    labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
+    theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
+  p
 })
 ```
 
@@ -468,7 +475,7 @@ output$plotWLevelPresent <- renderPlotly({
               aes(label = Year, x = max(.data$Dato) + hours(12), y = Vandstand, color = Year), 
               size = 3) + 
     ylab(yLab) + xlab("Dato") +
-    theme(legend.position="none") +
+    theme(axis.text.x  = element_text(angle=90, hjust = 1, vjust = 1), legend.position="none") + 
     scale_x_datetime(date_labels = "%e. %b", date_breaks = "1 day") +
     scale_size_continuous(range = c(0.25, 1))
   ggplotly(p, tooltip = c("text"))
@@ -520,7 +527,7 @@ output$plotWTempPresent <- renderPlotly({
               aes(label = Year, x = max(Date) + hours(12)), 
               size = 3)  + 
     ylab("Temperatur") + xlab("Dato") +
-    theme(legend.position="none") +
+    theme(axis.text.x  = element_text(angle=90, hjust = 1, vjust = 1), legend.position="none") + 
     scale_x_datetime(date_labels = "%e. %b", date_breaks = "1 day") +
     scale_size_continuous(range = c(0.1, 0.5))
   ggplotly(p, tooltip = c("text"))
@@ -865,6 +872,8 @@ Vægten for genudsatte fisk er [estimeret](#estimat-af-vægt) udfra tidligere fa
 <!-- For mere info se denne [rapport](http://htmlpreview.github.io/?https://github.com/relund/skjern/blob/master/reports/karup_weight.html). -->
 
 Vandstandsdata er fra [vandløbssiden](http://www.hydrometri.dk/hyd/). Den gennemensnitlige vandstand er estimeret som et rullende gennemsnit over 90 dage (45 dage på hver side af datoen) ved brug af tilgængelige data for alle år. Bemærk den gennemsnitlige vandstand siger nødvendigvis ikke noget om en god vandstand for fiskeriet, fx kan den gennemsnitlige vandstand i vinterhalvåret godt være høj.
+
+Kortet indeholder stednavne, parkering og kortoplysninger fra de forskellige foreninger ved åen. Ønsker du som forening at få tilføjet dit kort så er det nemt ([se her](https://github.com/relund/riverdata/tree/master/reports/map.md)).
 
 Forslag til forbedringer kan sendes til lars.relund[at]gmail[dot]com.
   
