@@ -14,7 +14,7 @@ mergeLists <- function (a,b) {
 #'
 #' @return The catch records
 readCatch <- function(path, datWeight) {
-  datCatch <- read_csv(path) %>% 
+  datCatch <- read_csv(path, col_types = "DddcfffllcclcfTd") %>% 
     mutate(
       Misc = paste0(
         if_else(!Killed, "<img src=\"www/c_and_r.gif\" alt=\"C&R\">", "", ""),
@@ -25,6 +25,7 @@ readCatch <- function(path, datWeight) {
         if_else(!is.na(Foto),str_c("<a href=\"", Foto, "\", target=\"_blank\"><img src=\"www/foto.gif\" alt=\"Foto\"></a>"),"", "")
       ),
       Month = month(Date, label = T), Week = week(Date), Year = year(Date), 
+      Place = fct_explicit_na(Place, "Ukendt"),
       NoWeight = 1*is.na(Weight), Day = yday(Date), DayStr = format(Date, "%d. %b")
     )
   datCatch <- left_join(datCatch, datWeight, by = c("Length", "Month" = "Period")) %>% 
@@ -129,7 +130,7 @@ yearlyStat <- function(datCatch) {
 monthlyStat <- function(datCatch, year) {
   dat <- datCatch %>% 
     filter(year(Date) == year) %>% 
-    mutate(Month = month(Date)) %>% group_by(Month) %>% nest() %>% 
+    mutate(Month = month(Date, label = TRUE)) %>% group_by(Month) %>% nest() %>% 
     mutate(keep = map_lgl(data, function(df) { # remove months where no weight or length
       if_else(nrow(df) == sum(is.na(df$Length)) | nrow(df) == sum(is.na(df$Weight)), FALSE, TRUE)
     })) %>% 
