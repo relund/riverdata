@@ -181,33 +181,48 @@ monthlyStat <- function(datCatch, year) {
   
   # check for missing columns
   if (!("TotalP_Andet" %in% names(dat))) dat <- dat %>% mutate(TotalP_Andet = 0, KilledP_Andet = 0)
-  dat <- 
-    dat  %>% 
-    ungroup() %>% 
-    transmute(Month, Total, 
-              Sex = paste0(format(100*Male/Total, digits = 0, trim = TRUE), "/",
-                           format(100*Female/Total, digits = 0, trim = TRUE), "/",
-                           format(100*SexUnknown/Total, digits = 0, trim = TRUE)),
-              Place = paste0(format(100*TotalP_Nedre/Total, digits = 0, trim = TRUE), "/", 
-                             format(100*TotalP_Mellem/Total, digits = 0, trim = TRUE), "/", 
-                             format(100*`TotalP_Øvre`/Total, digits = 0, trim = TRUE), "/", 
-                             format(100*`TotalP_Vorgod Å`/Total, digits = 0, trim = TRUE), "/",
-                             format(100*`TotalP_Omme Å`/Total, digits = 0, trim = TRUE), "/",
-                             format(100*`TotalP_Andet`/Total, digits = 0, trim = TRUE)),
-              PlaceK = paste0(format(100*KilledP_Nedre/Killed, digits = 0, trim = TRUE), "/", 
-                              format(100*KilledP_Mellem/Killed, digits = 0, trim = TRUE), "/", 
-                              format(100*`KilledP_Øvre`/Killed, digits = 0, trim = TRUE), "/", 
-                              format(100*`KilledP_Vorgod Å`/Killed, digits = 0, trim = TRUE), "/",
-                              format(100*`KilledP_Omme Å`/Killed, digits = 0, trim = TRUE), "/",
-                              format(100*`KilledP_Andet`/Killed, digits = 0, trim = TRUE)),
-              Method = paste0(format(100*Flue/Total, digits = 0, trim = TRUE), "/", 
-                              format(100*Spin/Total, digits = 0, trim = TRUE), "/", 
-                              format(100*Orm/Total, digits = 0, trim = TRUE), "/", 
-                              format(100*Andet/Total, digits = 0, trim = TRUE)),
-              Released = paste0(round(100*Released/Total, 0), "/", 
-                                round(100*Killed/Total, 0)),
-              Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)), 
-              Weight = paste0(round(WeightAvg,1), "/", round(WeightMax,1), "/", round(Kg,0)), 
-              Fulton = paste0(round(FultonAvg,2), "/", round(FultonMax,2))) %>%
-    mutate_if(is.character, str_replace_all, pattern = "NaN|NA", replacement = "0")
+  if (nrow(dat) == 0) {
+    dat <-
+      tibble(
+        Month = month(now(), label = T),
+        Total = "0/0",
+        Sex = "0/0/0",
+        Place = "0/0/0/0/0/0",
+        Method = "0/0/0/0",
+        Released = "0/0",
+        Length = "0/0",
+        Weight = "0/0/0",
+        Fulton = "0/0"
+      )
+  } else {
+    dat <- 
+      dat  %>% 
+      ungroup() %>% 
+      transmute(Month, Total, 
+                Sex = paste0(format(100*Male/Total, digits = 0, trim = TRUE), "/",
+                             format(100*Female/Total, digits = 0, trim = TRUE), "/",
+                             format(100*SexUnknown/Total, digits = 0, trim = TRUE)),
+                Place = paste0(format(100*TotalP_Nedre/Total, digits = 0, trim = TRUE), "/", 
+                               format(100*TotalP_Mellem/Total, digits = 0, trim = TRUE), "/", 
+                               format(100*`TotalP_Øvre`/Total, digits = 0, trim = TRUE), "/", 
+                               format(100*`TotalP_Vorgod Å`/Total, digits = 0, trim = TRUE), "/",
+                               format(100*`TotalP_Omme Å`/Total, digits = 0, trim = TRUE), "/",
+                               format(100*`TotalP_Andet`/Total, digits = 0, trim = TRUE)),
+                PlaceK = paste0(format(100*KilledP_Nedre/Killed, digits = 0, trim = TRUE), "/", 
+                                format(100*KilledP_Mellem/Killed, digits = 0, trim = TRUE), "/", 
+                                format(100*`KilledP_Øvre`/Killed, digits = 0, trim = TRUE), "/", 
+                                format(100*`KilledP_Vorgod Å`/Killed, digits = 0, trim = TRUE), "/",
+                                format(100*`KilledP_Omme Å`/Killed, digits = 0, trim = TRUE), "/",
+                                format(100*`KilledP_Andet`/Killed, digits = 0, trim = TRUE)),
+                Method = paste0(format(100*Flue/Total, digits = 0, trim = TRUE), "/", 
+                                format(100*Spin/Total, digits = 0, trim = TRUE), "/", 
+                                format(100*Orm/Total, digits = 0, trim = TRUE), "/", 
+                                format(100*Andet/Total, digits = 0, trim = TRUE)),
+                Released = paste0(round(100*Released/Total, 0), "/", 
+                                  round(100*Killed/Total, 0)),
+                Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)), 
+                Weight = paste0(round(WeightAvg,1), "/", round(WeightMax,1), "/", round(Kg,0)), 
+                Fulton = paste0(round(FultonAvg,2), "/", round(FultonMax,2))) %>%
+      mutate_if(is.character, str_replace_all, pattern = "NaN|NA", replacement = "0")
+  }
 }
