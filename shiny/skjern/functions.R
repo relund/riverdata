@@ -179,8 +179,6 @@ monthlyStat <- function(datCatch, year) {
     unnest(cols = c(TotalStat, PlaceStat, MethodStat)) %>% select(-data) %>% 
     replace(., is.na(.), 0)
   
-  # check for missing columns
-  if (!("TotalP_Andet" %in% names(dat))) dat <- dat %>% mutate(TotalP_Andet = 0, KilledP_Andet = 0)
   if (nrow(dat) == 0) {
     dat <-
       tibble(
@@ -195,6 +193,16 @@ monthlyStat <- function(datCatch, year) {
         Fulton = "0/0"
       )
   } else {
+    # add missing cols
+    cNames <- c("Month", "Total", "Male", "Female", "SexUnknown", "TotalP_Nedre", "TotalP_Mellem", 
+                "TotalP_Øvre", "TotalP_Vorgod Å", "TotalP_Omme Å", "TotalP_Andet", 
+                "KilledP_Nedre", "KilledP_Mellem", "KilledP_Øvre", "KilledP_Vorgod Å", 
+                "KilledP_Omme Å", "KilledP_Andet", "Flue", "Spin", "Orm", "Andet", "Released", 
+                "Killed", "LengthAvg", "LengthMax", "WeightAvg", "WeightMax", "FultonAvg", "FultonMax")
+    cNames <- cNames[!(cNames %in% names(dat))]
+    cols <- rep(0, length(cNames))
+    names(cols) = cNames
+    dat <- dat %>% add_column(!!!cols)
     dat <- 
       dat  %>% 
       ungroup() %>% 
