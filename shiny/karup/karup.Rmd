@@ -347,7 +347,7 @@ output$plotCatchSeaMonth <- renderPlot({
     select(Date, Place) %>% 
     arrange(desc(Date))
   ggplot(data = dat, aes(x = Date)) +
-    geom_bar(aes(fill = Place)) + 
+    geom_bar(aes(fill = Place), width = 0.75) + 
     scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(NA_Date_, date(now()+ddays(1)))) + 
     labs(fill = "") + xlab("Dato") + ylab("Antal fangster") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
