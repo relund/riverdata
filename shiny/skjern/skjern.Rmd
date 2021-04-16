@@ -1,5 +1,5 @@
 ---
-title: "Dashboard for Skjern Å"
+title: "Dashboard Skjern Å"
 author: ''
 output:
   flexdashboard::flex_dashboard:
@@ -440,6 +440,47 @@ datStatMonthSal %>%
 
 
 
+
+
+
+Fangsttabel {data-navmenu="Laks"}
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Seneste fangster
+
+```{r}
+dataTableOutput("dTSalCatch")
+```
+
+```{r, context = "server"}
+output$dTSalCatch <- DT::renderDataTable(
+  DT::datatable(
+    datCatchSal %>% select(Date:Method, Fulton, Misc, NoWeight),
+    class = 'stripe row-border order-column nowrap compact', # nowrap display compact
+    rownames = FALSE,
+    filter = 'bottom',
+    escape = FALSE,
+    options = list(pageLength = 15, order = list(list(0, 'desc')),
+                   list(visible=FALSE, targets="NoWeight"),
+                   # autoWidth = TRUE,
+                   columnDefs = list(
+                     list(className = 'dt-center', targets = 0:7),
+                     list(visible=FALSE, targets=c(8))
+                   )
+              ),
+    colnames = c('Dato', 'Længde', 'Vægt', 'Navn', 'Sted', 'Metode', 'Kondition', 'Diverse', 'NoWeight'),
+    extensions = c('Responsive')  #,'FixedHeader','RowGroup'
+  ) %>%
+  formatStyle(columns = 'Weight', valueColumns = 'NoWeight', color = styleEqual(c(0, 1), c("black","green"))) %>%
+  formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>%
+  formatRound(c('Length'), digits = 0) %>%
+  formatRound(c('Weight'), digits = 1) %>%
+  formatRound(c('Fulton'), digits = 2)
+)
+```
 
 
 Fangster `r curYear` {data-navmenu="Havørred"}
@@ -1419,7 +1460,7 @@ Row
 
 Dette dashboard er lavet af Lars Relund og giver information omkring fiskeriet i Skjern Å. Data er hentet fra forskellige kilder. 
 
-Fangst data er fra SÅS. Der er data fra 2004. Kun laks og havørred over mindstemålet vises under fangster. Å systemet er opdelt i zoner *Nedre* (fra udløbet of opstrøms til Borris Krog bro), *Mellem* (fra Borris Krog Bro til Tarp Bro), *Øvre* (Opstrøms Tarp Bro), *Vorgod Å*, *Omme Å* samt *Andet* (andre områder). Kondition er beregnet udfra [Fultons formel](http://ulnits.dk/biologi/the-k-factor/). Du kan sammenligne de forskellige år under både *Havørred* og *Laks* menuerne.
+Fangst data er fra [SÅS](https://skjernaasam.dk/catchreport/?species=salmon). Der er data fra 2004. Kun laks og havørred over mindstemålet vises under fangster. Å systemet er opdelt i zoner *Nedre* (fra udløbet of opstrøms til Borris Krog bro), *Mellem* (fra Borris Krog Bro til Tarp Bro), *Øvre* (Opstrøms Tarp Bro), *Vorgod Å*, *Omme Å* samt *Andet* (andre områder). Kondition er beregnet udfra [Fultons formel](http://ulnits.dk/biologi/the-k-factor/). Du kan sammenligne de forskellige år under både *Havørred* og *Laks* menuerne.
 
 <!-- Vægten for genudsatte fisk er [estimeret](#estimat-af-vægt) udfra tidligere fangster og givet i en anden farve.  -->
 

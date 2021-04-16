@@ -81,7 +81,8 @@ curYear <- if_else(month(now())*100 + day(now()) < 301, year(now())-1, year(now(
 datWeightSea<- read_csv(paste0(prefix, "data_karup_weight_seatrout.csv"), col_types = "dfddd")
 
 # Catch - Records 
-datCatchSea <- readCatch(prefix, datWeightSea)
+datCatchSea <- readCatch(prefix, datWeightSea) %>% 
+  filter(Length >= 40)
 
 # Catch - Yearly statistics
 datStatYearSea <- yearlyStat(datCatchSea)
@@ -294,43 +295,6 @@ output$cSeaBig <- renderValueBox({
 })
 ```
 
-<!-- Row  -->
-<!-- ----------------------------------------------------------------------- -->
-
-<!-- ### Seneste fangster -->
-
-<!-- ```{r} -->
-<!-- dataTableOutput("dTSeaCatch") -->
-<!-- ``` -->
-
-<!-- ```{r, context = "server"} -->
-<!-- output$dTSeaCatch <- DT::renderDataTable( -->
-<!--   DT::datatable( -->
-<!--     datCatchSea %>% select(Date:Method, Fulton, Misc, NoWeight), -->
-<!--     class = 'stripe row-border order-column nowrap compact', # nowrap display compact -->
-<!--     rownames = FALSE, -->
-<!--     filter = 'bottom', -->
-<!--     escape = FALSE, -->
-<!--     options = list(pageLength = 15, order = list(list(0, 'desc')), -->
-<!--                    list(visible=FALSE, targets="NoWeight"), -->
-<!--                    # autoWidth = TRUE, -->
-<!--                    columnDefs = list( -->
-<!--                      list(className = 'dt-center', targets = 0:7), -->
-<!--                      list(visible=FALSE, targets=c(8)) -->
-<!--                    ) -->
-<!--               ), -->
-<!--     colnames = c('Dato', 'Længde', 'Vægt', 'Navn', 'Sted', 'Metode', 'Kondition', 'Diverse', 'NoWeight'), -->
-<!--     extensions = c('Responsive')  #,'FixedHeader','RowGroup' -->
-<!--   ) %>% -->
-<!--   formatStyle(columns = 'Weight', valueColumns = 'NoWeight', color = styleEqual(c(0, 1), c("black","green"))) %>%  -->
-<!--   formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>% -->
-<!--   formatRound(c('Length'), digits = 0) %>% -->
-<!--   formatRound(c('Weight'), digits = 1) %>% -->
-<!--   formatRound(c('Fulton'), digits = 2) -->
-<!-- ) -->
-<!-- ``` -->
- 
-
 Row
 -----------------------------------------------------------------------
 
@@ -435,6 +399,47 @@ datStatMonthSea %>%
   kable(col.names = cNames, escape = F, align = "c") %>%
   kable_styling(fixed_thead = T, font_size = 10,
                 bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+
+
+Fangsttabel {data-navmenu="Havørred"}
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Seneste fangster
+
+```{r}
+dataTableOutput("dTSeaCatch")
+```
+
+```{r, context = "server"}
+output$dTSeaCatch <- DT::renderDataTable(
+  DT::datatable(
+    datCatchSea %>% select(Date:Method, Fulton, Misc, NoWeight),
+    class = 'stripe row-border order-column nowrap compact', # nowrap display compact
+    rownames = FALSE,
+    filter = 'bottom',
+    escape = FALSE,
+    options = list(pageLength = 15, order = list(list(0, 'desc')),
+                   list(visible=FALSE, targets="NoWeight"),
+                   # autoWidth = TRUE,
+                   columnDefs = list(
+                     list(className = 'dt-center', targets = 0:7),
+                     list(visible=FALSE, targets=c(8))
+                   )
+              ),
+    colnames = c('Dato', 'Længde', 'Vægt', 'Navn', 'Sted', 'Metode', 'Kondition', 'Diverse', 'NoWeight'),
+    extensions = c('Responsive')  #,'FixedHeader','RowGroup'
+  ) %>%
+  formatStyle(columns = 'Weight', valueColumns = 'NoWeight', color = styleEqual(c(0, 1), c("black","green"))) %>%
+  formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>%
+  formatRound(c('Length'), digits = 0) %>%
+  formatRound(c('Weight'), digits = 1) %>%
+  formatRound(c('Fulton'), digits = 2)
+)
 ```
 
 
@@ -865,9 +870,9 @@ Row
 
 Dette dashboard er lavet af Lars Relund og giver information omkring fiskeriet i Karup Å. Data er hentet fra forskellige kilder. 
 
-Fangst data er fra KÅS. Der er data fra 2003. Bemærk, at det er først fra 2019, at der har været obligatorisk fangstrapportering. Kun havørred over mindstemålet vises under fangster. Å systemet er opdelt i zoner *Nedre* (fra udløbet opstrøms til Hagebro), *Mellem* (fra Hagebro til Landevejsbroen ved Karup), *Øvre* (Opstrøms Landevejsbroen ved Karup) og Haderis/Haderup Å. Kondition er beregnet udfra [Fultons formel](http://ulnits.dk/biologi/the-k-factor/).  
+Fangst data er fra [KÅS](https://www.karupaa.dk/fangster/). Der er data fra 2003. Bemærk, at det er først fra 2019, at der har været obligatorisk fangstrapportering. Kun havørred over mindstemålet bruges i beregningerne. Å systemet er opdelt i zoner *Nedre* (fra udløbet opstrøms til Hagebro), *Mellem* (fra Hagebro til Landevejsbroen ved Karup), *Øvre* (Opstrøms Landevejsbroen ved Karup) og Haderis/Haderup Å. Kondition er beregnet udfra [Fultons formel](http://ulnits.dk/biologi/the-k-factor/).  
 
-<!-- Vægten for genudsatte fisk er [estimeret](#estimat-af-vægt) udfra tidligere fangster og givet i en anden farve.  -->
+Vægten for genudsatte fisk er [estimeret](#estimat-af-vægt) udfra tidligere fangster og givet i en anden farve.
 
 <!-- For mere info se denne [rapport](http://htmlpreview.github.io/?https://github.com/relund/skjern/blob/master/reports/karup_weight.html). -->
 
