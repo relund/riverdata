@@ -248,7 +248,7 @@ lst1 <- stripKml(mapId)
 mapId <- "1EKI26YR4FQtlIKIQoAbo3Rbooj8" # HI-LF
 lst2 <- stripKml(mapId, Club = "HI-LF")
 mapId <- "1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF"
-lst3 <- stripKml(mapId, Club = "SLF")
+lst3 <- stripKml(mapId, Club = "Skj-LF")
 datMarkers <- bind_rows(lst1$datMarkers, lst2$datMarkers, lst3$datMarkers) %>% 
   filter(!is.na(Icon))
 datLines <- bind_rows(lst1$datLines, lst2$datLines, lst3$datLines)
