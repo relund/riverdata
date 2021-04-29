@@ -249,7 +249,7 @@ mapId <- "1EKI26YR4FQtlIKIQoAbo3Rbooj8" # HI-LF
 lst2 <- stripKml(mapId, Club = "HI-LF")
 mapId <- "1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF"
 lst3 <- stripKml(mapId, Club = "Skj-LF")
-mapId <- "https://www.google.com/maps/d/u/0/edit?mid=1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD&usp=sharing"
+mapId <- "1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD"
 lst4 <- stripKml(mapId, Club = "BFF")
 datMarkers <- bind_rows(lst1$datMarkers, lst2$datMarkers, lst3$datMarkers, lst4$datMarkers) %>% 
   filter(!is.na(Icon))
