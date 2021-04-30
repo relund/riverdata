@@ -349,6 +349,7 @@ output$plotCatchSalMonth <- renderPlot({
 
   ggplot(data = dat, aes(x = Date)) +
     geom_bar(aes(fill = Place), width = 0.75) + 
+    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1)) + #  vjust = -0.5
     scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(NA_Date_, date(now()+ddays(1)))) + 
     labs(fill = "") + xlab("Dato") + ylab("Antal fangster") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
@@ -373,7 +374,7 @@ output$plotCatchSalWeek <- renderPlot({
   
   p <- ggplot(data = dat, aes(x = Week)) +
     geom_bar(aes(fill = Place)) + 
-    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) 
+    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1)) #  vjust = -0.5
   if (curYear == year(now())) p <- p + expand_limits(x = isoweek(now())) 
   p <- p +
     coord_cartesian(clip = 'off') +
@@ -397,7 +398,7 @@ output$plotCatchSalMonthNow <-  renderPlot({
   
   p <- ggplot(dat, aes(x = Month)) + 
     geom_bar(aes(fill = Place)) + 
-    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) 
+    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1)) # vjust = -.5 
   if (curYear == year(now())) p <- p + expand_limits(x = isoweek(now())) 
   p <- p +
     coord_cartesian(clip = 'off') +
@@ -562,41 +563,6 @@ output$cSeaBig <- renderValueBox({
 })
 ```
 
-<!-- Row  -->
-<!-- ----------------------------------------------------------------------- -->
-
-<!-- ### Seneste fangster -->
-
-<!-- ```{r} -->
-<!-- dataTableOutput("dTSeaCatch") -->
-<!-- ``` -->
-
-<!-- ```{r, context = "server"} -->
-<!-- output$dTSeaCatch <- DT::renderDataTable( -->
-<!--   DT::datatable( -->
-<!--     datCatchSea %>% select(Date:Method, Fulton, Misc, NoWeight), -->
-<!--     class = 'stripe row-border order-column nowrap compact', # nowrap display compact -->
-<!--     rownames = FALSE, -->
-<!--     filter = 'bottom', -->
-<!--     escape = FALSE, -->
-<!--     options = list(pageLength = 15, order = list(list(0, 'desc')), -->
-<!--                    list(visible=FALSE, targets="NoWeight"), -->
-<!--                    # autoWidth = TRUE, -->
-<!--                    columnDefs = list( -->
-<!--                      list(className = 'dt-center', targets = 0:7), -->
-<!--                      list(visible=FALSE, targets=c(8)) -->
-<!--                    ) -->
-<!--               ), -->
-<!--     colnames = c('Dato', 'Længde', 'Vægt', 'Navn', 'Sted', 'Metode', 'Kondition', 'Diverse', 'NoWeight'), -->
-<!--     extensions = c('Responsive')  #,'FixedHeader','RowGroup' -->
-<!--   ) %>% -->
-<!--   formatStyle(columns = 'Weight', valueColumns = 'NoWeight', color = styleEqual(c(0, 1), c("black","green"))) %>%  -->
-<!--   formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>% -->
-<!--   formatRound(c('Length'), digits = 0) %>% -->
-<!--   formatRound(c('Weight'), digits = 1) %>% -->
-<!--   formatRound(c('Fulton'), digits = 2) -->
-<!-- ) -->
-<!-- ``` -->
 
 Row
 -----------------------------------------------------------------------
@@ -616,6 +582,7 @@ output$plotCatchSeaMonth <- renderPlot({
 
   ggplot(data = dat, aes(x = Date)) +
     geom_bar(aes(fill = Place)) + 
+    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1)) +
     scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(NA_Date_, date(now()+ddays(1)))) + 
     labs(fill = "") + xlab("Dato") + ylab("Antal fangster") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
@@ -640,7 +607,7 @@ output$plotCatchSeaWeek <- renderPlot({
   
   ggplot(data = dat, aes(x = Week)) +
     geom_bar(aes(fill = Place)) + 
-    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) +
+    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1)) +
     expand_limits(x = isoweek(now())) + 
     labs(fill = "") + xlab("Uge") + ylab("Antal fangster") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
@@ -661,7 +628,7 @@ output$plotCatchSeaMonthNow <- renderPlot({
   
 ggplot(dat, aes(x = Month)) + 
      geom_bar(aes(fill = Place), stat="count") +
-     geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) +
+     geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1)) +
      #expand_limits(x = month(now(), label = T)) + 
      labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
      theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
@@ -699,6 +666,46 @@ datStatMonthSea %>%
                 bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
+
+
+Fangsttabel {data-navmenu="Havørred"}
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Seneste fangster
+
+```{r}
+dataTableOutput("dTSeaCatch")
+```
+
+```{r, context = "server"}
+output$dTSeaCatch <- DT::renderDataTable(
+  DT::datatable(
+    datCatchSea %>% select(Date:Method, Fulton, Misc, NoWeight),
+    class = 'stripe row-border order-column nowrap compact', # nowrap display compact
+    rownames = FALSE,
+    filter = 'bottom',
+    escape = FALSE,
+    options = list(pageLength = 15, order = list(list(0, 'desc')),
+                   list(visible=FALSE, targets="NoWeight"),
+                   # autoWidth = TRUE,
+                   columnDefs = list(
+                     list(className = 'dt-center', targets = 0:7),
+                     list(visible=FALSE, targets=c(8))
+                   )
+              ),
+    colnames = c('Dato', 'Længde', 'Vægt', 'Navn', 'Sted', 'Metode', 'Kondition', 'Diverse', 'NoWeight'),
+    extensions = c('Responsive')  #,'FixedHeader','RowGroup'
+  ) %>%
+  formatStyle(columns = 'Weight', valueColumns = 'NoWeight', color = styleEqual(c(0, 1), c("black","green"))) %>%
+  formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>%
+  formatRound(c('Length'), digits = 0) %>%
+  formatRound(c('Weight'), digits = 1) %>%
+  formatRound(c('Fulton'), digits = 2)
+)
+```
 
 
 
