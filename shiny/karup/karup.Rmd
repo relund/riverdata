@@ -337,7 +337,7 @@ output$plotCatchSeaWeek <- renderPlot({
   p <- ggplot(data = dat, aes(x = Week)) +
     geom_bar(aes(fill = Place)) + 
     geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) 
-  if (curYear == year(now())) p <- p + expand_limits(x = week(now())) 
+  if (curYear == year(now())) p <- p + expand_limits(x = isoweek(now())) 
   p <- p +
     coord_cartesian(clip = 'off') +
     labs(fill = "") + xlab("Uge") + ylab("Antal fangster") + 
@@ -361,7 +361,7 @@ output$plotCatchSeaMonthNow <- renderPlot({
   p <- ggplot(dat, aes(x = Month)) + 
     geom_bar(aes(fill = Place)) + 
     geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", vjust = -.5) 
-  if (curYear == year(now())) p <- p + expand_limits(x = week(now())) 
+  if (curYear == year(now())) p <- p + expand_limits(x = isoweek(now())) 
   p <- p +
     coord_cartesian(clip = 'off') +
     labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
