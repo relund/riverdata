@@ -24,7 +24,7 @@ readCatch <- function(path, datWeight) {
         if_else(Net, '<img src="www/net.gif" alt="Garnskadet">', "", ""),
         if_else(!is.na(Foto),str_c("<a href=\"", Foto, "\", target=\"_blank\"><img src=\"www/foto.gif\" alt=\"Foto\"></a>"),"", "")
       ),
-      Month = month(Date, label = T), Week = week(Date), Year = year(Date), 
+      Month = month(Date, label = T), Week = isoweek(Date), Year = year(Date), 
       Place = fct_explicit_na(Place, "Ukendt"),
       NoWeight = 1*is.na(Weight), Day = yday(Date), DayStr = format(Date, "%d. %b")
     )
