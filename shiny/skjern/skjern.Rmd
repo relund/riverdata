@@ -155,7 +155,7 @@ groups <- NULL
 # Markers
 Ids <- datMarkers %>% 
   filter(
-    str_detect(Group, regex("Parkering", ignore_case = T)) | 
+    str_detect(Group, regex("parkering", ignore_case = T)) | 
       str_detect(Desc, regex("indhegning", ignore_case = T))) %>% 
   pull(Id)
 maplet <- mapAddMarkers(maplet, "Parkering", datMarkers %>% filter(Id %in% Ids))

@@ -251,12 +251,19 @@ mapId <- "1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF" # Skj-LF
 lst3 <- stripKml(mapId, Club = "Skj-LF")
 mapId <- "1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD" # BFF
 lst4 <- stripKml(mapId, Club = "BFF")
-## LF1926 (has a map for each place)
-mapId <- "1d8I43tTbY5IyOjzTHpqlY8hd7F0"
-lst5_1 <- stripKml(mapId, Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")
+## LF1926 (has a map for each place, try to hack)
+lst5_1 <- stripKml("1d8I43tTbY5IyOjzTHpqlY8hd7F0", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Sdr. Felding
+lst5_2 <- stripKml("1lHHXIhjmF23X1wG0MWqLPiazhjg", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Udløbet
+lst5_3 <- stripKml("1OIEh02I2rpO8a1F05Lq3LijF4O8", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Albæk
+lst5_4 <- stripKml("1BxltqquXBJRRxj2_GVWzjA1TbhQ", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Skarrild
+lst5_4$datLines <- lst5_4$datLines %>% mutate(Group = if_else(str_detect(Text, fixed('clasonborg', ignore_case=TRUE)), "dagkort", Group))
 
-datMarkers <- bind_rows(lst1$datMarkers, lst2$datMarkers, lst3$datMarkers, lst4$datMarkers) %>% 
+
+
+datMarkers <- bind_rows(lst1$datMarkers, lst2$datMarkers, lst3$datMarkers, lst4$datMarkers,
+                        lst5_1$datMarkers, lst5_2$datMarkers, lst5_3$datMarkers, lst5_4$datMarkers) %>% 
   filter(!is.na(Icon))
-datLines <- bind_rows(lst1$datLines, lst2$datLines, lst3$datLines, lst4$datLines)
+datLines <- bind_rows(lst1$datLines, lst2$datLines, lst3$datLines, lst4$datLines,
+                      lst5_1$datLines, lst5_2$datLines, lst5_3$datLines, lst5_4$datLines)
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
