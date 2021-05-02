@@ -247,10 +247,14 @@ mapId <- "135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ" # Places
 lst1 <- stripKml(mapId)
 mapId <- "1EKI26YR4FQtlIKIQoAbo3Rbooj8" # HI-LF
 lst2 <- stripKml(mapId, Club = "HI-LF")
-mapId <- "1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF"
+mapId <- "1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF" # Skj-LF
 lst3 <- stripKml(mapId, Club = "Skj-LF")
-mapId <- "1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD"
+mapId <- "1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD" # BFF
 lst4 <- stripKml(mapId, Club = "BFF")
+## LF1926 (has a map for each place)
+mapId <- "1d8I43tTbY5IyOjzTHpqlY8hd7F0"
+lst5_1 <- stripKml(mapId, Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")
+
 datMarkers <- bind_rows(lst1$datMarkers, lst2$datMarkers, lst3$datMarkers, lst4$datMarkers) %>% 
   filter(!is.na(Icon))
 datLines <- bind_rows(lst1$datLines, lst2$datLines, lst3$datLines, lst4$datLines)

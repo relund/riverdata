@@ -786,7 +786,7 @@ updateWaterTempSkjern <- function(stations, prefix) {
 
 
 
-stripKml <- function(mapId, Club = NA) {
+stripKml <- function(mapId, Club = NA, GroupNameMarkers = NULL, GroupNameLines = NULL) {
   kml <- read_xml(str_c("https://www.google.com/maps/d/u/0/kml?mid=", mapId, "&forcekml=1"))
   xml_ns_strip(kml)
   x <- xml_find_all(kml, "//Folder")
@@ -815,8 +815,10 @@ stripKml <- function(mapId, Club = NA) {
         str_detect(Desc, fixed('hytte', ignore_case=TRUE)) ~ "cottage.png",
         str_detect(Desc, fixed('indhegning', ignore_case=TRUE)) ~ "fence.png",
         str_detect(Desc, fixed('laksens hus', ignore_case=TRUE)) ~ "house.png",
+        str_detect(Desc, fixed('p-plads', ignore_case=TRUE)) ~ "park.png",
         TRUE ~ NA_character_
-      ))
+      )) 
+    if (!is.null(GroupNameMarkers)) datMarkers$Group <- GroupNameMarkers
   }
 
   datLines <- NULL
@@ -842,6 +844,7 @@ stripKml <- function(mapId, Club = NA) {
       unnest(col = c(Line)) %>% 
       unnest(col = c(LineCord)) %>% 
       mutate(Club = Club)
+    if (!is.null(GroupNameLines)) datLines$Group <- GroupNameLines
   }
   return(list(datMarkers = datMarkers, datLines = datLines))
 }
