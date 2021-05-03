@@ -1048,12 +1048,13 @@ dat <- dat %>%
             yVAvgL = round(mean(Length, na.rm = T),0),
             yVTotalW = round(sum(Weight, na.rm = T),0)
             ) %>% 
-  mutate(yV = .data[[input$iYUnitSal]]) %>% 
   arrange_at(c(input$iXUnitSal, "xV")) %>% 
   group_by(xV) %>% 
   mutate(pct = sum(yVTotal)) %>% 
   group_by_at(c("xV", "grp", input$iXUnitSal)) %>% 
-  mutate(label = str_c(round(100*yVTotal/pct, 0), "%"))
+  mutate(label = str_c(round(100*yVTotal/pct, 0), "%"),
+         yVPct = round(100*yVTotal/pct, 0)) %>% 
+  mutate(yV = .data[[input$iYUnitSal]]) 
 
 if (input$iGroupSal == "None") dat <- dat %>% mutate(label = yV)
 xLab <- names(cIXUnit)[grep(input$iXUnitSal, cIXUnit)]
@@ -1091,7 +1092,8 @@ cIYUnit <- c("Fisk fanget" = "yVTotal",
              "Gennemsnitlig længde" = "yVAvgL",
              "Max vægt" = "yVMaxW",
              "Max længde" = "yVMaxL",
-             "Total vægt" = "yVTotalW")
+             "Total vægt" = "yVTotalW",
+             "Procent (gruppeinddeling)" = "yVPct")
 selectInput("iYUnitSal", "Vælg enhed på y-aksen:", cIYUnit, selectize = FALSE)
 ```
 
@@ -1107,7 +1109,7 @@ cIGroup <- c("Område" = "Place",
             "Køn" = "Sex",
             "Hjemtaget" = "Killed",
             "Ingen" = "None")
-selectInput("iGroupSal", "Vælg gruppe inddeling:", cIGroup, "None", selectize = FALSE)
+selectInput("iGroupSal", "Vælg gruppeinddeling:", cIGroup, "None", selectize = FALSE)
 ```
 
 
@@ -1160,12 +1162,13 @@ dat <- dat %>%
             yVAvgL = round(mean(Length, na.rm = T),0),
             yVTotalW = round(sum(Weight, na.rm = T),0)
             ) %>% 
-  mutate(yV = .data[[input$iYUnitSea]]) %>% 
   arrange_at(c(input$iXUnitSea, "xV")) %>% 
   group_by(xV) %>% 
   mutate(pct = sum(yVTotal)) %>% 
   group_by_at(c("xV", "grp", input$iXUnitSea)) %>% 
-  mutate(label = str_c(round(100*yVTotal/pct, 0), "%"))
+  mutate(label = str_c(round(100*yVTotal/pct, 0), "%"),
+         yVPct = round(100*yVTotal/pct, 0)) %>% 
+  mutate(yV = .data[[input$iYUnitSea]]) 
 
 if (input$iGroupSea == "None") dat <- dat %>% mutate(label = yV)
 xLab <- names(cIXUnit)[grep(input$iXUnitSea, cIXUnit)]
@@ -1203,7 +1206,8 @@ cIYUnit <- c("Fisk fanget" = "yVTotal",
              "Gennemsnitlig længde" = "yVAvgL",
              "Max vægt" = "yVMaxW",
              "Max længde" = "yVMaxL",
-             "Total vægt" = "yVTotalW")
+             "Total vægt" = "yVTotalW",
+             "Procent (gruppeinddeling)" = "yVPct")
 selectInput("iYUnitSea", "Vælg enhed på y-aksen:", cIYUnit, selectize = FALSE)
 ```
 
