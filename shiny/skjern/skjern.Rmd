@@ -47,8 +47,7 @@ library(leaflet)
 
 source("functions.R")
 
-faIcon <- function (name, class = "", title = "", lib = "font-awesome") 
-{
+faIcon <- function (name, class = "", title = "", lib = "font-awesome") {
     prefixes <- list(`font-awesome` = "fa", glyphicon = "glyphicon")
     prefix <- prefixes[[lib]]
     if (is.null(prefix)) {
@@ -68,6 +67,7 @@ faIcon <- function (name, class = "", title = "", lib = "font-awesome")
     htmltools::browsable(iconTag)
 }
 addResourcePath('www', paste0(getwd(), "/www"))
+Sys.setlocale("LC_TIME", "da_DK.UTF-8")
 ```
 
 
@@ -436,7 +436,8 @@ cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")),
 datStatMonthSal %>%
   kable(col.names = cNames, escape = F, align = "c") %>%
   kable_styling(fixed_thead = T, font_size = 10,
-                bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+                bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
+  add_header_above(c(" " = 2, "Køn", "Område (alle fangster/hjemtaget)" = 2, "Metode", "Genudsat", "Længde", "Vægt", "Kondition"))
 ```
 
 
@@ -663,7 +664,8 @@ cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")),
 datStatMonthSea %>%
   kable(col.names = cNames, escape = F, align = "c") %>%
   kable_styling(fixed_thead = T, font_size = 10,
-                bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+                bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
+  add_header_above(c(" " = 2, "Køn", "Område (alle fangster/hjemtaget)" = 2, "Metode", "Genudsat", "Længde", "Vægt", "Kondition"))
 ```
 
 
@@ -800,7 +802,8 @@ cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")),
 datStatYearSal %>% 
   kable(col.names = cNames, escape = F, align = "c") %>% 
   kable_styling(fixed_thead = T, font_size = 10,
-                bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+                bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
+  add_header_above(c(" " = 2, "Køn", "Område (alle fangster/hjemtaget)" = 2, "Metode", "Genudsat", "Længde", "Vægt", "Kondition"))
 
 # tabStat <- 
 #   datStatYearSal %>% 
@@ -929,7 +932,8 @@ cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")),
 datStatYearSea %>% 
   kable(col.names = cNames, escape = F, align = "c") %>% 
   kable_styling(fixed_thead = T, font_size = 10,
-                bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+                bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
+  add_header_above(c(" " = 2, "Køn", "Område (alle fangster/hjemtaget)" = 2, "Metode", "Genudsat", "Længde", "Vægt", "Kondition"))
 ```
 
 
