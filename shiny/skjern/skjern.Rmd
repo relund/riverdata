@@ -1,5 +1,5 @@
 ---
-title: "Dashboard Skjern Å"
+title: "Skjern Å - Dashboard "
 author: ''
 output:
   flexdashboard::flex_dashboard:
@@ -67,7 +67,7 @@ faIcon <- function (name, class = "", title = "", lib = "font-awesome") {
     htmltools::browsable(iconTag)
 }
 addResourcePath('www', paste0(getwd(), "/www"))
-Sys.setlocale("LC_TIME", "da_DK.UTF-8")
+Sys.setlocale("LC_ALL", "da_DK.UTF-8")
 ```
 
 
