@@ -243,15 +243,31 @@ dat <- calcWaterLevelsWeb(dat, prefix)
 
 
 #### Map ####
-lst1 <- stripKml("135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ")  # Places
-lst2_1 <- stripKml("1EKI26YR4FQtlIKIQoAbo3Rbooj8", Club = "HI-LF")  # Skjern Å
-lst2_2 <- stripKml("16Fh0qfhd6Aqwr5SzssWHj3bLybA", Club = "HI-LF")  # Vorgod Å
-lst3 <- stripKml("1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF", Club = "Skj-LF")
-lst4 <- stripKml("1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD", Club = "BFF")
-datMarkers <- bind_rows(lst1$datMarkers, lst2_1$datMarkers, lst2_2$datMarkers, lst3$datMarkers, lst4$datMarkers)
-datLines <- bind_rows(lst1$datLines, lst2_1$datLines, lst2_2$datMarkers, lst3$datLines, lst4$datLines)
-
-## LF1926 (has a map for each place, try to hack)
+lst <- stripKml("135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ")  # Places
+datMarkers <- lst$datMarkers
+datLines <- lst$datLines
+## HI-LF
+mapIds <- c("1EKI26YR4FQtlIKIQoAbo3Rbooj8", # Skjern Å
+            "16Fh0qfhd6Aqwr5SzssWHj3bLybA", # Vorgod Å
+            "1TlsJDLuLyOdClyIJjvW4PluJ0xk", # Karstoft Å
+            "1lNB2Ak-WMVkA9nvVRQBcgTOLylw", # Rind Å
+            "1uSITXXEXqCtKr58RYDkUmqIFOkw" # Fjederholt Å
+            )
+for (i in 1:length(mapIds)) {
+  lst <- stripKml(mapIds[i], Club = "HI-LF") 
+  lst$datLines$LineGroupId <- lst$datLines$LineGroupId + i*100
+  datMarkers <- bind_rows(datMarkers, lst$datMarkers)
+  datLines <- bind_rows(datLines, lst$datLines)
+}
+## Skj-LF
+lst <- stripKml("1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF", Club = "Skj-LF")
+datMarkers <- bind_rows(datMarkers, lst$datMarkers)
+datLines <- bind_rows(datLines, lst$datLines)
+## BFF
+lst <- stripKml("1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD", Club = "BFF")
+datMarkers <- bind_rows(datMarkers, lst$datMarkers)
+datLines <- bind_rows(datLines, lst$datLines)
+## LF1926 (has a map for each place with no layers, try to hack)
 mapIds <- c("1d8I43tTbY5IyOjzTHpqlY8hd7F0", # Sdr. Felding
             "1lHHXIhjmF23X1wG0MWqLPiazhjg", # Udløbet
             "1OIEh02I2rpO8a1F05Lq3LijF4O8", # Albæk
@@ -273,5 +289,6 @@ lst$datLines <- lst$datLines %>% mutate(Group = if_else(str_detect(Text, fixed('
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) %>% 
   filter(!is.na(Icon))
 datLines <- bind_rows(datLines, lst$datLines)
+## Write to csv
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
