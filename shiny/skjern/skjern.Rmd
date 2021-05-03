@@ -1108,6 +1108,7 @@ cIGroup <- c("Område" = "Place",
             "Metode" = "Method",
             "Køn" = "Sex",
             "Hjemtaget" = "Killed",
+            "Garnskadet" = "Net",
             "Ingen" = "None")
 selectInput("iGroupSal", "Vælg gruppeinddeling:", cIGroup, "None", selectize = FALSE)
 ```
@@ -1222,6 +1223,7 @@ cIGroup <- c("Område" = "Place",
             "Metode" = "Method",
             "Køn" = "Sex",
             "Hjemtaget" = "Killed",
+            "Garnskadet" = "Net",
             "Ingen" = "None")
 selectInput("iGroupSea", "Vælg gruppe inddeling:", cIGroup, "None", selectize = FALSE)
 ```
