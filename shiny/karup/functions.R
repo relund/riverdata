@@ -131,7 +131,7 @@ yearlyStat <- function(datCatch) {
 monthlyStat <- function(datCatch, year) {
   dat <- datCatch %>% 
     filter(year(Date) == year) %>% 
-    mutate(Month = month(Date, label = TRUE, locale = "da_DK.UTF-8")) %>% group_by(Month) %>% nest() %>% 
+    mutate(Month = month(Date, label = TRUE)) %>% group_by(Month) %>% nest() %>% 
     mutate(keep = map_lgl(data, function(df) { # remove months where no weight or length
       if_else(nrow(df) == sum(is.na(df$Length)) | nrow(df) == sum(is.na(df$Weight)), FALSE, TRUE)
     })) %>% 
