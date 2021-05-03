@@ -257,13 +257,24 @@ lst5_2 <- stripKml("1lHHXIhjmF23X1wG0MWqLPiazhjg", Club = "LF1926", GroupNameMar
 lst5_3 <- stripKml("1OIEh02I2rpO8a1F05Lq3LijF4O8", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Albæk
 lst5_4 <- stripKml("1BxltqquXBJRRxj2_GVWzjA1TbhQ", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Skarrild
 lst5_4$datLines <- lst5_4$datLines %>% mutate(Group = if_else(str_detect(Text, fixed('clasonborg', ignore_case=TRUE)), "dagkort", Group))
+lst5_5 <- stripKml("1kkZdxvxzBZ03pGrDprGEDnHEqS0", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Karstoft Å ved Skarrildhus
+lst5_6 <- stripKml("1MGXP6audGZCH0Dz6iNJ27mHGUOA", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Omme Å ved Farre
+lst5_7 <- stripKml("1q0d_VvbuvqHvHljTSeuv3QkMty9Sjg6O", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Omme Å ved Stovstrup
+lst5_8 <- stripKml("1tmD0iHbHGayL4GgtiKWyBESDu4uamFmC", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Omme Å ved Rabæk
+lst5_9 <- stripKml("12DDsCWF1P8bRYwaDuZa0jhPTetw", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Vorgod Å ved Troldhede
+lst5_10 <- stripKml("1Xoln0k9Xf7qS05QKrFzovBLkOk8", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Vorgod Å nedre
 
 
 
 datMarkers <- bind_rows(lst1$datMarkers, lst2$datMarkers, lst3$datMarkers, lst4$datMarkers,
-                        lst5_1$datMarkers, lst5_2$datMarkers, lst5_3$datMarkers, lst5_4$datMarkers) %>% 
+                        lst5_1$datMarkers, lst5_2$datMarkers, lst5_3$datMarkers, lst5_4$datMarkers,
+                        lst5_5$datMarkers, lst5_6$datMarkers, lst5_7$datMarkers, lst5_8$datMarkers,
+                        lst5_9$datMarkers, lst5_10$datMarkers
+                        ) %>% 
   filter(!is.na(Icon))
 datLines <- bind_rows(lst1$datLines, lst2$datLines, lst3$datLines, lst4$datLines,
-                      lst5_1$datLines, lst5_2$datLines, lst5_3$datLines, lst5_4$datLines)
+                      lst5_1$datLines, lst5_2$datLines, lst5_3$datLines, lst5_4$datLines,
+                      lst5_5$datLines, lst5_6$datLines, lst5_7$datLines, lst5_8$datLines,
+                      lst5_9$datLines, lst5_10$datLines)
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
