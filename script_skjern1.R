@@ -243,38 +243,35 @@ dat <- calcWaterLevelsWeb(dat, prefix)
 
 
 #### Map ####
-mapId <- "135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ" # Places
-lst1 <- stripKml(mapId)
-mapId <- "1EKI26YR4FQtlIKIQoAbo3Rbooj8" # HI-LF
-lst2 <- stripKml(mapId, Club = "HI-LF")
-mapId <- "1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF" # Skj-LF
-lst3 <- stripKml(mapId, Club = "Skj-LF")
-mapId <- "1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD" # BFF
-lst4 <- stripKml(mapId, Club = "BFF")
+lst1 <- stripKml("135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ")  # Places
+lst2_1 <- stripKml("1EKI26YR4FQtlIKIQoAbo3Rbooj8", Club = "HI-LF")  # Skjern Å
+lst2_2 <- stripKml("16Fh0qfhd6Aqwr5SzssWHj3bLybA", Club = "HI-LF")  # Vorgod Å
+lst3 <- stripKml("1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF", Club = "Skj-LF")
+lst4 <- stripKml("1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD", Club = "BFF")
+datMarkers <- bind_rows(lst1$datMarkers, lst2_1$datMarkers, lst2_2$datMarkers, lst3$datMarkers, lst4$datMarkers)
+datLines <- bind_rows(lst1$datLines, lst2_1$datLines, lst2_2$datMarkers, lst3$datLines, lst4$datLines)
+
 ## LF1926 (has a map for each place, try to hack)
-lst5_1 <- stripKml("1d8I43tTbY5IyOjzTHpqlY8hd7F0", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Sdr. Felding
-lst5_2 <- stripKml("1lHHXIhjmF23X1wG0MWqLPiazhjg", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Udløbet
-lst5_3 <- stripKml("1OIEh02I2rpO8a1F05Lq3LijF4O8", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Albæk
-lst5_4 <- stripKml("1BxltqquXBJRRxj2_GVWzjA1TbhQ", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Skarrild
-lst5_4$datLines <- lst5_4$datLines %>% mutate(Group = if_else(str_detect(Text, fixed('clasonborg', ignore_case=TRUE)), "dagkort", Group))
-lst5_5 <- stripKml("1kkZdxvxzBZ03pGrDprGEDnHEqS0", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Karstoft Å ved Skarrildhus
-lst5_6 <- stripKml("1MGXP6audGZCH0Dz6iNJ27mHGUOA", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Omme Å ved Farre
-lst5_7 <- stripKml("1q0d_VvbuvqHvHljTSeuv3QkMty9Sjg6O", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Omme Å ved Stovstrup
-lst5_8 <- stripKml("1tmD0iHbHGayL4GgtiKWyBESDu4uamFmC", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Omme Å ved Rabæk
-lst5_9 <- stripKml("12DDsCWF1P8bRYwaDuZa0jhPTetw", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Vorgod Å ved Troldhede
-lst5_10 <- stripKml("1Xoln0k9Xf7qS05QKrFzovBLkOk8", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Vorgod Å nedre
-
-
-
-datMarkers <- bind_rows(lst1$datMarkers, lst2$datMarkers, lst3$datMarkers, lst4$datMarkers,
-                        lst5_1$datMarkers, lst5_2$datMarkers, lst5_3$datMarkers, lst5_4$datMarkers,
-                        lst5_5$datMarkers, lst5_6$datMarkers, lst5_7$datMarkers, lst5_8$datMarkers,
-                        lst5_9$datMarkers, lst5_10$datMarkers
-                        ) %>% 
+mapIds <- c("1d8I43tTbY5IyOjzTHpqlY8hd7F0", # Sdr. Felding
+            "1lHHXIhjmF23X1wG0MWqLPiazhjg", # Udløbet
+            "1OIEh02I2rpO8a1F05Lq3LijF4O8", # Albæk
+            "1kkZdxvxzBZ03pGrDprGEDnHEqS0", # Karstoft Å ved Skarrildhus
+            "1MGXP6audGZCH0Dz6iNJ27mHGUOA", # Omme Å ved Farre
+            "1q0d_VvbuvqHvHljTSeuv3QkMty9Sjg6O", # Omme Å ved Stovstrup,
+            "1tmD0iHbHGayL4GgtiKWyBESDu4uamFmC", # Omme Å ved Rabæk
+            "12DDsCWF1P8bRYwaDuZa0jhPTetw", # Vorgod Å ved Troldhede
+            "1Xoln0k9Xf7qS05QKrFzovBLkOk8" # Vorgod Å nedre
+            )
+for (i in 1:length(mapIds)) {
+  lst <- stripKml(mapIds[i], Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem") 
+  lst$datLines$LineGroupId <- lst$datLines$LineGroupId + i*10
+  datMarkers <- bind_rows(datMarkers, lst$datMarkers)
+  datLines <- bind_rows(datLines, lst$datLines)
+}
+lst <- stripKml("1BxltqquXBJRRxj2_GVWzjA1TbhQ", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Skarrild
+lst$datLines <- lst$datLines %>% mutate(Group = if_else(str_detect(Text, fixed('clasonborg', ignore_case=TRUE)), "dagkort", Group))
+datMarkers <- bind_rows(datMarkers, lst$datMarkers) %>% 
   filter(!is.na(Icon))
-datLines <- bind_rows(lst1$datLines, lst2$datLines, lst3$datLines, lst4$datLines,
-                      lst5_1$datLines, lst5_2$datLines, lst5_3$datLines, lst5_4$datLines,
-                      lst5_5$datLines, lst5_6$datLines, lst5_7$datLines, lst5_8$datLines,
-                      lst5_9$datLines, lst5_10$datLines)
+datLines <- bind_rows(datLines, lst$datLines)
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
