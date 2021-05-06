@@ -206,37 +206,6 @@ maplet <- maplet %>%
 
 ```{r, context = "server"}
 onRestored(function(state) {
-  if (!is.null(state$input$iInvYearSal)) {
-    updateSliderInput(session, "iInvYearSal",
-     value = state$input$iInvYearSal
-    )
-  }
-  if (!is.null(state$input$iInvDaySal)) {
-    updateSliderInput(session, "iInvDaySal",
-     value = as.Date(state$input$iInvDaySal)
-    )
-  }
-  if (!is.null(state$input$iGroupSal)) {
-    updateSelectInput(session, "iGroupSal",
-     selected = state$input$iGroupSal
-    )
-  }
-  if (!is.null(state$input$iDataSal)) {
-    updateSelectInput(session, "iDataSal",
-     selected = state$input$iDataSal
-    )
-  }
-  if (!is.null(state$input$iYUnitSal)) {
-    updateSelectInput(session, "iYUnitSal",
-     selected = state$input$iYUnitSal
-    )
-  }
-  if (!is.null(state$input$iXUnitSal)) {
-    updateSelectInput(session, "iXUnitSal",
-     selected = state$input$iXUnitSal
-    )
-  }
-  
   if (!is.null(state$input$iInvYearSea)) {
     updateSliderInput(session, "iInvYearSea",
      value = state$input$iInvYearSea
@@ -721,8 +690,10 @@ if (input$iXUnitSea == "Day") {
 dat <- 
   datCatchSea %>% 
   dplyr::filter(Year >= input$iInvYearSea[1], Year <= input$iInvYearSea[2],
-                Day >= yday(ymd(str_c(input$iInvYearSea[1],"-",month(input$iInvDaySea[1]),"-",day(input$iInvDaySea[1])))),
-                Day <= yday(ymd(str_c(input$iInvYearSea[2],"-",month(input$iInvDaySea[2]),"-",day(input$iInvDaySea[2]))))) 
+                MDay >= min(mday(input$iInvDaySea[1]), mday(input$iInvDaySea[2])),
+                MDay <= max(mday(input$iInvDaySea[1]), mday(input$iInvDaySea[2])),
+                MonthN >= month(input$iInvDaySea[1]),
+                MonthN <= month(input$iInvDaySea[2])) 
 if (input$iDataSea == "KilledTrue") dat <- dat %>% dplyr::filter(Killed)
 if (input$iDataSea == "KilledFalse") dat <- dat %>% dplyr::filter(!Killed)
 if (input$iDataSea == "WeightTrue") dat <- dat %>% dplyr::filter(NoWeight == 0)
