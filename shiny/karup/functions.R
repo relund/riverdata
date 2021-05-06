@@ -29,8 +29,9 @@ readCatch <- function(prefix, datWeight) {
         if_else(Sex == 'Female', '<img src="www/girl.gif" alt="Hun">', "", ""),
         if_else(!is.na(Foto),str_c("<a href=\"", Foto, "\", target=\"_blank\"><img src=\"www/foto.gif\" alt=\"Foto\"></a>"),"", "")
       ),
-      Month = factor(month(Date, label = T), ordered = F), Week = isoweek(Date), Year = year(Date), 
-      NoWeight = 1*is.na(Weight), Day = yday(Date), DayStr = format(Date, "%d. %b")
+      Month = factor(month(Date, label = T), ordered = F), MonthN = month(Date), Week = isoweek(Date), Year = year(Date), 
+      NoWeight = 1*is.na(Weight), MDay = mday(Date), DayStr = format(Date, "%d. %b"),
+      Day = str_c(MonthN, "-", MDay)
     )
   
   datCatch <- left_join(datCatch, datWeight, by = c("Length", "Month" = "Period")) %>% 

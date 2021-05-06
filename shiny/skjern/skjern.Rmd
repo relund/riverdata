@@ -72,6 +72,7 @@ enableBookmarking(store = 'url')
 ```
 
 ```{r, context = "server"}
+Sys.setlocale("LC_ALL", "da_DK.UTF-8")
 onRestored(function(state) {
   if (!is.null(state$input$iInvYearSal)) {
     updateSliderInput(session, "iInvYearSal",
@@ -1057,12 +1058,12 @@ plotOutput("plotCompareSal")
 ```{r, context = "server"}
 output$plotCompareSal <- renderPlot({
 # input <- NULL
-# input$iInvYear <- c(2018,2019)
-# input$iInvDay <- c("2019-04-16", "2019-04-25")
-# input$iXUnit <- "Day"  # Day
-# input$iYUnit <- "yVAvgW"
-# input$iGroup <- "None"
-# input$iData <- "TRUE"
+# input$iInvYearSal <- c(2004,2021)
+# input$iInvDaySal <- c("2021-04-16", "2021-04-16")
+# input$iXUnitSal <- "Day"  # Day
+# input$iYUnitSal <- "yVTotal"
+# input$iGroupSal <- "None"
+# input$iDataSal <- "All"
 
 onBookmarked(function(url) {
   updateQueryString(str_c(url, "#section-compare-sal"))
@@ -1071,7 +1072,7 @@ setBookmarkExclude(str_subset(names(input), "^i.*Sal$", negate = TRUE))
 session$doBookmark()
   
 if (input$iXUnitSal == "Day") {
-  iXUnitSal <- "DayStr" 
+  iXUnitSal <- "DayStr"
 } else if (input$iXUnitSal == "Year") {
   iXUnitSal <- "None"
 } else iXUnitSal <- input$iXUnitSal
@@ -1079,8 +1080,10 @@ if (input$iXUnitSal == "Day") {
 dat <- 
   datCatchSal %>% 
   dplyr::filter(Year >= input$iInvYearSal[1], Year <= input$iInvYearSal[2],
-                Day >= yday(ymd(str_c(input$iInvYearSal[1],"-",month(input$iInvDaySal[1]),"-",day(input$iInvDaySal[1])))),
-                Day <= yday(ymd(str_c(input$iInvYearSal[2],"-",month(input$iInvDaySal[2]),"-",day(input$iInvDaySal[2]))))) 
+                MDay >= min(mday(input$iInvDaySal[1]), mday(input$iInvDaySal[2])),
+                MDay <= max(mday(input$iInvDaySal[1]), mday(input$iInvDaySal[2])),
+                MonthN >= month(input$iInvDaySal[1]),
+                MonthN <= month(input$iInvDaySal[2])) 
 if (input$iDataSal == "KilledTrue") dat <- dat %>% dplyr::filter(Killed)
 if (input$iDataSal == "KilledFalse") dat <- dat %>% dplyr::filter(!Killed)
 if (input$iDataSal == "WeightTrue") dat <- dat %>% dplyr::filter(NoWeight == 0)
@@ -1124,8 +1127,8 @@ sliderInput("iInvYearSal", label = "Vælg årstal:",
             min = 2004, max = year(now()), sep = "",
             value = c(2016, year(now())), step = 1)
 sliderInput("iInvDaySal", label = "Vælg dato interval: ",
-            min = as.Date("2019-04-01"), max = as.Date("2019-10-31"), 
-            value = c(as.Date("2019-04-01"), as.Date("2019-10-31")), step = 1,
+            min = as.Date(str_c(year(now()), "-04-01")), max = as.Date(str_c(year(now()), "-10-31")), 
+            value = c(as.Date(str_c(year(now()), "-04-01")), as.Date(str_c(year(now()), "-10-31"))), step = 1,
             timeFormat = "%d %b")
 ```
 
@@ -1177,12 +1180,12 @@ plotOutput("plotCompareSea")
 ```{r, context = "server"}
 output$plotCompareSea <- renderPlot({
 # input <- NULL
-# input$iInvYear <- c(2018,2019)
-# input$iInvDay <- c("2019-04-16", "2019-04-25")
-# input$iXUnit <- "Day"  # Day
-# input$iYUnit <- "yVAvgW"
-# input$iGroup <- "None"
-# input$iData <- "TRUE"
+# input$iInvYearSal <- c(2018,2019)
+# input$iInvDaySal <- c("2021-04-16", "2021-04-16")
+# input$iXUnitSal <- "Year"  # Day
+# input$iYUnitSal <- "yVAvgW"
+# input$iGroupSal <- "None"
+# input$iDataSal <- "All"
   
 onBookmarked(function(url) {
   updateQueryString(str_c(url, "#section-compare-sea"))
@@ -1191,7 +1194,7 @@ setBookmarkExclude(str_subset(names(input), "^i.*Sea$", negate = TRUE))
 session$doBookmark()
 
 if (input$iXUnitSea == "Day") {
-  iXUnitSea <- "DayStr" 
+  iXUnitSea <- "DayStr"
 } else if (input$iXUnitSea == "Year") {
   iXUnitSea <- "None"
 } else iXUnitSea <- input$iXUnitSea
@@ -1199,8 +1202,10 @@ if (input$iXUnitSea == "Day") {
 dat <- 
   datCatchSea %>% 
   dplyr::filter(Year >= input$iInvYearSea[1], Year <= input$iInvYearSea[2],
-                Day >= yday(ymd(str_c(input$iInvYearSea[1],"-",month(input$iInvDaySea[1]),"-",day(input$iInvDaySea[1])))),
-                Day <= yday(ymd(str_c(input$iInvYearSea[2],"-",month(input$iInvDaySea[2]),"-",day(input$iInvDaySea[2]))))) 
+                MDay >= min(mday(input$iInvDaySal[1]), mday(input$iInvDaySal[2])),
+                MDay <= max(mday(input$iInvDaySal[1]), mday(input$iInvDaySal[2])),
+                MonthN >= month(input$iInvDaySal[1]),
+                MonthN <= month(input$iInvDaySal[2])) 
 if (input$iDataSea == "KilledTrue") dat <- dat %>% dplyr::filter(Killed)
 if (input$iDataSea == "KilledFalse") dat <- dat %>% dplyr::filter(!Killed)
 if (input$iDataSea == "WeightTrue") dat <- dat %>% dplyr::filter(NoWeight == 0)
@@ -1244,8 +1249,8 @@ sliderInput("iInvYearSea", label = "Vælg årstal:",
             min = 2004, max = year(now()), sep = "",
             value = c(2016, year(now())), step = 1)
 sliderInput("iInvDaySea", label = "Vælg dato interval: ",
-            min = as.Date("2019-04-01"), max = as.Date("2019-10-31"), 
-            value = c(as.Date("2019-04-01"), as.Date("2019-10-31")), step = 1,
+            min = as.Date(str_c(year(now()), "-04-01")), max = as.Date(str_c(year(now()), "-10-31")), 
+            value = c(as.Date(str_c(year(now()), "-04-01")), as.Date(str_c(year(now()), "-10-31"))), step = 1,
             timeFormat = "%d %b")
 ```
 
