@@ -71,6 +71,7 @@ faIcon <- function (name, class = "", title = "", lib = "font-awesome")
 }
 addResourcePath('www', paste0(getwd(), "/www"))
 Sys.setlocale("LC_TIME", "da_DK")
+enableBookmarking(store = 'url')
 ```
 
 
@@ -203,18 +204,72 @@ maplet <- maplet %>%
 ```
 
 
-```{r, eval=FALSE}
-verbatimTextOutput("hash")
-query <- getQueryString()
+```{r, context = "server"}
+onRestored(function(state) {
+  if (!is.null(state$input$iInvYearSal)) {
+    updateSliderInput(session, "iInvYearSal",
+     value = state$input$iInvYearSal
+    )
+  }
+  if (!is.null(state$input$iInvDaySal)) {
+    updateSliderInput(session, "iInvDaySal",
+     value = as.Date(state$input$iInvDaySal)
+    )
+  }
+  if (!is.null(state$input$iGroupSal)) {
+    updateSelectInput(session, "iGroupSal",
+     selected = state$input$iGroupSal
+    )
+  }
+  if (!is.null(state$input$iDataSal)) {
+    updateSelectInput(session, "iDataSal",
+     selected = state$input$iDataSal
+    )
+  }
+  if (!is.null(state$input$iYUnitSal)) {
+    updateSelectInput(session, "iYUnitSal",
+     selected = state$input$iYUnitSal
+    )
+  }
+  if (!is.null(state$input$iXUnitSal)) {
+    updateSelectInput(session, "iXUnitSal",
+     selected = state$input$iXUnitSal
+    )
+  }
+  
+  if (!is.null(state$input$iInvYearSea)) {
+    updateSliderInput(session, "iInvYearSea",
+     value = state$input$iInvYearSea
+    )
+  }
+  if (!is.null(state$input$iInvDaySea)) {
+    updateSliderInput(session, "iInvDaySea",
+     value = as.Date(state$input$iInvDaySea)
+    )
+  }
+  if (!is.null(state$input$iGroupSea)) {
+    updateSelectInput(session, "iGroupSea",
+     selected = state$input$iGroupSea
+    )
+  }
+  if (!is.null(state$input$iDataSea)) {
+    updateSelectInput(session, "iDataSea",
+     selected = state$input$iDataSea
+    )
+  }
+  if (!is.null(state$input$iYUnitSea)) {
+    updateSelectInput(session, "iYUnitSea",
+     selected = state$input$iYUnitSea
+    )
+  }
+  if (!is.null(state$input$iXUnitSea)) {
+    updateSelectInput(session, "iXUnitSea",
+     selected = state$input$iXUnitSea
+    )
+  }
+})
 ```
 
-
-```{r, context = "server", eval=FALSE}
-output$hash <- renderText({
-  query <- getQueryString()
-  URLencode(str_c("?", str_c(names(query), query, sep = "=", collapse="&"), "#section-compare-sal"))
-      })
-```
 
 
 Fangster `r curYear` {data-navmenu="Havørred"}
@@ -629,7 +684,7 @@ output$plotCatchSeaMonthlyM <- renderPlot({
 
 
 
-Sammenlign {data-navmenu="Havørred"}
+Sammenlign {data-navmenu="Havørred" #compare-sea}
 =======================================================================
 
 Row {data-height=1000}
@@ -643,7 +698,6 @@ plotOutput("plotCompareSea")
 
 ```{r, context = "server"}
 output$plotCompareSea <- renderPlot({
-  
 # input <- NULL
 # input$iInvYear <- c(2018,2019)
 # input$iInvDay <- c("2019-04-16", "2019-04-25")
@@ -651,6 +705,12 @@ output$plotCompareSea <- renderPlot({
 # input$iYUnit <- "yVAvgW"
 # input$iGroup <- "None"
 # input$iData <- "TRUE"
+
+onBookmarked(function(url) {
+  updateQueryString(str_c(url, "#section-compare-sea"))
+})
+setBookmarkExclude(str_subset(names(input), "^i.*Sea$", negate = TRUE))
+session$doBookmark()
 
 if (input$iXUnitSea == "Day") {
   iXUnitSea <- "DayStr" 
