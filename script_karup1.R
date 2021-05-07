@@ -102,13 +102,31 @@ dat <- calcWaterTempWeb(dat, rMeans, prefix)
 
 
 #### Map ####
-mapId <- "1XJoAUKY_-kbmhZgovPpLgi82Gn8" # Places
-lst1 <- stripKml(mapId)
-mapId <- "1fzTAHG04McV3WO_IKxuxSPkDIaE" # HI-LF
-lst2 <- stripKml(mapId, Club = "HI-LF")
-datMarkers <- bind_rows(lst1$datMarkers, lst2$datMarkers) %>% 
-  filter(!is.na(Icon))
-datLines <- bind_rows(lst1$datLines, lst2$datLines)
+# Places
+lst <- stripKml("1XJoAUKY_-kbmhZgovPpLgi82Gn8")  
+datMarkers <- lst$datMarkers
+datLines <- lst$datLines
+# HI-LF
+lst <- stripKml("1fzTAHG04McV3WO_IKxuxSPkDIaE", Club = "HI-LF")
+datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
+datLines <- bind_rows(datLines, lst$datLines)
+# LFSO - Use my own maps since otherwise cannot identify dagkort/medlem
+mapIds <- c("1REe4_q1yvBikiH2F7ZhsCAVCsmc", # Zone 1
+            "1yXJtKx-ahWi9daAYA6Qh-AeO9lw", # Zone1a 
+            "16-gVaFz4dOviJEUKHikj4lsDKVM", # Zone 2a
+            "14LWr7b1Wuobkx2qW5ZYywuk8R9s", # Zone 2b
+            "1z7mp4FsSawKil8dh6z-zynIZacs", # Zone 3
+            "1JtSO1fPJLH37bnv0QG_svI7c4-Q", # Zone 4
+            "1RO7N1_1J_LYRlDDKdkkts9ydSgw"  # Zone 5
+)
+for (i in 1:length(mapIds)) {
+  lst <- stripKml(mapIds[i], Club = "LFSO") 
+  lst$datLines$LineGroupId <- lst$datLines$LineGroupId + i*100
+  datMarkers <- bind_rows(datMarkers, lst$datMarkers)
+  datLines <- bind_rows(datLines, lst$datLines)
+}
+
+datMarkers <- datMarkers  %>% filter(!is.na(Icon))
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
 
