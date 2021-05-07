@@ -135,6 +135,17 @@ onRestored(function(state) {
      selected = state$input$iXUnitSea
     )
   }
+  
+  if (!is.null(state$input$iPlaceW)) {
+    updateSelectInput(session, "iPlaceW",
+     selected = state$input$iPlaceW
+    )
+  }
+  if (!is.null(state$input$iScaleW)) {
+    updateSelectInput(session, "iScaleW",
+     selected = state$input$iScaleW
+    )
+  }
 })
 ```
 
@@ -272,7 +283,7 @@ maplet <- maplet %>%
   showGroup("Stednavne")
 ```
 
-Fangster `r curYear` {data-navmenu="Laks"}
+Fangster `r curYear` {data-navmenu="Laks" #fangster-sal}
 =======================================================================
 
 Row
@@ -398,6 +409,14 @@ plotOutput("plotCatchSalMonth")
 
 ```{r, context = "server"}
 output$plotCatchSalMonth <- renderPlot({
+  # url <- str_c(
+  #   # session$clientData$url_protocol, "://", 
+  #   # session$clientData$url_hostname,
+  #   session$clientData$url_pathname, 
+  #   "#section-fangster-sal"
+  # )
+  # updateQueryString(url) 
+  
   dat <- datCatchSal %>% 
     dplyr::filter(Date > now() - days(30)) %>% 
     select(Date, Place) %>% 
@@ -541,7 +560,7 @@ output$dTSalCatch <- DT::renderDataTable(
 ```
 
 
-Fangster `r curYear` {data-navmenu="Havørred"}
+Fangster `r curYear` {data-navmenu="Havørred" #fangster-sea}
 =======================================================================
 
 Row
@@ -787,6 +806,13 @@ plotlyOutput("plotWLevelPresent")
 output$plotWLevelPresent <- renderPlotly({
   loc <- Sys.setlocale("LC_TIME", "da_DK")
   on.exit(Sys.setlocale("LC_TIME", loc))
+  
+  onBookmarked(function(url) {
+    updateQueryString(str_c(url, "#section-vandstand"))
+  })
+  setBookmarkExclude(str_subset(names(input), "^i.*W$", negate = TRUE))
+  session$doBookmark()
+
   yLab <- if_else(input$iScaleW == "LevelRelative", "Relativ vandstand (cm)", "Vandstand (cm)")
   tmp <- datWLevel %>% 
       filter(Place == input$iPlaceW) %>% 

@@ -236,6 +236,17 @@ onRestored(function(state) {
      selected = state$input$iXUnitSea
     )
   }
+  
+  if (!is.null(state$input$iPlaceW)) {
+    updateSelectInput(session, "iPlaceW",
+     selected = state$input$iPlaceW
+    )
+  }
+  if (!is.null(state$input$iScaleW)) {
+    updateSelectInput(session, "iScaleW",
+     selected = state$input$iScaleW
+    )
+  }
 })
 ```
 
@@ -489,6 +500,13 @@ plotlyOutput("plotWLevelPresent")
 output$plotWLevelPresent <- renderPlotly({
   loc <- Sys.setlocale("LC_TIME", "da_DK")
   on.exit(Sys.setlocale("LC_TIME", loc))
+  
+  onBookmarked(function(url) {
+    updateQueryString(str_c(url, "#section-vandstand"))
+  })
+  setBookmarkExclude(str_subset(names(input), "^i.*W$", negate = TRUE))
+  session$doBookmark()
+  
   yLab <- if_else(input$iScaleW == "LevelRelative", "Relativ vandstand (cm)", "Vandstand (cm)")
   tmp <- datWLevel %>% 
       filter(Place == input$iPlaceW) %>% 
@@ -535,7 +553,7 @@ Vandtemperatur
 Row 
 -----------------------------------------------------------------------
 
-### 
+### Hagebro
 ```{r}
 plotlyOutput("plotWTempPresent")
 ```

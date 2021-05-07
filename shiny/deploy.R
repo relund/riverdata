@@ -1,6 +1,6 @@
 # Need to run this for getting the local right
 
-options(rsconnect.locale = "da_DK.UTF-8")
+# options(rsconnect.locale = "da_DK.UTF-8")
 
 ## Skjern Dashboard
 rsconnect::deployApp(
