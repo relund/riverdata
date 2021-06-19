@@ -1,180 +1,175 @@
 Date,Length,Weight,Name,Place,Method,Sex,Cut,Killed,Foto,Notes,Net,NetDesc,Kelt,ReportDate,Id
-2021-06-18,83,5.5,Claus Thomsen Boe,Mellem,Flue,Han,TRUE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-18T08:20:58Z,27908
-2021-06-18,85,5.8,Stefan Bartelsen,Nedre,Flue,Hun,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/20210618_061623-1024x768.jpg,NA,FALSE,NA,Nej,2021-06-18T09:32:16Z,27909
-2021-06-18,90,NA,Jesper S Petersen,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-18T10:12:26Z,27911
-2021-06-18,86,6.5,Jesper S Petersen,Nedre,Flue,Han,TRUE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-18T10:11:13Z,27910
-2021-06-18,77,NA,Peder Kirkegaard,Vorgod Å,Spin,Hun,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/C7E47BDD-6250-4C74-9B50-481B407C2253-768x1024.jpeg,NA,FALSE,NA,Nej,2021-06-18T12:43:56Z,27912
-2021-06-18,80,NA,Henrik Baadsgaard,Nedre,Flue,Hun,TRUE,TRUE,NA,Havlus på haleroden,FALSE,NA,Nej,2021-06-18T13:39:40Z,27913
-2021-06-18,95,8.8,Jørgen Klokker,Øvre,Flue,Han,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-18T20:02:05Z,27914
-2021-06-18,117,14,Peter Cramon,Nedre,Spin,Han,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/4BB96FC5-23FA-4578-91BC-8789D0406F10-768x1024.jpeg,12-13 minutters hård fight.,FALSE,NA,Nej,2021-06-18T22:23:26Z,27915
-2021-06-18,79,4.1,Kenneth Lund,Øvre,Spin,NA,TRUE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-18T22:53:17Z,27916
 2021-06-18,96,9,Stefan Mahlau,Mellem,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-18T23:56:41Z,27918
 2021-06-18,82,6,Henrik Fenger,Øvre,Spin,NA,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/01E569BE-DA1E-4836-80F3-A9D355289005-768x1024.jpeg,NA,FALSE,NA,Nej,2021-06-18T23:30:05Z,27917
-2021-06-17,83,5.9,Martin Krogh,Nedre,Flue,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-17T11:26:11Z,27900
-2021-06-17,73,NA,Peter Jensen,Øvre,Spin,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-17T14:28:43Z,27902
-2021-06-17,82,NA,Daniel Astrup,Mellem,Spin,Han,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/13FCDFED-A5C9-42AC-92D2-C30C7EEDF3B7-768x1024.jpeg,NA,FALSE,NA,Nej,2021-06-17T13:46:31Z,27901
+2021-06-18,79,4.1,Kenneth Lund,Øvre,Spin,NA,TRUE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-18T22:53:17Z,27916
+2021-06-18,117,14,Peter Cramon,Nedre,Spin,Han,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/4BB96FC5-23FA-4578-91BC-8789D0406F10-768x1024.jpeg,12-13 minutters hård fight.,FALSE,NA,Nej,2021-06-18T22:23:26Z,27915
+2021-06-18,95,8.8,Jørgen Klokker,Øvre,Flue,Han,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-18T20:02:05Z,27914
+2021-06-18,80,NA,Henrik Baadsgaard,Nedre,Flue,Hun,TRUE,TRUE,NA,Havlus på haleroden,FALSE,NA,Nej,2021-06-18T13:39:40Z,27913
+2021-06-18,77,NA,Peder Kirkegaard,Vorgod Å,Spin,Hun,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/C7E47BDD-6250-4C74-9B50-481B407C2253-768x1024.jpeg,NA,FALSE,NA,Nej,2021-06-18T12:43:56Z,27912
+2021-06-18,90,NA,Jesper S Petersen,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-18T10:12:26Z,27911
+2021-06-18,86,6.5,Jesper S Petersen,Nedre,Flue,Han,TRUE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-18T10:11:13Z,27910
+2021-06-18,85,5.8,Stefan Bartelsen,Nedre,Flue,Hun,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/20210618_061623-1024x768.jpg,NA,FALSE,NA,Nej,2021-06-18T09:32:16Z,27909
+2021-06-18,83,5.5,Claus Thomsen Boe,Mellem,Flue,Han,TRUE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-18T08:20:58Z,27908
 2021-06-17,80,5.5,Jann Sams,Nedre,Flue,Han,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/20210617_120035-998x1024.jpg,Fin flot laks god kondition.,FALSE,NA,Nej,2021-06-17T21:52:40Z,27905
-2021-06-16,65,NA,Walter-Joachim Paarmann,Mellem,Flue,Hun,FALSE,FALSE,NA,NA,TRUE,Beidseitig vernarbte netzspuren hinterm kopf,Nej,2021-06-16T12:26:22Z,27878
-2021-06-16,89,5.9,Matthias Rosin,Nedre,Flue,Hun,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/20210616_095842-1024x498.jpg,Fantastic fish; thanks for help to a nice danish guy named stig.,FALSE,NA,Nej,2021-06-16T12:16:40Z,27877
-2021-06-16,82,5.8,Mike Birch,Mellem,Orm,Han,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/8CF35085-BF2F-41DC-9531-A2CFAC4D0D48-768x1024.jpeg,NA,FALSE,NA,Nej,2021-06-16T11:48:15Z,27875
-2021-06-16,74,NA,Jesper Mortensen,Mellem,Spin,NA,FALSE,FALSE,NA,Fin lille laks der skulle ud igen og blive stor,FALSE,NA,Nej,2021-06-16T12:46:33Z,27881
-2021-06-16,91,7,Niels Olsen,Mellem,Spin,Han,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/40D26EE8-51EC-415D-BE40-B4A4706DE0CE-768x1024.jpeg,NA,FALSE,NA,Nej,2021-06-16T12:34:30Z,27880
-2021-06-16,85,5.7,Jørgen Buch,Øvre,Spin,Hun,TRUE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T12:33:44Z,27879
-2021-06-16,82,5.4,Martin Botten,Mellem,Orm,Han,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/348A7E88-7244-4500-B063-B841F77DC9DE-576x1024.png,NA,FALSE,NA,Nej,2021-06-16T14:15:48Z,27885
-2021-06-16,85,6,Frederik Jansen,Mellem,Orm,Han,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T14:13:37Z,27884
-2021-06-16,80,5.3,Poul Ole Damsgaard,Mellem,Spin,Hun,TRUE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T13:42:29Z,27883
+2021-06-17,73,NA,Peter Jensen,Øvre,Spin,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-17T14:28:43Z,27902
+2021-06-17,83,5.9,Martin Krogh,Nedre,Flue,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-17T11:26:11Z,27900
+2021-06-17,82,NA,Daniel Astrup,Mellem,Spin,Han,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/13FCDFED-A5C9-42AC-92D2-C30C7EEDF3B7-768x1024.jpeg,NA,FALSE,NA,Nej,2021-06-17T13:46:31Z,27901
+2021-06-16,88,NA,Udo Risau,Vorgod Å,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-16T22:18:49Z,27899
+2021-06-16,80,4.9,Oleksandr Lishchuk,Nedre,Spin,Hun,TRUE,TRUE,NA,NA,FALSE,NA,Ja,2021-06-16T22:12:39Z,27898
+2021-06-16,82,5.8,Jens Løntoft,Mellem,Flue,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T21:38:34Z,27897
+2021-06-16,70,NA,Thue Clausen,Mellem,Flue,Han,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/240EA8DA-1776-4E64-A1CC-B2410A585F90-768x1024.jpeg,NA,FALSE,NA,Nej,2021-06-16T20:15:26Z,27895
+2021-06-16,84,5.8,Svend Kristensen,Nedre,Spin,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T20:05:12Z,27894
+2021-06-16,81,5.3,Niels Jepsen,Nedre,Spin,Hun,TRUE,TRUE,NA,Rent begynderheld.,FALSE,NA,Nej,2021-06-16T19:44:46Z,27893
+2021-06-16,82,5.2,Nils Munkgaard,Øvre,Spin,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T18:25:49Z,27892
+2021-06-16,82,6,Alex Hjort,Øvre,Spin,Han,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T17:30:54Z,27890
 2021-06-16,88,7.8,Bruno Rohde,Mellem,Flue,Han,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/279BB1AF-2833-43D8-AFE3-324CE8E68762-2-768x1024.jpeg,"2 kast ved åen var nok idag voldsom fin fisk ,
 Det var den lille blå rørflue der slog til igen, tak til jørn for landing af laksen",FALSE,NA,Nej,2021-06-16T17:21:15Z,27889
 2021-06-16,80,6.6,Svend Åge Andersen,Nedre,Spin,Hun,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/20C11887-3368-46E4-B4D9-8232F8DABBA5-768x1024.jpeg,Blank fisk lige fra havet,FALSE,NA,Nej,2021-06-16T17:20:21Z,27888
 2021-06-16,85,6.2,Frank Thygesen,Nedre,Spin,Han,FALSE,TRUE,NA,Fc spinner,FALSE,NA,Nej,2021-06-16T16:31:58Z,27887
-2021-06-16,82,5.2,Nils Munkgaard,Øvre,Spin,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T18:25:49Z,27892
-2021-06-16,82,5.2,Nils Munkgaard,Øvre,Spin,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T17:57:43Z,27891
-2021-06-16,82,6,Alex Hjort,Øvre,Spin,Han,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T17:30:54Z,27890
-2021-06-16,81,5.3,Niels Jepsen,Nedre,Spin,Hun,TRUE,TRUE,NA,Rent begynderheld.,FALSE,NA,Nej,2021-06-16T19:44:46Z,27893
-2021-06-16,70,NA,Thue Clausen,Mellem,Flue,Han,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/240EA8DA-1776-4E64-A1CC-B2410A585F90-768x1024.jpeg,NA,FALSE,NA,Nej,2021-06-16T20:15:26Z,27895
-2021-06-16,84,5.8,Svend Kristensen,Nedre,Spin,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T20:05:12Z,27894
-2021-06-16,88,NA,Udo Risau,Vorgod Å,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-16T22:18:49Z,27899
-2021-06-16,80,4.9,Oleksandr Lishchuk,Nedre,Spin,Hun,TRUE,TRUE,NA,NA,FALSE,NA,Ja,2021-06-16T22:12:39Z,27898
-2021-06-16,82,5.8,Jens Løntoft,Mellem,Flue,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T21:38:34Z,27897
-2021-06-15,88,NA,Michael Cederholm,Nedre,Flue,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/CDDF23F1-577B-4077-BED3-4891746011C5-1024x768.jpeg,NA,FALSE,NA,Nej,2021-06-15T13:02:10Z,27866
-2021-06-15,87,NA,Poul Erik Kristiansen,Nedre,Spin,Han,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-15T14:19:57Z,27867
-2021-06-15,83,NA,Finn Meldgård,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,TRUE,Sår på snuden,Nej,2021-06-15T15:59:11Z,27869
-2021-06-15,85,NA,Finn Meldgård,Nedre,Spin,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-15T15:55:25Z,27868
-2021-06-15,95,NA,Frederik Pedersen,Nedre,Spin,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/IMG_20210615_190255_631-970x1024.jpg,NA,FALSE,NA,Nej,2021-06-15T20:53:09Z,27871
-2021-06-15,92,NA,Celia Enslev,Mellem,Andet,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/IMG_20210615_083203-1024x472.jpg,Taget på spinflue,FALSE,NA,Nej,2021-06-15T20:49:07Z,27870
+2021-06-16,82,5.4,Martin Botten,Mellem,Orm,Han,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/348A7E88-7244-4500-B063-B841F77DC9DE-576x1024.png,NA,FALSE,NA,Nej,2021-06-16T14:15:48Z,27885
+2021-06-16,85,6,Frederik Jansen,Mellem,Orm,Han,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T14:13:37Z,27884
+2021-06-16,80,5.3,Poul Ole Damsgaard,Mellem,Spin,Hun,TRUE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T13:42:29Z,27883
+2021-06-16,74,NA,Jesper Mortensen,Mellem,Spin,NA,FALSE,FALSE,NA,Fin lille laks der skulle ud igen og blive stor,FALSE,NA,Nej,2021-06-16T12:46:33Z,27881
+2021-06-16,91,7,Niels Olsen,Mellem,Spin,Han,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/40D26EE8-51EC-415D-BE40-B4A4706DE0CE-768x1024.jpeg,NA,FALSE,NA,Nej,2021-06-16T12:34:30Z,27880
+2021-06-16,85,5.7,Jørgen Buch,Øvre,Spin,Hun,TRUE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-16T12:33:44Z,27879
+2021-06-16,65,NA,Walter-Joachim Paarmann,Mellem,Flue,Hun,FALSE,FALSE,NA,NA,TRUE,Beidseitig vernarbte netzspuren hinterm kopf,Nej,2021-06-16T12:26:22Z,27878
+2021-06-16,89,5.9,Matthias Rosin,Nedre,Flue,Hun,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/20210616_095842-1024x498.jpg,Fantastic fish; thanks for help to a nice danish guy named stig.,FALSE,NA,Nej,2021-06-16T12:16:40Z,27877
+2021-06-16,82,5.8,Mike Birch,Mellem,Orm,Han,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/8CF35085-BF2F-41DC-9531-A2CFAC4D0D48-768x1024.jpeg,NA,FALSE,NA,Nej,2021-06-16T11:48:15Z,27875
+2021-06-15,93,NA,Michael Heimann,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-16T14:32:51Z,27886
 2021-06-15,90,NA,Kim Rasmussen,Nedre,Flue,Hun,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-15T22:03:20Z,27873
 2021-06-15,80,NA,Ralph Eriksen,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-15T21:58:04Z,27872
-2021-06-15,93,NA,Michael Heimann,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-16T14:32:51Z,27886
-2021-06-14,82,NA,Lars Erik Olsen,Nedre,Flue,Han,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-14T10:38:26Z,27857
-2021-06-14,82,NA,Per Langkjær,Nedre,Spin,Hun,TRUE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-14T14:27:42Z,27860
-2021-06-14,85,NA,Jan Tryk,Mellem,Flue,Han,TRUE,FALSE,NA,Dejlig morgen....;c)),FALSE,NA,Nej,2021-06-14T18:39:41Z,27861
+2021-06-15,95,NA,Frederik Pedersen,Nedre,Spin,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/IMG_20210615_190255_631-970x1024.jpg,NA,FALSE,NA,Nej,2021-06-15T20:53:09Z,27871
+2021-06-15,92,NA,Celia Enslev,Mellem,Andet,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/IMG_20210615_083203-1024x472.jpg,Taget på spinflue,FALSE,NA,Nej,2021-06-15T20:49:07Z,27870
+2021-06-15,83,NA,Finn Meldgård,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,TRUE,Sår på snuden,Nej,2021-06-15T15:59:11Z,27869
+2021-06-15,85,NA,Finn Meldgård,Nedre,Spin,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-15T15:55:25Z,27868
+2021-06-15,87,NA,Poul Erik Kristiansen,Nedre,Spin,Han,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-15T14:19:57Z,27867
+2021-06-15,88,NA,Michael Cederholm,Nedre,Flue,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/CDDF23F1-577B-4077-BED3-4891746011C5-1024x768.jpeg,NA,FALSE,NA,Nej,2021-06-15T13:02:10Z,27866
+2021-06-14,85,NA,Per Gylling,Mellem,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-14T21:31:41Z,27864
 2021-06-14,96,NA,Lasse Laursen,Mellem,Flue,Han,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/96cm-2-1024x768.jpeg,NA,FALSE,NA,Nej,2021-06-14T21:18:59Z,27863
 2021-06-14,102,NA,Jimmy Nielsen,Nedre,Spin,Han,FALSE,FALSE,NA,Fcspinner,FALSE,NA,Nej,2021-06-14T20:58:25Z,27862
-2021-06-14,85,NA,Per Gylling,Mellem,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-14T21:31:41Z,27864
-2021-06-13,100,10,Tomasz Salwin,Nedre,Spin,Han,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-06-13T16:12:19Z,27852
+2021-06-14,85,NA,Jan Tryk,Mellem,Flue,Han,TRUE,FALSE,NA,Dejlig morgen....;c)),FALSE,NA,Nej,2021-06-14T18:39:41Z,27861
+2021-06-14,82,NA,Per Langkjær,Nedre,Spin,Hun,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-14T14:27:42Z,27860
+2021-06-14,82,NA,Lars Erik Olsen,Nedre,Flue,Han,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-14T10:38:26Z,27857
 2021-06-13,85,NA,Nikolaj Korsholm,Mellem,Flue,Han,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/6CB8C79D-E3D2-4FA4-858E-97B7D87A7B9B.jpeg,NA,FALSE,NA,Nej,2021-06-13T20:00:44Z,27854
-2021-06-12,85,NA,Flemming Nybo,Øvre,Spin,Hun,FALSE,TRUE,NA,Fanget oven for juellingsholm,FALSE,NA,Nej,2021-06-12T10:47:41Z,27841
-2021-06-12,97,NA,Hans Andersen,Nedre,Spin,NA,FALSE,FALSE,NA,Stærk blank laks med to flotte spring og delvis ødelagt net. Stor tak til fiske-kollega for hjælp ved landing.,FALSE,NA,Nej,2021-06-12T12:42:43Z,27842
-2021-06-12,113,17,Robert Peetz,Øvre,Flue,Han,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-12T14:34:44Z,27843
+2021-06-13,100,10,Tomasz Salwin,Nedre,Spin,Han,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-06-13T16:12:19Z,27852
+2021-06-12,84,NA,Kim Mohr,Nedre,Spin,Hun,FALSE,FALSE,NA,Mega fedt,TRUE,Nej,Nej,2021-06-13T00:39:10Z,27849
+2021-06-12,80,NA,Bo Bundsbæk,Nedre,Spin,NA,TRUE,FALSE,NA,NA,TRUE,Kraftig garnskade på hovedet..,Nej,2021-06-12T21:43:44Z,27848
+2021-06-12,90,NA,Kasppar Kjærgård,Nedre,Spin,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-12T21:17:23Z,27847
+2021-06-12,82,5,Ole L. Pedersen,Øvre,Spin,Han,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/Oles-laks-1024x614.jpg,Tak til torben for netarbejdet med  landing af fisken,TRUE,Lille skade på siden af fisken men ellers en rigtig flot fisk,Nej,2021-06-12T18:03:46Z,27846
 2021-06-12,78,NA,Nicolai Just Jakobsen,Mellem,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-12T16:57:14Z,27845
 2021-06-12,84,NA,Leo Mejlholm,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,TRUE,Skade på bagerste del af kroppen,Nej,2021-06-12T16:25:01Z,27844
-2021-06-12,82,5,Ole L. Pedersen,Øvre,Spin,Han,TRUE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/Oles-laks-1024x614.jpg,Tak til torben for netarbejdet med  landing af fisken,TRUE,Lille skade på siden af fisken men ellers en rigtig flot fisk,Nej,2021-06-12T18:03:46Z,27846
-2021-06-12,90,NA,Kasppar Kjærgård,Nedre,Spin,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-12T21:17:23Z,27847
-2021-06-12,80,NA,Bo Bundsbæk,Nedre,Spin,NA,TRUE,FALSE,NA,NA,TRUE,Kraftig garnskade på hovedet..,Nej,2021-06-12T21:43:44Z,27848
-2021-06-12,84,NA,Kim Mohr,Nedre,Spin,Hun,FALSE,FALSE,NA,Mega fedt,TRUE,Nej,Nej,2021-06-13T00:39:10Z,27849
-2021-06-11,90,NA,Peder Kirkegaard,Nedre,Spin,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/4E0160C4-2B28-4342-B4E8-CE5BD2F008AC-768x1024.jpeg,Kanonfight mange spring,FALSE,NA,Nej,2021-06-11T12:26:57Z,27830
-2021-06-11,88,NA,Peter Faarup,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,4,Nej,2021-06-11T12:24:25Z,27829
-2021-06-11,78,NA,Peter Faarup,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,4,Nej,2021-06-11T12:34:58Z,27831
-2021-06-11,74,4,Frederik Aakær Staun,Øvre,Flue,NA,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/received_309225227516552-1024x768.jpeg,NA,FALSE,NA,Nej,2021-06-11T19:43:12Z,27832
+2021-06-12,113,17,Kontroludvalget,Øvre,Flue,Han,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-12T14:34:44Z,27843
+2021-06-12,97,NA,Hans Andersen,Nedre,Spin,NA,FALSE,FALSE,NA,Stærk blank laks med to flotte spring og delvis ødelagt net. Stor tak til fiske-kollega for hjælp ved landing.,FALSE,NA,Nej,2021-06-12T12:42:43Z,27842
+2021-06-12,85,NA,Flemming Nybo,Øvre,Spin,Hun,FALSE,TRUE,NA,Fanget oven for juellingsholm,FALSE,NA,Nej,2021-06-12T10:47:41Z,27841
+2021-06-11,78,NA,Jesper Lillelund,Nedre,Spin,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-13T22:07:58Z,27855
+2021-06-11,75,NA,Pieter Jensen,Nedre,Spin,Han,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/Pieters-75-cm-laks-1024x576.jpg,Helt blank,FALSE,NA,Nej,2021-06-11T22:52:14Z,27839
 2021-06-11,75,NA,Michael Holm Sørensen,Nedre,Flue,NA,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-06-11T22:10:59Z,27838
 2021-06-11,85,NA,Emil S.,Mellem,Spin,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-11T22:07:34Z,27837
-2021-06-11,83,NA,Bo Bundsbæk,Nedre,Spin,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/2B8F2E5A-E29C-4B4B-BB7F-4334E202C895-768x1024.jpeg,NA,FALSE,NA,Nej,2021-06-11T21:46:10Z,27836
+2021-06-11,83,NA,Johan Bundsbæk,Nedre,Spin,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/2B8F2E5A-E29C-4B4B-BB7F-4334E202C895-768x1024.jpeg,NA,FALSE,NA,Nej,2021-06-11T21:46:10Z,27836
 2021-06-11,80,NA,Johan Bundsbæk,Nedre,Spin,NA,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-11T21:44:44Z,27835
 2021-06-11,85,NA,Bo Bundsbæk,Nedre,Spin,NA,FALSE,FALSE,NA,NA,TRUE,Spor efter garn på hovedet,Nej,2021-06-11T21:43:15Z,27834
-2021-06-11,75,NA,Pieter Jensen,Nedre,Spin,Han,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/Pieters-75-cm-laks-1024x576.jpg,Helt blank,FALSE,NA,Nej,2021-06-11T22:52:14Z,27839
-2021-06-11,78,NA,Jesper Lillelund,Nedre,Spin,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-13T22:07:58Z,27855
-2021-06-10,85,NA,Torben Bjørn,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-10T08:36:20Z,27820
-2021-06-10,86,NA,Eskild Dam Nielsen,Mellem,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-10T17:20:06Z,27824
-2021-06-10,85,NA,Dennis Nielsen,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-10T17:00:44Z,27823
+2021-06-11,74,4,Frederik Aakær Staun,Øvre,Flue,NA,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/received_309225227516552-1024x768.jpeg,NA,FALSE,NA,Nej,2021-06-11T19:43:12Z,27832
+2021-06-11,78,NA,Peter Faarup,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,4,Nej,2021-06-11T12:34:58Z,27831
+2021-06-11,90,NA,Peder Kirkegaard,Nedre,Spin,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/4E0160C4-2B28-4342-B4E8-CE5BD2F008AC-768x1024.jpeg,Kanonfight mange spring,FALSE,NA,Nej,2021-06-11T12:26:57Z,27830
+2021-06-11,88,NA,Peter Faarup,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,4,Nej,2021-06-11T12:24:25Z,27829
+2021-06-10,75,NA,Casper Vinther,Nedre,Spin,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-11T11:25:54Z,27828
+2021-06-10,82,NA,Frederik Thor,Mellem,Spin,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/7749FB73-104D-4CCA-B415-E99DBF6FA3B7-1-473x1024.png,NA,FALSE,NA,Nej,2021-06-11T00:00:24Z,27827
 2021-06-10,103,NA,Bjarne Laursen,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-10T18:27:32Z,27826
 2021-06-10,82,NA,Bjarne Laursen,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-10T18:26:48Z,27825
-2021-06-10,82,NA,Frederik Thor,Mellem,Spin,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/7749FB73-104D-4CCA-B415-E99DBF6FA3B7-1-473x1024.png,NA,FALSE,NA,Nej,2021-06-11T00:00:24Z,27827
-2021-06-10,75,NA,Casper Vinther,Nedre,Spin,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-11T11:25:54Z,27828
-2021-06-09,100,10,Birger Dam Jensen,Nedre,Flue,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/3B683AB4-1969-4557-83FA-47DF1091CF09-768x1024.jpeg,"Stærk laks
-Tak for hjælpen jan tryk",FALSE,NA,Nej,2021-06-09T11:10:43Z,27813
+2021-06-10,86,NA,Eskild Dam Nielsen,Mellem,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-10T17:20:06Z,27824
+2021-06-10,85,NA,Dennis Nielsen,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-10T17:00:44Z,27823
+2021-06-10,85,NA,Torben Bjørn,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-10T08:36:20Z,27820
+2021-06-09,90,NA,Morten,Nedre,Spin,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-10T10:11:40Z,27821
+2021-06-09,77,NA,Martin Carstensen,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-09T18:21:48Z,27819
+2021-06-09,84,NA,Eigil Præstholm Sørensen,Mellem,Flue,NA,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/20210609_120020-576x1024.jpg,NA,FALSE,NA,Nej,2021-06-09T13:59:20Z,27817
+2021-06-09,78,NA,Klaus Bretlau,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/Laks-09-06-2021-1024x432.png,"Min anden laks i år. Laksen tog en lille hackle/rejeflue i ved egen bred, lige da solen var ved at bryde igennem skyerne.",FALSE,NA,Nej,2021-06-09T12:47:51Z,27816
 2021-06-09,85,NA,Torben Smedegaard,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-09T12:10:59Z,27815
 2021-06-09,80,NA,Lars Erik Olsen,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-09T11:50:25Z,27814
-2021-06-09,78,NA,Klaus Bretlau,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/Laks-09-06-2021-1024x432.png,"Min anden laks i år. Laksen tog en lille hackle/rejeflue i ved egen bred, lige da solen var ved at bryde igennem skyerne.",FALSE,NA,Nej,2021-06-09T12:47:51Z,27816
-2021-06-09,84,NA,Eigil Præstholm Sørensen,Mellem,Flue,NA,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/20210609_120020-576x1024.jpg,NA,FALSE,NA,Nej,2021-06-09T13:59:20Z,27817
-2021-06-09,77,NA,Martin Carstensen,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-09T18:21:48Z,27819
-2021-06-09,90,NA,Morten,Nedre,Spin,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-10T10:11:40Z,27821
-2021-06-08,102,NA,Peter Faarup,Nedre,Spin,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-08T15:13:33Z,27806
+2021-06-09,100,10,Birger Dam Jensen,Nedre,Flue,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/3B683AB4-1969-4557-83FA-47DF1091CF09-768x1024.jpeg,"Stærk laks
+Tak for hjælpen jan tryk",FALSE,NA,Nej,2021-06-09T11:10:43Z,27813
+2021-06-08,82,NA,Christian Thor Larsen,Mellem,Spin,Hun,FALSE,FALSE,NA,Det var en fantastisk oplevelse - og jeg skylder en stor tak til sten mortensen der hjalp med at nette den smukke fisk. Uden ham - havde det ikke gået. Tak.,FALSE,NA,Nej,2021-06-09T16:27:03Z,27818
+2021-06-08,84,NA,Malthe L. Weber,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-08T22:55:46Z,27811
 2021-06-08,93,NA,Martin Skelmose,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/33895C84-3012-49DE-8D9F-C2770748AB92-768x1024.jpeg,NA,FALSE,NA,Nej,2021-06-08T19:16:16Z,27810
 2021-06-08,100,NA,Lasse Laursen,Mellem,Flue,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/IMG_0394-3-1024x768.jpeg,"En bred, høj og usædvanlig flot laks. Landet af silja longhurst.",FALSE,NA,Nej,2021-06-08T19:00:54Z,27809
-2021-06-08,84,NA,Malthe L. Weber,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-08T22:55:46Z,27811
-2021-06-08,82,NA,Christian Thor Larsen,Mellem,Spin,Hun,FALSE,FALSE,NA,Det var en fantastisk oplevelse - og jeg skylder en stor tak til sten mortensen der hjalp med at nette den smukke fisk. Uden ham - havde det ikke gået. Tak.,FALSE,NA,Nej,2021-06-09T16:27:03Z,27818
-2021-06-07,109,NA,Henrik Nielsen-Refs,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/GH0201531623052713-1024x576.jpg,Fantastik fight og ny pb ...Tak skjern å ....havde et par overfladiske skader,FALSE,NA,Nej,2021-06-07T10:12:37Z,27801
-2021-06-07,85,NA,Claus Skeldal,Nedre,Flue,NA,NA,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/Laks-Trampestien-1024x576.jpg,NA,FALSE,NA,Nej,2021-06-07T16:46:40Z,27802
+2021-06-08,102,NA,Peter Faarup,Nedre,Spin,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-08T15:13:33Z,27806
 2021-06-07,91,NA,Hans Jørgen Dahl,Nedre,Spin,Han,TRUE,FALSE,NA,NA,TRUE,Skade ved halen,Nej,2021-06-07T17:11:38Z,27803
-2021-06-06,78,NA,Niels Olsen,Mellem,Spin,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T09:28:03Z,27784
-2021-06-06,92,8,Peter Bilgrav Sørensen,Øvre,Spin,Hun,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/DSC_0493-1-576x1024.jpg,NA,FALSE,NA,Nej,2021-06-06T09:11:21Z,27783
-2021-06-06,59,NA,Torben Frederiksen,Nedre,Spin,Hun,NA,FALSE,NA,Sår på halerod,FALSE,NA,Ja,2021-06-06T10:52:44Z,27788
-2021-06-06,92,NA,Jens Pedersen,Mellem,Flue,Hun,TRUE,FALSE,NA,En stærk laks med havlus,FALSE,NA,Nej,2021-06-06T10:17:02Z,27787
-2021-06-06,82,NA,Peder Langkjær,Nedre,Flue,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T15:47:22Z,27789
-2021-06-06,NA,NA,Finn Bjerg,Nedre,Spin,Hun,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T19:06:33Z,27790
-2021-06-06,90,NA,Finn Bjerg,Nedre,Spin,Hun,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T20:35:47Z,27795
-2021-06-06,99,7,Finn Bjerg,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T20:33:48Z,27794
-2021-06-06,92,NA,Patrick Boel,Nedre,Flue,Hun,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T19:50:58Z,27793
-2021-06-06,80,NA,Patrick Boel,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T19:49:56Z,27792
-2021-06-06,80,NA,Jørn Andersen,Nedre,Flue,Hun,FALSE,FALSE,NA,Flotteste kompakte nyopstegen laks.,FALSE,NA,Nej,2021-06-06T19:31:35Z,27791
+2021-06-07,85,NA,Claus Skeldal,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/Laks-Trampestien-1024x576.jpg,NA,FALSE,NA,Nej,2021-06-07T16:46:40Z,27802
+2021-06-07,109,NA,Henrik Nielsen-Refs,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/GH0201531623052713-1024x576.jpg,Fantastik fight og ny pb ...Tak skjern å ....havde et par overfladiske skader,FALSE,NA,Nej,2021-06-07T10:12:37Z,27801
 2021-06-06,90,NA,Torben Pedersen,Øvre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T22:31:13Z,27800
 2021-06-06,85,NA,Torben Pedersen,Øvre,Flue,Hun,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T22:30:00Z,27799
 2021-06-06,89,NA,Christian Koehlbrandt,Nedre,Flue,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T22:11:43Z,27798
 2021-06-06,67,3.5,Rasmus Vemmelund,Mellem,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/6705AD93-8EBB-4240-A0A8-06833D6874B7-1024x768.jpeg,Vægten er anslået. Tromletyk grilse.,FALSE,NA,Nej,2021-06-06T22:00:44Z,27797
 2021-06-06,85,NA,Klaus Balleby,Nedre,Spin,Han,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T21:44:17Z,27796
-2021-06-05,92,NA,Vincent Horst,Nedre,Flue,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/B3CD26A6-8D1D-4DCB-AF92-007C43DD0742-576x1024.jpeg,NA,FALSE,NA,Nej,2021-06-05T07:23:55Z,27777
-2021-06-05,80,NA,Lasse Nyholm Jessen,Nedre,Flue,NA,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-06-05T19:05:21Z,27779
-2021-06-05,81,NA,Peter Kolding,Nedre,Flue,Han,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/Laks-05.06.2021-81-cm.jpg,Bidmærke i ryggen ved rygfinnen,FALSE,NA,Nej,2021-06-05T21:55:05Z,27780
+2021-06-06,90,NA,Finn Bjerg,Nedre,Spin,Hun,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T20:35:47Z,27795
+2021-06-06,92,NA,Patrick Boel,Nedre,Flue,Hun,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T19:50:58Z,27793
+2021-06-06,80,NA,Patrick Boel,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T19:49:56Z,27792
+2021-06-06,80,NA,Jørn Andersen,Nedre,Flue,Hun,FALSE,FALSE,NA,Flotteste kompakte nyopstegen laks.,FALSE,NA,Nej,2021-06-06T19:31:35Z,27791
+2021-06-06,82,NA,Peder Langkjær,Nedre,Flue,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T15:47:22Z,27789
+2021-06-06,59,NA,Torben Frederiksen,Nedre,Spin,Hun,NA,FALSE,NA,Sår på halerod,FALSE,NA,Ja,2021-06-06T10:52:44Z,27788
+2021-06-06,92,NA,Jens Pedersen,Mellem,Flue,Hun,TRUE,FALSE,NA,En stærk laks med havlus,FALSE,NA,Nej,2021-06-06T10:17:02Z,27787
+2021-06-06,78,NA,Niels Olsen,Mellem,Spin,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-06T09:28:03Z,27784
+2021-06-06,92,8,Peter Bilgrav Sørensen,Øvre,Spin,Hun,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/06/DSC_0493-1-576x1024.jpg,NA,FALSE,NA,Nej,2021-06-06T09:11:21Z,27783
+2021-06-05,108,12.2,Mick Hansen,Øvre,Orm,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-06T10:13:37Z,27786
 2021-06-05,80,NA,Ole Wisler,Mellem,Flue,Han,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/59CD3132-4B50-4464-BA96-BBFB65593AEF-1024x1024.jpeg,Med havlus,FALSE,NA,Nej,2021-06-05T23:14:27Z,27782
 2021-06-05,85,NA,Edin Adulovic,Nedre,Flue,Hun,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-06-05T22:53:08Z,27781
-2021-06-05,108,12.2,Mick Hansen,Øvre,Orm,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-06T10:13:37Z,27786
-2021-06-04,95,NA,Edin Adulovic,Nedre,Flue,Hun,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-06-04T11:44:26Z,27774
+2021-06-05,81,NA,Peter Kolding,Nedre,Flue,Han,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/Laks-05.06.2021-81-cm.jpg,Bidmærke i ryggen ved rygfinnen,FALSE,NA,Nej,2021-06-05T21:55:05Z,27780
+2021-06-05,80,NA,Lasse Nyholm Jessen,Nedre,Flue,NA,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-06-05T19:05:21Z,27779
+2021-06-05,92,NA,Vincent Horst,Nedre,Flue,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/B3CD26A6-8D1D-4DCB-AF92-007C43DD0742-576x1024.jpeg,NA,FALSE,NA,Nej,2021-06-05T07:23:55Z,27777
 2021-06-04,85,NA,Per Larsen,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/51030290-392A-40B4-9B51-91FF2F051FCA-1024x561.jpeg,NA,FALSE,NA,Nej,2021-06-04T13:54:20Z,27776
 2021-06-04,95,NA,Jesper Moesgaard,Øvre,Spin,Han,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-06-04T13:33:51Z,27775
-2021-06-03,102,NA,Søren Peter Larsen,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-03T11:01:15Z,27772
-2021-06-03,105,NA,Rajko Kruse,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-03T11:46:55Z,27773
+2021-06-04,95,NA,Edin Adulovic,Nedre,Flue,Hun,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-06-04T11:44:26Z,27774
 2021-06-03,83,NA,Rasmus Vemmelund,Mellem,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/67ACB888-D716-459F-AD79-3214FDF9FFE4-768x1024.jpeg,Meget flot fisk. ☺️,FALSE,NA,Nej,2021-06-05T09:44:37Z,27778
-2021-06-02,90,NA,Smets Marc,Nedre,Flue,Hun,TRUE,FALSE,NA,"Nice fresh silver salmon, without lies.",FALSE,NA,Nej,2021-06-02T19:51:10Z,27768
-2021-06-02,73,4.5,Morten Jonassen,Mellem,Spin,NA,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-02T19:13:03Z,27767
+2021-06-03,105,NA,Rajko Kruse,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-03T11:46:55Z,27773
+2021-06-03,102,NA,Søren Peter Larsen,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-03T11:01:15Z,27772
 2021-06-02,86,NA,Rune Rask,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-02T21:32:25Z,27771
 2021-06-02,82,NA,Rainer Griebel,Nedre,Flue,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/image-1024x768.jpeg,Laks in very good condition,FALSE,NA,Nej,2021-06-02T21:30:28Z,27770
 2021-06-02,90,NA,Niels Bolt,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/3DA88ED0-3931-4B03-A394-EE764F2FD47F-1024x768.jpeg,NA,FALSE,NA,Nej,2021-06-02T21:03:59Z,27769
-2021-06-01,90,NA,Claus Skeldal,Nedre,Flue,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/IMG_0420-768x1024.jpg,NA,FALSE,NA,Nej,2021-06-01T13:03:49Z,27764
-2021-06-01,89,NA,Steffen Juhl,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-01T11:42:29Z,27763
-2021-06-01,100,NA,Søren Peter Larsen,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-01T15:24:03Z,27765
+2021-06-02,90,NA,Smets Marc,Nedre,Flue,Hun,TRUE,FALSE,NA,"Nice fresh silver salmon, without lies.",FALSE,NA,Nej,2021-06-02T19:51:10Z,27768
+2021-06-02,73,4.5,Morten Jonassen,Mellem,Spin,NA,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-06-02T19:13:03Z,27767
 2021-06-01,95,NA,Miky Figo Ribič,Omme Å,Flue,Hun,FALSE,FALSE,NA,NA,TRUE,On the left side,Nej,2021-06-02T17:06:17Z,27766
-2021-05-31,92,NA,Per Langkjær,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-31T13:31:30Z,27759
-2021-05-31,70,NA,Frank Skau Møller,Nedre,Flue,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-31T20:49:33Z,27760
+2021-06-01,100,NA,Søren Peter Larsen,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-01T15:24:03Z,27765
+2021-06-01,90,NA,Claus Skeldal,Nedre,Flue,NA,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/06/IMG_0420-768x1024.jpg,NA,FALSE,NA,Nej,2021-06-01T13:03:49Z,27764
+2021-06-01,89,NA,Steffen Juhl,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-01T11:42:29Z,27763
 2021-05-31,82,NA,Sarah Rønholt,Nedre,Flue,Han,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-31T22:03:24Z,27761
-2021-05-30,90,NA,Johan Salling,Nedre,Spin,NA,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-30T13:12:14Z,27753
-2021-05-30,113,NA,Bent,Nedre,Spin,Hun,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/C4D8CA7E-22FF-4B18-9F47-B748625BDC68-768x1024.jpeg,NA,FALSE,NA,Nej,2021-05-30T15:50:21Z,27755
-2021-05-30,95,NA,Peter Kolding,Nedre,Flue,Hun,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/Laks-30.05.2021-95-cm.jpg,Højre brystfinne var klippet,FALSE,NA,Nej,2021-05-30T19:57:10Z,27756
-2021-05-30,92,NA,Mikkel Jungersen,Mellem,Flue,NA,FALSE,FALSE,NA,NA,TRUE,"Dybt snitsår på 3 x 1,5 cm samt lidt rifter på venstre side bagest på kroppen",Nej,2021-05-30T22:05:22Z,27757
+2021-05-31,70,NA,Frank Skau Møller,Nedre,Flue,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-31T20:49:33Z,27760
+2021-05-31,92,NA,Per Langkjær,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-31T13:31:30Z,27759
 2021-05-30,86,NA,Sebastian Wirth,Nedre,Spin,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/Laks-Skjern-A-768x1024.jpeg,Sehr gesundes blankes weibchen.,FALSE,NA,Nej,2021-05-31T10:52:11Z,27758
-2021-05-29,82,NA,Jesper Gammelgaard,Vorgod Å,Flue,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-29T11:36:40Z,27749
-2021-05-29,102,NA,Steffen Juhl,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-29T13:42:06Z,27750
-2021-05-29,74,5.1,Jürgen Schmidberger,Nedre,Spin,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-05-29T18:15:34Z,27751
-2021-05-29,85,NA,Peter Kolding,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/laks-85-cm-29.05.2021.jpg,NA,FALSE,NA,Nej,2021-05-29T22:00:41Z,27752
+2021-05-30,92,NA,Mikkel Jungersen,Mellem,Flue,NA,FALSE,FALSE,NA,NA,TRUE,"Dybt snitsår på 3 x 1,5 cm samt lidt rifter på venstre side bagest på kroppen",Nej,2021-05-30T22:05:22Z,27757
+2021-05-30,95,NA,Peter Kolding,Nedre,Flue,Hun,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/Laks-30.05.2021-95-cm.jpg,Højre brystfinne var klippet,FALSE,NA,Nej,2021-05-30T19:57:10Z,27756
+2021-05-30,113,NA,Bent Hygum,Nedre,Spin,Hun,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/C4D8CA7E-22FF-4B18-9F47-B748625BDC68-768x1024.jpeg,NA,FALSE,NA,Nej,2021-05-30T15:50:21Z,27755
+2021-05-30,90,NA,Johan Salling,Nedre,Spin,NA,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/A7D6B850-073C-4C4A-824B-09981DF5E1C5-1024x768.jpeg,NA,FALSE,NA,Nej,2021-05-30T13:12:14Z,27753
 2021-05-29,78,NA,Ivan Møller Knudsen,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-30T13:55:22Z,27754
-2021-05-28,87,NA,Klaus Møller Nielsen,Mellem,Orm,Han,TRUE,FALSE,NA,NA,TRUE,Den havde sår på snuden,Nej,2021-05-28T16:14:48Z,27745
-2021-05-28,92,NA,Stefan Bartelsen,Omme Å,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-28T19:44:48Z,27747
-2021-05-28,92,NA,Stefan Bartelsen,Omme Å,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-28T19:44:06Z,27746
+2021-05-29,85,NA,Peter Kolding,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/laks-85-cm-29.05.2021.jpg,NA,FALSE,NA,Nej,2021-05-29T22:00:41Z,27752
+2021-05-29,74,4.1,Jürgen Schmidberger,Nedre,Spin,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-05-29T18:15:34Z,27751
+2021-05-29,102,NA,Steffen Juhl,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-29T13:42:06Z,27750
+2021-05-29,82,NA,Jesper Gammelgaard,Vorgod Å,Flue,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-29T11:36:40Z,27749
 2021-05-28,80,5.2,Patrick Boel,Øvre,Flue,Han,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/05/IMG_20210528_165042-1024x467.jpg,NA,FALSE,NA,Nej,2021-05-28T22:16:10Z,27748
+2021-05-28,92,NA,Stefan Bartelsen,Omme Å,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-28T19:44:06Z,27746
+2021-05-28,87,NA,Klaus Møller Nielsen,Mellem,Orm,Han,TRUE,FALSE,NA,NA,TRUE,Den havde sår på snuden,Nej,2021-05-28T16:14:48Z,27745
 2021-05-25,95,NA,Per Larsen,Nedre,Flue,Hun,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/2899F66D-ADDA-46F5-A201-24B422358765-806x1024.jpeg,Skadet på gællelåg og hoved,FALSE,NA,Nej,2021-05-25T17:47:50Z,27744
-2021-05-24,74,NA,Kasper,Nedre,Spin,Han,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-05-24T11:52:55Z,27741
-2021-05-24,84,6.2,Jens Poul Jensen Vasco,Øvre,Spin,Hun,TRUE,TRUE,NA,NA,FALSE,NA,Nej,2021-05-24T15:05:54Z,27742
-2021-05-24,98,NA,Kristoffer Ebdahl Rasmussen,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/388B1B86-951E-4187-BFE6-754926B58059-1024x768.jpeg,NA,TRUE,Snuden lidt skadet,Nej,2021-05-25T07:38:13Z,27743
 2021-05-24,94,NA,Michel Seidelin,Omme Å,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-06-12T09:30:55Z,27840
-2021-05-23,90,NA,Kristian Hewitt,Nedre,Spin,Han,FALSE,FALSE,NA,NA,TRUE,Garnskade på snuden af fisken,Nej,2021-05-23T15:16:01Z,27736
-2021-05-23,92,NA,René Milling Eriksen,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-23T19:07:57Z,27737
-2021-05-23,81,NA,Jacob Sihm,Mellem,Spin,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/4D78948F-4B9C-49CF-A899-737C277AC83D-762x1024.jpeg,Fanget ca. 18.00,FALSE,NA,Nej,2021-05-23T22:37:48Z,27738
+2021-05-24,98,NA,Kristoffer Ebdahl Rasmussen,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/388B1B86-951E-4187-BFE6-754926B58059-1024x768.jpeg,NA,TRUE,Snuden lidt skadet,Nej,2021-05-25T07:38:13Z,27743
+2021-05-24,84,6.2,Jens Poul Jensen Vasco,Øvre,Spin,Hun,TRUE,TRUE,NA,NA,FALSE,NA,Nej,2021-05-24T15:05:54Z,27742
+2021-05-24,74,NA,Kasper,Nedre,Spin,Han,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-05-24T11:52:55Z,27741
 2021-05-23,80,NA,Kasppar Kjærgård,Mellem,Spin,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/6C2E4F75-8779-4762-976D-4CF8C7775A83-2-1024x683.jpeg,NA,FALSE,NA,Nej,2021-05-24T08:11:29Z,27739
 2021-05-23,81,NA,Jacob Sihm,Øvre,Spin,Hun,FALSE,FALSE,NA,Fanger omkring kl 18,FALSE,NA,Nej,2021-05-24T11:02:27Z,27740
-2021-05-22,77,NA,Bo Iversen,Mellem,Spin,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/IMG_20210522_093222-768x1024.jpg,Første laks fed oplevelse,FALSE,NA,Nej,2021-05-22T15:04:59Z,27730
+2021-05-23,92,NA,René Milling Eriksen,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-23T19:07:57Z,27737
+2021-05-23,90,NA,Kristian Hewitt,Nedre,Spin,Han,FALSE,FALSE,NA,NA,TRUE,Garnskade på snuden af fisken,Nej,2021-05-23T15:16:01Z,27736
+2021-05-22,80,NA,Rene Gregersen,Mellem,Flue,NA,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-05-23T11:57:41Z,27735
+2021-05-22,95,NA,Bjarne Laursen,Mellem,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-22T23:30:46Z,27734
+2021-05-22,78,NA,Morten Sussemiehl Pedersen,Nedre,Spin,Hun,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-22T22:12:35Z,27733
 2021-05-22,95,NA,Jesper Ottosen,Mellem,Spin,Hun,FALSE,FALSE,NA,NA,TRUE,"Svamp i hovedet, lignede den havde haft hovedet i garn.",Nej,2021-05-22T19:12:32Z,27732
 2021-05-22,101,NA,Sune Gellert,Nedre,Flue,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/11FF8DE2-D0FF-41C2-ADCE-D64EC7BE8092-1-1-1024x1024.jpeg,"Tusind tak til marc for guiding og landing!
 Og til rene for moralsk opbakning ;)",FALSE,NA,Nej,2021-05-22T18:51:40Z,27731
-2021-05-22,78,NA,Morten Sussemiehl Pedersen,Nedre,Spin,Hun,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-22T22:12:35Z,27733
-2021-05-22,95,NA,Bjarne Laursen,Mellem,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-22T23:30:46Z,27734
-2021-05-22,80,NA,Rene Gregersen,Mellem,Flue,NA,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-05-23T11:57:41Z,27735
-2021-05-21,85,NA,Peder Kirkegaard,Nedre,Spin,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/4ED3B2FC-4C9A-4B6C-A7CB-19FC42BE82BA-768x1024.jpeg,Helt frisk tyk fisk i super kondi,FALSE,NA,Nej,2021-05-21T11:25:11Z,27727
-2021-05-21,85,NA,Benny Pedersen,Nedre,Flue,Han,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-21T13:23:13Z,27728
+2021-05-22,77,NA,Bo Iversen,Mellem,Spin,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/IMG_20210522_093222-768x1024.jpg,Første laks fed oplevelse,FALSE,NA,Nej,2021-05-22T15:04:59Z,27730
 2021-05-21,95,NA,Kristoffer Ebdahl Rasmussen,Nedre,Spin,NA,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/9C62DCDA-3C25-41AC-A0BC-1907ABC8A380-1024x683.jpeg,NA,FALSE,NA,Nej,2021-05-21T21:28:16Z,27729
+2021-05-21,85,NA,Benny Pedersen,Nedre,Flue,Han,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-21T13:23:13Z,27728
+2021-05-21,85,NA,Peder Kirkegaard,Nedre,Spin,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/4ED3B2FC-4C9A-4B6C-A7CB-19FC42BE82BA-768x1024.jpeg,Helt frisk tyk fisk i super kondi,FALSE,NA,Nej,2021-05-21T11:25:11Z,27727
+2021-05-20,103,NA,Park Senior,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-20T21:31:56Z,27726
 2021-05-20,86,NA,Laurits Bjerre Nickelsen,Øvre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-20T07:55:28Z,27724
 2021-05-20,92,NA,Torben Skødeberg Pedersen,Nedre,Spin,Hun,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/IMG_20210520_115452-1024x1024.jpg,Fin laks i god kondi som gav en fin fight med spring helt fri af vandet.,FALSE,NA,Nej,2021-05-20T19:45:52Z,27725
-2021-05-20,103,NA,Park Senior,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-20T21:31:56Z,27726
-2021-05-19,85,NA,Steen Fløe,Nedre,Flue,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/IMG_8581.jpg,NA,FALSE,NA,Nej,2021-05-19T11:58:59Z,27722
 2021-05-19,95,NA,Tim Byfoged Larsen,Nedre,Flue,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/3059769A-67B5-456E-8327-00261666718D-1024x768.jpeg,Tak til danny v. For hjælp med nettet.,FALSE,NA,Nej,2021-05-19T16:45:38Z,27723
+2021-05-19,85,NA,Steen Fløe,Nedre,Flue,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/IMG_8581.jpg,NA,FALSE,NA,Nej,2021-05-19T11:58:59Z,27722
 2021-05-18,95,NA,Peter Saabye,Mellem,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-18T23:33:48Z,27721
 2021-05-18,77,NA,Verner Mortensen,Øvre,Flue,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-18T19:38:06Z,27720
 2021-05-18,95,NA,Jan Tryk,Nedre,Flue,Hun,FALSE,FALSE,NA,Med lus,FALSE,NA,Nej,2021-05-18T18:57:47Z,27719
@@ -185,7 +180,6 @@ Og til rene for moralsk opbakning ;)",FALSE,NA,Nej,2021-05-22T18:51:40Z,27731
 2021-05-16,78,5,Peter Eg,Øvre,Spin,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-05-16T21:36:23Z,27714
 2021-05-16,87,NA,Mads Andersen,Nedre,Spin,NA,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/492B7B0E-8254-4E8B-9D18-2CB51CCD8FE0-768x1024.jpeg,NA,FALSE,NA,Nej,2021-05-16T17:21:56Z,27713
 2021-05-16,95,NA,Jens Rasmussen,Nedre,Flue,Hun,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-16T13:44:35Z,27712
-2021-05-16,95,NA,Jens,Nedre,Flue,Hun,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-05-16T13:42:54Z,27711
 2021-05-16,94,NA,Jens Pedersen,Omme Å,Spin,Hun,FALSE,FALSE,NA,Havde mærker efter havlus,FALSE,NA,Nej,2021-05-16T13:11:49Z,27710
 2021-05-15,96,NA,William Rask,Nedre,Spin,Hun,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/6C15D8E7-9F4D-4767-AD8C-3DA3BB43A0B0-1024x768.jpeg,William på 10 er fangeren.,FALSE,NA,Nej,2021-05-15T22:41:46Z,27709
 2021-05-15,89,NA,Mikkel Holm,Mellem,Spin,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/05/IMG_20210515_123627_215-1-1024x1024.jpg,Årets første tur til skjernå og efter 30 minutters fiskeri banker den her smuksak på,FALSE,NA,Nej,2021-05-15T22:37:19Z,27708
