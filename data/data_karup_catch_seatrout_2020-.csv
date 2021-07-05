@@ -1,6 +1,11 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
 2021-07-05,52,1.75,Ole Brix Nielsen,Nedre,Spin,FALSE,NA,TRUE,Female
 2021-07-05,40,0,Mark Vagn Hansen,Mellem,Flue,FALSE,NA,FALSE,NA
+2021-07-04,42,0,Johnny Olesen,Nedre,Orm,FALSE,NA,FALSE,NA
+2021-07-04,42,NA,Johnny Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
+2021-07-04,44,NA,Johnny Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
+2021-07-04,44,NA,Johnny Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
+2021-07-04,47,1.2,Carsten Nielsen,Nedre,Orm,FALSE,NA,TRUE,Female
 2021-07-04,45,0,Flemming Pedersen,Nedre,Spin,FALSE,NA,FALSE,NA
 2021-07-04,47,1.2,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,Male
 2021-07-04,69,3.8,John Hjort,Nedre,Spin,FALSE,NA,TRUE,Female
@@ -19,6 +24,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
 2021-07-02,75,5.6,Preben Olson,Nedre,Spin,FALSE,NA,TRUE,Male
 2021-07-02,78,5.8,Stig Jensen,Nedre,Orm,FALSE,NA,TRUE,Female
 2021-07-02,68,NA,Henrik Johansen,Nedre,Orm,FALSE,NA,TRUE,Female
+2021-07-01,45,0,Carsten Nielsen,Nedre,Orm,FALSE,NA,FALSE,Female
 2021-07-01,45,0,Frank Schmidt,Nedre,Spin,FALSE,NA,FALSE,NA
 2021-07-01,45,NA,Mogens Skaarup,Mellem,Spin,FALSE,NA,TRUE,Female
 2021-07-01,45,NA,Preben Falkeøje Pilgaard,Mellem,Spin,FALSE,NA,TRUE,Female
