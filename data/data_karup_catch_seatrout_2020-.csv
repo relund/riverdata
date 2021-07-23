@@ -1,5 +1,5 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
-2021-07-23,42,NA,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
+2021-07-23,42,0.9,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
 2021-07-23,42,0,Ole Schmidt Eskesen,Nedre,Flue,FALSE,NA,FALSE,NA
 2021-07-23,50,1.5,Ole Schmidt Eskesen,Nedre,Flue,FALSE,NA,TRUE,Male
 2021-07-23,48,0,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,Female
@@ -19,6 +19,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
 2021-07-21,82,6.7,Mikkel Ølund Rasmussen,Haderup Å,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A954C0E711F3120FC12587190034F66B.jpg,TRUE,Male
 2021-07-21,46,0,Eigil Amlund,Mellem,Flue,FALSE,NA,FALSE,NA
 2021-07-21,56,2,Lars Ligaard,Nedre,Flue,FALSE,NA,TRUE,Female
+2021-07-20,49,1.3,Poul B. Oddershede,Mellem,Spin,FALSE,NA,TRUE,Female
 2021-07-20,57,1.9,Brian Jensen,Mellem,Flue,FALSE,NA,TRUE,Male
 2021-07-20,45,0,Karl-Ole Frandsen,Mellem,Flue,FALSE,NA,FALSE,Female
 2021-07-20,50,1.5,Karl-Ole Frandsen,Mellem,Flue,FALSE,NA,TRUE,Female
@@ -484,7 +485,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
 2020-09-22,65,3.2,Søren Holm-Rasmussen,Mellem,Flue,FALSE,NA,TRUE,Female
 2020-09-22,65,2.44,Hans-Rudolph Lenler-Eriksen,Mellem,Spin,FALSE,NA,TRUE,Male
 2020-09-22,54,0,Jesper Hedman,Mellem,Flue,FALSE,NA,FALSE,Female
-2020-09-21,65,0,Henrik Johansen,Nedre,Orm,FALSE,NA,FALSE,NA
+2020-09-21,65,NA,Henrik Johansen,Nedre,Orm,FALSE,NA,TRUE,NA
 2020-09-21,70,4.1,Morten Wølck,Nedre,Flue,FALSE,NA,TRUE,Male
 2020-09-21,58,0,Lars Petersen,Mellem,Flue,FALSE,NA,FALSE,Male
 2020-09-21,81,5.7,Georg Christensen,Nedre,Flue,FALSE,NA,TRUE,NA
