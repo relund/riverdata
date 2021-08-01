@@ -1,5 +1,7 @@
 Date,Length,Weight,Name,Place,Method,Sex,Cut,Killed,Foto,Notes,Net,NetDesc,Kelt,ReportDate,Id
 2021-08-01,70,NA,Lukas,Mellem,Spin,Hun,TRUE,TRUE,NA,NA,FALSE,NA,Nej,2021-08-01T11:22:51Z,28296
+2021-08-01,75,4.4,Bo Iversen,Mellem,Spin,Hun,FALSE,TRUE,https://skjernaasam.dk/wp-content/uploads/2021/08/5291CE5B-343F-489B-844A-5A04E567B788-768x1024.jpeg,NA,TRUE,Små skader på siden,Nej,2021-08-01T11:39:12Z,28298
+2021-08-01,61,NA,Per Gylling,Mellem,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/08/IMG_20210801_102541-768x1024.jpg,Meget meget flot fisk. Lille men flot men dog med sælbid,FALSE,NA,Nej,2021-08-01T11:32:35Z,28297
 2021-07-31,90,NA,William Rask,Nedre,Spin,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2021/07/47C05ECF-50A3-4C74-B873-C16C8C3DE4DA-768x1024.jpeg,NA,FALSE,NA,Nej,2021-07-31T10:12:47Z,28282
 2021-07-31,65,NA,Rune Rask,Nedre,Spin,Han,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-07-31T10:09:10Z,28281
 2021-07-31,65,2.8,Torben Bjørn,Nedre,Flue,Han,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-07-31T11:54:59Z,28283
@@ -13,6 +15,7 @@ Date,Length,Weight,Name,Place,Method,Sex,Cut,Killed,Foto,Notes,Net,NetDesc,Kelt,
 2021-07-31,80,NA,Dennis Jürgensen,Nedre,Spin,Han,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2021-07-31T20:50:32Z,28292
 2021-07-31,80,NA,Dennis Jürgensen,Nedre,Spin,NA,NA,FALSE,NA,NA,FALSE,NA,Nej,2021-07-31T20:48:38Z,28291
 2021-07-31,80,5.1,Mohamad Alfar,Mellem,Spin,Han,TRUE,FALSE,NA,NA,FALSE,NA,Ja,2021-07-31T23:36:12Z,28295
+2021-07-31,110,NA,Mohamad Alfar,Mellem,Spin,Han,TRUE,FALSE,NA,NA,FALSE,NA,Ja,2021-08-01T12:11:03Z,28299
 2021-07-30,80,NA,Kjeld Sørensen,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2021-07-30T09:38:49Z,28260
 2021-07-30,82,NA,Kim Rasmussen,Nedre,Flue,Han,TRUE,FALSE,NA,Skade på ene gællelåg,FALSE,NA,Nej,2021-07-30T09:35:02Z,28259
 2021-07-30,75,4,Erling Willumsgaard,Nedre,Spin,Hun,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2021-07-30T10:32:58Z,28261
