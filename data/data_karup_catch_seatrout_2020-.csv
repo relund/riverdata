@@ -1,6 +1,7 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
 2021-08-03,50,NA,Stig Jensen,Haderup Å,Orm,FALSE,NA,TRUE,Female
 2021-08-03,59,NA,Stig Jensen,Haderup Å,Orm,FALSE,NA,TRUE,Male
+2021-08-02,76,5.11,Poul B. Oddershede,Mellem,Flue,FALSE,NA,TRUE,Female
 2021-08-02,75,5.2,Karl-Ole Frandsen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B8498FC2DDD861A6C12587260037200E.jpg,TRUE,Male
 2021-08-02,59,2.4,Brian Jensen,Nedre,Flue,FALSE,NA,TRUE,Male
 2021-08-02,43,0,Jan Palmgren Nielsen,Mellem,Flue,FALSE,NA,FALSE,Male
@@ -146,6 +147,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
 2021-07-22,41,0,Robert Pedersen,Mellem,Spin,FALSE,NA,FALSE,Female
 2021-07-22,40,0,Lars Nørgaard,Nedre,Flue,FALSE,NA,FALSE,Female
 2021-07-22,50,NA,Michael Schwennesen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/6567BB34F94C1D20C125871A00328CA7.jpg,TRUE,Female
+2021-07-21,47,0.97,Poul B. Oddershede,Mellem,Spin,FALSE,NA,TRUE,Male
 2021-07-21,50,0,Brian Hovmand,Mellem,Flue,FALSE,NA,FALSE,NA
 2021-07-21,60,2.4,Brian Hovmand,Mellem,Flue,FALSE,NA,TRUE,Female
 2021-07-21,73,4.45,Anders Lunde,Mellem,Spin,FALSE,NA,TRUE,Male
