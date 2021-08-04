@@ -1,4 +1,7 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
+2021-08-04,70,4.2,Per Steen Pedersen,Nedre,Spin,FALSE,NA,TRUE,Female
+2021-08-04,78,6.1,Per Steen Pedersen,Nedre,Spin,FALSE,NA,TRUE,Male
+2021-08-04,48,0,Per Steen Pedersen,Nedre,Spin,FALSE,NA,FALSE,NA
 2021-08-04,56,2,Brian Therkelsen,Nedre,Flue,FALSE,NA,TRUE,Female
 2021-08-04,60,2.3,Brian Therkelsen,Nedre,Flue,FALSE,NA,TRUE,Male
 2021-08-04,66,3.2,Emil Pedersen,Øvre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8247d4aee8ad413bb4fef3cc28b1ecfe.jpg,TRUE,NA
@@ -7,6 +10,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
 2021-08-04,74,5.1,Elvin Frølund,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/E6752DBBE81DF286C12587270048EB14.jpg,TRUE,Male
 2021-08-04,50,1.5,Morten B W Jensen,Mellem,Spin,FALSE,NA,TRUE,Male
 2021-08-04,58,2.5,Tom Johannesen,Nedre,Flue,FALSE,NA,TRUE,Female
+2021-08-03,85,8.2,Anker Ravn,Nedre,Spin,FALSE,NA,TRUE,Male
 2021-08-03,56,1.9,Brian Jensen,Nedre,Flue,FALSE,NA,TRUE,Female
 2021-08-03,51,1.2,Peter Gravgaard Rosenbæk,Nedre,Spin,FALSE,NA,TRUE,Male
 2021-08-03,61,3,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,Male
@@ -15,8 +19,6 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
 2021-08-03,55,2.3,Eric Ottens,Mellem,Spin,FALSE,NA,TRUE,Male
 2021-08-03,50,NA,Stig Jensen,Haderup Å,Orm,FALSE,NA,TRUE,Female
 2021-08-03,59,NA,Stig Jensen,Haderup Å,Orm,FALSE,NA,TRUE,Male
-2021-08-02,78,6.1,Per Steen Pedersen,Nedre,Spin,FALSE,NA,TRUE,Male
-2021-08-02,48,0,Per Steen Pedersen,Nedre,Spin,FALSE,NA,FALSE,NA
 2021-08-02,78,5.8,Emil Pedersen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/cfad39614acd4e4c9a57ebd5cbc420d5.jpg,TRUE,NA
 2021-08-02,45,0,Jørgen Klokker,Nedre,Flue,FALSE,NA,FALSE,Female
 2021-08-02,76,5.4,Arne Grynnerup,Haderup Å,Flue,FALSE,NA,TRUE,Female
