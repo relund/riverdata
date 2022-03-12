@@ -627,7 +627,7 @@ writeCatchKarup <- function() {
   rows <- lapply(rows, FUN = function(x) {x[,1]})
   dat1 <-  suppressMessages(t(map_dfc(rows, ~ .x)))
   colnames(dat1) <- cols$label
-  dat1 <- as_tibble(dat1)
+  dat1 <- as_tibble(dat1, .name_repair = "universal")
   dateStr <- dat1$Dato %>% str_extract_all("(?<=\\().+?(?=\\))", simplify = T) %>%
     str_split(",", simplify = TRUE) %>% as_tibble(.name_repair = "minimal")
   colnames(dateStr) <- c("Year", "Month", "Day")
