@@ -95,11 +95,11 @@ datStatMonthSea <- monthlyStat(datCatchSea, curYear)
 
 # Water levels 
 datWLevel <- 
-  read_csv(paste0(prefix, "data_karup_waterlevel_web.csv"), col_types = "Tffdd") 
+  read_csv(paste0(prefix, "data_karup_waterlevel_web.csv"), locale = locale(tz = "CET"), col_types = "Tffdd") 
 
 # Water temperature
 datWTemp <- 
-  read_csv(paste0(prefix, "data_karup_watertemp_web.csv"), col_types = "Tffd") 
+  read_csv(paste0(prefix, "data_karup_watertemp_web.csv"), locale = locale(tz = "CET"), col_types = "Tffd") 
 
 # Maps data
 mapAddMarkers <- function(map, group, data) {
@@ -284,7 +284,7 @@ valueBoxOutput("cSeaSeven")
 ```{r, context = "server", include=FALSE}
 output$cSeaSeven <- renderValueBox({
   valueBox(
-    value = datCatchSea %>% dplyr::filter(Date > now() - days(7)) %>% nrow(),
+    value = datCatchSea %>% dplyr::filter(Date > now(tzone = "CET") - days(7)) %>% nrow(),
     icon = "fa-chart-line",
     color = "primary"
   )
@@ -344,7 +344,7 @@ plotOutput("plotCatchSeaMonth")
 ```{r, context = "server"}
 output$plotCatchSeaMonth <- renderPlot({
   dat <- datCatchSea %>% 
-    dplyr::filter(Date > now() - days(30)) %>% 
+    dplyr::filter(Date > now(tzone = "CET") - days(30)) %>% 
     select(Date, Place) %>% 
     arrange(desc(Date))
   ggplot(data = dat, aes(x = Date)) +

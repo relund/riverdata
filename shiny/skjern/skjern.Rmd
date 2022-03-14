@@ -174,7 +174,9 @@ datStatMonthSea <- monthlyStat(datCatchSea, curYear)
 
 # Water levels 
 datWLevel <- 
-  read_csv(paste0(prefix, "data_skjern_waterlevel_web.csv"), col_types = "Tffdd") 
+  read_csv(paste0(prefix, "data_skjern_waterlevel_web.csv"), 
+           locale = locale(tz = "CET"), 
+           col_types = "Tffdd") 
   #dplyr::filter(str_detect(Place, "Skjern|Rind"))
 
 # Lock flow
@@ -316,7 +318,7 @@ valueBoxOutput("cSalSeven")
 ```{r, context = "server", include=FALSE}
 output$cSalSeven <- renderValueBox({
   valueBox(
-    value = datCatchSal %>% dplyr::filter(Date > now() - days(7)) %>% nrow(),
+    value = datCatchSal %>% dplyr::filter(Date > now(tzone = "CET") - days(7)) %>% nrow(),
     icon = "fa-chart-line",
     color = "primary"
   )
@@ -420,7 +422,7 @@ output$plotCatchSalMonth <- renderPlot({
   # updateQueryString(url) 
   
   dat <- datCatchSal %>% 
-    dplyr::filter(Date > now() - days(30)) %>% 
+    dplyr::filter(Date > now(tzone = "CET") - days(30)) %>% 
     select(Date, Place) %>% 
     arrange(desc(Date))
 
@@ -620,7 +622,7 @@ valueBoxOutput("cSeaSeven")
 ```{r, context = "server", include=FALSE}
 output$cSeaSeven <- renderValueBox({
   valueBox(
-    value = datCatchSea %>% dplyr::filter(Date > now() - days(7)) %>% nrow(),
+    value = datCatchSea %>% dplyr::filter(Date > now(tzone = "CET") - days(7)) %>% nrow(),
     icon = "fa-chart-line",
     color = "primary"
   )
@@ -681,7 +683,7 @@ plotOutput("plotCatchSeaMonth")
 ```{r, context = "server"}
 output$plotCatchSeaMonth <- renderPlot({
   dat <- datCatchSea %>% 
-    dplyr::filter(Date > now() - days(30)) %>% 
+    dplyr::filter(Date > now(tzone = "CET") - days(30)) %>% 
     select(Date, Place) %>% 
     arrange(desc(Date))
 
@@ -1553,7 +1555,7 @@ Row
 
 ```{r}
 rate <- datFlow %>% 
-  dplyr::filter(DateTime > now() - days(7)) %>% 
+  dplyr::filter(DateTime > now(tzone = "CET") - days(7)) %>% 
   # summarise(Rate = 100*sum(Open)/(2*n())) %>% 
   summarise(Rate = 100*sum(Open>0)/(n())) %>% 
   as.numeric() %>% round(0)
