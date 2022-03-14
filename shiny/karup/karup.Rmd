@@ -59,9 +59,10 @@ faIcon <- function (name, class = "", title = "", lib = "font-awesome")
     }
     if (class != "") class = paste0(" ", class)
     prefix_class <- prefix
-    if (prefix_class == "fa" && name %in% shiny:::font_awesome_brands) {
-        prefix_class <- "fab"
-    } else if (prefix_class == "fa") prefix_class <- "fas"
+    # if (prefix_class == "fa" && name %in% shiny:::font_awesome_brands) {
+    #     prefix_class <- "fab"
+    # } else if (prefix_class == "fa") prefix_class <- "fas"
+    if (prefix_class == "fa") prefix_class <- "fas"
     iconClass <- paste0(prefix_class, " ", prefix, "-", name, class)
     iconTag <- tags$i(class = iconClass, title = title)
     htmltools::htmlDependencies(iconTag) <- htmltools::htmlDependency("font-awesome", 
@@ -454,9 +455,36 @@ dataTableOutput("dTSeaCatch")
 ```
 
 ```{r, context = "server"}
+## Med navn
+# output$dTSeaCatch <- DT::renderDataTable(
+#   DT::datatable(
+#     datCatchSea %>% select(Date:Method, Fulton, Misc, NoWeight),
+#     class = 'stripe row-border order-column nowrap compact', # nowrap display compact
+#     rownames = FALSE,
+#     filter = 'bottom',
+#     escape = FALSE,
+#     options = list(pageLength = 15, order = list(list(0, 'desc')),
+#                    list(visible=FALSE, targets="NoWeight"),
+#                    # autoWidth = TRUE,
+#                    columnDefs = list(
+#                      list(className = 'dt-center', targets = 0:7),
+#                      list(visible=FALSE, targets=c(8))
+#                    )
+#               ),
+#     colnames = c('Dato', 'Længde', 'Vægt', 'Navn', 'Sted', 'Metode', 'Kondition', 'Diverse', 'NoWeight'),
+#     extensions = c('Responsive')  #,'FixedHeader','RowGroup'
+#   ) %>%
+#   formatStyle(columns = 'Weight', valueColumns = 'NoWeight', color = styleEqual(c(0, 1), c("black","green"))) %>%
+#   formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>%
+#   formatRound(c('Length'), digits = 0) %>%
+#   formatRound(c('Weight'), digits = 1) %>%
+#   formatRound(c('Fulton'), digits = 2)
+# )
+
+## Uden navn
 output$dTSeaCatch <- DT::renderDataTable(
   DT::datatable(
-    datCatchSea %>% select(Date:Method, Fulton, Misc, NoWeight),
+    datCatchSea %>% select(Date:Weight, Place, Method, Fulton, Misc, NoWeight),
     class = 'stripe row-border order-column nowrap compact', # nowrap display compact
     rownames = FALSE,
     filter = 'bottom',
@@ -465,11 +493,11 @@ output$dTSeaCatch <- DT::renderDataTable(
                    list(visible=FALSE, targets="NoWeight"),
                    # autoWidth = TRUE,
                    columnDefs = list(
-                     list(className = 'dt-center', targets = 0:7),
-                     list(visible=FALSE, targets=c(8))
+                     list(className = 'dt-center', targets = 0:6),
+                     list(visible=FALSE, targets=c(7))
                    )
               ),
-    colnames = c('Dato', 'Længde', 'Vægt', 'Navn', 'Sted', 'Metode', 'Kondition', 'Diverse', 'NoWeight'),
+    colnames = c('Dato', 'Længde', 'Vægt', 'Sted', 'Metode', 'Kondition', 'Diverse', 'NoWeight'),
     extensions = c('Responsive')  #,'FixedHeader','RowGroup'
   ) %>%
   formatStyle(columns = 'Weight', valueColumns = 'NoWeight', color = styleEqual(c(0, 1), c("black","green"))) %>%
@@ -684,14 +712,22 @@ plotOutput("plotCompareSea")
 ```
 
 ```{r, context = "server"}
+cIXUnit <- c("Dag" = "Day", "Uge" = "Week", "Måned" = "Month", "År" = "Year")
+cIYUnit <- c("Fisk fanget" = "yVTotal",
+             "Gennemsnitlig vægt" = "yVAvgW",
+             "Gennemsnitlig længde" = "yVAvgL",
+             "Max vægt" = "yVMaxW",
+             "Max længde" = "yVMaxL",
+             "Total vægt" = "yVTotalW",
+             "Procent (gruppeinddeling)" = "yVPct")
 output$plotCompareSea <- renderPlot({
 # input <- NULL
-# input$iInvYear <- c(2018,2019)
-# input$iInvDay <- c("2019-04-16", "2019-04-25")
-# input$iXUnit <- "Day"  # Day
-# input$iYUnit <- "yVAvgW"
-# input$iGroup <- "None"
-# input$iData <- "TRUE"
+# input$iInvYearSea <- c(2020,2021)
+# input$iInvDaySea <- c("2019-08-30", "2019-09-12")
+# input$iXUnitSea <- "Day"  # Day
+# input$iYUnitSea <- "yVAvgW"
+# input$iGroupSea <- "None"
+# input$iDataSea <- "TRUE"
 
 onBookmarked(function(url) {
   updateQueryString(str_c(url, "#section-compare-sea"))
@@ -705,13 +741,24 @@ if (input$iXUnitSea == "Day") {
   iXUnitSea <- "None"
 } else iXUnitSea <- input$iXUnitSea
 
+# print(str_c(input$iInvYearSea[1], "-", 
+#                               formatC(month(input$iInvDaySea[1]), width = 2, flag = "0"), "-", 
+#                               formatC(mday(input$iInvDaySea[1]), width = 2, flag = "0")))
+# print(str_c(input$iInvYearSea[2], "-", 
+#                               formatC(month(input$iInvDaySea[2]), width = 2, flag = "0"), "-", 
+#                               formatC(mday(input$iInvDaySea[2]), width = 2, flag = "0")))
 dat <- 
   datCatchSea %>% 
+  # dplyr::filter(Year >= input$iInvYearSea[1], Year <= input$iInvYearSea[2],
+  #               MDay >= min(mday(input$iInvDaySea[1]), mday(input$iInvDaySea[2])),
+  #               MDay <= max(mday(input$iInvDaySea[1]), mday(input$iInvDaySea[2])),
+  #               MonthN >= month(input$iInvDaySea[1]),
+  #               MonthN <= month(input$iInvDaySea[2])) 
   dplyr::filter(Year >= input$iInvYearSea[1], Year <= input$iInvYearSea[2],
-                MDay >= min(mday(input$iInvDaySea[1]), mday(input$iInvDaySea[2])),
-                MDay <= max(mday(input$iInvDaySea[1]), mday(input$iInvDaySea[2])),
                 MonthN >= month(input$iInvDaySea[1]),
-                MonthN <= month(input$iInvDaySea[2])) 
+                MonthN <= month(input$iInvDaySea[2]),
+                100 * MonthN + MDay >= 100 * month(input$iInvDaySea[1]) + mday(input$iInvDaySea[1]),
+                100 * MonthN + MDay <= 100 * month(input$iInvDaySea[2]) + mday(input$iInvDaySea[2]))
 if (input$iDataSea == "KilledTrue") dat <- dat %>% dplyr::filter(Killed)
 if (input$iDataSea == "KilledFalse") dat <- dat %>% dplyr::filter(!Killed)
 if (input$iDataSea == "WeightTrue") dat <- dat %>% dplyr::filter(NoWeight == 0)
@@ -800,24 +847,29 @@ Row
 ### Estimat af vægt (kg) givet længde (cm) og måned
   
 ```{r}
-tab <- 
-  datWeightSea %>%
-  pivot_wider(id_cols = Length:Period, names_from = Period, values_from = Avg) %>% 
+tmp <- datWeightSea %>% 
+  mutate(Period = as.character(Period)) %>% 
+  mutate(Period = 
+           case_when(Period == "May" ~ "Maj",
+                     Period == "Oct" ~ "Okt",
+                     TRUE ~ Period))
+
+tab <- tmp %>% 
+  pivot_wider(id_cols = Length, names_from = Period, values_from = Avg) %>% 
   mutate_at(2:ncol(.), function(x) {
     format(round(x, 1), 1)
   })
 
-tab1 <- 
-  datWeightSea %>%
-  pivot_wider(id_cols = Length:Period, names_from = Period, values_from = Lower) %>% 
+tab1 <- tmp %>%
+  pivot_wider(id_cols = Length, names_from = Period, values_from = Lower) %>% 
   mutate_at(2:ncol(.), function(x) {
     format(round(x, 1), 1)
   })
 
 tab <- map2_df(tab, tab1, ~ str_c(.x, " [", .y))
 
-tab1 <- datWeightSea %>%
-  pivot_wider(id_cols = Length:Period, names_from = Period, values_from = Upper) %>% 
+tab1 <- tmp %>%
+  pivot_wider(id_cols = Length, names_from = Period, values_from = Upper) %>% 
   mutate_at(2:ncol(.), function(x) {
     format(round(x, 1), 1)
   })
@@ -826,8 +878,8 @@ tab <- map2_df(tab, tab1, ~ str_c(.x, ",", .y, "]")) %>%
   mutate(Length = str_remove(Length, " .*")) %>% 
   select(Length, ncol(.):2) 
   
-monthNames <- c("Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
-colnames(tab) <- c("Længde", monthNames[4:(ncol(tab) + 2)])
+# monthNames <- c("Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+colnames(tab)[1] <- c("Længde")
 
 tab %>% 
   kable(align = "c") %>% 

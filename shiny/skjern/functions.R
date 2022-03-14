@@ -27,7 +27,9 @@ readCatch <- function(path, datWeight) {
       Month = month(Date, label = T), MonthN = month(Date), Week = isoweek(Date), Year = year(Date), 
       Place = fct_explicit_na(Place, "Ukendt"),
       NoWeight = 1*is.na(Weight), MDay = mday(Date), DayStr = format(Date, "%d. %b"),
-      Day = str_c(MonthN, "-", MDay)
+      Day = str_c(formatC(MonthN, width = 2, flag = "0"), 
+                  "-",
+                  formatC(MDay, width = 2, flag = "0"))
     )
   datCatch <- left_join(datCatch, datWeight, by = c("Length", "Month" = "Period")) %>% 
     mutate(Weight = if_else(is.na(Weight), round(Avg,1), Weight)) %>% 

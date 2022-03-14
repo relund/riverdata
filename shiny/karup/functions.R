@@ -31,7 +31,9 @@ readCatch <- function(prefix, datWeight) {
       ),
       Month = factor(month(Date, label = T), ordered = F), MonthN = month(Date), Week = isoweek(Date), Year = year(Date), 
       NoWeight = 1*is.na(Weight), MDay = mday(Date), DayStr = format(Date, "%d. %b"),
-      Day = str_c(MonthN, "-", MDay)
+      Day = str_c(formatC(MonthN, width = 2, flag = "0"), 
+                  "-",
+                  formatC(MDay, width = 2, flag = "0"))
     )
   
   datCatch <- left_join(datCatch, datWeight, by = c("Length", "Month" = "Period")) %>% 
