@@ -562,7 +562,6 @@
         "officer",
         "rlang",
         "rmarkdown",
-        "uuid",
         "xml2"
       ]
     },
@@ -709,7 +708,6 @@
         "purrr",
         "rlang",
         "tibble",
-        "uuid",
         "vctrs",
         "withr"
       ]
@@ -855,8 +853,7 @@
       "Repository": "CRAN",
       "Hash": "99df65cfef20e525ed38c3d2577f7190",
       "Requirements": [
-        "openssl",
-        "uuid"
+        "openssl"
       ]
     },
     "isoband": {
@@ -1148,7 +1145,6 @@
       "Hash": "0a93ccc072f566f8a65fe75b5b6f81e7",
       "Requirements": [
         "R6",
-        "uuid",
         "xml2",
         "zip"
       ]
@@ -1906,14 +1902,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "c9c462b759a5cc844ae25b5942654d13",
-      "Requirements": []
-    },
-    "uuid": {
-      "Package": "uuid",
-      "Version": "1.0-4",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "99c959c7424be995ddca19b5736c8dd0",
       "Requirements": []
     },
     "vctrs": {
