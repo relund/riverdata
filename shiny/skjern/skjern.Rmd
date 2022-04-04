@@ -152,7 +152,8 @@ onRestored(function(state) {
 ```
 
 
-```{r, context="data", include=FALSE}  
+```{r, context="setup", include=FALSE} 
+#context="data"
 prefix <- "https://raw.githubusercontent.com/relund/skjern/master/data/"
 curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
 
