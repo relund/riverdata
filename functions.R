@@ -110,7 +110,7 @@ updateCatchSkjern <- function(prefix, species, start = year(now()), reset = F) {
     dat <- dat %>% 
       dplyr::filter(Length > 39 | is.na(Length)) %>% 
       mutate(Place = fixStringErrors(Place), Weight = round(Weight,1), Length = round(Length)) %>% 
-      arrange(desc(Date, ReportDate))
+      arrange(desc(Date), desc(ReportDate))
     message("  Write data to ", fn)
     write_csv(dat, fn)
   } else {
