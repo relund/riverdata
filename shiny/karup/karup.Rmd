@@ -305,6 +305,7 @@ output$cSeaYear <- renderValueBox({
   killedPct <- if_else(total > 0, format(100*killed/total, digits = 0), "0")
   releasedPct <- if_else(total > 0, format(100*(total - killed)/total, digits = 0), "0")
   valueBox(
+    caption = str_c("Fangster i ", curYear, " (hjemtaget/genudsat)"),
     value = str_c(total, " (", killedPct, "%/", releasedPct, "%)"),
     icon = "fa-fish",
     color = "warning"
@@ -351,7 +352,7 @@ output$plotCatchSeaMonth <- renderPlot({
   ggplot(data = dat, aes(x = Date)) +
     geom_bar(aes(fill = Place), width = 0.75) + 
     geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1)) +
-    scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(NA_Date_, date(now()))) +  
+    scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(NA_Date_, date(now()+ddays(1)))) +  
     labs(fill = "") + xlab("Dato") + ylab("Antal fangster") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
  })
@@ -400,7 +401,7 @@ output$plotCatchSeaMonthNow <- renderPlot({
   p <- ggplot(dat, aes(x = Month)) + 
     geom_bar(aes(fill = Place)) + 
     geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1))
-  if (curYear == year(now())) p <- p + expand_limits(x = isoweek(now())) 
+  # if (curYear == year(now())) p <- p + expand_limits(x = isoweek(now())) 
   p <- p +
     coord_cartesian(clip = 'off') +
     labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
@@ -415,7 +416,7 @@ Row
 
 ### Opsumering
 
-```{r, context = "data"}
+```{r}
 cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")), 
    "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
    paste0(faIcon("mars", title = "Han"),"/",
@@ -740,6 +741,8 @@ if (input$iXUnitSea == "Day") {
   iXUnitSea <- "DayStr" 
 } else if (input$iXUnitSea == "Year") {
   iXUnitSea <- "None"
+} else if (input$iXUnitSea == "None") {
+  iXUnitSea <- "All"
 } else iXUnitSea <- input$iXUnitSea
 
 # print(str_c(input$iInvYearSea[1], "-", 
@@ -764,7 +767,7 @@ if (input$iDataSea == "KilledTrue") dat <- dat %>% dplyr::filter(Killed)
 if (input$iDataSea == "KilledFalse") dat <- dat %>% dplyr::filter(!Killed)
 if (input$iDataSea == "WeightTrue") dat <- dat %>% dplyr::filter(NoWeight == 0)
 dat <- dat %>% 
-  mutate(None = "", xV = str_c(.data[[iXUnitSea]], " ", Year), grp = .data[[input$iGroupSea]]) %>% 
+  mutate(None = "", xV = if (iXUnitSea == "All") None else str_c(.data[[iXUnitSea]], " ", Year), grp = .data[[input$iGroupSea]]) %>% 
   group_by_at(c("xV", "grp", input$iXUnitSea)) %>%
   summarise(yVTotal = n(),
             yVMaxW = max(Weight, na.rm = T), 
@@ -810,7 +813,7 @@ sliderInput("iInvDaySea", label = "Vælg dato interval: ",
 
 ### 
 ```{r}
-cIXUnit <- c("Dag" = "Day", "Uge" = "Week", "Måned" = "Month", "År" = "Year")
+cIXUnit <- c("Dag" = "Day", "Uge" = "Week", "Måned" = "Month", "År" = "Year", "Alle År" = "None")
 selectInput("iXUnitSea", "Vælg enhed på x-aksen:", cIXUnit, selected = "Year", selectize = FALSE)
 cIYUnit <- c("Fisk fanget" = "yVTotal",
              "Gennemsnitlig vægt" = "yVAvgW",
