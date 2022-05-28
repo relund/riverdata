@@ -14,4 +14,4 @@ positive)](http://hyde.dk/Sflow/default_flow.asp). For info see
 
 5) Weight estimates calculated from a regression model (see reports folder).
 
-Two shiny dashboards using the data are made (see the shiny folder)
+Two shiny dashboards using the data are made (see the shiny folder).
