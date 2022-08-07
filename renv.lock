@@ -1703,7 +1703,10 @@
       "Package": "terra",
       "Version": "1.6-7",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://rspatial.r-universe.dev",
+      "RemoteUrl": "https://github.com/rspatial/terra",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "5f06a2855db44e0a4f9b882cf56d1935f097b342",
       "Hash": "5d0f75086235149ccfa42c3f3596a079",
       "Requirements": [
         "Rcpp"
