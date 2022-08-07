@@ -25,9 +25,8 @@ jobs:
       - name: Install pandoc and pandoc citeproc
         run: |
           brew install pandoc
+          brew install pkg-config
           brew install gdal
-          brew install proj
-          brew install sqlite
           
       - name: Cache Renv packages
         uses: actions/cache@v1
