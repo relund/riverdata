@@ -27,6 +27,7 @@ jobs:
           brew install pandoc
           brew install gdal
           brew install proj
+          brew install sqlite
           
       - name: Cache Renv packages
         uses: actions/cache@v1
