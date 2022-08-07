@@ -258,7 +258,7 @@ calcLockWeb <- function(dat, prefix) {
 #'
 #' @note Stations can be found at http://www.hydrometri.dk/hyd/. Get obs for the last 100 days
 #' @return Range of dates.
-updateWaterLevel <- function(stations, prefix) {
+updateWaterLevel <- function(stations, prefix, days = 100) {
   year <- year(now())
   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
   fn <- paste0(prefix, "_waterlevel_", year, ".csv")
@@ -272,7 +272,7 @@ updateWaterLevel <- function(stations, prefix) {
     id <- stations$id[i]
     place <- stations$place[i]
     # get obs for last 100 days
-    tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=100&pw=100000000&inclraw=true"))
+    tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=", days, "&pw=100000000&inclraw=true"))
     offset <- as.numeric(tmp$tsh$Offset)
     tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
     tmp$V <- tmp$V - rep(offset, length(tmp$V))
@@ -304,6 +304,65 @@ updateWaterLevel <- function(stations, prefix) {
   message("  Write data to ", fn)
   write_csv(dat, fn)
   return(invisible(dat))
+}
+
+
+#' Update and save water level data for current year
+#'
+#' @param stations Stations under consideration.
+#' @param prefix Path prefix (e.g. data/data_skjern).
+#' @param days Number of days back to read.
+#'
+#' @note Stations can be found at https://vandportalen.dk/.
+#' @return Range of dates.
+updateWaterLevel_new <- function(stations, prefix, days = 100) {
+  iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
+  dat <- NULL
+  for (i in 1:nrow(stations)) {
+    id <- stations$id[i]
+    place <- stations$place[i]
+    # get obs for last 100 days
+    tmp <- fromJSON(paste0("https://vandportalen.dk/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=", days, "&pw=100000000&inclraw=true"))
+    offset <- as.numeric(tmp$tsh$Offset)
+    tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
+    tmp$V <- tmp$V - rep(offset, length(tmp$V))
+    colnames(tmp) <- c("Date", place)
+    if (is.null(dat)) {
+      dat <- tmp
+    } else {
+      dat <- full_join(dat, tmp, by = "Date")
+    }
+  }
+  dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
+  dat <- dat %>% 
+    pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Level') %>% 
+    filter(!is.na(Level))
+  # save to files
+  for (y in unique(year(dat$Date))) {
+    fn <- paste0(prefix, "_waterlevel_", y, ".csv")
+    # if (file.exists(fn)) {
+    #   datOld <- read_csv(fn, col_types = "Tcd") 
+    # } else 
+    datOld <- NULL
+    message("Waterlevel: Update dataset for year ", y)
+    dat1 <- dat %>% dplyr::filter(year(Date) == y) %>%
+      arrange_all(desc) %>%
+      distinct(Date, .keep_all = T)
+    # combine with old data
+    dat1 <- bind_rows(datOld, dat1) %>% 
+      arrange_all(desc) %>%
+      distinct(Date, Place, .keep_all = T) %>% 
+      select(Date, Place, Level)
+    # remove outliers
+    dat1 <- as_tsibble(dat1, key = Place, index = Date) %>% 
+      group_by_key() %>%
+      mutate(Level = tsclean(Level, replace.missing = FALSE)) %>% 
+      as_tibble()
+    # save
+    message("Write data to ", fn)
+    write_csv(dat1, fn)
+  }
+  return(range(dat$Date))
 }
 
 

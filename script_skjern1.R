@@ -122,18 +122,26 @@ estimateWeight(paste0(prefix, "_weight_seatrout.csv"), datCatchSeatrout, minLeng
 # }
 
 
-#### Waterlevel ####
+#### Waterlevel @ hydrometri.dk ####
+
+# stations <-
+#   tibble(id = c("24717", "24605", "24622", "24657", "24601", "24649"), 
+#          place = c("Skjern Å - Sandfeldvej", 
+#                    "Skjern Å - Alergaard",
+#                    "Skjern Å - Gjaldbæk bro",
+#                    "Rind Å - Arnborg kirke",
+#                    "Omme Å - Sønderskov bro",
+#                    "Karstoft Å - Fiskedamme"))
+# tsid = id seems to have been changed add new id's (7/8/2022)
 stations <-
-  tibble(id = c("055416", "055414", "001862", "017898", "054757", "001855", "052386"), 
-         place = c("Vorgod Å - Vandmøllen", 
-                   "Skjern Å - Sandfeldvej", 
+  tibble(id = c("055414", "001862", "017898", "054757", "001855"), 
+         place = c("Skjern Å - Sandfeldvej", 
                    "Skjern Å - Alergaard",
                    "Skjern Å - Gjaldbæk bro",
                    "Rind Å - Arnborg kirke",
-                   "Omme Å - Sønderskov bro",
-                   "Fjederholt Å - A18"))
+                   "Omme Å - Sønderskov bro"))
 ## Update and save data current year
-updateWaterLevel(stations, prefix)   
+updateWaterLevel(stations, prefix) 
 # getWaterLevels(stations, prefix) # if reset
 
 ## Calc moving average 
@@ -292,3 +300,4 @@ datLines <- bind_rows(datLines, lst$datLines)
 ## Write to csv
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
+
