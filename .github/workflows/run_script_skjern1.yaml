@@ -2,12 +2,14 @@ name: R script Skjern 1
 
 on: 
   push:
-    paths:
-      - .github/workflows/run_script_skjern1.yaml
-      - script_skjern1.R
-      - functions.R
-  schedule: 
-    - cron: '0 * * * *'  # every hour
+    # paths:
+  #     - .github/workflows/run_script_skjern1.yaml
+  #     - script_skjern1.R
+  #     - functions.R
+  # schedule: 
+  #   - cron: '0 * * * *'  # every hour
+    branches-ignore:
+      - '**'
 
 jobs:
   render:
