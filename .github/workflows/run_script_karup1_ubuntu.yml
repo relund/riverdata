@@ -7,7 +7,7 @@ on:
       - script_karup1.R
       - functions.R
   schedule: 
-    - cron: '30 * * * *'  # every hour
+    # - cron: '30 * * * *'  # every hour
     
 jobs:
   render:
