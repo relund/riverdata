@@ -12,7 +12,7 @@ Date,Length,Weight,Name,Place,Method,Sex,Cut,Killed,Foto,Notes,Net,NetDesc,Kelt,
 2022-08-18,62,2.4,Thomas Kjelgaard,Nedre,Flue,Han,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2022-08-18T17:33:09Z,30834
 2022-08-18,55,NA,Nicolai Just Jakobsen,Nedre,Spin,Hun,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2022-08-18T17:13:43Z,30833
 2022-08-18,84,NA,Finn Meldgård,Nedre,Spin,NA,FALSE,FALSE,NA,NA,TRUE,Skade på siden,Nej,2022-08-18T13:42:34Z,30832
-2022-08-15,90,NA,Thor,Nedre,Spin,Han,TRUE,FALSE,NA,NA,TRUE,Manglende skel på området 10 × 10 cm bag bryst finne,Nej,2022-08-15T20:31:22Z,30831
+2022-08-15,90,NA,Thor,Nedre,Spin,Han,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/08/0E30458B-FF2E-4BBC-884A-2899629ECAA9-1024x484.jpeg,NA,TRUE,Manglende skel på området 10 × 10 cm bag bryst finne,Nej,2022-08-15T20:31:22Z,30831
 2022-08-15,87,NA,Steen Mortensen,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/08/IMG_1725-rotated.jpg,NA,FALSE,NA,Nej,2022-08-15T17:00:03Z,30830
 2022-08-15,65,NA,Markus Klump,Nedre,Spin,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/08/2DB4E314-24D3-45E0-AA91-3637BFC954D6-1024x768.jpeg,NA,FALSE,NA,Nej,2022-08-15T13:41:13Z,30829
 2022-08-14,52,NA,Poul Lund Larsen,Øvre,Spin,NA,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2022-08-14T18:20:02Z,30828
@@ -81,7 +81,7 @@ Date,Length,Weight,Name,Place,Method,Sex,Cut,Killed,Foto,Notes,Net,NetDesc,Kelt,
 
 Jeg ved ikke hvad vedhænger betyder..",FALSE,NA,Nej,2022-08-07T19:33:38Z,30755
 2022-08-07,85,NA,Mustafa,Nedre,Flue,Han,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2022-08-07T19:20:06Z,30754
-2022-08-07,90,NA,Per Wandel,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/08/20220807_094641-768x1024.jpg,NA,FALSE,NA,Nej,2022-08-07T18:24:59Z,30753
+2022-08-07,90,NA,Per Wandel,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/08/download-1.png,NA,FALSE,NA,Nej,2022-08-07T18:24:59Z,30753
 2022-08-07,90,NA,Per K. Pedersen,Nedre,Flue,Han,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2022-08-07T17:49:07Z,30752
 2022-08-07,80,NA,Erling Pedersen,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-08-07T17:48:38Z,30751
 2022-08-07,90,NA,Aage Martinsen,Nedre,Spin,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-08-07T17:42:23Z,30750
@@ -425,7 +425,7 @@ Fejl i tidlige oprettet fangstrapport den blev genudsat",FALSE,NA,Nej,2022-07-18
 2022-07-15,80,NA,Bjarne Laursen,Mellem,Flue,Hun,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2022-07-15T23:00:07Z,30372
 2022-07-15,90,NA,Klaus Lietzen,Nedre,Spin,Hun,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2022-07-15T20:11:27Z,30370
 2022-07-15,81,NA,Morten Martinsen,Øvre,Spin,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/07/D58E40CA-A197-4B42-90EB-008F14FA9BB8-768x1024.jpeg,Vanvittig stærk fisk størrelsen taget i betragtning.,FALSE,NA,Nej,2022-07-15T15:53:30Z,30369
-2022-07-15,82,NA,Henrik,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-07-15T15:47:18Z,30368
+2022-07-15,82,NA,Henrik Bøjgaard,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-07-15T15:47:18Z,30368
 2022-07-15,65,NA,Karsten Fini,Nedre,Flue,Han,FALSE,TRUE,NA,NA,FALSE,NA,Nej,2022-07-15T12:13:09Z,30366
 2022-07-15,95,NA,Per Gylling,Mellem,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/07/Screenshot_20220715-093035_Gallery-1-461x1024.jpg,Perfekt tyk og stærk fisk på enhånds. En rigtig jumper✌️,FALSE,NA,Nej,2022-07-15T09:52:26Z,30365
 2022-07-14,63,2.4,Joshua Krak,Nedre,Spin,NA,NA,TRUE,https://skjernaasam.dk/wp-content/uploads/2022/07/C02E28ED-A4AA-4320-9632-AABC32F49F89-768x1024.jpeg,NA,FALSE,NA,Nej,2022-07-15T15:06:36Z,30367
@@ -885,7 +885,7 @@ Kontroludvalget",FALSE,NA,Nej,2022-06-02T11:05:08Z,29836
 2022-05-23,104,NA,Peter Kolding,Mellem,Flue,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/Laks-23.05.2025-104-cm-III-2-764x1024.jpg,NA,FALSE,NA,Nej,2022-05-23T16:09:04Z,29723
 2022-05-23,90,NA,Peder Pedersen,Mellem,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-23T15:06:11Z,29722
 2022-05-23,95,NA,Allan Nørskov Johansen,Mellem,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-23T14:31:15Z,29721
-2022-05-23,83,5.5,Mathias,Mellem,Spin,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/159C2EB2-A377-4528-8FCA-2415835EBAD0-1-768x1024.jpeg,NA,FALSE,NA,Nej,2022-05-23T12:47:45Z,29720
+2022-05-23,83,5.5,Mathias Kvist,Mellem,Spin,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/159C2EB2-A377-4528-8FCA-2415835EBAD0-1-768x1024.jpeg,NA,FALSE,NA,Nej,2022-05-23T12:47:45Z,29720
 2022-05-23,95,NA,Torben Smedegaard,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-23T11:53:48Z,29719
 2022-05-23,80,NA,Rajko Kruse,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-23T07:51:24Z,29718
 2022-05-22,93,NA,Casper Hansen,Mellem,Flue,NA,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-22T21:39:46Z,29717
@@ -910,7 +910,6 @@ Kontroludvalget",FALSE,NA,Nej,2022-06-02T11:05:08Z,29836
 2022-05-20,102,NA,Dennis Nielsen,Vorgod Å,Spin,Han,TRUE,FALSE,NA,Super flot fisk frisk med lus,FALSE,NA,Nej,2022-05-20T16:52:15Z,29698
 2022-05-20,94,NA,Michael Holm Sørensen,Mellem,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-20T15:54:36Z,29697
 2022-05-19,90,NA,Columbus Leth,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-20T00:04:28Z,29696
-2022-05-19,91,NA,Tommy Hansen,Mellem,Flue,NA,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-19T22:32:50Z,29695
 2022-05-19,91,NA,Tommy Hansen,Mellem,Flue,NA,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/9F071F26-1BDD-493C-A447-6CB4A20B570B-473x1024.png,Super stærk fisk,FALSE,NA,Nej,2022-05-19T22:27:38Z,29694
 2022-05-19,90,NA,Tim Balling,Nedre,Spin,NA,TRUE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/inbound3308763679364081696-1024x768.jpg,NA,FALSE,NA,Nej,2022-05-19T19:39:48Z,29693
 2022-05-19,84,NA,Timo Augustin,Nedre,Spin,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/CDD47D96-6CED-45A0-8D79-15DF0DA1C9C1-846x1024.jpeg,NA,FALSE,NA,Nej,2022-05-19T19:29:39Z,29692
@@ -990,7 +989,7 @@ De hjemmelavede spinnere gør det virkelig godt ;)",FALSE,NA,Nej,2022-05-12T23:1
 2022-05-12,71,NA,Søren  Calundan Jensen,Øvre,Spin,Hun,FALSE,FALSE,NA,NA,TRUE,Lidt  skadet på næse,Nej,2022-05-12T17:39:04Z,29621
 2022-05-12,91,NA,Kjeld Sørensen,Nedre,Flue,NA,FALSE,FALSE,NA,Havlus,FALSE,NA,Nej,2022-05-12T15:37:35Z,29619
 2022-05-12,89,NA,Thorkild Feldthusen Jensen,Nedre,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-12T14:18:46Z,29617
-2022-05-12,73,NA,Es,Mellem,Flue,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-12T12:49:30Z,29616
+2022-05-12,73,NA,Emil Schandorff,Mellem,Flue,NA,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-12T12:49:30Z,29616
 2022-05-12,94,NA,Børge Jensen,Mellem,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-12T09:35:39Z,29614
 2022-05-11,87,NA,Patrick Rezulak,Nedre,Spin,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/8D7048E3-D2B9-4D5C-9CAB-FC88EDF3AEC8-1024x473.png,NA,FALSE,NA,Nej,2022-05-12T15:39:39Z,29620
 2022-05-11,87,NA,Patrick Rezulak,Nedre,Spin,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-12T15:35:34Z,29618
@@ -1005,7 +1004,7 @@ De hjemmelavede spinnere gør det virkelig godt ;)",FALSE,NA,Nej,2022-05-12T23:1
 2022-05-11,97,NA,Michael Holm Sørensen,Nedre,Flue,Hun,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/skade-1024x576.jpg,NA,TRUE,Rød plet på venstre side af fisken midt på.,Nej,2022-05-11T17:54:35Z,29605
 2022-05-11,80,NA,Heine Lund Fausing,Nedre,Flue,Hun,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-11T17:21:19Z,29604
 2022-05-11,81,NA,Brian Bjergsø,Nedre,Flue,NA,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/IMG_20220511_123414-1024x768.jpg,NA,FALSE,NA,Nej,2022-05-11T15:51:38Z,29603
-2022-05-11,100,NA,Es,Mellem,Flue,NA,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-11T12:02:57Z,29602
+2022-05-11,100,NA,Emil Scandorff,Mellem,Flue,NA,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-11T12:02:57Z,29602
 2022-05-11,105,NA,Keld Bertelsen,Mellem,Flue,Han,FALSE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-11T10:39:24Z,29601
 2022-05-11,98,NA,Kenny Frost,Nedre,Flue,Han,FALSE,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/0032BFF4-8177-4DCC-AD69-E30FD5595961-1-576x1024.jpeg,NA,FALSE,NA,Nej,2022-05-11T08:52:44Z,29600
 2022-05-11,95,NA,Per K Pedersen,Nedre,Spin,Hun,TRUE,FALSE,NA,NA,FALSE,NA,Nej,2022-05-11T08:51:18Z,29599
