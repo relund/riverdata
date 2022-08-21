@@ -1,4 +1,5 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
+2022-08-21,50,1.5,Mads Christensen,Nedre,Flue,FALSE,NA,TRUE,NA
 2022-08-21,65,0,Lars Petersen,Mellem,Flue,FALSE,NA,FALSE,Male
 2022-08-21,54,0,Oliver Leonardy Nielsen,Mellem,Spin,FALSE,NA,FALSE,NA
 2022-08-21,55,0,Jeppe Crenzien,Mellem,Flue,FALSE,NA,FALSE,Male
@@ -9,6 +10,9 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
 2022-08-20,60,0,Allan Bay,Mellem,Flue,FALSE,NA,FALSE,Female
 2022-08-20,58,2.2,Anders Hansen,Mellem,Flue,FALSE,NA,TRUE,NA
 2022-08-20,59,2.45,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,Male
+2022-08-19,67,3,Bo Fomsgaard,Mellem,Flue,FALSE,NA,TRUE,NA
+2022-08-19,55,0,Bo Fomsgaard,Mellem,Flue,FALSE,NA,FALSE,NA
+2022-08-19,79,6.2,Bo Fomsgaard,Mellem,Flue,FALSE,NA,TRUE,Male
 2022-08-19,60,0,Nichlas Dag Vestergaard,Øvre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8595A5AB6673BC83C12588A500325C68.jpg,FALSE,Male
 2022-08-19,60,0,Kristian Søndergård Andersen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/4A82B03CC6A2DDE4C12588A4003A1D9C.jpg,FALSE,NA
 2022-08-19,57,1.9,Henrik Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA
