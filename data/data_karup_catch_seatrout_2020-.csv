@@ -1,7 +1,9 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
+2022-09-11,58,2.11,Allan Rosendahl,Mellem,Flue,FALSE,NA,TRUE,Female
 2022-09-10,57,1.9,Henning Sandager,Haderup Å,Spin,FALSE,NA,TRUE,Female
 2022-09-10,50,0,Andreas Andersen,Øvre,Spin,FALSE,NA,FALSE,Female
 2022-09-10,55,0,Flemming Andersen,Øvre,Spin,FALSE,NA,FALSE,Female
+2022-09-08,63,3,Kurt Juel,Nedre,Spin,FALSE,NA,TRUE,NA
 2022-09-08,57,0,Arne Grynnerup,Mellem,Flue,FALSE,NA,FALSE,Female
 2022-09-08,54,2,Holger Jakobsen,Nedre,Spin,FALSE,NA,TRUE,Female
 2022-09-06,65,NA,Nichlas Dag  Vestergaard,Øvre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/5B81F47F159E7236C12588B6004C977B.jpg,TRUE,Female
@@ -407,6 +409,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
 2022-07-13,70,4.6,Simon Nielsen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/ADCCD45002A891B4C125887F002FC0BE.jpg,TRUE,Female
 2022-07-13,65,NA,Owen N,Nedre,Flue,FALSE,NA,TRUE,NA
 2022-07-13,62,2.85,Osman Viba Bejtovic,Mellem,Flue,FALSE,NA,TRUE,Female
+2022-07-12,52,2,Kurt Juel,Nedre,Spin,FALSE,NA,TRUE,NA
 2022-07-12,62,3.1,Günter Großmann,Nedre,Flue,FALSE,NA,TRUE,NA
 2022-07-12,58,2.6,Heinrich Frølund Pedersen,Nedre,Flue,FALSE,NA,TRUE,Male
 2022-07-12,60,2.5,Per S Nielsen,Øvre,Flue,FALSE,NA,TRUE,Female
