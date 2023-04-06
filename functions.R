@@ -1,6 +1,39 @@
 ### Functions for scripts
 
 
+#' Estimate weight given dat
+#'
+#' @param fn The csv file to save to.
+#' @param dat The data set with column Period
+#' @param minLength 
+#'
+#' @return
+# estimateWeightOld <- function(fn, dat, minLength = 40, maxLength = max(dat$Length, na.rm = TRUE)) {
+#   message("Weight: Estimate weight")
+#   dat <- dat %>% 
+#     filter(Length > minLength - 1 & Killed) %>% 
+#     mutate(Period = factor(month(Date, label = T), ordered = F)) %>% 
+#     group_by(Period) %>% filter(n() > 5) # at least 6 obs
+#   mod <- lm(log(Weight) ~ Period*log(Length), dat)
+#   datP <- expand_grid(Length = minLength:maxLength, Period = unique(dat$Period))
+#   res <- predict(mod, datP, interval='prediction', level=0.95) 
+#   res <- exp(res)
+#   res <- res %>% as_tibble() 
+#   res <- bind_cols(datP, res) %>% group_by(Period) #%>% select(Length:Avg)
+#   colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
+#   res <- res %>% 
+#     mutate(Avg = round(Avg,3), Lower = round(Lower, 3), Upper = round(Upper, 3))
+#   message("  Write data to ", fn)
+#   write_csv(res, fn)
+#   return(invisible(res))
+# }
+
+
+#' Fix UTF8 string error
+#'
+#' @param strings Strings to fix
+#'
+#' @return Fixed strings
 fixStringErrors <- function(strings) {
   strings <- strings %>% str_replace("Vorgod �", "Vorgod Å") %>% 
     str_replace("Omme �", "Omme Å") %>% 
@@ -11,184 +44,9 @@ fixStringErrors <- function(strings) {
 }
 
 
-#' Update catch records for Skjern river
-#'
-#' @param prefix Path prefix (e.g. data/data_skjern).
-#' @param species Either "salmon" or "trout".
-#' @param start Year where update records from
-#' @param reset If TRUE don't append to the old records!
-#'
-#' @return The updated catch records appended to the the old records. 
-updateCatchSkjern <- function(prefix, species, start = year(now()), reset = F) {
-  message("Catch records: Update dataset for ", species, ".")
-  foundId <- NULL
-  datOld <- NULL
-  if (species == "salmon") fn <- paste0(prefix, "_catch_salmon.csv") 
-  if (species == "trout") fn <- paste0(prefix, "_catch_seatrout.csv")
-  if (file.exists(fn)) {
-    datOld <- read_csv(fn, col_types = "DddccccllcclccTd")
-    foundId <- datOld %>% pull(Id)
-  }
-  
-  noError <- function(code) {
-    tryCatch(code,
-             error = function(c) TRUE
-    )
-  }
-  
-  curY <- year(now())
-  dat <- NULL
-  message("  Consider year:", appendLF = F)
-  for (y in start:curY) {
-    message(" ", y, appendLF = F)
-    url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=", species)
-    page <- read_html(url)
-    ids <- html_nodes(page, xpath = '//*[@id="report-list"]/tbody/tr/@data-id') %>% 
-      html_text() %>% as.numeric()
-    for (id in ids) {
-      if (id %in% foundId & !reset) next
-      url <- str_c("http://skjernaasam.dk/ajax/?action=getcatch&id=", id) 
-      while (TRUE) {
-        val <- noError(jsonlite::fromJSON(url))
-        if (!is.logical(val)) break
-      }
-      if (is.null(val$imageid)) val$imagefile = ""
-      val <- val %>% unlist()
-      dat <- bind_rows(val, dat)
-    }
-  }
-  message("")
-  
-  if (!is.null(dat)) {
-    dat <- dat %>% select("Id" = id, "Date" = date, "Length" = length_cm, "Weight" = weight_kg, "Sex" = sex, "Place" = location, "Cut" = cut_fin, "Net" = net_injury, "NetDesc" = injury_description, "Killed" = released, "Method" = method, "Notes" = notes, "Kelt" = kelt, "ReportDate" = report_date, "Name" = name, "Foto" = imagefile)
-    dat <- dat %>% 
-      mutate(Killed = if_else(Killed == "Ja", FALSE, TRUE),  # Since represent released
-             Length = str_replace_all(Length, c(".cm" = "", "Ukendt" = NA_character_)),
-             Weight = str_replace_all(Weight, c(".kg" = "", "Ukendt" = NA_character_)),
-             Cut = case_when(
-               Cut %in% c("Ja", "left_pelvic", "right_pelvic", "pelvic", "Fedtfinne", "tail", "pectoral", "anal") ~ TRUE, 
-               Cut == "Nej" ~ FALSE,
-               TRUE ~ NA),
-             Net = if_else(Net == "Ja", TRUE, FALSE),
-             Place = case_when(
-               str_detect(Place, "Øvre|Rind|Karstoft|Vinbæk|Opstrøms") ~ "Øvre",
-               str_detect(Place, "Mellem|Borris Krog bro til Tarp Bro|Felding|Konsortiet") ~ "Mellem",
-               str_detect(Place, "Nedre|A11|Albæk|Fjord") ~ "Nedre",
-               str_detect(Place, "Vorgod") ~ "Vorgod Å",
-               str_detect(Place, "Omme") ~ "Omme Å",
-               TRUE ~ "Andet"),
-             NetDesc = str_to_sentence(NetDesc),
-             Sex = str_replace_all(Sex, c("Ukendt" = NA_character_)),
-             Name = str_to_title(Name),
-             Notes = str_to_sentence(Notes)) %>% 
-      type_convert(col_types = cols(
-        Date = col_date(format = ""),
-        Length = col_double(),
-        Weight = col_double(),
-        Name = col_character(),
-        Place = col_character(),
-        Method = col_character(),
-        Sex = col_character(),
-        Cut = col_logical(),
-        Killed = col_logical(),
-        Foto = col_character(),
-        Notes = col_character(),
-        Net = col_logical(),
-        NetDesc = col_character(),
-        Kelt = col_character(),
-        ReportDate = col_datetime(format = ""),
-        Id = col_double()
-      )) %>% 
-      select(Date, Length, Weight, Name, Place, Method, Sex, Cut, Killed, Foto, Notes, 
-             Net, NetDesc, Kelt, ReportDate, Id)
-    
-    # Try to fix errors
-    dat <- dat %>% mutate(Length = if_else(Length < 40 & Weight > 0.5, NA_real_, Length))
-
-    if (reset & !is.null(datOld)) datOld <- datOld %>% filter(year(Date) < start)
-    dat <- bind_rows(datOld,dat)
-    dat <- dat %>% 
-      dplyr::filter(Length > 39 | is.na(Length)) %>% 
-      mutate(Place = fixStringErrors(Place), Weight = round(Weight,1), Length = round(Length)) %>% 
-      arrange(desc(Date), desc(ReportDate))
-    message("  Write data to ", fn)
-    write_csv(dat, fn)
-  } else {
-    dat <- datOld
-  }
-  return(invisible(dat))
-}
 
 
-#' Estimate weight given dat
-#'
-#' @param fn The csv file to save to.
-#' @param dat The data set with column Period
-#' @param minLength 
-#'
-#' @return
-estimateWeight <- function(fn, dat, minLength = 40, maxLength = max(dat$Length, na.rm = TRUE)) {
-  message("Weight: Estimate weight")
-  dat <- dat %>% 
-    filter(Length > minLength - 1 & Killed) %>% 
-    mutate(Period = factor(month(Date, label = T), ordered = F)) %>% 
-    group_by(Period) %>% filter(n() > 5) # at least 6 obs
-  mod <- lm(log(Weight) ~ Period*log(Length), dat)
-  datP <- expand_grid(Length = minLength:maxLength, Period = unique(dat$Period))
-  res <- predict(mod, datP, interval='prediction', level=0.95) 
-  res <- exp(res)
-  res <- res %>% as_tibble() 
-  res <- bind_cols(datP, res) %>% group_by(Period) #%>% select(Length:Avg)
-  colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
-  res <- res %>% 
-    mutate(Avg = round(Avg,3), Lower = round(Lower, 3), Upper = round(Upper, 3))
-  message("  Write data to ", fn)
-  write_csv(res, fn)
-  return(invisible(res))
-}
 
-
-#' Update and save lock data for Hvide Sande
-#'
-#' @param prefix Path prefix (e.g. data/data_skjern).
-#'
-#' @return The lock data set.
-updateLockSkjern <- function(prefix) {
-  message("Lock flow: Update dataset.")
-  fn <- paste0(prefix, "_flow_lock.csv")
-  url <- 'http://hyde.dk/Sflow/default_flow.asp'
-  webpage <- read_html(url)
-  dat <- html_nodes(webpage, xpath = "/html/body/div[2]/div[3]/script/text()")
-  dat <- html_text(dat)
-  dat <- str_replace_all(dat, "[\r\n\t]", "")
-  
-  dates <- str_replace(dat, "^.*labels:", "{\n'labels' :")
-  dates <- str_replace(dates, "].*$", "]\n}")
-  dates <- str_replace_all(dates, "'", '"')
-  dates <- fromJSON(dates)$labels
-
-  flow <- str_replace(dat, "^.*data:", "{\n'data' :")
-  flow <- str_replace(flow, "].*$", "]\n}")
-  flow <- str_replace_all(flow, "'", '"')
-  flow <- fromJSON(flow)$data
-
-  if (length(dates)==length(flow)) {
-    dat <- tibble(DateTime = dmy_hm(dates, tz = "CET"), Flow = flow)  %>% 
-      arrange_all(desc) %>% distinct()
-    if (!file.exists(fn)) {
-      write_csv(dat, fn)
-      dat
-    } else {
-      datOld <- read_csv(fn, col_types = "Ti", locale = locale(tz = "CET"))
-      dat <- bind_rows(datOld,dat) %>% 
-        arrange_all(desc) %>% 
-        distinct()
-      message("  Write data to ", fn)
-      write_csv(dat, fn)
-    }
-  }
-  return(invisible(dat))
-}
 
 
 #' Calc flow dataset for web
@@ -251,6 +109,8 @@ calcLockWeb <- function(dat, prefix) {
 }
 
 
+
+
 #' Update and save water level data for current year
 #'
 #' @param stations Stations under consideration.
@@ -258,53 +118,53 @@ calcLockWeb <- function(dat, prefix) {
 #'
 #' @note Stations can be found at http://www.hydrometri.dk/hyd/. Get obs for the last 100 days
 #' @return Range of dates.
-updateWaterLevel <- function(stations, prefix, days = 100) {
-  year <- year(now())
-  iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
-  fn <- paste0(prefix, "_waterlevel_", year, ".csv")
-  message("Waterlevel: Update dataset.")
-  # read data for last 100 days
-  if (file.exists(fn)) {
-    datOld <- read_csv(fn, col_types = "Tcd") 
-  } else datOld <- NULL
-  dat <- NULL
-  for (i in 1:nrow(stations)) {
-    id <- stations$id[i]
-    place <- stations$place[i]
-    # get obs for last 100 days
-    tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=", days, "&pw=100000000&inclraw=true"))
-    offset <- as.numeric(tmp$tsh$Offset)
-    tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
-    tmp$V <- tmp$V - rep(offset, length(tmp$V))
-    colnames(tmp) <- c("Date", place)
-    if (is.null(dat)) {
-      dat <- tmp
-    } else {
-      dat <- full_join(dat, tmp, by = "Date")
-    }
-  }
-  dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
-  dat <- dat %>% dplyr::filter(year(Date) == year) %>%
-    arrange_all(desc) %>%
-    distinct(Date, .keep_all = T)
-  dat <- dat %>% 
-    pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Level') %>% 
-    filter(!is.na(Level))
-  # combine with old data
-  dat <- bind_rows(datOld, dat) %>% 
-    arrange_all(desc) %>%
-    distinct(Date, Place, .keep_all = T) %>% 
-    select(Date, Place, Level)
-  # remove outliers
-  dat <- as_tsibble(dat, key = Place, index = Date) %>% 
-    group_by_key() %>%
-    mutate(Level = tsclean(Level, replace.missing = FALSE)) %>% 
-    as_tibble()
-  # save
-  message("  Write data to ", fn)
-  write_csv(dat, fn)
-  return(invisible(dat))
-}
+# updateWaterLevelOld <- function(stations, prefix, days = 100) {
+#   yr <- year(now())
+#   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
+#   fn <- paste0(prefix, "_waterlevel_", yr, ".csv")
+#   message("Waterlevel: Update dataset.")
+#   # read data for last 100 days
+#   if (file.exists(fn)) {
+#     datOld <- read_csv(fn, col_types = "Tcd") 
+#   } else datOld <- NULL
+#   dat <- NULL
+#   for (i in 1:nrow(stations)) {
+#     id <- stations$id[i]
+#     place <- stations$place[i]
+#     # get obs for last 100 days
+#     tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=", days, "&pw=100000000&inclraw=true"))
+#     offset <- as.numeric(tmp$tsh$Offset)
+#     tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
+#     tmp$V <- tmp$V - rep(offset, length(tmp$V))
+#     colnames(tmp) <- c("Date", place)
+#     if (is.null(dat)) {
+#       dat <- tmp
+#     } else {
+#       dat <- full_join(dat, tmp, by = "Date")
+#     }
+#   }
+#   dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
+#   dat <- dat %>% dplyr::filter(year(Date) == yr) %>%
+#     arrange_all(desc) %>%
+#     distinct(Date, .keep_all = T)
+#   dat <- dat %>% 
+#     pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Level') %>% 
+#     filter(!is.na(Level))
+#   # combine with old data
+#   dat <- bind_rows(datOld, dat) %>% 
+#     arrange_all(desc) %>%
+#     distinct(Date, Place, .keep_all = T) %>% 
+#     select(Date, Place, Level)
+#   # remove outliers
+#   dat <- as_tsibble(dat, key = Place, index = Date) %>% 
+#     group_by_key() %>%
+#     mutate(Level = tsclean(Level, replace.missing = FALSE)) %>% 
+#     as_tibble()
+#   # save
+#   message("  Write data to ", fn)
+#   write_csv(dat, fn)
+#   return(invisible(dat))
+# }
 
 
 #' Update and save water level data for current year
@@ -314,109 +174,109 @@ updateWaterLevel <- function(stations, prefix, days = 100) {
 #' @param days Number of days back to read.
 #'
 #' @note Stations can be found at https://vandportalen.dk/.
-#' @return Range of dates.
-updateWaterLevel_new <- function(stations, prefix, days = 100) {
-  iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
-  dat <- NULL
-  for (i in 1:nrow(stations)) {
-    id <- stations$id[i]
-    place <- stations$place[i]
-    # get obs for last 100 days
-    tmp <- fromJSON(paste0("https://vandportalen.dk/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=", days, "&pw=100000000&inclraw=true"))
-    offset <- as.numeric(tmp$tsh$Offset)
-    tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
-    tmp$V <- tmp$V - rep(offset, length(tmp$V))
-    colnames(tmp) <- c("Date", place)
-    if (is.null(dat)) {
-      dat <- tmp
-    } else {
-      dat <- full_join(dat, tmp, by = "Date")
-    }
-  }
-  dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
-  dat <- dat %>% 
-    pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Level') %>% 
-    filter(!is.na(Level))
-  # save to files
-  for (y in unique(year(dat$Date))) {
-    fn <- paste0(prefix, "_waterlevel_", y, ".csv")
-    # if (file.exists(fn)) {
-    #   datOld <- read_csv(fn, col_types = "Tcd") 
-    # } else 
-    datOld <- NULL
-    message("Waterlevel: Update dataset for year ", y)
-    dat1 <- dat %>% dplyr::filter(year(Date) == y) %>%
-      arrange_all(desc) %>%
-      distinct(Date, .keep_all = T)
-    # combine with old data
-    dat1 <- bind_rows(datOld, dat1) %>% 
-      arrange_all(desc) %>%
-      distinct(Date, Place, .keep_all = T) %>% 
-      select(Date, Place, Level)
-    # remove outliers
-    dat1 <- as_tsibble(dat1, key = Place, index = Date) %>% 
-      group_by_key() %>%
-      mutate(Level = tsclean(Level, replace.missing = FALSE)) %>% 
-      as_tibble()
-    # save
-    message("Write data to ", fn)
-    write_csv(dat1, fn)
-  }
-  return(range(dat$Date))
-}
+#' #' @return Range of dates.
+#' updateWaterLevel_new <- function(stations, prefix, days = 100) {
+#'   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
+#'   dat <- NULL
+#'   for (i in 1:nrow(stations)) {
+#'     id <- stations$id[i]
+#'     place <- stations$place[i]
+#'     # get obs for last 100 days
+#'     tmp <- fromJSON(paste0("https://vandportalen.dk/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=", days, "&pw=100000000&inclraw=true"))
+#'     offset <- as.numeric(tmp$tsh$Offset)
+#'     tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
+#'     tmp$V <- tmp$V - rep(offset, length(tmp$V))
+#'     colnames(tmp) <- c("Date", place)
+#'     if (is.null(dat)) {
+#'       dat <- tmp
+#'     } else {
+#'       dat <- full_join(dat, tmp, by = "Date")
+#'     }
+#'   }
+#'   dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
+#'   dat <- dat %>% 
+#'     pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Level') %>% 
+#'     filter(!is.na(Level))
+#'   # save to files
+#'   for (y in unique(year(dat$Date))) {
+#'     fn <- paste0(prefix, "_waterlevel_", y, ".csv")
+#'     # if (file.exists(fn)) {
+#'     #   datOld <- read_csv(fn, col_types = "Tcd") 
+#'     # } else 
+#'     datOld <- NULL
+#'     message("Waterlevel: Update dataset for year ", y)
+#'     dat1 <- dat %>% dplyr::filter(year(Date) == y) %>%
+#'       arrange_all(desc) %>%
+#'       distinct(Date, .keep_all = T)
+#'     # combine with old data
+#'     dat1 <- bind_rows(datOld, dat1) %>% 
+#'       arrange_all(desc) %>%
+#'       distinct(Date, Place, .keep_all = T) %>% 
+#'       select(Date, Place, Level)
+#'     # remove outliers
+#'     dat1 <- as_tsibble(dat1, key = Place, index = Date) %>% 
+#'       group_by_key() %>%
+#'       mutate(Level = tsclean(Level, replace.missing = FALSE)) %>% 
+#'       as_tibble()
+#'     # save
+#'     message("Write data to ", fn)
+#'     write_csv(dat1, fn)
+#'   }
+#'   return(range(dat$Date))
+#' }
 
 
-#' Get and save all water level data for 2017 until now
+#' Get and save all water level data for 2012 until now
 #'
 #' @param stations Stations under consideration.
 #' @param prefix Path prefix (e.g. data/data_skjern).
 #'
-#' @note Stations can be found at http://www.hydrometri.dk/hyd/. Get obs for the last 50000 days
+#' @note Stations can be found at https://vandportalen.dk/ (look at the url). 
 #' @return The dataset.
-getWaterLevels <- function(stations, prefix) {
-  iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
-  message("Waterlevel: Get and save datasets.")
-  # read data for last 100 days
-  dat <- NULL
-  for (i in 1:nrow(stations)) {
-    id <- stations$id[i]
-    place <- stations$place[i]
-    # get obs for last 100 days
-    tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=50000&pw=100000000&inclraw=true"))
-    offset <- as.numeric(tmp$tsh$Offset)
-    tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
-    tmp$V <- tmp$V - rep(offset, length(tmp$V))
-    colnames(tmp) <- c("Date", place)
-    if (is.null(dat)) {
-      dat <- tmp
-    } else {
-      dat <- full_join(dat, tmp, by = "Date")
-    }
-  }
-  dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
-  dat <- dat %>% 
-    arrange_all(desc) %>%
-    distinct(Date, .keep_all = T)
-  dat <- dat %>% 
-    pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Level') %>% 
-    filter(!is.na(Level))
-  dat <- dat %>% 
-    arrange_all(desc) %>%
-    distinct(Date, Place, .keep_all = T) %>% 
-    select(Date, Place, Level)
-  # remove outliers
-  dat <- as_tsibble(dat, key = Place, index = Date) %>% 
-    group_by_key() %>%
-    mutate(Level = tsclean(Level, replace.missing = FALSE)) %>% 
-    as_tibble()
-  # save
-  for (y in distinct(dat, year(Date)) %>% pull()) {
-    fn <- paste0(prefix, "_waterlevel_", y, ".csv")
-    message("  Write data to ", fn)
-    write_csv(dplyr::filter(dat, year(Date) == y), fn)
-  }
-  return(invisible(dat))
-}
+# getWaterLevels <- function(stations, prefix) {
+#   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
+#   message("Waterlevel: Get and save datasets.")
+#   # read data 
+#   dat <- NULL
+#   for (i in 1:nrow(stations)) {
+#     id <- stations$id[i]
+#     place <- stations$place[i]
+#     tmp <- fromJSON(paste0("https://vandportalen.dk/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=50000&pw=1000"))
+#     tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
+#     tmp <- tmp %>% filter(!(is.nan(V) | is.na(V)))
+#     colnames(tmp) <- c("Date", "Level")
+#     tmp <- tmp %>% mutate(Place = place, Serie = i)
+#     if (is.null(dat)) {
+#       dat <- tmp
+#     } else {
+#       dat <- bind_rows(dat, tmp)
+#     }
+#   }
+#   dat <- dat %>% 
+#     mutate(Date = ymd_hms(Date, tz = "UTC"))
+#   # remove outliers
+#   dat <- as_tsibble(dat, key = Serie, index = Date) %>% 
+#     group_by_key() %>%
+#     mutate(Level = tsclean(Level, replace.missing = FALSE)) %>% 
+#     as_tibble()
+#   dat <- dat %>% 
+#     select(-Serie) %>% 
+#     mutate(Date = floor_date(Date, unit = "30 mins")) %>% 
+#     group_by(Date, Place) %>% 
+#     summarise(Level = mean(Level), .groups = "drop") %>% 
+#     mutate(Level = round(Level, 4)) %>% 
+#     arrange(desc(Date), Place) %>% 
+#     filter(!is.na(Level))
+#   # dat <- dat %>% dplyr::filter(year(Date) > 2011)
+# 
+#   # save
+#   for (y in distinct(dat, year(Date)) %>% pull()) {
+#     fn <- paste0(prefix, "_waterlevel_", y, ".csv")
+#     message("  Write data to ", fn)
+#     write_csv(dplyr::filter(dat, year(Date) == y), fn)
+#   }
+#   return(invisible(dat))
+# }
 
 
 
@@ -435,7 +295,7 @@ readWLevels <- function(prefix, years) {
                 read_csv(fn, col_types = cols(
                   Date = col_datetime(format = ""),
                   Place = col_character(),
-                  Level = col_double()
+                  Value = col_double()
                 )))
   }
   return(dat)
@@ -474,20 +334,20 @@ calcWaterMovAvg <- function(dat, prefix) {
   }
   
   tmp <- dat %>% 
-    select(Date, Place, Level) %>% 
+    select(Date, Place, Value) %>% 
     mutate(Day = yday(Date)) %>% 
     group_by(Day, Place) %>% 
     summarise_if(is.numeric, mean, na.rm = TRUE) %>% 
     group_by(Place) %>% 
     nest() %>% 
     mutate(data = map(data, function(df) {
-      df %>% mutate(Level = if_else(Day==366, lag(Level), Level)) 
+      df %>% mutate(Value = if_else(Day==366, lag(Value), Value)) 
     })) %>% 
     mutate(data = map(data, function(df) {
-      df %>% mutate(Level = movAvg(Level)) 
+      df %>% mutate(Value = movAvg(Value)) 
     })) %>% 
     unnest(cols = c(data)) %>% 
-    rename(Level_rAvg90 = Level) 
+    rename(Level_rAvg90 = Value) 
   message("  Write data to ", fn)
   write_csv(tmp, fn)
   return(tmp)
@@ -510,20 +370,20 @@ calcWaterTempMovAvg <- function(dat, prefix) {
   }
   
   tmp <- dat %>% 
-    select(Date, Place, Temp) %>% 
+    select(Date, Place, Value) %>% 
     mutate(Day = yday(Date)) %>% 
     group_by(Day, Place) %>% 
     summarise_if(is.numeric, mean, na.rm = TRUE) %>% 
     group_by(Place) %>% 
     nest() %>% 
     mutate(data = map(data, function(df) {
-      df %>% mutate(Temp = if_else(Day==366, lag(Temp), Temp)) 
+      df %>% mutate(Value = if_else(Day==366, lag(Value), Value)) 
     })) %>% 
     mutate(data = map(data, function(df) {
-      df %>% mutate(Temp = movAvg(Temp)) 
+      df %>% mutate(Value = movAvg(Value)) 
     })) %>% 
     unnest(cols = c(data)) %>% 
-    rename(Avg = Temp) 
+    rename(Avg = Value) 
   message("  Write data to ", fn)
   write_csv(tmp, fn)
   return(tmp)
@@ -534,7 +394,7 @@ calcWaterTempMovAvg <- function(dat, prefix) {
 #' Calc relative water levels
 #'
 #' @param dat Water level records.
-#' @param rMeans Average levels.
+#' @param rMeans Average levels (tibble).
 #' @param prefix Path prefix (e.g. data/data_skjern).
 #'
 #' @return The dataset.
@@ -543,7 +403,7 @@ calcWaterLevelRelative <- function(dat, rMeans, prefix) {
   dat <- dat %>% 
     mutate(Day = yday(Date)) %>% 
     left_join(rMeans, by = c("Place", "Day")) %>% 
-    mutate(Level = round(Level, 3), LevelRelative = round(Level - Level_rAvg90, 3)) %>% 
+    mutate(Level = round(Value, 3), LevelRelative = round(Level - Level_rAvg90, 3)) %>% 
     select(-Day, -Level_rAvg90)
   return(dat)
 }
@@ -571,6 +431,7 @@ calcWaterTempWeb <- function(dat, rMeans, prefix) {
     select(-Day)
   fn <- paste0(prefix, "_watertemp_web.csv")
   dat <- dat %>% 
+    rename(Temp = Value) %>% 
     ## data 14 days back for each year
     mutate(DaysSince = as.numeric(date(Date))) %>% 
     group_by(Place) %>% 
@@ -651,7 +512,7 @@ calcWaterLevelsWeb <- function(dat, prefix) {
     mutate(Hour = hour(Date), DateDay = date(Date)) %>% 
     group_by(Hour, Place, DateDay, YGroup) %>% 
     summarise(Date = median(Date),
-              Level = round(100*mean(Level),1), 
+              Level = round(100*mean(Value),1), 
               LevelRelative = round(100*mean(LevelRelative),1),
               .groups = "drop") %>% 
     select(-Hour, -DateDay) %>% 
@@ -749,49 +610,49 @@ writeCatchKarup <- function() {
 #' @param stations Stations under consideration.
 #' @param prefix Path prefix (e.g. data/data_karup).
 #'
-#' @note Stations can be found at http://www.hydrometri.dk/hyd/. Get obs for the last 100 days
+#' @note Stations can be found at http://www.hydrometri.dk/hyd/.
 #' @return The dataset.
-updateWaterTempKarup <- function(stations, prefix) {
-  year <- year(now())
-  iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
-  fn <- paste0(prefix, "_watertemp_", year, ".csv")
-  message("Water temperature: Update datasets.")
-  # read data for last 100 days
-  if (file.exists(fn)) {
-    datOld <- read_csv(fn, col_types = "Tcd") 
-  } else datOld <- NULL
-  dat <- NULL
-  for (i in 1:nrow(stations)) {
-    id <- stations$id[i]
-    place <- stations$place[i]
-    # get obs for last 100 days
-    tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=100&pw=100000000&inclraw=true"))
-    offset <- as.numeric(tmp$tsh$Offset)
-    tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
-    tmp$V <- tmp$V - rep(offset, length(tmp$V))
-    colnames(tmp) <- c("Date", paste0(place, " (", id, ")"))
-    if (is.null(dat)) {
-      dat <- tmp
-    } else {
-      dat <- full_join(dat, tmp, by = "Date")
-    }
-  }
-  dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
-  dat <- dat %>% dplyr::filter(year(Date) == year) %>%
-    arrange_all(desc) %>%
-    distinct(Date, .keep_all = T)
-  dat <- dat %>% 
-    pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Temp') %>% 
-    filter(!is.na(Temp))
-  # combine with old data
-  dat <- bind_rows(datOld, dat) %>% 
-    arrange_all(desc) %>%
-    distinct(Date, Place, .keep_all = T)
-  # save
-  message("  Write data to ", fn)
-  write_csv(dat, fn)
-  return(invisible(dat))
-}
+# updateWaterTempKarup <- function(stations, prefix, days = 100) {
+#   year <- year(now())
+#   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
+#   fn <- paste0(prefix, "_watertemp_", year, ".csv")
+#   message("Water temperature: Update datasets.")
+#   # read data for last 100 days
+#   if (file.exists(fn)) {
+#     datOld <- read_csv(fn, col_types = "Tcd") 
+#   } else datOld <- NULL
+#   dat <- NULL
+#   for (i in 1:nrow(stations)) {
+#     id <- stations$id[i]
+#     place <- stations$place[i]
+#     # get obs for last 100 days
+#     tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=100&pw=100000000&inclraw=true"))
+#     offset <- as.numeric(tmp$tsh$Offset)
+#     tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
+#     tmp$V <- tmp$V - rep(offset, length(tmp$V))
+#     colnames(tmp) <- c("Date", paste0(place, " (", id, ")"))
+#     if (is.null(dat)) {
+#       dat <- tmp
+#     } else {
+#       dat <- full_join(dat, tmp, by = "Date")
+#     }
+#   }
+#   dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
+#   dat <- dat %>% dplyr::filter(year(Date) == year) %>%
+#     arrange_all(desc) %>%
+#     distinct(Date, .keep_all = T)
+#   dat <- dat %>% 
+#     pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Temp') %>% 
+#     filter(!is.na(Temp))
+#   # combine with old data
+#   dat <- bind_rows(datOld, dat) %>% 
+#     arrange_all(desc) %>%
+#     distinct(Date, Place, .keep_all = T)
+#   # save
+#   message("  Write data to ", fn)
+#   write_csv(dat, fn)
+#   return(invisible(dat))
+# }
 
 
 #' Update water temperature data for current year 
@@ -927,3 +788,348 @@ stripKml <- function(mapId, Club = NA, GroupNameMarkers = NULL, GroupNameLines =
 #     mutate(long = as.numeric(str_split_fixed(cord, ",", 3)[,1]), lat = as.numeric(str_split_fixed(cord, ",", 3)[,2])) %>% 
 #     select(-cord)
 # }
+
+
+
+#' Save catch records from a given year to a csv file 
+#'
+#' @param url Url for json (without year) ending with a slash.
+#' @param yr Year to get data for.
+#' @param prefix Prefix for csv files such as 'data/data_karup'.
+#'
+#' @return The data.
+writeCatch <- function(url, prefix, yr) {
+  message("Catch records: Update dataset for year ", yr)
+  ## data to today
+  dat <- fromJSON(url)
+  cols <- dat$cols
+  cols$label[is.na(cols$label)] <- "Unknown"
+  rows <- dat$rows$c
+  rows <- lapply(rows, FUN = function(x) {x[,1]})
+  dat1 <-  suppressMessages(t(map_dfc(rows, ~ .x)))
+  colnames(dat1) <- cols$label
+  dat1 <- as_tibble(dat1, .name_repair = "universal")
+  dateStr <- dat1$Dato %>% str_extract_all("(?<=\\().+?(?=\\))", simplify = T) %>%
+    str_split(",", simplify = TRUE) %>% as_tibble(.name_repair = "minimal")
+  colnames(dateStr) <- c("Year", "Month", "Day")
+  dateStr <- suppressMessages(type_convert(dateStr))
+  dateStr <- mutate(dateStr, Month = Month + 1)
+  dateStr <- str_c(dateStr$Year, "-", str_pad(dateStr$Month, 2, "left", pad="0"), "-", str_pad(dateStr$Day, 2, "left", pad="0"))
+  dat1 <- bind_cols(Date=dateStr, dat1)
+  dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Havørred"))
+  dat2 <- dat1 %>% transmute(Date, Length = `Længde`, Weight = `Vægt`, Name = Navn, Place = Zone, Method = Agn, Cut = FALSE, Foto = Foto, Killed = (Hjemtaget == "Ja"), Sex = `Køn`)
+  dat2 <- suppressMessages(type_convert(dat2))
+  
+  ### Merge and tidy
+ dat3 <- dat2 %>% mutate(Weight = if_else(Length >= 40, Weight, NA_real_))
+  ## Remove weight outliers
+  res <- read_csv(str_c(prefix, "_weight_seatrout.csv"), show_col_types = FALSE) 
+  res <- res %>% 
+    group_by(Length) %>% 
+    summarise(Lower = min(Lower), Upper = max(Upper))
+ dat3 <- left_join(dat3, res)
+  #dat3 %>% filter( !((Weight >= 0.8 * Lower & Weight <= 1.2 * Upper) | is.na(Weight) ))
+ dat3 <-dat3 %>% 
+    mutate(Weight = if_else(Weight >= 0.8 * Lower & Weight <= 1.2 * Upper, Weight, NA_real_, NA_real_)) %>% 
+    select(-Upper, -Lower)
+  ## Fix custom errors
+ dat3 <-dat3 %>% 
+    mutate(Method = 
+             str_replace_all(Method, 
+                             c("Wobler" = "Spin", "Blink" = "Spin", "Spinner" = "Spin", "Jig" = "Spin", 
+                               "Bombarda med flue" = "Spin", "Tørflue" = "Flue", "Pirk/Pilk" = "Spin", 
+                               "Mede" = "Orm", "Spinflue" = "Spin", "Spin-flue" = "Spin", "Maddike" = "Orm", "Orm, spinner" = "Orm")))
+  # unique(dat3$Method)
+ dat3 <-dat3 %>% mutate(Sex = str_replace_all(Sex, c("Han" = "Male", "Hun" = "Female", "Ved ikke" = NA)))
+  # unique(dat3$Sex)
+ dat3 <-dat3 %>% mutate(Name = str_to_title(str_replace_all(Name, c("Ikke oplyst" = NA, "Mogens Styhr Rasmussen" = "Mogens Styhr", "Ikke Oplyst" = NA, "Poul Godt Godt" = "Poul Godt", "KÅS [0-9 ]* " = "", "Kås [0-9 ]* " = "", ", Vridsted, 2017123" = "", "Xx Yy" = NA))))
+ dat3 <-dat3 %>% mutate(Name = str_replace(Name, fixed("**********"), NA)) %>% mutate(Name = str_replace(Name, "Xx Yy", NA_character_))
+ dat3 <-dat3 %>% mutate(Place = str_replace_all(Place, c("Mellem.*" = "Mellem", "Øvre.*" = "Øvre", "Nedre.*" = "Nedre")))
+  # unique(dat3$Place)
+  
+  ## Save to file
+  fn <- str_c(prefix, "_catch_seatrout_", yr, ".csv")
+  message("  Write data to ", fn)
+  write_csv(dat3, fn)
+  return(dat3)
+}
+
+
+
+#' Estimate weight ranges.
+#'
+#' @param prefix Prefix for csv files such as 'data/data_karup'.
+#' @param seatrout If true get data for seatrout otherwise salmon.
+#'
+#' @return The estimated results (tibble).
+estimateWeight <- function(prefix, seatrout = TRUE) {
+  message("Weight: Estimate weight")
+  species <- if_else(seatrout, "seatrout", "salmon")
+  pfx <- str_c(str_remove(prefix,".*/"), "_catch_", species)
+  dat <- getAllCatches(pfx)
+  minLength <- 40
+  maxLength <- max(dat$Length, na.rm = TRUE)
+  dat <- dat %>% 
+    filter(Length > minLength - 1 & Killed) %>% 
+    mutate(Period = factor(month(Date, label = T), ordered = F)) %>% 
+    group_by(Period) %>% filter(n() > 5) # at least 6 obs
+  mod <- lm(log(Weight) ~ Period*log(Length), dat)
+  datP <- expand_grid(Length = minLength:maxLength, Period = unique(dat$Period))
+  res <- predict(mod, datP, interval='prediction', level=0.95) 
+  res <- exp(res)
+  res <- res %>% as_tibble() 
+  res <- bind_cols(datP, res) %>% group_by(Period) #%>% select(Length:Avg)
+  colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
+  res <- res %>% 
+    mutate(Avg = round(Avg,3), Lower = round(Lower, 3), Upper = round(Upper, 3))
+  fn <- str_c(prefix, "_weight_", species, ".csv")
+  message("  Write data to ", fn)
+  write_csv(res, fn)
+  return(invisible(res))
+}
+
+
+#' Read all catches from a river
+#'
+#' @param prefix File prefix such as 'data_karup_catch_seatrout'.
+#'
+#' @return The data.
+getAllCatches <- function(prefix) {
+  f <- dir_ls("data", regexp = str_c(prefix, "_[0-9]{4}"))
+  dat <- read_csv(f) %>% 
+    arrange(Date)
+  return(dat)
+}
+
+
+#' Update catch records for Skjern river
+#'
+#' @param prefix Path prefix (e.g. data/data_skjern).
+#' @param species Either "salmon" or "trout".
+#' @param start Year where update records from
+#' @param reset If TRUE don't append to the old records!
+#'
+#' @return The updated catch records appended to the the old records. 
+updateCatchSkjern <- function(prefix, species, start = year(now()), reset = F) {
+  message("Catch records: Update dataset for ", species, ".")
+  foundId <- NULL
+  datOld <- NULL
+  if (species == "salmon") fn <- paste0(prefix, "_catch_salmon.csv") 
+  if (species == "trout") fn <- paste0(prefix, "_catch_seatrout.csv")
+  if (file.exists(fn)) {
+    datOld <- read_csv(fn, col_types = "DddccccllcclccTd")
+    foundId <- datOld %>% pull(Id)
+  }
+  
+  noError <- function(code) {
+    tryCatch(code,
+             error = function(c) TRUE
+    )
+  }
+  
+  curY <- year(now())
+  dat <- NULL
+  message("  Consider year:", appendLF = F)
+  for (y in start:curY) {
+    message(" ", y, appendLF = F)
+    url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=", species)
+    page <- read_html(url)
+    ids <- html_nodes(page, xpath = '//*[@id="report-list"]/tbody/tr/@data-id') %>% 
+      html_text() %>% as.numeric()
+    for (id in ids) {
+      if (id %in% foundId & !reset) next
+      url <- str_c("http://skjernaasam.dk/ajax/?action=getcatch&id=", id) 
+      while (TRUE) {
+        val <- noError(jsonlite::fromJSON(url))
+        if (!is.logical(val)) break
+      }
+      if (is.null(val$imageid)) val$imagefile = ""
+      val <- val %>% unlist()
+      dat <- bind_rows(val, dat)
+    }
+  }
+  message("")
+  
+  if (!is.null(dat)) {
+    dat <- dat %>% select("Id" = id, "Date" = date, "Length" = length_cm, "Weight" = weight_kg, "Sex" = sex, "Place" = location, "Cut" = cut_fin, "Net" = net_injury, "NetDesc" = injury_description, "Killed" = released, "Method" = method, "Notes" = notes, "Kelt" = kelt, "ReportDate" = report_date, "Name" = name, "Foto" = imagefile)
+    dat <- dat %>% 
+      mutate(Killed = if_else(Killed == "Ja", FALSE, TRUE),  # Since represent released
+             Length = str_replace_all(Length, c(".cm" = "", "Ukendt" = NA_character_)),
+             Weight = str_replace_all(Weight, c(".kg" = "", "Ukendt" = NA_character_)),
+             Cut = case_when(
+               Cut %in% c("Ja", "left_pelvic", "right_pelvic", "pelvic", "Fedtfinne", "tail", "pectoral", "anal") ~ TRUE, 
+               Cut == "Nej" ~ FALSE,
+               TRUE ~ NA),
+             Net = if_else(Net == "Ja", TRUE, FALSE),
+             Place = case_when(
+               str_detect(Place, "Øvre|Rind|Karstoft|Vinbæk|Opstrøms") ~ "Øvre",
+               str_detect(Place, "Mellem|Borris Krog bro til Tarp Bro|Felding|Konsortiet") ~ "Mellem",
+               str_detect(Place, "Nedre|A11|Albæk|Fjord") ~ "Nedre",
+               str_detect(Place, "Vorgod") ~ "Vorgod Å",
+               str_detect(Place, "Omme") ~ "Omme Å",
+               TRUE ~ "Andet"),
+             NetDesc = str_to_sentence(NetDesc),
+             Sex = str_replace_all(Sex, c("Ukendt" = NA_character_)),
+             Name = str_to_title(Name),
+             Notes = str_to_sentence(Notes)) %>% 
+      type_convert(col_types = cols(
+        Date = col_date(format = ""),
+        Length = col_double(),
+        Weight = col_double(),
+        Name = col_character(),
+        Place = col_character(),
+        Method = col_character(),
+        Sex = col_character(),
+        Cut = col_logical(),
+        Killed = col_logical(),
+        Foto = col_character(),
+        Notes = col_character(),
+        Net = col_logical(),
+        NetDesc = col_character(),
+        Kelt = col_character(),
+        ReportDate = col_datetime(format = ""),
+        Id = col_double()
+      )) %>% 
+      select(Date, Length, Weight, Name, Place, Method, Sex, Cut, Killed, Foto, Notes, 
+             Net, NetDesc, Kelt, ReportDate, Id)
+    
+    # Try to fix errors
+    dat <- dat %>% mutate(Length = if_else(Length < 40 & Weight > 0.5, NA_real_, Length))
+    
+    if (reset & !is.null(datOld)) datOld <- datOld %>% filter(year(Date) < start)
+    dat <- bind_rows(datOld,dat)
+    dat <- dat %>% 
+      dplyr::filter(Length > 39 | is.na(Length)) %>% 
+      mutate(Place = fixStringErrors(Place), Weight = round(Weight,1), Length = round(Length)) %>% 
+      arrange(desc(Date), desc(ReportDate))
+    message("  Write data to ", fn)
+    write_csv(dat, fn)
+  } else {
+    dat <- datOld
+  }
+  return(invisible(dat))
+}
+
+
+#' Update and save time series data from vandportalen.dk
+#'
+#' @param stations Stations under consideration.
+#' @param prefix Path prefix (e.g. data/data_skjern).
+#' @param prefix1 Prefix to append to `prefix` (e.g. waterlevel).
+#' @param days Number of days back to get data for.
+#'
+#' @note Stations can be found at https://vandportalen.dk/ (look at the url). 
+#' @return Data set (tibble).
+saveTimeSeriesData <- function(stations, prefix, prefix1, days) {
+  message("Retrive ", prefix1, " time series data.")
+  iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
+  dat <- NULL
+  for (i in 1:nrow(stations)) {
+    id <- stations$id[i]
+    place <- stations$place[i]
+    tmp <- fromJSON(paste0("https://vandportalen.dk/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=", days, "&pw=1000"))
+    if (length(tmp$PlotRecs) == 0) next
+    tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
+    tmp <- tmp %>% filter(!(is.nan(V) | is.na(V)))
+    colnames(tmp) <- c("Date", "Value")
+    tmp <- tmp %>% mutate(Place = place, Serie = i)
+    dat <- bind_rows(dat, tmp)
+  }
+  dat <- dat %>% 
+    mutate(Date = ymd_hms(Date, tz = "UTC"))
+  # remove outliers
+  dat <- as_tsibble(dat, key = Serie, index = Date) %>% 
+    group_by_key() %>%
+    mutate(Value = tsclean(Value, replace.missing = FALSE)) %>% 
+    as_tibble() %>% 
+    select(-Serie) %>% 
+    mutate(Date = floor_date(Date, unit = "30 mins")) %>% 
+    arrange(desc(Date), Place) 
+  # merge and save
+  for (y in distinct(dat, year(Date)) %>% pull()) {
+    dat1 <- dat %>% filter(year(Date) == y)
+    fn <- paste0(prefix, "_", prefix1, "_", y, ".csv") 
+    if (file.exists(fn)) {
+      datOld <- read_csv(fn, col_types = "Tcd") 
+      dat1 <- bind_rows(datOld, dat1) 
+    } 
+    dat1 <- dat1 %>% 
+      select(Date, Place, Value) %>% 
+      filter(!is.na(Value)) %>% 
+      group_by(Date, Place) %>% 
+      summarise(Value = mean(Value), .groups = "drop") %>% 
+      distinct(Date, Place, .keep_all = T) %>% 
+      arrange(desc(Date), Place) 
+    message("  Write data to ", fn)
+    write_csv(dat1, fn)
+  }
+  return(invisible(dat))
+}
+
+
+#' Update and save lock data for Hvide Sande
+#'
+#' @param prefix Path prefix (e.g. data/data_skjern).
+#'
+#' @return The lock data set.
+updateLockSkjern <- function(prefix) {
+  message("Lock flow: Update dataset.")
+  fn <- paste0(prefix, "_flow_lock.csv")
+  url <- 'http://hyde.dk/Sflow/default_flow.asp'
+  webpage <- read_html(url)
+  dat <- html_nodes(webpage, xpath = "/html/body/div[2]/div[3]/script/text()")
+  dat <- html_text(dat)
+  dat <- str_replace_all(dat, "[\r\n\t]", "")
+  
+  dates <- str_replace(dat, "^.*labels:", "{\n'labels' :")
+  dates <- str_replace(dates, "].*$", "]\n}")
+  dates <- str_replace_all(dates, "'", '"')
+  dates <- fromJSON(dates)$labels
+  
+  flow <- str_replace(dat, "^.*data:", "{\n'data' :")
+  flow <- str_replace(flow, "].*$", "]\n}")
+  flow <- str_replace_all(flow, "'", '"')
+  flow <- fromJSON(flow)$data
+  
+  if (length(dates)==length(flow)) {
+    dat <- tibble(DateTime = dmy_hm(dates, tz = "CET"), Flow = flow)  %>% 
+      arrange_all(desc) %>% distinct()
+    if (!file.exists(fn)) {
+      write_csv(dat, fn)
+      dat
+    } else {
+      datOld <- read_csv(fn, col_types = "Ti", locale = locale(tz = "CET"))
+      dat <- bind_rows(datOld,dat) %>% 
+        arrange_all(desc) %>% 
+        distinct()
+      message("  Write data to ", fn)
+      write_csv(dat, fn)
+    }
+  }
+  return(invisible(dat))
+}
+
+
+
+#' Read data files from the data subfolder
+#'
+#' @param pattern File to search for (can use regexp) (e.g. 'data_karup_catch_seatrout_[0-9]{4}').
+#'
+#' @return The data (tibble).
+readDataFiles <- function(pattern) {
+  f <- dir_ls("data", regexp = pattern)
+  dat <- read_csv(f) %>% 
+    arrange(Date)
+  return(dat)
+}
+
+# path <- "data/data_karup_catch_seatrout_2020-2022.csv"
+# prefix <- "data/data_karup_catch_seatrout"
+splitDataFileByYear <- function(path, prefix) {
+  dat <- read_csv(path) 
+  for (y in distinct(dat, year(Date)) %>% pull()) {
+    fn <- paste0(prefix, "_", y, ".csv") 
+    message("  Write data to ", fn)
+    write_csv(filter(dat, year(Date) == y), fn)
+  }
+}

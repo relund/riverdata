@@ -6,15 +6,18 @@ library(lubridate)
 library(zoo)
 library(forecast)
 library(tsibble)
+library(fs)
 source("functions.R")
 
+url <- "https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/catches/assoc/49F1767931B31CD0C1258398007953C0/1/"
 prefix <- "data/data_karup"
+yr <- year(now())
 
 #### Catch records ####
-datCatchSeatrout <- writeCatchKarup()
+datCatchSeatrout <- writeCatch(url, prefix, yr)
 
 #### Weight ####
-estimateWeight(paste0(prefix, "_weight_seatrout.csv"), datCatchSeatrout, minLength =  40)
+estimateWeight(prefix, seatrout = TRUE)
 
 #### Save montly statistics for current year ####
 # datStat <- datCatch %>% 
@@ -70,13 +73,12 @@ estimateWeight(paste0(prefix, "_weight_seatrout.csv"), datCatchSeatrout, minLeng
 
 
 #### Waterlevel ####
-stations <- tibble(id = c("054764", "001762", "001767"), place = c("Karup By", "Hagebro", "Nørkærbro"))
-## Update data current year
-updateWaterLevel(stations, prefix)   
-# getWaterLevels(stations, prefix) # if reset
+stations <- tibble(id = c("24262", "24265", "23645", "1040"), place = c("Karup By", "Hagebro", "Nørkærbro", "Hagebro"))
+saveTimeSeriesData(stations, prefix, prefix1 = "waterlevel", days = 50)  
+# saveTimeSeriesData(stations, prefix, prefix1 = "waterlevel", days = 50000)  # if update all years
 
 ## Calc moving average 
-dat <- readWLevels(prefix, 2012:year(now()))
+dat <- readWLevels(prefix, 1986:year(now()))
 rMeans <- calcWaterMovAvg(dat, prefix)
 
 ## Relative datasets 
@@ -88,10 +90,8 @@ dat <- calcWaterLevelsWeb(dat, prefix)
 
 
 #### Water temperature ####
-stations <- tibble(id = c("59885"), place = c("Hagebro"))
-
-## Update data current year
-updateWaterTempKarup(stations, prefix)  
+stations <- tibble(id = c("1555"), place = c("Hagebro"))
+saveTimeSeriesData(stations, prefix, prefix1 = "watertemp", days = 50)  
 
 ## Calc moving average 
 dat <- readWTemp(prefix, 2020:year(now()))
