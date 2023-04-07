@@ -1045,6 +1045,7 @@ saveTimeSeriesData <- function(stations, prefix, prefix1, days) {
     select(-Serie) %>% 
     mutate(Date = floor_date(Date, unit = "30 mins")) %>% 
     arrange(desc(Date), Place) 
+  ggplot(dat %>% filter(year(Date) == 2022), aes(x = Date, y = Value, color = Place)) + geom_line()
   # merge and save
   for (y in distinct(dat, year(Date)) %>% pull()) {
     dat1 <- dat %>% filter(year(Date) == y)
@@ -1053,12 +1054,13 @@ saveTimeSeriesData <- function(stations, prefix, prefix1, days) {
       datOld <- read_csv(fn, col_types = "Tcd") 
       dat1 <- bind_rows(datOld, dat1) 
     } 
+    ggplot(dat1, aes(x = Date, y = Value, color = Place)) + geom_line()
     dat1 <- dat1 %>% 
       select(Date, Place, Value) %>% 
       filter(!is.na(Value)) %>% 
       group_by(Date, Place) %>% 
       summarise(Value = mean(Value), .groups = "drop") %>% 
-      distinct(Date, Place, .keep_all = T) %>% 
+      # distinct(Date, Place, .keep_all = T) %>% 
       arrange(desc(Date), Place) 
     message("  Write data to ", fn)
     write_csv(dat1, fn)
