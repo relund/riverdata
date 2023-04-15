@@ -6,9 +6,10 @@ on:
       - .github/workflows/run_script_skjern1_ubuntu.yaml
       - script_skjern1.R
       - functions.R
-  schedule: 
-    - cron: '0 * * * *'  # every hour
-
+  # schedule: 
+  #   - cron: '0 * * * *'  # every hour
+  branches-ignore:
+      - '**'
 jobs:
   render:
     name: Run script_skjern1.R
