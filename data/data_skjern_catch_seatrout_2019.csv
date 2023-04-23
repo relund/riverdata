@@ -1,0 +1,388 @@
+Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
+2019-10-15,52,NA,Steen Mortensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-10-15,56,NA,Bue Keldorff Poulsen,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-10-14,63,2.5,Lars Vedsø,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2019-10-14,55,NA,Anders Kristensen,Øvre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/10/IMG_4548-1024x768.jpg,FALSE,Han,FALSE
+2019-10-13,NA,NA,Susanne Damgaard,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-10-13,63,NA,Bue Keldorff Poulsen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-10-12,40,NA,Per Ørum,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2019-10-11,52,NA,Jim Thaysen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-10-11,50,NA,Stuart Longhurst,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-10-10,65,NA,Lars Bistrup,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-10-10,66,2.6,Jaroslav Stransky,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-10-10,50,NA,Patrick M.,Mellem,Flue,FALSE,NA,TRUE,NA,FALSE
+2019-10-10,55,NA,Fikret Selimovic,Mellem,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/10/20191010_120353-1024x576.jpg,FALSE,NA,FALSE
+2019-10-09,52,NA,Søren Fredslund Andersen,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-10-09,47,NA,Søren Fredslund Andersen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-10-08,60,3,Iver Kloster,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2019-10-08,50,NA,Stefan Meldgaard,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-10-08,50,NA,Henrik Lodahl,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2019-10-07,55,NA,Jakob Krogager,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-10-07,45,NA,Jakob Krogager,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-10-07,46,NA,Anders Kristensen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-10-07,56,2.2,Anders K. Jakobsen,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
+2019-10-06,73,3.3,Hans Jørgen Jensen,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
+2019-10-05,80,NA,Henrik Thygesen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-10-05,50,NA,Jan Thorsted,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-10-05,55,NA,Jesper Ottosen,Omme Å,Flue,NA,NA,FALSE,Han,FALSE
+2019-10-05,55,NA,Leif Larsen,Øvre,Flue,FALSE,NA,TRUE,Han,FALSE
+2019-10-04,48,NA,Jakob Muus,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2019-10-04,45,NA,Dennis Nielsen,Vorgod Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-10-03,55,NA,Stefan Tonn,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-10-03,48,1.1,Mathias F. Jakobsen,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2019-10-03,74,5.1,K. Jensen,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-10-03,62,NA,Kaj Nielsen,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-10-02,60,NA,Kim Michelsen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-10-01,50,NA,Lars Relund,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-10-01,52,NA,Erik O. Kristensen,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-10-01,58,NA,Jørgen Jeppesen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-09-30,50,NA,Erik  Dønvig,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-29,52,NA,Lars Korshøj,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
+2019-09-29,52,NA,Lars Korshøj,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-29,54,NA,Lars Korshøj,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-29,52,NA,Lars Korshøj,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-09-29,54,NA,Lars Korshøj,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-09-29,58,NA,Lars Korshøj,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-09-28,63,NA,Morten Hansen,Øvre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/10/EB93D9D7-F656-4881-AD6A-A1D2905A6C45-576x1024.png,TRUE,NA,FALSE
+2019-09-28,45,NA,Karl-Ole Frandsen,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2019-09-28,40,NA,Karl-Ole Frandsen,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2019-09-28,69,NA,Patrick Fron,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-28,48,NA,Mads Ole Madsen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-27,55,NA,Ronald Otto,Vorgod Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-27,68,NA,Ralph Eriksen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-09-27,52,NA,Jack Christiansen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-09-27,55,NA,Torben Smedegaard,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-09-27,50,NA,Erik Just Pedersen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-27,40,NA,Jacob Krøjgaard,Øvre,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/09/F93277DE-4C46-4E69-B65B-78D13EE1ED64-1024x768.jpeg,FALSE,Hun,FALSE
+2019-09-26,50,NA,Dennis Nielsen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-26,NA,NA,Henning Andersen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-25,50,NA,Per Laursen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-25,55,NA,Dennis Nielsen,Vorgod Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-24,58,2.4,Martin Møller Andersen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-24,61,NA,Peter Nyhuus,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-23,50,NA,Brian Christensenbri,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-22,NA,NA,Jørgen Jørgensen,Nedre,Flue,NA,NA,FALSE,Han,FALSE
+2019-09-21,45,NA,Leif Larsen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-21,49,NA,Michael Rousau,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-21,52,1.4,Uwe Hüls,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-09-20,55,NA,Henrik Møller,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-20,45,NA,Jesper Ottosen,Mellem,Spin,NA,NA,FALSE,Hun,FALSE
+2019-09-20,42,NA,Kenny,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-20,56,2,Kurt Helstrup Jensen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-09-19,55,NA,Tommy Frank Hoelgaard,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-09-19,48,NA,Kim Harpsø Jensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-18,42,NA,Claus Jeppesen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-18,45,NA,Henrik Lodahl,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2019-09-18,50,NA,Henrik Lodahl,Øvre,Spin,NA,NA,FALSE,Han,FALSE
+2019-09-18,55,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-09-18,50,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-18,NA,NA,Steen Mortensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-18,60,NA,Jørgen Jørgensen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-09-18,50,NA,Peter Wittrup,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-18,45,NA,Peter Wittrup,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-18,40,NA,John Edvard Roland Olesen,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2019-09-17,NA,NA,Jørgen Jørgensen,Øvre,Orm,NA,NA,FALSE,NA,FALSE
+2019-09-17,NA,NA,Jørgen Jørgensen,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2019-09-17,41,NA,Henrik Jensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-17,55,NA,Jørgen Jørgensen,Øvre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/09/IMG_4910-1.jpg,FALSE,Han,FALSE
+2019-09-16,60,NA,Poul Lauridsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-09-16,64,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/09/VideoCapture_20190916-200650-1-1024x576.jpg,FALSE,Hun,FALSE
+2019-09-16,50,NA,Allan Nørskov Johansen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-09-16,55,NA,Bo Fomsgaard,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-16,53,NA,Kai Beltoft,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-09-16,41,NA,Jørn Vendelbo,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-09-16,45,NA,Torben Smedegaard,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-15,40,NA,Erik Just Pedersen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-14,50,NA,Bjarne Larsen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-14,40,NA,Bjarne Larsen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-14,NA,NA,Steen Mortensen,Mellem,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/09/Havorred-20cm.jpeg,FALSE,NA,FALSE
+2019-09-13,47,NA,Verner O. Jensen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-09-13,51,NA,Boye Pedersen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-13,45,1,Ejner Kaa,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-13,45,1,Jørgen Buch,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-09-13,45,1.5,Ole Iversen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-09-12,50,NA,Steen Mortensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-12,85,NA,Frank Richter,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-09-12,60,NA,Ole Wisler,Mellem,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/09/184F4C20-8D38-4A4F-943E-6D9DE7588F66-1-1024x768.jpeg,FALSE,Hun,FALSE
+2019-09-12,60,NA,Malthe Wisler Johansen,Mellem,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/09/20190912_135338-1024x768.jpg,FALSE,NA,FALSE
+2019-09-12,45,NA,Malthe Wisler Johansen,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-09-12,44,NA,Kjartan Nielsen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-09-11,50,NA,Peter Kolding,Mellem,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/09/11.09.2019-Havørred-50-cm.jpg,FALSE,Hun,FALSE
+2019-09-11,53,NA,Daniel Hofmann,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2019-09-11,60,NA,Bo Nielsen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-11,53,NA,Steen Mortensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-10,50,NA,Jan Thorsted,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-09-10,NA,NA,Bjarne Staulund Jakobsen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-10,50,NA,Dennis Heine Sørensen,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2019-09-10,50,NA,Heiko Wilhelms,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-10,45,NA,Henrik Mougaard,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2019-09-10,65,NA,Heine Lund Fausing,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-09-10,55,NA,Niels Birkedal Thomsen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-09-09,60,NA,Per Gylling,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-09-09,45,NA,Per Gylling,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-09,66,NA,C.e.lindquist,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-09,65,NA,Kristian Krath,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-09-08,41,NA,Mogens,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-09-08,63,NA,Carsten Aasted Gad,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-08,43,NA,Jan Andersen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-07,60,NA,Henrik Plaetner,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-09-07,50,NA,Jesper Ottosen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-07,52,NA,Henrik Mougaard,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2019-09-07,57,NA,Sebastian Nielsen,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-09-07,50,NA,Erik Just Pedersen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-09-07,50,NA,Erik Just Pedersen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-07,45,NA,Sune Gellert,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2019-09-06,54,1.7,Per Jørgensen,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-09-06,45,NA,Torben Albertsen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-06,45,NA,Thomas Frimurer,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-06,53,NA,Thomas,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-09-06,47,NA,Jim Thaysen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-06,60,NA,Jacob Ejlersen,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2019-09-06,59,NA,Thomas Marcussen,Øvre,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/09/IMG_20190906_183240-768x1024.jpg,TRUE,Hun,FALSE
+2019-09-06,71,NA,Frank Jensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-06,47,NA,Bent Winkler,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2019-09-05,72,NA,Von Euw Martin,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-05,55,1.6,Allan Nordfeldt West,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2019-09-05,64,2.5,Klaus Møller Nielsen,Mellem,Orm,FALSE,NA,TRUE,Hun,FALSE
+2019-09-04,50,NA,Steen Mortensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-04,NA,NA,Steen Mortensen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-04,NA,NA,Steen Mortensen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-04,72,4,Peter Kolding,Mellem,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/09/04.09.2019-Havørred-72-cm-og-4-kg.jpg,TRUE,Hun,FALSE
+2019-09-04,84,NA,Maik Hein,Nedre,Spin,TRUE,NA,FALSE,NA,FALSE
+2019-09-03,49,NA,Brian Vemmelund,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-03,49,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-03,45,NA,Lars Erik Olsen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-09-03,52,NA,Flemming Jørgensen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-09-01,47,NA,Søren Fredslund Andersen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-01,40,NA,Søren Fredslund Andersen,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-09-01,50,NA,Steen Mortensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-09-01,83,NA,Klaus Laursen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-09-01,47,NA,Peter Sørensen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-09-01,55,NA,Henning Bak,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-09-01,50,NA,Henning Bak,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-08-30,NA,NA,Ole Bsk,Øvre,Orm,FALSE,NA,FALSE,NA,FALSE
+2019-08-30,58,NA,Søren Busch,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-27,60,NA,Mogens,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-08-25,40,NA,Malthe Wisler,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2019-08-25,46,NA,Malthe Wisler,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2019-08-25,58,NA,Ivan Mortensen,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2019-08-23,46,NA,Jørgen Jørgensen,Nedre,Flue,FALSE,NA,TRUE,Han,TRUE
+2019-08-23,50,NA,Per Andersen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-23,45,NA,Erling Pedersen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-08-22,60,NA,Leif Madsen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-22,50,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-22,63,2.6,Carsten Velling,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-08-22,77,NA,Henrik Aggergaard,Nedre,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/08/748BC776-D839-469E-8237-810D06B2FC7A-473x1024.png,FALSE,Hun,FALSE
+2019-08-21,46,NA,Bjarne Staulund Jakobsen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-21,50,NA,Knud Erik Medom,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
+2019-08-20,50,1.7,Tommy Jørgensen,Øvre,Spin,NA,https://skjernaasam.dk/wp-content/uploads/2019/08/sh-fisk-782x1024.jpg,TRUE,Hun,FALSE
+2019-08-20,70,NA,Kenneth Nielsen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-20,75,4.7,Henrik Møller,Øvre,Flue,FALSE,NA,TRUE,Han,FALSE
+2019-08-20,55,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-20,48,NA,Steen Mortensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-20,66,NA,Kristian Jørgensen,Nedre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/08/20190820_080530-1024x768.jpg,FALSE,Hun,FALSE
+2019-08-20,55,NA,Jørgen Hasselbalch,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2019-08-20,52,NA,Verner  Mortensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-19,48,NA,Søren Hansson,Vorgod Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-08-18,46,NA,Per Lundvig,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-18,50,NA,Kim Harpsø Jensen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-08-16,52,1.4,Jacob Bock,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-08-16,65,NA,Bo Fomsgaard,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-16,50,NA,Bo Fomsgaard,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-16,64,3,Otto Lygum,Nedre,Orm,FALSE,NA,TRUE,Hun,FALSE
+2019-08-16,49,NA,Erik O. Kristensen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-08-15,55,NA,Bo Fomsgaard,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-15,50,NA,Bo Fomsgaard,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-15,50,NA,Steen Mortensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-15,50,NA,Carsten Velling,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-08-15,57,2.3,Niels Præst,Mellem,Flue,FALSE,NA,TRUE,Han,FALSE
+2019-08-14,57,NA,Nick Christiansen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-08-14,55,NA,Torben Bjørn,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-13,50,NA,Svend Kristensen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2019-08-13,NA,NA,Erling. Pedersen,Vorgod Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-13,50,NA,Erling  Pedersen,Vorgod Å,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-08-12,NA,NA,Nicolai Just Jakobsen,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2019-08-12,42,NA,Søren Hansson,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-08-12,45,NA,Niels Birkedal Thomsen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-12,61,2.8,Torben Bjørn,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-08-11,NA,NA,Kristian Jensen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-08-11,54,NA,Torben Pedersen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-11,NA,NA,Mads Ole Madsen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-10,50,NA,Jesper S Petersen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-10,59,2.8,Tommy Frank Hoelgaard,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-08-10,45,NA,Mads Ole Madsen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-10,44,NA,Mads Ole Madsen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-10,48,NA,Mads Ole Madsen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-10,65,NA,Niels Rohde Ottosen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-08-09,50,NA,Flemming Vad,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-09,55,NA,Per Andersen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-09,57,NA,Benny Pedersen,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-08-08,77,NA,Steen Toftdal Gerner,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-08-08,47,NA,Verner  Mortensen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-08-07,55,NA,Verner  Mortensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-07,69,NA,Uffe Hansen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-06,50,NA,Claus Eriksen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-08-06,48,1.3,Børge Kirkegaard,Vorgod Å,Spin,FALSE,NA,TRUE,Han,FALSE
+2019-08-06,75,NA,Kristian Jørgensen,Nedre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/08/Screenshot_20190806-194608_Gallery-498x1024.jpg,FALSE,Han,FALSE
+2019-08-06,50,NA,Søren Hansson,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-08-06,55,NA,Jørgen Buch,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-08-06,55,NA,Oliver Lind,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-08-05,45,1,Jakob Krogager,Øvre,Flue,FALSE,NA,TRUE,Hun,TRUE
+2019-08-04,55,2,Markus Klump,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2019-08-03,50,NA,René Sørup,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-08-02,45,NA,Sebastian Schumacher,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-08-02,50,NA,Jesper Ottosen,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2019-08-02,55,2.6,Karsten Fini Hansen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-08-01,50,NA,Jan Nord Nielsen,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-08-01,45,1.7,Wilfred Hedegaard,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-08-01,64,NA,Wilhelm Mieth,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-07-28,50,NA,Norbert Wilde,Øvre,Flue,FALSE,NA,TRUE,NA,FALSE
+2019-07-23,60,2.2,Fin Kragelund,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2019-07-23,50,NA,Bjarne Staulund Jakobsen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-23,NA,NA,René Sørup,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-07-23,NA,NA,Niels Olsen,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-07-23,44,NA,Niels Olsen,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-07-22,70,NA,Jesper Ottosen,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2019-07-22,41,NA,Kurt Thomsen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-21,55,NA,Niels Rohde Ottosen,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2019-07-21,52,NA,Jørn Kjær Iversen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-07-20,50,NA,Dennis Rammekjær,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-07-20,50,NA,Karl Henrik Hamann,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-19,58,NA,Henrik Mougaard,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-07-18,42,NA,Steffen Pedersen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-18,55,NA,Per Lundvig,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2019-07-18,50,NA,Birger Dam Jensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-17,75,NA,Jesper Ottosen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-07-17,85,NA,Steffen Pedersen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-16,60,NA,Ole Damgaard,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-07-15,60,NA,Svend Erik Øgendahl,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-15,80,NA,Klaus Knudsen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-07-15,62,NA,Helge Kristensent,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-07-14,55,NA,Johnny Mehl Hansen,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2019-07-14,68,NA,Jesper Ottosen,Nedre,Spin,NA,NA,FALSE,Han,FALSE
+2019-07-14,42,NA,Steffen Juhl,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-07-14,45,NA,Thomas Mosgaard,Nedre,Flue,FALSE,NA,TRUE,Hun,TRUE
+2019-07-13,50,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-07-13,55,NA,Kristian Jensen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-07-13,57,2.5,Stefan Meldgaard,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-07-12,45,NA,Birger Dam Jensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-11,47,NA,Niels Laude,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2019-07-11,46,NA,Per Langkjær,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-07-10,49,1.8,Kim Matthiesen,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-07-10,50,NA,Verner Jensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-10,55,NA,Jan Andersen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-07-10,45,NA,Per Gylling,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-10,45,NA,Peder Kirkegaard,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-07-10,66,NA,Thomas Mosgaard,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-07-09,45,NA,Christian Brandt,Øvre,Spin,NA,https://skjernaasam.dk/wp-content/uploads/2019/07/66258693_656458988155628_4790900151692558336_n-768x1024.jpg,FALSE,NA,FALSE
+2019-07-09,50,NA,Torben Smedegaard,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-07-08,50,NA,Erik Just Pedersen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-07-08,50,NA,Herluf Micael Jensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-07-08,46,NA,Klaus Bretlau,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2019-07-08,42,NA,Klaus Bretlau,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2019-07-08,71,NA,Jens Rasmussen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-07,45,NA,Rune Rask,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-07-07,51,NA,Steffen Juhl,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-06,47,NA,Emil Fogh,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-07-06,43,NA,Kim Mathiasen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-05,55,NA,Erik Just Pedersen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-07-05,42,NA,Jonathan Lindenmayer,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-05,56,NA,Alex Hjort,Nedre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/07/3AA25448-9D23-43FD-8598-298FEF1C5ADE-1-1024x768.jpeg,FALSE,Hun,FALSE
+2019-07-02,45,NA,Erling Pedersen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-07-01,45,NA,Kurt Jensen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-07-01,48,NA,Per Laursen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-29,65,NA,Jesper Ottosen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-06-29,46,NA,Jimmi,Nedre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/06/20190629_145210-1024x498.jpg,TRUE,Han,FALSE
+2019-06-29,45,NA,Erik Just Pedersen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-28,42,NA,Rainer Griebel,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-06-28,43,NA,Niels Andersen,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-06-28,55,NA,Flemming Jacobsen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-06-27,63,NA,Joachim Sejr,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-27,43,NA,Karl-Ole Frandsen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-27,40,NA,Leo Vanden Broeck,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-26,53,NA,Ole Vedsted,Øvre,Orm,FALSE,NA,FALSE,Hun,FALSE
+2019-06-25,45,NA,Kristian Jensen,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2019-06-24,46,NA,Poul Bisgaard,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-06-24,45,NA,Christian Ebbesen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-06-24,48,1.7,Karl-Ole Frandsen,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-06-22,40,NA,Tom Behmer,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-06-22,47,NA,Torben Skødeberg Pedersen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-06-22,45,NA,Florian Hassenpflug,Mellem,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/06/54B558C6-B076-4E8D-8865-4751FDB68BBB-1024x768.jpeg,FALSE,NA,FALSE
+2019-06-22,50,NA,Florian Hassenpflug,Mellem,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/06/05FE8705-E437-43B4-9ED1-69B72848E546-1024x768.jpeg,FALSE,NA,FALSE
+2019-06-22,65,NA,Meinert Matzen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-22,45,NA,Niels J Holmgaard,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2019-06-22,50,NA,Andreas Holm Andersen,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2019-06-21,45,NA,Ole Iversen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-06-21,51,NA,Jonas Stora,Nedre,Spin,NA,NA,TRUE,NA,FALSE
+2019-06-21,55,NA,Henrik Nielsen-Refs,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-06-21,45,NA,Leo Hestbech,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-06-21,55,NA,Per Fuglsang,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2019-06-21,50,NA,Jan Østerby Olesen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-06-20,57,NA,Brian Bechmann,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-06-19,43,NA,Torben Skødeberg Pedersen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-06-19,52,1.5,Boris Nolting,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-06-18,52,NA,Lars Korshøj,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-06-18,42,NA,Bo Vang Hansen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-06-18,50,NA,Martin Skelmose,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-06-18,45,1.2,Ryan Sidelmann,Nedre,Spin,FALSE,NA,TRUE,NA,FALSE
+2019-06-18,50,NA,Lars Erik Olsen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-17,43,NA,Per Nørgaard,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-06-17,50,NA,Per Laursen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-17,60,NA,Jan Thorsted,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-06-17,47,1.5,Gert Hartvigsen,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-06-17,50,NA,Henrik Jensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-06-16,45,NA,Heinrich Frølund,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-16,45,NA,Niels Rohde Ottosen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-06-16,50,NA,Flemming Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-16,46,NA,Andreas Kunze,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-06-16,45,NA,Erling Pedersen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-06-16,50,NA,Lars Erik Olsen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-16,50,NA,Ole Friis,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-15,50,NA,Chris Vistisen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-06-15,50,NA,Ole Abild,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-15,45,NA,Oliver Lind,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-06-15,45,NA,Ronald  Patzer,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-14,50,NA,Henning Bak,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-06-14,56,2.1,Alex Hjort,Vorgod Å,Spin,FALSE,NA,TRUE,Hun,FALSE
+2019-06-14,56,NA,Ricki Blicher,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2019-06-14,75,NA,Thomas Mosgaard,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-14,50,NA,Torben Smedegaard,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-06-13,44,NA,Preben  Foged Albertsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-06-13,45,NA,Jan Østerby Olesen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-13,61,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-06-12,70,NA,Brian Størup,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-06-12,40,NA,Martin Skelmose,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-12,45,NA,Torben Bastrup,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-12,50,NA,Peter Fosgerau,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-11,52,NA,Torben Pedersen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2019-06-11,45,NA,Henrik Brahtz,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2019-06-11,57,NA,Jakob Boman Hansen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-06-10,54,NA,Torben Pedersen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-06-10,50,NA,Mads Ole Madsen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-06-10,48,NA,René Sørup,Nedre,Flue,NA,https://skjernaasam.dk/wp-content/uploads/2019/06/BE95E289-DD58-4140-AB30-7DE11C357AE5-1024x768.jpeg,FALSE,Hun,FALSE
+2019-06-10,52,1.8,Vagn Pedersen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-06-09,42,1,Lars Windmar,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-06-08,45,NA,Oliver Lind,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-06-08,62,NA,Oliver Lind,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-06-08,52,NA,Peter Schulz,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-06-08,54,NA,Mikkel Skotte Sølvkjær,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2019-06-07,45,NA,Kent Ullerup,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-06-07,52,NA,Leo,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-06-04,40,NA,Kim Flindt,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2019-06-01,65,NA,Torben Nielsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-06-01,59,NA,Torben Pedersen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2019-05-31,65,NA,Fabian Franz,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2019-05-31,52,NA,Laurids Madsen,Mellem,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/06/5F63394F-C1FB-485D-B192-BAF8E31848EE-1024x768.jpeg,FALSE,Hun,FALSE
+2019-05-27,50,NA,Birger Hansen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-05-25,65,4,Stefan Mahlau,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2019-05-23,43,NA,Richard Bakker,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2019-05-23,62,NA,Riekus Bennink,Mellem,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/05/2E7779BC-CF1D-4472-A22F-C4608FBD04D6-768x1024.jpeg,FALSE,Hun,FALSE
+2019-05-22,70,NA,Thor Evensen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-05-18,NA,NA,Nick Søgaard,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-05-14,70,NA,Ralph Eriksen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2019-05-04,60,NA,Jens Jensen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2019-05-02,45,NA,Steen Fløe,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2019-04-28,60,NA,Jakob Boman,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-04-27,NA,NA,Eigil Jensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2019-04-24,50,NA,Peter Hønholt,Øvre,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2019/04/761624F0-9EA2-4BB9-8A47-3A2C35A5B17E-1024x768.jpeg,FALSE,Hun,FALSE
+2019-04-22,45,NA,Bjarne Laursen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE

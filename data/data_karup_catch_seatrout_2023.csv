@@ -1,21 +1,18 @@
-Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
-2023-04-03,43,NA,Kurt Juel,Nedre,Spin,FALSE,NA,TRUE,Male
-2023-04-02,85,6.5,Carsten Nielsen,Nedre,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B9F50B65A02357BDC1258985006FC2D9.jpg,TRUE,NA
-2023-03-23,38,NA,Jørn N. Kristensen,Nedre,Flue,FALSE,NA,FALSE,NA
-2023-03-21,44,0.6,Erik Just Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA
-2023-03-19,38,NA,Carsten Nielsen,Mellem,Spin,FALSE,NA,FALSE,Female
-2023-03-19,50,NA,Erik Just Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA
-2023-03-19,37,NA,Noah Olesen,Nedre,Orm,FALSE,NA,FALSE,NA
-2023-03-18,60,NA,Noah Olesen,Nedre,Orm,FALSE,NA,FALSE,NA
-2023-03-18,37,NA,Noah Olesen,Nedre,Orm,FALSE,NA,FALSE,NA
-2023-03-18,74,NA,Kenneth Østergaard,Nedre,Flue,FALSE,NA,FALSE,Female
-2023-03-18,64,NA,Finn  Kristiansen,Nedre,Orm,FALSE,NA,TRUE,Male
-2023-03-18,60,NA,Carsten Nielsen,Nedre,Spin,FALSE,NA,FALSE,Female
-2023-03-10,70,NA,Erik Just Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA
-2023-03-10,70,NA,Erik Just Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA
-2023-03-03,40,NA,Ole Hansen,Nedre,Orm,FALSE,NA,FALSE,NA
-2023-03-02,61,NA,Svend Erik Jensen,Nedre,Orm,FALSE,NA,TRUE,Male
-2023-03-02,78,NA,Søren Chr Olesen,Nedre,Orm,FALSE,NA,FALSE,Male
-2023-03-01,55,NA,Steen Jensen,Nedre,Flue,FALSE,NA,FALSE,Male
-2023-03-01,50,NA,Søren Chr Olesen,Nedre,Orm,FALSE,NA,FALSE,Male
-2023-03-01,62,NA,Jens Peder Madsen,Nedre,Flue,FALSE,NA,FALSE,NA
+Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
+2023-04-22,71,4.5,J Sjødahl,Nedre,Flue,NA,NA,TRUE,NA,FALSE
+2023-04-03,43,NA,Kurt Juel,Nedre,Spin,NA,NA,TRUE,Male,FALSE
+2023-04-02,85,6.5,Carsten Nielsen,Nedre,Orm,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B9F50B65A02357BDC1258985006FC2D9.jpg,TRUE,NA,FALSE
+2023-03-21,44,0.6,Erik Just Pedersen,Nedre,Flue,NA,NA,TRUE,NA,TRUE
+2023-03-19,50,NA,Erik Just Pedersen,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2023-03-18,60,NA,Noah Olesen,Nedre,Orm,NA,NA,FALSE,NA,FALSE
+2023-03-18,74,NA,Kenneth Østergaard,Nedre,Flue,NA,NA,FALSE,Female,FALSE
+2023-03-18,64,NA,Finn  Kristiansen,Nedre,Orm,NA,NA,TRUE,Male,FALSE
+2023-03-18,60,NA,Carsten Nielsen,Nedre,Spin,NA,NA,FALSE,Female,FALSE
+2023-03-10,70,NA,Erik Just Pedersen,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2023-03-10,70,NA,Erik Just Pedersen,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2023-03-03,40,NA,Ole Hansen,Nedre,Orm,NA,NA,FALSE,NA,FALSE
+2023-03-02,61,NA,Svend Erik Jensen,Nedre,Orm,NA,NA,TRUE,Male,FALSE
+2023-03-02,78,NA,Søren Chr Olesen,Nedre,Orm,NA,NA,FALSE,Male,FALSE
+2023-03-01,55,NA,Steen Jensen,Nedre,Flue,NA,NA,FALSE,Male,FALSE
+2023-03-01,50,NA,Søren Chr Olesen,Nedre,Orm,NA,NA,FALSE,Male,FALSE
+2023-03-01,62,NA,Jens Peder Madsen,Nedre,Flue,NA,NA,FALSE,NA,FALSE

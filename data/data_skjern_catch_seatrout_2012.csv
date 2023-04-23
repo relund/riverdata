@@ -1,0 +1,467 @@
+Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
+2012-10-16,45,NA,Jens Meldgård,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-10-15,47,1,Lars,Nedre,Orm,FALSE,NA,TRUE,Hun,FALSE
+2012-10-15,45,NA,Ole Nielsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-10-15,48,NA,Ole Nielsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-10-15,60,2.6,Bent-Aage-Petersen,Øvre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2012-10-15,54,1.8,Ole Nielsen,Nedre,Spin,FALSE,NA,TRUE,Hun,TRUE
+2012-10-15,58,1.4,Bent-Aage-Petersen,Øvre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2012-10-15,42,NA,Jimmy Nielsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-10-15,45,NA,Jimmy Nielsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-10-15,52,NA,Jimmy Nielsen,Omme Å,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-10-15,58,NA,Torben Thinggaard,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-10-15,52,1.7,Jakob Jespersen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-10-15,55,1.9,Sv.e.øgendahl,Mellem,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-10-15,45,NA,Finn Meldgård,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2012-10-14,55,NA,Torben Skødeberg Pedersen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-10-14,67,3.4,Carsten Pedersen,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-10-14,69,NA,Stig Christensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-14,46,NA,Rene' Lumby,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-14,59,2.9,Steffen Kjær,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-10-13,54,NA,Jens Meldgård,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-10-13,50,NA,De Ridder Omer,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-10-13,55,1.8,Leif Jørgensen,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-10-13,50,1.5,Rene' Lumby,Nedre,Flue,TRUE,NA,TRUE,Hun,FALSE
+2012-10-13,68,3.5,Steen Mortensen,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-10-13,47,NA,Jan Rummelhoff,Nedre,Flue,TRUE,NA,FALSE,NA,FALSE
+2012-10-13,48,1.2,Thomas Andersen,Øvre,Spin,NA,NA,TRUE,NA,FALSE
+2012-10-12,75,NA,Karl F Tappe,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-10-12,53,NA,Tomasz Caban,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-10-12,45,NA,Harald Hansen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-12,52,NA,Jens Vad Thellesen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-10-12,50,NA,Kim Iversen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-12,40,NA,Marc Skovby,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-11,57,2,Bjørn Schrøder,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-10-11,40,NA,Jan Rasmussen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-10-11,60,NA,De Ridder Omer,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-10-11,48,NA,Søren Larsen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-10-11,50,NA,Lars Pedersen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-10-11,43,NA,Karl,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-10-11,51,NA,Mads Kjærgaard,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-10-11,65,2.6,Kristian Jørgensen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-10-11,55,NA,Poul Mortensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-10,50,1.5,Bent-Aage-Petersen,Øvre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2012-10-10,48,NA,Boye Pedersen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-10-10,63,2.9,Svend Thomsen,Øvre,Orm,FALSE,NA,TRUE,Hun,FALSE
+2012-10-10,41,NA,Stig Christensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-10,65,NA,Stig Christensen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-10-10,50,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-10,52,NA,Karl Pedersen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-10-10,62,NA,Erik Dønvig.,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-10-10,50,NA,Torben Smedegaard,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-10-09,58,NA,Boye Pedersen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-10-09,57,NA,Sv. Mørk,Mellem,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-10-09,60,2.4,Thomas Andersen,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-10-09,46,0.8,Ulrich Böhm,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-10-08,75,NA,Karl-F. Tappe,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-08,60,3,Gunnar Gregersen,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-10-08,65,NA,Bjarne Laursen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-08,45,NA,Benny Jensen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-10-08,68,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-08,45,NA,Erik Dønvig.,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-10-08,70,4.7,John Madsen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-10-07,60,NA,Tomasz Caban,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-10-07,75,4,Lars Windmar,Vorgod Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-10-07,43,NA,Marc Skovby,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-07,45,NA,Per Sunesen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-06,67,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-06,58,1.8,Dirk Feicke,Mellem,Flue,FALSE,NA,TRUE,Hun,TRUE
+2012-10-06,49,1.5,Torben Pedersen,Mellem,Flue,TRUE,NA,TRUE,Hun,FALSE
+2012-10-05,57,1.8,Steffen Kjær,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-10-05,42,NA,Kristian Holm,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-10-04,45,NA,Ronald Patzer,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-10-04,72,4.3,Peder Bæk,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-10-04,57,1.8,Erik Dønvig,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-10-04,52,NA,Finn Meldgård,Nedre,Spin,FALSE,NA,FALSE,Hun,TRUE
+2012-10-04,41,NA,Benny Jensen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-10-03,55,NA,Thomas Bang,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-10-03,49,NA,Benny Isenborghs,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-10-02,55,NA,Torben Thinggaard,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-10-01,91,NA,Lars Behrmann,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-10-01,45,NA,Ronald Patzer,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-10-01,59,NA,Marc Skovby,Omme Å,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-09-30,60,2,Peter Klein,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-09-30,45,NA,Walter Gielow,Nedre,Spin,TRUE,NA,TRUE,Hun,FALSE
+2012-09-30,58,NA,Jacob Lundgaard,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2012-09-30,53,NA,Jacob Lundgaard,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-09-30,46,NA,Kim Rasmussen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-09-30,61,NA,Kurt Havshøj Jensen,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2012-09-30,79,6.5,Jærn Kjør Iversen,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-09-30,50,NA,Tim Byfoged Larsen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-09-30,50,NA,Birger Dam Jensen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-09-30,45,NA,Renè Lumby,Nedre,Flue,FALSE,NA,FALSE,NA,TRUE
+2012-09-30,48,NA,Torben Pedersen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-30,40,NA,Bo Østergaard,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-29,42,NA,´Ronald Patzer,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-09-29,63,3,Peter Østerballe,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-09-29,50,1.5,Ole Damgaard,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-09-29,65,NA,Charly Kristensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-29,44,NA,Hans Andersen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-09-29,50,NA,Frank Jensen,Øvre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-09-28,48,NA,Torben Pedersen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-09-28,50,NA,Svend Erik Øgendahl,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-28,52,1.8,Peter Christensen,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-09-28,50,NA,Lars Schmidt,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-09-26,64,3,Henning Jansen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-09-26,70,4,S. Damgaard,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-09-25,55,1.9,Casper,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-09-25,55,1.9,Casper,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-09-25,48,NA,Rasmus Vemmelund,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-09-25,63,NA,Ole Skaar,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-25,54,1.7,Ole Nielsen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-09-23,45,NA,Henning Nielsen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-09-23,55,1.8,Poul Erik Kristiansen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-09-21,60,NA,Tim Byfoged Larsen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-09-21,72,NA,Niels Birkedal Thomsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-09-21,51,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,Han,TRUE
+2012-09-20,57,NA,Sven Berggreen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-19,NA,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-09-19,77,NA,Erling  Pedersen,Omme Å,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-09-19,54,2,Jens Løntoft,Øvre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-09-19,50,NA,Ib Attrup,Øvre,Spin,FALSE,NA,TRUE,NA,FALSE
+2012-09-18,56,1.8,Poul Skovbjerg Jeppesen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-09-18,54,NA,Anders Møller Nielsen,Nedre,Spin,FALSE,NA,FALSE,Hun,TRUE
+2012-09-18,50,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-09-17,49,1.5,H. S. Nielsen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-09-17,50,NA,Finn Jensen,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2012-09-17,52,1.8,Verner Mortensen,Øvre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-09-16,60,NA,Jens-Kristian Mikkelsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-16,62,NA,Rene Hermansen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-09-16,54,2,Joan B. Madsen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-09-16,50,NA,Niklas Andersen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2012-09-16,58,2.2,Henrik S. Hansen,Øvre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-09-15,53,NA,Jens-Kristian Mikkelsen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-09-15,53,NA,Kaj Vestergaard,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-15,45,NA,Birger Dam Jensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-09-15,NA,NA,Frank Jensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-15,57,1.8,Kai Beltoft,Mellem,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-09-15,68,NA,Holger Schmid,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-09-14,53,2,Rojko Kruse,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-09-14,80,7.1,Ole W. Knudsen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-09-14,63,3,Per Søby Jensen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-09-14,59,2.2,Tonni Kjær Jensen,Øvre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-09-14,65,NA,Tim Byfoged Larsen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-09-13,68,3.8,Birger Dam Jensen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-09-13,48,NA,Kurt Jensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-13,50,NA,Jesper Pekruhn,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-13,48,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2012-09-12,63,2.6,Holger Röhrs,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-09-12,60,NA,Erling  Pedersen,Omme Å,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-09-11,75,5.2,Jakob Skov,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-09-10,57,1.9,Søren Jansen,Nedre,Orm,FALSE,NA,TRUE,Hun,FALSE
+2012-09-10,44,1.4,Svend Åge Pedersen,Vorgod Å,Orm,FALSE,NA,TRUE,Hun,FALSE
+2012-09-10,63,NA,Anne Postma,Vorgod Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-10,52,2,Martin Krogh,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-09-10,56,NA,Hans Jørgen Husted,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-09-10,52,NA,Verner Mortensen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-09-09,51,NA,Laurids Meldgård,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2012-09-09,55,1.9,Karl Pedersen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-09-09,50,1.5,Jan Hartvigsen,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-09-08,40,NA,Kim Flindt,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-09-07,60,2.5,Brian Vemmelund,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-09-07,65,3.1,Karl Henrik Hamann,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-09-07,67,3.6,Verner Mortensen,Mellem,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-09-06,60,3.7,Jens H. Olesen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-09-06,72,4,Henning Bak,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-09-05,67,3.5,Carsten Pedersen,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-09-05,45,NA,Ole Pedersen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-09-05,55,NA,Peder Langkjær,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-09-05,52,NA,Lars Nielsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-04,42,NA,Michael Linddal,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-09-04,43,NA,Michael Linddal,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-09-04,50,NA,Jim Thaysen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-04,47,NA,Andreas Kunze,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-09-04,44,NA,Andreas Kunze,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-03,55,NA,Steen Skovbo,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-02,55,1.8,Henning Bak,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-09-02,52,NA,Henning Bak,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-09-02,54,1.7,Thomas Engelbrecht,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-09-02,NA,NA,Thomas Mosgaard,Omme Å,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-09-02,49,NA,Brian Jensen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-09-01,59,NA,Dierk Köster,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-09-01,84,NA,Josua (Jogge),Nedre,Spin,FALSE,NA,FALSE,Han,TRUE
+2012-09-01,84,NA,Josua (Jogge),Nedre,Spin,FALSE,NA,FALSE,Han,TRUE
+2012-09-01,84,NA,Josua (Jogge),Nedre,Spin,FALSE,NA,FALSE,Han,TRUE
+2012-09-01,84,NA,Josua (Jogge),Nedre,Spin,FALSE,NA,FALSE,Han,TRUE
+2012-09-01,84,NA,Josua (Jogge),Nedre,Spin,FALSE,NA,FALSE,Han,TRUE
+2012-09-01,63,NA,Jesper Andersen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-09-01,43,NA,Per Carlsen,Mellem,Flue,FALSE,NA,FALSE,Hun,TRUE
+2012-09-01,58,2.3,Niklas Andersen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-09-01,46,NA,Erling  Pedersen,Omme Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-09-01,50,NA,Erling  Pedersen,Omme Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-08-31,56,NA,Sv. Mørk,Mellem,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-08-31,57,NA,Hans Jørgen Husted,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-08-31,47,NA,Claus Lysemose,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-08-31,57,NA,Thomas Fænø,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-08-30,50,NA,Stefan Hansen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-08-29,63,3.1,Per Sunesen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-08-29,55,NA,Ole Skaar,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-08-29,50,NA,Ole Skaar,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-08-29,60,NA,Harald Hansen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-08-29,58,2.4,Søren Larsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-08-29,55,NA,Mads Kjærgaard,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-08-28,51,NA,Hans Jørgen Husted,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-08-28,53,1.5,Gunnar Gregersen,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-08-28,58,NA,Ole Damgaard,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-08-27,56,2.1,Danny Vollertsen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-08-27,48,NA,Allan,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-08-26,55,3,Haris Salkic,Nedre,Flue,FALSE,NA,TRUE,Han,TRUE
+2012-08-26,51,NA,Stefan Behrend,Øvre,Flue,FALSE,NA,TRUE,NA,FALSE
+2012-08-26,67,3.4,Hans Jørgen Husted,Nedre,Flue,FALSE,NA,TRUE,NA,FALSE
+2012-08-26,49,NA,Tommy Hansen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-08-26,55,NA,Aage Martinsen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2012-08-26,55,NA,Finn S Lauridsen,Mellem,Flue,FALSE,NA,FALSE,NA,TRUE
+2012-08-25,55,2.5,Lars Thygesen,Nedre,Flue,FALSE,NA,TRUE,NA,FALSE
+2012-08-25,65,NA,Steen Mortensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-08-25,45,NA,Henrik Bach,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-08-24,52,1.5,Jesper Lindgaard Christensen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-08-24,50,NA,Henrik Bach,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-08-24,45,NA,Torben Thinggaard,Nedre,Flue,FALSE,NA,FALSE,Hun,TRUE
+2012-08-23,43,NA,Kurt Jensen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-08-23,50,NA,Claus Olesen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-08-22,46,NA,Roland Luley,Nedre,Spin,FALSE,NA,TRUE,NA,FALSE
+2012-08-22,67,3.2,Erling Bøjgaard,Øvre,Spin,FALSE,NA,TRUE,NA,FALSE
+2012-08-22,52,1.7,Bjarne Dyrberg,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-08-22,65,NA,Erling  Pedersen,Omme Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-08-21,45,1.2,Jens Henning,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-08-20,47,1.5,Knud Erikborbjerg,Nedre,Orm,FALSE,NA,TRUE,Hun,FALSE
+2012-08-19,58,1.8,Harry Østergaard Jensen,Nedre,Flue,FALSE,NA,TRUE,Hun,TRUE
+2012-08-19,54,NA,Erling  Pedersen,Omme Å,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-08-18,65,3.2,Henning Jansen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-08-17,50,NA,Ronny Lagoni Thomsen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-08-17,65,NA,Kristian Heller,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-08-17,56,2.1,Boye Pedersen,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-08-16,NA,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-08-16,71,NA,Erik O Kristensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-08-15,50,NA,Bo Fomsgaard,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-08-14,65,3.4,Søren Pedersen,Mellem,Orm,FALSE,NA,TRUE,Han,FALSE
+2012-08-13,65,NA,Ronald Patzer,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-08-13,56,NA,Finn Dueholm Larsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-08-12,58,3,"Ruprecht, Marko",Nedre,Spin,TRUE,NA,FALSE,NA,TRUE
+2012-08-12,60,NA,Anders Hermansen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-08-12,52,NA,Erling  Pedersen,Omme Å,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-08-11,46,NA,Morten Thim Jensen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-08-10,68,3.4,Thom Jørgensen,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-08-09,65,3,Frank Dehlinhardt,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-08-09,47,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-08-09,50,NA,Hennjng Bak,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-08-09,70,NA,Per Andersen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-08-09,42,NA,Henning Højhus Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,FALSE
+2012-08-09,54,NA,Hans Jørgen Husted,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-08-08,50,1.5,Lars Løve Lund,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-08-08,55,NA,Lars Nielsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-08-08,50,1.5,Lars Løve Lund,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-08-08,50,1.5,Lars Løve Lund,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-08-08,52,NA,Uwe Hüls,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-08-08,71,5.1,Ejner Kaa,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-08-08,59,2,Jørgen Jørgensen,Mellem,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-08-08,55,1.8,Anders Meldgaard,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-08-08,46,NA,Anders Meldgaard,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-08-07,59,2.2,Allan Nordfeldt West,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-08-07,65,3.5,Erik Gjelstrup,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-08-07,60,2.5,John Randeris Sørensen,Mellem,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-08-07,53,NA,Henrik Bojsen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-08-07,53,NA,Stig Christensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-08-06,60,NA,Giite Møller Falck,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-08-06,64,NA,Jakob Skov,Nedre,Flue,FALSE,NA,FALSE,Han,TRUE
+2012-08-06,46,1.1,Søren Fredslund Andersen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-08-05,56,2.2,Tommy F Hoelgaard,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-08-05,47,NA,James Juelsgaard,Omme Å,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-08-05,47,1.3,Kim Juhl Jensen,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-08-05,50,NA,Erik Just Pedersen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-08-04,52,NA,Lars Lindholm,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-08-04,53,NA,Johnny Morell,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-08-04,70,4.5,Kristian Jørgensen,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-08-03,55,NA,Johnny Morell,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-08-03,40,NA,Erling  Pedersen,Omme Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-08-02,NA,NA,Steen Skovbo,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-08-02,56,2.1,Steen Skovbo,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-08-02,73,4.5,Andreas Ørskov,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-08-02,55,NA,Marc Skovby,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-08-02,63,3.1,Ib Sommer,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-08-02,56,NA,P:e:kristiansen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-08-01,45,NA,Per Lundig,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-08-01,47,1.4,Jan Hartvigsen,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-08-01,60,2.6,Søren Fredslund Andersen,Nedre,Spin,FALSE,NA,TRUE,Hun,TRUE
+2012-07-31,56,NA,Helge Kristensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-31,52,2.1,Klaus Kristiansen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-07-31,52,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-07-31,45,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-07-30,50,NA,Birger Hansen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-07-29,59,3,Kjeld R. Nielsen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-07-29,60,2.4,Renè Lumby,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-07-29,60,NA,Erling  Pedersen,Omme Å,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-07-29,48,NA,Erling  Pedersen,Omme Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-28,66,4,Ole L. Pedersen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-07-28,50,NA,Erling  Pedersen,Omme Å,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-27,51,1.3,Dirk Feicke,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-07-27,50,NA,Bent Hygum,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-27,51,1.4,Jenserik Bro,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-07-26,60,NA,Karl Pedersen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-07-26,60,NA,Svend Erik Øgendahl,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-25,47,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-07-25,46,NA,Erling  Pedersen,Omme Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-23,45,NA,Svend Erik Øgendahl,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-23,60,2.7,Michael Nørremark,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-07-22,50,NA,Klaus Øgendahl,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-21,60,NA,Frederik Iversen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-21,56,NA,Charly Kristensen,Nedre,Flue,FALSE,NA,FALSE,Han,TRUE
+2012-07-20,52,1.7,L    Pedersen,Øvre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-07-20,45,NA,Karl Henrik Hamann,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-07-20,52,1.8,Ole W. Knudsen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-07-20,75,NA,Svend Erik Øgendahl,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-07-20,50,NA,Svend Erik Øgendahl,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-19,67,4,Ole Nees,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-07-19,46,NA,Mads Balle,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-19,51,NA,Peder Langkjær,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-18,65,NA,Jakob Sørensen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-07-18,50,NA,Jakob Sørensen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-07-18,55,NA,Jakob Sørensen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-07-18,47,NA,Børge Erland Jensen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-07-18,58,2.5,Smekens Alfred,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-07-18,76,NA,Per Sunesen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-18,43,NA,Gunner K. Pedersen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-18,53,NA,Anders Møller Nielsen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-07-18,52,NA,Klaus,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-18,62,3.3,Peder Langkjær,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-07-18,50,NA,Heine Fausing,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-18,50,NA,Heine Fausing,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-17,50,1.5,Jacobs Alfred,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-07-17,55,NA,Svend Erik Øgendahl,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-17,55,NA,Jimmi Lund Bindesbøl,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-17,57,NA,Morten Petersen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-16,83,7,Florian Hassenpflug,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-16,45,1,Per Sunesen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-16,45,1,Per Sunesen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-16,50,NA,Torben Thinggaard,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-16,74,6,Helge Kristensen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-07-16,42,NA,Morten Petersen,Vorgod Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-16,57,3.3,Charly Kristensen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-07-15,66,3.7,Paw Mouritzen,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-07-15,53,NA,Bruno Stamm,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-14,54,1.8,Bruno Stamm,Øvre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-07-14,45,NA,Jørn Benborg,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-14,70,4,Thomas B Jensen,Andet,Andet,FALSE,NA,TRUE,Han,FALSE
+2012-07-14,57,NA,Christian Lykke Flinker,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-07-14,60,NA,Marc Skovby,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-14,60,NA,Dennis Nielsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-13,46,NA,Bjarne Nicolaisen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-13,48,NA,Daniel,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-07-13,54,NA,Thomas Torpe,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-13,61,3.1,Hans Jørgen Husted,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-07-13,52,NA,Hans Jørgen Husted,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-07-13,53,1.7,Ib Sommer,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-07-13,65,NA,Klaus Øgendahl,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-07-13,55,3,Charly Kristensen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-07-13,50,NA,Erik Just Pedersen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-13,54,NA,Marc Skovby,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-12,75,NA,Svend Erik Øgendahl,Nedre,Flue,FALSE,NA,FALSE,NA,TRUE
+2012-07-12,60,NA,Klaus Øgendahl,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-11,48,NA,Brian Jakobsen,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-07-11,51,1.6,Lars Østergaard Kristensen,Nedre,Spin,FALSE,NA,TRUE,NA,FALSE
+2012-07-11,50,NA,Svend Erik Øgendahl,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-11,50,NA,Lars Fabrin,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-07-11,50,NA,Lars Fabrin,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-07-11,55,NA,Dennis Nielsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-11,62,NA,Erling  Pedersen,Omme Å,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-10,45,1.5,Laurids Meldgård,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-07-10,76,NA,Jakob Skov,Nedre,Flue,FALSE,NA,FALSE,Han,TRUE
+2012-07-10,50,NA,Casper Hansen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-07-10,50,NA,Casper Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-10,41,NA,Mads Balle,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-10,48,NA,Carsten Pedersen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-07-09,58,NA,Henrik L. Rasmussen,Nedre,Orm,FALSE,NA,FALSE,NA,FALSE
+2012-07-09,52,NA,Peder Bæk,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-09,60,NA,Peter Jensen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-07-09,60,NA,Peter Jensen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-07-08,50,NA,Jakob Sørensen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-07-08,55,NA,Thomas Torpe,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-08,50,NA,Thomas Torpe,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-08,45,NA,Thomas Torpe,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-07,65,3.7,Henrik Laursen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-07-07,43,NA,Keld Lyager,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-06,55,NA,Susanne Jensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-06,55,NA,Susanne Jensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-06,53,NA,Erling  Pedersen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-06,54,NA,Svend Erik Øgendahl,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-04,50,NA,Torben Smedegaard,Mellem,Flue,FALSE,NA,FALSE,Hun,TRUE
+2012-07-04,46,1.2,Arne Egebak,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-07-03,50,NA,Stefan Hansen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-07-03,60,NA,Ralf Peters,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-07-03,55,NA,Svend Erik Øgendahl,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-07-01,54,1.8,Tommy F Hoelgaard,Øvre,Flue,TRUE,NA,TRUE,Hun,TRUE
+2012-07-01,59,NA,Kim Rasmussen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-06-30,NA,NA,Gert Eriksen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-06-29,62,3.1,Poul Skovbjerg Jeppesen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-06-28,58,2.3,Brian Jakobsen,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-06-28,45,NA,Iver Koster,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-06-28,65,NA,Svend Erik Øgendahl,Mellem,Flue,FALSE,NA,FALSE,NA,TRUE
+2012-06-26,68,3.9,P.h. Poulsen,Mellem,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-06-26,55,NA,Jakob Skov,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-06-26,55,NA,Dennis Nielsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-06-24,72,5.3,Bjarne Nielsen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-06-24,53,NA,Thomas Mosgaard,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-06-23,53,NA,Dennis Hynkemejer,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-06-22,55,NA,Tim Byfoged Larsen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-06-21,72,NA,Jesper Andersen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-06-20,45,NA,Willy Pedersen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-06-18,56,2.5,Lars Møller Jensen,Nedre,Orm,FALSE,NA,TRUE,Hun,TRUE
+2012-06-17,60,NA,Jesper Andersen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-06-17,74,5.4,Sjønne Holmgaard,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-06-16,50,NA,Kim Rasmussen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-06-16,74,NA,Martin Mæhlisen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-06-16,50,NA,Klaus Øgendahl,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-06-16,60,2.7,Torben Smedegaard,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-06-16,63,NA,Torben Smedegaard,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-06-15,65,NA,Thomas Torpe,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-06-15,58,NA,Thomas Torpe,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-06-15,58,NA,Thomas Torpe,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-06-14,68,NA,Dennis Nielsen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2012-06-13,63,3.5,Rene' Jensen,Mellem,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-06-12,68,NA,Nicolai Skovsbøl,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-06-11,65,NA,Carsten B Hansen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-06-10,51,NA,Jim Jørgensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-06-07,47,NA,Ib Sommer,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-06-05,75,NA,Jimmi Lund Bindesbøl,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-06-05,65,NA,Kristoffer Led Jensen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2012-06-04,47,1.5,Andreas Kunze,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-06-02,65,NA,Stefan Kesemeyer,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-06-02,60,NA,Jacob Skov,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-05-31,70,5,Dennis Nielsen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-05-30,70,NA,Stefan Hansen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-05-30,60,NA,Bruno Sørensen,Omme Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-05-28,47,1.5,Bo Bisgaard,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-05-27,45,NA,Holger Röhrs,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-05-27,52,NA,Bjarne Nicolaisen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-05-27,68,3.5,Erling  Pedersen,Omme Å,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-05-26,60,NA,Bjarne Nicolaisen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-05-22,73,NA,Jørgen Møller Jensen,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-05-20,63,3.3,Jan Holm,Omme Å,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-05-19,50,NA,Jesper Andersen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-05-18,72,NA,Jesper,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-05-18,72,NA,Jesper Andersen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-05-13,61,NA,Steffen Juhl,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-05-08,55,2,Erik Dønvig.,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2012-05-04,50,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-05-03,45,1.1,Jørgen Bjerre,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-05-02,45,NA,Jacobs Alfred,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-05-02,55,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-04-30,60,NA,Kim Rasmussen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-04-30,60,NA,Ole Skaar,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-04-21,48,NA,Jens Busk,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-04-20,NA,NA,Josua,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2012-04-20,40,NA,Peter Husted,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-04-20,NA,NA,Kristian Holm,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-04-19,60,2.5,Paw Mouritzen,Nedre,Spin,TRUE,NA,FALSE,Hun,FALSE
+2012-04-19,45,NA,Frank Mogensen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-04-18,45,NA,Niklas Andersen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2012-04-18,53,NA,Per Egholm,Nedre,Spin,TRUE,NA,TRUE,Han,FALSE
+2012-04-17,62,NA,Anders Krogager Jørgensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2012-04-17,NA,NA,Alexander Jobski,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-04-16,50,NA,Hans Knudsen,Nedre,Andet,FALSE,NA,FALSE,NA,FALSE
+2012-04-16,NA,NA,Gunnar Gregesen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2012-04-16,55,NA,Klaus Leuner,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-04-16,60,NA,Jacob Lyck,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2012-04-16,41,NA,Stefan Meldgaard,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-04-16,55,NA,Steen Bork-Larsen,Nedre,Flue,FALSE,NA,FALSE,Hun,TRUE
+2012-04-16,40,NA,Iver Kloster,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
