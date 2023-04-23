@@ -44,7 +44,7 @@ library(shinyBS)
 library(kableExtra)
 # library(zoo) 
 library(leaflet)
-
+library(fs)
 source("functions.R")
 
 faIcon <- function (name, class = "", title = "", lib = "font-awesome") 
@@ -155,6 +155,7 @@ onRestored(function(state) {
 ```{r, context="setup", include=FALSE} 
 #context="data"
 prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
+# prefix <- "../../data/"
 curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
 
 # Weight - Estimates 
@@ -162,8 +163,8 @@ datWeightSea<- read_csv(paste0(prefix, "data_skjern_weight_seatrout.csv"))
 datWeightSal <- read_csv(paste0(prefix, "data_skjern_weight_salmon.csv"))
 
 # Catch - Records 
-datCatchSal <- readCatch(paste0(prefix, "data_skjern_catch_salmon.csv"), datWeightSal)
-datCatchSea <- readCatch(paste0(prefix, "data_skjern_catch_seatrout.csv"), datWeightSea)
+datCatchSal <- readCatch(paste0(prefix, "data_skjern_catch_salmon"), datWeightSal)
+datCatchSea <- readCatch(paste0(prefix, "data_skjern_catch_seatrout"), datWeightSea)
 
 # Catch - Yearly statistics
 datStatYearSal <- yearlyStat(datCatchSal)
@@ -336,8 +337,8 @@ valueBoxOutput("cSalYear")
 output$cSalYear <- renderValueBox({
   total <- datCatchSal %>% dplyr::filter(year(Date) == curYear) %>% nrow()
   killed <- datCatchSal %>% dplyr::filter(year(Date) == curYear, Killed == TRUE) %>% nrow()
-  killedPct <- if_else(total > 0, format(100*killed/total, digits = 0), "0")
-  releasedPct <- if_else(total > 0, format(100*(total - killed)/total, digits = 0), "0")
+  killedPct <- if_else(total > 0, paste0(round(100*killed/total, digits = 0)), "0")
+  releasedPct <- if_else(total > 0, paste0(round(100*(total - killed)/total, digits = 0)), "0")
   valueBox(
     caption = str_c("Fangster i ", curYear, " (hjemtaget/genudsat)"),
     value = str_c(total, " (", killedPct, "%/", releasedPct, "%)"),
@@ -585,7 +586,7 @@ output$dTSalCatch <- DT::renderDataTable(
     extensions = c('Responsive')  #,'FixedHeader','RowGroup'
   ) %>%
   formatStyle(columns = 'Weight', valueColumns = 'NoWeight', color = styleEqual(c(0, 1), c("black","green"))) %>%
-  formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>%
+  # formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>%
   formatRound(c('Length'), digits = 0) %>%
   formatRound(c('Weight'), digits = 1) %>%
   formatRound(c('Fulton'), digits = 2)
@@ -641,8 +642,8 @@ valueBoxOutput("cSeaYear")
 output$cSeaYear <- renderValueBox({
   total <- datCatchSea %>% dplyr::filter(year(Date) == curYear) %>% nrow()
   killed <- datCatchSea %>% dplyr::filter(year(Date) == curYear, Killed == TRUE) %>% nrow()
-  killedPct <- if_else(total > 0, format(100*killed/total, digits = 0), "0")
-  releasedPct <- if_else(total > 0, format(100*(total - killed)/total, digits = 0), "0")
+  killedPct <- if_else(total > 0, paste0(round(100*killed/total, digits = 0)), "0")
+  releasedPct <- if_else(total > 0, paste0(round(100*(total - killed)/total, digits = 0)), "0")
   valueBox(
     value = str_c(total, " (", killedPct, "%/", releasedPct, "%)"),
     icon = "fa-fish",
@@ -837,7 +838,7 @@ output$dTSeaCatch <- DT::renderDataTable(
     extensions = c('Responsive')  #,'FixedHeader','RowGroup'
   ) %>%
   formatStyle(columns = 'Weight', valueColumns = 'NoWeight', color = styleEqual(c(0, 1), c("black","green"))) %>%
-  formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>%
+  # formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>%
   formatRound(c('Length'), digits = 0) %>%
   formatRound(c('Weight'), digits = 1) %>%
   formatRound(c('Fulton'), digits = 2)

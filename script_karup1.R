@@ -17,7 +17,7 @@ yr <- year(now())
 datCatchSeatrout <- writeCatch(url, prefix, yr)
 
 #### Weight ####
-estimateWeight(prefix, seatrout = TRUE)
+writeWeightEstimates(prefix, seatrout = TRUE)
 
 #### Save montly statistics for current year ####
 # datStat <- datCatch %>% 
@@ -74,31 +74,38 @@ estimateWeight(prefix, seatrout = TRUE)
 
 #### Waterlevel ####
 stations <- tibble(id = c("24262", "24265", "23645", "1040"), place = c("Karup By", "Hagebro", "Nørkærbro", "Hagebro"))
-saveTimeSeriesData(stations, prefix, prefix1 = "waterlevel", days = 50)  
-# saveTimeSeriesData(stations, prefix, prefix1 = "waterlevel", days = 50000)  # if update all years
+writeTimeSeriesData(stations, prefix, prefix1 = "waterlevel", days = 15)  
+# d <- as.integer(now() - ymd_hms("2017-01-01 12:00:00"))
+# writeTimeSeriesData(stations, prefix, prefix1 = "waterlevel", days = d)  # if update from 2017
 
 ## Calc moving average 
-dat <- readWLevels(prefix, 1986:year(now()))
-rMeans <- calcWaterMovAvg(dat, prefix)
+dat <- readDataFiles("data_karup_waterlevel_[0-9]{4}")
+rMeans <- writeWaterMovAvg(dat, prefix)
+# ggplot(dat %>% filter (year(Date) == 2022), aes(x = Date, y = Value)) + geom_line() + facet_wrap(vars(Place), scales = "free", nrow = 3)
+# dat <- dat %>% mutate(Day = yday(Date)) %>% left_join(rMeans)
+# ggplot(dat, aes(x = Date, y = Value)) + geom_line() + geom_line(aes(x = Date, y = Level_rAvg90), color = "blue") + facet_wrap(vars(Place), scales = "free", nrow = 3)
+# ggplot(rMeans, aes(x = Day, y = Level_rAvg90)) + geom_line() + facet_grid(rows = vars(Place), scales = "free")
 
 ## Relative datasets 
 dat <- calcWaterLevelRelative(dat, rMeans, prefix)
+# dat1 <- dat %>% mutate(yr = year(Date), Day = yday(Date))
+# ggplot(dat1, aes(x = Day, y = Level, color = factor(yr))) + geom_line() + facet_wrap(vars(Place), scales = "free", nrow = 3)
 
 ## Dataset for web 
-dat <- calcWaterLevelsWeb(dat, prefix)
+dat <- writeWaterLevelsWeb(dat, prefix)
 
 
 
 #### Water temperature ####
 stations <- tibble(id = c("1555"), place = c("Hagebro"))
-saveTimeSeriesData(stations, prefix, prefix1 = "watertemp", days = 50)  
+writeTimeSeriesData(stations, prefix, prefix1 = "watertemp", days = 50)  
 
 ## Calc moving average 
 dat <- readWTemp(prefix, 2020:year(now()))
-rMeans <- calcWaterTempMovAvg(dat, prefix)
+rMeans <- writeWaterTempMovAvg(dat, prefix)
 
 ## Dataset for web 
-dat <- calcWaterTempWeb(dat, rMeans, prefix)
+dat <- writeWaterTempWeb(dat, rMeans, prefix)
 
 
 #### Map ####

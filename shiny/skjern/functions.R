@@ -9,23 +9,67 @@ mergeLists <- function (a,b) {
 
 #' Read and prepare catch records for table
 #'
-#' @param path Full path to csv file.
+#' @param prefix Prefix to csv files e.g. "../../data/data_skjern_catch_salmon".
 #' @param datWeight Weight estimates
 #'
 #' @return The catch records
-readCatch <- function(path, datWeight) {
+readCatchOld <- function(prefix, datWeight) {
+  f <- paste0(prefix, "_", 2003:year(now()), ".csv")
+  datCatch <- read_csv(f, col_types = "Dddcfflclf")  %>% 
+    mutate(Weight = if_else(Killed, Weight, NA_real_), Place = fct_na_value_to_level(Place, "Ukendt"))
+  
   datCatch <- read_csv(path, col_types = "DddcfffllcclcfTd") %>% 
     mutate(
       Misc = paste0(
         if_else(!Killed, "<img src=\"www/c_and_r.gif\" alt=\"C&R\">", "", ""),
         if_else(Cut, "<img src=\"www/cut.gif\" alt=\"Finneklippet\">", "", ""),
-        if_else(Sex == 'Han', '<img src="www/boy.gif" alt="Han">', "", ""),
-        if_else(Sex == 'Hun', '<img src="www/girl.gif" alt="Hun">', "", ""),
+        if_else(Sex == 'Male', '<img src="www/boy.gif" alt="Han">', "", ""),
+        if_else(Sex == 'Female', '<img src="www/girl.gif" alt="Hun">', "", ""),
         if_else(Net, '<img src="www/net.gif" alt="Garnskadet">', "", ""),
         if_else(!is.na(Foto),str_c("<a href=\"", Foto, "\", target=\"_blank\"><img src=\"www/foto.gif\" alt=\"Foto\"></a>"),"", "")
       ),
       Month = month(Date, label = T), MonthN = month(Date), Week = isoweek(Date), Year = year(Date), 
       Place = fct_explicit_na(Place, "Ukendt"),
+      NoWeight = 1*is.na(Weight), MDay = mday(Date), DayStr = format(Date, "%d. %b"),
+      Day = str_c(formatC(MonthN, width = 2, flag = "0"), 
+                  "-",
+                  formatC(MDay, width = 2, flag = "0"))
+    )
+  datWeight <- datWeight %>%
+    mutate(Period = as.character(Period)) %>%
+    mutate(Period =
+             case_when(Period == "May" ~ "Maj",
+                       Period == "Oct" ~ "Okt",
+                       TRUE ~ Period))
+  datCatch <- left_join(datCatch, datWeight, by = c("Length", "Month" = "Period")) %>% 
+    mutate(Weight = if_else(is.na(Weight), round(Avg,1), Weight)) %>% 
+    mutate(Fulton = Weight*100000/Length^3) %>% 
+    mutate(Month = month(Date, label = T))
+  return(datCatch)
+}
+
+
+#' Read and prepare catch records for table
+#'
+#' @param prefix Prefix to csv files e.g. "../../data/data_skjern_catch_salmon".
+#' @param datWeight Weight estimates.
+#'
+#' @return The catch records
+readCatch <- function(prefix, datWeight) {
+  f <- paste0(prefix, "_", 2004:year(now()), ".csv")
+  datCatch <- read_csv(f, col_types = "Dddcfflclfl")  %>% 
+    mutate(Weight = if_else(Killed, Weight, NA_real_), Place = fct_na_value_to_level(Place, "Ukendt"))
+  
+  datCatch <- datCatch %>% 
+    mutate(
+      Misc = paste0(
+        if_else(!Killed, "<img src=\"www/c_and_r.gif\" alt=\"C&R\">", "", ""),
+        if_else(Cut, "<img src=\"www/cut.gif\" alt=\"Finneklippet\">", "", ""),
+        if_else(Sex == 'Male', '<img src="www/boy.gif" alt="Han">', "", ""),
+        if_else(Sex == 'Female', '<img src="www/girl.gif" alt="Hun">', "", ""),
+        if_else(!is.na(Foto),str_c("<a href=\"", Foto, "\", target=\"_blank\"><img src=\"www/foto.gif\" alt=\"Foto\"></a>"),"", "")
+      ),
+      Month = factor(month(Date, label = T), ordered = F), MonthN = month(Date), Week = isoweek(Date), Year = year(Date), 
       NoWeight = 1*is.na(Weight), MDay = mday(Date), DayStr = format(Date, "%d. %b"),
       Day = str_c(formatC(MonthN, width = 2, flag = "0"), 
                   "-",
@@ -56,8 +100,8 @@ yearlyStat <- function(datCatch) {
     mutate(
       TotalStat = map(data, function(df) {
         summarise(df, Total = n(), 
-                  Female = sum(Sex == "Hun", na.rm = T), 
-                  Male = sum(Sex == "Han", na.rm = T),
+                  Female = sum(Sex == "Female", na.rm = T), 
+                  Male = sum(Sex == "Male", na.rm = T),
                   SexUnknown = Total - Female - Male,
                   Released = sum(!Killed, na.rm = T),
                   Killed = sum(Killed, na.rm = T),
@@ -101,25 +145,25 @@ yearlyStat <- function(datCatch) {
     dat  %>% 
     ungroup() %>% 
     transmute(Year, Total, 
-              Sex = paste0(format(100*Male/Total, digits = 0, trim = TRUE), "/",
-                           format(100*Female/Total, digits = 0, trim = TRUE), "/",
-                           format(100*SexUnknown/Total, digits = 0, trim = TRUE)),
-              Place = paste0(format(100*TotalP_Nedre/Total, digits = 0, trim = TRUE), "/", 
-                             format(100*TotalP_Mellem/Total, digits = 0, trim = TRUE), "/", 
-                             format(100*`TotalP_Øvre`/Total, digits = 0, trim = TRUE), "/", 
-                             format(100*`TotalP_Vorgod Å`/Total, digits = 0, trim = TRUE), "/",
-                             format(100*`TotalP_Omme Å`/Total, digits = 0, trim = TRUE), "/",
-                             format(100*`TotalP_Andet`/Total, digits = 0, trim = TRUE)),
-              PlaceK = paste0(format(100*KilledP_Nedre/Killed, digits = 0, trim = TRUE), "/", 
-                              format(100*KilledP_Mellem/Killed, digits = 0, trim = TRUE), "/", 
-                              format(100*`KilledP_Øvre`/Killed, digits = 0, trim = TRUE), "/", 
-                              format(100*`KilledP_Vorgod Å`/Killed, digits = 0, trim = TRUE), "/",
-                              format(100*`KilledP_Omme Å`/Killed, digits = 0, trim = TRUE), "/",
-                              format(100*`KilledP_Andet`/Killed, digits = 0, trim = TRUE)),
-              Method = paste0(format(100*Flue/Total, digits = 0, trim = TRUE), "/", 
-                              format(100*Spin/Total, digits = 0, trim = TRUE), "/", 
-                              format(100*Orm/Total, digits = 0, trim = TRUE), "/", 
-                              format(100*Andet/Total, digits = 0, trim = TRUE)),
+              Sex = paste0(round(100*Male/Total, digits = 0), "/",
+                           round(100*Female/Total, digits = 0), "/",
+                           round(100*SexUnknown/Total, digits = 0)),
+              Place = paste0(round(100*TotalP_Nedre/Total, digits = 0), "/", 
+                             round(100*TotalP_Mellem/Total, digits = 0), "/", 
+                             round(100*`TotalP_Øvre`/Total, digits = 0), "/", 
+                             round(100*`TotalP_Vorgod Å`/Total, digits = 0), "/",
+                             round(100*`TotalP_Omme Å`/Total, digits = 0), "/",
+                             round(100*`TotalP_Andet`/Total, digits = 0)),
+              PlaceK = paste0(round(100*KilledP_Nedre/Killed, digits = 0), "/", 
+                              round(100*KilledP_Mellem/Killed, digits = 0), "/", 
+                              round(100*`KilledP_Øvre`/Killed, digits = 0), "/", 
+                              round(100*`KilledP_Vorgod Å`/Killed, digits = 0), "/",
+                              round(100*`KilledP_Omme Å`/Killed, digits = 0), "/",
+                              round(100*`KilledP_Andet`/Killed, digits = 0)),
+              Method = paste0(round(100*Flue/Total, digits = 0), "/", 
+                              round(100*Spin/Total, digits = 0), "/", 
+                              round(100*Orm/Total, digits = 0), "/", 
+                              round(100*Andet/Total, digits = 0)),
               Released = paste0(round(100*Released/Total, 0), "/", 
                                 round(100*Killed/Total, 0)),
               Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)), 
@@ -147,8 +191,8 @@ monthlyStat <- function(datCatch, year) {
     mutate(
       TotalStat = map(data, function(df) {
         summarise(df, Total = n(), 
-                  Female = sum(Sex == "Hun", na.rm = T), 
-                  Male = sum(Sex == "Han", na.rm = T),
+                  Female = sum(Sex == "Female", na.rm = T), 
+                  Male = sum(Sex == "Male", na.rm = T),
                   SexUnknown = Total - Female - Male,
                   Released = sum(!Killed, na.rm = T),
                   Killed = sum(Killed, na.rm = T),
@@ -216,25 +260,25 @@ monthlyStat <- function(datCatch, year) {
       dat  %>% 
       ungroup() %>% 
       transmute(Month, Total, 
-                Sex = paste0(format(100*Male/Total, digits = 0, trim = TRUE), "/",
-                             format(100*Female/Total, digits = 0, trim = TRUE), "/",
-                             format(100*SexUnknown/Total, digits = 0, trim = TRUE)),
-                Place = paste0(format(100*TotalP_Nedre/Total, digits = 0, trim = TRUE), "/", 
-                               format(100*TotalP_Mellem/Total, digits = 0, trim = TRUE), "/", 
-                               format(100*`TotalP_Øvre`/Total, digits = 0, trim = TRUE), "/", 
-                               format(100*`TotalP_Vorgod Å`/Total, digits = 0, trim = TRUE), "/",
-                               format(100*`TotalP_Omme Å`/Total, digits = 0, trim = TRUE), "/",
-                               format(100*`TotalP_Andet`/Total, digits = 0, trim = TRUE)),
-                PlaceK = paste0(format(100*KilledP_Nedre/Killed, digits = 0, trim = TRUE), "/", 
-                                format(100*KilledP_Mellem/Killed, digits = 0, trim = TRUE), "/", 
-                                format(100*`KilledP_Øvre`/Killed, digits = 0, trim = TRUE), "/", 
-                                format(100*`KilledP_Vorgod Å`/Killed, digits = 0, trim = TRUE), "/",
-                                format(100*`KilledP_Omme Å`/Killed, digits = 0, trim = TRUE), "/",
-                                format(100*`KilledP_Andet`/Killed, digits = 0, trim = TRUE)),
-                Method = paste0(format(100*Flue/Total, digits = 0, trim = TRUE), "/", 
-                                format(100*Spin/Total, digits = 0, trim = TRUE), "/", 
-                                format(100*Orm/Total, digits = 0, trim = TRUE), "/", 
-                                format(100*Andet/Total, digits = 0, trim = TRUE)),
+                Sex = paste0(round(100*Male/Total, digits = 0), "/",
+                             round(100*Female/Total, digits = 0), "/",
+                             round(100*SexUnknown/Total, digits = 0)),
+                Place = paste0(round(100*TotalP_Nedre/Total, digits = 0), "/", 
+                               round(100*TotalP_Mellem/Total, digits = 0), "/", 
+                               round(100*`TotalP_Øvre`/Total, digits = 0), "/", 
+                               round(100*`TotalP_Vorgod Å`/Total, digits = 0), "/",
+                               round(100*`TotalP_Omme Å`/Total, digits = 0), "/",
+                               round(100*`TotalP_Andet`/Total, digits = 0)),
+                PlaceK = paste0(round(100*KilledP_Nedre/Killed, digits = 0), "/", 
+                                round(100*KilledP_Mellem/Killed, digits = 0), "/", 
+                                round(100*`KilledP_Øvre`/Killed, digits = 0), "/", 
+                                round(100*`KilledP_Vorgod Å`/Killed, digits = 0), "/",
+                                round(100*`KilledP_Omme Å`/Killed, digits = 0), "/",
+                                round(100*`KilledP_Andet`/Killed, digits = 0)),
+                Method = paste0(round(100*Flue/Total, digits = 0), "/", 
+                                round(100*Spin/Total, digits = 0), "/", 
+                                round(100*Orm/Total, digits = 0), "/", 
+                                round(100*Andet/Total, digits = 0)),
                 Released = paste0(round(100*Released/Total, 0), "/", 
                                   round(100*Killed/Total, 0)),
                 Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)), 

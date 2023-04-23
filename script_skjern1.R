@@ -6,247 +6,116 @@ library(lubridate)
 library(zoo)
 library(forecast)
 library(tsibble)
+library(fs)
 source("functions.R")
 
+url <- "https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/catches/assoc/A97F957DD48AEDD4C1258814003E71FE/1/"
 prefix <- "data/data_skjern"
-
-#### Flow though lock at Hvide Sande ####
-dat <- updateLockSkjern(prefix)
-calcLockWeb(dat, prefix)
+yr <- year(now())
 
 #### Catch records ####
+datCatchSalmon <- writeCatch(url, prefix, yr, species = "Laks")
+datCatchSeatrout <- writeCatch(url, prefix, yr, species = "Havørred")
 
-if (day(now()) == 19 & hour(now()) == 4) {
-  datCatchSalmon <- updateCatchSkjern(prefix, species = "salmon", reset = TRUE)   #, reset = T, start = 2004
-  datCatchSeatrout <- updateCatchSkjern(prefix, species = "trout", reset = TRUE) 
-} else {
-  datCatchSalmon <- updateCatchSkjern(prefix, species = "salmon") 
-  datCatchSeatrout <- updateCatchSkjern(prefix, species = "trout")
-}
+
+#### Flow though lock at Hvide Sande ####
+dat <- writeLockSkjern(prefix)
+writeLockWeb(dat, prefix)
+
 
 #### Weight ####
-estimateWeight(paste0(prefix, "_weight_salmon.csv"), datCatchSalmon, minLength =  40, maxLength = 145)
-estimateWeight(paste0(prefix, "_weight_seatrout.csv"), datCatchSeatrout, minLength =  40)
-
-#### Waterlevel - Prelim data set ####
-# # Find id using http://hydrometri.azurewebsites.net/Scripts/azureplot_new.js and set a breakpoint
-# stations <- 
-#   tibble(id = c("055416", "055414", "001862", "017898", "054757", "001855", "052386"), 
-#          place = c("Vorgod Å - Vandmøllen", 
-#                    "Skjern Å - Sandfeldvej", 
-#                    "Skjern Å - Alergaard",
-#                    "Skjern Å - Gjaldbæk bro",
-#                    "Rind Å - Arnborg kirke",
-#                    "Omme Å - Sønderskov bro",
-#                    "Fjederholt Å - A18"))
-# 
-# for (y in 2013:2020) {
-#   fn <- paste0("data/data_skjern_waterlevel_", y, ".csv")
-#   dat <- NULL
-#   iso <- format(date(paste0(y+1, "-01-14")), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
-#   for (i in 1:nrow(stations)) {
-#     id <- stations$id[i]
-#     place <- stations$place[i]
-#     tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=4000&pw=100000000&inclraw=true"))
-#     offset <- as.numeric(tmp$tsh$Offset)
-#     tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
-#     tmp$V <- tmp$V - rep(offset, length(tmp$V))
-#     colnames(tmp) <- c("Date", paste0(place, " (", id, ")"))
-#     if (is.null(dat)) {
-#       dat <- tmp
-#     } else {
-#       dat <- full_join(dat,tmp, by = "Date")
-#     }
-#   }
-#   dat$Date <- ymd_hms(dat$Date, tz = "UTC") %>% with_tz("CET") # from UTC to CET
-#   dat <- dat %>% dplyr::filter(year(Date) == y) %>% arrange(Date)
-#   readr::write_csv(dat, fn)
-#   print(range(dat$Date))
-# }
-# 
-# 
-# ## Tidy prelim water level datasets 
-# readWLevels <- function(years) {
-#   colT <- cols(
-#     Date = col_datetime(format = ""),
-#     `Vorgod Å - Vandmøllen (055416)` = col_double(),
-#     `Skjern Å - Sandfeldvej (055414)` = col_double(),
-#     `Skjern Å - Alergaard (001862)` = col_double(),
-#     `Skjern Å - Gjaldbæk bro (017898)` = col_double(),
-#     `Rind Å - Arnborg kirke (054757)` = col_double(),
-#     `Omme Å - Sønderskov bro (001855)` = col_double(),
-#     `Fjederholt Å - A18 (052386)` = col_double()
-#   )
-#   dat <- NULL
-#   cat("Read year:")
-#   for (y in years) {
-#     cat(y, "\n")
-#     fn <- paste0("data/data_skjern_waterlevel_", y, ".csv")
-#     dat <- bind_rows(dat, read_csv(fn, col_types = colT))
-#   }
-#   return(dat)
-# }
-# dat <- readWLevels(2014:2020)
-# datL <- dat %>% pivot_longer(cols = 2:ncol(dat), names_to = 'Group', values_to = 'Level')
-# datS <- datL %>% dplyr::filter(year(Date)>2013)
-# ggplot(data = datS, aes(x = Date, y = Level)) + geom_line(aes(color = Group), show.legend = T)
-# # Most observations are from 2017. Only consider 2017-present
-# dat <- dat %>% dplyr::filter(year(Date)>2016)
-# datL <- dat %>% pivot_longer(cols = 2:ncol(dat), names_to = 'Group', values_to = 'Level')
-# ggplot(data = datL, aes(x = Date, y = Level)) + geom_line(aes(color = Group), show.legend = T)
-# 
-# # Remove outliners:
-# remove_outliers <- function(x, na.rm = TRUE, ...) {
-#   qnt <- quantile(x, probs=c(.1, .9), na.rm = na.rm, ...)
-#   # H <- 1.5 * IQR(x, na.rm = na.rm)
-#   H <- 5 * sd(x, na.rm = na.rm)   # remove 8 sd above and below mean
-#   y <- x
-#   idx <- which(x < (qnt[1] - H) | x > (qnt[2] + H))
-#   cat("Remove", length(which(x < (qnt[1] - H) | x > (qnt[2] + H))), "outliers\n")
-#   # print(x[idx])
-#   y[idx] <- NA
-#   y
-# }
-# # dat1 <- dat %>% mutate_if(is.numeric, tsclean)   # remove outliers and replace missing values
-# # dat1 <- dat1 %>% mutate_if(is.numeric, as.numeric)  # remove ts class
-# # colnames(dat1)[2:4] = paste0(colnames(dat)[2:4]," clean")
-# dat1 <- dat %>% mutate_if(is.numeric, remove_outliers)
-# datL <- dat1 %>% pivot_longer(cols = 2:ncol(dat1), names_to = 'Group', values_to = 'Level')
-# ggplot(data = datL, aes(x = Date, y = Level)) + geom_line(aes(color = Group), show.legend = T)
-# 
-# ## Save cleaned data
-# for (y in 2017:2019) {
-#   fn <- paste0("data/data_skjern_waterlevel_", y, ".csv")
-#   dat2 <- dat1 %>% dplyr::filter(year(Date) == y) %>% arrange(Date)
-#   write_csv(dat2, fn)
-# }
+writeWeightEstimates(prefix, seatrout = TRUE)
+writeWeightEstimates(prefix, seatrout = FALSE)
 
 
-#### Waterlevel @ hydrometri.dk ####
-
-# stations <-
-#   tibble(id = c("24717", "24605", "24622", "24657", "24601", "24649"), 
-#          place = c("Skjern Å - Sandfeldvej", 
-#                    "Skjern Å - Alergaard",
-#                    "Skjern Å - Gjaldbæk bro",
-#                    "Rind Å - Arnborg kirke",
-#                    "Omme Å - Sønderskov bro",
-#                    "Karstoft Å - Fiskedamme"))
-# tsid = id seems to have been changed add new id's (7/8/2022)
+#### Waterlevel ####
 stations <-
-  tibble(id = c("055414", "001862", "017898", "054757", "001855"), 
-         place = c("Skjern Å - Sandfeldvej", 
+  tibble(id = c("24717", "24605", "24622", "54559", "24649", "24657", "24601", "24689"),
+         place = c("Skjern Å - Sandfeldvej",
                    "Skjern Å - Alergaard",
                    "Skjern Å - Gjaldbæk bro",
+                   "Skjern Å - Landevejsbroen",
+                   "Karstoft Å - Fiskedamme",
                    "Rind Å - Arnborg kirke",
-                   "Omme Å - Sønderskov bro"))
-## Update and save data current year
-updateWaterLevel(stations, prefix) 
-# getWaterLevels(stations, prefix) # if reset
-
+                   "Omme Å - Sønderskov bro",
+                   "Fjederholt Å - A18"))
+writeTimeSeriesData(stations, prefix, prefix1 = "waterlevel", days = 15)  
+# d <- as.integer(now() - ymd_hms("2017-01-01 12:00:00"))
+# writeTimeSeriesData(stations, prefix, prefix1 = "waterlevel", days = d)  # if update from 2017
 ## Calc moving average 
-dat <- readWLevels(prefix, 2014:year(now()))
-rMeans <- calcWaterMovAvg(dat, prefix)
-
+dat <- readDataFiles("data_skjern_waterlevel_[0-9]{4}")
+rMeans <- writeWaterMovAvg(dat, prefix)
 ## Relative datasets 
 dat <- calcWaterLevelRelative(dat, rMeans, prefix)
-
 ## Dataset for web 
-dat <- calcWaterLevelsWeb(dat, prefix)
-
-
-# dat %>%
-#   ggplot(aes(x = Date, y = Level, color = Place)) +
-#   geom_line()
-# 
-# dat %>% group_by(Place) %>% nest()
-# 
-# 
-# library(plotly)
-# tmp <- as_tsibble(dat, key = Place)
-# tmp <- tmp %>%
-#   group_by_key() %>%
-#   mutate(L = tsclean(Level, replace.missing = FALSE))
-# #View(tmp %>% filter(round(Level,1) != round(L,1)))
-# 
-# 
-# tmp <- tmp %>% filter(Place == "Omme Å - Sønderskov bro")
-# 
-# p <- tmp %>% 
-#   ggplot() +
-#   geom_line(aes(x = Date, y = L), color = "black") +
-#   geom_line(aes(x = Date, y = Level), color = "red", alpha = 0.1) 
-# p
-# ggplotly(p)
+dat <- writeWaterLevelsWeb(dat, prefix)
 
 
 #### Water temperature ####
+# stations <-
+#   tibble(id = c("470"),
+#          place = c("Fjederholt Å - A18"))
 # 
-# ## Update data current year
-# updateWaterTempSkjern(stations, prefix)  
+# 
+# dat <- read_csv("https://www.hobolink.com/p/129c8db1cac5dff51e4157b3644ad63e#")
+# 
+# 
+# 
+# 
 # 
 # library(httr)
-# library(rvest)
-# library(dplyr)
-# res <- POST("https://www.hobolink.com/p/05811e4cdecf4a8832047fadcb59bbaf",
-#             encode="form",
-#             user_agent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.50 Safari/537.36"),
-#             add_headers(`Referer`="https://www.hobolink.com/p/05811e4cdecf4a8832047fadcb59bbaf"),
+# # library(rvest)
+# url <- "https://www.hobolink.com/p/129c8db1cac5dff51e4157b3644ad63e#"
+# res <- POST(url,
+#             encode="json",
+#             user_agent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"),
+#             add_headers(`referer`="https://www.hobolink.com/p/129c8db1cac5dff51e4157b3644ad63e"),
+#             # body = "javax.faces.partial.ajax=true&javax.faces.source=hobolink-devices-real-time-plots-form%3Aj_idt198%3Aj_idt333&javax.faces.partial.execute=%40all&javax.faces.partial.render=hobolink-devices-real-time-plots-form%3Aj_idt198%3AdayPlot406715&hobolink-devices-real-time-plots-form%3Aj_idt198%3Aj_idt333=hobolink-devices-real-time-plots-form%3Aj_idt198%3Aj_idt333&hobolink-devices-real-time-plots-form=hobolink-devices-real-time-plots-form&hobolink-devices-real-time-plots-form%3Aj_idt198_activeIndex=0&javax.faces.ViewState=-5503341876077484605%3A8942472651375839520"
 #             body=list(
-#               # javax.faces.partial.ajax = "true",
-#               # javax.faces.source = "hobolink-devices-real-time-plots-form:j_idt198:j_idt399",
-#               # javax.faces.partial.execute = "@all",
-#               # javax.faces.partial.render = "hobolink-devices-real-time-plots-form:j_idt198:monthPlot367929",
-#               # `hobolink-devices-real-time-plots-form:j_idt198:j_idt399` = "hobolink-devices-real-time-plots-form:j_idt198:j_idt399",
-#               # `hobolink-devices-real-time-plots-form` = "hobolink-devices-real-time-plots-form",
-#               # `hobolink-devices-real-time-plots-form:j_idt198_activeIndex` = "2",
-#               # javax.faces.ViewState = "5420958408134968228:-5689265068462936229"
-#               
 #               javax.faces.partial.ajax = "true",
-#               javax.faces.source = "hobolink-devices-latest-data-form:latest-query-table-id:0:j_idt309",
+#               javax.faces.source = "hobolink-devices-real-time-plots-form:j_idt198:j_idt333",
 #               javax.faces.partial.execute = "@all",
-#               javax.faces.partial.render = "hobolink-devices-latest-data-form:hiddenDownloadButton",
-#               `hobolink-devices-latest-data-form:latest-query-table-id:0:j_idt309` = "hobolink-devices-latest-data-form:latest-query-table-id:0:j_idt309",
-#               `hobolink-devices-latest-data-form` = "hobolink-devices-latest-data-form",
-#               `hobolink-devices-latest-data-form:j_idt265_collapsed` = "false",
-#               `javax.faces.ViewState` = "1359004840769262366:3886099500288169103"
-#               
-#               # `javax.faces.partial.ajax` = "true",
-#               # `javax.faces.source` = "hobolink-devices-real-time-plots-form:j_idt198",
-#               # `javax.faces.partial.execute` = "hobolink-devices-real-time-plots-form:j_idt198",
-#               # `javax.faces.partial.render` = "hobolink-devices-real-time-plots-form:j_idt198",
-#               # `hobolink-devices-real-time-plots-form:j_idt198` = "hobolink-devices-real-time-plots-form:j_idt198",
-#               # `hobolink-devices-real-time-plots-form:j_idt198_contentLoad` = "true",
-#               # `hobolink-devices-real-time-plots-form:j_idt198_newTab` = "hobolink-devices-real-time-plots-form:j_idt198:month-tab",
-#               # `hobolink-devices-real-time-plots-form:j_idt198_tabindex` = "2",
-#               # `hobolink-devices-real-time-plots-form` = "hobolink-devices-real-time-plots-form",
-#               # `hobolink-devices-real-time-plots-form:j_idt198_activeIndex` = "2",
-#               # `javax.faces.ViewState` = "6311353073065817781:-147379906274328667"              
-#               
-#               
-#               ), verbose())
+#               javax.faces.partial.render = "hobolink-devices-real-time-plots-form:j_idt198:dayPlot406715",
+#               `hobolink-devices-real-time-plots-form:j_idt198:j_idt333` = "hobolink-devices-real-time-plots-form:j_idt198:j_idt333",
+#               `hobolink-devices-real-time-plots-form` = "hobolink-devices-real-time-plots-form",
+#               `hobolink-devices-real-time-plots-form:j_idt198_activeIndex` = "0",
+#               javax.faces.ViewState = "-5503341876077484605:8942472651375839520"
+# )
 # 
+#               , verbose())
 # 
-# 
-# 
-# 
-# res_t <- content(res, as="text")
+# res_t <- content(res, as="text") %>% str_detect("dayGraphData")
 # res_h <- paste0(unlist(strsplit(res_t, "\r\n"))[-1], sep="", collapse="\n")
+# # 
+# # 
+# # 
+# # monthGraphData367929
 # 
 # 
 # 
-# monthGraphData367929
-# url <- "https://www.hobolink.com/p/05811e4cdecf4a8832047fadcb59bbaf"
-# page <- read_html(url)
-# ids <- html_nodes(page, 
-#                   xpath = '/html/body/div[4]/div/div[2]/div/div[2]/div[2]/div/form/div/div/div[2]/div/div/div/div[3]/div/div[5]/script') 
+# library(httr)
+# # library(rvest)
+# url <- "https://www.hobolink.com/p/129c8db1cac5dff51e4157b3644ad63e#hobolink-devices-real-time-plots-form:j_idt198:week-tab"
+# x <- GET(url, add_headers('user-agent' = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'))
+# xml <- read_html(x)
+# xml %>% xml_find_all('/html/body/div[4]/div/div[2]/div/div[2]/div[2]/div/form/div/div/div[2]/div/div') %>% xml_text()
 # 
-# ## Calc moving average 
-# dat <- readWTemp(prefix, 2020:year(now()))
-# rMeans <- calcWaterTempMovAvg(dat, prefix)
 # 
-# ## Dataset for web 
-# dat <- calcWaterTempWeb(dat, rMeans, prefix)
+# 
+# 
+# read_html(x)
+# ids <- html_nodes(page,
+#                   xpath = '/html/body/div[4]/div/div[2]/div/div[2]/div[2]/div/form/div/div/div[2]/div/div/div/div[2]/div/div[4]/script')
+# 
+# page %>% html_elements("script")
+# 
+# 
+# # ## Calc moving average 
+# # dat <- readWTemp(prefix, 2020:year(now()))
+# # rMeans <- calcWaterTempMovAvg(dat, prefix)
+# # 
+# # ## Dataset for web 
+# # dat <- calcWaterTempWeb(dat, rMeans, prefix)
 
 
 

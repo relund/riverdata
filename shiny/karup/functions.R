@@ -9,16 +9,14 @@ mergeLists <- function (a,b) {
 
 #' Read and prepare catch records for table
 #'
-#' @param path Full path to csv file.
-#' @param datWeight Weight estimates
+#' @param prefix Prefix to csv files e.g. "../../data/data_skjern_catch_salmon".
+#' @param datWeight Weight estimates.
 #'
 #' @return The catch records
 readCatch <- function(prefix, datWeight) {
-  datCatch <- 
-    bind_rows(
-      read_csv(paste0(prefix, "data_karup_catch_seatrout_2020-.csv"), col_types = "Dddcfflclf"),
-      read_csv(paste0(prefix, "data_karup_catch_seatrout_2003-2019.csv"), col_types = "Dddcfflclf")) %>% 
-    mutate(Weight = if_else(Killed, Weight, NA_real_), Place = fct_explicit_na(Place, "Ukendt"))
+  f <- paste0(prefix, "_", 2004:year(now()), ".csv")
+  datCatch <- read_csv(f, col_types = "Dddcfflclfl")  %>% 
+    mutate(Weight = if_else(Killed, Weight, NA_real_), Place = fct_na_value_to_level(Place, "Ukendt"))
 
   datCatch <- datCatch %>% 
     mutate(
@@ -60,8 +58,8 @@ yearlyStat <- function(datCatch) {
     mutate(
       TotalStat = map(data, function(df) {
         summarise(df, Total = n(), 
-                  Female = sum(Sex == "Hun", na.rm = T), 
-                  Male = sum(Sex == "Han", na.rm = T),
+                  Female = sum(Sex == "Female", na.rm = T), 
+                  Male = sum(Sex == "Male", na.rm = T),
                   SexUnknown = Total - Female - Male,
                   Released = sum(!Killed, na.rm = T),
                   Killed = sum(Killed, na.rm = T),
@@ -107,18 +105,18 @@ yearlyStat <- function(datCatch) {
     dat  %>% 
     ungroup() %>% 
     transmute(Year, Total, 
-              Sex = paste0(format(100*Male/Total, digits = 0, trim = TRUE), "/",
-                           format(100*Female/Total, digits = 0, trim = TRUE), "/",
-                           format(100*SexUnknown/Total, digits = 0, trim = TRUE)),
-              Place = paste0(format(100*Nedre/Total, digits = 0, trim = TRUE), "/", 
-                             format(100*Mellem/Total, digits = 0, trim = TRUE), "/", 
-                             format(100*`Øvre`/Total, digits = 0, trim = TRUE), "/", 
-                             format(100*`Haderup Å`/Total, digits = 0, trim = TRUE), "/",
-                             format(100*(Total - Nedre - Mellem - `Øvre` - `Haderup Å`)/Total, digits = 0, trim = TRUE)),
-              Method = paste0(format(100*Flue/Total, digits = 0, trim = TRUE), "/", 
-                              format(100*Spin/Total, digits = 0, trim = TRUE), "/", 
-                              format(100*Orm/Total, digits = 0, trim = TRUE), "/", 
-                              format(100*(Total - Flue - Spin - Orm)/Total, digits = 0, trim = TRUE)),
+              Sex = paste0(round(100*Male/Total, 0), "/",
+                           round(100*Female/Total, 0), "/",
+                           round(100*SexUnknown/Total, 0)),
+              Place = paste0(round(100*Nedre/Total, 0), "/", 
+                             round(100*Mellem/Total, 0), "/", 
+                             round(100*`Øvre`/Total, 0), "/", 
+                             round(100*`Haderup Å`/Total, 0), "/",
+                             round(100*(Total - Nedre - Mellem - `Øvre` - `Haderup Å`)/Total, 0)),
+              Method = paste0(round(100*Flue/Total, 0), "/", 
+                              round(100*Spin/Total, 0), "/", 
+                              round(100*Orm/Total, 0), "/", 
+                              round(100*(Total - Flue - Spin - Orm)/Total, 0)),
               Released = paste0(round(100*Released/Total, 0), "/", 
                                 round(100*(Total - Released)/Total, 0)),
               Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)), 
@@ -212,18 +210,18 @@ monthlyStat <- function(datCatch, year) {
       dat  %>% 
       ungroup() %>% 
       transmute(Month, Total, 
-                Sex = paste0(format(100*Male/Total, digits = 0, trim = TRUE), "/",
-                             format(100*Female/Total, digits = 0, trim = TRUE), "/",
-                             format(100*SexUnknown/Total, digits = 0, trim = TRUE)),
-                Place = paste0(format(100*Nedre/Total, digits = 0, trim = TRUE), "/", 
-                               format(100*Mellem/Total, digits = 0, trim = TRUE), "/", 
-                               format(100*`Øvre`/Total, digits = 0, trim = TRUE), "/", 
-                               format(100*`Haderup Å`/Total, digits = 0, trim = TRUE), "/",
-                               format(100*(Total - Nedre - Mellem - `Øvre` - `Haderup Å`)/Total, digits = 0, trim = TRUE)),
-                Method = paste0(format(100*Flue/Total, digits = 0, trim = TRUE), "/", 
-                                format(100*Spin/Total, digits = 0, trim = TRUE), "/", 
-                                format(100*Orm/Total, digits = 0, trim = TRUE), "/", 
-                                format(100*(Total - Flue - Spin - Orm)/Total, digits = 0, trim = TRUE)),
+                Sex = paste0(round(100*Male/Total, 0), "/",
+                             round(100*Female/Total, 0), "/",
+                             round(100*SexUnknown/Total, 0)),
+                Place = paste0(round(100*Nedre/Total, 0), "/", 
+                               round(100*Mellem/Total, 0), "/", 
+                               round(100*`Øvre`/Total, 0), "/", 
+                               round(100*`Haderup Å`/Total, 0), "/",
+                               round(100*(Total - Nedre - Mellem - `Øvre` - `Haderup Å`)/Total, 0)),
+                Method = paste0(round(100*Flue/Total, 0), "/", 
+                                round(100*Spin/Total, 0), "/", 
+                                round(100*Orm/Total, 0), "/", 
+                                round(100*(Total - Flue - Spin - Orm)/Total, 0)),
                 Released = paste0(round(100*Released/Total, 0), "/", 
                                   round(100*(Total - Released)/Total, 0)),
                 Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)), 
@@ -232,3 +230,6 @@ monthlyStat <- function(datCatch, year) {
       mutate_if(is.character, str_replace_all, pattern = "NaN|NA", replacement = "0")
   }
 }
+
+
+

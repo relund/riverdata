@@ -46,7 +46,7 @@ library(kableExtra)
 library(leaflet)
 library(xml2)
 library(htmltools)
-
+library(fs)
 source("functions.R")
 
 faIcon <- function (name, class = "", title = "", lib = "font-awesome") 
@@ -79,13 +79,14 @@ enableBookmarking(store = 'url')
 ```{r, context="setup", include=FALSE}  
 #context="data"
 prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
+# prefix <- "../../data/"
 curYear <- if_else(month(now())*100 + day(now()) < 301, year(now())-1, year(now()))   # assume previous year until season starts
 
 # Weight - Estimates 
 datWeightSea<- read_csv(paste0(prefix, "data_karup_weight_seatrout.csv"), col_types = "dfddd")
 
 # Catch - Records 
-datCatchSea <- readCatch(prefix, datWeightSea) %>% 
+datCatchSea <- readCatch(paste0(prefix, "data_karup_catch_seatrout"), datWeightSea) %>% 
   filter(Length >= 40)
 
 # Catch - Yearly statistics
@@ -302,8 +303,8 @@ valueBoxOutput("cSeaYear")
 output$cSeaYear <- renderValueBox({
   total <- datCatchSea %>% dplyr::filter(year(Date) == curYear) %>% nrow()
   killed <- datCatchSea %>% dplyr::filter(year(Date) == curYear, Killed == TRUE) %>% nrow()
-  killedPct <- if_else(total > 0, format(100*killed/total, digits = 0), "0")
-  releasedPct <- if_else(total > 0, format(100*(total - killed)/total, digits = 0), "0")
+  killedPct <- if_else(total > 0, str_c(round(100*killed/total, digits = 0)), "0")
+  releasedPct <- if_else(total > 0, str_c(round(100*(total - killed)/total, digits = 0)), "0")
   valueBox(
     caption = str_c("Fangster i ", curYear, " (hjemtaget/genudsat)"),
     value = str_c(total, " (", killedPct, "%/", releasedPct, "%)"),
@@ -503,7 +504,7 @@ output$dTSeaCatch <- DT::renderDataTable(
     extensions = c('Responsive')  #,'FixedHeader','RowGroup'
   ) %>%
   formatStyle(columns = 'Weight', valueColumns = 'NoWeight', color = styleEqual(c(0, 1), c("black","green"))) %>%
-  formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>%
+  # formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>%
   formatRound(c('Length'), digits = 0) %>%
   formatRound(c('Weight'), digits = 1) %>%
   formatRound(c('Fulton'), digits = 2)
