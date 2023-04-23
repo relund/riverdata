@@ -1,479 +1,479 @@
-Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
-2009-03-01,75,3.375,Claus Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-03-01,60,1.8,Hans Andersen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-03-01,56,1.6,Jesper Mølholt,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-03-01,56,2.05,Kaj K. Rasmussen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-03-01,60,2.2,Niels Iversen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-03-01,60,1.728,Ole Friis,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-03-01,59,2.3,Palle Jeppesen,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-03-01,65,2.197,Per Laursen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-03-01,70,2.744,Per Laursen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-03-01,40,0.5,Thomas Eriksen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-03-01,70,2.744,Thomas Høgh,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-03-01,63,2.000376,NA,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-03-01,65,2.197,NA,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-03-01,70,2.744,NA,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-03-01,78,3.796416,NA,Mellem,Orm,FALSE,NA,TRUE,NA
-2009-03-02,67,3,Jens Steffensen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-03-02,70,4,Preben Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-03-03,60,0.8,NA,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-03-04,62,1.906624,NA,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-03-09,64,2.2,Hans Andersen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-03-13,61,1.815848,Mogens Thomassen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-03-14,70,3,NA,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-03-15,47,1.05,Simon Lindegaard,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-03-15,53,1.55,Simon Lindegaard,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-03-15,74.5,6.5,NA,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-03-26,63,2.000376,Mogens Thomassen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-04-09,78,5.6,Poul Godt,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-04-15,77,5.2,Emir Adzemovic,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-04-27,78,5.2,Jens Bredahl,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-04-29,72,3.9,Michael Pedersen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-04-30,70,4.5,Søren Borg Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-05-03,53,2,Kent Mathiassen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-05-03,55,2,Kent Mathiassen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-05-05,75,5.5,Benny Amstrup,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-05-05,70,4.8,Skovbjerg Eg,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-05-06,72,4.3,Poul Kærgaard Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-05-08,65,3.1,Ole Bakke,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-05-13,73,4.4,Poul Kærgaard Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-05-14,75,5.1,Knud Vestergaard,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-05-16,89,8.6,Peter Brokær,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-05-16,75,5,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-05-17,76,6,Per Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-05-19,68.5,4.1,Rasmus Hald Rasmussen,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-05-21,70,3.7,Jesper Palm,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-05-22,79,5.25,Ole Rohde,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-05-23,74,5.1,Frank Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-05-27,72,5.3,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-05-29,43,1.1,Frank Jensen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-05-29,42,1.1,NA,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-05-30,76,6,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-02,64,2.7,Per Laursen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-06-02,64,2.7,NA,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-06-04,82,5.2,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-04,78,5.5,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-04,79,6,Jørgen Skov Rasmussen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-06-04,81,6.4,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-06-05,74,5.1,Niels Peder Larsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-06,57,2.2,Arne Overby,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-06,71,4.2,Erik Bogø,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-06-06,78,5.5,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-07,48,1,Jeppe Jensen,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-06-08,49,1.7,Mogens Vestergaard Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-09,46,1.1,Vilhelm Rønsholdt,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-10,77,6.1,Kim Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-10,96,12.7,Morten Wölck,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-10,60,2.4,Tom Johannesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-10,65,3.5,Ulrik Schou,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-06-10,79,5.6,Willy Risgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-11,43,1,Henning Voergård,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-11,47,1.4,Skovbjerg Eg,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-11,72,4.5,Willy Risgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-12,56,1.9,Helge Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-12,74,4.7,Tom Sørensen,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-06-13,70,4.5,Bo Schmidt Eskesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-13,71,4.1,Johnny Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-13,70,4.5,Kim Petersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-13,53,1.6,Kurt Simonsen,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-06-13,77,5.4,Poul Kærgaard Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-14,67,4.2,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-06-15,70,4.2,Benny Amstrup,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-15,45,1.07557196345872,Keld Mikkelsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-06-16,44,1,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-06-17,60,2.4,Jørgen Skov Rasmussen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-17,73,5.5,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-06-18,77,6,Niels Søndergaard,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-18,77,6,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-19,63,3.1,Dennis Rasmussen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-19,45,1.1,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-06-19,46,1.2,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-06-20,68,3.9,Henning Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-20,44,1.1,Paul Erik Nielsen,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-06-21,78,6.15,Christian Vennevold,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-21,77,6.1,Edhem Salkic,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-21,68,3.3,Knud Vestergaard,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-06-21,72,4.25,Ole Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-21,77,5.2,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-06-21,84,8.1,Poul Lauridsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-06-21,50,1,NA,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-06-22,73,4.3,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-06-22,70,4.5,Símon Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-06-23,73,4.65,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-06-23,63,3,Lars Wenneberg,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-23,43,1,Moldaschl,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-26,57,2.05,Ken Poulsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-27,90,8.9,Flemming Andersen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-06-27,69,3.8,Rasmus H. Wølck,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-06-27,46,1.25,Steen Roslev,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-29,68,4,Kim G. Schmidt,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-29,61,2.8,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-06-30,75.5,5.6,Bo Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-02,48,1.3,Edward Mullins,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-02,80,6.6,Poul Kærgård Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-08,47,1.4,Flemming Kristiansen,Mellem,Orm,FALSE,NA,TRUE,NA
-2009-07-08,47,1.5,Flemming Kristiansen,Øvre,Orm,FALSE,NA,TRUE,NA
-2009-07-08,50,1.8,Tom Johannesen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-07-08,53,1.75,NA,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-09,54,1.9,Bo Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-09,45,0.95,NA,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-07-09,66,3.2,NA,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-07-10,52,1.89,Benny Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-10,46,1.2,Edward Mullins,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-10,47,1.22544974444088,Kim H Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-10,45,1.2,Lars Wenneberg Hvide Sande,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-11,65,3.8,Flemming Kristiansen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-11,59,2.5,Jan Struwe Christensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-07-11,66,3.36,Steen Roslev,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-12,50,1.2,Frank Bach,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-12,46,1,Mogens Thomassen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-13,48,1.30534600365243,Simon Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-07-13,44,1,NA,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-07-14,64,3,Asbjørn Schlosser,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-14,50,1.4,Helge Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-14,51,1.8,Tom Johannesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-14,55,2,NA,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-07-15,71,4.6,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-07-15,49,1.4,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-15,48,1.4,Tom Johannesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-16,64,3.3,Mogens Dahl Pallesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-16,58,2.4,NA,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-07-17,53,1.6,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-07-17,61,2.6,Tom Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-18,64,3.5,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-18,53,1.75,Jørn Hansen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-18,48,1.2,Per Laursen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-07-18,48,1.25,Tom Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-19,50,1.5,Arne Kjølhede,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-19,46,1.2,Frank Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-19,49,1.35,Helge Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-19,61,2.8,Henning Larsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-19,62,2.4,Kenneth Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-07-19,86,7.5,Kenneth Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-07-19,59,2.45,Matthias Germer,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-07-20,50,1.4,Frank Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-21,70,4.5,Peter Nyhuus,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-07-22,60,2.6,Bruno Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-22,64,3.3,Ole Lenler-Eriksen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-07-22,64,3.3,Ole Lenler-Eriksen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-07-23,55,2,Christian Sørensen,Mellem,Orm,FALSE,NA,TRUE,NA
-2009-07-23,61,2.7,Finn Vestergaard Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-23,54.5,2,Flemming Nielsen,Mellem,Orm,FALSE,NA,TRUE,NA
-2009-07-23,61,3,Frank Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-23,79,6.8,Lars Eriksen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-23,63,3,Skovbjerg Eg,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-23,81,6.8,Søren Pedersen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-07-23,46,1.14888200422736,Verner Mortensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-24,41,1,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-07-24,78,6.5,Henning Povlsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-24,57,2.35,Ole Ovesen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-07-25,65,3,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-07-25,67,3.85,Brian Houmand,Mellem,Orm,FALSE,NA,TRUE,NA
-2009-07-25,77,5.74,Esben H. Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-25,44,1,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-25,78,6.7,Poul Køhler,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-26,55,2.16,Esben H. Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-26,51,1.6,Mikael Rønsholdt,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-26,86,6.2,Morten Wølck,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-26,50,1.6,Niels A.k. Hansen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-27,49,1.2,Jacob Hansen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-07-27,51,1.6,Steen Roslev,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-28,70,4.1,Harald Jandt,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-28,73,4.5,Jens Løntoft,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-07-28,77,6,Mogens Dahl Pallesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-29,56,2,Bjarne Jakobsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-29,63,3.6,Carl Knudsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-29,76,4.4,Per K. Haaning,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-07-30,63,3,Karsten Simonsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-30,87,7.7,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-30,59,2.5,Verner Mortensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-07-31,76,5.9,Per K Haaning,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-01,82,7.3,Hans Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-01,62,2.5,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-01,62,2.5,Jacob Hansen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-01,62,3.2,Jan Nors,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-01,65,2.9,NA,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-02,59,2.2,Carl Knudsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-02,78,7,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-02,58,2.2,Jan Pedersen,Mellem,Orm,FALSE,NA,TRUE,NA
-2009-08-02,67.5,3.5,Michael Schwennesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-03,75,5.5,Morten Andersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-03,68,3.7,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-04,50,1.5,Gunnar Sahl,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-04,62,3.3,John Olesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-04,43,1,Tom Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-05,68,3.5,Jakob Larsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-06,61,2.35,Anders Dalgaard,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-06,48,1.3,Bo Jensen,Mellem,Orm,FALSE,NA,TRUE,NA
-2009-08-06,50,1.5,Matthias Germer,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-06,55,2,Ole Ovesen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-06,48,1.3,Skovbjerg Eg,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-07,62,2.8,Mogens Thomassen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-07,54,2,Peter Qvist,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-08,56,2.2,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-08,64,3.5,Per Nørgaard,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-08,78,5.6,Steen   Hessel,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-08-09,61,2.9,Bruno Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-09,51.5,1.37,Edward Mullins,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-09,76,5,Frank Bach,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-09,82,6.6,Karsten Simonsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-09,84,6.6,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-09,74,4.7,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-09,61,2.9,Søren Zedlitz Mikkelsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-10,82,7.5,Jan Struwe Christensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-10,72,5,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-11,85,8.5,Anders Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-11,58,1.9,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-08-11,64,2.9,Mogens Thomassen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-12,92,9.2,Lars Villadsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-13,79,5.8,Brian Hovmand,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-14,45.5,1.04,Finn M. Pedersen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-08-14,50,1.48,Flemming Andersen,Mellem,Orm,FALSE,NA,TRUE,NA
-2009-08-14,62,3.16,Leif Johansen,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-08-14,52,1.65,Mogens Svensson,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-14,75,4.97949983082743,Per Gylling Hansen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-14,62,3.08,Per Steen Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-14,79,5.7,Uffe Hansen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-14,81,6.2,Uffe Hansen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-15,67.5,3.88,Bruno Broberg,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-15,56,2.28,Emir Adzemovic,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-15,55,2.15,Esben H. Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-15,50.5,1.34,Finn Vallerbæk,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-15,56.5,2.19,Flemming Hestbjerg,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-15,71.5,4.55,Henrik Svarre,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-15,61.5,3.2,Jens Løntoft,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-15,82,7.32,John Kristensen,Mellem,Orm,FALSE,NA,TRUE,NA
-2009-08-15,75,4.94,Kenneth Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-15,80,7.09,Kim Aage Larsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-15,49,1.47,Klaus Berthelsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-15,67,3.83,Mogens Styhr,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-15,69,4.09,Osman Viba Bjertonic,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-15,61,2.96,Per Martin Trædal,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-15,72,5.06,Peter Bjerregaard,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-08-15,52.5,1.63,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-16,54,1.81,Benny Amstrup,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-16,54,2.04,Benny Amstrup,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-16,73,4.31,Bruno Broberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-08-16,54,1.74,Helle Rasmussen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-16,51,1.44,Jonny Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-08-16,62,2.76,Karsten Simonsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-16,48,1.27,Peter A. Risgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-16,49,1.25,Peter Bjerregaard,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-08-17,48,1.3,Ulrik Schou,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-18,80,6.9,NA,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-19,88,8.05,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-08-19,73,5.6,Helge Larsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-19,48.5,1.4,Jakob Larsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-19,65,3.4,Peter Nyhuus,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-20,77,5.6,Nicholaj Pedersen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-21,65,3.4,Helge Larsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-08-21,63,2.8,Holger Riis-Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-21,57,2.3,Niels Sloth Rasmussen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-08-21,67,3.5,Per Simonsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-22,89,8.9,Jacob Hansen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-08-22,78,6.45,Per Nørgaard,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-22,52,1.5,Steffen Svendsen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-08-23,48,1.3,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-23,42,0.874479842290589,Edward Mullins,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-23,61,2.6,Jakob Larsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-23,52,1.65,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-08-24,85,7.24,Tom Johannesen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-08-24,46.5,1.25,Tommy M Rasmussen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-26,54,1.85858835285668,Per Dolleris Knudsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-08-26,50,1.4754073572822,Peter Nyhuus,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-27,78,5.6,Bruno Stamm,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-27,58,2.1,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-08-27,56,2,Leif Nemeth,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-08-28,79,6.4,Jan Rummelhoff,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-28,57,2.2,Mikkel Bertelsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-29,57,2.4,Finn Emiliussen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-08-30,80,7,Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-08-30,62,2.8,NA,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-08-31,50.5,1.5,Steen Hessel,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-08-31,47,1.2,Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-09-01,52,1.7,Fritz Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-09-01,62,2.7,Tom Johannesen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-02,58,1.75,Hans-Jørgen Nielsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-02,54,1.65,Jacob Lorentsen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-02,56,1.75,Jacob Lorentsen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-02,47,1.22544974444088,Lars Skov,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-03,50,1.4754073572822,Jacob Lorentsen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-03,60,2.3,Jacob Lorentsen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-03,67,3.25,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-05,50,1.4754073572822,Hans Jørgen Nielsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-05,65,3.3,Henning Voergård,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-09-05,76,5.5,Henrik Krog,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-09-05,62,2.3,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-05,55,1.5,Thomas Eriksen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-06,50,1.2,Allan Gabs,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-06,50,1.2,Allan Gabs,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-06,46,1.14,Anders Dalgaard,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-09-06,44,1,Bent A. Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-06,58,1.7,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-06,60,2.45,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-06,81,6.5,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-06,63,2.6,Jonas Laursen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-06,63,2.6,Jonas Laursen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-06,60,2.4,Steen Hessel,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-09-06,60,2.2,Steffen Svendsen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-06,65,2.9,Steffen Svendsen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-07,65,3.1,Jens Møller Jensen,Mellem,Orm,FALSE,NA,TRUE,NA
-2009-09-07,53,1.75,Jørn Greve,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-07,70,3.9,Morten Beck Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-09-07,46,1,Per Laursen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-08,48,1.2,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-08,65,3.3,NA,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-10,69,3.6,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-09-10,71,3.8,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-09-11,58,2.35,Casper Simonsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-11,60,2.35,Freddi Christiansen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-09-12,62,1.8,A. Harder,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-12,74.5,5.5,Bruno Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-09-12,65,3,Henrik Krog,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-12,47,1.05,Preben Frederiksen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-09-12,50,1.3,Rasmus Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-09-13,52,1.4,Anders Dalgaard,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-09-13,81,5.3,Asbjørn Schlosser,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-09-13,79,6.5,Christian Vennevold,Mellem,Orm,FALSE,NA,TRUE,NA
-2009-09-13,82,6.8,Christian Vennevold,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-13,63,2.4,Helge Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-09-14,67,3.5,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-14,83,6.74894997278654,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-14,56,1.8,Bo Jensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-14,57,1.8,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-14,65,2.9,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-14,72,3.9,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-14,58,2.2,NA,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-15,64,2.7,Per Laursen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-16,57,1.8,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-16,67,3.7,Flemming Kristiansen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-17,75,4,Frank Bach,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-17,88,6.8,Frank Bach,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-17,80,6.7,Jørgen Skov Rasmussen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-17,76,4.65,Renè R Nielsen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-18,67,3.7,Flemming Kristiansen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-19,70,4,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-19,92,8.7,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-09-19,63,2.47,Peter Bjerregaard,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-20,68,3.5,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-20,69,3.2,Hans-Rudolph Lenler-Eriksen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-20,69,3.2,Hans-Rudolph Lenler-Eriksen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-20,60,2.3,Jeppe Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-09-21,60,2.54950391338364,Peter Nyhuus,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-21,65,3.5,Poul Erik Petersen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-21,64,3.1,Torben Smedegaard,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-22,89,9,Lars Relund,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-22,54,1.83,P.d. Knudsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-22,70,4.04851778838236,Peter Nyhuus,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-23,89,8,Frank Bach,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-09-23,56,1.9,Morten Beck Nielsen,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-09-24,60,2.4,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-24,85,7,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-24,55,1.36,Niels Vestermark,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-24,54,1.65,Toke Rodil,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-09-24,51,1.4,Tommy Frank Hoelgaard,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-24,51,1.4,Tommy Hoelgaard,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-25,71,4.22451618121784,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-25,49,1.3,Gunnar Sahl,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-25,50,1.5,Gunnar Sahl,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-25,70,4.4,Jørgen Skov Rasmussen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-25,81,6.5,Jørgen Skov Rasmussen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-25,54,1.8,Niels Sloth Rasmussen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-25,62,2.7,Steffen Svendsen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-25,69,3,Steffen Svendsen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-26,48,1.5,Bent Smedegaard,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-26,59,2.2,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-26,58,2.30295744235236,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-26,55,1.8,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-26,63,3.2,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-26,67,3.4,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-09-26,69,3.2,Jens Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-09-26,85,6.5,Kurt Andersen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-26,70,3,Niels-Bo Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-09-26,59,2,Tommy Frank Hoelgaard,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-26,59,2,Tommy Hoelgaard,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-27,84,6.8,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-09-27,93,9.5,Søren Jespersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-27,52,1.65,Søren Pedersen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-27,70,4.5,Søren Pedersen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-27,42,0.874479842290589,Steffen Svendsen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-28,72,4.40554276232693,Jens S. Beier,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-09-28,61,2.4,Tommy Frank Hoelgaard,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-28,61,2.6,Tommy Hoelgaard,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-09-28,75,4,Torben Smedegaard,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-09-29,58,1.9,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-29,73,4.3,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-09-29,70,3.5,Poul  Kærgaard Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-09-30,63,3.9,Jens Foldager,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-10-01,60,2.3,Bengt Askvid,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-10-01,70,3.6,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-01,44,1,Tommy Frank Hoelgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-01,44,1,Tommy Hoelgaard,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-10-02,59,2,Kurt Andersen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-10-03,55,2,Bent A. Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-04,66,3.6,Christian Morell,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-10-04,55,2.2,Mikkel Bertelsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-04,63,2.8,Thomas Eriksen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-10-05,57,2.5,Bent A. Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-05,63,3,Bent A. Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-05,52,1.5,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-10-05,67,3.1,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-10-05,69,3.6,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-10-05,75,4.5,Gunnar Sahl,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-10-05,60,2.54950391338364,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-05,71,3.5,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-05,70,3.07,Lars Jørgensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-05,62,3.1,Niels I. Poulsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-10-05,77,5.3,Renè R Nielsen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-05,64,3.4,Tommy Frank Hoelgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-05,64,3.4,Tommy Hoelgaard,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-10-06,59,2.25,Hans-Jürgen Bruhn,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-10-06,64,3,Henrik Hviid,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-08,53,1.5,Gorm Pallesen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-10-08,71.5,3.85,Hans-Jürgen Bruhn,Nedre,Flue,FALSE,NA,TRUE,NA
-2009-10-08,41,0.813492403769972,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-08,58,2.7,Klaus Johannsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-08,85,7.1,Per Laursen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-09,78,5,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-10,53,1.7,Christian Morell,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-10-11,53,1.9,Erland Sørensen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-11,67,3.6,Peter Rasmussen,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-10-12,60,2.2,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-15,48,1.2,Emil Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-15,60,2.54950391338364,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-15,79,6.3,Peter Sørensen,Mellem,Orm,FALSE,NA,TRUE,NA
-2009-10-16,61,2.2,Frank Bach,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-10-17,57,2.2,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-17,88,8.5,Niels Sloth Rasmussen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-17,66,3.5,Tommy Frank Hoelgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-17,66,3.5,Tommy Hoelgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-20,57,2.5,Mikael Rønsholdt,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-10-21,63,2.7,Karsten Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-10-22,75,4.97949983082743,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-22,60,2.5,Ejvind Andersen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-10-22,59,2.42414150105009,Keld Mikkelsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-22,63,3.1,Steen Hessel,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-10-24,34,NA,Esben Ludvigsen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-24,60,2,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-24,52,1.65963262154189,John Toft,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-10-25,48,1.1,Frank Bach,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-25,51,1.3,Frank Bach,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-25,87,7.6,Jakob Larsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2009-10-25,80,6,Palle Raun,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-10-26,62,2.3,Esben Ludvigsen,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-27,64,2.9,Bo Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-10-27,74,4.75,Harald Moesgård,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-27,48,0.98,Jens Møller Jensen,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-10-27,61,2.6,Tommy Frank Hoelgaard,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-10-27,61,2.55,Tommy Hoelgaard,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-28,61,3.2,Bent A. Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-28,73,4.5916683512628,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA
-2009-10-28,66,3.6,Poul Erik Petersen,Øvre,Spin,FALSE,NA,TRUE,NA
-2009-10-29,84,6.74,Henning Blom Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-10-30,84,7,Anders Søndergaard Larsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-30,59,2.8,Gunnar Sahl,Mellem,Spin,FALSE,NA,TRUE,NA
-2009-10-30,55,1.96376719254261,Henning Blom Nielsen,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-10-30,61,2.3,Jürgen Steinborn,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-10-30,63,2.8,Jürgen Steinborn,Nedre,Orm,FALSE,NA,TRUE,NA
-2009-10-31,64,2.92,Henning Blom Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2009-10-31,67,3.3,Jan Wolf,Nedre,Spin,FALSE,NA,TRUE,NA
+Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
+2009-03-01,75,3.375,Claus Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-03-01,60,1.8,Hans Andersen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-03-01,56,1.6,Jesper Mølholt,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-03-01,56,2.05,Kaj K. Rasmussen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-03-01,60,2.2,Niels Iversen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-03-01,60,1.728,Ole Friis,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-03-01,59,2.3,Palle Jeppesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-03-01,65,2.197,Per Laursen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-03-01,70,2.744,Per Laursen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-03-01,40,0.5,Thomas Eriksen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-03-01,70,2.744,Thomas Høgh,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-03-01,63,2.000376,NA,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-03-01,65,2.197,NA,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-03-01,70,2.744,NA,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-03-01,78,3.796416,NA,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2009-03-02,67,3,Jens Steffensen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-03-02,70,4,Preben Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-03-03,60,0.8,NA,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-03-04,62,1.906624,NA,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-03-09,64,2.2,Hans Andersen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-03-13,61,1.815848,Mogens Thomassen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-03-14,70,3,NA,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-03-15,47,1.05,Simon Lindegaard,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-03-15,53,1.55,Simon Lindegaard,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-03-15,74.5,6.5,NA,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-03-26,63,2.000376,Mogens Thomassen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-04-09,78,5.6,Poul Godt,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-04-15,77,5.2,Emir Adzemovic,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-04-27,78,5.2,Jens Bredahl,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-04-29,72,3.9,Michael Pedersen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-04-30,70,4.5,Søren Borg Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-05-03,53,2,Kent Mathiassen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-05-03,55,2,Kent Mathiassen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-05-05,75,5.5,Benny Amstrup,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-05-05,70,4.8,Skovbjerg Eg,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-05-06,72,4.3,Poul Kærgaard Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-05-08,65,3.1,Ole Bakke,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-05-13,73,4.4,Poul Kærgaard Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-05-14,75,5.1,Knud Vestergaard,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-05-16,89,8.6,Peter Brokær,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-05-16,75,5,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-05-17,76,6,Per Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-05-19,68.5,4.1,Rasmus Hald Rasmussen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-05-21,70,3.7,Jesper Palm,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-05-22,79,5.25,Ole Rohde,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-05-23,74,5.1,Frank Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-05-27,72,5.3,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-05-29,43,1.1,Frank Jensen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-05-29,42,1.1,NA,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-05-30,76,6,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-02,64,2.7,Per Laursen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-02,64,2.7,NA,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-04,82,5.2,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-04,78,5.5,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-04,79,6,Jørgen Skov Rasmussen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-04,81,6.4,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-06-05,74,5.1,Niels Peder Larsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-06,57,2.2,Arne Overby,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-06,71,4.2,Erik Bogø,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-06-06,78,5.5,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-07,48,1,Jeppe Jensen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-06-08,49,1.7,Mogens Vestergaard Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-09,46,1.1,Vilhelm Rønsholdt,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-10,77,6.1,Kim Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-10,96,12.7,Morten Wölck,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-10,60,2.4,Tom Johannesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-10,65,3.5,Ulrik Schou,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-10,79,5.6,Willy Risgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-11,43,1,Henning Voergård,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-11,47,1.4,Skovbjerg Eg,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-11,72,4.5,Willy Risgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-12,56,1.9,Helge Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-12,74,4.7,Tom Sørensen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-06-13,70,4.5,Bo Schmidt Eskesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-13,71,4.1,Johnny Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-13,70,4.5,Kim Petersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-13,53,1.6,Kurt Simonsen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-06-13,77,5.4,Poul Kærgaard Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-14,67,4.2,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-06-15,70,4.2,Benny Amstrup,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-15,45,1.07557196345872,Keld Mikkelsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-16,44,1,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-06-17,60,2.4,Jørgen Skov Rasmussen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-17,73,5.5,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-06-18,77,6,Niels Søndergaard,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-18,77,6,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-19,63,3.1,Dennis Rasmussen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-19,45,1.1,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-06-19,46,1.2,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-06-20,68,3.9,Henning Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-20,44,1.1,Paul Erik Nielsen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-06-21,78,6.15,Christian Vennevold,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-21,77,6.1,Edhem Salkic,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-21,68,3.3,Knud Vestergaard,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-21,72,4.25,Ole Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-21,77,5.2,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-06-21,84,8.1,Poul Lauridsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-06-21,50,1,NA,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-22,73,4.3,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-22,70,4.5,Símon Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-23,73,4.65,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-06-23,63,3,Lars Wenneberg,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-23,43,1,Moldaschl,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-26,57,2.05,Ken Poulsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-27,90,8.9,Flemming Andersen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-27,69,3.8,Rasmus H. Wølck,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-27,46,1.25,Steen Roslev,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-29,68,4,Kim G. Schmidt,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-29,61,2.8,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-06-30,75.5,5.6,Bo Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-02,48,1.3,Edward Mullins,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-02,80,6.6,Poul Kærgård Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-08,47,1.4,Flemming Kristiansen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2009-07-08,47,1.5,Flemming Kristiansen,Øvre,Orm,FALSE,NA,TRUE,NA,NA
+2009-07-08,50,1.8,Tom Johannesen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-08,53,1.75,NA,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-09,54,1.9,Bo Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-09,45,0.95,NA,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-09,66,3.2,NA,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-10,52,1.89,Benny Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-10,46,1.2,Edward Mullins,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-10,47,1.22544974444088,Kim H Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-10,45,1.2,Lars Wenneberg Hvide Sande,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-11,65,3.8,Flemming Kristiansen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-11,59,2.5,Jan Struwe Christensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-11,66,3.36,Steen Roslev,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-12,50,1.2,Frank Bach,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-12,46,1,Mogens Thomassen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-13,48,1.30534600365243,Simon Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-13,44,1,NA,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-14,64,3,Asbjørn Schlosser,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-14,50,1.4,Helge Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-14,51,1.8,Tom Johannesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-14,55,2,NA,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-15,71,4.6,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-15,49,1.4,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-15,48,1.4,Tom Johannesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-16,64,3.3,Mogens Dahl Pallesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-16,58,2.4,NA,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-17,53,1.6,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-17,61,2.6,Tom Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-18,64,3.5,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-18,53,1.75,Jørn Hansen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-18,48,1.2,Per Laursen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-18,48,1.25,Tom Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-19,50,1.5,Arne Kjølhede,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-19,46,1.2,Frank Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-19,49,1.35,Helge Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-19,61,2.8,Henning Larsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-19,62,2.4,Kenneth Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-19,86,7.5,Kenneth Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-19,59,2.45,Matthias Germer,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-20,50,1.4,Frank Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-21,70,4.5,Peter Nyhuus,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-22,60,2.6,Bruno Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-22,64,3.3,Ole Lenler-Eriksen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-22,64,3.3,Ole Lenler-Eriksen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-23,55,2,Christian Sørensen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2009-07-23,61,2.7,Finn Vestergaard Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-23,54.5,2,Flemming Nielsen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2009-07-23,61,3,Frank Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-23,79,6.8,Lars Eriksen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-23,63,3,Skovbjerg Eg,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-23,81,6.8,Søren Pedersen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-23,46,1.14888200422736,Verner Mortensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-24,41,1,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-24,78,6.5,Henning Povlsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-24,57,2.35,Ole Ovesen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-25,65,3,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-25,67,3.85,Brian Houmand,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2009-07-25,77,5.74,Esben H. Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-25,44,1,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-25,78,6.7,Poul Køhler,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-26,55,2.16,Esben H. Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-26,51,1.6,Mikael Rønsholdt,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-26,86,6.2,Morten Wølck,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-26,50,1.6,Niels A.k. Hansen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-27,49,1.2,Jacob Hansen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-27,51,1.6,Steen Roslev,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-28,70,4.1,Harald Jandt,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-28,73,4.5,Jens Løntoft,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-28,77,6,Mogens Dahl Pallesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-29,56,2,Bjarne Jakobsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-29,63,3.6,Carl Knudsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-29,76,4.4,Per K. Haaning,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-07-30,63,3,Karsten Simonsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-30,87,7.7,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-30,59,2.5,Verner Mortensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-07-31,76,5.9,Per K Haaning,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-01,82,7.3,Hans Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-01,62,2.5,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-01,62,2.5,Jacob Hansen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-01,62,3.2,Jan Nors,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-01,65,2.9,NA,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-02,59,2.2,Carl Knudsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-02,78,7,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-02,58,2.2,Jan Pedersen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2009-08-02,67.5,3.5,Michael Schwennesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-03,75,5.5,Morten Andersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-03,68,3.7,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-04,50,1.5,Gunnar Sahl,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-04,62,3.3,John Olesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-04,43,1,Tom Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-05,68,3.5,Jakob Larsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-06,61,2.35,Anders Dalgaard,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-06,48,1.3,Bo Jensen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2009-08-06,50,1.5,Matthias Germer,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-06,55,2,Ole Ovesen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-06,48,1.3,Skovbjerg Eg,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-07,62,2.8,Mogens Thomassen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-07,54,2,Peter Qvist,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-08,56,2.2,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-08,64,3.5,Per Nørgaard,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-08,78,5.6,Steen   Hessel,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-08-09,61,2.9,Bruno Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-09,51.5,1.37,Edward Mullins,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-09,76,5,Frank Bach,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-09,82,6.6,Karsten Simonsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-09,84,6.6,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-09,74,4.7,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-09,61,2.9,Søren Zedlitz Mikkelsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-10,82,7.5,Jan Struwe Christensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-10,72,5,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-11,85,8.5,Anders Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-11,58,1.9,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-11,64,2.9,Mogens Thomassen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-12,92,9.2,Lars Villadsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-13,79,5.8,Brian Hovmand,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-14,45.5,1.04,Finn M. Pedersen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-14,50,1.48,Flemming Andersen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2009-08-14,62,3.16,Leif Johansen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-08-14,52,1.65,Mogens Svensson,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-14,75,4.97949983082743,Per Gylling Hansen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-14,62,3.08,Per Steen Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-14,79,5.7,Uffe Hansen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-14,81,6.2,Uffe Hansen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-15,67.5,3.88,Bruno Broberg,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-15,56,2.28,Emir Adzemovic,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-15,55,2.15,Esben H. Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-15,50.5,1.34,Finn Vallerbæk,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-15,56.5,2.19,Flemming Hestbjerg,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-15,71.5,4.55,Henrik Svarre,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-15,61.5,3.2,Jens Løntoft,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-15,82,7.32,John Kristensen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2009-08-15,75,4.94,Kenneth Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-15,80,7.09,Kim Aage Larsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-15,49,1.47,Klaus Berthelsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-15,67,3.83,Mogens Styhr,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-15,69,4.09,Osman Viba Bjertonic,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-15,61,2.96,Per Martin Trædal,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-15,72,5.06,Peter Bjerregaard,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-15,52.5,1.63,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-16,54,1.81,Benny Amstrup,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-16,54,2.04,Benny Amstrup,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-16,73,4.31,Bruno Broberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-08-16,54,1.74,Helle Rasmussen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-16,51,1.44,Jonny Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-08-16,62,2.76,Karsten Simonsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-16,48,1.27,Peter A. Risgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-16,49,1.25,Peter Bjerregaard,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-17,48,1.3,Ulrik Schou,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-18,80,6.9,NA,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-19,88,8.05,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-19,73,5.6,Helge Larsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-19,48.5,1.4,Jakob Larsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-19,65,3.4,Peter Nyhuus,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-20,77,5.6,Nicholaj Pedersen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-21,65,3.4,Helge Larsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-21,63,2.8,Holger Riis-Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-21,57,2.3,Niels Sloth Rasmussen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-21,67,3.5,Per Simonsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-22,89,8.9,Jacob Hansen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-22,78,6.45,Per Nørgaard,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-22,52,1.5,Steffen Svendsen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-23,48,1.3,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-23,42,0.874479842290589,Edward Mullins,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-23,61,2.6,Jakob Larsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-23,52,1.65,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-24,85,7.24,Tom Johannesen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-24,46.5,1.25,Tommy M Rasmussen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-26,54,1.85858835285668,Per Dolleris Knudsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-26,50,1.4754073572822,Peter Nyhuus,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-27,78,5.6,Bruno Stamm,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-27,58,2.1,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-27,56,2,Leif Nemeth,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-28,79,6.4,Jan Rummelhoff,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-28,57,2.2,Mikkel Bertelsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-29,57,2.4,Finn Emiliussen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-08-30,80,7,Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-30,62,2.8,NA,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-08-31,50.5,1.5,Steen Hessel,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-08-31,47,1.2,Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-01,52,1.7,Fritz Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-01,62,2.7,Tom Johannesen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-02,58,1.75,Hans-Jørgen Nielsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-02,54,1.65,Jacob Lorentsen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-02,56,1.75,Jacob Lorentsen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-02,47,1.22544974444088,Lars Skov,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-03,50,1.4754073572822,Jacob Lorentsen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-03,60,2.3,Jacob Lorentsen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-03,67,3.25,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-05,50,1.4754073572822,Hans Jørgen Nielsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-05,65,3.3,Henning Voergård,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-05,76,5.5,Henrik Krog,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-05,62,2.3,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-05,55,1.5,Thomas Eriksen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-06,50,1.2,Allan Gabs,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-06,50,1.2,Allan Gabs,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-06,46,1.14,Anders Dalgaard,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-06,44,1,Bent A. Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-06,58,1.7,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-06,60,2.45,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-06,81,6.5,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-06,63,2.6,Jonas Laursen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-06,63,2.6,Jonas Laursen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-06,60,2.4,Steen Hessel,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-09-06,60,2.2,Steffen Svendsen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-06,65,2.9,Steffen Svendsen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-07,65,3.1,Jens Møller Jensen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2009-09-07,53,1.75,Jørn Greve,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-07,70,3.9,Morten Beck Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-07,46,1,Per Laursen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-08,48,1.2,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-08,65,3.3,NA,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-10,69,3.6,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-10,71,3.8,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-11,58,2.35,Casper Simonsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-11,60,2.35,Freddi Christiansen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-12,62,1.8,A. Harder,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-12,74.5,5.5,Bruno Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-12,65,3,Henrik Krog,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-12,47,1.05,Preben Frederiksen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-12,50,1.3,Rasmus Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-13,52,1.4,Anders Dalgaard,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-13,81,5.3,Asbjørn Schlosser,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-13,79,6.5,Christian Vennevold,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2009-09-13,82,6.8,Christian Vennevold,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-13,63,2.4,Helge Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-14,67,3.5,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-14,83,6.74894997278654,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-14,56,1.8,Bo Jensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-14,57,1.8,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-14,65,2.9,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-14,72,3.9,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-14,58,2.2,NA,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-15,64,2.7,Per Laursen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-16,57,1.8,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-16,67,3.7,Flemming Kristiansen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-17,75,4,Frank Bach,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-17,88,6.8,Frank Bach,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-17,80,6.7,Jørgen Skov Rasmussen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-17,76,4.65,Renè R Nielsen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-18,67,3.7,Flemming Kristiansen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-19,70,4,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-19,92,8.7,Henrik Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-19,63,2.47,Peter Bjerregaard,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-20,68,3.5,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-20,69,3.2,Hans-Rudolph Lenler-Eriksen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-20,69,3.2,Hans-Rudolph Lenler-Eriksen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-20,60,2.3,Jeppe Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-21,60,2.54950391338364,Peter Nyhuus,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-21,65,3.5,Poul Erik Petersen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-21,64,3.1,Torben Smedegaard,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-22,89,9,Lars Relund,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-22,54,1.83,P.d. Knudsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-22,70,4.04851778838236,Peter Nyhuus,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-23,89,8,Frank Bach,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-23,56,1.9,Morten Beck Nielsen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-09-24,60,2.4,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-24,85,7,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-24,55,1.36,Niels Vestermark,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-24,54,1.65,Toke Rodil,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-24,51,1.4,Tommy Frank Hoelgaard,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-24,51,1.4,Tommy Hoelgaard,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-25,71,4.22451618121784,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-25,49,1.3,Gunnar Sahl,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-25,50,1.5,Gunnar Sahl,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-25,70,4.4,Jørgen Skov Rasmussen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-25,81,6.5,Jørgen Skov Rasmussen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-25,54,1.8,Niels Sloth Rasmussen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-25,62,2.7,Steffen Svendsen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-25,69,3,Steffen Svendsen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-26,48,1.5,Bent Smedegaard,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-26,59,2.2,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-26,58,2.30295744235236,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-26,55,1.8,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-26,63,3.2,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-26,67,3.4,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-26,69,3.2,Jens Stubkjær,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-26,85,6.5,Kurt Andersen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-26,70,3,Niels-Bo Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-26,59,2,Tommy Frank Hoelgaard,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-26,59,2,Tommy Hoelgaard,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-27,84,6.8,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-27,93,9.5,Søren Jespersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-27,52,1.65,Søren Pedersen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-27,70,4.5,Søren Pedersen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-27,42,0.874479842290589,Steffen Svendsen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-28,72,4.40554276232693,Jens S. Beier,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-28,61,2.4,Tommy Frank Hoelgaard,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-28,61,2.6,Tommy Hoelgaard,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-28,75,4,Torben Smedegaard,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-29,58,1.9,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-29,73,4.3,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-09-29,70,3.5,Poul  Kærgaard Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-09-30,63,3.9,Jens Foldager,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-01,60,2.3,Bengt Askvid,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-01,70,3.6,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-01,44,1,Tommy Frank Hoelgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-01,44,1,Tommy Hoelgaard,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-02,59,2,Kurt Andersen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-03,55,2,Bent A. Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-04,66,3.6,Christian Morell,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-04,55,2.2,Mikkel Bertelsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-04,63,2.8,Thomas Eriksen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-05,57,2.5,Bent A. Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-05,63,3,Bent A. Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-05,52,1.5,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-05,67,3.1,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-05,69,3.6,Bo Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-05,75,4.5,Gunnar Sahl,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-05,60,2.54950391338364,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-05,71,3.5,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-05,70,3.07,Lars Jørgensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-05,62,3.1,Niels I. Poulsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-05,77,5.3,Renè R Nielsen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-05,64,3.4,Tommy Frank Hoelgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-05,64,3.4,Tommy Hoelgaard,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-06,59,2.25,Hans-Jürgen Bruhn,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-06,64,3,Henrik Hviid,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-08,53,1.5,Gorm Pallesen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-08,71.5,3.85,Hans-Jürgen Bruhn,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-08,41,0.813492403769972,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-08,58,2.7,Klaus Johannsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-08,85,7.1,Per Laursen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-09,78,5,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-10,53,1.7,Christian Morell,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-11,53,1.9,Erland Sørensen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-11,67,3.6,Peter Rasmussen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-10-12,60,2.2,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-15,48,1.2,Emil Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-15,60,2.54950391338364,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-15,79,6.3,Peter Sørensen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2009-10-16,61,2.2,Frank Bach,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-17,57,2.2,Flemming Sparvath,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-17,88,8.5,Niels Sloth Rasmussen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-17,66,3.5,Tommy Frank Hoelgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-17,66,3.5,Tommy Hoelgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-20,57,2.5,Mikael Rønsholdt,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-21,63,2.7,Karsten Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-22,75,4.97949983082743,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-22,60,2.5,Ejvind Andersen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-22,59,2.42414150105009,Keld Mikkelsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-22,63,3.1,Steen Hessel,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-24,34,NA,Esben Ludvigsen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-24,60,2,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-24,52,1.65963262154189,John Toft,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-25,48,1.1,Frank Bach,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-25,51,1.3,Frank Bach,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-25,87,7.6,Jakob Larsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-25,80,6,Palle Raun,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-26,62,2.3,Esben Ludvigsen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-27,64,2.9,Bo Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-27,74,4.75,Harald Moesgård,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-27,48,0.98,Jens Møller Jensen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-10-27,61,2.6,Tommy Frank Hoelgaard,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-27,61,2.55,Tommy Hoelgaard,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-28,61,3.2,Bent A. Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-28,73,4.5916683512628,Bo Fomsgaard,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2009-10-28,66,3.6,Poul Erik Petersen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-29,84,6.74,Henning Blom Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-30,84,7,Anders Søndergaard Larsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-30,59,2.8,Gunnar Sahl,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-30,55,1.96376719254261,Henning Blom Nielsen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-10-30,61,2.3,Jürgen Steinborn,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-10-30,63,2.8,Jürgen Steinborn,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2009-10-31,64,2.92,Henning Blom Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2009-10-31,67,3.3,Jan Wolf,Nedre,Spin,FALSE,NA,TRUE,NA,NA

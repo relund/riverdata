@@ -1,758 +1,758 @@
-Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex
-2018-03-01,51,1.4,Hans Henrik Jørgensen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-03-01,42,NA,Hans Henrik Jørgensen,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-03-01,74,NA,Hans Henrik Jørgensen,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-03-01,59,2,Kim Allan Andersen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-03-01,60,NA,Michael Bækdal,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-03-04,60,NA,Lars Relund,Øvre,Flue,FALSE,NA,FALSE,NA
-2018-03-04,87,NA,Lars Relund,Øvre,Flue,FALSE,NA,FALSE,NA
-2018-03-06,53,NA,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-03-09,60,NA,Hans-Jørn Christensen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-03-11,64,NA,Per Gylling,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-03-13,74,3.55,Steen Lauridsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-03-14,65,NA,Bo Eskesen,Mellem,Orm,FALSE,NA,FALSE,NA
-2018-03-18,53,NA,Christian Petersen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-03-23,66,NA,Peder Riisgaard,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-03-24,59,NA,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-03-24,97.5,NA,Lars Uhre Bruun,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-03-24,76,4.7,Stig Lindholm,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-03-24,59,2,Torben Høj Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-03-25,65,NA,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-03-25,57,1.95,Jens Christensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-03-26,70,NA,Jens Hvam,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-04-01,67,3,Erik Døssing Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-04-02,56,NA,Carsten Nielsen,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-04-02,58,NA,Carsten Nielsen,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-04-06,55,NA,Stig Lindholm,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-04-07,70,NA,Henrik Olsen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-04-08,65,NA,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-04-08,72,NA,Lars Uhre Bruun,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-04-12,40,NA,Peter Hønholt,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-05-07,80,6,Bo Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-05-09,76,5.1,Henrik Johasnen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-05-11,79,6.8,Henrik Johansen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-05-18,78,5.3,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-05-18,71.5,4.7,Michael Broberg,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-05-20,84,7.2,Carsten Nielsen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-05-21,75,4.8,Mette Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-05-22,83,7.55,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-05-23,73,5,Oluf R. Cramer,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-06-03,80,5.8,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-06-04,75,5.5,Benny Amstrup,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-06-04,50,NA,Lars Uldum,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-06-05,72,4.8,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-06-05,72,4.6,Torben Høj Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-06-10,65,3.3,Erik Just Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-06-12,64,3.4,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-06-12,71,4.2,Ole Rohde,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-06-12,47,1.2,Vagn Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-06-13,50,1.5,Christian Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-06-13,57,2.4,Steen Bork-Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-06-15,40,NA,Ole Dich,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-06-15,42,0.9,Steen D Hessel,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-06-16,74,4.7,Allan Lindgreen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-06-16,60,2.5,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-06-17,48,NA,Nils Munkgaard,Mellem,Spin,FALSE,NA,FALSE,NA
-2018-06-19,75,5,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-06-19,45,1.1,Bo Eskesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-06-20,42,1,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-06-21,50,1.44,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-06-21,44,0.98,Peter   Bjerregaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-06-22,42,NA,Bruno Broberg,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-06-22,84,7,Tommy Lisbjerg,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-06-23,46,1.5,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-06-23,44,NA,Jan Palmgren Nielsen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-06-23,59,2.8,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-06-23,76,5.3,Ole Würtz Knudsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-06-24,75,5.2,Bruno Broberg,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-06-25,75,5.5,Henrik Johansen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-06-26,68,4,Henrik Olsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-06-26,42,NA,Knud Tørnqvist,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-06-26,46,NA,Tom Johannesen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-06-27,45,1.3,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-06-27,69,4,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-06-28,70,4.6,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-06-29,55,NA,Henrik Johansen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-06-29,43,NA,Nils Munkgaard,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-06-30,70,3.7,Thomas Borup Svendsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-01,54,2.3,Finn Kristiansen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-01,40,0.78,Leif S. Nielsen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-01,45,1.1,Mikael Rønsholdt,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-02,63,3.2,Claus Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-02,40,NA,Ole Dich,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-07-02,63,2.9,Ole Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-03,67,4.2,Tom Johannesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-04,45,1.2,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-04,71,4.4,Heinrich,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-04,57,2.3,Ole Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-05,61,2.7,Jens Lønberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-05,75,4.3,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-05,42,0.86,Ole Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-06,63,2.71,Allan Jacobsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-06,54,2.2,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-06,68,3.8,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-06,65,3.2,Michael Broberg,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-07,78,5.4,Asbjørn Schlosser,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-07,49,1.4,Hans-Jørn Christensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-07,76,4.5,Lars Relund,Øvre,Flue,FALSE,NA,TRUE,NA
-2018-07-07,49,1.5,Niels Peder Larsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-07,55,1.8,Per Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-07,73,3.9,Philip Berthel,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-08,42,1.2,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-07-08,43,1.2,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-07-08,44,1.2,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-07-08,47,1.2,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-07-08,45,1.3,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-07-08,69,4.1,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-08,50,1.35,Jens Henry Hede Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-08,43,1.05,Kenneth Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-08,55,1.9,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-08,69,3.8,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-09,79,6.5,Allan Jacobsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-09,65,3.3,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-09,45,1.2,Helge Larsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-09,54,1.8,Knud Tørnqvist,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-09,68,4.2,Lars Nørgaard,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-09,50,1.3,Morten Agersnap,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-09,50,1.6,Morten Rasmussen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-09,48,1.3,Paw Pedersen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-09,67,3.8,Peter Nyhuus,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-09,52,1.6,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-07-09,73,5,Søren Fuglsang,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-10,62,3,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-10,46,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-07-10,66,3.5,Michael Broberg,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-07-10,71,4.25,Michael Skovgaard,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-10,54,1.97,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-11,52,1.7,Bo Østergaard,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-11,53,1.8,Eigil Amlund,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-11,68,3.7,Henrik Johansen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-11,47,1.2,Jens Lønberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-11,72,4.1,Tommy Skaalum,Øvre,Flue,FALSE,NA,TRUE,NA
-2018-07-11,52,1.6,Tove Ankersen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-12,73,4.8,Brian Størup,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-12,47,1.2,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-07-12,73,4.36,Henning Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-12,75,4.5,Karl-Ole Frandsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-12,71,4.2,Mogens Skaarup,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-12,72,4.8,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-07-12,45,1.25,Sönke Becker,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-12,79,5.6,Søren Nordmand,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-12,53,1.9,Tove Ankersen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-13,50,NA,Brian Størup,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-07-13,58,NA,Brian Størup,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-07-13,60,2.4,Johnny Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-13,47,1.2,Mikael Rønsholdt,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-14,52,1.5,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-07-14,54,1.5,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-07-14,59,2,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-07-14,53,2,Henrik Olsen,Øvre,Flue,FALSE,NA,TRUE,NA
-2018-07-14,49,1.6,Jakob B Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-14,48,1.3,Kenneth Kjeldsen Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-14,45,NA,Kenneth Kjeldsen Nielsen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-07-14,72,5.4,Lars Relund,Øvre,Flue,FALSE,NA,TRUE,NA
-2018-07-15,50,NA,Brian Størup,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-07-15,45,1.2,Daniel Andersen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-15,64,3.1,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-15,44,1.2,Henrik Bønnelykke,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-15,45,1.2,Henrik Bønnelykke,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-15,40,NA,Henrik Bønnelykke,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-07-15,76,4.9,Jan Behrmann,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-15,48,1.4,Karsten Mikaelsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-15,70,4.7,Ole T Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-15,50,NA,Per Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-07-15,64,3,Per Steen Stengaard Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-15,43,0.9,Villy,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-16,74,6.6,Brian Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-16,61,3,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-16,72,4.5,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-16,72,4.6,Ole Asmussen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-16,67,3.8,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-16,50,NA,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-07-17,58,2.3,Carsten Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-17,45,1,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-07-17,57,2.5,Lars Nørgaard,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-17,65,3.6,Leif Jensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-07-17,56,1.95,Philip Berthel,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-17,52,NA,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-07-17,52,1.7,Rasmus Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-17,63,3,Torben Smedegaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-18,52,1.9,Flemming Andersen,Øvre,Flue,FALSE,NA,TRUE,NA
-2018-07-18,56,2,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-18,40,NA,Mikael Rønsholdt,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-07-18,58,2.3,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-18,48,NA,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-07-19,51,1.5,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-19,70,3.9,Mogens Skaarup,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-19,49,NA,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-07-19,87,8.18,Stig Jensen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-07-20,50,1.6,"Henning Dreier, Sydals",Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-20,55,NA,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-07-21,58,2.3,Anne Matrie Klausen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-07-21,52,NA,Bjarne Jakobsen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-07-21,56,1.84,Flemming Lund Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-21,72,4.8,Johnny  Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-21,52,1.6,Kenneth Kjeldsen Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-21,53,1.8,Kristian S Andersen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-21,68,3.5,Kurt Sinonsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-21,56,2.1,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-21,52,NA,Poul Lauridsen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-07-22,52,1.8,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-22,54,1.6,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-22,44,1,Poul B. Oddershede,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-07-22,44,1.2,Poul Godt,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-23,45,1.2,Anne Mariie Klausen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-07-23,60,2.85,Eric Ottens,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-23,77,5.5,Poul Lauridsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-23,79,6.1,Stig Jensen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-07-24,75,5.3,Palle Laursen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-25,45,1,Daniel Andersen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-25,45,NA,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-07-26,57,2.1,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-27,60,2.4,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-27,66,3.6,Rami Azzam,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-28,66,3.6,Brian Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-28,44,1,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-29,52,1.4,Allan Nørskov Johansen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-29,50,1.6,Bo Østergaard,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-29,55,2,Jan Behrmann,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-29,59,2.7,Kurt Granat,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-07-29,62,2.5,Søren Fisker,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-29,50,1.2,Torben Smedegaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-07-29,58,2,Torben Smedegaard,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-07-29,45,NA,Torben Smedegaard,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-07-30,72.5,4.7,Bo Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-30,50,1.4,Bo Østergaard,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-30,66,3.8,Bruno Broberg,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-30,63,2.7,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-07-30,68,NA,Gary Taylor,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-07-30,57.5,2.5,Jens Peder Kristensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-07-30,58,2.3,Kenneth Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-31,42,0.8,Jens Henry Hede Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-31,54,2.4,Morten Wølck,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-31,62,3.2,Ole Asmussen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-07-31,50,1.5,Peter Hønholt,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-07-31,50,1.25,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-01,48,1.3,Jan Palmgren Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-01,55,2.3,Rasmus P. Jensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-01,59,2.1,Torben Smedegaard,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-02,43,0.9,Allan Nørskov Johansen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-02,42,NA,Bjarne Jakobsen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-08-02,50,1.5,Henrik Søndergård,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-02,42,NA,Palle Markussen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-08-02,58,2.3,Philip Marturin Knudsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-02,58,2.5,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-02,79,6.34,Stig Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-03,51,1.5,Stephen Schubert,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-04,45,1,Bo Søndergård Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-04,44,NA,Flemming Petersen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-08-04,56,2.3,Niels Peder Larsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-04,40,NA,Rasmus P. Jensen,Mellem,Spin,FALSE,NA,FALSE,NA
-2018-08-04,45,NA,Rasmus P. Jensen,Mellem,Spin,FALSE,NA,FALSE,NA
-2018-08-05,52,NA,Bent Kristensen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-08-05,56,2.1,Erik Døssing,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-05,41,0.8,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-05,55,2.5,Per Gylling,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-05,45,NA,Per Gylling,Mellem,Spin,FALSE,NA,FALSE,NA
-2018-08-06,45,1.1,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-06,50,1.4,Larsbo Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-06,65,3.49,Poul B. Oddershede,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-06,50,1.4,Steen D Hessel,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-08-07,48,1.3,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-07,51,1.7,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-07,65,3.6,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-08,58,NA,Karl-Ole Frandsen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-08-08,45,NA,Per Gylling,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-08-09,50,1.4,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-09,45,1,Hans Lauridsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-10,62,2.5,Erik Just Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-10,48.5,1.23,Gert Kristensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-10,42,0.93,Mathias Due Jensen,Øvre,Spin,FALSE,NA,TRUE,NA
-2018-08-10,53.5,1.69,Rudi Kjaerrumgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-10,47,1.2,T. Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-11,66,3.65,Allan Bo Iversen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-11,47,1.18,Brian Thomsen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-08-11,44.5,1.03,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-11,70,4.47,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-11,47,1.13,Johan Lynderup,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-11,48,1.26,Kenneth Klokker,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-11,43,0.98,Michael Schwennesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-11,54,1.55,Paw Pedersen,Øvre,Orm,FALSE,NA,TRUE,NA
-2018-08-11,57,1.72,Peder Lundsgaard,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-11,47.5,1.24,Peder Risgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-11,56,2.15,Tom Johannesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-11,51,1.47,Tommy Stick,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-11,50.5,1.4,Torben Frost,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-08-11,50.5,1.47,Troels Storm,Øvre,Spin,FALSE,NA,TRUE,NA
-2018-08-12,48,1.18,Bent Kristensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-12,54,1.51,Bent Kristensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-12,53,1.6,Brian Hovmand,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-08-12,58,2.23,Lars Relund,Øvre,Flue,FALSE,NA,TRUE,NA
-2018-08-12,52.5,1.76,Morten F. Jørgensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-12,70,4.55,Morten F. Jørgensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-12,48.5,1.32,Torben Frost,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-13,58,2,Carsten Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-13,57,1.7,Kasper Reinholdt,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-13,49,1.3,Kristian S Andersen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-08-13,48,1,Per Hollesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-13,63,3.08,Poul B. Oddershede,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-14,53,1.7,Bruno Broberg,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-14,51,1.2,Fritz Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-14,80,5,Henrik Ravn,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-14,53,1.7,Michael Broberg,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-14,44,1,Michael Seiffert,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-14,75,5.2,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-15,40,NA,Johnny Petersen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-08-16,46,1.3,Hans-Rudolph Lenler-Eriksen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-16,65,3.1,Mikael Rønsholdt,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-16,75,5.1,Ole Bernth,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-08-17,45,NA,Ars Holst,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-08-17,52,1.44,Jeppe Risum,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-17,58,2.1,Ole,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-17,57,2.52,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-18,47,NA,Frank Bach,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-08-18,49,NA,Frank Bach,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-08-18,56,1.95,Henrik Krog,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-18,55,2.2,Jan Behrmann,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-19,55,2.3,Anders Haugstrup,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-19,59,3,Claus Bertelsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-19,44,1.2,Einer Olesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-19,55,1.9,Einer Olesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-19,60,3.1,Einer Olesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-19,66,3.2,Rasmus Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-20,54,1.6,Arne Bach,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-20,47,1.4,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-20,60,2.55,Lars Petersen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-20,70,3.8,Lars Relund,Øvre,Flue,FALSE,NA,TRUE,NA
-2018-08-20,56,2,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-20,50,1.3,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-21,55,2,Jan Nors,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-21,59,2.55,Ole T Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-23,52,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-08-23,40,NA,Bent Kristensen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-08-23,56,2.06,Bent Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-23,54.5,2,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-24,56,2,Johnny  Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-24,54,1.87,Peter Bjerregaard,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-24,61,2.55,Peter Bjerregaard,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-08-24,62,NA,Rasmus P. Jensen,Mellem,Spin,FALSE,NA,FALSE,NA
-2018-08-24,56,1.9,Tom Larsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-25,75,5.7,Esben Hougaard Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-25,60.5,2.8,Georg Christensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-25,79,6.1,Jakob Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-25,65,3.3,Johnny  Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-25,60,2.6,Niels Peder Larsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-25,55,1.9,Poul B. Oddershede,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-26,53,1.7,Allan Bay,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-26,56,2,Carsten Riis,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-26,69,3.85,Carsten Riis,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-26,58,2.6,Kim Lundkvist,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-26,58,2.5,Mikael Rønsholdt,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-26,53,1.6,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-26,55.5,2,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-27,48,1.3,Bruno Broberg,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-27,72,4.6,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-27,59,2.43,Henrik Ravn,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-27,72,4,Knud Tørnqvist,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-27,55,1.9,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-27,70,4.3,Søren Fuglsang,Øvre,Spin,FALSE,NA,TRUE,NA
-2018-08-27,50,1.5,Tommy Knudsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-27,61,2.35,Vagn Riis-Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-28,50,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-08-28,63,2.8,Helge Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-28,48,1.2,Jeppe Bender Jørgensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-28,41,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-08-28,62,3,Morten Jakobsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-28,60,2.5,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-28,62,2.3,Peter Brokær,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-28,63,2.4,Peter Brokær,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-28,40,1.5,Rune Nørgaard Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-28,59,2.5,Søren Fuglsang,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-28,67,3,Søren Olsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-28,58,2,Vagn Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-28,43,NA,Vagn Nielsen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-08-29,57,2.2,Allan Bay,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-29,61,2.5,Henning Andersen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-29,63,2.7,Knud Barslund,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-29,57,2.2,Mikael Rønsholdt,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-29,60,2.7,Søren Fuglsang,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-29,50,1.4,Vagn Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-30,81,7.2,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-08-30,45,NA,Lars Relund,Øvre,Flue,FALSE,NA,FALSE,NA
-2018-08-30,57,2.1,Michael Seiffert,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-30,65,3.2,Peder Lundsgaard,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-08-30,65,NA,Peter Nyhuus,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-08-30,66,3,Vagn Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-31,61,2.8,Allan Bay,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-31,62,3,Henrik Olsen,Øvre,Flue,FALSE,NA,TRUE,NA
-2018-08-31,46,1.2,Lars Schult,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-08-31,51,1.5,Mickael Rasmussen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-08-31,53,1.6,Mogens Skaarup,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-01,65,3.1,Allan Bay,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-01,45,NA,Allan Nørskov Johansen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-09-01,48,1.2,Bent Svendsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-01,56,2,Johnny  Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-01,56,2,Noah Olesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-01,59,2.35,Ole W. Knudsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-01,60,2.5,Ole W. Knudsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-01,62,2.55,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-01,58,2.3,Tom Johannesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-01,50,1.5,Villy Mortensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-02,52,NA,Jakob B Jensen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-09-02,63,NA,Jakob B Jensen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-09-02,60,NA,Kristian S Andersen,Mellem,Spin,FALSE,NA,FALSE,NA
-2018-09-02,61,2,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-02,50,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-09-02,72,4.2,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-03,44,1,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-09-03,53,1.5,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-09-03,58,2.2,Kim Snejbjerg,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-04,50,1.5,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-09-04,62,2.8,Lars Relund,Øvre,Flue,FALSE,NA,TRUE,NA
-2018-09-05,58,2.2,Johnny Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-05,61,2.5,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-05,54,1.6,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-05,59,2.7,Peter Nyhuus,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-06,52,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-09-06,45,1.03,Finn Faarkrog,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-06,71,4,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-06,54,1.7,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-06,58,NA,Peder Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-09-06,62.5,2.8,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-07,60,2.3,Mogens Skaarup,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-08,65,NA,Finn Vestergård Jensen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-09-08,60,2,Kristian Krath,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-08,56,1.7,Morten Olsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-08,61,2.5,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-08,88,7.3,Ole Lenler-Eriksen,Øvre,Spin,FALSE,NA,TRUE,NA
-2018-09-08,78,4.9,Rasmus P. Jensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-08,47,NA,Rasmus P. Jensen,Mellem,Spin,FALSE,NA,FALSE,NA
-2018-09-08,52,NA,Rasmus P. Jensen,Øvre,Spin,FALSE,NA,FALSE,NA
-2018-09-09,56,2,Arne Bach,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-09,68,4.05,Mette Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-09,42,0.9,Tom Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-09,63,2.8,Tom Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-10,50,1.3,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-10,68,3.7,Finn Kristiansen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-09-10,65,3.1,Helge Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-10,60,NA,Henrik Olsen,Øvre,Flue,FALSE,NA,FALSE,NA
-2018-09-10,42,NA,Niels Vestermark,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-09-10,54,1.7,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-10,56,2.2,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-10,40,NA,Peter Brokær,Mellem,Spin,FALSE,NA,FALSE,NA
-2018-09-11,58,2,Emir Adzemovic,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-11,58,1.8,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-11,50,NA,Søren Nordmand,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-09-12,56,1.9,Anders Autzen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-12,56,1.7,Henrik Olsen,Øvre,Flue,FALSE,NA,TRUE,NA
-2018-09-12,51,1.5,Poul E Andersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-13,52,1.6,Kristian S Andersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-13,61,2.4,Lars Autzen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-13,63,3.2,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-13,54,NA,Rasmus P. Jensen,Mellem,Spin,FALSE,NA,FALSE,NA
-2018-09-14,60,2.5,Bruno Broberg,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-14,73,4,Erik Just Pedersen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-14,42,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-09-14,81,4.75,Poul E Hansen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-15,68,4.1,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-15,59,2,Mogens Skaarup,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-15,42,NA,Ole Møller Hansen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-09-15,51,1.6,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-15,64,3.1,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-15,62,2.55,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-16,64,1.91,Brian Vargas Møller-Iversen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-16,40,NA,Brian Vargas Møller-Iversen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-09-16,63,2.7,Bruno Broberg,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-16,58,1.7,Carsten Bregnhøj,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-16,58,2,Flemming Petersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-16,44,NA,Flemming Petersen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-09-16,50,NA,Jan Snejbjerg,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-09-16,45,NA,Ole Møller Hansen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-09-16,48,1.7,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-16,57,2.8,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-17,62,NA,Allan Nørskov Johansen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-09-17,53,1.65,Bent Winkler,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-17,41,1.2,Eigil Amlund,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-17,40,NA,Henning Voergård,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-09-17,61,2.5,Kasper Reinholdt,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-17,58,2.3,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-17,60,2.5,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-18,65,3.35,Ole T Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-18,71,4.3,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-19,60,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-09-19,42,1.2,Eigil Amlund,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-19,53,1.3,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-19,42,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-09-20,95,9.96,Bent Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-20,62,2.5,Emir Adzemovic,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-20,42,NA,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-09-20,46,NA,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-09-20,59,2.4,Ole T Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-21,64,2.9,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-21,59,2.1,Benny Amstrup,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-21,48,NA,Benny Amstrup,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-09-21,60,2.4,Brita Broberg,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-09-21,60,2.7,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-22,55,2,Finn Borum,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-22,60,2.81,Jan Snejbjerg Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-22,54,1.8,Mogens Skaarup,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-22,70,NA,Peder Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-09-22,71,4.1,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-22,52,1.4,Steen D Hessel,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-09-23,56,2.2,Arne Bach,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-23,70,3.8,Benny Larsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-23,61,2.4,Leif Lund,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-23,63,2.86,Ole,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-23,67,3.6,Stig Jensen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-09-24,59,2.1,Christian Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-24,64,3.2,Henning Voergård,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-25,47,1.1,H. Grønborg-Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-25,84,6.6,Henning Voergård,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-25,42,NA,Henning Voergård,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-09-25,55,1.7,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-25,56,1.7,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-25,63,3.1,Karl Mayer,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-25,71,4.3,Karl Mayer,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-25,81,6.5,Kenneth Kjeldsen Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-25,84,7.7,Kenneth Kjeldsen Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-25,56,1.8,Søren Olsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-26,77,5.3,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-26,60,2.1,Henning Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-26,60,NA,Jan Snejbjerg Jensen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-09-26,57,2.13,Johan Lynderup,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-26,40,NA,Johnny Pedersen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-09-26,62,2.9,Nils Munkgaard,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-26,62,2.2,Steen Lauridsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-26,65,3.32,Steen Lauridsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-27,75,4.2,Henrik Bønnelykke,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-27,62,2.5,Holger Riis-Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-27,50,NA,Jan Snejbjerg Jensen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-09-27,70,4.1,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-27,63,2.5,Peter Mejlhede,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-27,62,2.6,Philip Marturin Knudsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-27,62,2.6,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-28,59,2.5,Bent Levring,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-28,54,1.7,Emir Adzemovic,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-28,61,2.6,Finn Gandrup,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-28,51,1.4,Johnny Pedersen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-09-28,60,2.2,Kim Petersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-28,57,2.1,Kim Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-28,60,2.5,Kim Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-28,70,4.2,Kim Thygesen,Øvre,Flue,FALSE,NA,TRUE,NA
-2018-09-28,54,1.8,Poul E Andersen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-09-28,63,2.85,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-29,50,1.55,Eric  Ottens,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-09-29,48,1,Erik D. Andersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-29,57,2.5,Flemming Møller Jensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-29,75,4.72,Henning Voergård,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-29,60,2.6,Ib Kloster,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-29,75,4.92,Ivan Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-29,54,1.7,Johan Lynderup,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-29,57,2.1,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-30,60,NA,Allan Bay,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-09-30,72,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-09-30,64,2.8,Emir Adzemovic,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-30,57,2,Flemming Lund Madsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-30,74,4.9,Johan Lynderup,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-09-30,63,2.8,Lars Relund,Øvre,Flue,FALSE,NA,TRUE,NA
-2018-09-30,54,1.87,Mads Kjærgaard,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-09-30,56,2,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-30,62,2,Per Hollesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-09-30,49,1.1,Sebastian Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-01,56,1.8,Emir Adzemovic,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-01,54,1.65,Gisbert Tigges,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-01,51,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-01,90,7.65,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-01,42,NA,Peder Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-10-01,63,3.1,Poul Godt,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-01,78,5.6,Poul Godt,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-01,56,1.85,Tigges Gisbert,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-02,67,3.2,Frank Bach,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-10-02,56,1.85,Tigges Gisbert,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-02,59,2.05,Tigges Gisbert,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-03,60,2.37,Bo Eskesen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-10-03,40,NA,Henning Voergård,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-03,52,1.6,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-03,55,2,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-03,58,2,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-05,55,NA,Anders Dalgaard,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-05,46,1,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-05,54,1.7,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-05,40,NA,Jan Karnøe,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-05,61,2.48,Jan Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-10-05,75,4.6,Jens Lønberg,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-10-05,59,2.2,Jess Larsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-10-05,66,3.25,Ole Hansen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-05,41,NA,Ole Hansen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-05,73,4.4,Peter Nyhuus,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-05,58,2.3,Steen Nørskov Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-10-06,55,1.8,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-06,65,3.3,Kristian S Andersen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-10-06,74,4.5,Niels Peder Larsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-06,43,NA,Ole Hansen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-06,64,2.8,Steen Bork Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-06,69,3.8,Steen Bork Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-06,70,4.2,Stefan Bartelsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-07,65,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-10-07,48,NA,Jakob B Jensen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-10-07,55,NA,Jakob B Jensen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-10-07,50,1.3,Jens Østergaard Petersen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-07,60,2.65,Ole Hansen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-08,59,2.4,Georg Christensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-08,58,1.93,Lars Autzen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-08,64,2.8,NA,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-10-09,55,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-09,47,1.28,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-09,70,5,Per Hollesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-10,54,1.6,Bo Eskesen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-10-10,59,2.55,Ib Kloster,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-10,42,NA,Ib Kloster,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-10,52,1.4,Johan Lynderup,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-10,52,1.5,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-10,54,1.6,Philip Berthel,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-11,71,3.95,Brian Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-11,67,3.2,Eigil Amlund,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-11,81,6.55,Henning Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-11,52,1.5,Holger Riis-Jensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-11,45,NA,Ole Dich,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-11,50,1.5,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-12,61,2.75,Arne Bach,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-10-12,50,NA,Jeppe Jørgensen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-12,52,1.8,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-12,52,NA,Peter Moesgaard,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-10-13,65,3.5,Claus Bertelsen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-10-13,48,NA,Robert Pedersen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-10-14,51,1.4,Leif Lund,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-15,58,1.95,Gisbert Tigges,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-16,60,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-10-16,64,2.8,Asbjørn Schlosser,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-16,62,2.9,Finn Lajgaard,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-16,54,1.6,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-16,75,NA,Peter,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-17,55,1.65,Jens Østergaard Petersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-17,62,2.3,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-17,62,2.6,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-17,52,1.3,Philip Marturin Knudsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-17,55,NA,Poul,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-10-17,60,2.5,Thomas Andersen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-10-18,56,NA,Brian Hovmand,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-10-18,68,3.8,Flemming Kristiansen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-18,54,1.65,Henning Voergård,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-18,60,NA,Henrik Olsen,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-10-18,52,NA,Ib Kloster,Mellem,Flue,FALSE,NA,FALSE,NA
-2018-10-18,47,1.2,Ivan Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-18,83,7,Nils Munkgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-18,65,3,Poul,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-10-18,61,NA,Poul,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-10-19,65,3.2,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-19,42,NA,Gustav Setnik,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-19,45,NA,Gustav Setnik,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-19,69,3.45,Poul,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-10-19,40,NA,Poul,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-10-19,70,4,Uffe Hansen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-20,52,NA,Brian Hovmand,Mellem,Orm,FALSE,NA,FALSE,NA
-2018-10-20,51,NA,Ib Kloster,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-20,52,NA,Tom Johannesen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-21,54,1.65,Gisbert Tigges,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-21,54,1.7,Johnny  Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-21,85,NA,Johnny  Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-21,66,3,Kristian Rasmussen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-21,45,NA,Ole Hansen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-21,55,1.85,Otto Andersen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-21,60,1.8,Per Hollesen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-10-22,65,3.1,Allan Bay,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-10-22,55,1.55,Brian,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-22,45,NA,Helge Kristensen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-23,69,3.5,John Simonsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-23,80,5,Kurt Juel,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-23,47,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-24,64,2.7,Asbjørn Schlosser,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-24,66,3.25,Bent Winkler,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-10-24,71,4.1,Henrik Johansen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-10-24,71,4.2,Jørgen Skov,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-24,59.5,2.25,Kurt Juel,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-24,55,1.7,Michael Hansen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-24,63,2.8,Michael Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-10-24,80,6.6,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-24,42,NA,Poul Godt,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-10-24,55,1.6,Søren Chr Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-10-25,64,2.7,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-25,55,1.71,Hans J. Jensen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-10-25,59,2.1,Nils Munkgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-25,62,2.6,Nils Munkgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-25,60,2.3,Noah Olesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-25,60,2.16,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-25,68,3.6,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-26,66,3.2,Anders Børresen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-26,40,NA,Bent Kristensen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-10-26,47,1.1,Bent Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-26,58,2.5,Bent Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-26,63,3.1,Bent Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-26,57,1.8,Carsten Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-26,79,5.1,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-26,47,NA,Henning Voergård,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-26,52,NA,Henning Voergård,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-26,61,2,Marius Josefsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-26,41,NA,Marius Josefsen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-26,42,0.9,Martin Fuglsang-Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-26,62,2.5,Mogens Skaarup,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-10-26,61,2.5,Morten Olsen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-10-26,58,2.2,Ole Jakobsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-26,55,1.7,Patrick Boel,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-26,58,1.85,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-27,65,2.8,Arne Gjørret,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-27,76,5.4,Carl Baes,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-27,56,2,Finn Lajgaard,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-27,60,2.3,Georg Christensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-27,55,1.75,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-27,67,3.13,Jan Wolf,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-27,69,3.15,Jan Wolf,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-28,72,4,Carsten Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-28,45,NA,Christian Petersen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-28,62,NA,Jørn N. Kristensen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-28,67,3.2,Michael Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-10-28,50,1.45,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-28,53,1.78,Per Hollesen,Mellem,Spin,FALSE,NA,TRUE,NA
-2018-10-28,55,NA,Svend Thomsen,Øvre,Orm,FALSE,NA,FALSE,NA
-2018-10-28,74,4.6,Tommy Knudsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-29,53,1.58,Ivan Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-29,61.5,2.62,Ivan Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-29,73,4.56,Ivan Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-29,41,0.7,Jørgen Carlsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-29,59,2,Jørn N. Kristensen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-29,53,1.35,Lars Autzen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-29,43,1,Leif S. Nielsen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-10-30,55,1.9,Arne Østergård,Øvre,Spin,FALSE,NA,TRUE,NA
-2018-10-30,45,NA,Bent Kristensen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-10-30,60,2.2,Bo Østergaard,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-10-30,66,3.3,Finn Kristiansen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-10-30,69,NA,Finn Kristiansen,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-10-30,70,NA,Finn Kristiansen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-10-30,49,NA,Helge Jakobsen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-10-30,53,1.7,Henning Larsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-30,42,NA,Henning Larsen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-10-30,45,NA,Henning Larsen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-10-30,74,4.5,Jim Thaysen,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-10-30,46,NA,Marius Josefsen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-30,40,NA,Paul Bæk,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-10-30,48,1,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-30,64,3.3,Per Steen Stengaard Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-30,59,NA,Søren Chr Olesen,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-10-30,43,NA,Uffe Hansen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-30,68,NA,Uffe Hansen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-30,57,1.85,Vagn Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-31,59,2.6,Bent Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-31,64,NA,Bent Nielsen,Nedre,Spin,FALSE,NA,FALSE,NA
-2018-10-31,63,2.55,Frank Andersen,Mellem,Orm,FALSE,NA,TRUE,NA
-2018-10-31,65,NA,Henrik Johansen,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-10-31,55,NA,Jakob Larsen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-31,43,0.8,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-31,61,3,Johnny  Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA
-2018-10-31,60,2.4,Noah Olesen,Nedre,Orm,FALSE,NA,TRUE,NA
-2018-10-31,54,1.63,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-31,58,2.3,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-31,60,1.9,Per Brøndum,Mellem,Flue,FALSE,NA,TRUE,NA
-2018-10-31,66,3.5,Per Steen Stengaard Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA
-2018-10-31,45,NA,Søren Chr Olesen,Nedre,Orm,FALSE,NA,FALSE,NA
-2018-10-31,76,NA,Uffe Hansen,Nedre,Flue,FALSE,NA,FALSE,NA
-2018-10-31,53,1.68,Wilfred Hansen,Nedre,Flue,FALSE,NA,TRUE,NA
+Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
+2018-03-01,51,1.4,Hans Henrik Jørgensen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-03-01,42,NA,Hans Henrik Jørgensen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-03-01,74,NA,Hans Henrik Jørgensen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-03-01,59,2,Kim Allan Andersen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-03-01,60,NA,Michael Bækdal,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-03-04,60,NA,Lars Relund,Øvre,Flue,FALSE,NA,FALSE,NA,NA
+2018-03-04,87,NA,Lars Relund,Øvre,Flue,FALSE,NA,FALSE,NA,NA
+2018-03-06,53,NA,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-03-09,60,NA,Hans-Jørn Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-03-11,64,NA,Per Gylling,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-03-13,74,3.55,Steen Lauridsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-03-14,65,NA,Bo Eskesen,Mellem,Orm,FALSE,NA,FALSE,NA,NA
+2018-03-18,53,NA,Christian Petersen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-03-23,66,NA,Peder Riisgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-03-24,59,NA,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-03-24,97.5,NA,Lars Uhre Bruun,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-03-24,76,4.7,Stig Lindholm,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-03-24,59,2,Torben Høj Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-03-25,65,NA,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-03-25,57,1.95,Jens Christensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-03-26,70,NA,Jens Hvam,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-04-01,67,3,Erik Døssing Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-04-02,56,NA,Carsten Nielsen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-04-02,58,NA,Carsten Nielsen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-04-06,55,NA,Stig Lindholm,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-04-07,70,NA,Henrik Olsen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-04-08,65,NA,Jann Kønig,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-04-08,72,NA,Lars Uhre Bruun,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-04-12,40,NA,Peter Hønholt,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-05-07,80,6,Bo Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-05-09,76,5.1,Henrik Johasnen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-05-11,79,6.8,Henrik Johansen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-05-18,78,5.3,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-05-18,71.5,4.7,Michael Broberg,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-05-20,84,7.2,Carsten Nielsen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-05-21,75,4.8,Mette Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-05-22,83,7.55,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-05-23,73,5,Oluf R. Cramer,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-06-03,80,5.8,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-06-04,75,5.5,Benny Amstrup,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-06-04,50,NA,Lars Uldum,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-06-05,72,4.8,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-06-05,72,4.6,Torben Høj Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-06-10,65,3.3,Erik Just Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-06-12,64,3.4,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-06-12,71,4.2,Ole Rohde,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-06-12,47,1.2,Vagn Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-06-13,50,1.5,Christian Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-06-13,57,2.4,Steen Bork-Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-06-15,40,NA,Ole Dich,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-06-15,42,0.9,Steen D Hessel,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-06-16,74,4.7,Allan Lindgreen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-06-16,60,2.5,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-06-17,48,NA,Nils Munkgaard,Mellem,Spin,FALSE,NA,FALSE,NA,NA
+2018-06-19,75,5,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-06-19,45,1.1,Bo Eskesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-06-20,42,1,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-06-21,50,1.44,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-06-21,44,0.98,Peter   Bjerregaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-06-22,42,NA,Bruno Broberg,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-06-22,84,7,Tommy Lisbjerg,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-06-23,46,1.5,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-06-23,44,NA,Jan Palmgren Nielsen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-06-23,59,2.8,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-06-23,76,5.3,Ole Würtz Knudsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-06-24,75,5.2,Bruno Broberg,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-06-25,75,5.5,Henrik Johansen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-06-26,68,4,Henrik Olsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-06-26,42,NA,Knud Tørnqvist,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-06-26,46,NA,Tom Johannesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-06-27,45,1.3,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-06-27,69,4,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-06-28,70,4.6,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-06-29,55,NA,Henrik Johansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-06-29,43,NA,Nils Munkgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-06-30,70,3.7,Thomas Borup Svendsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-01,54,2.3,Finn Kristiansen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-01,40,0.78,Leif S. Nielsen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-01,45,1.1,Mikael Rønsholdt,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-02,63,3.2,Claus Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-02,40,NA,Ole Dich,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-07-02,63,2.9,Ole Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-03,67,4.2,Tom Johannesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-04,45,1.2,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-04,71,4.4,Heinrich,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-04,57,2.3,Ole Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-05,61,2.7,Jens Lønberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-05,75,4.3,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-05,42,0.86,Ole Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-06,63,2.71,Allan Jacobsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-06,54,2.2,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-06,68,3.8,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-06,65,3.2,Michael Broberg,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-07,78,5.4,Asbjørn Schlosser,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-07,49,1.4,Hans-Jørn Christensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-07,76,4.5,Lars Relund,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-07,49,1.5,Niels Peder Larsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-07,55,1.8,Per Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-07,73,3.9,Philip Berthel,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-08,42,1.2,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-08,43,1.2,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-08,44,1.2,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-08,47,1.2,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-08,45,1.3,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-08,69,4.1,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-08,50,1.35,Jens Henry Hede Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-08,43,1.05,Kenneth Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-08,55,1.9,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-08,69,3.8,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-09,79,6.5,Allan Jacobsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-09,65,3.3,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-09,45,1.2,Helge Larsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-09,54,1.8,Knud Tørnqvist,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-09,68,4.2,Lars Nørgaard,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-09,50,1.3,Morten Agersnap,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-09,50,1.6,Morten Rasmussen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-09,48,1.3,Paw Pedersen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-09,67,3.8,Peter Nyhuus,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-09,52,1.6,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-09,73,5,Søren Fuglsang,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-10,62,3,Helge Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-10,46,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-07-10,66,3.5,Michael Broberg,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-10,71,4.25,Michael Skovgaard,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-10,54,1.97,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-11,52,1.7,Bo Østergaard,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-11,53,1.8,Eigil Amlund,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-11,68,3.7,Henrik Johansen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-11,47,1.2,Jens Lønberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-11,72,4.1,Tommy Skaalum,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-11,52,1.6,Tove Ankersen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-12,73,4.8,Brian Størup,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-12,47,1.2,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-12,73,4.36,Henning Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-12,75,4.5,Karl-Ole Frandsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-12,71,4.2,Mogens Skaarup,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-12,72,4.8,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-12,45,1.25,Sönke Becker,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-12,79,5.6,Søren Nordmand,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-12,53,1.9,Tove Ankersen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-13,50,NA,Brian Størup,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-07-13,58,NA,Brian Størup,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-07-13,60,2.4,Johnny Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-13,47,1.2,Mikael Rønsholdt,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-14,52,1.5,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-14,54,1.5,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-14,59,2,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-14,53,2,Henrik Olsen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-14,49,1.6,Jakob B Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-14,48,1.3,Kenneth Kjeldsen Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-14,45,NA,Kenneth Kjeldsen Nielsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-07-14,72,5.4,Lars Relund,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-15,50,NA,Brian Størup,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-07-15,45,1.2,Daniel Andersen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-15,64,3.1,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-15,44,1.2,Henrik Bønnelykke,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-15,45,1.2,Henrik Bønnelykke,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-15,40,NA,Henrik Bønnelykke,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-07-15,76,4.9,Jan Behrmann,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-15,48,1.4,Karsten Mikaelsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-15,70,4.7,Ole T Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-15,50,NA,Per Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-07-15,64,3,Per Steen Stengaard Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-15,43,0.9,Villy,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-16,74,6.6,Brian Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-16,61,3,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-16,72,4.5,Heinrich Frølund,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-16,72,4.6,Ole Asmussen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-16,67,3.8,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-16,50,NA,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-07-17,58,2.3,Carsten Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-17,45,1,Flemming Olesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-17,57,2.5,Lars Nørgaard,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-17,65,3.6,Leif Jensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-17,56,1.95,Philip Berthel,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-17,52,NA,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-07-17,52,1.7,Rasmus Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-17,63,3,Torben Smedegaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-18,52,1.9,Flemming Andersen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-18,56,2,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-18,40,NA,Mikael Rønsholdt,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-07-18,58,2.3,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-18,48,NA,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-07-19,51,1.5,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-19,70,3.9,Mogens Skaarup,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-19,49,NA,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-07-19,87,8.18,Stig Jensen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-20,50,1.6,"Henning Dreier, Sydals",Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-20,55,NA,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-07-21,58,2.3,Anne Matrie Klausen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-21,52,NA,Bjarne Jakobsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-07-21,56,1.84,Flemming Lund Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-21,72,4.8,Johnny  Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-21,52,1.6,Kenneth Kjeldsen Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-21,53,1.8,Kristian S Andersen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-21,68,3.5,Kurt Sinonsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-21,56,2.1,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-21,52,NA,Poul Lauridsen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-07-22,52,1.8,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-22,54,1.6,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-22,44,1,Poul B. Oddershede,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-22,44,1.2,Poul Godt,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-23,45,1.2,Anne Mariie Klausen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-23,60,2.85,Eric Ottens,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-23,77,5.5,Poul Lauridsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-23,79,6.1,Stig Jensen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-24,75,5.3,Palle Laursen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-25,45,1,Daniel Andersen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-25,45,NA,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-07-26,57,2.1,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-27,60,2.4,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-27,66,3.6,Rami Azzam,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-28,66,3.6,Brian Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-28,44,1,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-29,52,1.4,Allan Nørskov Johansen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-29,50,1.6,Bo Østergaard,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-29,55,2,Jan Behrmann,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-29,59,2.7,Kurt Granat,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-29,62,2.5,Søren Fisker,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-29,50,1.2,Torben Smedegaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-29,58,2,Torben Smedegaard,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-29,45,NA,Torben Smedegaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-07-30,72.5,4.7,Bo Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-30,50,1.4,Bo Østergaard,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-30,66,3.8,Bruno Broberg,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-30,63,2.7,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-07-30,68,NA,Gary Taylor,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-07-30,57.5,2.5,Jens Peder Kristensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-07-30,58,2.3,Kenneth Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-31,42,0.8,Jens Henry Hede Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-31,54,2.4,Morten Wølck,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-31,62,3.2,Ole Asmussen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-31,50,1.5,Peter Hønholt,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-07-31,50,1.25,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-01,48,1.3,Jan Palmgren Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-01,55,2.3,Rasmus P. Jensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-01,59,2.1,Torben Smedegaard,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-02,43,0.9,Allan Nørskov Johansen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-02,42,NA,Bjarne Jakobsen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-08-02,50,1.5,Henrik Søndergård,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-02,42,NA,Palle Markussen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-08-02,58,2.3,Philip Marturin Knudsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-02,58,2.5,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-02,79,6.34,Stig Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-03,51,1.5,Stephen Schubert,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-04,45,1,Bo Søndergård Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-04,44,NA,Flemming Petersen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-08-04,56,2.3,Niels Peder Larsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-04,40,NA,Rasmus P. Jensen,Mellem,Spin,FALSE,NA,FALSE,NA,NA
+2018-08-04,45,NA,Rasmus P. Jensen,Mellem,Spin,FALSE,NA,FALSE,NA,NA
+2018-08-05,52,NA,Bent Kristensen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-08-05,56,2.1,Erik Døssing,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-05,41,0.8,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-05,55,2.5,Per Gylling,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-05,45,NA,Per Gylling,Mellem,Spin,FALSE,NA,FALSE,NA,NA
+2018-08-06,45,1.1,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-06,50,1.4,Larsbo Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-06,65,3.49,Poul B. Oddershede,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-06,50,1.4,Steen D Hessel,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-08-07,48,1.3,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-07,51,1.7,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-07,65,3.6,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-08,58,NA,Karl-Ole Frandsen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-08-08,45,NA,Per Gylling,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-08-09,50,1.4,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-09,45,1,Hans Lauridsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-10,62,2.5,Erik Just Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-10,48.5,1.23,Gert Kristensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-10,42,0.93,Mathias Due Jensen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-10,53.5,1.69,Rudi Kjaerrumgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-10,47,1.2,T. Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-11,66,3.65,Allan Bo Iversen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-11,47,1.18,Brian Thomsen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-08-11,44.5,1.03,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-11,70,4.47,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-11,47,1.13,Johan Lynderup,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-11,48,1.26,Kenneth Klokker,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-11,43,0.98,Michael Schwennesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-11,54,1.55,Paw Pedersen,Øvre,Orm,FALSE,NA,TRUE,NA,NA
+2018-08-11,57,1.72,Peder Lundsgaard,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-11,47.5,1.24,Peder Risgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-11,56,2.15,Tom Johannesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-11,51,1.47,Tommy Stick,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-11,50.5,1.4,Torben Frost,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-08-11,50.5,1.47,Troels Storm,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-12,48,1.18,Bent Kristensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-12,54,1.51,Bent Kristensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-12,53,1.6,Brian Hovmand,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-08-12,58,2.23,Lars Relund,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-12,52.5,1.76,Morten F. Jørgensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-12,70,4.55,Morten F. Jørgensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-12,48.5,1.32,Torben Frost,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-13,58,2,Carsten Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-13,57,1.7,Kasper Reinholdt,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-13,49,1.3,Kristian S Andersen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-08-13,48,1,Per Hollesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-13,63,3.08,Poul B. Oddershede,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-14,53,1.7,Bruno Broberg,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-14,51,1.2,Fritz Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-14,80,5,Henrik Ravn,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-14,53,1.7,Michael Broberg,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-14,44,1,Michael Seiffert,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-14,75,5.2,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-15,40,NA,Johnny Petersen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-08-16,46,1.3,Hans-Rudolph Lenler-Eriksen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-16,65,3.1,Mikael Rønsholdt,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-16,75,5.1,Ole Bernth,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-08-17,45,NA,Ars Holst,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-08-17,52,1.44,Jeppe Risum,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-17,58,2.1,Ole,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-17,57,2.52,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-18,47,NA,Frank Bach,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-08-18,49,NA,Frank Bach,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-08-18,56,1.95,Henrik Krog,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-18,55,2.2,Jan Behrmann,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-19,55,2.3,Anders Haugstrup,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-19,59,3,Claus Bertelsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-19,44,1.2,Einer Olesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-19,55,1.9,Einer Olesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-19,60,3.1,Einer Olesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-19,66,3.2,Rasmus Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-20,54,1.6,Arne Bach,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-20,47,1.4,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-20,60,2.55,Lars Petersen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-20,70,3.8,Lars Relund,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-20,56,2,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-20,50,1.3,Sigfred Madsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-21,55,2,Jan Nors,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-21,59,2.55,Ole T Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-23,52,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-08-23,40,NA,Bent Kristensen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-08-23,56,2.06,Bent Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-23,54.5,2,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-24,56,2,Johnny  Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-24,54,1.87,Peter Bjerregaard,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-24,61,2.55,Peter Bjerregaard,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-08-24,62,NA,Rasmus P. Jensen,Mellem,Spin,FALSE,NA,FALSE,NA,NA
+2018-08-24,56,1.9,Tom Larsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-25,75,5.7,Esben Hougaard Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-25,60.5,2.8,Georg Christensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-25,79,6.1,Jakob Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-25,65,3.3,Johnny  Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-25,60,2.6,Niels Peder Larsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-25,55,1.9,Poul B. Oddershede,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-26,53,1.7,Allan Bay,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-26,56,2,Carsten Riis,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-26,69,3.85,Carsten Riis,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-26,58,2.6,Kim Lundkvist,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-26,58,2.5,Mikael Rønsholdt,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-26,53,1.6,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-26,55.5,2,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-27,48,1.3,Bruno Broberg,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-27,72,4.6,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-27,59,2.43,Henrik Ravn,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-27,72,4,Knud Tørnqvist,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-27,55,1.9,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-27,70,4.3,Søren Fuglsang,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-27,50,1.5,Tommy Knudsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-27,61,2.35,Vagn Riis-Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-28,50,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-08-28,63,2.8,Helge Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-28,48,1.2,Jeppe Bender Jørgensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-28,41,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-08-28,62,3,Morten Jakobsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-28,60,2.5,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-28,62,2.3,Peter Brokær,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-28,63,2.4,Peter Brokær,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-28,40,1.5,Rune Nørgaard Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-28,59,2.5,Søren Fuglsang,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-28,67,3,Søren Olsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-28,58,2,Vagn Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-28,43,NA,Vagn Nielsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-08-29,57,2.2,Allan Bay,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-29,61,2.5,Henning Andersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-29,63,2.7,Knud Barslund,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-29,57,2.2,Mikael Rønsholdt,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-29,60,2.7,Søren Fuglsang,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-29,50,1.4,Vagn Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-30,81,7.2,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-30,45,NA,Lars Relund,Øvre,Flue,FALSE,NA,FALSE,NA,NA
+2018-08-30,57,2.1,Michael Seiffert,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-30,65,3.2,Peder Lundsgaard,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-08-30,65,NA,Peter Nyhuus,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-08-30,66,3,Vagn Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-31,61,2.8,Allan Bay,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-31,62,3,Henrik Olsen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-31,46,1.2,Lars Schult,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-31,51,1.5,Mickael Rasmussen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-08-31,53,1.6,Mogens Skaarup,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-01,65,3.1,Allan Bay,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-01,45,NA,Allan Nørskov Johansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-01,48,1.2,Bent Svendsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-01,56,2,Johnny  Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-01,56,2,Noah Olesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-01,59,2.35,Ole W. Knudsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-01,60,2.5,Ole W. Knudsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-01,62,2.55,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-01,58,2.3,Tom Johannesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-01,50,1.5,Villy Mortensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-02,52,NA,Jakob B Jensen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-02,63,NA,Jakob B Jensen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-02,60,NA,Kristian S Andersen,Mellem,Spin,FALSE,NA,FALSE,NA,NA
+2018-09-02,61,2,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-02,50,NA,Rasmus Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-02,72,4.2,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-03,44,1,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-09-03,53,1.5,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-09-03,58,2.2,Kim Snejbjerg,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-04,50,1.5,Flemming Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-09-04,62,2.8,Lars Relund,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-05,58,2.2,Johnny Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-05,61,2.5,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-05,54,1.6,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-05,59,2.7,Peter Nyhuus,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-06,52,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-06,45,1.03,Finn Faarkrog,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-06,71,4,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-06,54,1.7,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-06,58,NA,Peder Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-09-06,62.5,2.8,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-07,60,2.3,Mogens Skaarup,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-08,65,NA,Finn Vestergård Jensen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-09-08,60,2,Kristian Krath,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-08,56,1.7,Morten Olsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-08,61,2.5,Ole Dich,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-08,88,7.3,Ole Lenler-Eriksen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-08,78,4.9,Rasmus P. Jensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-08,47,NA,Rasmus P. Jensen,Mellem,Spin,FALSE,NA,FALSE,NA,NA
+2018-09-08,52,NA,Rasmus P. Jensen,Øvre,Spin,FALSE,NA,FALSE,NA,NA
+2018-09-09,56,2,Arne Bach,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-09,68,4.05,Mette Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-09,42,0.9,Tom Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-09,63,2.8,Tom Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-10,50,1.3,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-10,68,3.7,Finn Kristiansen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-09-10,65,3.1,Helge Jakobsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-10,60,NA,Henrik Olsen,Øvre,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-10,42,NA,Niels Vestermark,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-10,54,1.7,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-10,56,2.2,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-10,40,NA,Peter Brokær,Mellem,Spin,FALSE,NA,FALSE,NA,NA
+2018-09-11,58,2,Emir Adzemovic,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-11,58,1.8,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-11,50,NA,Søren Nordmand,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-12,56,1.9,Anders Autzen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-12,56,1.7,Henrik Olsen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-12,51,1.5,Poul E Andersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-13,52,1.6,Kristian S Andersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-13,61,2.4,Lars Autzen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-13,63,3.2,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-13,54,NA,Rasmus P. Jensen,Mellem,Spin,FALSE,NA,FALSE,NA,NA
+2018-09-14,60,2.5,Bruno Broberg,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-14,73,4,Erik Just Pedersen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-14,42,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-14,81,4.75,Poul E Hansen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-15,68,4.1,Bruno Broberg,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-15,59,2,Mogens Skaarup,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-15,42,NA,Ole Møller Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-15,51,1.6,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-15,64,3.1,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-15,62,2.55,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-16,64,1.91,Brian Vargas Møller-Iversen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-16,40,NA,Brian Vargas Møller-Iversen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-09-16,63,2.7,Bruno Broberg,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-16,58,1.7,Carsten Bregnhøj,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-16,58,2,Flemming Petersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-16,44,NA,Flemming Petersen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-09-16,50,NA,Jan Snejbjerg,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-16,45,NA,Ole Møller Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-16,48,1.7,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-16,57,2.8,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-17,62,NA,Allan Nørskov Johansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-17,53,1.65,Bent Winkler,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-17,41,1.2,Eigil Amlund,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-17,40,NA,Henning Voergård,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-17,61,2.5,Kasper Reinholdt,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-17,58,2.3,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-17,60,2.5,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-18,65,3.35,Ole T Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-18,71,4.3,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-19,60,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-19,42,1.2,Eigil Amlund,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-19,53,1.3,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-19,42,NA,Knud Tørnqvist,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-09-20,95,9.96,Bent Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-20,62,2.5,Emir Adzemovic,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-20,42,NA,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-20,46,NA,Georg Christensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-20,59,2.4,Ole T Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-21,64,2.9,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-21,59,2.1,Benny Amstrup,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-21,48,NA,Benny Amstrup,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-09-21,60,2.4,Brita Broberg,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-09-21,60,2.7,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-22,55,2,Finn Borum,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-22,60,2.81,Jan Snejbjerg Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-22,54,1.8,Mogens Skaarup,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-22,70,NA,Peder Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-09-22,71,4.1,Robert Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-22,52,1.4,Steen D Hessel,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-09-23,56,2.2,Arne Bach,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-23,70,3.8,Benny Larsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-23,61,2.4,Leif Lund,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-23,63,2.86,Ole,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-23,67,3.6,Stig Jensen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-09-24,59,2.1,Christian Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-24,64,3.2,Henning Voergård,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-25,47,1.1,H. Grønborg-Pedersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-25,84,6.6,Henning Voergård,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-25,42,NA,Henning Voergård,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-25,55,1.7,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-25,56,1.7,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-25,63,3.1,Karl Mayer,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-25,71,4.3,Karl Mayer,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-25,81,6.5,Kenneth Kjeldsen Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-25,84,7.7,Kenneth Kjeldsen Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-25,56,1.8,Søren Olsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-26,77,5.3,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-26,60,2.1,Henning Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-26,60,NA,Jan Snejbjerg Jensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-26,57,2.13,Johan Lynderup,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-26,40,NA,Johnny Pedersen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-09-26,62,2.9,Nils Munkgaard,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-26,62,2.2,Steen Lauridsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-26,65,3.32,Steen Lauridsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-27,75,4.2,Henrik Bønnelykke,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-27,62,2.5,Holger Riis-Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-27,50,NA,Jan Snejbjerg Jensen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-27,70,4.1,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-27,63,2.5,Peter Mejlhede,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-27,62,2.6,Philip Marturin Knudsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-27,62,2.6,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-28,59,2.5,Bent Levring,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-28,54,1.7,Emir Adzemovic,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-28,61,2.6,Finn Gandrup,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-28,51,1.4,Johnny Pedersen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-09-28,60,2.2,Kim Petersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-28,57,2.1,Kim Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-28,60,2.5,Kim Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-28,70,4.2,Kim Thygesen,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-28,54,1.8,Poul E Andersen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-09-28,63,2.85,Sigfred Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-29,50,1.55,Eric  Ottens,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-29,48,1,Erik D. Andersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-29,57,2.5,Flemming Møller Jensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-29,75,4.72,Henning Voergård,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-29,60,2.6,Ib Kloster,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-29,75,4.92,Ivan Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-29,54,1.7,Johan Lynderup,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-29,57,2.1,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-30,60,NA,Allan Bay,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-30,72,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-09-30,64,2.8,Emir Adzemovic,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-30,57,2,Flemming Lund Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-30,74,4.9,Johan Lynderup,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-30,63,2.8,Lars Relund,Øvre,Flue,FALSE,NA,TRUE,NA,NA
+2018-09-30,54,1.87,Mads Kjærgaard,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-30,56,2,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-30,62,2,Per Hollesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-09-30,49,1.1,Sebastian Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-01,56,1.8,Emir Adzemovic,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-01,54,1.65,Gisbert Tigges,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-01,51,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-01,90,7.65,Peder Lundsgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-01,42,NA,Peder Lundsgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-10-01,63,3.1,Poul Godt,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-01,78,5.6,Poul Godt,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-01,56,1.85,Tigges Gisbert,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-02,67,3.2,Frank Bach,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-02,56,1.85,Tigges Gisbert,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-02,59,2.05,Tigges Gisbert,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-03,60,2.37,Bo Eskesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-10-03,40,NA,Henning Voergård,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-03,52,1.6,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-03,55,2,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-03,58,2,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-05,55,NA,Anders Dalgaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-05,46,1,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-05,54,1.7,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-05,40,NA,Jan Karnøe,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-05,61,2.48,Jan Nielsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-05,75,4.6,Jens Lønberg,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-05,59,2.2,Jess Larsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-05,66,3.25,Ole Hansen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-05,41,NA,Ole Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-05,73,4.4,Peter Nyhuus,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-05,58,2.3,Steen Nørskov Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-06,55,1.8,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-06,65,3.3,Kristian S Andersen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-06,74,4.5,Niels Peder Larsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-06,43,NA,Ole Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-06,64,2.8,Steen Bork Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-06,69,3.8,Steen Bork Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-06,70,4.2,Stefan Bartelsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-07,65,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-07,48,NA,Jakob B Jensen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-07,55,NA,Jakob B Jensen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-07,50,1.3,Jens Østergaard Petersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-07,60,2.65,Ole Hansen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-08,59,2.4,Georg Christensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-08,58,1.93,Lars Autzen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-08,64,2.8,NA,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-09,55,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-09,47,1.28,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-09,70,5,Per Hollesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-10,54,1.6,Bo Eskesen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-10-10,59,2.55,Ib Kloster,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-10,42,NA,Ib Kloster,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-10,52,1.4,Johan Lynderup,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-10,52,1.5,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-10,54,1.6,Philip Berthel,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-11,71,3.95,Brian Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-11,67,3.2,Eigil Amlund,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-11,81,6.55,Henning Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-11,52,1.5,Holger Riis-Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-11,45,NA,Ole Dich,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-11,50,1.5,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-12,61,2.75,Arne Bach,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-12,50,NA,Jeppe Jørgensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-12,52,1.8,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-12,52,NA,Peter Moesgaard,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-10-13,65,3.5,Claus Bertelsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-13,48,NA,Robert Pedersen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-10-14,51,1.4,Leif Lund,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-15,58,1.95,Gisbert Tigges,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-16,60,NA,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-16,64,2.8,Asbjørn Schlosser,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-16,62,2.9,Finn Lajgaard,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-16,54,1.6,Ole Eskesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-16,75,NA,Peter,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-17,55,1.65,Jens Østergaard Petersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-17,62,2.3,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-17,62,2.6,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-17,52,1.3,Philip Marturin Knudsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-17,55,NA,Poul,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-10-17,60,2.5,Thomas Andersen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-18,56,NA,Brian Hovmand,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-18,68,3.8,Flemming Kristiansen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-18,54,1.65,Henning Voergård,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-18,60,NA,Henrik Olsen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-18,52,NA,Ib Kloster,Mellem,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-18,47,1.2,Ivan Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-18,83,7,Nils Munkgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-18,65,3,Poul,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-10-18,61,NA,Poul,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-10-19,65,3.2,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-19,42,NA,Gustav Setnik,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-19,45,NA,Gustav Setnik,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-19,69,3.45,Poul,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-10-19,40,NA,Poul,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-10-19,70,4,Uffe Hansen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-20,52,NA,Brian Hovmand,Mellem,Orm,FALSE,NA,FALSE,NA,NA
+2018-10-20,51,NA,Ib Kloster,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-20,52,NA,Tom Johannesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-21,54,1.65,Gisbert Tigges,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-21,54,1.7,Johnny  Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-21,85,NA,Johnny  Jeppesen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-21,66,3,Kristian Rasmussen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-21,45,NA,Ole Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-21,55,1.85,Otto Andersen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-21,60,1.8,Per Hollesen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-22,65,3.1,Allan Bay,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-22,55,1.55,Brian,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-22,45,NA,Helge Kristensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-23,69,3.5,John Simonsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-23,80,5,Kurt Juel,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-23,47,NA,Lars Ligaard,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-24,64,2.7,Asbjørn Schlosser,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-24,66,3.25,Bent Winkler,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-24,71,4.1,Henrik Johansen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-10-24,71,4.2,Jørgen Skov,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-24,59.5,2.25,Kurt Juel,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-24,55,1.7,Michael Hansen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-24,63,2.8,Michael Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-24,80,6.6,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-24,42,NA,Poul Godt,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-10-24,55,1.6,Søren Chr Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-10-25,64,2.7,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-25,55,1.71,Hans J. Jensen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-25,59,2.1,Nils Munkgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-25,62,2.6,Nils Munkgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-25,60,2.3,Noah Olesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-25,60,2.16,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-25,68,3.6,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-26,66,3.2,Anders Børresen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-26,40,NA,Bent Kristensen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-10-26,47,1.1,Bent Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-26,58,2.5,Bent Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-26,63,3.1,Bent Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-26,57,1.8,Carsten Sørensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-26,79,5.1,Einer Olesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-26,47,NA,Henning Voergård,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-26,52,NA,Henning Voergård,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-26,61,2,Marius Josefsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-26,41,NA,Marius Josefsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-26,42,0.9,Martin Fuglsang-Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-26,62,2.5,Mogens Skaarup,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-26,61,2.5,Morten Olsen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-26,58,2.2,Ole Jakobsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-26,55,1.7,Patrick Boel,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-26,58,1.85,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-27,65,2.8,Arne Gjørret,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-27,76,5.4,Carl Baes,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-27,56,2,Finn Lajgaard,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-27,60,2.3,Georg Christensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-27,55,1.75,Jakob Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-27,67,3.13,Jan Wolf,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-27,69,3.15,Jan Wolf,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-28,72,4,Carsten Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-28,45,NA,Christian Petersen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-28,62,NA,Jørn N. Kristensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-28,67,3.2,Michael Sørensen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-28,50,1.45,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-28,53,1.78,Per Hollesen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-28,55,NA,Svend Thomsen,Øvre,Orm,FALSE,NA,FALSE,NA,NA
+2018-10-28,74,4.6,Tommy Knudsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-29,53,1.58,Ivan Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-29,61.5,2.62,Ivan Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-29,73,4.56,Ivan Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-29,41,0.7,Jørgen Carlsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-29,59,2,Jørn N. Kristensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-29,53,1.35,Lars Autzen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-29,43,1,Leif S. Nielsen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-10-30,55,1.9,Arne Østergård,Øvre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-30,45,NA,Bent Kristensen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-10-30,60,2.2,Bo Østergaard,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-30,66,3.3,Finn Kristiansen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-10-30,69,NA,Finn Kristiansen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-10-30,70,NA,Finn Kristiansen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-10-30,49,NA,Helge Jakobsen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-10-30,53,1.7,Henning Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-30,42,NA,Henning Larsen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-10-30,45,NA,Henning Larsen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-10-30,74,4.5,Jim Thaysen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-30,46,NA,Marius Josefsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-30,40,NA,Paul Bæk,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-10-30,48,1,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-30,64,3.3,Per Steen Stengaard Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-30,59,NA,Søren Chr Olesen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-10-30,43,NA,Uffe Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-30,68,NA,Uffe Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-30,57,1.85,Vagn Nielsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-31,59,2.6,Bent Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-31,64,NA,Bent Nielsen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
+2018-10-31,63,2.55,Frank Andersen,Mellem,Orm,FALSE,NA,TRUE,NA,NA
+2018-10-31,65,NA,Henrik Johansen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-10-31,55,NA,Jakob Larsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-31,43,0.8,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-31,61,3,Johnny  Jeppesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-31,60,2.4,Noah Olesen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
+2018-10-31,54,1.63,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-31,58,2.3,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-31,60,1.9,Per Brøndum,Mellem,Flue,FALSE,NA,TRUE,NA,NA
+2018-10-31,66,3.5,Per Steen Stengaard Pedersen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
+2018-10-31,45,NA,Søren Chr Olesen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
+2018-10-31,76,NA,Uffe Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
+2018-10-31,53,1.68,Wilfred Hansen,Nedre,Flue,FALSE,NA,TRUE,NA,NA

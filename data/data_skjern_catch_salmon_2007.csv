@@ -1,0 +1,400 @@
+Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
+2007-09-15,90,6.7,Morten Harboe Jonassen,Andet,Andet,NA,NA,TRUE,Hun,FALSE
+2007-09-15,91,NA,John Poulsen,Andet,Andet,NA,NA,FALSE,Han,FALSE
+2007-09-15,64,NA,John Poulsen,Andet,Andet,FALSE,NA,FALSE,Hun,FALSE
+2007-09-15,80,4,Klaus Nielsen,Mellem,Orm,TRUE,NA,TRUE,Hun,FALSE
+2007-09-15,74,3.1,Steen Svendsen,Andet,Orm,FALSE,NA,TRUE,Hun,FALSE
+2007-09-15,64,2.3,Jan Houborg,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-09-15,68,3.5,Finn Clausen,Nedre,Spin,TRUE,NA,TRUE,Han,FALSE
+2007-09-15,95,NA,Finn Nissen Holdt,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-09-15,62,2,Peter Bjerg,Vorgod Å,Orm,FALSE,NA,TRUE,Han,FALSE
+2007-09-14,56,NA,Knud Stærke,Andet,Flue,FALSE,NA,FALSE,NA,FALSE
+2007-09-14,63,1.9,Steen Hedemann,Andet,Orm,FALSE,NA,TRUE,Han,FALSE
+2007-09-14,65,NA,Finn Larsen,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-09-14,63,NA,Kim Mikkelsen,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-09-14,63,NA,S.e.øgendahl,Andet,Andet,FALSE,NA,FALSE,Han,FALSE
+2007-09-14,62,2.2,Aage Sørensen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-09-14,57,NA,Bo Klausen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-09-14,90,7.2,Olav Hansen,Vorgod Å,Spin,TRUE,NA,TRUE,Han,FALSE
+2007-09-14,65,NA,Finn Sundberg Lauridsen,Omme Å,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-09-13,77,4.2,Bente Jensen,Nedre,Orm,NA,NA,TRUE,Han,FALSE
+2007-09-13,82,4.7,Ole Larsen,Nedre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2007-09-13,82,4.6,Kristian Knudsen,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-09-13,63,NA,Jorn Kristiansen,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-09-13,75,4.5,Carsten Nørgaard,Andet,Flue,NA,NA,TRUE,Hun,FALSE
+2007-09-13,81,4.7,Mørk-Pedersen,Andet,Orm,FALSE,NA,TRUE,Han,FALSE
+2007-09-13,60,NA,Jørgen Lorenzen,Andet,Flue,NA,NA,FALSE,Han,FALSE
+2007-09-13,82,5,Christian Petersen,Andet,Spin,NA,NA,TRUE,Hun,FALSE
+2007-09-13,105,NA,Bjarne Kjær,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-09-13,81,4.9,Johs Kjøngerskov,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-09-13,89,NA,Henning Karlsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-09-12,89,5.8,Palle Larsen,Nedre,Orm,FALSE,NA,TRUE,Hun,FALSE
+2007-09-12,58,NA,Stig Schønnemann,Andet,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-09-12,88,5.7,Erik Videriksen,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-09-12,71,3.3,Rene Asmussen,Andet,Orm,NA,NA,TRUE,Han,FALSE
+2007-09-12,67,2.4,Herman Tøstesen,Nedre,Andet,FALSE,NA,TRUE,Han,FALSE
+2007-09-12,65,2.5,Ole Damgaard,Nedre,Andet,FALSE,NA,FALSE,Han,FALSE
+2007-09-12,62,2,Preben Hansen,Mellem,Spin,FALSE,NA,TRUE,NA,FALSE
+2007-09-12,68,NA,Bert Vermaas,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-09-12,63,NA,Mogens Larsen,Nedre,Orm,FALSE,NA,FALSE,Han,FALSE
+2007-09-12,71,NA,Henning Karlsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-09-12,93,7.9,Michael Christiansen,Mellem,Orm,FALSE,NA,TRUE,Hun,FALSE
+2007-09-12,58,NA,Ole Nielsen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2007-09-12,83,NA,Mogens Thomassen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2007-09-12,70,NA,Hans Hansen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2007-09-11,68,2.7,John Lind,Andet,Orm,TRUE,NA,FALSE,Han,FALSE
+2007-09-11,78,4.8,Anders S F Jensen,Nedre,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-09-11,70,2.8,Teddy.øhlenschlæger.,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2007-09-11,81,4.5,Anders Abildtrup,Nedre,Spin,FALSE,NA,TRUE,Hun,TRUE
+2007-09-11,85,5.5,Jørn Kjær Iversen,Mellem,Andet,TRUE,NA,TRUE,Hun,TRUE
+2007-09-11,93,8.1,Verner Mortensen,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-09-10,82,6.2,Michael Matussik,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-09-10,74,NA,Bert Vermaas,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-09-10,84,5.7,Bjarne Nøreng,Andet,Flue,TRUE,NA,TRUE,Han,FALSE
+2007-09-10,73,3.4,Svend Åge Pedersen,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-09-10,89,7,Søren Larsen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2007-09-09,90,6.1,Ole Christopher Rosenbek Fink,Andet,Andet,NA,NA,TRUE,Han,FALSE
+2007-09-09,NA,5.8,Bert Vermaas,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-09-09,55,NA,Henning Nielsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-09-09,60,1.7,Jesper D Pedersen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-09-09,65,NA,Thomas Torpe,Andet,Flue,FALSE,NA,FALSE,NA,FALSE
+2007-09-09,88,NA,Hans Jørgen Husted,Nedre,Spin,TRUE,NA,FALSE,Han,FALSE
+2007-09-09,61,2,Anders Larsen,Nedre,Flue,NA,NA,TRUE,Han,TRUE
+2007-09-08,66,2.9,Erik Petersen,Nedre,Spin,TRUE,NA,TRUE,Han,FALSE
+2007-09-08,85,4.7,Harry Østergaard,Andet,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-09-08,85,5.5,Jens Peder Vestergaard,Nedre,Andet,FALSE,NA,TRUE,Han,FALSE
+2007-09-08,91,NA,Per Andersen,Nedre,Flue,NA,NA,FALSE,Han,TRUE
+2007-09-08,60,3,Martin Borggreen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-09-08,57,NA,Birthe Ringsted,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-09-08,63,2.4,Svend Åge Mortensen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-09-08,77,4,Dan Maul,Nedre,Spin,NA,NA,TRUE,Hun,TRUE
+2007-09-08,66,2.9,Erik Pedersen,Nedre,Spin,NA,NA,TRUE,Han,FALSE
+2007-09-07,63,2.2,Britt Haderslev,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-09-07,80,5,Jens Herborg Olesen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-09-07,62,NA,Lars Jacobsen,Andet,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-09-07,58,NA,Bjarne Korshøj Mathiasen,Nedre,Andet,NA,NA,FALSE,Han,FALSE
+2007-09-06,120,14,Per Gylling Hansen,Vorgod Å,Spin,TRUE,NA,TRUE,Han,FALSE
+2007-09-06,81,4.7,Stig Nielsen,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-09-06,88,6.6,Verner Mortensen,Nedre,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-09-06,88,7.5,Michael Balzer,Nedre,Flue,NA,NA,TRUE,Hun,FALSE
+2007-09-05,65,3,Flemming Frandsen,Andet,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-09-05,94,7.9,Hans Hansen,Nedre,Spin,NA,NA,TRUE,Han,FALSE
+2007-09-05,64,NA,Finn Hansen,Andet,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-09-05,84,NA,Olaf Solberg,Vorgod Å,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-09-04,88,6.3,Arne Munk Jensen,Mellem,Andet,FALSE,NA,TRUE,Han,FALSE
+2007-09-04,73,5,John Madsen,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2007-09-04,79,5,Jørgen P. Jensen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-09-04,82,5.1,Finn Sundberg Lauridsen,Nedre,Flue,TRUE,NA,TRUE,Han,FALSE
+2007-09-03,65,NA,Henning Olesen,Andet,Spin,NA,NA,FALSE,Han,FALSE
+2007-09-03,63,2.1,Mogens Thomassen,Andet,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-09-03,87,6.7,Lene Gosch,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-09-03,63,NA,Bjarne Kjær,Øvre,Andet,FALSE,NA,FALSE,Han,FALSE
+2007-09-02,62,NA,Doris Pedersen,Andet,Orm,FALSE,NA,FALSE,Hun,FALSE
+2007-09-02,70,NA,Claus Olesen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-09-02,60,1.8,Uffe Lundberg,Nedre,Spin,TRUE,NA,TRUE,Han,FALSE
+2007-09-02,76,NA,Hans Jørgen Husted,Nedre,Flue,TRUE,NA,FALSE,Hun,FALSE
+2007-09-02,75,3.5,Charly Kristensen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-09-01,76,4.5,Herluf Sørensen,Andet,Spin,NA,NA,TRUE,Hun,FALSE
+2007-09-01,84,7.3,Jens Thomsen,Andet,Orm,FALSE,NA,TRUE,Hun,FALSE
+2007-09-01,83,5.2,Jan Holm,Mellem,Spin,NA,NA,TRUE,Hun,FALSE
+2007-09-01,64,NA,Svend Aage Pedersen,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-09-01,68,3,Leif Bøjgaard,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-09-01,66,2.5,Ole Segato,Andet,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-09-01,66,NA,Ib Sommer P,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-08-31,80,5,Kennet Brask,Mellem,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-08-31,84,4.5,Verner Jensen,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-31,68,NA,Svend Åge Pedersen,Andet,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-08-31,80,3.7,Erik Møller,Andet,Orm,NA,NA,TRUE,Hun,FALSE
+2007-08-31,75,3.5,Allan Nordfeldt West,Mellem,Spin,TRUE,NA,TRUE,Han,FALSE
+2007-08-30,62,NA,Kristian Kjær,Andet,Orm,NA,NA,TRUE,Han,FALSE
+2007-08-30,62,NA,Thomas Weiergang,Andet,Spin,NA,NA,TRUE,NA,FALSE
+2007-08-30,61,NA,Per Gylling Hansen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-30,92,5.3,Jan Mou,Andet,Spin,FALSE,NA,TRUE,Han,TRUE
+2007-08-30,63,NA,Lars Kilde,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-30,75,4.5,Bruno Stamm,Vorgod Å,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-08-30,62,NA,Carsten Nørgaard,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2007-08-30,89,6.6,Ole Karlskov,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-29,77,NA,Jens Meldgård,Nedre,Andet,TRUE,NA,FALSE,Hun,FALSE
+2007-08-29,60,1.9,Erik Thygesen,Andet,Spin,TRUE,NA,TRUE,Han,FALSE
+2007-08-29,60,NA,Flemming Olsen,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-29,96,NA,Henning Karlsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-08-29,80,4.6,Paw Jensen,Andet,Spin,FALSE,NA,TRUE,NA,FALSE
+2007-08-29,94,NA,Hans Jørgen Husted,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-08-29,61,1.7,Manfred Born,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-28,82,NA,Jens Meldgård,Andet,Spin,NA,NA,FALSE,Han,FALSE
+2007-08-28,86,5.3,Ralph,Andet,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-08-28,60,1.5,Harald Buur,Mellem,Orm,NA,NA,TRUE,Han,FALSE
+2007-08-28,86,5.5,Bjørn Pedersen,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-28,79,3.9,Jimmy Nielsen,Andet,Spin,NA,NA,TRUE,Han,TRUE
+2007-08-28,93,7,Birgit Petersen,Andet,Andet,NA,NA,TRUE,Han,FALSE
+2007-08-28,81,5,Jens Løntoft,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-08-28,62,NA,Niels Birkedal Thomsen,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-08-28,62,2.2,Lars Husted,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-28,60,NA,Lars Kilde,Mellem,Spin,NA,NA,FALSE,Han,FALSE
+2007-08-28,78,NA,Bo Fomsgaard,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-08-28,95,NA,Frederik Iversen,Mellem,Andet,NA,NA,FALSE,Han,FALSE
+2007-08-28,63,2.1,Thomas Torpe,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2007-08-27,60,NA,Bjarne Nielsen,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-27,80,4.8,Ole Thomsen,Mellem,Orm,FALSE,NA,TRUE,Hun,FALSE
+2007-08-27,92,NA,Thomas Borup Svendsen,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-08-27,88,NA,Peter Husted,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-27,86,5.4,Sv.e.øgendahl,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-27,80,4.6,Ib Sommer P,Andet,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-08-26,61,NA,Einar Nielsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-08-26,84,5.1,Rene Hermansen,Andet,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-08-26,84,4.9,Klaus Øgendahl,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2007-08-26,82,4.9,Niels Peter Larsen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-26,79,4.4,Kenneth Damgaard,Vorgod Å,Spin,NA,NA,TRUE,Hun,FALSE
+2007-08-26,79,4.2,Erik Just,Vorgod Å,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-26,79,3.8,Leon Madsen,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-26,78,4.6,Lars Jacobsen,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2007-08-26,58,NA,Claes Fiskbæk,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-26,70,3,Claus Olesen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-26,61,NA,Paul Jensen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-08-26,65,NA,Erling Pedersen,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-08-26,55,NA,Finn Hansen,Andet,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-08-26,80,NA,Finn Hansen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-26,57,NA,Bruno Sørensen,Nedre,Andet,FALSE,NA,FALSE,Hun,FALSE
+2007-08-26,59,NA,Kennet Damgaard Eskildsen,Nedre,Spin,TRUE,NA,FALSE,NA,FALSE
+2007-08-25,70,NA,Jan Holm,Andet,Spin,NA,NA,FALSE,Han,FALSE
+2007-08-25,76,4.7,Paul Jensen,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2007-08-25,70,3.2,Finn Hansen,Nedre,Spin,NA,NA,TRUE,Han,FALSE
+2007-08-25,82,5,Jan Christophersen,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2007-08-25,77,3.7,Finn Henriksen,Nedre,Flue,TRUE,NA,TRUE,Han,FALSE
+2007-08-25,74,3.9,Jens Meldgård,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-08-25,62,NA,Claes Fiskbæk,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-25,70,3,Claus Olesen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-25,80,NA,Jeannie Bekker,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-08-25,60,NA,Birger D. Jensen,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-08-25,64,2.5,Anders Harmensen,Nedre,Spin,TRUE,NA,FALSE,Han,FALSE
+2007-08-25,60,NA,Erik Linneberg,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2007-08-25,61,NA,Finn Hansen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-08-25,63,NA,Flemming Skovdal,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-24,77,5,John Kelly,Andet,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-08-24,65,3,Anders Hermansen,Nedre,Spin,TRUE,NA,FALSE,Han,FALSE
+2007-08-24,80,4.5,Ole Kjær Jensen,Nedre,Andet,FALSE,NA,TRUE,Hun,TRUE
+2007-08-24,62,2,Jakob Sørensen,Andet,Flue,FALSE,NA,FALSE,NA,FALSE
+2007-08-23,82,5.5,Leif Bøjgaard,Andet,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-08-23,92,7.2,Karl Nielsen,Mellem,Andet,NA,NA,TRUE,Han,FALSE
+2007-08-23,66,2.6,Henrik Hansen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-23,61,1.9,Niels Iversen,Nedre,Flue,NA,NA,TRUE,Han,FALSE
+2007-08-22,78,4.5,Ejgil Jensen,Andet,Spin,NA,NA,TRUE,Han,FALSE
+2007-08-22,62,NA,Keld Staulund,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2007-08-22,62,NA,Lars Jacobsen,Andet,Spin,NA,NA,FALSE,NA,FALSE
+2007-08-22,63,NA,Steen Hessel,Andet,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-08-21,64,2.5,Søren S. Nielsen,Andet,Orm,FALSE,NA,FALSE,Han,FALSE
+2007-08-21,83,4.7,Ingo Seebech,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-08-21,89,6.3,Keld Staulund,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-08-21,86,NA,Henning Karlsen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-08-21,85,NA,Henrik Jensen,Mellem,Flue,TRUE,NA,FALSE,Hun,FALSE
+2007-08-21,75,4.2,Bo Fomsgaard,Andet,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-08-21,78,3.9,Niels Iversen,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-08-21,61,NA,Finn Hansen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-08-20,80,NA,Henning Karlsen,Nedre,Flue,FALSE,NA,FALSE,Han,TRUE
+2007-08-20,58,NA,Ole Karlskov,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-08-20,80,5.5,Keld Lyager,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-08-19,80,NA,Claus Olesen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-08-19,68,NA,Poul Lauridsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-08-19,75,4,John Dynesen,Andet,Orm,FALSE,NA,TRUE,Hun,FALSE
+2007-08-19,63,2.5,Henning Nielsen,Øvre,Andet,FALSE,NA,TRUE,Han,FALSE
+2007-08-19,75,NA,Finn B. Hansen,Andet,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-08-19,84,5.7,Leo V Pedersen,Nedre,Andet,NA,NA,TRUE,Han,FALSE
+2007-08-19,60,NA,Klaus Øgendahl,Andet,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-08-18,77,4.7,Severin Jensen,Vorgod Å,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-18,77,NA,Jens Meldgård,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-18,83,5.2,Frederik Sørensen,Nedre,Spin,TRUE,NA,TRUE,Hun,TRUE
+2007-08-18,72,NA,Sv.e.øgendahl,Andet,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-08-18,82,5.5,Peter Bertelsen,Mellem,Orm,NA,NA,TRUE,Hun,FALSE
+2007-08-18,88,5.9,Johs Gothen,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-17,87,NA,Jens Meldgård,Nedre,Spin,NA,NA,FALSE,Han,FALSE
+2007-08-17,88,6.2,Søren Larsen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-08-17,86,6.1,Lars Kilde,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-08-17,76,NA,Flemming Skovdal,Nedre,Orm,FALSE,NA,FALSE,NA,FALSE
+2007-08-17,70,NA,Flemming Skovdal,Nedre,Orm,NA,NA,FALSE,Hun,FALSE
+2007-08-16,86,6.7,Peter Husted,Nedre,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-08-16,85,6,Jens S. Beier,Nedre,Andet,FALSE,NA,TRUE,Han,FALSE
+2007-08-16,78,NA,Finn B. Hansen,Andet,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-08-15,61,2,Niels Juel Grønbjerg,Nedre,Spin,FALSE,NA,TRUE,Hun,TRUE
+2007-08-15,63,2.1,Svend Ørbæk Jensen,Mellem,Spin,NA,NA,TRUE,Han,FALSE
+2007-08-15,62,NA,Henrik Jensen,Vorgod Å,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-08-15,87,NA,Sv.e.øgendahl,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-15,60,2,Neumann Michael,Nedre,Spin,NA,NA,TRUE,Han,FALSE
+2007-08-15,58,NA,Claes Fiskbæk,Andet,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-08-14,90,NA,Poul Lauridsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2007-08-14,85,6,Hans Jørgen Husted,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-08-14,68,NA,Svend Aage Pedersen,Andet,Andet,TRUE,NA,FALSE,NA,FALSE
+2007-08-13,80,5,Bent Husted,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-08-13,81,5.5,Svend Petersen,Nedre,Orm,FALSE,NA,TRUE,Hun,FALSE
+2007-08-13,83,6.1,Steen Sørnsen,Andet,Spin,NA,NA,TRUE,Hun,TRUE
+2007-08-13,75,NA,Sv.e.øgendahl,Andet,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-08-12,85,5.7,Knud Østergaard Hansen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-08-12,79,NA,Mogens Christiansen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2007-08-12,79,NA,Mogens Christiansen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2007-08-12,78,NA,Klaus Øgendahl,Andet,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-08-12,102,10.2,Heine Fausing,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-12,67,2.8,Anders Balle,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-11,95,NA,John Poulsen,Nedre,Flue,NA,NA,FALSE,Han,FALSE
+2007-08-11,62,NA,Jens Meldgård,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-08-11,78,4.4,Jesper Worm,Omme Å,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-08-11,74,3.8,Kristian Pedersen,Nedre,Flue,TRUE,NA,TRUE,Han,FALSE
+2007-08-11,85,NA,Klaus Øgendahl,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-08-11,78,5,Gert Ringsted,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2007-08-11,85,5.1,Ronald Patzer,Andet,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-08-10,82,NA,Jens Meldgård,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-08-10,78,4,Jan Pilgaard,Andet,Orm,FALSE,NA,TRUE,Hun,TRUE
+2007-08-10,61,2,Markus Wehlings,Andet,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-08-10,61,NA,Per Andersen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-08-10,80,NA,Jenserik Bro,Andet,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-08-10,92,NA,Jenserik Bro,Andet,Orm,FALSE,NA,FALSE,Hun,FALSE
+2007-08-09,80,NA,Lars Jacobsen,Andet,Spin,NA,NA,FALSE,Han,FALSE
+2007-08-08,62,NA,Svend Aage Pedersen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2007-08-07,87,NA,Bjarne Kjær,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-07,87,NA,Bjarne Kjær,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-07,79,NA,Jenserik Bro,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-07,80,NA,Børge Lauridsen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-08-06,80,4.8,Henning Olesen,Andet,Orm,FALSE,NA,TRUE,NA,FALSE
+2007-08-06,83,5,Jan Hartvigsen,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-08-05,74,3.8,Gert Midtgaard,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-08-04,80,NA,Klaus Øgendahl,Andet,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-08-04,84,5.5,Flemming Olsen,Mellem,Orm,FALSE,NA,TRUE,Hun,FALSE
+2007-08-04,75,3.9,Peter Bøjgaard,Nedre,Spin,TRUE,NA,TRUE,Han,FALSE
+2007-08-02,78,4.4,Carl De Clercq,Nedre,Spin,TRUE,NA,TRUE,Han,FALSE
+2007-08-02,83,5.6,Thomas Espersen,Andet,Flue,TRUE,NA,TRUE,Hun,FALSE
+2007-08-02,78,3.7,Henrik Jensen,Mellem,Flue,TRUE,NA,TRUE,Han,FALSE
+2007-08-01,88,5.5,Ulf Bach,Nedre,Orm,FALSE,NA,TRUE,Han,FALSE
+2007-08-01,81,5,Finn Hansen,Andet,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-08-01,91,NA,Jenserik Bro,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-08-01,77,5.1,Peter Overby,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2007-07-31,82,5.1,Finn Frederiksen,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-07-30,60,2,Erik Just Pedersen,Andet,Flue,FALSE,NA,FALSE,NA,FALSE
+2007-07-29,86,5.8,Henrik Christensen,Andet,Andet,NA,NA,TRUE,Han,FALSE
+2007-07-28,86,8,Henning Kerlsen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-07-28,63,NA,Jens Meldgård,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-07-28,86,5,Peter Ahlburg,Andet,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-07-26,83,6.5,Thomas Jeppesen,Nedre,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-07-25,83,4.8,Flemming Nødskouv Christensen,Nedre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2007-07-25,80,4.5,Børge Lauridsen,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2007-07-24,86,5.9,Leif Mou,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-07-23,67,NA,Henning Karlsen,Andet,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-07-23,88,5.6,Preben Skiffard,Andet,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-07-22,77,4.5,Michael Neumann,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-07-22,87,6,Heiko Hamann,Andet,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-07-22,86,6.2,Poul Lauridsen,Nedre,Flue,NA,NA,TRUE,Hun,FALSE
+2007-07-21,83,5.3,Bjarne Kjær,Nedre,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-07-21,82,4.6,Poul Bøjgaard,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-07-20,83,6.9,Kurt Rasmussen,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-07-20,84,5,Torben Jakobsen,Mellem,Spin,NA,NA,TRUE,Hun,FALSE
+2007-07-19,89,NA,Henning Karlsen,Nedre,Spin,FALSE,NA,FALSE,Han,TRUE
+2007-07-18,82,NA,John Poulsen,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2007-07-18,75,NA,Mogens Larsen,Andet,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-07-18,62,NA,Ågemartinsen,Vorgod Å,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-07-16,82,4.8,Arne Kamstrup,Nedre,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-07-11,88,NA,Klaus Øgendahl,Andet,Spin,FALSE,NA,FALSE,Han,TRUE
+2007-07-10,82,6.2,Lars Jacobsen,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-07-09,100,9.2,Claus Øgendal,Andet,Spin,NA,NA,TRUE,Han,FALSE
+2007-07-08,87,7.1,Niels Peder Larsen,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2007-07-08,75,4,Kjeld R. Nielsen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-07-07,91,7.5,Anders Kousgård,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-07-07,100,9.3,Niels Nielsen,Omme Å,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-07-03,90,7.3,Mogens Larsen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-07-03,80,4.9,Peder Langkjær,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-07-02,76,3.6,Thomas Borup Svendsen,Mellem,Spin,FALSE,NA,TRUE,Hun,TRUE
+2007-07-02,84,6.3,Kim Madsen,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-06-29,81,4.4,Steen Mortensen,Andet,Flue,NA,NA,TRUE,Hun,FALSE
+2007-06-25,102,11,Erling Bøjgaard,Andet,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-06-20,86,7.6,Finn Jensen,Mellem,Andet,NA,NA,TRUE,Hun,FALSE
+2007-06-19,76,NA,Henning Karlsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2007-06-15,74,NA,Jim Thaysen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-06-15,78,NA,Hardy Christensen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-06-13,78,4.5,Henning Lauridsen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-06-05,87,6.4,Ole Frederiksen,Nedre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2007-06-05,92,7.5,Kristian Albæk Pedersen,Omme Å,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-06-04,84,6.2,Ole Pedersen,Mellem,Spin,NA,NA,TRUE,Han,FALSE
+2007-06-03,98,8.3,Mogens Christiansen,Nedre,Spin,FALSE,NA,TRUE,Hun,TRUE
+2007-06-03,94,7.1,Mikael Vogt Glavinski,Andet,Andet,FALSE,NA,TRUE,Hun,FALSE
+2007-06-02,84,NA,Henning Kerlsen,Nedre,Flue,FALSE,NA,FALSE,Hun,TRUE
+2007-05-28,105,NA,John Poulsen,Andet,Flue,NA,NA,FALSE,Hun,FALSE
+2007-05-28,105,11.6,Torben Jensen,Andet,Flue,TRUE,NA,TRUE,Han,FALSE
+2007-05-28,92,8,Kim Henriksen,Mellem,Flue,NA,NA,TRUE,Hun,TRUE
+2007-05-26,94,8,Frederik Jensen,Nedre,Orm,FALSE,NA,TRUE,NA,FALSE
+2007-05-26,102,12.4,John Poulsen,Andet,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-05-26,90,6.2,Allan Rasmussen,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-05-26,96,6.5,Nicklas Bach Havn,Vorgod Å,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-05-26,85,6.3,Kenneth Klokker,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-05-24,92,7.9,Georghe Nan,Nedre,Flue,TRUE,NA,TRUE,Hun,FALSE
+2007-05-24,69,NA,Henning Karlsen,Andet,Flue,FALSE,NA,FALSE,Hun,FALSE
+2007-05-24,79,NA,Henning Karlsen,Andet,Flue,FALSE,NA,FALSE,Hun,TRUE
+2007-05-23,93,6.9,Poul Erik Østergaard,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-05-21,79,5.3,Lahaye Luciem,Andet,Orm,NA,NA,TRUE,Han,FALSE
+2007-05-21,84,NA,Frederik Iversen,Mellem,Andet,TRUE,NA,FALSE,Hun,FALSE
+2007-05-20,72,3.5,Hans Jessen,Nedre,Spin,TRUE,NA,TRUE,Han,FALSE
+2007-05-19,88,NA,Jens Meldgård,Andet,Spin,TRUE,NA,FALSE,Han,FALSE
+2007-05-18,85,NA,John Poulsen,Nedre,Flue,FALSE,NA,FALSE,Han,TRUE
+2007-05-17,92,7,Ole Andreasen,Omme Å,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-05-17,80,NA,Henning Karlsen,Andet,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-05-17,62,NA,Henning Karlsen,Andet,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-05-16,90,8,Bruno Sørensen,Andet,Spin,FALSE,NA,TRUE,Han,TRUE
+2007-05-16,105,NA,Birger Jensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2007-05-13,92,6.4,Stefan Meldgaard,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-05-12,93,8.2,Kim Rasmussen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-05-11,88,6.5,Benny Larsen,Andet,Spin,NA,NA,TRUE,Hun,FALSE
+2007-05-10,85,5.5,Lucas Ghekiere,Andet,Spin,NA,NA,TRUE,NA,FALSE
+2007-05-10,83,5,Jakob Sørensen,Andet,Flue,NA,NA,FALSE,NA,FALSE
+2007-05-10,99,10,Bjarne Allentoft Nielsen,Andet,Andet,FALSE,NA,TRUE,Hun,FALSE
+2007-05-09,89,8,Jenspeder Kristensen,Mellem,Spin,NA,NA,TRUE,Hun,FALSE
+2007-05-07,94,8.1,Claus Olesen.,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-05-07,90,7,Lars Møller,Andet,Flue,FALSE,NA,TRUE,NA,FALSE
+2007-05-06,104,11.5,Henrik Lodahl,Mellem,Spin,FALSE,NA,TRUE,Hun,TRUE
+2007-05-04,80,5.6,Thomas Gustafsson,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-05-03,90,7,Carsten Oddeskjær,Andet,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-05-02,85,6,Lars Kjøngerskov,Mellem,Andet,FALSE,NA,FALSE,NA,TRUE
+2007-04-29,100,9.2,Erling Bøjgaard,Andet,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-04-29,98,9.8,Lars Pedersen.,Vorgod Å,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-04-29,90,6.8,Jens-Erik Bro,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-04-27,102,NA,Andreas Michaelsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2007-04-27,82,NA,Lars Pedersen,Andet,Flue,FALSE,NA,FALSE,NA,FALSE
+2007-04-27,111,NA,Bjarne Laursen,Andet,Flue,FALSE,NA,FALSE,Hun,FALSE
+2007-04-26,85,6,Frank Mogensen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-04-25,105,11.6,Mogens Hansen,Andet,Orm,FALSE,NA,TRUE,Han,FALSE
+2007-04-25,93,7,Mathias Flodgaard Jakobsen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-04-24,91,6.7,Lars Kjøngerskov,Mellem,Spin,FALSE,NA,TRUE,Hun,TRUE
+2007-04-23,90,7.1,Andreas Michaelsen,Andet,Flue,TRUE,NA,TRUE,Han,FALSE
+2007-04-23,100,NA,Andreas Michaelsen,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
+2007-04-23,88,6.8,Per Andersen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-04-22,92,7.5,Claes Fiskbæk,Andet,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-04-22,96,9.6,Henrik Bennedsen,Andet,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-04-22,95,9,Frederik Iversen,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-04-21,92,7.3,Jens Meldgård.,Andet,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-04-21,94,7.2,Leif Bøjgaard,Øvre,Spin,TRUE,NA,TRUE,Han,FALSE
+2007-04-21,94,9,Kim Christian Larsen,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-04-21,90,7.5,John Madsen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-04-21,89,7.1,Niels Præst,Andet,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-04-21,92,7.4,Hardy Christensen,Mellem,Flue,FALSE,NA,TRUE,Han,TRUE
+2007-04-21,86,7.2,Henrik Poulsen,Andet,Spin,TRUE,NA,TRUE,Hun,FALSE
+2007-04-20,84,NA,Henning Karlsen,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2007-04-18,81,5.5,Omer De Ridder,Andet,Flue,NA,NA,TRUE,Han,TRUE
+2007-04-18,96,9,Jeppe Jørgensen,Andet,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-04-18,83,5.5,Peter Kolding,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-04-17,93,8.2,Walter Kutschka,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-04-17,80,5.5,Olaf Solberg,Nedre,Spin,NA,NA,TRUE,Hun,TRUE
+2007-04-17,112,13,Brian Christensen,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-04-15,81,5,Steen Strange Sørensen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-04-15,92,8.6,Bjarne Laursen,Andet,Flue,NA,NA,TRUE,Han,FALSE
+2007-04-15,80,NA,Lars Pedersen,Andet,Flue,FALSE,NA,FALSE,Hun,FALSE
+2007-04-14,90,7.8,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-04-13,97,10.5,Lars Mollerup,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-04-12,92,NA,Henning Karlsen,Andet,Spin,FALSE,NA,FALSE,Hun,FALSE
+2007-04-11,90,7.2,Erik Dønvig,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-04-11,95,8.5,Jim Thaysen,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2007-04-11,95,8.6,Helmut Löwenstein,Andet,Flue,FALSE,NA,TRUE,Han,TRUE
+2007-04-10,96,9.8,Steen Hessel,Nedre,Spin,FALSE,NA,TRUE,Hun,TRUE
+2007-04-05,78,NA,Jesper Andersen,Andet,Flue,FALSE,NA,FALSE,Hun,FALSE
+2007-04-04,92,8.3,Ingemann Michaelsen,Andet,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-04-04,89,7,Finn Nissen Holdt,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2007-04-02,103,9.3,Frank Schwarz,Andet,Flue,FALSE,NA,TRUE,Han,FALSE
+2007-04-01,75,3,Peder Lundsgaard,Mellem,Spin,FALSE,NA,TRUE,Hun,TRUE
+2007-04-01,98,8.5,Birger Jensen,Nedre,Orm,FALSE,NA,TRUE,Hun,FALSE
+2007-04-01,93,8,Erik Just Pedersen,Andet,Flue,FALSE,NA,TRUE,Hun,FALSE
+2007-04-01,80,NA,Kim Flindt,Andet,Flue,FALSE,NA,FALSE,NA,FALSE
+2007-04-01,75,2,Christina Rytz,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2007-04-01,54,NA,Tommy D Eskildsen,Nedre,Andet,FALSE,NA,FALSE,Han,FALSE
