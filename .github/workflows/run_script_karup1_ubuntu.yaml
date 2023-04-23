@@ -6,6 +6,7 @@ on:
       - .github/workflows/run_script_karup1_ubuntu.yaml
       - script_karup1.R
       - functions.R
+      - renv.lock
   schedule:
     - cron: '30 * * * *'  # every hour
   # branches-ignore:
