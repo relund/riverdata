@@ -42,6 +42,7 @@ stations <-
 writeTimeSeriesData(stations, prefix, prefix1 = "waterlevel", days = 15)  
 # d <- as.integer(now() - ymd_hms("2017-01-01 12:00:00"))
 # writeTimeSeriesData(stations, prefix, prefix1 = "waterlevel", days = d)  # if update from 2017
+
 ## Calc moving average 
 dat <- readDataFiles("data_skjern_waterlevel_[0-9]{4}")
 rMeans <- writeWaterMovAvg(dat, prefix)

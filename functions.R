@@ -811,14 +811,14 @@ writeCatch <- function(url, prefix, yr, species = "Havørred") {
   rows <- lapply(rows, FUN = function(x) {x[,1]})
   dat1 <-  suppressMessages(t(map_dfc(rows, ~ .x)))
   colnames(dat1) <- cols$label
-  dat1 <- as_tibble(dat1, .name_repair = "universal")
+  dat1 <- suppressMessages(as_tibble(dat1, .name_repair = "universal"))
   dateStr <- dat1$Dato %>% str_extract_all("(?<=\\().+?(?=\\))", simplify = T) %>%
     str_split(",", simplify = TRUE) %>% as_tibble(.name_repair = "minimal")
   colnames(dateStr) <- c("Year", "Month", "Day")
   dateStr <- suppressMessages(type_convert(dateStr))
   dateStr <- mutate(dateStr, Month = Month + 1)
   dateStr <- str_c(dateStr$Year, "-", str_pad(dateStr$Month, 2, "left", pad="0"), "-", str_pad(dateStr$Day, 2, "left", pad="0"))
-  dat1 <- bind_cols(Date=dateStr, dat1)
+  dat1 <- suppressMessages(bind_cols(Date=dateStr, dat1))
   if (species == "Havørred") dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Havørred"))
   if (species == "Laks") dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Laks"))
   dat2 <- dat1 %>% 
@@ -836,7 +836,7 @@ writeCatch <- function(url, prefix, yr, species = "Havørred") {
   res <- res %>% 
     group_by(Length) %>% 
     summarise(Lower = min(Lower), Upper = max(Upper))
- dat3 <- left_join(dat3, res)
+ dat3 <- left_join(dat3, res, by = join_by(Length))
   #dat3 %>% filter( !((Weight >= 0.8 * Lower & Weight <= 1.2 * Upper) | is.na(Weight) ))
  dat3 <-dat3 %>% 
     mutate(Weight = if_else(Weight >= 0.8 * Lower & Weight <= 1.2 * Upper, Weight, NA_real_, NA_real_)) %>% 
@@ -914,7 +914,7 @@ writeWeightEstimates <- function(prefix, seatrout = TRUE) {
 #' @return The data.
 getAllCatches <- function(prefix) {
   f <- dir_ls("data", regexp = str_c(prefix, "_[0-9]{4}"))
-  dat <- read_csv(f) %>% 
+  dat <- read_csv(f, col_types = "Dddcfflclcl") %>% 
     arrange(Date)
   return(dat)
 }
@@ -1165,7 +1165,7 @@ writeLockSkjern <- function(prefix) {
 #' @return The data (tibble).
 readDataFiles <- function(pattern) {
   f <- dir_ls("data", regexp = pattern)
-  dat <- read_csv(f) %>% 
+  dat <- read_csv(f, show_col_types = FALSE) %>% 
     arrange(Date)
   return(dat)
 }

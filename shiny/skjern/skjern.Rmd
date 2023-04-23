@@ -155,12 +155,12 @@ onRestored(function(state) {
 ```{r, context="setup", include=FALSE} 
 #context="data"
 prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
-# prefix <- "../../data/"
+prefix <- "../../data/"
 curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
 
 # Weight - Estimates 
-datWeightSea<- read_csv(paste0(prefix, "data_skjern_weight_seatrout.csv"))
-datWeightSal <- read_csv(paste0(prefix, "data_skjern_weight_salmon.csv"))
+datWeightSea<- read_csv(paste0(prefix, "data_skjern_weight_seatrout.csv"), col_types = "dfddd")
+datWeightSal <- read_csv(paste0(prefix, "data_skjern_weight_salmon.csv"), col_types = "dfddd")
 
 # Catch - Records 
 datCatchSal <- readCatch(paste0(prefix, "data_skjern_catch_salmon"), datWeightSal)
@@ -179,7 +179,6 @@ datWLevel <-
   read_csv(paste0(prefix, "data_skjern_waterlevel_web.csv"), 
            locale = locale(tz = "CET"), 
            col_types = "Tffdd") 
-  #dplyr::filter(str_detect(Place, "Skjern|Rind"))
 
 # Lock flow
 datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock_web.csv"), 
@@ -431,7 +430,7 @@ output$plotCatchSalMonth <- renderPlot({
 
   ggplot(data = dat, aes(x = Date)) +
     geom_bar(aes(fill = Place), width = 0.75) + 
-    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1)) + #  vjust = -0.5
+    geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) + #  vjust = -0.5
     scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(NA_Date_, date(now()+ddays(1)))) + # now()+ddays(1)
     labs(fill = "") + xlab("Dato") + ylab("Antal fangster") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
@@ -456,7 +455,7 @@ output$plotCatchSalWeek <- renderPlot({
   
   p <- ggplot(data = dat, aes(x = Week)) +
     geom_bar(aes(fill = Place)) + 
-    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1)) #  vjust = -0.5
+    geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) #  vjust = -0.5
   if (curYear == year(now())) p <- p + expand_limits(x = isoweek(now())) 
   p <- p +
     coord_cartesian(clip = 'off') +
@@ -480,7 +479,7 @@ output$plotCatchSalMonthNow <-  renderPlot({
   
   p <- ggplot(dat, aes(x = Month)) + 
     geom_bar(aes(fill = Place)) + 
-    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1)) # vjust = -.5 
+    geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) # vjust = -.5 
   # if (curYear == year(now())) p <- p + expand_limits(x = isoweek(now())) 
   p <- p +
     coord_cartesian(clip = 'off') +
@@ -692,7 +691,7 @@ output$plotCatchSeaMonth <- renderPlot({
 
   ggplot(data = dat, aes(x = Date)) +
     geom_bar(aes(fill = Place)) + 
-    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1)) +
+    geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) +
     scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(NA_Date_, date(now()+ddays(1)))) + 
     labs(fill = "") + xlab("Dato") + ylab("Antal fangster") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
@@ -717,7 +716,7 @@ output$plotCatchSeaWeek <- renderPlot({
   
   ggplot(data = dat, aes(x = Week)) +
     geom_bar(aes(fill = Place)) + 
-    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1)) +
+    geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) +
     expand_limits(x = isoweek(now())) + 
     labs(fill = "") + xlab("Uge") + ylab("Antal fangster") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
@@ -738,7 +737,7 @@ output$plotCatchSeaMonthNow <- renderPlot({
   
 ggplot(dat, aes(x = Month)) + 
      geom_bar(aes(fill = Place), stat="count") +
-     geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1)) +
+     geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) +
      #expand_limits(x = month(now(), label = T)) + 
      labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
      theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
@@ -1010,9 +1009,9 @@ output$plotCatchSalMonthlyP <- renderPlot({
   dat <- datCatchSal %>% select(Month, Place)
   
   ggplot(data = dat, aes(x = Month)) +
-    geom_bar(aes(fill = Place, y = (..count..)/sum(..count..))) + 
-    geom_text(aes(label = scales::percent(round((..count..)/sum(..count..),2)),
-                   y = (..count..)/sum(..count..)), stat= "count", vjust = -.5) +
+    geom_bar(aes(fill = Place, y = (after_stat(count))/sum(after_stat(count)))) + 
+    geom_text(aes(label = scales::percent(round((after_stat(count))/sum(after_stat(count)),2)),
+                   y = (after_stat(count))/sum(after_stat(count))), stat= "count", vjust = -.5) +
     labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
     scale_y_continuous(labels = scales::percent) + 
     guides(fill = guide_legend(ncol = 6)) + 
@@ -1031,9 +1030,9 @@ output$plotCatchSalMonthlyM <- renderPlot({
   dat <- datCatchSal %>% select(Month, Method)
   
   ggplot(data = dat, aes(x = Month)) +
-    geom_bar(aes(fill = Method, y = (..count..)/sum(..count..))) + 
-    geom_text(aes(label = scales::percent(round((..count..)/sum(..count..),2)),
-                   y = (..count..)/sum(..count..)), stat= "count", vjust = -.5) +
+    geom_bar(aes(fill = Method, y = (after_stat(count))/sum(after_stat(count)))) + 
+    geom_text(aes(label = scales::percent(round((after_stat(count))/sum(after_stat(count)),2)),
+                   y = (after_stat(count))/sum(after_stat(count))), stat= "count", vjust = -.5) +
     labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
     scale_y_continuous(labels = scales::percent) + 
     guides(fill = guide_legend(ncol = 4)) + 
@@ -1096,9 +1095,9 @@ output$plotCatchSeaMonthlyP <- renderPlot({
   dat <- datCatchSea %>% select(Month, Place)
   
   ggplot(data = dat, aes(x = Month)) +
-    geom_bar(aes(fill = Place, y = (..count..)/sum(..count..))) + 
-    geom_text(aes(label = scales::percent(round((..count..)/sum(..count..),2)),
-                   y = (..count..)/sum(..count..)), stat= "count", vjust = -.5) +
+    geom_bar(aes(fill = Place, y = (after_stat(count))/sum(after_stat(count)))) + 
+    geom_text(aes(label = scales::percent(round((after_stat(count))/sum(after_stat(count)),2)),
+                   y = (after_stat(count))/sum(after_stat(count))), stat= "count", vjust = -.5) +
     labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
     scale_y_continuous(labels = scales::percent) + 
     guides(fill = guide_legend(ncol = 6)) + 
@@ -1117,9 +1116,9 @@ output$plotCatchSeaMonthlyM <- renderPlot({
   dat <- datCatchSea %>% select(Month, Method)
   
   ggplot(data = dat, aes(x = Month)) +
-    geom_bar(aes(fill = Method, y = (..count..)/sum(..count..))) + 
-    geom_text(aes(label = scales::percent(round((..count..)/sum(..count..),2)),
-                   y = (..count..)/sum(..count..)), stat= "count", vjust = -.5) +
+    geom_bar(aes(fill = Method, y = (after_stat(count))/sum(after_stat(count)))) + 
+    geom_text(aes(label = scales::percent(round((after_stat(count))/sum(after_stat(count)),2)),
+                   y = (after_stat(count))/sum(after_stat(count))), stat= "count", vjust = -.5) +
     labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
     scale_y_continuous(labels = scales::percent) + 
     guides(fill = guide_legend(ncol = 4)) + 
@@ -1596,7 +1595,7 @@ plotlyOutput("plotLock")
 output$plotLock <- renderPlotly({
   p <- ggplot(datFlow) + 
     # geom_bar(aes(x = DateTime, y = 100*Open), stat = "identity") +
-    geom_hline(yintercept = 0, size = 0.25) + 
+    geom_hline(yintercept = 0, linewidth = 0.25) + 
     geom_line(aes(x = DateTime, y = Flow), color = "#3399ff") + #, colour = Open
     # scale_colour_gradient2(low = "red", mid = "yellow", high = "green", na.value = NA, midpoint = 1, guide = "legend") +
     # geom_point(aes(x = DateTime, y = Flow), data = dat[findPeaks(dat$Flow),]) +
@@ -1667,7 +1666,7 @@ Fangst data er fra [SÅS](https://skjernaasam.dk/catchreport/?species=salmon). D
 
 <!-- For mere info se denne [rapport](http://htmlpreview.github.io/?https://github.com/relund/skjern/blob/master/reports/skjern_weight.html). -->
 
-Vandstandsdata er fra [vandløbssiden](http://www.hydrometri.dk/hyd/). Den gennemensnitlige vandstand er estimeret som et rullende gennemsnit over 90 dage (45 dage på hver side af datoen) ved brug af tilgængelige data for alle år. Bemærk den gennemsnitlige vandstand siger nødvendigvis ikke noget om en god vandstand for fiskeriet, fx kan den gennemsnitlige vandstand i vinterhalvåret godt være høj.
+Vandstandsdata er fra [vandportalen](https://vandportalen.dk/). Den gennemensnitlige vandstand er estimeret som et rullende gennemsnit over 90 dage (45 dage på hver side af datoen) ved brug af tilgængelige data for alle år. Bemærk den gennemsnitlige vandstand siger nødvendigvis ikke noget om en god vandstand for fiskeriet, fx kan den gennemsnitlige vandstand i vinterhalvåret godt være høj.
 
 Sluse data er fra [vejrstationen i Hvide Sande](http://hyde.dk/Sflow/default_flow.asp). Flowet er negativt ved strøm ud af fjorden (udstrøm) og positiv ved indstrøm. 
 

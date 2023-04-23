@@ -352,7 +352,7 @@ output$plotCatchSeaMonth <- renderPlot({
     arrange(desc(Date))
   ggplot(data = dat, aes(x = Date)) +
     geom_bar(aes(fill = Place), width = 0.75) + 
-    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1)) +
+    geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) +
     scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(NA_Date_, date(now()+ddays(1)))) +  
     labs(fill = "") + xlab("Dato") + ylab("Antal fangster") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
@@ -377,7 +377,7 @@ output$plotCatchSeaWeek <- renderPlot({
   
   p <- ggplot(data = dat, aes(x = Week)) +
     geom_bar(aes(fill = Place)) + 
-    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1))
+    geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1))
   if (curYear == year(now())) p <- p + expand_limits(x = isoweek(now())) 
   p <- p +
     coord_cartesian(clip = 'off') +
@@ -401,7 +401,7 @@ output$plotCatchSeaMonthNow <- renderPlot({
   
   p <- ggplot(dat, aes(x = Month)) + 
     geom_bar(aes(fill = Place)) + 
-    geom_text(aes(label = ..count.., y= ..count.. ), stat= "count", position = position_dodge(width = 1))
+    geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1))
   # if (curYear == year(now())) p <- p + expand_limits(x = isoweek(now())) 
   p <- p +
     coord_cartesian(clip = 'off') +
@@ -668,9 +668,9 @@ output$plotCatchSeaMonthlyP <- renderPlot({
   dat <- datCatchSea %>% select(Month, Place)
   
   ggplot(data = dat, aes(x = Month)) +
-    geom_bar(aes(fill = Place, y = (..count..)/sum(..count..))) + 
-    geom_text(aes(label = scales::percent(round((..count..)/sum(..count..),2)),
-                   y = (..count..)/sum(..count..)), stat= "count", vjust = -.5) +
+    geom_bar(aes(fill = Place, y = (after_stat(count))/sum(after_stat(count)))) + 
+    geom_text(aes(label = scales::percent(round((after_stat(count))/sum(after_stat(count)),2)),
+                   y = (after_stat(count))/sum(after_stat(count))), stat= "count", vjust = -.5) +
     labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
     scale_y_continuous(labels = scales::percent) + 
     guides(fill = guide_legend(ncol = 6)) + 
@@ -689,9 +689,9 @@ output$plotCatchSeaMonthlyM <- renderPlot({
   dat <- datCatchSea %>% select(Month, Method)
   
   ggplot(data = dat, aes(x = Month)) +
-    geom_bar(aes(fill = Method, y = (..count..)/sum(..count..))) + 
-    geom_text(aes(label = scales::percent(round((..count..)/sum(..count..),2)),
-                   y = (..count..)/sum(..count..)), stat= "count", vjust = -.5) +
+    geom_bar(aes(fill = Method, y = (after_stat(count))/sum(after_stat(count)))) + 
+    geom_text(aes(label = scales::percent(round((after_stat(count))/sum(after_stat(count)),2)),
+                   y = (after_stat(count))/sum(after_stat(count))), stat= "count", vjust = -.5) +
     labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
     scale_y_continuous(labels = scales::percent) + 
     guides(fill = guide_legend(ncol = 4)) + 
@@ -988,7 +988,7 @@ Vægten for genudsatte fisk er [estimeret](#estimat-af-vægt) udfra tidligere fa
 
 <!-- For mere info se denne [rapport](http://htmlpreview.github.io/?https://github.com/relund/skjern/blob/master/reports/karup_weight.html). -->
 
-Vandstandsdata er fra [vandløbssiden](http://www.hydrometri.dk/hyd/). Den gennemensnitlige vandstand er estimeret som et rullende gennemsnit over 90 dage (45 dage på hver side af datoen) ved brug af tilgængelige data for alle år. Bemærk den gennemsnitlige vandstand siger nødvendigvis ikke noget om en god vandstand for fiskeriet, fx kan den gennemsnitlige vandstand i vinterhalvåret godt være høj.
+Vandstandsdata er fra [vandportalen](https://vandportalen.dk/). Den gennemensnitlige vandstand er estimeret som et rullende gennemsnit over 90 dage (45 dage på hver side af datoen) ved brug af tilgængelige data for alle år. Bemærk den gennemsnitlige vandstand siger nødvendigvis ikke noget om en god vandstand for fiskeriet, fx kan den gennemsnitlige vandstand i vinterhalvåret godt være høj.
 
 Kortet indeholder stednavne, parkering og kortoplysninger fra de forskellige foreninger ved åen. Ønsker du som forening at få tilføjet dit kort så er det nemt ([se her](https://github.com/relund/riverdata/tree/master/reports/map.md)).
 
