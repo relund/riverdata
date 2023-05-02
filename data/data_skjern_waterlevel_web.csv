@@ -1668,7 +1668,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-04-25T09:25:00Z,Fjederholt Å - A18,2023,4028.4,1.4
 2020-04-25T10:25:00Z,Fjederholt Å - A18,2023,4028.5,1.5
 2020-04-25T11:25:00Z,Fjederholt Å - A18,2023,4028.6,1.7
-2020-04-25T12:25:00Z,Fjederholt Å - A18,2023,4028.6,1.6
+2020-04-25T12:25:00Z,Fjederholt Å - A18,2023,4028.7,1.7
 2020-04-25T13:25:00Z,Fjederholt Å - A18,2023,4028.5,1.4
 2020-04-25T14:25:00Z,Fjederholt Å - A18,2023,4028.2,1.1
 2020-04-25T15:25:00Z,Fjederholt Å - A18,2023,4027.9,0.9
@@ -4196,13 +4196,13 @@ Date,Place,YGroup,Level,LevelRelative
 2020-04-23T22:25:00Z,Karstoft Å - Fiskedamme,2023,1559.7,11.2
 2020-04-23T23:25:00Z,Karstoft Å - Fiskedamme,2023,1559.9,11.4
 2020-04-24T00:25:00Z,Karstoft Å - Fiskedamme,2023,1560.1,11.8
-2020-04-24T01:25:00Z,Karstoft Å - Fiskedamme,2023,1560.3,11.9
+2020-04-24T01:25:00Z,Karstoft Å - Fiskedamme,2023,1560.3,12
 2020-04-24T02:25:00Z,Karstoft Å - Fiskedamme,2023,1560.5,12.2
-2020-04-24T03:25:00Z,Karstoft Å - Fiskedamme,2023,1560.6,12.3
-2020-04-24T04:25:00Z,Karstoft Å - Fiskedamme,2023,1560.8,12.6
-2020-04-24T05:25:00Z,Karstoft Å - Fiskedamme,2023,1561,12.7
-2020-04-24T06:25:00Z,Karstoft Å - Fiskedamme,2023,1561.2,12.9
-2020-04-24T07:25:00Z,Karstoft Å - Fiskedamme,2023,1561.6,13.3
+2020-04-24T03:25:00Z,Karstoft Å - Fiskedamme,2023,1560.7,12.4
+2020-04-24T04:25:00Z,Karstoft Å - Fiskedamme,2023,1560.9,12.6
+2020-04-24T05:25:00Z,Karstoft Å - Fiskedamme,2023,1561.1,12.8
+2020-04-24T06:25:00Z,Karstoft Å - Fiskedamme,2023,1561.3,13.1
+2020-04-24T07:25:00Z,Karstoft Å - Fiskedamme,2023,1561.6,13.4
 2020-04-24T08:25:00Z,Karstoft Å - Fiskedamme,2023,1561.9,13.6
 2020-04-24T09:25:00Z,Karstoft Å - Fiskedamme,2023,1562.4,14.1
 2020-04-24T10:25:00Z,Karstoft Å - Fiskedamme,2023,1562.9,14.6
@@ -6028,7 +6028,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-04-23T23:25:00Z,Omme Å - Sønderskov bro,2023,344.9,3.7
 2020-04-24T00:25:00Z,Omme Å - Sønderskov bro,2023,344.7,3.8
 2020-04-24T01:25:00Z,Omme Å - Sønderskov bro,2023,344.8,3.9
-2020-04-24T02:25:00Z,Omme Å - Sønderskov bro,2023,345,4.1
+2020-04-24T02:25:00Z,Omme Å - Sønderskov bro,2023,345.1,4.2
 2020-04-24T03:25:00Z,Omme Å - Sønderskov bro,2023,345.2,4.3
 2020-04-24T04:25:00Z,Omme Å - Sønderskov bro,2023,345.7,4.8
 2020-04-24T05:25:00Z,Omme Å - Sønderskov bro,2023,345.8,4.9
@@ -10616,6 +10616,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-05-02T00:22:30Z,Skjern Å - Gjaldbæk bro,2017,452.7,-7.1
 2020-05-02T01:22:30Z,Skjern Å - Gjaldbæk bro,2017,452.6,-7.2
 2020-05-02T02:22:30Z,Skjern Å - Gjaldbæk bro,2017,452.7,-7.1
+2020-05-02T03:22:30Z,Skjern Å - Gjaldbæk bro,2017,452.7,-7.1
+2020-05-02T04:22:30Z,Skjern Å - Gjaldbæk bro,2017,452.6,-7.2
+2020-05-02T05:22:30Z,Skjern Å - Gjaldbæk bro,2017,452.6,-7.2
+2020-05-02T06:22:30Z,Skjern Å - Gjaldbæk bro,2017,452.6,-7.2
 2020-04-17T00:22:30Z,Skjern Å - Gjaldbæk bro,2018,455.3,-12.4
 2020-04-17T01:22:30Z,Skjern Å - Gjaldbæk bro,2018,455.3,-12.4
 2020-04-17T02:22:30Z,Skjern Å - Gjaldbæk bro,2018,455.3,-12.4
@@ -10979,6 +10983,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-05-02T00:22:30Z,Skjern Å - Gjaldbæk bro,2018,481.6,21.8
 2020-05-02T01:22:30Z,Skjern Å - Gjaldbæk bro,2018,481.3,21.4
 2020-05-02T02:22:30Z,Skjern Å - Gjaldbæk bro,2018,481,21.2
+2020-05-02T03:22:30Z,Skjern Å - Gjaldbæk bro,2018,480.6,20.8
+2020-05-02T04:22:30Z,Skjern Å - Gjaldbæk bro,2018,480.2,20.4
+2020-05-02T05:22:30Z,Skjern Å - Gjaldbæk bro,2018,479.7,19.9
+2020-05-02T06:22:30Z,Skjern Å - Gjaldbæk bro,2018,479.3,19.4
 2020-04-17T00:22:30Z,Skjern Å - Gjaldbæk bro,2020,471.5,4.4
 2020-04-17T01:22:30Z,Skjern Å - Gjaldbæk bro,2020,471.5,4.4
 2020-04-17T02:22:30Z,Skjern Å - Gjaldbæk bro,2020,471.5,4.3
@@ -11342,6 +11350,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-05-02T00:22:30Z,Skjern Å - Gjaldbæk bro,2020,488.8,29.5
 2020-05-02T01:22:30Z,Skjern Å - Gjaldbæk bro,2020,490,30.8
 2020-05-02T02:22:30Z,Skjern Å - Gjaldbæk bro,2020,491.3,32.1
+2020-05-02T03:22:30Z,Skjern Å - Gjaldbæk bro,2020,492.6,33.4
+2020-05-02T04:22:30Z,Skjern Å - Gjaldbæk bro,2020,494,34.8
+2020-05-02T05:22:30Z,Skjern Å - Gjaldbæk bro,2020,495.3,36.1
+2020-05-02T06:22:30Z,Skjern Å - Gjaldbæk bro,2020,496.3,37.1
 2020-04-17T00:22:30Z,Skjern Å - Gjaldbæk bro,2021,453,-14.7
 2020-04-17T01:22:30Z,Skjern Å - Gjaldbæk bro,2021,453,-14.7
 2020-04-17T02:22:30Z,Skjern Å - Gjaldbæk bro,2021,452.9,-14.8
@@ -11705,6 +11717,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-05-02T00:22:30Z,Skjern Å - Gjaldbæk bro,2021,449.8,-10
 2020-05-02T01:22:30Z,Skjern Å - Gjaldbæk bro,2021,449.6,-10.2
 2020-05-02T02:22:30Z,Skjern Å - Gjaldbæk bro,2021,449.6,-10.2
+2020-05-02T03:22:30Z,Skjern Å - Gjaldbæk bro,2021,449.5,-10.3
+2020-05-02T04:22:30Z,Skjern Å - Gjaldbæk bro,2021,449.5,-10.3
+2020-05-02T05:22:30Z,Skjern Å - Gjaldbæk bro,2021,449.4,-10.4
+2020-05-02T06:22:30Z,Skjern Å - Gjaldbæk bro,2021,449.3,-10.5
 2020-04-17T00:22:30Z,Skjern Å - Gjaldbæk bro,2022,455.3,-12.4
 2020-04-17T01:22:30Z,Skjern Å - Gjaldbæk bro,2022,455.1,-12.6
 2020-04-17T02:22:30Z,Skjern Å - Gjaldbæk bro,2022,455.1,-12.6
@@ -12068,6 +12084,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-05-02T00:22:30Z,Skjern Å - Gjaldbæk bro,2022,440.1,-19.7
 2020-05-02T01:22:30Z,Skjern Å - Gjaldbæk bro,2022,440.3,-19.5
 2020-05-02T02:22:30Z,Skjern Å - Gjaldbæk bro,2022,440.4,-19.4
+2020-05-02T03:22:30Z,Skjern Å - Gjaldbæk bro,2022,440.5,-19.3
+2020-05-02T04:22:30Z,Skjern Å - Gjaldbæk bro,2022,440.6,-19.2
+2020-05-02T05:22:30Z,Skjern Å - Gjaldbæk bro,2022,440.5,-19.3
+2020-05-02T06:22:30Z,Skjern Å - Gjaldbæk bro,2022,440.5,-19.3
 2020-04-17T00:25:00Z,Skjern Å - Gjaldbæk bro,2023,485.5,17.8
 2020-04-17T01:25:00Z,Skjern Å - Gjaldbæk bro,2023,485.2,17.5
 2020-04-17T02:25:00Z,Skjern Å - Gjaldbæk bro,2023,484.8,17.1
@@ -12431,7 +12451,11 @@ Date,Place,YGroup,Level,LevelRelative
 2020-05-02T00:25:00Z,Skjern Å - Gjaldbæk bro,2023,458,-1.7
 2020-05-02T01:25:00Z,Skjern Å - Gjaldbæk bro,2023,458.2,-1.6
 2020-05-02T02:25:00Z,Skjern Å - Gjaldbæk bro,2023,458.4,-1.4
-2020-05-02T03:10:00Z,Skjern Å - Gjaldbæk bro,2023,458.5,-1.3
+2020-05-02T03:25:00Z,Skjern Å - Gjaldbæk bro,2023,458.4,-1.4
+2020-05-02T04:25:00Z,Skjern Å - Gjaldbæk bro,2023,458.4,-1.4
+2020-05-02T05:25:00Z,Skjern Å - Gjaldbæk bro,2023,458.3,-1.5
+2020-05-02T06:25:00Z,Skjern Å - Gjaldbæk bro,2023,458.3,-1.5
+2020-05-02T07:10:00Z,Skjern Å - Gjaldbæk bro,2023,458.4,-1.4
 2020-04-17T00:30:00Z,Skjern Å - Landevejsbroen,2021,184.7,-13.8
 2020-04-17T01:25:00Z,Skjern Å - Landevejsbroen,2021,184.4,-14.1
 2020-04-17T02:28:00Z,Skjern Å - Landevejsbroen,2021,184.7,-13.8
@@ -15113,15 +15137,15 @@ Date,Place,YGroup,Level,LevelRelative
 2020-04-24T08:25:00Z,Skjern Å - Sandfeldvej,2023,2777.4,-2.8
 2020-04-24T09:25:00Z,Skjern Å - Sandfeldvej,2023,2779.9,-0.3
 2020-04-24T10:25:00Z,Skjern Å - Sandfeldvej,2023,2782.2,2
-2020-04-24T11:25:00Z,Skjern Å - Sandfeldvej,2023,2784.3,4.1
-2020-04-24T12:25:00Z,Skjern Å - Sandfeldvej,2023,2785.1,5
-2020-04-24T13:25:00Z,Skjern Å - Sandfeldvej,2023,2785.7,5.4
-2020-04-24T14:25:00Z,Skjern Å - Sandfeldvej,2023,2786.2,6
-2020-04-24T15:25:00Z,Skjern Å - Sandfeldvej,2023,2786.7,6.6
-2020-04-24T16:25:00Z,Skjern Å - Sandfeldvej,2023,2787.3,7.1
-2020-04-24T17:25:00Z,Skjern Å - Sandfeldvej,2023,2787.8,7.6
-2020-04-24T18:25:00Z,Skjern Å - Sandfeldvej,2023,2788.3,8.2
-2020-04-24T19:25:00Z,Skjern Å - Sandfeldvej,2023,2788.9,8.6
+2020-04-24T11:25:00Z,Skjern Å - Sandfeldvej,2023,2784.4,4.2
+2020-04-24T12:25:00Z,Skjern Å - Sandfeldvej,2023,2785.5,5.3
+2020-04-24T13:25:00Z,Skjern Å - Sandfeldvej,2023,2786,5.8
+2020-04-24T14:25:00Z,Skjern Å - Sandfeldvej,2023,2786.5,6.3
+2020-04-24T15:25:00Z,Skjern Å - Sandfeldvej,2023,2787,6.8
+2020-04-24T16:25:00Z,Skjern Å - Sandfeldvej,2023,2787.5,7.3
+2020-04-24T17:25:00Z,Skjern Å - Sandfeldvej,2023,2788,7.8
+2020-04-24T18:25:00Z,Skjern Å - Sandfeldvej,2023,2788.5,8.3
+2020-04-24T19:25:00Z,Skjern Å - Sandfeldvej,2023,2788.9,8.7
 2020-04-24T20:25:00Z,Skjern Å - Sandfeldvej,2023,2789.4,9.2
 2020-04-24T21:25:00Z,Skjern Å - Sandfeldvej,2023,2789.3,9.1
 2020-04-24T22:25:00Z,Skjern Å - Sandfeldvej,2023,2787.9,7.7
