@@ -30,7 +30,7 @@ writeWeightEstimates(prefix, seatrout = FALSE)
 
 #### Waterlevel ####
 stations <-
-  tibble(id = c("24717", "24605", "24622", "54559", "24649", "24657", "24601", "24689"),
+  tibble(id = c("24717", "24605", "24622", "54559", "24649", "24657", "24601", "468"),
          place = c("Skjern Å - Sandfeldvej",
                    "Skjern Å - Alergaard",
                    "Skjern Å - Gjaldbæk bro",
