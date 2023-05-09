@@ -1,0 +1,69 @@
+---
+title: "Skjern Å - Sluse data"
+author: ''
+output:
+  flexdashboard::flex_dashboard:
+    css: www/style.css
+    favicon: favicon.png
+    orientation: rows
+    theme: paper
+    vertical_layout: fill
+knit: (function(inputFile, encoding) { 
+      out_dir <- '../docs';
+      rmarkdown::render(inputFile,
+                        encoding=encoding, 
+                        output_file=file.path(dirname(inputFile), out_dir, 'lock-flow.html')) })
+editor_options:
+  chunk_output_type: console
+---
+
+<script>
+$(".selectize-input input").prop('readonly','readonly');
+</script>
+
+```{r, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = FALSE)
+library(ggplot2)
+library(plotly)
+library(flexdashboard)
+library(tidyverse)
+library(lubridate)
+library(fs)
+source("functions.R")
+
+
+Sys.setlocale("LC_ALL", "da_DK.UTF-8")
+
+prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
+# prefix <- "../../data/"
+curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
+
+
+# Lock flow
+datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock_web.csv"), 
+                    locale = locale(tz = "CET"),
+                    col_types = "Tdd")
+```
+
+
+Row
+-----------------------------------------------------------------------
+
+### Sluse flow de seneste 14 dage (strøm ind i fjorden er positiv)
+
+```{r}
+  p <- ggplot(datFlow) + 
+    # geom_bar(aes(x = DateTime, y = 100*Open), stat = "identity") +
+    geom_hline(yintercept = 0, linewidth = 0.25) + 
+    geom_line(aes(x = DateTime, y = Flow), color = "#3399ff") + #, colour = Open
+    # scale_colour_gradient2(low = "red", mid = "yellow", high = "green", na.value = NA, midpoint = 1, guide = "legend") +
+    # geom_point(aes(x = DateTime, y = Flow), data = dat[findPeaks(dat$Flow),]) +
+    #scale_colour_gradient(low = "red", high = "green", na.value = NA, guide = "legend", breaks = c(0,1,2), name = "", labels = c("Lukket", "Delvis åben", "Åben")) +
+    # guide_coloursteps(even.steps = TRUE, show.limits = NULL, ticks = FALSE) +
+    theme(axis.text.x  = element_text(angle=90, hjust = 1, vjust = 1), legend.position="none") + 
+    scale_x_datetime(date_labels = "%e. %b", date_breaks = "1 day") +
+    labs(x = "Dato", y = "Flow (m3/s, udstrøm er negativ)")  #title = "Sluseflow Hvide Sande"
+  ggplotly(p)
+```
+
