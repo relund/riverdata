@@ -1441,8 +1441,7 @@ tab1 <- tmp %>%
   })
 
 tab <- map2_df(tab, tab1, ~ str_c(.x, ",", .y, "]")) %>% 
-  mutate(Length = str_remove(Length, " .*")) %>% 
-  select(Length, ncol(.):2) 
+  mutate(Length = str_remove(Length, " .*")) 
   
 # monthNames <- c("Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 colnames(tab)[1] <- c("Længde")
@@ -1514,8 +1513,7 @@ tab1 <- tmp %>%
   })
 
 tab <- map2_df(tab, tab1, ~ str_c(.x, ",", .y, "]")) %>% 
-  mutate(Length = str_remove(Length, " .*")) %>% 
-  select(Length, ncol(.):2) 
+  mutate(Length = str_remove(Length, " .*")) 
   
 # monthNames <- c("Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 colnames(tab)[1] <- c("Længde")
