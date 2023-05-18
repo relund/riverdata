@@ -21,7 +21,7 @@ writeWeightEstimates(prefix, seatrout = TRUE)
 
 
 #### Waterlevel ####
-stations <- tibble(id = c("24262", "24265", "23645", "1040"), place = c("Karup By", "Hagebro", "Nørkærbro", "Hagebro"))
+stations <- tibble(id = c("24262", "24265", "23645"), place = c("Karup By", "Hagebro", "Nørkærbro"))
 writeTimeSeriesData(stations, prefix, prefix1 = "waterlevel", days = 15)  
 # d <- as.integer(now() - ymd_hms("2017-01-01 12:00:00"))
 # writeTimeSeriesData(stations, prefix, prefix1 = "waterlevel", days = d)  # if update from 2017
