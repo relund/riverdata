@@ -8,9 +8,9 @@ positive)](http://hyde.dk/Sflow/default_flow.asp). For info see
 
 2) Catch data of salmon and seatrout from [river Skjern](https://skjernaasam.dk/) and [river Karup](https://karupaa.dk).
 
-3) Water level data [from different stations](https://www.hydrometri.dk/hyd/).
+3) Water level data [from different stations](https://www.vandportalen.dk/).
 
-4) Water temperature from [river Karup](https://www.hydrometri.dk/hyd/) and [river Skjern](https://www.hobolink.com/p/05811e4cdecf4a8832047fadcb59bbaf)
+4) Water temperature from [river Karup](https://www.vandportalen.dk/) and [river Skjern](https://www.hobolink.com/p/05811e4cdecf4a8832047fadcb59bbaf)
 
 5) Weight estimates calculated from a regression model (see reports folder).
 
