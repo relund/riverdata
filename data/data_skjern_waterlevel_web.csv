@@ -2980,8 +2980,8 @@ Date,Place,YGroup,Level,LevelRelative
 2020-06-20T22:25:00Z,Karstoft Å - Fiskedamme,2023,1537.3,0.1
 2020-06-20T23:25:00Z,Karstoft Å - Fiskedamme,2023,1537.2,-0
 2020-06-21T00:25:00Z,Karstoft Å - Fiskedamme,2023,1537.1,-0
-2020-06-21T01:25:00Z,Karstoft Å - Fiskedamme,2023,1537.2,0.1
-2020-06-21T02:25:00Z,Karstoft Å - Fiskedamme,2023,1537.5,0.4
+2020-06-21T01:25:00Z,Karstoft Å - Fiskedamme,2023,1537.2,0
+2020-06-21T02:25:00Z,Karstoft Å - Fiskedamme,2023,1537.4,0.3
 2020-06-21T03:25:00Z,Karstoft Å - Fiskedamme,2023,1537.9,0.8
 2020-06-21T04:25:00Z,Karstoft Å - Fiskedamme,2023,1539.6,2.6
 2020-06-21T05:25:00Z,Karstoft Å - Fiskedamme,2023,1539.8,2.7
@@ -4221,7 +4221,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-06-27T08:25:00Z,Omme Å - Sønderskov bro,2023,307.6,1.8
 2020-06-27T09:25:00Z,Omme Å - Sønderskov bro,2023,307.8,2
 2020-06-27T10:25:00Z,Omme Å - Sønderskov bro,2023,308.1,2.3
-2020-06-27T11:25:00Z,Omme Å - Sønderskov bro,2023,308.2,2.4
+2020-06-27T11:25:00Z,Omme Å - Sønderskov bro,2023,308.2,2.5
 2020-06-27T12:25:00Z,Omme Å - Sønderskov bro,2023,307.9,2.1
 2020-06-27T13:25:00Z,Omme Å - Sønderskov bro,2023,307.3,1.5
 2020-06-27T14:25:00Z,Omme Å - Sønderskov bro,2023,307,1.2
@@ -5759,12 +5759,12 @@ Date,Place,YGroup,Level,LevelRelative
 2020-06-26T15:25:00Z,Rind Å - Arnborg kirke,2023,2474.4,2
 2020-06-26T16:25:00Z,Rind Å - Arnborg kirke,2023,2475.3,2.9
 2020-06-26T17:25:00Z,Rind Å - Arnborg kirke,2023,2476.5,4.1
-2020-06-26T18:25:00Z,Rind Å - Arnborg kirke,2023,2477.5,5.1
-2020-06-26T19:25:00Z,Rind Å - Arnborg kirke,2023,2478.1,5.7
-2020-06-26T20:25:00Z,Rind Å - Arnborg kirke,2023,2478.6,6.2
+2020-06-26T18:25:00Z,Rind Å - Arnborg kirke,2023,2477.4,5.1
+2020-06-26T19:25:00Z,Rind Å - Arnborg kirke,2023,2478,5.6
+2020-06-26T20:25:00Z,Rind Å - Arnborg kirke,2023,2478.5,6.1
 2020-06-26T21:25:00Z,Rind Å - Arnborg kirke,2023,2479,6.6
-2020-06-26T22:25:00Z,Rind Å - Arnborg kirke,2023,2479.5,7.1
-2020-06-26T23:25:00Z,Rind Å - Arnborg kirke,2023,2480,7.6
+2020-06-26T22:25:00Z,Rind Å - Arnborg kirke,2023,2479.4,7
+2020-06-26T23:25:00Z,Rind Å - Arnborg kirke,2023,2479.9,7.5
 2020-06-27T00:25:00Z,Rind Å - Arnborg kirke,2023,2480.4,7.9
 2020-06-27T01:25:00Z,Rind Å - Arnborg kirke,2023,2480.6,8.2
 2020-06-27T02:25:00Z,Rind Å - Arnborg kirke,2023,2480.2,7.7
@@ -6635,7 +6635,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-06-26T02:25:00Z,Skjern Å - Alergaard,2023,643.1,-16
 2020-06-26T03:25:00Z,Skjern Å - Alergaard,2023,642.9,-16.2
 2020-06-26T04:25:00Z,Skjern Å - Alergaard,2023,643,-16.1
-2020-06-26T05:25:00Z,Skjern Å - Alergaard,2023,643.2,-15.9
+2020-06-26T05:25:00Z,Skjern Å - Alergaard,2023,643.3,-15.8
 2020-06-26T06:25:00Z,Skjern Å - Alergaard,2023,643.8,-15.2
 2020-06-26T07:25:00Z,Skjern Å - Alergaard,2023,644.5,-14.6
 2020-06-26T08:25:00Z,Skjern Å - Alergaard,2023,645.1,-14
@@ -6659,9 +6659,9 @@ Date,Place,YGroup,Level,LevelRelative
 2020-06-27T02:25:00Z,Skjern Å - Alergaard,2023,660.9,2
 2020-06-27T03:25:00Z,Skjern Å - Alergaard,2023,661.8,2.9
 2020-06-27T04:25:00Z,Skjern Å - Alergaard,2023,662.7,3.9
-2020-06-27T05:25:00Z,Skjern Å - Alergaard,2023,663.3,4.4
-2020-06-27T06:25:00Z,Skjern Å - Alergaard,2023,663.9,5
-2020-06-27T07:25:00Z,Skjern Å - Alergaard,2023,664.3,5.4
+2020-06-27T05:25:00Z,Skjern Å - Alergaard,2023,663.2,4.3
+2020-06-27T06:25:00Z,Skjern Å - Alergaard,2023,663.6,4.7
+2020-06-27T07:25:00Z,Skjern Å - Alergaard,2023,664.1,5.2
 2020-06-27T08:30:00Z,Skjern Å - Alergaard,2023,664.5,5.6
 2020-06-27T09:25:00Z,Skjern Å - Alergaard,2023,664.5,5.7
 2020-06-27T10:25:00Z,Skjern Å - Alergaard,2023,664.5,5.6
@@ -8372,6 +8372,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-07-04T00:27:00Z,Skjern Å - Landevejsbroen,2021,154.4,-6.1
 2020-07-04T01:30:30Z,Skjern Å - Landevejsbroen,2021,154.4,-6.1
 2020-07-04T02:34:00Z,Skjern Å - Landevejsbroen,2021,154.4,-6.1
+2020-07-04T03:29:00Z,Skjern Å - Landevejsbroen,2021,154.1,-6.4
+2020-07-04T04:24:00Z,Skjern Å - Landevejsbroen,2021,154.2,-6.3
+2020-07-04T05:27:30Z,Skjern Å - Landevejsbroen,2021,153.4,-7.1
+2020-07-04T06:31:00Z,Skjern Å - Landevejsbroen,2021,154.4,-6.1
 2020-06-20T00:26:00Z,Skjern Å - Landevejsbroen,2022,160.9,-3.5
 2020-06-20T01:29:00Z,Skjern Å - Landevejsbroen,2022,161.4,-3
 2020-06-20T02:32:00Z,Skjern Å - Landevejsbroen,2022,161.7,-2.8
@@ -8606,8 +8610,8 @@ Date,Place,YGroup,Level,LevelRelative
 2020-06-26T03:28:00Z,Skjern Å - Landevejsbroen,2023,153.8,-8.9
 2020-06-26T04:18:00Z,Skjern Å - Landevejsbroen,2023,153.9,-8.8
 2020-06-26T05:33:00Z,Skjern Å - Landevejsbroen,2023,152.4,-10.3
-2020-06-26T06:28:00Z,Skjern Å - Landevejsbroen,2023,152.8,-9.9
-2020-06-26T07:13:00Z,Skjern Å - Landevejsbroen,2023,154,-8.7
+2020-06-26T06:28:00Z,Skjern Å - Landevejsbroen,2023,152.7,-10
+2020-06-26T07:13:00Z,Skjern Å - Landevejsbroen,2023,153.9,-8.8
 2020-06-26T08:30:30Z,Skjern Å - Landevejsbroen,2023,154.5,-8.2
 2020-06-26T09:35:30Z,Skjern Å - Landevejsbroen,2023,155.3,-7.4
 2020-06-26T10:23:00Z,Skjern Å - Landevejsbroen,2023,155.7,-7
@@ -8753,6 +8757,8 @@ Date,Place,YGroup,Level,LevelRelative
 2020-07-04T00:27:30Z,Skjern Å - Landevejsbroen,2023,169.7,9.2
 2020-07-04T01:32:30Z,Skjern Å - Landevejsbroen,2023,169.4,8.9
 2020-07-04T02:35:00Z,Skjern Å - Landevejsbroen,2023,168.8,8.3
+2020-07-04T04:37:30Z,Skjern Å - Landevejsbroen,2023,168.2,7.6
+2020-07-04T06:45:00Z,Skjern Å - Landevejsbroen,2023,170.4,9.9
 2020-06-20T00:22:30Z,Skjern Å - Sandfeldvej,2018,2758.5,1.4
 2020-06-20T01:22:30Z,Skjern Å - Sandfeldvej,2018,2758.4,1.4
 2020-06-20T02:22:30Z,Skjern Å - Sandfeldvej,2018,2758.2,1.1
