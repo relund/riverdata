@@ -2138,18 +2138,6 @@
       ],
       "Hash": "90b28393209827327de889f49935140a"
     },
-    "terra": {
-      "Package": "terra",
-      "Version": "1.7-39",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "Rcpp",
-        "methods"
-      ],
-      "Hash": "6037d18193ca3f16900646e773937094"
-    },
     "testthat": {
       "Package": "testthat",
       "Version": "3.1.9",
