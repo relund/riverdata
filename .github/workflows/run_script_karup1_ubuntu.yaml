@@ -37,8 +37,6 @@ jobs:
       - uses: r-lib/actions/setup-renv@v2
         env: 
           RENV_CONFIG_SANDBOX_ENABLED: FALSE
-        with:
-          bypass-cache: true
           
       - name: Run R script
         run: Rscript --verbose script_karup1.R
