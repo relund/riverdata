@@ -35,8 +35,9 @@ jobs:
           sudo apt-get install -y libgdal-dev libgeos-dev libproj-dev 
           
       - uses: r-lib/actions/setup-renv@v2
+        env: RENV_CONFIG_SANDBOX_ENABLED: FALSE
         with:
-          cache-version: 2
+          bypass-cache: false
           
       - name: Run R script
         run: Rscript --verbose script_karup1.R
