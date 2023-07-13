@@ -28,11 +28,11 @@ jobs:
         with:
           use-public-rspm: true
     
-      # - name: Install dependices
-      #   run: |
+      - name: Install dependices
+        run: |
       #     sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
       #     sudo apt-get update
-      #     sudo apt-get install libgdal-dev libgeos-dev libproj-dev 
+          sudo apt-get install -y libgdal-dev libgeos-dev libproj-dev
           
       - uses: r-lib/actions/setup-renv@v2
           
