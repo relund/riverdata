@@ -30,10 +30,8 @@ jobs:
     
       - name: Install dependices
         run: |
-          sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
           sudo apt-get update
-          sudo apt-get install libgdal-dev libgeos-dev libproj-dev 
-          export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib 
+          sudo apt-get install libproj-dev 
           
       - uses: r-lib/actions/setup-renv@v2
           
