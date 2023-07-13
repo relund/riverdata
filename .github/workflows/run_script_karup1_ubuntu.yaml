@@ -35,6 +35,8 @@ jobs:
           sudo apt-get install -y libgdal-dev libgeos-dev libproj-dev 
           
       - uses: r-lib/actions/setup-renv@v2
+        with:
+          cache-version: 2
           
       - name: Run R script
         run: Rscript --verbose script_karup1.R
