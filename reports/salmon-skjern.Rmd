@@ -51,6 +51,8 @@ cIGroup <- c("Område" = "Place",
             "Ingen" = "None")
 ```
 
+# Alle fangster
+
 Der blev totalt fanget `r nrow(datCatchSal)` laks i 2022. 
 
 Grupperet efter metode:
@@ -87,7 +89,7 @@ dat <- bind_rows(dat1, dat2)
 
 dat %>% 
   mutate(across(1:(ncol(.)-1), ~ str_c(.x," (", round(100*.x/Totalt, 0), "%)"))) %>% 
-  rename(Klippet = "FALSE", `Ikke klippet` = "TRUE", `Ved ikke` = "NA") %>% 
+  rename(Klippet = "TRUE", `Ikke klippet` = "FALSE", `Ved ikke` = "NA") %>% 
   kbl() %>% 
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
@@ -125,6 +127,81 @@ ggplot(data = dat, aes(x = `Antal laks`, y = Pct)) +
   geom_col() +
   geom_text(aes(label = Pct, y = Pct), cex = 4, nudge_y = 1)  
 ```
+
+# Fangster uden fedtfinne
+
+```{r}
+datCatchSal <- datCatchSal %>% filter(Cut == TRUE)
+```
+
+Der blev totalt fanget `r nrow(datCatchSal)` laks i 2022. 
+
+Grupperet efter metode:
+
+```{r}
+dat1 <-datCatchSal %>% 
+  count(Month, Method) %>% 
+  pivot_wider(names_from = Method, values_from = n) %>% 
+  rowwise(Month) %>%
+  mutate(Totalt = sum(c_across(), na.rm = T)) 
+dat2 <- dat1 %>% 
+  ungroup() %>% 
+  summarise(Month = "Totalt", across(2:ncol(.), ~ sum(.x, na.rm = T)))
+dat <- bind_rows(dat1, dat2)
+
+dat %>% 
+  mutate(across(Spin:Totalt, ~ str_c(.x," (", round(100*.x/Totalt, 0), "%)"))) %>% 
+  kbl() %>% 
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+Grupperet efter små og store laks (73 cm):
+
+```{r}
+dat1 <- datCatchSal %>% 
+  mutate(Gr = if_else(Length <= 73, "<=73cm", ">73cm")) %>% 
+  count(Month, Gr) %>% 
+  pivot_wider(names_from = Gr, values_from = n) %>% 
+  rowwise(Month) %>%
+  mutate(Totalt = sum(c_across(), na.rm = T)) 
+dat2 <- dat1 %>% 
+  ungroup() %>% 
+  summarise(Month = "Totalt", across(2:ncol(.), ~ sum(.x, na.rm = T)))
+dat <- bind_rows(dat1, dat2)
+
+dat %>% 
+  mutate(across(1:(ncol(.)-1), ~ str_c(.x," (", round(100*.x/Totalt, 0), "%)"))) %>% 
+  kbl() %>% 
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+Antal fangster per fisker (antager at navne er unikke):
+
+```{r}
+dat <- datCatchSal %>% 
+  count(Name) %>% 
+  count(n) %>% 
+  rename(`Antal laks` = "n", n = nn) %>% 
+  mutate(Pct = round(100*n/sum(n), 0))
+
+ggplot(data = dat, aes(x = `Antal laks`, y = Pct)) +
+  geom_col() +
+  geom_text(aes(label = Pct, y = Pct), cex = 4, nudge_y = 1)  
+```
+
+Hvor mange fiskere fanger en fedfinneklippet laks eller flere?
+
+```{r}
+dat <- datCatchSal %>% 
+  group_by(Name) %>%
+  summarize(n = n(), small = min(Length, na.rm = T) <= 73, big = max(Length, na.rm = T) > 73) %>% 
+  ungroup() %>% 
+  summarise(Personer = n(), "fangster<=73cm" = sum(small, na.rm =T ), "fangster>73cm" = sum(big, na.rm = T))
+dat %>% 
+  kbl() %>% 
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
 
 
 
