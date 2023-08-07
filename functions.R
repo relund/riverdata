@@ -846,7 +846,8 @@ writeCatch <- function(url, prefix, yr, species = "Havørred") {
     mutate(Method = str_replace_all(Method, 
                              c("Wobler" = "Spin", "Blink" = "Spin", "Spinner" = "Spin", "Jig" = "Spin", 
                                "Bombarda med flue" = "Spin", "Tørflue" = "Flue", "Pirk/Pilk" = "Spin", 
-                               "Mede" = "Orm", "Spinflue" = "Spin", "Spin-flue" = "Spin", "Maddike" = "Orm", "Orm, spinner" = "Orm")),
+                               "Mede" = "Orm", "Spinflue" = "Spin", "Spin-flue" = "Spin", "Maddike" = "Orm", 
+                               "Orm, spinner" = "Orm", "Orm,spin" = "Orm")),
            Place = case_when(
              str_detect(Place, "(Øvre.*)|(Skjern.*Rind)|(Skjern.*opstrøms)") ~ "Øvre",
              str_detect(Place, "(Mellem.*)|(Skjern.*Tarp.*Borris)") ~ "Mellem",
