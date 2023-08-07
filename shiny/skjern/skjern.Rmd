@@ -1006,7 +1006,9 @@ plotOutput("plotCatchSalMonthlyP")
 
 ```{r, context = "server"}
 output$plotCatchSalMonthlyP <- renderPlot({
-  dat <- datCatchSal %>% select(Month, Place)
+  dat <- datCatchSal %>% 
+    filter(MonthN != 3) %>% 
+    select(Month, Place) 
   
   ggplot(data = dat, aes(x = Month)) +
     geom_bar(aes(fill = Place, y = (after_stat(count))/sum(after_stat(count)))) + 
@@ -1027,7 +1029,9 @@ plotOutput("plotCatchSalMonthlyM")
 
 ```{r, context = "server"}
 output$plotCatchSalMonthlyM <- renderPlot({
-  dat <- datCatchSal %>% select(Month, Method)
+  dat <- datCatchSal %>% 
+    filter(MonthN != 3) %>% 
+    select(Month, Method) 
   
   ggplot(data = dat, aes(x = Month)) +
     geom_bar(aes(fill = Method, y = (after_stat(count))/sum(after_stat(count)))) + 
@@ -1041,6 +1045,32 @@ output$plotCatchSalMonthlyM <- renderPlot({
 ```
 
 
+Row
+-----------------------------------------------------------------------
+
+### Månedlige fangster givet størrelse 2004-`r year(now())`
+
+```{r}
+plotOutput("plotCatchSalMonthlySize")
+```
+
+```{r, context = "server"}
+output$plotCatchSalMonthlySize <- renderPlot({
+  dat <- datCatchSal %>% 
+    filter(MonthN != 3) %>% 
+    mutate(Size = if_else(Length <= 73, "<= 73 cm", if_else(Length <= 90, "]73 cm, 90 cm]", "> 90 cm"))) %>% 
+    select(Month, Size) 
+  
+  ggplot(data = dat, aes(x = Month)) +
+    geom_bar(aes(fill = Size, y = (after_stat(count))/sum(after_stat(count)))) + 
+    geom_text(aes(label = scales::percent(round((after_stat(count))/sum(after_stat(count)),2)),
+                   y = (after_stat(count))/sum(after_stat(count))), stat= "count", vjust = -.5) +
+    labs(fill = "") + xlab("Måned") + ylab("Antal fangster") + 
+    scale_y_continuous(labels = scales::percent) + 
+    guides(fill = guide_legend(ncol = 4)) + 
+    theme(legend.position="bottom")  # axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), 
+})
+```
 
 
 Statistik over år {data-navmenu="Havørred"}
