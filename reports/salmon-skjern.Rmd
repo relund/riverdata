@@ -20,14 +20,17 @@ knit: (function(inputFile, encoding) {
 
 ```{r, include=FALSE}
 library(knitr)
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, out.width = "100%", cache = T)
 library(tidyverse)
 library(kableExtra)
-source("../shiny/skjern/functions.R")
+library(here)
+i_am("reports/salmon-skjern.Rmd")
+source(here("./shiny/skjern/functions.R"))
 prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
 curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
 datWeightSal <- read_csv(paste0(prefix, "data_skjern_weight_salmon.csv"), col_types = "dfddd")
-datCatchSal <- readCatch(paste0(prefix, "data_skjern_catch_salmon"), datWeightSal) %>% filter(Year == 2022)
+datCatchSalAll <- readCatch(paste0(prefix, "data_skjern_catch_salmon"), datWeightSal) 
+datCatchSal <- datCatchSalAll %>% filter(Year == 2022)
 ```
 
 ```{r}
@@ -130,6 +133,8 @@ ggplot(data = dat, aes(x = `Antal laks`, y = Pct)) +
 
 # Fangster uden fedtfinne
 
+Bemærk vi har ikke medtaget laks fanget, hvor fedtfinne ikke er identificeret (96 stk dvs højt sat er ca. 30 a disse uden fedtfinne). 
+
 ```{r}
 datCatchSal <- datCatchSal %>% filter(Cut == TRUE)
 ```
@@ -175,7 +180,8 @@ dat %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
-Antal fangster per fisker (antager at navne er unikke):
+
+I det følgende antager vi at navne er unikke (lig en person). Antal fangster per fisker (antager at navne er unikke):
 
 ```{r}
 dat <- datCatchSal %>% 
@@ -189,218 +195,240 @@ ggplot(data = dat, aes(x = `Antal laks`, y = Pct)) +
   geom_text(aes(label = Pct, y = Pct), cex = 4, nudge_y = 1)  
 ```
 
-Hvor mange fiskere fanger en fedfinneklippet laks eller flere?
+Hvor mange fiskere fanger en fedfinneklippet laks eller flere? 
 
 ```{r}
 dat <- datCatchSal %>% 
   group_by(Name) %>%
   summarize(n = n(), small = min(Length, na.rm = T) <= 73, big = max(Length, na.rm = T) > 73) %>% 
   ungroup() %>% 
-  summarise(Personer = n(), "fangster<=73cm" = sum(small, na.rm =T ), "fangster>73cm" = sum(big, na.rm = T))
+  summarise(Personer = n(), "fanger<=73" = sum(small, na.rm =T ), "fanger>73cm" = sum(big, na.rm = T))
 dat %>% 
   kbl() %>% 
   kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+Hvornår fanges den første fedtfinneklippet laks af en fisker? 
+
+```{r}
+# dat <- datCatchSal %>% 
+#   group_by(Name) %>%
+#   arrange(Date, .by_group = T) %>% 
+#   summarize(Date = min(Date), Grilse = first(Length) <= 73) %>% 
+#   group_by(Date) %>%
+#   summarise(Antal = n(), Grilse = sum(Grilse)) %>% 
+#   mutate(Totalt = cumsum(Antal)) 
+dat <- datCatchSal %>% 
+  group_by(Name) %>%
+  arrange(Date, .by_group = T) %>% 
+  slice_head(n = 1) %>% 
+  mutate(`<=73cm` = Length <= 73)
+ggplot(data = dat, aes(x = Date, fill = `<=73cm`)) +
+  geom_bar() +
+  labs(main = "Fangst af første laks uden fedtfinne", y = "Antal") +
+  theme(legend.position="bottom") 
+```
+
+
+
+
+```{r}
+limit = 73
+dat <- datCatchSal %>% 
+  filter(Length > limit) %>% 
+  group_by(Name) %>%
+  arrange(Date, .by_group = T) %>% 
+  slice_head(n = 1) 
+```
+
+Hvis antager at fiskere genudsætter fisk under eller på `r limit` cm og hjemtager den første over (`r nrow(dat)` laks hjemtages):
+
+
+```{r}
+ggplot(data = dat, aes(x = Date)) +
+  geom_bar() +
+  labs(main = "Fangst af første laks uden fedtfinne", y = "Antal") +
+  theme(legend.position="bottom") 
+```
+
+
+
+
+```{r}
+limit = 89
+dat <- datCatchSal %>% 
+  filter(Length > limit) %>% 
+  group_by(Name) %>%
+  arrange(Date, .by_group = T) %>% 
+  slice_head(n = 1) 
+```
+
+Hvis antager at fiskere genudsætter fisk under eller på  `r limit` cm og hjemtager den første over (`r nrow(dat)` laks hjemtages):
+
+
+```{r}
+ggplot(data = dat, aes(x = Date)) +
+  geom_bar() +
+  labs(main = "Fangst af første laks uden fedtfinne", y = "Antal") +
+  theme(legend.position="bottom") 
 ```
 
 
 
 
 
-<!-- ```{r} -->
-<!-- input <- NULL -->
-<!-- input$iInvYearSal <- c(2022,2022) -->
-<!-- input$iInvDaySal <- c("2022-04-01", "2022-10-31") -->
-<!-- input$iXUnitSal <- "Year"   -->
-<!-- input$iYUnitSal <- "yVTotal" -->
-<!-- input$iGroupSal <- "Method" -->
-<!-- input$iDataSal <- "All" -->
+# Fangster uden fedtfinne (gennemsnit over 2018 - 2022)
 
-<!-- if (input$iXUnitSal == "Day") { -->
-<!--   iXUnitSal <- "DayStr" -->
-<!-- } else if (input$iXUnitSal == "Year") { -->
-<!--   iXUnitSal <- "None" -->
-<!-- } else if (input$iXUnitSal == "None") { -->
-<!--   iXUnitSal <- "All" -->
-<!-- } else iXUnitSal <- input$iXUnitSal -->
-
-<!-- dat <-  -->
-<!--   datCatchSal %>%  -->
-<!--   # dplyr::filter(Year >= input$iInvYearSal[1], Year <= input$iInvYearSal[2], -->
-<!--   #               MDay >= min(mday(input$iInvDaySal[1]), mday(input$iInvDaySal[2])), -->
-<!--   #               MDay <= max(mday(input$iInvDaySal[1]), mday(input$iInvDaySal[2])), -->
-<!--   #               MonthN >= month(input$iInvDaySal[1]), -->
-<!--   #               MonthN <= month(input$iInvDaySal[2]))  -->
-<!--   dplyr::filter(Year >= input$iInvYearSal[1], Year <= input$iInvYearSal[2], -->
-<!--                 MonthN >= month(input$iInvDaySal[1]), -->
-<!--                 MonthN <= month(input$iInvDaySal[2]), -->
-<!--                 100 * MonthN + MDay >= 100 * month(input$iInvDaySal[1]) + mday(input$iInvDaySal[1]), -->
-<!--                 100 * MonthN + MDay <= 100 * month(input$iInvDaySal[2]) + mday(input$iInvDaySal[2])) -->
-
-<!-- if (input$iDataSal == "KilledTrue") dat <- dat %>% dplyr::filter(Killed) -->
-<!-- if (input$iDataSal == "KilledFalse") dat <- dat %>% dplyr::filter(!Killed) -->
-<!-- if (input$iDataSal == "WeightTrue") dat <- dat %>% dplyr::filter(NoWeight == 0) -->
-<!-- dat <- dat %>%  -->
-<!--   mutate(None = "", xV = if (iXUnitSal == "All") None else str_c(.data[[iXUnitSal]], " ", Year), grp = .data[[input$iGroupSal]]) %>%  -->
-<!--   group_by_at(c("xV", "grp", input$iXUnitSal)) %>% -->
-<!--   summarise(yVTotal = n(), -->
-<!--             yVMaxW = max(Weight, na.rm = T),  -->
-<!--             yVMaxL = max(Length, na.rm = T), -->
-<!--             yVAvgW = round(mean(Weight, na.rm = T),1),  -->
-<!--             yVAvgL = round(mean(Length, na.rm = T),0), -->
-<!--             yVTotalW = round(sum(Weight, na.rm = T),0) -->
-<!--             ) %>%  -->
-<!--   arrange_at(c(input$iXUnitSal, "xV")) %>%  -->
-<!--   group_by(xV) %>%  -->
-<!--   mutate(pct = sum(yVTotal)) %>%  -->
-<!--   group_by_at(c("xV", "grp", input$iXUnitSal)) %>%  -->
-<!--   mutate(label = str_c(round(100*yVTotal/pct, 0), "%"), -->
-<!--          yVPct = round(100*yVTotal/pct, 0)) %>%  -->
-<!--   mutate(yV = .data[[input$iYUnitSal]])  -->
-
-<!-- if (input$iGroupSal == "None") dat <- dat %>% mutate(label = yV) -->
-<!-- xLab <- names(cIXUnit)[grep(input$iXUnitSal, cIXUnit)] -->
-<!-- yLab <- names(cIYUnit)[grep(input$iYUnitSal, cIYUnit)] -->
-<!-- dat$xV <- factor(dat$xV, levels = unique(dat$xV[order(dat[[input$iXUnitSal]], dat$xV)])) -->
-<!-- ggplot(data = dat, aes(x = xV, y = yV)) + -->
-<!--   geom_col(aes(fill = grp), position = position_dodge2(preserve = "single")) + -->
-<!--   # geom_text(aes(label = yV, y = 1.05*yV), position = position_dodge2(width = 0.9)) +  -->
-<!--   geom_text(aes(label = label, y = 1.05*yV), position = position_dodge2(width = 0.9), cex = 3)  +  #, vjust = "inward", hjust = "inward" -->
-<!--   labs(fill = "") + xlab(xLab) + ylab(yLab) + -->
-<!--   theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom") -->
-
-<!-- ``` -->
+```{r}
+datCatchSal <- datCatchSalAll %>% filter(Cut == TRUE, Year %in% 2018:2022)
+```
 
 
-<!-- ## Fangster per måned -->
+Grupperet efter metode:
 
-<!-- ```{r} -->
-<!-- input <- NULL -->
-<!-- input$iInvYearSal <- c(2022,2022) -->
-<!-- input$iInvDaySal <- c("2022-04-01", "2022-10-31") -->
-<!-- input$iXUnitSal <- "Month"  # Day -->
-<!-- input$iYUnitSal <- "yVTotal" -->
-<!-- input$iGroupSal <- "None" -->
-<!-- input$iDataSal <- "All" -->
+```{r}
+dat1 <- datCatchSal %>% 
+  filter(MonthN != 3) %>% 
+  count(Month, Method) %>% 
+  mutate(n = n/5) %>% 
+  pivot_wider(names_from = Method, values_from = n) %>% 
+  rowwise(Month) %>%
+  mutate(Totalt = sum(c_across(), na.rm = T)) 
+dat2 <- dat1 %>% 
+  ungroup() %>% 
+  summarise(Month = "Totalt", across(2:ncol(.), ~ sum(.x, na.rm = T)))
+dat <- bind_rows(dat1, dat2)
 
-<!-- if (input$iXUnitSal == "Day") { -->
-<!--   iXUnitSal <- "DayStr" -->
-<!-- } else if (input$iXUnitSal == "Year") { -->
-<!--   iXUnitSal <- "None" -->
-<!-- } else if (input$iXUnitSal == "None") { -->
-<!--   iXUnitSal <- "All" -->
-<!-- } else iXUnitSal <- input$iXUnitSal -->
+dat %>% 
+  mutate(across(Spin:Totalt, ~ str_c(.x," (", round(100*.x/Totalt, 0), "%)"))) %>% 
+  kbl() %>% 
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
 
-<!-- dat <-  -->
-<!--   datCatchSal %>%  -->
-<!--   # dplyr::filter(Year >= input$iInvYearSal[1], Year <= input$iInvYearSal[2], -->
-<!--   #               MDay >= min(mday(input$iInvDaySal[1]), mday(input$iInvDaySal[2])), -->
-<!--   #               MDay <= max(mday(input$iInvDaySal[1]), mday(input$iInvDaySal[2])), -->
-<!--   #               MonthN >= month(input$iInvDaySal[1]), -->
-<!--   #               MonthN <= month(input$iInvDaySal[2]))  -->
-<!--   dplyr::filter(Year >= input$iInvYearSal[1], Year <= input$iInvYearSal[2], -->
-<!--                 MonthN >= month(input$iInvDaySal[1]), -->
-<!--                 MonthN <= month(input$iInvDaySal[2]), -->
-<!--                 100 * MonthN + MDay >= 100 * month(input$iInvDaySal[1]) + mday(input$iInvDaySal[1]), -->
-<!--                 100 * MonthN + MDay <= 100 * month(input$iInvDaySal[2]) + mday(input$iInvDaySal[2])) -->
+Grupperet efter små og store laks (73 cm):
 
-<!-- if (input$iDataSal == "KilledTrue") dat <- dat %>% dplyr::filter(Killed) -->
-<!-- if (input$iDataSal == "KilledFalse") dat <- dat %>% dplyr::filter(!Killed) -->
-<!-- if (input$iDataSal == "WeightTrue") dat <- dat %>% dplyr::filter(NoWeight == 0) -->
-<!-- dat <- dat %>%  -->
-<!--   mutate(None = "", xV = if (iXUnitSal == "All") None else str_c(.data[[iXUnitSal]], " ", Year), grp = .data[[input$iGroupSal]]) %>%  -->
-<!--   group_by_at(c("xV", "grp", input$iXUnitSal)) %>% -->
-<!--   summarise(yVTotal = n(), -->
-<!--             yVMaxW = max(Weight, na.rm = T),  -->
-<!--             yVMaxL = max(Length, na.rm = T), -->
-<!--             yVAvgW = round(mean(Weight, na.rm = T),1),  -->
-<!--             yVAvgL = round(mean(Length, na.rm = T),0), -->
-<!--             yVTotalW = round(sum(Weight, na.rm = T),0) -->
-<!--             ) %>%  -->
-<!--   arrange_at(c(input$iXUnitSal, "xV")) %>%  -->
-<!--   group_by(xV) %>%  -->
-<!--   mutate(pct = sum(yVTotal)) %>%  -->
-<!--   group_by_at(c("xV", "grp", input$iXUnitSal)) %>%  -->
-<!--   mutate(label = str_c(round(100*yVTotal/pct, 0), "%"), -->
-<!--          yVPct = round(100*yVTotal/pct, 0)) %>%  -->
-<!--   mutate(yV = .data[[input$iYUnitSal]])  -->
+```{r}
+dat1 <- datCatchSal %>% 
+  filter(MonthN != 3) %>% 
+  mutate(Gr = if_else(Length <= 73, "<=73cm", ">73cm")) %>% 
+  count(Month, Gr) %>% 
+  mutate(n = n/5) %>% 
+  pivot_wider(names_from = Gr, values_from = n) %>% 
+  rowwise(Month) %>%
+  mutate(Totalt = sum(c_across(), na.rm = T)) 
+dat2 <- dat1 %>% 
+  ungroup() %>% 
+  summarise(Month = "Totalt", across(2:ncol(.), ~ sum(.x, na.rm = T)))
+dat <- bind_rows(dat1, dat2)
 
-<!-- if (input$iGroupSal == "None") dat <- dat %>% mutate(label = yV) -->
-<!-- xLab <- names(cIXUnit)[grep(input$iXUnitSal, cIXUnit)] -->
-<!-- yLab <- names(cIYUnit)[grep(input$iYUnitSal, cIYUnit)] -->
-<!-- dat$xV <- factor(dat$xV, levels = unique(dat$xV[order(dat[[input$iXUnitSal]], dat$xV)])) -->
-<!-- ggplot(data = dat, aes(x = xV, y = yV)) + -->
-<!--   geom_col(aes(fill = grp), position = position_dodge2(preserve = "single")) + -->
-<!--   # geom_text(aes(label = yV, y = 1.05*yV), position = position_dodge2(width = 0.9)) +  -->
-<!--   geom_text(aes(label = label, y = 1.05*yV), position = position_dodge2(width = 0.9), cex = 3)  +  #, vjust = "inward", hjust = "inward" -->
-<!--   labs(fill = "") + xlab(xLab) + ylab(yLab) + -->
-<!--   theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom") -->
-<!-- ``` -->
+dat %>% 
+  mutate(across(1:(ncol(.)-1), ~ str_c(.x," (", round(100*.x/Totalt, 0), "%)"))) %>% 
+  kbl() %>% 
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+
+I det følgende antager vi at navne er unikke (lig en person). Antal fangster per fisker (antager at navne er unikke):
+
+```{r}
+dat <- datCatchSal %>% 
+  count(Year, Name) %>% 
+  count(Year, n) %>% 
+  group_by(n) %>% 
+  summarise(nn = mean(nn)) %>% 
+  rename(`Antal laks` = "n", n = nn) %>% 
+  mutate(Pct = round(100*n/sum(n), 0))
+
+ggplot(data = dat, aes(x = `Antal laks`, y = Pct)) +
+  geom_col() +
+  geom_text(aes(label = Pct, y = Pct), cex = 4, nudge_y = 1)  
+```
+
+Hvor mange fiskere fanger en fedfinneklippet laks eller flere? 
+
+```{r}
+dat <- datCatchSal %>% 
+  group_by(Year, Name) %>%
+  summarize(n = n(), small = min(Length, na.rm = T) <= 73, big = max(Length, na.rm = T) > 73) %>% 
+  group_by(Year) %>% 
+  summarise(Personer = n(), "fanger<=73" = sum(small, na.rm =T ), "fanger>73cm" = sum(big, na.rm = T))
+dat %>% 
+  kbl() %>% 
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+Hvornår fanges den første fedtfinneklippet laks af en fisker? 
+
+```{r}
+# dat <- datCatchSal %>% 
+#   group_by(Name) %>%
+#   arrange(Date, .by_group = T) %>% 
+#   summarize(Date = min(Date), Grilse = first(Length) <= 73) %>% 
+#   group_by(Date) %>%
+#   summarise(Antal = n(), Grilse = sum(Grilse)) %>% 
+#   mutate(Totalt = cumsum(Antal)) 
+dat <- datCatchSal %>% 
+  group_by(Name) %>%
+  arrange(Date, .by_group = T) %>% 
+  slice_head(n = 1) %>% 
+  mutate(`<=73cm` = Length <= 73)
+ggplot(data = dat, aes(x = Date, fill = `<=73cm`)) +
+  geom_bar() +
+  labs(main = "Fangst af første laks uden fedtfinne", y = "Antal") +
+  theme(legend.position="bottom") 
+```
 
 
 
 
-<!-- ## Fangster per måned -->
+```{r}
+limit = 73
+dat <- datCatchSal %>% 
+  filter(Length > limit) %>% 
+  group_by(Year, Name) %>%
+  arrange(Date, .by_group = T) %>% 
+  slice_head(n = 1) 
+```
 
-<!-- ```{r} -->
-<!-- input <- NULL -->
-<!-- input$iInvYearSal <- c(2022,2022) -->
-<!-- input$iInvDaySal <- c("2022-04-01", "2022-10-31") -->
-<!-- input$iXUnitSal <- "Month"  # Day -->
-<!-- input$iYUnitSal <- "yVTotal" -->
-<!-- input$iGroupSal <- "None" -->
-<!-- input$iDataSal <- "All" -->
+Hvis antager at fiskere genudsætter fisk under eller på `r limit` cm og hjemtager den første over:
 
-<!-- if (input$iXUnitSal == "Day") { -->
-<!--   iXUnitSal <- "DayStr" -->
-<!-- } else if (input$iXUnitSal == "Year") { -->
-<!--   iXUnitSal <- "None" -->
-<!-- } else if (input$iXUnitSal == "None") { -->
-<!--   iXUnitSal <- "All" -->
-<!-- } else iXUnitSal <- input$iXUnitSal -->
 
-<!-- dat <-  -->
-<!--   datCatchSal %>%  -->
-<!--   # dplyr::filter(Year >= input$iInvYearSal[1], Year <= input$iInvYearSal[2], -->
-<!--   #               MDay >= min(mday(input$iInvDaySal[1]), mday(input$iInvDaySal[2])), -->
-<!--   #               MDay <= max(mday(input$iInvDaySal[1]), mday(input$iInvDaySal[2])), -->
-<!--   #               MonthN >= month(input$iInvDaySal[1]), -->
-<!--   #               MonthN <= month(input$iInvDaySal[2]))  -->
-<!--   dplyr::filter(Year >= input$iInvYearSal[1], Year <= input$iInvYearSal[2], -->
-<!--                 MonthN >= month(input$iInvDaySal[1]), -->
-<!--                 MonthN <= month(input$iInvDaySal[2]), -->
-<!--                 100 * MonthN + MDay >= 100 * month(input$iInvDaySal[1]) + mday(input$iInvDaySal[1]), -->
-<!--                 100 * MonthN + MDay <= 100 * month(input$iInvDaySal[2]) + mday(input$iInvDaySal[2])) -->
+```{r}
+ggplot(data = dat, aes(x = Date)) +
+  geom_bar() +
+  labs(main = "Fangst af første laks uden fedtfinne", y = "Antal") +
+  theme(legend.position="bottom") 
+```
 
-<!-- if (input$iDataSal == "KilledTrue") dat <- dat %>% dplyr::filter(Killed) -->
-<!-- if (input$iDataSal == "KilledFalse") dat <- dat %>% dplyr::filter(!Killed) -->
-<!-- if (input$iDataSal == "WeightTrue") dat <- dat %>% dplyr::filter(NoWeight == 0) -->
-<!-- dat <- dat %>%  -->
-<!--   mutate(None = "", xV = if (iXUnitSal == "All") None else str_c(.data[[iXUnitSal]], " ", Year), grp = .data[[input$iGroupSal]]) %>%  -->
-<!--   group_by_at(c("xV", "grp", input$iXUnitSal)) %>% -->
-<!--   summarise(yVTotal = n(), -->
-<!--             yVMaxW = max(Weight, na.rm = T),  -->
-<!--             yVMaxL = max(Length, na.rm = T), -->
-<!--             yVAvgW = round(mean(Weight, na.rm = T),1),  -->
-<!--             yVAvgL = round(mean(Length, na.rm = T),0), -->
-<!--             yVTotalW = round(sum(Weight, na.rm = T),0) -->
-<!--             ) %>%  -->
-<!--   arrange_at(c(input$iXUnitSal, "xV")) %>%  -->
-<!--   group_by(xV) %>%  -->
-<!--   mutate(pct = sum(yVTotal)) %>%  -->
-<!--   group_by_at(c("xV", "grp", input$iXUnitSal)) %>%  -->
-<!--   mutate(label = str_c(round(100*yVTotal/pct, 0), "%"), -->
-<!--          yVPct = round(100*yVTotal/pct, 0)) %>%  -->
-<!--   mutate(yV = .data[[input$iYUnitSal]])  -->
 
-<!-- if (input$iGroupSal == "None") dat <- dat %>% mutate(label = yV) -->
-<!-- xLab <- names(cIXUnit)[grep(input$iXUnitSal, cIXUnit)] -->
-<!-- yLab <- names(cIYUnit)[grep(input$iYUnitSal, cIYUnit)] -->
-<!-- dat$xV <- factor(dat$xV, levels = unique(dat$xV[order(dat[[input$iXUnitSal]], dat$xV)])) -->
-<!-- ggplot(data = dat, aes(x = xV, y = yV)) + -->
-<!--   geom_col(aes(fill = grp), position = position_dodge2(preserve = "single")) + -->
-<!--   # geom_text(aes(label = yV, y = 1.05*yV), position = position_dodge2(width = 0.9)) +  -->
-<!--   geom_text(aes(label = label, y = 1.05*yV), position = position_dodge2(width = 0.9), cex = 3)  +  #, vjust = "inward", hjust = "inward" -->
-<!--   labs(fill = "") + xlab(xLab) + ylab(yLab) + -->
-<!--   theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom") -->
-<!-- ``` -->
+
+
+```{r}
+limit = 89
+dat <- datCatchSal %>% 
+  filter(Length > limit) %>% 
+  group_by(Year, Name) %>%
+  arrange(Date, .by_group = T) %>% 
+  slice_head(n = 1) 
+```
+
+Hvis antager at fiskere genudsætter fisk under eller på  `r limit` cm og hjemtager den første over:
+
+
+```{r}
+ggplot(data = dat, aes(x = Date)) +
+  geom_bar() +
+  labs(main = "Fangst af første laks uden fedtfinne", y = "Antal") +
+  theme(legend.position="bottom") 
+```
+
+
+
+
+
+
+
+
+
+
 
