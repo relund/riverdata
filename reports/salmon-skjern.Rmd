@@ -279,6 +279,27 @@ ggplot(data = dat, aes(x = Date)) +
 
 # Fangster uden fedtfinne (gennemsnit over 2018 - 2022)
 
+Hvor mange af fangsterne er uden fedtfinne givet et område:
+
+```{r}
+library(forcats)
+datCatchSal <- datCatchSalAll %>% filter(Year %in% 2018:2022)
+dat <- datCatchSal %>% 
+  filter(MonthN != 3) %>% 
+  group_by(Year, Place) %>% 
+  summarise(n = n(), Cut = sum(Cut, na.rm = T)/n()) %>% 
+  group_by(Place) %>% 
+  summarise(`Antal laks` = mean(n), Pct = round(100 * mean(Cut),0)) %>% 
+  filter(Pct > 0)
+dat %>% 
+    ggplot(aes(x = Place, y = Pct)) +
+  geom_col(aes(fill = Place), position = position_dodge2(preserve = "single")) +
+  theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom") 
+```
+
+
+
+
 ```{r}
 datCatchSal <- datCatchSalAll %>% filter(Cut == TRUE, Year %in% 2018:2022)
 ```
@@ -402,7 +423,7 @@ ggplot(data = dat, aes(x = Date)) +
 
 
 
-
+  
 ```{r}
 limit = 89
 dat <- datCatchSal %>% 
