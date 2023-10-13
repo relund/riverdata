@@ -1,4 +1,5 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
+2023-10-13,80,NA,Frank Jensen,Øvre,Flue,TRUE,NA,FALSE,Han,FALSE
 2023-10-13,70,NA,Gert Eriksen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2023-10-13,65,NA,Ole Damgaard,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
 2023-10-12,74,NA,Harald Roland,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
@@ -11,9 +12,9 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2023-10-12,81,NA,Jan Strandmark,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/CF1494929F7C1D8DC1258A460064278A.jpg,FALSE,Hun,FALSE
 2023-10-12,86,NA,Erik B. Linneberg,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2023-10-12,76,NA,Christian L. Aagaard Olsen,Nedre,Spin,TRUE,NA,FALSE,Hun,FALSE
-2023-10-12,84,NA,Tomas Novikas,Øvre,Flue,TRUE,NA,TRUE,Han,FALSE
+2023-10-12,84,NA,Tomas Novikas,Øvre,Flue,TRUE,NA,FALSE,Han,FALSE
 2023-10-12,73,NA,Joacim Bøllehuus,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
-2023-10-12,70,NA,Tomas Novikas,Øvre,Flue,NA,NA,TRUE,Hun,FALSE
+2023-10-12,70,NA,Tomas Novikas,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
 2023-10-12,80,NA,Lars Due Dahl Larsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2023-10-12,90,NA,Mustafa Tesnjak,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2023-10-12,86,NA,Jörg Duschanek,Nedre,Spin,TRUE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/38D2495F77D9064EC1258A46003D48A7.jpg,FALSE,Han,FALSE
@@ -57,6 +58,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2023-10-08,70,NA,Poul Lund Larsen,Andet,Spin,TRUE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/48ded9cec7d0481c93ad1e5d00ac9573.jpg,FALSE,Han,FALSE
 2023-10-08,88,NA,Bo Iversen,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/23F758D90135A1DCC1258A42003400BC.jpg,FALSE,Han,FALSE
 2023-10-08,86,NA,Frank Jensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-07,68,NA,Karsten Fini,Mellem,Flue,NA,NA,FALSE,Han,FALSE
 2023-10-07,82,NA,Jannik Stachnau,Nedre,Flue,TRUE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/70D131932E0A8250C1258A4200351F48.jpg,FALSE,Hun,FALSE
 2023-10-07,65,NA,Rasmus Vemmelund,Mellem,Flue,TRUE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/37FC9CF4DE94F811C1258A4200272ADF.jpg,TRUE,Han,FALSE
 2023-10-07,81,NA,Moritz Wohlers,Vorgod Å,Spin,FALSE,NA,FALSE,Hun,FALSE
