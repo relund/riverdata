@@ -3978,14 +3978,14 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-13T06:25:00Z,Karstoft Å - Fiskedamme,2023,1564.3,11.7
 2020-10-13T07:25:00Z,Karstoft Å - Fiskedamme,2023,1564,11.5
 2020-10-13T08:25:00Z,Karstoft Å - Fiskedamme,2023,1564.1,11.5
-2020-10-13T09:25:00Z,Karstoft Å - Fiskedamme,2023,1564.5,11.8
-2020-10-13T10:25:00Z,Karstoft Å - Fiskedamme,2023,1565.4,12.8
-2020-10-13T11:25:00Z,Karstoft Å - Fiskedamme,2023,1566.4,13.8
-2020-10-13T12:25:00Z,Karstoft Å - Fiskedamme,2023,1567.3,14.7
-2020-10-13T13:25:00Z,Karstoft Å - Fiskedamme,2023,1568.3,15.7
-2020-10-13T14:25:00Z,Karstoft Å - Fiskedamme,2023,1569.3,16.7
+2020-10-13T09:25:00Z,Karstoft Å - Fiskedamme,2023,1564.7,12.1
+2020-10-13T10:25:00Z,Karstoft Å - Fiskedamme,2023,1565.6,13
+2020-10-13T11:25:00Z,Karstoft Å - Fiskedamme,2023,1566.6,14
+2020-10-13T12:25:00Z,Karstoft Å - Fiskedamme,2023,1567.5,14.9
+2020-10-13T13:25:00Z,Karstoft Å - Fiskedamme,2023,1568.5,15.8
+2020-10-13T14:25:00Z,Karstoft Å - Fiskedamme,2023,1569.4,16.8
 2020-10-13T15:25:00Z,Karstoft Å - Fiskedamme,2023,1570.3,17.7
-2020-10-13T16:25:00Z,Karstoft Å - Fiskedamme,2023,1571.2,18.6
+2020-10-13T16:25:00Z,Karstoft Å - Fiskedamme,2023,1571.3,18.7
 2020-10-13T17:25:00Z,Karstoft Å - Fiskedamme,2023,1572.3,19.7
 2020-10-13T18:25:00Z,Karstoft Å - Fiskedamme,2023,1574.2,21.6
 2020-10-13T19:25:00Z,Karstoft Å - Fiskedamme,2023,1576.5,23.9
@@ -4010,7 +4010,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-14T14:25:00Z,Karstoft Å - Fiskedamme,2023,1603.3,50.5
 2020-10-14T15:25:00Z,Karstoft Å - Fiskedamme,2023,1604,51.2
 2020-10-14T16:25:00Z,Karstoft Å - Fiskedamme,2023,1604.4,51.6
-2020-10-14T17:25:00Z,Karstoft Å - Fiskedamme,2023,1605.1,52.2
+2020-10-14T17:25:00Z,Karstoft Å - Fiskedamme,2023,1605,52.2
 2020-10-14T18:25:00Z,Karstoft Å - Fiskedamme,2023,1604.7,51.9
 2020-10-14T19:25:00Z,Karstoft Å - Fiskedamme,2023,1604.9,52.2
 2020-10-14T20:25:00Z,Karstoft Å - Fiskedamme,2023,1604.9,52
@@ -4174,10 +4174,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-21T10:25:00Z,Karstoft Å - Fiskedamme,2023,1580.2,26
 2020-10-21T11:25:00Z,Karstoft Å - Fiskedamme,2023,1581.7,27.6
 2020-10-21T12:25:00Z,Karstoft Å - Fiskedamme,2023,1583,28.9
-2020-10-21T13:25:00Z,Karstoft Å - Fiskedamme,2023,1584.4,30.2
-2020-10-21T14:25:00Z,Karstoft Å - Fiskedamme,2023,1585.3,31.2
-2020-10-21T15:25:00Z,Karstoft Å - Fiskedamme,2023,1586.1,32
-2020-10-21T16:25:00Z,Karstoft Å - Fiskedamme,2023,1586.6,32.5
+2020-10-21T13:25:00Z,Karstoft Å - Fiskedamme,2023,1584.2,30.1
+2020-10-21T14:25:00Z,Karstoft Å - Fiskedamme,2023,1585.2,31.1
+2020-10-21T15:25:00Z,Karstoft Å - Fiskedamme,2023,1585.8,31.7
+2020-10-21T16:25:00Z,Karstoft Å - Fiskedamme,2023,1586.4,32.3
 2020-10-21T17:25:00Z,Karstoft Å - Fiskedamme,2023,1586.7,32.6
 2020-10-21T18:25:00Z,Karstoft Å - Fiskedamme,2023,1586.9,32.8
 2020-10-21T19:25:00Z,Karstoft Å - Fiskedamme,2023,1586.9,32.8
@@ -9718,7 +9718,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-13T16:25:00Z,Skjern Å - Alergaard,2023,705.1,26.8
 2020-10-13T17:25:00Z,Skjern Å - Alergaard,2023,706.1,27.8
 2020-10-13T18:25:00Z,Skjern Å - Alergaard,2023,706.9,28.6
-2020-10-13T19:25:00Z,Skjern Å - Alergaard,2023,708,29.7
+2020-10-13T19:25:00Z,Skjern Å - Alergaard,2023,708.1,29.8
 2020-10-13T20:25:00Z,Skjern Å - Alergaard,2023,709.4,31.1
 2020-10-13T21:25:00Z,Skjern Å - Alergaard,2023,711,32.7
 2020-10-13T22:25:00Z,Skjern Å - Alergaard,2023,713.1,34.7
@@ -9984,7 +9984,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-24T18:25:00Z,Skjern Å - Alergaard,2023,720,38.7
 2020-10-24T19:25:00Z,Skjern Å - Alergaard,2023,720.2,38.9
 2020-10-24T20:25:00Z,Skjern Å - Alergaard,2023,720.3,38.9
-2020-10-24T21:25:00Z,Skjern Å - Alergaard,2023,720.9,39.5
+2020-10-24T21:25:00Z,Skjern Å - Alergaard,2023,721,39.6
 2020-10-24T22:25:00Z,Skjern Å - Alergaard,2023,721.5,40.1
 2020-10-24T23:25:00Z,Skjern Å - Alergaard,2023,722.3,40.9
 2020-10-25T00:25:00Z,Skjern Å - Alergaard,2023,723.5,42
@@ -11865,7 +11865,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-13T09:25:00Z,Skjern Å - Gjaldbæk bro,2023,485.1,19.6
 2020-10-13T10:25:00Z,Skjern Å - Gjaldbæk bro,2023,484.8,19.3
 2020-10-13T11:25:00Z,Skjern Å - Gjaldbæk bro,2023,484.8,19.3
-2020-10-13T12:25:00Z,Skjern Å - Gjaldbæk bro,2023,485,19.6
+2020-10-13T12:25:00Z,Skjern Å - Gjaldbæk bro,2023,485.1,19.6
 2020-10-13T13:25:00Z,Skjern Å - Gjaldbæk bro,2023,485.6,20.1
 2020-10-13T14:25:00Z,Skjern Å - Gjaldbæk bro,2023,485.8,20.3
 2020-10-13T15:25:00Z,Skjern Å - Gjaldbæk bro,2023,486.4,20.9
@@ -12140,7 +12140,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-24T20:25:00Z,Skjern Å - Gjaldbæk bro,2023,501.3,32.3
 2020-10-24T21:25:00Z,Skjern Å - Gjaldbæk bro,2023,501.8,32.8
 2020-10-24T22:25:00Z,Skjern Å - Gjaldbæk bro,2023,502.1,33.1
-2020-10-24T23:25:00Z,Skjern Å - Gjaldbæk bro,2023,502.7,33.7
+2020-10-24T23:25:00Z,Skjern Å - Gjaldbæk bro,2023,502.8,33.8
 2020-10-25T00:25:00Z,Skjern Å - Gjaldbæk bro,2023,503.6,34.3
 2020-10-25T01:25:00Z,Skjern Å - Gjaldbæk bro,2023,504.4,35.1
 2020-10-25T02:25:00Z,Skjern Å - Gjaldbæk bro,2023,505.5,36.2
@@ -12400,30 +12400,30 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-20T21:29:00Z,Skjern Å - Landevejsbroen,2021,208.4,25.8
 2020-10-20T22:32:00Z,Skjern Å - Landevejsbroen,2021,209.1,26.6
 2020-10-20T23:27:00Z,Skjern Å - Landevejsbroen,2021,209.4,26.8
-2020-10-21T00:30:00Z,Skjern Å - Landevejsbroen,2021,210.7,27.7
-2020-10-21T01:25:30Z,Skjern Å - Landevejsbroen,2021,211.4,28.4
-2020-10-21T02:28:30Z,Skjern Å - Landevejsbroen,2021,212.9,29.9
-2020-10-21T03:31:30Z,Skjern Å - Landevejsbroen,2021,213.9,30.9
-2020-10-21T04:35:00Z,Skjern Å - Landevejsbroen,2021,214.4,31.4
-2020-10-21T05:30:00Z,Skjern Å - Landevejsbroen,2021,215.4,32.4
-2020-10-21T06:17:00Z,Skjern Å - Landevejsbroen,2021,216.1,33.1
-2020-10-21T07:20:00Z,Skjern Å - Landevejsbroen,2021,215.7,32.7
+2020-10-21T00:30:00Z,Skjern Å - Landevejsbroen,2021,210.7,27.6
+2020-10-21T01:25:30Z,Skjern Å - Landevejsbroen,2021,211.4,28.3
+2020-10-21T02:28:30Z,Skjern Å - Landevejsbroen,2021,212.9,29.8
+2020-10-21T03:31:30Z,Skjern Å - Landevejsbroen,2021,213.9,30.8
+2020-10-21T04:35:00Z,Skjern Å - Landevejsbroen,2021,214.4,31.3
+2020-10-21T05:30:00Z,Skjern Å - Landevejsbroen,2021,215.4,32.3
+2020-10-21T06:17:00Z,Skjern Å - Landevejsbroen,2021,216.1,33
+2020-10-21T07:20:00Z,Skjern Å - Landevejsbroen,2021,215.7,32.6
 2020-10-21T08:31:00Z,Skjern Å - Landevejsbroen,2021,217.2,34.1
-2020-10-21T09:26:00Z,Skjern Å - Landevejsbroen,2021,218.4,35.4
-2020-10-21T10:45:00Z,Skjern Å - Landevejsbroen,2021,215.4,32.4
-2020-10-21T11:09:00Z,Skjern Å - Landevejsbroen,2021,216.4,33.4
-2020-10-21T12:20:00Z,Skjern Å - Landevejsbroen,2021,219.4,36.4
-2020-10-21T13:39:00Z,Skjern Å - Landevejsbroen,2021,219.1,36.1
-2020-10-21T14:26:00Z,Skjern Å - Landevejsbroen,2021,220.7,37.7
-2020-10-21T15:13:00Z,Skjern Å - Landevejsbroen,2021,221.4,38.4
-2020-10-21T16:32:00Z,Skjern Å - Landevejsbroen,2021,222.4,39.4
-2020-10-21T17:27:00Z,Skjern Å - Landevejsbroen,2021,225.4,42.4
-2020-10-21T18:22:00Z,Skjern Å - Landevejsbroen,2021,222.7,39.7
-2020-10-21T19:33:00Z,Skjern Å - Landevejsbroen,2021,224.9,41.9
-2020-10-21T20:36:00Z,Skjern Å - Landevejsbroen,2021,222.9,39.9
-2020-10-21T21:23:30Z,Skjern Å - Landevejsbroen,2021,223.4,40.4
-2020-10-21T22:34:30Z,Skjern Å - Landevejsbroen,2021,222.9,39.9
-2020-10-21T23:37:30Z,Skjern Å - Landevejsbroen,2021,225.4,42.4
+2020-10-21T09:26:00Z,Skjern Å - Landevejsbroen,2021,218.4,35.3
+2020-10-21T10:45:00Z,Skjern Å - Landevejsbroen,2021,215.4,32.3
+2020-10-21T11:09:00Z,Skjern Å - Landevejsbroen,2021,216.4,33.3
+2020-10-21T12:20:00Z,Skjern Å - Landevejsbroen,2021,219.4,36.3
+2020-10-21T13:39:00Z,Skjern Å - Landevejsbroen,2021,219.1,36
+2020-10-21T14:26:00Z,Skjern Å - Landevejsbroen,2021,220.7,37.6
+2020-10-21T15:13:00Z,Skjern Å - Landevejsbroen,2021,221.4,38.3
+2020-10-21T16:32:00Z,Skjern Å - Landevejsbroen,2021,222.4,39.3
+2020-10-21T17:27:00Z,Skjern Å - Landevejsbroen,2021,225.4,42.3
+2020-10-21T18:22:00Z,Skjern Å - Landevejsbroen,2021,222.7,39.6
+2020-10-21T19:33:00Z,Skjern Å - Landevejsbroen,2021,224.9,41.8
+2020-10-21T20:36:00Z,Skjern Å - Landevejsbroen,2021,222.9,39.8
+2020-10-21T21:23:30Z,Skjern Å - Landevejsbroen,2021,223.4,40.3
+2020-10-21T22:34:30Z,Skjern Å - Landevejsbroen,2021,222.9,39.8
+2020-10-21T23:37:30Z,Skjern Å - Landevejsbroen,2021,225.4,42.3
 2020-10-22T00:40:30Z,Skjern Å - Landevejsbroen,2021,222.4,38.9
 2020-10-22T01:43:30Z,Skjern Å - Landevejsbroen,2021,223.9,40.4
 2020-10-22T02:15:00Z,Skjern Å - Landevejsbroen,2021,223.4,39.9
@@ -12518,6 +12518,9 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-25T19:28:00Z,Skjern Å - Landevejsbroen,2021,216.4,32.1
 2020-10-25T20:23:00Z,Skjern Å - Landevejsbroen,2021,216.4,32.1
 2020-10-25T21:34:00Z,Skjern Å - Landevejsbroen,2021,216.2,31.9
+2020-10-25T22:29:00Z,Skjern Å - Landevejsbroen,2021,216.4,32.1
+2020-10-25T23:25:00Z,Skjern Å - Landevejsbroen,2021,215.9,31.6
+2020-10-26T00:28:00Z,Skjern Å - Landevejsbroen,2021,215.6,31.1
 2020-10-11T00:30:00Z,Skjern Å - Landevejsbroen,2022,178.2,-2.4
 2020-10-11T01:27:30Z,Skjern Å - Landevejsbroen,2022,178.1,-2.5
 2020-10-11T02:27:30Z,Skjern Å - Landevejsbroen,2022,177.7,-2.9
@@ -12758,30 +12761,30 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-20T21:25:00Z,Skjern Å - Landevejsbroen,2022,167.5,-15.1
 2020-10-20T22:30:00Z,Skjern Å - Landevejsbroen,2022,168,-14.6
 2020-10-20T23:27:30Z,Skjern Å - Landevejsbroen,2022,168.4,-14.2
-2020-10-21T00:27:30Z,Skjern Å - Landevejsbroen,2022,168.4,-14.6
-2020-10-21T01:27:30Z,Skjern Å - Landevejsbroen,2022,168.4,-14.6
-2020-10-21T02:30:00Z,Skjern Å - Landevejsbroen,2022,168.4,-14.6
-2020-10-21T03:27:30Z,Skjern Å - Landevejsbroen,2022,168.6,-14.4
-2020-10-21T04:27:30Z,Skjern Å - Landevejsbroen,2022,168.4,-14.6
-2020-10-21T05:27:30Z,Skjern Å - Landevejsbroen,2022,168.4,-14.6
-2020-10-21T06:30:00Z,Skjern Å - Landevejsbroen,2022,168.4,-14.6
-2020-10-21T07:27:30Z,Skjern Å - Landevejsbroen,2022,168.6,-14.4
-2020-10-21T08:27:30Z,Skjern Å - Landevejsbroen,2022,168.9,-14.1
-2020-10-21T09:27:30Z,Skjern Å - Landevejsbroen,2022,168.4,-14.6
-2020-10-21T10:30:00Z,Skjern Å - Landevejsbroen,2022,168.3,-14.7
-2020-10-21T11:27:30Z,Skjern Å - Landevejsbroen,2022,168.6,-14.3
-2020-10-21T12:27:30Z,Skjern Å - Landevejsbroen,2022,169.3,-13.7
-2020-10-21T13:27:30Z,Skjern Å - Landevejsbroen,2022,169.3,-13.7
-2020-10-21T14:30:00Z,Skjern Å - Landevejsbroen,2022,169.4,-13.6
-2020-10-21T15:27:30Z,Skjern Å - Landevejsbroen,2022,169.4,-13.6
-2020-10-21T16:27:30Z,Skjern Å - Landevejsbroen,2022,169.7,-13.3
-2020-10-21T17:27:30Z,Skjern Å - Landevejsbroen,2022,170.4,-12.6
-2020-10-21T18:30:00Z,Skjern Å - Landevejsbroen,2022,170.4,-12.6
-2020-10-21T19:27:30Z,Skjern Å - Landevejsbroen,2022,170.4,-12.6
-2020-10-21T20:27:30Z,Skjern Å - Landevejsbroen,2022,170.4,-12.6
-2020-10-21T21:27:30Z,Skjern Å - Landevejsbroen,2022,171.3,-11.7
-2020-10-21T22:30:00Z,Skjern Å - Landevejsbroen,2022,171.4,-11.6
-2020-10-21T23:27:30Z,Skjern Å - Landevejsbroen,2022,171.9,-11.1
+2020-10-21T00:27:30Z,Skjern Å - Landevejsbroen,2022,168.4,-14.7
+2020-10-21T01:27:30Z,Skjern Å - Landevejsbroen,2022,168.4,-14.7
+2020-10-21T02:30:00Z,Skjern Å - Landevejsbroen,2022,168.4,-14.7
+2020-10-21T03:27:30Z,Skjern Å - Landevejsbroen,2022,168.6,-14.5
+2020-10-21T04:27:30Z,Skjern Å - Landevejsbroen,2022,168.4,-14.7
+2020-10-21T05:27:30Z,Skjern Å - Landevejsbroen,2022,168.4,-14.7
+2020-10-21T06:30:00Z,Skjern Å - Landevejsbroen,2022,168.4,-14.7
+2020-10-21T07:27:30Z,Skjern Å - Landevejsbroen,2022,168.6,-14.5
+2020-10-21T08:27:30Z,Skjern Å - Landevejsbroen,2022,168.9,-14.2
+2020-10-21T09:27:30Z,Skjern Å - Landevejsbroen,2022,168.4,-14.7
+2020-10-21T10:30:00Z,Skjern Å - Landevejsbroen,2022,168.3,-14.8
+2020-10-21T11:27:30Z,Skjern Å - Landevejsbroen,2022,168.6,-14.4
+2020-10-21T12:27:30Z,Skjern Å - Landevejsbroen,2022,169.3,-13.8
+2020-10-21T13:27:30Z,Skjern Å - Landevejsbroen,2022,169.3,-13.8
+2020-10-21T14:30:00Z,Skjern Å - Landevejsbroen,2022,169.4,-13.7
+2020-10-21T15:27:30Z,Skjern Å - Landevejsbroen,2022,169.4,-13.7
+2020-10-21T16:27:30Z,Skjern Å - Landevejsbroen,2022,169.7,-13.4
+2020-10-21T17:27:30Z,Skjern Å - Landevejsbroen,2022,170.4,-12.7
+2020-10-21T18:30:00Z,Skjern Å - Landevejsbroen,2022,170.4,-12.7
+2020-10-21T19:27:30Z,Skjern Å - Landevejsbroen,2022,170.4,-12.7
+2020-10-21T20:27:30Z,Skjern Å - Landevejsbroen,2022,170.4,-12.7
+2020-10-21T21:27:30Z,Skjern Å - Landevejsbroen,2022,171.3,-11.8
+2020-10-21T22:30:00Z,Skjern Å - Landevejsbroen,2022,171.4,-11.7
+2020-10-21T23:27:30Z,Skjern Å - Landevejsbroen,2022,171.9,-11.2
 2020-10-22T00:27:30Z,Skjern Å - Landevejsbroen,2022,172.2,-11.3
 2020-10-22T01:27:30Z,Skjern Å - Landevejsbroen,2022,172.2,-11.3
 2020-10-22T02:30:00Z,Skjern Å - Landevejsbroen,2022,173.1,-10.4
@@ -12876,6 +12879,9 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-25T19:29:30Z,Skjern Å - Landevejsbroen,2022,190.6,6.3
 2020-10-25T20:30:30Z,Skjern Å - Landevejsbroen,2022,190.5,6.2
 2020-10-25T21:30:30Z,Skjern Å - Landevejsbroen,2022,190.7,6.4
+2020-10-25T22:33:00Z,Skjern Å - Landevejsbroen,2022,190.9,6.6
+2020-10-25T23:30:30Z,Skjern Å - Landevejsbroen,2022,191.4,7.1
+2020-10-26T00:30:30Z,Skjern Å - Landevejsbroen,2022,191.2,6.7
 2020-10-11T05:18:00Z,Skjern Å - Landevejsbroen,2023,227.4,46.8
 2020-10-11T08:13:00Z,Skjern Å - Landevejsbroen,2023,226.4,45.8
 2020-10-11T11:08:00Z,Skjern Å - Landevejsbroen,2023,220.4,39.8
@@ -12938,13 +12944,13 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-20T15:33:00Z,Skjern Å - Landevejsbroen,2023,218.4,35.8
 2020-10-20T18:31:00Z,Skjern Å - Landevejsbroen,2023,216.4,33.8
 2020-10-20T21:27:00Z,Skjern Å - Landevejsbroen,2023,216.4,33.8
-2020-10-21T00:24:00Z,Skjern Å - Landevejsbroen,2023,216.4,33.4
-2020-10-21T06:15:00Z,Skjern Å - Landevejsbroen,2023,216.4,33.4
-2020-10-21T09:12:00Z,Skjern Å - Landevejsbroen,2023,215.4,32.4
-2020-10-21T12:10:00Z,Skjern Å - Landevejsbroen,2023,216.4,33.4
-2020-10-21T15:05:00Z,Skjern Å - Landevejsbroen,2023,216.4,33.4
-2020-10-21T18:04:00Z,Skjern Å - Landevejsbroen,2023,218.9,35.9
-2020-10-21T21:07:00Z,Skjern Å - Landevejsbroen,2023,219.4,36.4
+2020-10-21T00:24:00Z,Skjern Å - Landevejsbroen,2023,216.4,33.3
+2020-10-21T06:15:00Z,Skjern Å - Landevejsbroen,2023,216.4,33.3
+2020-10-21T09:12:00Z,Skjern Å - Landevejsbroen,2023,215.4,32.3
+2020-10-21T12:10:00Z,Skjern Å - Landevejsbroen,2023,216.4,33.3
+2020-10-21T15:05:00Z,Skjern Å - Landevejsbroen,2023,216.4,33.3
+2020-10-21T18:04:00Z,Skjern Å - Landevejsbroen,2023,218.9,35.8
+2020-10-21T21:07:00Z,Skjern Å - Landevejsbroen,2023,219.4,36.3
 2020-10-22T00:01:00Z,Skjern Å - Landevejsbroen,2023,220.4,36.9
 2020-10-22T05:54:00Z,Skjern Å - Landevejsbroen,2023,222.4,38.9
 2020-10-22T08:49:00Z,Skjern Å - Landevejsbroen,2023,223.4,39.9
@@ -12976,6 +12982,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-25T16:27:00Z,Skjern Å - Landevejsbroen,2023,235.4,51.1
 2020-10-25T19:23:00Z,Skjern Å - Landevejsbroen,2023,236.4,52.1
 2020-10-25T22:19:00Z,Skjern Å - Landevejsbroen,2023,237.4,53.1
+2020-10-26T01:13:00Z,Skjern Å - Landevejsbroen,2023,237.4,52.9
 2020-10-11T00:22:30Z,Skjern Å - Sandfeldvej,2018,2757.3,-5
 2020-10-11T01:22:30Z,Skjern Å - Sandfeldvej,2018,2757.5,-4.8
 2020-10-11T02:22:30Z,Skjern Å - Sandfeldvej,2018,2757.4,-4.8
