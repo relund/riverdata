@@ -1,0 +1,102 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+```
+
+```{r, include=FALSE}
+library(tidyverse)
+library(plotly)
+
+prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
+# prefix <- "../../data/"
+
+# Water levels
+dat <-
+  read_csv(paste0(prefix, "data_skjern_waterlevel_web.csv"),
+           locale = locale(tz = "CET"),
+           col_types = "Tffdd") 
+
+
+
+# 
+# 
+# 
+# p <- ggplot(data = dat, mapping = aes(x = Date, y = LevelRelative, color = YGroup, size = 2, group = 1, text = str_c("Dato: ", format(Date, "%e. %b %H:00"), '<br>Vandstand: ', LevelRelative, ' cm'))) +
+#   geom_line(data = dat %>% filter(Place == "Fjederholt Å - A18"))
+# ggplotly(p, tooltip = c("text"))
+# 
+#   yLab <- if_else(input$iScaleW == "LevelRelative", "Relativ vandstand (cm)", "Vandstand (cm)")
+#   tmp <- datWLevel %>%
+#       filter(Place == input$iPlaceW) %>%
+#       transmute(Dato = Date, Vandstand = .data[[input$iScaleW]], Year = YGroup, Size = if_else(Year == year(now()), 2, 1))
+#   p <- ggplot(
+#     data = tmp,
+#     aes(x = Dato, y = Vandstand, color = Year, size = Size, group = 1,   # group = 1,  must be added for working https://stackoverflow.com/questions/45948926/ggplotly-text-aesthetic-causing-geom-line-to-not-display
+        # text = str_c("Dato: ", format(Dato, "%e. %b %H:00"), '<br>Vandstand: ', Vandstand, ' cm')))
+    # geom_smooth(aes(group = Group), na.rm = T, method = lm, formula = y ~ splines::bs(x, 40),
+    #             se = FALSE, color = "grey", lwd=0.5) +
+
+  # if (input$iScaleW == "LevelRelative") p <- p + geom_hline(yintercept = 0, colour="black")
+  # p <- p +
+  #   geom_line(na.rm = T) + 
+  #   geom_text(data = tmp %>% group_by(Year) %>% filter(Dato == max(Dato)), 
+  #             aes(label = Year, x = max(.data$Dato) + hours(12), y = Vandstand, color = Year), 
+  #             size = 3, hjust = "left") + 
+  #   ylab(yLab) + xlab("Dato") +
+  #   theme(axis.text.x  = element_text(angle=90, hjust = 1, vjust = 1), legend.position="none") + 
+  #   scale_x_datetime(date_labels = "%e. %b", date_breaks = "1 day") + #, limits = c(min(tmp$Dato), max(tmp$Dato) + hours(18))) +
+  #   scale_size_continuous(range = c(0.25, 1))
+  # ggplotly(p, tooltip = c("text"))
+```
+
+```{r}
+dat1 <- dat %>% 
+  select(-Level) %>% 
+  pivot_wider(names_from = Place, values_from = LevelRelative)
+
+create_buttons <- function(df, y_axis_var_names) {
+  vi <- vector("list", length(y_axis_var_names))
+  vi[1:length(vi)] <- F
+  lapply(
+    1:length(y_axis_var_names),
+    FUN = function(idx, df) {
+      vi[idx] <- T
+      if (idx > 1) vi[idx-1] <- F
+      button <- list(
+        method = 'restyle',
+        args = list("visible", vi), 
+        label = y_axis_var_names[idx]
+      )
+    },
+    df
+  )
+}
+y_axis_var_names <- dat %>% distinct(Place) %>% pull(Place) %>% as.character()
+fig <- plot_ly(dat1) 
+tmp <- dat1 %>% transmute(Dato = Date, YGroup, Place = dat1[[3]])
+fig <- fig %>% add_lines( x = ~Dato, y = ~Place, split = ~YGroup, data = tmp, visible = T) 
+for(c in 4:ncol(dat1)) {
+  tmp <- dat1 %>% transmute(Dato = Date, YGroup, Place = dat1[[c]])
+  fig <- fig %>% add_lines( x = ~Dato, y = ~Place, split = ~YGroup, data = tmp, visible = F) 
+}
+fig %>% 
+  layout(
+    # title = "Drop down menus - Styling",
+    xaxis = list(domain = c(0, 1)),
+    yaxis = list(title = "Relativ vandstand"),
+    updatemenus = list(
+      list(
+        y = 1,
+        x = 0.22,
+        buttons = create_buttons(dat1, y_axis_var_names)
+    )
+  ))
+  
+
+```
+
+
+
