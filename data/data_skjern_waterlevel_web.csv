@@ -3917,9 +3917,9 @@ Date,Place,YGroup,Level,LevelRelative
 2020-11-22T16:25:00Z,Karstoft Å - Fiskedamme,2023,1585.2,24.2
 2020-11-22T17:25:00Z,Karstoft Å - Fiskedamme,2023,1585.6,24.6
 2020-11-22T18:25:00Z,Karstoft Å - Fiskedamme,2023,1586.2,25.2
-2020-11-22T19:25:00Z,Karstoft Å - Fiskedamme,2023,1586.9,25.9
-2020-11-22T20:25:00Z,Karstoft Å - Fiskedamme,2023,1587.7,26.7
-2020-11-22T21:25:00Z,Karstoft Å - Fiskedamme,2023,1588.8,27.8
+2020-11-22T19:25:00Z,Karstoft Å - Fiskedamme,2023,1587,26
+2020-11-22T20:25:00Z,Karstoft Å - Fiskedamme,2023,1587.9,26.9
+2020-11-22T21:25:00Z,Karstoft Å - Fiskedamme,2023,1588.9,27.9
 2020-11-22T22:25:00Z,Karstoft Å - Fiskedamme,2023,1590.3,29.3
 2020-11-22T23:25:00Z,Karstoft Å - Fiskedamme,2023,1592.1,31.1
 2020-11-23T00:25:00Z,Karstoft Å - Fiskedamme,2023,1593.6,32.5
@@ -3946,7 +3946,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-11-23T21:25:00Z,Karstoft Å - Fiskedamme,2023,1622.8,61.7
 2020-11-23T22:25:00Z,Karstoft Å - Fiskedamme,2023,1623.3,62.2
 2020-11-23T23:25:00Z,Karstoft Å - Fiskedamme,2023,1623.7,62.6
-2020-11-24T00:25:00Z,Karstoft Å - Fiskedamme,2023,1624.3,63.1
+2020-11-24T00:25:00Z,Karstoft Å - Fiskedamme,2023,1624.3,63
 2020-11-24T01:25:00Z,Karstoft Å - Fiskedamme,2023,1624.4,63.1
 2020-11-24T02:25:00Z,Karstoft Å - Fiskedamme,2023,1624.8,63.5
 2020-11-24T03:25:00Z,Karstoft Å - Fiskedamme,2023,1624.5,63.2
@@ -8369,7 +8369,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-11-23T12:25:00Z,Rind Å - Arnborg kirke,2023,2549.6,42
 2020-11-23T13:25:00Z,Rind Å - Arnborg kirke,2023,2550.6,43.1
 2020-11-23T14:25:00Z,Rind Å - Arnborg kirke,2023,2551.6,44.1
-2020-11-23T15:25:00Z,Rind Å - Arnborg kirke,2023,2552.7,45.2
+2020-11-23T15:25:00Z,Rind Å - Arnborg kirke,2023,2552.6,45.1
 2020-11-23T16:25:00Z,Rind Å - Arnborg kirke,2023,2553.4,45.9
 2020-11-23T17:25:00Z,Rind Å - Arnborg kirke,2023,2554.2,46.7
 2020-11-23T18:25:00Z,Rind Å - Arnborg kirke,2023,2554.9,47.4
@@ -10453,6 +10453,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-12-02T08:22:30Z,Skjern Å - Gjaldbæk bro,2017,494.6,9.2
 2020-12-02T09:22:30Z,Skjern Å - Gjaldbæk bro,2017,494.3,8.9
 2020-12-02T10:22:30Z,Skjern Å - Gjaldbæk bro,2017,494,8.6
+2020-12-02T11:22:30Z,Skjern Å - Gjaldbæk bro,2017,493.8,8.4
+2020-12-02T12:22:30Z,Skjern Å - Gjaldbæk bro,2017,493.5,8.1
+2020-12-02T13:22:30Z,Skjern Å - Gjaldbæk bro,2017,493.2,7.8
+2020-12-02T14:22:30Z,Skjern Å - Gjaldbæk bro,2017,493,7.6
 2020-11-17T00:22:30Z,Skjern Å - Gjaldbæk bro,2018,440.7,-38.9
 2020-11-17T01:22:30Z,Skjern Å - Gjaldbæk bro,2018,440.4,-39.2
 2020-11-17T02:22:30Z,Skjern Å - Gjaldbæk bro,2018,440.2,-39.4
@@ -10824,6 +10828,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-12-02T08:22:30Z,Skjern Å - Gjaldbæk bro,2018,449.4,-36
 2020-12-02T09:22:30Z,Skjern Å - Gjaldbæk bro,2018,449.6,-35.9
 2020-12-02T10:22:30Z,Skjern Å - Gjaldbæk bro,2018,449.6,-35.8
+2020-12-02T11:22:30Z,Skjern Å - Gjaldbæk bro,2018,449.8,-35.6
+2020-12-02T12:22:30Z,Skjern Å - Gjaldbæk bro,2018,450,-35.4
+2020-12-02T13:22:30Z,Skjern Å - Gjaldbæk bro,2018,450.2,-35.2
+2020-12-02T14:22:30Z,Skjern Å - Gjaldbæk bro,2018,450.6,-34.8
 2020-11-17T00:22:30Z,Skjern Å - Gjaldbæk bro,2020,483.4,3.5
 2020-11-17T01:22:30Z,Skjern Å - Gjaldbæk bro,2020,483.7,3.8
 2020-11-17T02:22:30Z,Skjern Å - Gjaldbæk bro,2020,484,4.1
@@ -11195,6 +11203,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-12-02T08:22:30Z,Skjern Å - Gjaldbæk bro,2020,471.5,-14.5
 2020-12-02T09:22:30Z,Skjern Å - Gjaldbæk bro,2020,471.5,-14.5
 2020-12-02T10:22:30Z,Skjern Å - Gjaldbæk bro,2020,471.3,-14.7
+2020-12-02T11:22:30Z,Skjern Å - Gjaldbæk bro,2020,471.1,-14.9
+2020-12-02T12:22:30Z,Skjern Å - Gjaldbæk bro,2020,470.8,-15.2
+2020-12-02T13:22:30Z,Skjern Å - Gjaldbæk bro,2020,470.7,-15.3
+2020-12-02T14:22:30Z,Skjern Å - Gjaldbæk bro,2020,470.6,-15.4
 2020-11-17T00:22:30Z,Skjern Å - Gjaldbæk bro,2021,463.3,-16.3
 2020-11-17T01:22:30Z,Skjern Å - Gjaldbæk bro,2021,463.3,-16.3
 2020-11-17T02:22:30Z,Skjern Å - Gjaldbæk bro,2021,463.1,-16.5
@@ -11566,6 +11578,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-12-02T08:22:30Z,Skjern Å - Gjaldbæk bro,2021,519.1,33.7
 2020-12-02T09:22:30Z,Skjern Å - Gjaldbæk bro,2021,520.1,34.7
 2020-12-02T10:22:30Z,Skjern Å - Gjaldbæk bro,2021,521.1,35.6
+2020-12-02T11:22:30Z,Skjern Å - Gjaldbæk bro,2021,522.1,36.7
+2020-12-02T12:22:30Z,Skjern Å - Gjaldbæk bro,2021,523,37.6
+2020-12-02T13:22:30Z,Skjern Å - Gjaldbæk bro,2021,523.8,38.4
+2020-12-02T14:22:30Z,Skjern Å - Gjaldbæk bro,2021,524.5,39.1
 2020-11-17T00:25:00Z,Skjern Å - Gjaldbæk bro,2022,452.8,-26.9
 2020-11-17T01:25:00Z,Skjern Å - Gjaldbæk bro,2022,452.9,-26.7
 2020-11-17T02:25:00Z,Skjern Å - Gjaldbæk bro,2022,452.8,-26.9
@@ -11937,6 +11953,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-12-02T08:25:00Z,Skjern Å - Gjaldbæk bro,2022,453.2,-32.2
 2020-12-02T09:25:00Z,Skjern Å - Gjaldbæk bro,2022,453,-32.4
 2020-12-02T10:25:00Z,Skjern Å - Gjaldbæk bro,2022,453,-32.5
+2020-12-02T11:25:00Z,Skjern Å - Gjaldbæk bro,2022,452.9,-32.5
+2020-12-02T12:25:00Z,Skjern Å - Gjaldbæk bro,2022,452.7,-32.7
+2020-12-02T13:25:00Z,Skjern Å - Gjaldbæk bro,2022,452.6,-32.8
+2020-12-02T14:25:00Z,Skjern Å - Gjaldbæk bro,2022,452.5,-32.9
 2020-11-17T00:25:00Z,Skjern Å - Gjaldbæk bro,2023,533.8,54.2
 2020-11-17T01:25:00Z,Skjern Å - Gjaldbæk bro,2023,533.8,54.2
 2020-11-17T02:25:00Z,Skjern Å - Gjaldbæk bro,2023,533.8,54.2
@@ -12308,7 +12328,11 @@ Date,Place,YGroup,Level,LevelRelative
 2020-12-02T08:25:00Z,Skjern Å - Gjaldbæk bro,2023,482.7,-2.8
 2020-12-02T09:25:00Z,Skjern Å - Gjaldbæk bro,2023,482.6,-2.9
 2020-12-02T10:25:00Z,Skjern Å - Gjaldbæk bro,2023,482.3,-3.1
-2020-12-02T11:10:00Z,Skjern Å - Gjaldbæk bro,2023,482.1,-3.3
+2020-12-02T11:25:00Z,Skjern Å - Gjaldbæk bro,2023,482,-3.4
+2020-12-02T12:25:00Z,Skjern Å - Gjaldbæk bro,2023,481.8,-3.6
+2020-12-02T13:25:00Z,Skjern Å - Gjaldbæk bro,2023,481.8,-3.6
+2020-12-02T14:25:00Z,Skjern Å - Gjaldbæk bro,2023,481.7,-3.7
+2020-12-02T15:10:00Z,Skjern Å - Gjaldbæk bro,2023,481.6,-3.8
 2020-11-17T00:29:00Z,Skjern Å - Landevejsbroen,2021,196.7,4.3
 2020-11-17T01:24:00Z,Skjern Å - Landevejsbroen,2021,196.4,4
 2020-11-17T02:27:00Z,Skjern Å - Landevejsbroen,2021,196.2,3.8
