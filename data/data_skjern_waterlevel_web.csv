@@ -1601,7 +1601,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-12-09T19:22:30Z,Fjederholt Å - A18,2023,4040.3,4.2
 2020-12-09T20:22:30Z,Fjederholt Å - A18,2023,4040.9,4.8
 2020-12-09T21:22:30Z,Fjederholt Å - A18,2023,4041.4,5.3
-2020-12-09T22:22:30Z,Fjederholt Å - A18,2023,4042.1,6
+2020-12-09T22:22:30Z,Fjederholt Å - A18,2023,4042,5.8
 2020-12-09T23:22:30Z,Fjederholt Å - A18,2023,4042.7,6.6
 2020-12-10T00:22:30Z,Fjederholt Å - A18,2023,4043.3,7.1
 2020-12-10T01:22:30Z,Fjederholt Å - A18,2023,4044.2,8
@@ -1637,9 +1637,9 @@ Date,Place,YGroup,Level,LevelRelative
 2020-12-11T07:22:30Z,Fjederholt Å - A18,2023,4072.5,36.1
 2020-12-11T08:22:30Z,Fjederholt Å - A18,2023,4073.2,36.8
 2020-12-11T09:22:30Z,Fjederholt Å - A18,2023,4073.8,37.4
-2020-12-11T10:22:30Z,Fjederholt Å - A18,2023,4074.3,37.9
-2020-12-11T11:22:30Z,Fjederholt Å - A18,2023,4074.8,38.4
-2020-12-11T12:22:30Z,Fjederholt Å - A18,2023,4075.3,38.9
+2020-12-11T10:22:30Z,Fjederholt Å - A18,2023,4074.4,38
+2020-12-11T11:22:30Z,Fjederholt Å - A18,2023,4074.9,38.6
+2020-12-11T12:22:30Z,Fjederholt Å - A18,2023,4075.4,39
 2020-12-11T13:22:30Z,Fjederholt Å - A18,2023,4075.8,39.4
 2020-12-11T14:22:30Z,Fjederholt Å - A18,2023,4076.2,39.8
 2020-12-11T15:22:30Z,Fjederholt Å - A18,2023,4076.5,40.1
@@ -1651,12 +1651,12 @@ Date,Place,YGroup,Level,LevelRelative
 2020-12-11T21:22:30Z,Fjederholt Å - A18,2023,4077.3,40.8
 2020-12-11T22:22:30Z,Fjederholt Å - A18,2023,4077.3,40.9
 2020-12-11T23:22:30Z,Fjederholt Å - A18,2023,4077.2,40.8
-2020-12-12T00:22:30Z,Fjederholt Å - A18,2023,4077.6,41
+2020-12-12T00:22:30Z,Fjederholt Å - A18,2023,4077.8,41.1
 2020-12-12T01:22:30Z,Fjederholt Å - A18,2023,4077.4,40.8
 2020-12-12T02:22:30Z,Fjederholt Å - A18,2023,4077.4,40.8
 2020-12-12T03:22:30Z,Fjederholt Å - A18,2023,4077.5,40.9
-2020-12-12T04:22:30Z,Fjederholt Å - A18,2023,4077.3,40.7
-2020-12-12T05:22:30Z,Fjederholt Å - A18,2023,4077.4,40.8
+2020-12-12T04:22:30Z,Fjederholt Å - A18,2023,4077.4,40.8
+2020-12-12T05:22:30Z,Fjederholt Å - A18,2023,4077.5,40.8
 2020-12-12T06:22:30Z,Fjederholt Å - A18,2023,4077.2,40.6
 2020-12-12T07:22:30Z,Fjederholt Å - A18,2023,4076.6,40
 2020-12-12T08:22:30Z,Fjederholt Å - A18,2023,4076.5,39.9
@@ -4157,10 +4157,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-12-09T14:25:00Z,Karstoft Å - Fiskedamme,2023,1568.9,5.3
 2020-12-09T15:25:00Z,Karstoft Å - Fiskedamme,2023,1569.3,5.7
 2020-12-09T16:25:00Z,Karstoft Å - Fiskedamme,2023,1570,6.4
-2020-12-09T17:25:00Z,Karstoft Å - Fiskedamme,2023,1570.5,6.9
-2020-12-09T18:25:00Z,Karstoft Å - Fiskedamme,2023,1571.4,7.8
+2020-12-09T17:25:00Z,Karstoft Å - Fiskedamme,2023,1570.4,6.9
+2020-12-09T18:25:00Z,Karstoft Å - Fiskedamme,2023,1571.3,7.7
 2020-12-09T19:25:00Z,Karstoft Å - Fiskedamme,2023,1572.2,8.6
-2020-12-09T20:25:00Z,Karstoft Å - Fiskedamme,2023,1573.1,9.5
+2020-12-09T20:25:00Z,Karstoft Å - Fiskedamme,2023,1572.9,9.3
 2020-12-09T21:25:00Z,Karstoft Å - Fiskedamme,2023,1573.9,10.3
 2020-12-09T22:25:00Z,Karstoft Å - Fiskedamme,2023,1575,11.4
 2020-12-09T23:25:00Z,Karstoft Å - Fiskedamme,2023,1576.2,12.6
@@ -4181,11 +4181,11 @@ Date,Place,YGroup,Level,LevelRelative
 2020-12-10T14:25:00Z,Karstoft Å - Fiskedamme,2023,1594.4,31
 2020-12-10T15:25:00Z,Karstoft Å - Fiskedamme,2023,1595.1,31.7
 2020-12-10T16:25:00Z,Karstoft Å - Fiskedamme,2023,1596.1,32.7
-2020-12-10T17:25:00Z,Karstoft Å - Fiskedamme,2023,1596.8,33.5
+2020-12-10T17:25:00Z,Karstoft Å - Fiskedamme,2023,1596.9,33.5
 2020-12-10T18:25:00Z,Karstoft Å - Fiskedamme,2023,1597.7,34.3
 2020-12-10T19:25:00Z,Karstoft Å - Fiskedamme,2023,1598.3,34.9
 2020-12-10T20:25:00Z,Karstoft Å - Fiskedamme,2023,1598.7,35.3
-2020-12-10T21:25:00Z,Karstoft Å - Fiskedamme,2023,1599.4,36
+2020-12-10T21:25:00Z,Karstoft Å - Fiskedamme,2023,1599.5,36.1
 2020-12-10T22:25:00Z,Karstoft Å - Fiskedamme,2023,1599.9,36.5
 2020-12-10T23:25:00Z,Karstoft Å - Fiskedamme,2023,1600.2,36.7
 2020-12-11T00:25:00Z,Karstoft Å - Fiskedamme,2023,1600.5,37.1
@@ -8479,12 +8479,12 @@ Date,Place,YGroup,Level,LevelRelative
 2020-12-09T20:25:00Z,Rind Å - Arnborg kirke,2023,2510.4,0
 2020-12-09T21:25:00Z,Rind Å - Arnborg kirke,2023,2511.1,0.7
 2020-12-09T22:25:00Z,Rind Å - Arnborg kirke,2023,2512,1.6
-2020-12-09T23:25:00Z,Rind Å - Arnborg kirke,2023,2513.1,2.7
-2020-12-10T00:25:00Z,Rind Å - Arnborg kirke,2023,2514.3,4
+2020-12-09T23:25:00Z,Rind Å - Arnborg kirke,2023,2513,2.6
+2020-12-10T00:25:00Z,Rind Å - Arnborg kirke,2023,2514.2,3.9
 2020-12-10T01:25:00Z,Rind Å - Arnborg kirke,2023,2515.4,5.1
 2020-12-10T02:25:00Z,Rind Å - Arnborg kirke,2023,2516.6,6.3
 2020-12-10T03:25:00Z,Rind Å - Arnborg kirke,2023,2517.8,7.5
-2020-12-10T04:25:00Z,Rind Å - Arnborg kirke,2023,2518.9,8.6
+2020-12-10T04:25:00Z,Rind Å - Arnborg kirke,2023,2519,8.7
 2020-12-10T05:25:00Z,Rind Å - Arnborg kirke,2023,2520.1,9.8
 2020-12-10T06:25:00Z,Rind Å - Arnborg kirke,2023,2521.6,11.2
 2020-12-10T07:25:00Z,Rind Å - Arnborg kirke,2023,2523.3,13.1
@@ -8524,7 +8524,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-12-11T17:25:00Z,Rind Å - Arnborg kirke,2023,2558.4,48.3
 2020-12-11T18:25:00Z,Rind Å - Arnborg kirke,2023,2558.8,48.7
 2020-12-11T19:25:00Z,Rind Å - Arnborg kirke,2023,2559.2,49.1
-2020-12-11T20:25:00Z,Rind Å - Arnborg kirke,2023,2559.6,49.5
+2020-12-11T20:25:00Z,Rind Å - Arnborg kirke,2023,2559.7,49.6
 2020-12-11T21:25:00Z,Rind Å - Arnborg kirke,2023,2559.9,49.8
 2020-12-11T22:25:00Z,Rind Å - Arnborg kirke,2023,2560.1,50
 2020-12-11T23:25:00Z,Rind Å - Arnborg kirke,2023,2560.3,50.2
