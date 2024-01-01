@@ -1,0 +1,866 @@
+Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
+2023-10-29,55,NA,Jimm Tabur,Omme Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-10-29,53,NA,Cim Tabur,Omme Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-10-22,60,NA,Søren Bjørnkjær,Omme Å,Flue,NA,NA,FALSE,NA,FALSE
+2023-10-19,43,NA,Ejnar Andersen,Omme Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-10-19,55,NA,Søren Bjørnkjær,Omme Å,Flue,NA,NA,FALSE,NA,FALSE
+2023-10-15,60,NA,Peter Moesgaard,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-10-15,55,NA,Jesper Ottosen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-10-15,55,NA,Jesper Ottosen,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-10-15,55,NA,Jesper Ottosen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-15,49,NA,Bjørn Jørgensen,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-10-15,46,NA,Poul Lund Larsen,Andet,Spinder,FALSE,NA,FALSE,Hun,FALSE
+2023-10-15,53,NA,Torben Pedersen,Vorgod Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-10-15,47,NA,Bue Poulsen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-15,50,NA,Erling Willumsgaard,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-10-15,50,NA,Anders Toft Andersen,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-10-14,50,NA,Morten Eskildsen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-14,65,NA,Anders Beck,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-10-14,55,NA,Anders Beck,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-10-14,52,NA,Ryan Lund,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/501A511D6BB17315C1258A48005F8226.jpg,FALSE,Han,FALSE
+2023-10-14,55,NA,Niels Rohde Ottosen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-14,55,NA,Lars Nielsen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-10-13,52,NA,Claus Sørensen,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-10-13,50,NA,Claus Sørensen,Vorgod Å,Flue,NA,NA,FALSE,NA,FALSE
+2023-10-13,50,NA,Peter Tornmark Henriksen,Vorgod Å,Flue,TRUE,NA,FALSE,Hun,FALSE
+2023-10-13,50,NA,Susanne Damgaard,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-13,55,NA,Bo Iversen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/48E4BB9BDF276FC3C1258A470060C20E.jpg,FALSE,Hun,FALSE
+2023-10-13,47,NA,Jan Mark,Mellem,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/C6CA4984C23DBC7DC1258A47004DD82C.jpg,FALSE,Han,FALSE
+2023-10-13,45,NA,Jan Fredslund Nielsen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-10-13,54,NA,Marius Josefsen,Omme Å,Flue,NA,NA,FALSE,NA,FALSE
+2023-10-13,63,NA,Wolfgang Wohlers,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-10-13,45,NA,Kenny Frost,Vorgod Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-12,62,NA,Orla Jegstrup,Mellem,Orm,NA,NA,FALSE,Hun,FALSE
+2023-10-12,80,NA,Lars Kjøngerskov,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-10-12,56,NA,Dirk Stübner,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-12,55,NA,Kim Harpsø Jensen,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-10-12,55,NA,Kim Harpsø Jensen,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-10-12,50,NA,Bjarne Sehested,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-12,40,NA,Uffe Lillebæk,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-10-12,52,NA,Anders Christensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-12,51,NA,Anders Christensen,Mellem,Flue,TRUE,NA,FALSE,Hun,FALSE
+2023-10-12,50,NA,Anders Christensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-12,55,NA,Tomas Novikas,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-10-12,60,NA,Karl Pedersen,Vorgod Å,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-10-12,45,NA,Jesper Ottosen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-12,51,NA,Anders Christensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-12,50,NA,Anders Christensen,Mellem,Flue,TRUE,NA,FALSE,Hun,FALSE
+2023-10-12,58,NA,Wolfgang Wohlers,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-10-12,56,NA,Wolfgang Wohlers,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-10-12,55,NA,Niels Præst,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-12,50,NA,Erik Just Pedersen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-10-12,50,NA,Erling Pedersen,Vorgod Å,Flue,NA,NA,FALSE,Han,FALSE
+2023-10-12,52,NA,Anders Christensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-11,58,NA,Nico Lindenmayer,Øvre,Flue,TRUE,NA,FALSE,Han,FALSE
+2023-10-11,45,NA,Jørgen Nielsen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-10-11,65,NA,Jan-Henrik Winsløv,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-10-11,54,NA,Eskild Dam Nielsen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-11,56,NA,Niels-Jørn Mogensen,Nedre,Orm,NA,NA,FALSE,NA,FALSE
+2023-10-10,40,NA,Søren Bjørnkjær,Omme Å,Flue,NA,NA,FALSE,NA,FALSE
+2023-10-10,48,NA,Stig Madsen,Omme Å,Flue,NA,NA,FALSE,NA,FALSE
+2023-10-10,53,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-10,62,NA,Lasse Laursen,Mellem,Flue,NA,NA,FALSE,Han,FALSE
+2023-10-10,51,NA,Uffe Lillebæk,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-10-10,50,NA,Uffe Lillebæk,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-10-10,48,NA,Uffe Lillebæk,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-10-10,55,NA,Rasmus Vemmelund,Mellem,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/535A569D15653AC5C1258A44006474F5.jpg,FALSE,Hun,FALSE
+2023-10-10,53,NA,Kim Harpsø Jensen,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-10-10,52,NA,Uwe Hüls,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-10,49,NA,Anders Nielsen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-10-10,63,NA,Rajko Kruse,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-10-10,65,NA,Niels Præst,Øvre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/4E79BA3290C62725C1258A4400431490.jpg,FALSE,Han,FALSE
+2023-10-09,40,NA,H Poulsen,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2023-10-09,50,NA,Thomas Skjødt,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-10-09,54,NA,Dennis Heine Sørensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-09,50,NA,Lars Relund,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-10-09,55,NA,Dennis Nielsen,Vorgod Å,Spin,NA,NA,FALSE,Han,FALSE
+2023-10-09,50,NA,Dennis Nielsen,Vorgod Å,Spin,NA,NA,FALSE,Han,FALSE
+2023-10-09,55,NA,Claus Eriksen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-09,59,NA,Per Sønderup Nielsen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-10-09,56,NA,Hans Larsen,Vorgod Å,Flue,NA,NA,FALSE,NA,FALSE
+2023-10-09,55,NA,Erling Pedersen,Vorgod Å,Flue,NA,NA,FALSE,Hun,FALSE
+2023-10-08,59,NA,Wolfgang Meyerhof,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-10-08,55,NA,Mogens Kramer,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-10-08,45,NA,Mads Ole Madsen,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-10-08,53,NA,Matthias Nitsche,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-08,50,NA,Erling Pedersen,Vorgod Å,Flue,NA,NA,FALSE,Hun,FALSE
+2023-10-08,45,NA,Erling Pedersen,Vorgod Å,Flue,NA,NA,FALSE,Hun,FALSE
+2023-10-08,63,NA,Morten Martinsen,Vorgod Å,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8ba1165ac62242bfbcf76d2a251cea51.jpg,FALSE,Han,FALSE
+2023-10-08,60,NA,Morten Martinsen,Vorgod Å,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/7115e89421e049cabd95eddd6de18990.jpg,FALSE,Han,FALSE
+2023-10-07,60,NA,Morten Christiansen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-10-06,60,NA,Henrik Bay,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-06,65,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-10-06,60,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-05,52,NA,Kim Mathiasen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-04,50,NA,Niels Magid,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-10-04,48,NA,Niels Magid,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-10-04,58,NA,Tinten Fisch,Øvre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/07FDDDABC53D8B18C1258A3E00617C77.jpg,FALSE,Hun,FALSE
+2023-10-04,65,NA,Mogens Kramer,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-10-02,50,NA,Peter Wittrup,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-10-02,60,NA,Peter Wittrup,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-10-02,49,NA,Peter Wittrup,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-10-02,50,NA,Dennis Heine Sørensen,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-10-02,50,NA,Dennis Nielsen,Vorgod Å,Spin,NA,NA,FALSE,Han,FALSE
+2023-10-02,40,NA,Dennis Nielsen,Vorgod Å,Spin,NA,NA,FALSE,Hun,FALSE
+2023-10-01,57,NA,Frederik Thor,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-10-01,56,NA,Frederik Thor,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-10-01,55,NA,Frederik Thor,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-10-01,54,NA,Frederik Thor,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-10-01,53,NA,Frederik Thor,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-10-01,52,NA,Frederik Thor,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-10-01,50,NA,Flemming Elleby,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-01,55,NA,Jesper Ottosen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-01,49,NA,Helge Bertelsen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-10-01,51,NA,Helge Bertelsen,Omme Å,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-10-01,52,NA,Helge Bertelsen,Omme Å,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-10-01,48,NA,Poul Lund Larsen,Vorgod Å,Spinder,FALSE,NA,FALSE,Hun,FALSE
+2023-10-01,59,NA,Poul Lund Larsen,Vorgod Å,Spinder,FALSE,NA,FALSE,Han,FALSE
+2023-10-01,51,NA,Poul Lund Larsen,Vorgod Å,Spinder,FALSE,NA,FALSE,Hun,FALSE
+2023-10-01,48,NA,Poul Lund Larsen,Vorgod Å,Spinder,FALSE,NA,FALSE,Han,FALSE
+2023-10-01,50,NA,Morten Martinsen,Vorgod Å,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/3e02b9a687cb49cab6ee7582c3eba434.jpg,FALSE,Hun,FALSE
+2023-10-01,60,NA,Tobias Rudolph,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/AA2F7D742E5986AAC1258A3B003BFD06.jpg,FALSE,Hun,FALSE
+2023-10-01,50,NA,Erik Just Pedersen,Vorgod Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-01,50,NA,Erik Just Pedersen,Vorgod Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-10-01,65,NA,Henrik Madsen,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-09-30,45,NA,M Knudsen,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-09-30,56,NA,Lars Korshøj,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-09-30,50,NA,Svend Åge Andersen,Mellem,Spin,NA,NA,FALSE,Hun,FALSE
+2023-09-30,55,NA,Niels Rohde Ottosen,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-09-30,50,NA,Bjarke Therp,Øvre,Spin,NA,NA,FALSE,NA,TRUE
+2023-09-30,41,NA,Frank Jensen,Vorgod Å,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-09-29,53,NA,Brian Vemmelund,Omme Å,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-09-29,48,NA,Brian Vemmelund,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-09-29,58,NA,Søren Lauridsen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-09-29,50,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-29,59,NA,Mogens Kramer,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-09-29,55,NA,Lars Kjøngerskov,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-09-29,58,NA,René Sørup,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/951286948AFE244DC1258A39003B3B4E.jpg,FALSE,Hun,FALSE
+2023-09-28,55,NA,Jørn Andersen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-09-28,60,NA,Svend Thomsen,Vorgod Å,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-09-27,51,NA,Dennis Heine Sørensen,Andet,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-09-27,69,NA,Danilo Skudelny,Nedre,Spin,TRUE,NA,FALSE,Han,FALSE
+2023-09-27,62,NA,Ole Peder Toppenberg,Vorgod Å,Spin,NA,NA,FALSE,Han,FALSE
+2023-09-27,40,NA,Jimmy Nielsen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-27,47,NA,Morten Martinsen,Mellem,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/75ccb33308f1414c9f4f37eeae5000ad.jpg,FALSE,Hun,FALSE
+2023-09-27,50,NA,Erling Pedersen,Vorgod Å,Flue,NA,NA,FALSE,Hun,FALSE
+2023-09-26,55,NA,Bruno Sørensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-26,63,NA,Dennis Heine Sørensen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-09-26,58,NA,Torben Pedersen,Mellem,Spin,TRUE,NA,FALSE,Han,FALSE
+2023-09-26,55,NA,Marc Skovby,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-09-26,55,NA,Erling Pedersen,Vorgod Å,Flue,NA,NA,FALSE,Han,FALSE
+2023-09-25,50,NA,Miran Korosec,Øvre,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/49FC2DF83F559693C1258A35006DFD10.jpg,FALSE,NA,FALSE
+2023-09-25,58,NA,Peter Cramon,Mellem,Spin,NA,NA,FALSE,Hun,FALSE
+2023-09-25,58,NA,Gert Hartvigsen,Omme Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-25,58,NA,Luca Niebuhr,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-09-25,50,NA,Thomas Weiergang,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-25,60,NA,Thomas Weiergang,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-09-25,65,NA,Jan Fredslund Nielsen,Omme Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-25,45,NA,H. Poulsen,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-25,50,NA,Klaus Møller Nielsen,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-09-25,50,NA,Peter Kristensen,Øvre,Spin,NA,NA,FALSE,Han,FALSE
+2023-09-24,51,NA,Lars Nielsen,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-09-24,50,NA,Lars Nielsen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-24,55,NA,Florian Bahnsen,Nedre,Flue,TRUE,NA,FALSE,NA,FALSE
+2023-09-24,55,NA,John Broe Rasmussen,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-24,40,NA,John Broe Rasmussen,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-24,46,NA,Bjarke Therp,Øvre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/C722472646DF9111C1258A3400572246.jpg,FALSE,Han,FALSE
+2023-09-24,55,NA,Bjarke Therp,Øvre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B0B4B58926D7C7ABC1258A3400570D54.jpg,FALSE,Han,FALSE
+2023-09-24,40,NA,René Sørup,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-23,55,NA,Kurt Lorenz,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-09-23,45,NA,Kurt Lorenz,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-09-23,40,NA,Jan Filler,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-23,60,NA,Jan Filler,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-23,50,NA,Frederik Thor,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-23,60,NA,Lars Pedersen,Øvre,Spin,NA,NA,FALSE,Han,FALSE
+2023-09-23,46,NA,Morten Therp,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-23,51,NA,Stefan Schatz,Mellem,Spin,NA,NA,FALSE,Hun,FALSE
+2023-09-23,60,NA,Kristian Møller,Mellem,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8a63018d6e734fdbbc6845e0df7e02d4.jpg,FALSE,Hun,FALSE
+2023-09-22,62,NA,Frederik Thor,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-22,61,NA,Frederik Thor,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-22,60,NA,Frederik Thor,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-22,59,NA,Frederik Thor,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-09-22,42,NA,Lars Korshøj,Øvre,Spin,NA,NA,FALSE,Han,FALSE
+2023-09-22,60,NA,Lars Korshøj,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-09-22,62,NA,Marc Skovby,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-09-22,45,NA,Henrik Petersen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-22,55,NA,Kristian Nøreng,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-09-22,73,NA,Søren Knudsen,Øvre,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/89237764C768715BC1258A320054DB98.jpg,FALSE,Hun,FALSE
+2023-09-22,60,NA,Anders Kristensen,Omme Å,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/2d6e20af5f5a4343a3e7fbf00156270f.jpg,FALSE,Hun,FALSE
+2023-09-22,62,NA,Kenny Frost,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/FD02549B5A0D3F62C1258A320020BC1B.jpg,FALSE,Hun,FALSE
+2023-09-21,50,NA,Mirko Ban,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-09-21,65,NA,Vagn Pedersen,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/783E8C399B49649BC1258A31003B4758.jpg,FALSE,Hun,FALSE
+2023-09-20,60,NA,Christian,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-09-20,60,NA,Kristian Nøreng,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-09-19,54,NA,Chris Rævsgaard Hansen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-19,55,NA,Thomas Marcussen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-19,56,NA,Ole Vedsted,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-09-19,56,NA,Ole Vedsted,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-09-19,55,NA,Lars Stenvang,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-09-19,55,NA,Nicolai Just Jakobsen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-09-18,49,NA,Bjarne Staulund Jakobsen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-09-17,50,NA,Jimmi Lund Bindesbøl,Omme Å,Spin,NA,NA,FALSE,Hun,FALSE
+2023-09-16,43,NA,Brian Vemmelund,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-09-16,50,NA,Andreas Isaksen,Mellem,Flue,FALSE,NA,FALSE,NA,TRUE
+2023-09-16,65,NA,Brian Jensen,Mellem,Flue,NA,NA,FALSE,Hun,TRUE
+2023-09-16,53,NA,Niels-Jørn Mogensen,Øvre,Orm,FALSE,NA,FALSE,Han,FALSE
+2023-09-16,50,NA,Roar Rasmussen,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2023-09-16,55,NA,Peter Tornmark Henriksen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-15,50,NA,Peder Bjerre Kristensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-09-15,50,NA,Luca Niebuhr,Mellem,Spin,TRUE,NA,FALSE,NA,FALSE
+2023-09-14,52,NA,Brian Vemmelund,Omme Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-14,70,NA,Henrik Schmidt,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-09-14,50,NA,Andreas Kunze,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-09-14,57,NA,Frank Jensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-13,55,NA,Ole Damgaard,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-13,60,NA,Ole Damgaard,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-09-13,60,NA,Lars Kjøngerskov,Mellem,Spin,NA,NA,FALSE,Han,FALSE
+2023-09-13,55,NA,Tonni Kjær Jensen,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-09-12,53,NA,Marius Josefsen,Omme Å,Flue,NA,NA,FALSE,NA,FALSE
+2023-09-12,60,NA,Svend Thomsen,Vorgod Å,Spin,NA,NA,FALSE,Hun,FALSE
+2023-09-12,55,NA,Svend Thomsen,Vorgod Å,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-09-12,45,NA,Tim Byfoged Larsen,Nedre,Flue,NA,NA,FALSE,Han,FALSE
+2023-09-11,55,NA,Lars Kjøngerskov,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-09-10,50,NA,Olav Hansen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-09-10,52,NA,Jan Ottesen,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-09-09,52,NA,Jan Kjeldsen,Omme Å,Flue,NA,NA,FALSE,Han,FALSE
+2023-09-09,50,NA,Peter Holtet,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-09,60,NA,Bruno Stamm,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-09-08,57,NA,Hendrik Weiner,Nedre,Flue,TRUE,NA,FALSE,Han,FALSE
+2023-09-07,55,NA,Bo Fomsgaard,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-09-07,50,NA,Bo Fomsgaard,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-09-07,42,NA,Bjarne Staulund Jakobsen,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-09-07,60,NA,Flemming Jørgensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-09-06,58,NA,Peter May,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-09-05,55,NA,Tonni Kjær Jensen,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-09-05,46,NA,Bjarke Therp,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-09-04,48,NA,Flemming Jørgensen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-09-03,54,NA,Kenneth Bjerg,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-09-03,50,NA,Nick Søgaard,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-09-03,45,NA,Bjarke Therp,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-03,60,NA,René Sørup,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/54F3F4ADC27E97A5C1258A1F003E0B76.jpg,FALSE,Han,FALSE
+2023-09-03,58,NA,Frank Jensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-02,45,NA,M Knudsen,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-09-02,50,NA,Søren Hedegaard Larsen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-09-02,55,NA,René Christensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-09-02,58,NA,Frank-Uwe Michler,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-09-02,43,NA,Morten Martinsen,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-09-01,56,NA,Tom Bjerre Jensen,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2023-09-01,54,NA,Søren H. Larsen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-31,65,NA,Morten Petersen,Vorgod Å,Flue,NA,NA,FALSE,Han,FALSE
+2023-08-31,67,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-31,55,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-31,40,NA,Thomas Marcussen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-31,52,NA,Steen Jørgen Mortensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-31,62,NA,Arno Kupper,Mellem,Flue,TRUE,NA,FALSE,NA,FALSE
+2023-08-31,60,NA,Stig Christensen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-30,57,NA,Bjarne Staulund Jakobsen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-30,50,NA,Freddy Hansen,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-08-30,50,NA,Erling Pedersen,Vorgod Å,Flue,NA,NA,FALSE,Han,FALSE
+2023-08-29,65,NA,Per Gylling,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-29,55,NA,Per Gylling,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-28,55,NA,Olav Hansen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-28,45,NA,Kristian Nøreng,Øvre,Flue,FALSE,NA,FALSE,NA,TRUE
+2023-08-28,50,NA,Ole Damgaard,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-28,57,NA,Flemming Kristiansen,Vorgod Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-28,56,NA,Kristian A. Pedersen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-27,55,NA,Bo Fomsgaard,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-27,54,NA,Henrik Jensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-27,56,NA,Lars Korshøj,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-08-26,55,NA,Nico Lindenmayer,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-26,70,NA,Michael Schimpl,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-26,55,NA,Bjarne Laursen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-26,40,NA,Niels Rohde Ottosen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-26,65,NA,Carsten Knivford,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-26,57,NA,Jan-Henrik Winsløv,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-25,72,NA,Michael Schimpl,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-25,45,NA,Niels Rohde Ottosen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-24,55,NA,Niels Rohde Ottosen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-24,60,NA,Steffen Goldmann,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-24,50,NA,Søren Rasmussen,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-08-24,60,NA,Svend Thomsen,Vorgod Å,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-23,49,NA,Brian Vemmelund,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-23,65,NA,Keld Dahl,Nedre,Spin,NA,NA,FALSE,Han,FALSE
+2023-08-23,54,NA,Uwe Hüls,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-23,65,NA,Niels Rohde Ottosen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-23,50,NA,Niels Rohde Ottosen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-23,49,NA,Henrik Jensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-23,40,NA,Bent Winkler,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-08-23,48,NA,Steen Jørgen Mortensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-23,55,NA,Michael Rolsner,Omme Å,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-08-23,55,NA,Frederik Kjær,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-22,58,NA,Martin Nøreng,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-08-22,58,NA,Andreas Isaksen,Øvre,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/9F8D1BA62986A7E0C1258A13006CE03B.jpg,FALSE,NA,FALSE
+2023-08-22,50,NA,Ejner Olesen,Mellem,Orm,NA,NA,FALSE,NA,FALSE
+2023-08-22,50,NA,Ejner Olesen,Mellem,Orm,NA,NA,FALSE,NA,FALSE
+2023-08-22,68,NA,Karl Nielsen,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-21,45,NA,Lars Pedersen,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-08-21,45,NA,Simon Sønnichsen,Vorgod Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-08-20,60,NA,Morten Eskildsen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-20,40,NA,Morten Martinsen,Vorgod Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-08-20,50,NA,Oliver Gylling,Vorgod Å,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/48D7CAA7627D6A4EC1258A110043DBF7.jpg,FALSE,Han,FALSE
+2023-08-19,47,NA,Jan Kjeldsen,Omme Å,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-08-19,53,NA,Keld Dahl,Nedre,Spin,NA,NA,FALSE,Han,FALSE
+2023-08-19,45,NA,Phillip Frisk,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-08-19,52,NA,Stefan Mahlau,Mellem,Spin,NA,NA,FALSE,Hun,FALSE
+2023-08-18,60,NA,Lars Ellermann,Øvre,Flue,TRUE,NA,FALSE,NA,FALSE
+2023-08-18,55,NA,Michael Gehrt,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-18,60,NA,Michael Heimann,Mellem,Flue,NA,NA,FALSE,Han,FALSE
+2023-08-18,45,NA,Peter Tornmark Henriksen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8A3D033445D3B46AC1258A0F0067CFF7.jpg,FALSE,Hun,FALSE
+2023-08-18,53,NA,Henrik Schwalm,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-18,55,NA,Mads Thyge Pedersen,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-08-18,55,NA,Claus Roth Nielsen,Mellem,Spin,NA,NA,FALSE,Hun,FALSE
+2023-08-18,50,NA,Peder Bæk,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-18,55,NA,Erling Pedersen,Vorgod Å,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-18,70,NA,Steen Bork-Larsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-18,56,NA,Stefan Mahlau,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-18,60,NA,Peder Bjerre Kristensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-17,60,NA,Michael Schimpl,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-17,55,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-17,57,NA,Jannes Petersen,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2023-08-17,48,NA,Peter Tornmark Henriksen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-17,49,NA,Allan Nordfeldt West,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-17,56,NA,Peter Tornmark Henriksen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/6B21BC657017F699C1258A0E003B4BB5.jpg,FALSE,Hun,FALSE
+2023-08-17,48,NA,Kenneth Pedersen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-16,53,NA,Helge Bertelsen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-16,41,NA,Helge Bertelsen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-16,51,NA,Helge Bertelsen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-16,63,NA,Helge Bertelsen,Omme Å,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-16,50,NA,Peter Bjerregaard,Vorgod Å,Orm,NA,NA,FALSE,Hun,FALSE
+2023-08-16,55,NA,Michael Schimpl,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-08-16,50,NA,Lars Pedersen,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-08-16,65,NA,Allan Haugaard Feddersen,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-08-16,40,NA,Henrik Poulsen,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2023-08-16,45,NA,Brian Jensen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-16,47,NA,Brian Jensen,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-16,51,NA,Brian Jensen,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-16,50,NA,Brian Jensen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-16,55,NA,Brian Jensen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-16,58,NA,Brian Jensen,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-16,60,NA,Brian Jensen,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-16,52,NA,Stig Panduro,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-16,50,NA,Kim Flindt,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-16,60,NA,Uffe Lillebæk,Øvre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8A4E93FC8C10F9D6C1258A0D003E3CFC.jpg,FALSE,Hun,FALSE
+2023-08-16,50,NA,Uffe Lillebæk,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-08-16,50,NA,Stefan Mahlau,Mellem,Spin,NA,NA,FALSE,Hun,FALSE
+2023-08-16,58,NA,Poul Lauridsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-15,52,NA,Ejnar Andersen,Omme Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-08-15,42,NA,Peter Tornmark Henriksen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-15,52,NA,Mario Neske,Mellem,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/346B936664B03D9AC1258A0C006EC250.jpg,FALSE,Han,FALSE
+2023-08-15,75,NA,Henrik Jensen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/3CDFC7480F6243F5C1258A0C006E7925.jpg,FALSE,Hun,FALSE
+2023-08-15,50,NA,Thomas Weiergang,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-08-15,55,NA,Karl Aaby,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2023-08-15,50,NA,Erling Pedersen,Vorgod Å,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-14,45,NA,Jan Mark,Øvre,Spin,NA,NA,FALSE,Hun,TRUE
+2023-08-14,80,NA,Rene Strandgaard,Mellem,Flue,NA,NA,FALSE,Han,FALSE
+2023-08-13,53,NA,Kim Husted,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-13,45,NA,Jens Gregersen,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-08-13,51,NA,Alex Hjort,Vorgod Å,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-13,50,NA,Alex Hjort,Vorgod Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-12,49,NA,Michel Seidelin,Omme Å,Spin,NA,NA,FALSE,Han,FALSE
+2023-08-12,48,NA,Lars Pedersen,Omme Å,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-12,45,NA,Niels Rohde Ottosen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-12,60,NA,Henning Bak,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-12,55,NA,Jakob Jensen,Øvre,Spin,NA,NA,FALSE,Han,FALSE
+2023-08-12,52,NA,Henrik Jensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-12,48,NA,Carsten Johnsen,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-08-12,60,NA,Steen Jørgen Mortensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-11,50,NA,Nong Christensen,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-08-11,50,NA,Ole Damgaard,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-11,55,NA,Ole Damgaard,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-11,60,NA,Ole Damgaard,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-11,40,NA,Ole Damgaard,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-11,50,NA,Ole Damgaard,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-11,40,NA,Ole Damgaard,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-11,55,NA,Lars Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-11,60,NA,Jan Mark,Øvre,Spin,NA,NA,FALSE,Han,FALSE
+2023-08-11,55,NA,Lars Erik Olsen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-11,55,NA,Jan Østerby Olesen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-11,50,NA,Erling Pedersen,Vorgod Å,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-11,55,NA,Erling Pedersen,Vorgod Å,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-11,55,NA,Jesper S Petersen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-10,55,NA,Ryan Lund,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-10,65,NA,Henrik Axelsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-10,55,NA,Brian Jensen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-10,51,NA,Mogens Larsen,Omme Å,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/09A00868BA2E6F5DC1258A07006484BE.jpg,FALSE,Hun,FALSE
+2023-08-10,50,NA,Søren Vilsbøll,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-10,57,NA,William Rask,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-10,53,NA,Lars Erik Olsen,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-09,60,NA,Bo Fomsgaard,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-09,40,NA,Jens Hillingsø,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-09,45,NA,Henrik Qvortrup Thygeaen,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-08-09,50,NA,Henrik Qvortrup Thygeaen,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-09,55,NA,Henrik Qvortrup Thygeaen,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-09,50,NA,Lars Hougaard,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-09,53,NA,Henrik Jensen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-09,49,NA,Verner Mortensen,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-09,53,NA,Verner Mortensen,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-09,50,NA,Jesper Vistesen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-09,62,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-09,45,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-09,65,NA,Anders Kristensen,Omme Å,Spin,NA,NA,FALSE,Hun,FALSE
+2023-08-09,57,NA,Morten Martinsen,Mellem,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/09b4b0fa51374de9ab0cb44f696b2494.jpg,FALSE,Han,FALSE
+2023-08-09,50,NA,Anders Kristensen,Omme Å,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-08-09,63,NA,Lars Erik Olsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-09,45,NA,Torben Bjørn,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-08,62,NA,Jens Hillingsø,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-08,50,NA,Jens Hillingsø,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-08,50,NA,Søren Jansen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-08,55,NA,Kristian Nøreng,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-08,52,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-08,48,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-08,50,NA,Søren Nielsen,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2023-08-08,55,NA,Lars Korshøj,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-08,48,NA,Bruno Stamm,Vorgod Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-07,55,NA,Mogens Kramer,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-08-06,62,NA,Kristian Jørgensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-06,48,NA,Bruno Stamm,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-06,45,NA,Bruno Stamm,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-06,55,NA,Dennis Nielsen,Vorgod Å,Spin,NA,NA,FALSE,Hun,FALSE
+2023-08-06,50,NA,Dennis Nielsen,Vorgod Å,Spin,NA,NA,FALSE,Han,FALSE
+2023-08-06,45,NA,Dennis Nielsen,Vorgod Å,Spin,NA,NA,FALSE,Hun,FALSE
+2023-08-06,45,NA,Johan Salling,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-08-06,60,NA,Poul Lund Larsen,Vorgod Å,Spin,NA,NA,FALSE,Han,FALSE
+2023-08-06,51,NA,Poul Lund Larsen,Vorgod Å,Spin,NA,NA,FALSE,Hun,FALSE
+2023-08-06,45,NA,Per Andersen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-05,60,NA,Nik Janssen,Mellem,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/60880F9A5DBEBEA5C1258A02006E031C.jpg,FALSE,Hun,FALSE
+2023-08-05,64,NA,Elliot Naaby Andersen,Nedre,Flue,NA,NA,FALSE,Han,FALSE
+2023-08-05,56,NA,Tommy Dejligbjerg,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-05,60,NA,Per Gylling,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-05,55,NA,Per Gylling,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-05,61,NA,Dennis Heine Sørensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-05,62,NA,Dennis Heine Sørensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-05,41,NA,Erik O. Kristensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-05,48,NA,Benny Pedersen,Mellem,Flue,FALSE,NA,FALSE,Han,TRUE
+2023-08-05,58,NA,Flemming Jørgensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-04,50,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-08-04,67,NA,Dylan Svendsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-04,60,NA,Valentin Mougaard,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/176E7EC222D5FA0BC1258A01005B08FE.jpg,FALSE,Han,FALSE
+2023-08-04,52,NA,Letecia Jensen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-08-04,45,NA,Mads Ole Madsen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-08-04,65,NA,Erling Pedersen,Vorgod Å,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-04,55,NA,Anders Kristensen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-03,50,NA,Søren Jansen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-03,55,NA,Søren Jansen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-08-02,43,NA,Bjarne Nielsen,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-02,48,NA,Bjarne Nielsen,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-08-02,50,NA,Jan Mark,Øvre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/CA3038E7A2612658C12589FF005D8326.jpg,FALSE,Hun,FALSE
+2023-08-02,55,NA,Ole L. Pedersen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-08-02,55,NA,Valentin Mougaard,Mellem,Flue,FALSE,NA,FALSE,NA,TRUE
+2023-08-02,55,NA,Valentin Mougaard,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/D58F7D72CD480E97C12589FF0052F6A8.jpg,FALSE,NA,TRUE
+2023-08-01,50,NA,Ejnar Andersen,Omme Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-08-01,50,NA,Kenneth Kjeldsen Nie,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-08-01,55,NA,Markus Klump,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-08-01,50,NA,Vagn Pedersen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/229A2D93F1683A62C12589FE0048253B.jpg,FALSE,Hun,FALSE
+2023-07-31,55,NA,Bo Fomsgaard,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-31,40,NA,Steen Jørgen Mortensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-31,52,NA,David Hampel,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-31,46,NA,Ulrik Plate,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-31,56,NA,Simon Nordfeldt West,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-31,50,NA,Kristian Nøreng,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-31,45,NA,Frank Jensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-31,45,NA,Henrik Madsen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-30,57,NA,Børge Jensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-30,55,NA,Børge Jensen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-30,58,NA,Børge Jensen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-30,50,NA,Malthe Wisler Johansen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-30,45,NA,Asger Rask,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-29,51,NA,Bruno Stamm,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-29,45,NA,Lennart Schmidt,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-29,60,NA,Per Gylling,Mellem,Flue,FALSE,NA,FALSE,Hun,TRUE
+2023-07-28,55,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-28,50,NA,Thomas Marcussen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-28,56,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-28,51,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-28,49,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-28,60,NA,Lasse Laursen,Mellem,Flue,NA,NA,FALSE,Han,FALSE
+2023-07-28,49,NA,Klaus Grandahl,Mellem,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/42DEBEEE5B668B90C12589FA0041BA70.jpg,FALSE,NA,FALSE
+2023-07-28,45,NA,Erling Pedersen,Vorgod Å,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-28,50,NA,Birger Dam Jensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-27,50,NA,Erik Hegelund Jørgensen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-27,51,NA,Mikkel Vandris Jensen,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-27,50,NA,Jesper Ottosen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-27,58,NA,Thomas Skjødt,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-07-27,63,NA,Thomas Skjødt,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-07-27,45,NA,Timothy Poultney,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-26,60,NA,Rene,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-07-26,40,NA,Willi Mieth,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-07-26,49,NA,Peter Martinsen,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-26,60,NA,René Sørup,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/6AD0D4258C00FC7FC12589F8005CA616.jpg,FALSE,Hun,FALSE
+2023-07-26,55,NA,Sebastian,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-26,48,NA,Mogens Larsen,Omme Å,Spin,NA,NA,FALSE,Hun,FALSE
+2023-07-26,60,NA,Valentin Mougaard,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-26,55,NA,Carl Christian Friis Frederiksen,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-26,54,NA,Timothy Poultney,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-26,48,NA,Timothy Poultney,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-25,58,NA,Martin Didrichsons,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-07-25,48,NA,Bjarne Staulund Jakobsen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-25,60,NA,Morten Sussemiehl Pedersen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-25,51,NA,Jan Kjeldsen,Omme Å,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-25,40,NA,Nicolai Just Jakobsen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-25,55,NA,Nicolai Just Jakobsen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-25,50,NA,Helge Bertelsen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-25,50,NA,Kasper Juliussen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-24,55,NA,Morten Eskildsen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-24,55,NA,Mathias Kvist,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-24,45,NA,Mathias Kvist,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-24,54,NA,Anders Vilsbøll,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-07-24,52,NA,Jan Mark,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-07-24,50,NA,Timothy Poultney,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-23,60,NA,Kim Mathiasen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-23,55,NA,Bruno Didrichsons,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-22,56,NA,Henning Olesen,Vorgod Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-22,50,NA,Jimmi Lund Bindesbøl,Omme Å,Spin,NA,NA,FALSE,Hun,FALSE
+2023-07-22,50,NA,Jesper Ottosen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-22,50,NA,Niels Rohde Ottosen,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-07-22,61,NA,Jonathan Lindenmayer,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-22,48,NA,Kasper Juliussen,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-07-22,52,NA,Thomas Balle,Mellem,Spin,NA,NA,FALSE,Han,FALSE
+2023-07-22,47,NA,Henrik Bøjgård,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-22,40,NA,Jesper Ottosen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-22,57,NA,Jens Rasmussen,Vorgod Å,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-22,40,NA,Jens Rasmussen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-22,72,NA,Rainer Albers,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2023-07-22,55,NA,Dennis Krickau Østerballe,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-21,40,NA,Per Wandel,Mellem,Flue,FALSE,NA,FALSE,Han,TRUE
+2023-07-21,62,NA,Jan Tryk,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-21,45,NA,Torben Albertsen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-21,45,NA,Jan Mark,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-07-21,45,NA,Michael Heimann,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-21,55,NA,Bo Eskesen,Vorgod Å,Flue,NA,NA,FALSE,NA,FALSE
+2023-07-21,55,NA,Michael Park,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-21,50,NA,Kurt Jensen,Øvre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/F4D591B4FCF025DDC12589F3003C0EBF.jpg,FALSE,NA,FALSE
+2023-07-20,45,NA,Bjarne Staulund Jakobsen,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-20,52,NA,Bjarne Staulund Jakobsen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-20,48,NA,Bjarne Staulund Jakobsen,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-20,65,NA,Michael Heimann,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2023-07-20,55,NA,Niels Rohde Ottosen,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-20,52,NA,Lars Korshøj,Øvre,Spin,NA,NA,FALSE,Han,FALSE
+2023-07-20,45,NA,Henning Bak,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-20,55,NA,Thomas Marcussen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-20,60,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-20,40,NA,Steen Nielsen,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-20,60,NA,Philipp Risau,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-20,50,NA,Lars Erik Olsen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-20,55,NA,Lars Erik Olsen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-20,55,NA,Marc Skovby,Mellem,Flue,NA,NA,FALSE,Han,FALSE
+2023-07-19,49,NA,Bjarne Staulund Jakobsen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-19,48,NA,Kim Iversen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-18,52,NA,Magnus Knokgård,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-18,44,NA,Kim Harpsø Jensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-18,48,NA,Kim Harpsø Jensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-18,54,NA,Søren Holm,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-18,54,NA,Marc Skovby,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-18,62,NA,Finn Meldgård,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-18,60,NA,Magnus Knokgård,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-18,50,NA,Erling Pedersen,Vorgod Å,Flue,NA,NA,FALSE,Han,FALSE
+2023-07-17,48,NA,Bruno Stamm,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-17,49,NA,Helge Bertelsen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-17,48,NA,Helge Bertelsen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-17,45,NA,Johan Salling,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-17,51,NA,Carsten Johnsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-16,48,NA,Søren Rahbek Hansen,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-16,50,NA,Søren Rahbek Hansen,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-16,47,NA,Søren Rahbek Hansen,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-16,60,NA,Bjarne Staulund Jakobsen,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-07-16,68,NA,Stefan Jan Lindén,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-16,55,NA,Frederik Aakær Staun,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-07-16,60,NA,Nikolaj Bünger,Mellem,Spin,NA,NA,FALSE,Han,FALSE
+2023-07-16,50,NA,Viktor Quuu,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-16,55,NA,Peter Schleier,Nedre,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/237DF2C522F9F0A4C12589EE00449645.jpg,FALSE,NA,FALSE
+2023-07-15,50,NA,Susan Bünger,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-15,45,NA,Viktor Quuuu,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-15,50,NA,Viktor Quuuu,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-15,55,NA,Viktor Quuuu,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-15,55,NA,Jan Mark,Øvre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-07-15,53,NA,Markus Bech Bering,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-15,50,NA,René Sørup,Øvre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/E972C77E67675E38C12589ED003CF681.jpg,FALSE,Hun,FALSE
+2023-07-15,55,NA,René Sørup,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-15,50,NA,Jan Palmgren Nielsen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/4DC666855CDD964BC12589ED002A6D5F.jpg,FALSE,Han,FALSE
+2023-07-14,55,NA,Peter Kolding,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-14,54,NA,Flemming Jørgensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-14,55,NA,Jimmi Lund Bindesbøl,Omme Å,Spin,NA,NA,FALSE,Hun,FALSE
+2023-07-14,60,NA,Peder Bæk,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-14,50,NA,Henning Olesen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-14,55,NA,Bo Iversen,Nedre,Spin,TRUE,NA,FALSE,Han,FALSE
+2023-07-14,50,NA,Marc Skovby,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-13,47,NA,Morten Jonassen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-13,45,NA,Mogens Larsen,Nedre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B9A2C3915967B19BC12589EB006F426D.jpg,FALSE,Hun,FALSE
+2023-07-13,50,NA,Peter Kolding,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-13,47,NA,Kim Harpsø Jensen,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-13,55,NA,Henrik Tjygesen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-13,55,NA,Lasse Laursen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-13,50,NA,Lasse Laursen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-13,54,NA,Henrik Bøjgård,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-13,50,NA,Lasse Laursen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-13,58,NA,Matthias Rosin,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-13,50,NA,Peter Jørgensen,Mellem,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/3582550bd1b44aa19ac0e083c8ca2d1e.jpg,FALSE,NA,FALSE
+2023-07-13,50,NA,Verner Mortensen,Omme Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-13,55,NA,Lars Erik Olsen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-13,55,NA,Stig Christensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-12,47,NA,Ejnar Andersen,Omme Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-12,55,NA,Rasmus Braüner Sørensen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A344A1584C938E0EC12589EA006ABD57.jpg,FALSE,NA,FALSE
+2023-07-12,55,NA,Stefan Meldgaard,Nedre,Flue,NA,NA,FALSE,Han,FALSE
+2023-07-12,60,NA,Martin Thaysen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-12,55,NA,Martin Thaysen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-12,45,NA,Erling Pedersen,Vorgod Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-12,60,NA,Erling Pedersen,Vorgod Å,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-12,55,NA,Lars Erik Olsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-11,55,NA,Thomas Marcussen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-11,50,NA,Bjarne Staulund Jakobsen,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-11,43,NA,Søren Bilberg,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-07-11,50,NA,Søren Bilberg,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-07-11,55,NA,Kim Harpsø Jensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-11,53,NA,Nicolai Just Jakobsen,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-07-11,50,NA,Dennis Nielsen,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-07-11,45,NA,Dennis Nielsen,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-07-11,46,NA,Lars Erlandsen Brun,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-11,58,NA,Lars Erlandsen Brun,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-11,60,NA,Jan Johnsen,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-11,48,NA,Benny Pedersen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-09,45,NA,Brian Jensen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-09,55,NA,Morten Sussemiehl Pedersen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-07-09,60,NA,H Dahl,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-09,55,NA,Brian Jensen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-09,55,NA,Anders Larsen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-09,54,NA,Kim Bergensol,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-08,45,NA,Alex Hjort,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-08,50,NA,Erling Pedersen,Vorgod Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-08,55,NA,Mads Nybo Kæseler,Vorgod Å,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/92083E91BCBECA90C12589E600374967.jpg,FALSE,Hun,FALSE
+2023-07-08,55,NA,Morten Martinsen,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/4b5c019169604f21b1650a12ae957ee0.jpg,FALSE,Hun,FALSE
+2023-07-07,55,NA,Lukas Søgaard,Vorgod Å,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-07,55,NA,Erik O. Kristensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-07,50,NA,Peter Tornmark Henriksen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-07,60,NA,Niels Bolt,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-07,44,NA,Bjarke Therp,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-07,49,NA,Bjarke Therp,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-07,55,NA,Kristian Nøreng,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-07-07,45,NA,Ole Abild,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-07,52,NA,Nicolai Just Jakobsen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-07,55,NA,Emil Christensen,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-06,50,NA,Jesper Baadsgaard,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-06,55,NA,Bent Nøhr,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-06,50,NA,Kurt Lorenz,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-07-06,60,NA,Kurt Lorenz,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-07-06,55,NA,Ole Abild,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-06,50,NA,Carsten Johnsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-06,50,NA,Brian Jensen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-06,50,NA,Steen Nielsen,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-06,50,NA,Ole Abild,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-07-05,50,NA,Jens Jakob Jensen,Mellem,Flue,TRUE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/40335F11800FE320C12589E3005781F6.jpg,FALSE,Hun,FALSE
+2023-07-05,72,NA,Michael Knoethig,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-05,50,NA,Birger Dam Jensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-04,55,NA,Per Gylling,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-04,50,NA,Per Gylling,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-04,58,NA,Frederik Thor,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-04,57,NA,Frederik Thor,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-04,56,NA,Frederik Thor,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-04,55,NA,Frederik Thor,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2023-07-04,51,NA,Frank Jensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-03,55,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-03,51,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-03,50,NA,Mads Ole Madsen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-03,45,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-03,68,NA,Thomas Marcussen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-03,50,NA,Thomas Marcussen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-03,60,NA,Henrik Bønnelykke,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-03,80,NA,Henrik Bønnelykke,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-03,48,NA,Jørn Andersen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-03,50,NA,Kristian Nøreng,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-03,55,NA,Søren Peter Larsen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/697AA561D5E8F791C12589E1005DE01E.jpg,FALSE,NA,FALSE
+2023-07-02,55,NA,Alex Hjort,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-02,47,NA,Jørn Vendelbo,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-02,55,NA,Jesper Ottosen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-02,58,NA,Peter Moesgaard,Vorgod Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-02,40,NA,Jesper Pedersen,Vorgod Å,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-02,50,NA,Brian Jensen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-02,50,NA,Erling Pedersen,Vorgod Å,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-07-02,57,NA,Bent Larsen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-01,48,NA,Mads Nybo Kæseler,Vorgod Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-01,58,NA,Mads Nybo Kæseler,Vorgod Å,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/5921CAD5B0F37F9FC12589E600370270.jpg,FALSE,Han,FALSE
+2023-07-01,51,NA,Jan-Henrik Winsløv,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-07-01,50,NA,Jan-Henrik Winsløv,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-07-01,52,NA,Jan-Henrik Winsløv,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-07-01,55,NA,Per Gylling,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-07-01,50,NA,Bo Iversen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-07-01,50,NA,Klaus Grandahl,Mellem,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/00750AA74D353BD5C12589DF006DB29B.jpg,FALSE,NA,FALSE
+2023-07-01,60,NA,Klaus Grandahl,Mellem,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A40CE44993657ADEC12589DF006D99CF.jpg,FALSE,NA,FALSE
+2023-07-01,55,NA,Marc Skovby,Mellem,Flue,NA,NA,FALSE,Han,FALSE
+2023-07-01,55,NA,Michael Park,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-07-01,57,NA,Nicolai Frahm,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-07-01,50,NA,Bjarne Staulund Jakobsen,Mellem,Spin,NA,NA,FALSE,Hun,FALSE
+2023-07-01,55,NA,Henrik Schwalm,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-06-30,63,NA,Kristian Nøreng,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-06-30,57,NA,Per Kallmeyer,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-30,50,NA,Per Gylling,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-30,50,NA,Torben Albertsen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-06-29,69,NA,Nicolai Boss Nielsen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-29,50,NA,Ulrik Møller,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-06-29,45,NA,Per Gylling,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-29,55,NA,Marc Skovby,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-06-29,50,NA,Lasse Laursen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-29,52,NA,René Jensen,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-06-29,46,NA,Jan Mark,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-06-28,51,NA,Niklas Krosstein,Nedre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/783BDC638355FB88C12589E0002D1362.jpg,FALSE,NA,FALSE
+2023-06-28,52,NA,Bent Nøhr,Vorgod Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-06-28,52,NA,Bent Nøhr,Vorgod Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-06-28,48,NA,Bent Nøhr,Vorgod Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-06-28,55,NA,Nicolai Just Jakobsen,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-28,65,NA,Jimmy Kendra,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-06-28,65,NA,Henrik Thygesen,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-06-28,50,NA,Jimmy Kendra,Øvre,Flue,NA,NA,FALSE,Han,FALSE
+2023-06-28,65,NA,Olaf Solberg,Vorgod Å,Spin,NA,NA,FALSE,Hun,FALSE
+2023-06-28,55,NA,Olaf Solberg,Vorgod Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-06-28,55,NA,Per Gylling,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-28,50,NA,Per Gylling,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-06-28,52,NA,Henrik Borum Pedersen,Nedre,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/b28ab2d41ac144f2bfd68a981545d141.jpg,FALSE,NA,FALSE
+2023-06-28,45,NA,Michael H Hansen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-06-27,50,NA,Bruno Stamm,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-27,60,NA,Christian Møller,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-06-27,50,NA,Karsten Siggaard,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-06-27,60,NA,Hans Jørgen Dahl,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-27,50,NA,Sven Berggreen,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-06-27,52,NA,Sven Berggreen,Andet,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/FA5691D8B7838D2CC12589DB0056F228.jpg,FALSE,Hun,FALSE
+2023-06-27,55,NA,Gustav Isen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-06-27,55,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-26,55,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-26,60,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-26,60,NA,Rune Clausen,Nedre,Spin,NA,NA,FALSE,Han,FALSE
+2023-06-26,45,NA,Rune Rask,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-06-26,58,NA,Kristian Nøreng,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-26,55,NA,Olav Hansen,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-26,50,NA,Tommy Hoelgaard,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/9D48B1BA04327B53C12589DA00672E51.jpg,FALSE,NA,FALSE
+2023-06-26,49,NA,Erling Willumsgaard,Mellem,Spin,NA,NA,FALSE,Hun,FALSE
+2023-06-26,46,NA,Peter Tornmark Henriksen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-26,60,NA,Peter Tornmark Henriksen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-06-26,65,NA,Vagn Pedersen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/ABA51712C69955BBC12589DA0050D857.jpg,FALSE,Hun,FALSE
+2023-06-25,52,NA,Henrik Jensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-25,60,NA,Corinna Fleißer,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-06-25,55,NA,Claus Arnfeldt Andersen,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-06-25,50,NA,Ejner Kaa,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-06-25,50,NA,Jan Andreasen,Øvre,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/0E16E8D56D07299FC12589D9003843A5.jpg,FALSE,NA,FALSE
+2023-06-24,43,NA,Helge Bertelsen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-06-24,50,NA,Niels Rohde Ottosen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-24,50,NA,Erling Willumsgaard,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-06-24,50,NA,Jesper Ottosen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-24,55,NA,Erik Petersen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-24,55,NA,Svend Åge Andersen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-06-24,50,NA,Frederik Kjær Iversen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-06-24,74,NA,Hans Jørgen Dahl,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-24,50,NA,Morten Sussemiehl Pedersen,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-06-24,49,NA,Brian Jensen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-06-23,52,NA,Bk Pedersen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-23,55,NA,Jørn From,Andet,Flue,NA,NA,FALSE,Hun,FALSE
+2023-06-23,70,NA,Erik Just Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-22,54,NA,Emil Nøhr,Vorgod Å,Spin,NA,NA,FALSE,Hun,TRUE
+2023-06-22,53,NA,Emil Nøhr,Mellem,Flue,NA,NA,FALSE,Han,FALSE
+2023-06-22,50,NA,Kurt Lorenz,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2023-06-22,50,NA,Jan Fredslund Nielsen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-22,51,NA,Frederik Thor,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-06-22,50,NA,Frederik Thor,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-06-21,60,NA,Gerold Freiwald,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-06-21,47,NA,Mario Chiumiento,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-21,60,NA,Kurt Acker,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-06-21,65,NA,Kurt Acker,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-06-21,50,NA,Tommy Hoelgaard,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-21,53,NA,Rasmus Braüner Sørensen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/4DA57E612C540F7EC12589D500737CC9.jpg,FALSE,Hun,FALSE
+2023-06-21,58,NA,Martin Nøreng,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-06-21,57,NA,Henrik Carstens,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2023-06-21,54,NA,Henrik Carstens,Nedre,Spin,NA,NA,FALSE,Han,FALSE
+2023-06-21,40,NA,Nick Søgaard,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-21,55,NA,Ulrich Voß,Nedre,Spin,NA,NA,FALSE,Han,FALSE
+2023-06-21,55,NA,Svend Åge Andersen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-06-21,60,NA,Per Gylling,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-21,70,NA,Viktor Furbo Iversen,Mellem,Orm,FALSE,NA,FALSE,Hun,FALSE
+2023-06-21,55,NA,Anders Larsen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-21,50,NA,Johnny Harskov Bro,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-21,48,NA,Per Fuglsang,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-06-21,63,NA,Brian . Antonsrn,Mellem,Flue,TRUE,NA,FALSE,Hun,FALSE
+2023-06-20,66,NA,Ole Wisler,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-20,55,NA,Alex Hjort,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-06-20,53,NA,Mario Chiumiento,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-20,53,NA,Allan Christensen,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-20,55,NA,Jan Thorsted,Mellem,Spin,NA,NA,FALSE,Hun,FALSE
+2023-06-20,52,NA,Torben Bjørn,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-20,52,NA,Morten Sigby-Clausen,Vorgod Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-06-20,40,NA,Henrik Lyngsø Rasmussen,Nedre,Orm,NA,NA,FALSE,NA,FALSE
+2023-06-20,50,NA,Erik Just Pedersen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-20,51,NA,Michael Schimpl,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-06-20,55,NA,Birger Dam Jensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-19,55,NA,Rasmus Vemmelund,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-06-19,50,NA,Lasse Mortensen,Mellem,Orm,NA,NA,FALSE,NA,FALSE
+2023-06-19,55,NA,Lasse Mortensen,Mellem,Orm,NA,NA,FALSE,NA,FALSE
+2023-06-19,48,NA,Nick Søgaard,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-19,58,NA,Lasse Mortensen,Mellem,Orm,NA,NA,FALSE,NA,FALSE
+2023-06-19,42,NA,Morten Kolster Vendelbo,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-19,52,NA,Casper Vinther,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-19,55,NA,Kristian Nøreng,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-19,55,NA,Erik Just Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-19,55,NA,Vagn Pedersen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-19,55,NA,Kurt Christensen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-19,60,NA,Torben Bjørn,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-19,50,NA,Bo Søndergård Jensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-19,50,NA,Bo Søndergård Jensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-18,63,NA,Adonis Hage-Ali,Mellem,Flue,TRUE,NA,FALSE,Hun,FALSE
+2023-06-18,62,NA,Jan Schou Frederiksen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2023-06-18,50,NA,Anders Graae Westergaard,Mellem,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/396C099EF2834F2DC12589D200659252.jpg,FALSE,Hun,FALSE
+2023-06-18,50,NA,Thomas Sørensen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-06-18,70,NA,Ole Stokholm Lauridsen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-06-18,50,NA,Per Lundvig,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2023-06-18,50,NA,Lars Due Dahl Larsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-18,50,NA,René Sørup,Øvre,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/361CE56BA70E276CC12589D2002134B3.jpg,FALSE,Hun,FALSE
+2023-06-17,56,NA,Mario Neske,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/CFF66C203BE47B0BC12589D3005358EA.jpg,FALSE,Hun,FALSE
+2023-06-17,55,NA,Mario Neske,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/F117BD715D2197E8C12589D3005328E7.jpg,FALSE,Hun,FALSE
+2023-06-17,55,NA,Mario Neske,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/C46E24D8537DD4D3C12589D30053196B.jpg,FALSE,Hun,FALSE
+2023-06-17,55,NA,Mario Neske,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/BEB94DDE908077F8C12589D30053038D.jpg,FALSE,Hun,FALSE
+2023-06-17,60,NA,Søren Dalbøge,Nedre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/599AC94F212A01CAC12589D2005B1F77.jpg,FALSE,NA,FALSE
+2023-06-17,65,NA,Rasmus Kragebær,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-17,70,NA,Rasmus Kragebær,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-06-17,55,NA,Lars Ager,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-06-17,55,NA,Bo Fomsgaard,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-17,54,NA,Peter Hansen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-17,60,NA,Morten Martinsen,Vorgod Å,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/bae6dc34f6b645a39470e1a39cbacea7.jpg,FALSE,Hun,FALSE
+2023-06-17,50,NA,Matthias Rosin,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-06-17,65,NA,Rasmus Jakobsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-17,71,NA,Alfred Smekens,Nedre,Spin,NA,NA,FALSE,Han,FALSE
+2023-06-17,56,NA,Rasmus Munck,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/F3D4E8916B83D1B3C12589D1005BC2AC.jpg,FALSE,Hun,FALSE
+2023-06-17,57,NA,Søren Chr Olesen,Nedre,Orm,FALSE,NA,FALSE,NA,FALSE
+2023-06-17,65,NA,Rene Greggersen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-06-17,55,NA,Poul Lauridsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-17,60,NA,John Broe Rasmussen,Øvre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/AE062BBB87608BE3C12589D1004319CE.jpg,FALSE,NA,FALSE
+2023-06-17,50,NA,Rasmus Munck,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-06-17,52,NA,Marcel Löbenbrück,Nedre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/357B15FD99952E50C12589D1003BF3FA.jpg,FALSE,Hun,FALSE
+2023-06-17,57,NA,Kim Mathiasen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-17,55,NA,Dannie Odgaard Andersen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-16,46,NA,Henrik Hansen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-16,55,NA,Bjarne Staulund Jakobsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-16,60,NA,Frederik Jansen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-06-16,55,NA,Michael Seiffert,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2023-06-16,58,NA,Rasmus Munck,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/4A853A65D5D96B72C12589D00067EE38.jpg,FALSE,Hun,FALSE
+2023-06-16,52,NA,Kent Hauge,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-16,55,NA,Torben Fly Larsen,Vorgod Å,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-16,55,NA,Niels T Jepsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-16,58,NA,Poul Godt,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-06-16,58,NA,Henrik Hansen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-15,57,NA,Hartmut Brand,Nedre,Flue,TRUE,NA,FALSE,Hun,FALSE
+2023-06-15,56,NA,Søren Bilberg,Nedre,Flue,NA,NA,FALSE,Han,FALSE
+2023-06-15,53,NA,Søren Bilberg,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-06-15,57,NA,Marcel Löbenbrück,Nedre,Spin,TRUE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/15A0668649735D1CC12589CF0050E8E9.jpg,FALSE,NA,FALSE
+2023-06-15,55,NA,Jan Mark,Mellem,Spin,NA,NA,FALSE,Hun,FALSE
+2023-06-15,53,NA,Marcel Löbenbrück,Nedre,Spin,TRUE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/520A1BE5C96D6738C12589CF0043B9DB.jpg,FALSE,NA,FALSE
+2023-06-15,55,NA,Kenny Frost,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8BCFA43E07C3044EC12589CF0023126E.jpg,FALSE,Hun,FALSE
+2023-06-14,50,NA,Kim Flindt,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-13,50,NA,Benny Isenborghs,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2023-06-13,58,NA,Hans Jørgen Dahl,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2023-06-13,58,NA,Steen Mortensen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/D9812CBA5EF5AD49C12589CD004067A4.jpg,FALSE,Hun,FALSE
+2023-06-09,50,NA,Lars Erik Olsen,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2023-06-08,49,NA,Keld Bøgh,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-06-07,55,NA,Jørn Vendelbo,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2023-06-06,56,NA,Kenneth Nielsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2023-06-06,55,NA,Peter Cramon,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2023-06-05,77,NA,Per Langkjær,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-06-04,65,NA,Karsten Fini,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2023-05-30,64,NA,David Hampel,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-05-10,45,NA,Tobias Park,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2023-04-30,43,NA,Bjarke Therp,Vorgod Å,Spin,NA,NA,FALSE,NA,FALSE
+2023-04-16,50,NA,Rene Nielsen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-04-16,44,NA,Jan Kjeldsen,Omme Å,Spin,NA,NA,FALSE,NA,FALSE
