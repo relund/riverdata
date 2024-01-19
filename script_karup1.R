@@ -60,10 +60,12 @@ dat <- writeWaterTempWeb(dat, rMeans, prefix)
 lst <- stripKml("1XJoAUKY_-kbmhZgovPpLgi82Gn8")  
 datMarkers <- lst$datMarkers
 datLines <- lst$datLines
-# HI-LF
-lst <- stripKml("1fzTAHG04McV3WO_IKxuxSPkDIaE", Club = "HI-LF")
+
+# MV-LF
+lst <- stripKml("1A1Oi7hPeFbAU2ahS_zWgg6Fqcxa5Gbg", Club = "MV-LF")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)
+
 # LFSO - Use my own maps since otherwise cannot identify dagkort/medlem
 mapIds <- c("1REe4_q1yvBikiH2F7ZhsCAVCsmc", # Zone 1
             "1yXJtKx-ahWi9daAYA6Qh-AeO9lw", # Zone1a 
