@@ -124,23 +124,17 @@ dat <- writeWaterLevelsWeb(dat, prefix)
 lst <- stripKml("135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ")  # Places
 datMarkers <- lst$datMarkers
 datLines <- lst$datLines
-## HI-LF
-mapIds <- c("1EKI26YR4FQtlIKIQoAbo3Rbooj8", # Skjern Å
-            "16Fh0qfhd6Aqwr5SzssWHj3bLybA", # Vorgod Å
-            "1TlsJDLuLyOdClyIJjvW4PluJ0xk", # Karstoft Å
-            "1lNB2Ak-WMVkA9nvVRQBcgTOLylw", # Rind Å
-            "1uSITXXEXqCtKr58RYDkUmqIFOkw" # Fjederholt Å
-            )
-for (i in 1:length(mapIds)) {
-  lst <- stripKml(mapIds[i], Club = "HI-LF") 
-  lst$datLines$LineGroupId <- lst$datLines$LineGroupId + i*100
-  datMarkers <- bind_rows(datMarkers, lst$datMarkers)
-  datLines <- bind_rows(datLines, lst$datLines)
-}
+
+## MV-LF
+lst <- stripKml("1NiY_55Mw_GUULepLXq6Wjt0Gtu2K2c0", Club = "MV-LF")
+datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
+datLines <- bind_rows(datLines, lst$datLines)
+
 ## Skj-LF
 lst <- stripKml("1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF", Club = "Skj-LF")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers)
 datLines <- bind_rows(datLines, lst$datLines)
+
 ## BFF
 lst <- stripKml("1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD", Club = "BFF")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers)
@@ -167,6 +161,7 @@ lst$datLines <- lst$datLines %>% mutate(Group = if_else(str_detect(Text, fixed('
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) %>% 
   filter(!is.na(Icon))
 datLines <- bind_rows(datLines, lst$datLines)
+
 ## Write to csv
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
