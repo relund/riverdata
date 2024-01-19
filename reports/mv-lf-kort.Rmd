@@ -72,7 +72,7 @@ datMarkers <- read_csv(paste0(prefix, "data_karup_mapmarkers.csv"), col_types = 
   mutate(Desc = str_c(if_else(!is.na(Desc), str_c("<b>", Desc, "</b>"), "", ""), 
                        if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
   mutate(Desc = str_replace(Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>% 
-  mutate(Desc = map(Desc, HTML), Icon = str_c("../shiny/karup/www/", Icon), Id = 1:n()) %>% 
+  mutate(Desc = map(Desc, HTML), Icon = str_c("../docs/mv-lf/www/", Icon), Id = 1:n()) %>% 
   select(-Text) 
   
 datLines <- read_csv(paste0(prefix, "data_karup_maplines.csv"), col_types = "fccddif")  %>% 
