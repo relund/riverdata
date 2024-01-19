@@ -7,6 +7,7 @@ library(zoo)
 library(forecast)
 library(tsibble)
 library(fs)
+library(rmarkdown)
 source("functions.R")
 
 # url <- "https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/catches/assoc/49F1767931B31CD0C1258398007953C0/1/"
@@ -28,4 +29,4 @@ datMarkers <- datMarkers  %>% filter(!is.na(Icon))
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
 
-
+render("reports/mv-lf-kort.Rmd",output_dir = "docs/mv-lf")

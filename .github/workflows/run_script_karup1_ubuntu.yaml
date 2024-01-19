@@ -5,6 +5,7 @@ on:
     paths:
       - .github/workflows/run_script_karup1_ubuntu.yaml
       - script_karup1.R
+      - script_mv-lf.R
       - functions.R
       - renv.lock
   schedule:
@@ -38,6 +39,9 @@ jobs:
           
       - name: Run R script
         run: Rscript --verbose script_karup1.R
+        
+      - name: Run R script
+        run: Rscript --verbose script_mv-lf.R
         
       - name: Commit results
         run: |
