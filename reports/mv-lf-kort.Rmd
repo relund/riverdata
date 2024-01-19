@@ -68,6 +68,7 @@ mapAddLines <- function(map, group, data, color, useClub = TRUE) {
 
 datMarkers <- read_csv(paste0(prefix, "data_karup_mapmarkers.csv"), col_types = "fccddff") %>% 
   bind_rows(read_csv(paste0(prefix, "data_skjern_mapmarkers.csv"), col_types = "fccddff")) %>% 
+  bind_rows(read_csv(paste0(prefix, "data_mv-lf_mapmarkers.csv"), col_types = "fccddff")) %>% 
   filter(is.na(Club) | Club == "MV-LF") %>% 
   mutate(Desc = str_c(if_else(!is.na(Desc), str_c("<b>", Desc, "</b>"), "", ""), 
                        if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
@@ -77,6 +78,7 @@ datMarkers <- read_csv(paste0(prefix, "data_karup_mapmarkers.csv"), col_types = 
   
 datLines <- read_csv(paste0(prefix, "data_karup_maplines.csv"), col_types = "fccddif")  %>% 
   bind_rows(read_csv(paste0(prefix, "data_skjern_maplines.csv"), col_types = "fccddif")) %>% 
+  bind_rows(read_csv(paste0(prefix, "data_mv-lf_maplines.csv"), col_types = "fccddif")) %>% 
   filter(is.na(Club) | Club == "MV-LF") %>% 
   mutate(Desc = str_c("<b>", if_else(!is.na(Desc), Desc, "", ""), "</b>",
                        if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
@@ -118,7 +120,7 @@ maplet <- mapAddMarkers(maplet, "Info", datMarkers %>% filter(Id %in% Ids))
 datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
 
 # Lines
-maplet <- mapAddLines(maplet, group = "Parkering", color = "#000000", useClub = FALSE,
+maplet <- mapAddLines(maplet, group = "Parkering", color = "#eb9834", useClub = FALSE,
                       data = datLines %>% 
                         filter(str_detect(Group, regex("parkering", ignore_case = T))))
 maplet <- mapAddLines(maplet, group = "fiskevand", color = "#3C8AE6",
@@ -127,7 +129,7 @@ maplet <- mapAddLines(maplet, group = "fiskevand", color = "#3C8AE6",
 maplet <- mapAddLines(maplet, group = "medlem", color = "#EBE053",
                       data = datLines %>% 
                         filter(str_detect(Group, regex("medlem", ignore_case = T))))
-maplet <- mapAddLines(maplet, group = "dagkort", color = "#eb9834",
+maplet <- mapAddLines(maplet, group = "dagkort", color = "#000000",
                       data = datLines %>% 
                         filter(str_detect(Group, regex("dagkort", ignore_case = T))))
 maplet <- mapAddLines(maplet, group = "gæstekort", color = "#bf5656",
@@ -142,7 +144,7 @@ maplet <- maplet %>%
     options = layersControlOptions(collapsed = TRUE)
   ) %>% 
   hideGroup(groups) %>% 
-  showGroup("Stednavne") %>% 
+  showGroup(c("MV-LF (fiskevand)", "MV-LF (medlem)", "MV-LF (dagkort)", "Parkering", "Info")) %>% 
   addFullscreenControl()
 ```
 
