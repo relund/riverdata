@@ -736,13 +736,18 @@ stripKml <- function(mapId, Club = NA, GroupNameMarkers = NULL, GroupNameLines =
         str_detect(Group, fixed('sten', ignore_case=TRUE)) ~ "rock.png",
         str_detect(Desc, fixed('hytte', ignore_case=TRUE)) ~ "cottage.png",
         str_detect(Desc, fixed('indhegning', ignore_case=TRUE)) ~ "fence.png",
-        str_detect(Desc, fixed('laksens hus', ignore_case=TRUE)) ~ "house.png",
+        str_detect(Desc, fixed('hus', ignore_case=TRUE)) ~ "house.png",
         str_detect(Desc, fixed('fiskekort', ignore_case=TRUE)) ~ "house.png",
         str_detect(Desc, fixed('p-plads', ignore_case=TRUE)) ~ "park.png",
         str_detect(Desc, fixed('parkering', ignore_case=TRUE)) ~ "park.png",
         str_detect(Desc, fixed('spang', ignore_case=TRUE)) ~ "footbridge.png",
         str_detect(Desc, fixed('toilet', ignore_case=TRUE)) ~ "wc.png",
         str_detect(Desc, fixed('wc', ignore_case=TRUE)) ~ "wc.png",
+        str_detect(Desc, fixed('info', ignore_case=TRUE)) ~ "infoplace.png",
+        str_detect(Desc, fixed('shelter', ignore_case=TRUE)) ~ "shelter.png",
+        str_detect(Desc, fixed('bro', ignore_case=TRUE)) ~ "bridge.png",
+        str_detect(Desc, fixed('båd', ignore_case=TRUE)) ~ "boat.png",
+        str_detect(Desc, fixed('fiskeret', ignore_case=TRUE)) ~ "infoplace.png",
         TRUE ~ NA_character_
       )) 
     if (!is.null(GroupNameMarkers)) datMarkers$Group <- GroupNameMarkers
