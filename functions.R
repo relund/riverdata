@@ -808,7 +808,7 @@ stripKml <- function(mapId, Club = NA, GroupNameMarkers = NULL, GroupNameLines =
 #'
 #' @return The data (tibble).
 writeCatch <- function(url, prefix, yr, species = "Havørred", club = FALSE) {
-  message("Catch records: Update dataset for year ", yr)
+  message("Catch records: Write dataset for year ", yr)
   ## data to today
   dat <- fromJSON(str_c(url, yr))
   cols <- dat$cols
@@ -861,16 +861,18 @@ writeCatch <- function(url, prefix, yr, species = "Havørred", club = FALSE) {
                              c("Wobler" = "Spin", "Blink" = "Spin", "Spinner" = "Spin", "Jig" = "Spin", 
                                "Bombarda med flue" = "Spin", "Tørflue" = "Flue", "Pirk/Pilk" = "Spin", 
                                "Mede" = "Orm", "Spinflue" = "Spin", "Spin-flue" = "Spin", "Maddike" = "Orm", 
-                               "Orm, spinner" = "Orm", "Orm,spin" = "Orm")),
-           Place = case_when(
-             str_detect(Place, "(Øvre.*)|(Skjern.*Rind)|(Skjern.*opstrøms)") ~ "Øvre",
-             str_detect(Place, "(Mellem.*)|(Skjern.*Tarp.*Borris)") ~ "Mellem",
-             str_detect(Place, "(Nedre.*)|(Skjern.*Borris.*Fjord)") ~ "Nedre",
-             str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
-             str_detect(Place, "Vorgod") ~ "Vorgod Å",
-             str_detect(Place, "Omme") ~ "Omme Å",
-             TRUE ~ "Andet")
+                               "Orm, spinner" = "Orm", "Orm,spin" = "Orm"))
            )
+ if (!club) dat3 <-dat3 %>% 
+   mutate(Place = case_when(
+            str_detect(Place, "(Øvre.*)|(Skjern.*Rind)|(Skjern.*opstrøms)") ~ "Øvre",
+            str_detect(Place, "(Mellem.*)|(Skjern.*Tarp.*Borris)") ~ "Mellem",
+            str_detect(Place, "(Nedre.*)|(Skjern.*Borris.*Fjord)") ~ "Nedre",
+            str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
+            str_detect(Place, "Vorgod") ~ "Vorgod Å",
+            str_detect(Place, "Omme") ~ "Omme Å",
+            TRUE ~ "Andet")
+   )
  # dat3 <-dat3 %>% mutate(Sex = str_replace_all(Sex, c("Han" = "Male", "Hun" = "Female", "Ved ikke" = NA)))
  dat3 <-dat3 %>% mutate(Sex = str_replace_all(Sex, c("Ved ikke" = NA_character_)))
  dat3 <-dat3 %>% mutate(Cut = if_else(Cut == "Ja", TRUE, if_else(Cut == "Nej", FALSE, NA)))
