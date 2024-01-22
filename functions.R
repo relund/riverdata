@@ -804,15 +804,17 @@ stripKml <- function(mapId, Club = NA, GroupNameMarkers = NULL, GroupNameLines =
 #' @param yr Year to get data for.
 #' @param prefix Prefix for csv files such as 'data/data_karup'.
 #' @param species Species. Either "Havørred" or "Laks".
+#' @param club False if consider association. True if consider club.
 #'
 #' @return The data (tibble).
-writeCatch <- function(url, prefix, yr, species = "Havørred") {
+writeCatch <- function(url, prefix, yr, species = "Havørred", club = FALSE) {
   message("Catch records: Update dataset for year ", yr)
   ## data to today
-  dat <- fromJSON(url)
+  dat <- fromJSON(str_c(url, yr))
   cols <- dat$cols
   cols$label[is.na(cols$label)] <- "Unknown"
   rows <- dat$rows$c
+  if (is.null(rows)) return(NULL)
   rows <- lapply(rows, FUN = function(x) {x[,1]})
   dat1 <-  suppressMessages(t(map_dfc(rows, ~ .x)))
   colnames(dat1) <- cols$label
@@ -824,10 +826,15 @@ writeCatch <- function(url, prefix, yr, species = "Havørred") {
   dateStr <- mutate(dateStr, Month = Month + 1)
   dateStr <- str_c(dateStr$Year, "-", str_pad(dateStr$Month, 2, "left", pad="0"), "-", str_pad(dateStr$Day, 2, "left", pad="0"))
   dat1 <- suppressMessages(bind_cols(Date=dateStr, dat1))
+  if (club) dat1 <- dat1 %>% 
+    rename(River = `Unknown...4`)
   if (species == "Havørred") dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Havørred"))
   if (species == "Laks") dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Laks"))
-  dat2 <- dat1 %>% 
+  if (!club) dat2 <- dat1 %>% 
     transmute(Date, Length = `Længde`, Weight = `Vægt`, Name = Navn, Place = Zone, Method = Agn, 
+              Cut = NA_character_, Foto = Foto, Killed = (Hjemtaget == "Ja"), Sex = `Køn`, Net = Garnskadet)
+  if (club) dat2 <- dat1 %>% 
+    transmute(Date, Length = `Længde`, Weight = `Vægt`, Name = Navn, River, Place = Strækning.sted, Method = Agn, 
               Cut = NA_character_, Foto = Foto, Killed = (Hjemtaget == "Ja"), Sex = `Køn`, Net = Garnskadet)
   if ("Fedtfinne.klippet" %in% colnames(dat1)) dat2$Cut = dat1$Fedtfinne.klippet
   dat2 <- suppressMessages(type_convert(dat2))
@@ -835,17 +842,19 @@ writeCatch <- function(url, prefix, yr, species = "Havørred") {
   ### Merge and tidy
  dat3 <- dat2 %>% mutate(Weight = if_else(Length >= 40, Weight, NA_real_)) %>% 
    filter(Length >= 40 | is.na(Length))
-  ## Remove weight outliers
- if (species == "Havørred") res <- read_csv(str_c(prefix, "_weight_seatrout.csv"), show_col_types = FALSE) 
- if (species == "Laks") res <- read_csv(str_c(prefix, "_weight_salmon.csv"), show_col_types = FALSE) 
-  res <- res %>% 
-    group_by(Length) %>% 
-    summarise(Lower = min(Lower), Upper = max(Upper))
- dat3 <- left_join(dat3, res, by = join_by(Length))
-  #dat3 %>% filter( !((Weight >= 0.8 * Lower & Weight <= 1.2 * Upper) | is.na(Weight) ))
- dat3 <-dat3 %>% 
-    mutate(Weight = if_else(Weight >= 0.8 * Lower & Weight <= 1.2 * Upper, Weight, NA_real_, NA_real_)) %>% 
-    select(-Upper, -Lower)
+ if (!club) {
+   ## Remove weight outliers
+   if (species == "Havørred") res <- read_csv(str_c(prefix, "_weight_seatrout.csv"), show_col_types = FALSE) 
+   if (species == "Laks") res <- read_csv(str_c(prefix, "_weight_salmon.csv"), show_col_types = FALSE) 
+    res <- res %>% 
+      group_by(Length) %>% 
+      summarise(Lower = min(Lower), Upper = max(Upper))
+   dat3 <- left_join(dat3, res, by = join_by(Length))
+    #dat3 %>% filter( !((Weight >= 0.8 * Lower & Weight <= 1.2 * Upper) | is.na(Weight) ))
+   dat3 <-dat3 %>% 
+      mutate(Weight = if_else(Weight >= 0.8 * Lower & Weight <= 1.2 * Upper, Weight, NA_real_, NA_real_)) %>% 
+      select(-Upper, -Lower)
+ }
   ## Fix custom errors
  dat3 <-dat3 %>% 
     mutate(Method = str_replace_all(Method, 
@@ -871,6 +880,7 @@ writeCatch <- function(url, prefix, yr, species = "Havørred") {
   # unique(dat3$Place)
   
   ## Save to file
+  res <- tolower(species)
   if (species == "Havørred") res <- "seatrout"
   if (species == "Laks") res <- "salmon"
   fn <- str_c(prefix, "_catch_", res, "_", yr, ".csv")

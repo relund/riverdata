@@ -10,6 +10,9 @@ knit: (function(inputFile, encoding) {
                         output_file=file.path(dirname(inputFile), out_dir, 'mv-lf-kort.html')) })
 ---
 
+<!-- File for generating the interactive map for MV-LF (run by GitHub Actions every hour) -->
+<!-- Output is a html file in docs/mv-lf. -->
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(htmltools)
