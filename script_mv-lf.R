@@ -10,15 +10,15 @@ library(fs)
 library(rmarkdown)
 source("functions.R")
 
+
+#### Catch ####
+# To 2023 only HI-LF data
 url <- "https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/catches/club/37E6FB0707BAE0A1C1257F3A003FF013/1/"
 prefix <- "data/data_mv-lf"
 yr <- year(now())
 
 #### Catch records ####
-datCatch <- writeCatch(url, prefix, yr, species = "All", club = TRUE)
-
-
-
+writeCatch(url, prefix, yr, species = "All", club = TRUE)
 
 #### Map ####
 # Stednavne Karup

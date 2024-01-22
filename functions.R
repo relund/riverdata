@@ -834,7 +834,7 @@ writeCatch <- function(url, prefix, yr, species = "Havørred", club = FALSE) {
     transmute(Date, Length = `Længde`, Weight = `Vægt`, Name = Navn, Place = Zone, Method = Agn, 
               Cut = NA_character_, Foto = Foto, Killed = (Hjemtaget == "Ja"), Sex = `Køn`, Net = Garnskadet)
   if (club) dat2 <- dat1 %>% 
-    transmute(Date, Length = `Længde`, Weight = `Vægt`, Name = Navn, River, Place = Strækning.sted, Method = Agn, 
+    transmute(Date, Species = Art, Length = `Længde`, Weight = `Vægt`, Name = Navn, River, Place = Strækning.sted, Method = Agn, 
               Cut = NA_character_, Foto = Foto, Killed = (Hjemtaget == "Ja"), Sex = `Køn`, Net = Garnskadet)
   if ("Fedtfinne.klippet" %in% colnames(dat1)) dat2$Cut = dat1$Fedtfinne.klippet
   dat2 <- suppressMessages(type_convert(dat2))
