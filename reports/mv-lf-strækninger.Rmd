@@ -19,7 +19,6 @@ editor_options:
 library(knitr)
 library(tidyverse)
 library(lubridate)
-library(shiny)
 library(DT)
 # library(zoo) 
 library(jsonlite)
@@ -58,31 +57,39 @@ datPlaces <- tibble(River = river, Place = place)
 
 
 ```{r}
-# source("functions.R")
-prefix <- "data/data_mv-lf"
-yr <- year(now()
-dat <- NULL
-for (y in years) {
-  fn <- paste0(prefix, "_catch_all_", y, ".csv")
-  dat <- 
-    bind_rows(dat, read_csv(fn, col_types = "Tfd"))
+urlFileExist <- function(url){
+  HTTP_STATUS_OK <- 200
+  hd <- httr::HEAD(url)
+  status <- hd$all_headers[[1]]$status
+  lst <- list(exists = status == HTTP_STATUS_OK, status = status)
+  return(lst$exists)
 }
 
-
-
-
-url <- "https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/catches/club/37E6FB0707BAE0A1C1257F3A003FF013/1/"
-
-datCatch <- readCatchDTU(url) 
+prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/data_mv-lf"
+yr <- year(now())
+datCatch <- NULL
+for (y in 2016:yr) {
+  fn <- paste0(prefix, "_catch_all_", y, ".csv")
+  if (urlFileExist(fn)) datCatch <- bind_rows(datCatch, read_csv(fn, col_types = "Tfd"))
+}
 datCatch <- datCatch %>% 
   mutate(Year = year(Date))
+datCatch <- datCatch %>% 
+  filter(Species %in% c("Havørred", "Laks", "Bækørred", "Stalling", "Aborre", "Gedde", "Ål")) %>% 
+  filter(!(River == "Skjern Å" & is.na(Place))) %>% 
+  filter(!(River == "Karup Å" & is.na(Place))) %>% 
+  mutate(Place = if_else(is.na(Place), River, Place))
+# datCatch %>% filter(is.na(Place))
 
 dat <- datCatch %>% 
-  count(River, Place, Year) 
-dat <- full_join(dat, datPlaces)
+  count(River, Place, Year) %>% 
+  full_join(datPlaces) %>% 
+  replace_na(list(Year = 2023, n = 0))
+# View(dat)
 
-dat %>% pivot_wider(names_from = Year, values_from = n)
-
-
+dat %>% 
+  pivot_wider(names_from = Year, values_from = n, names_sort = T) %>% 
+  rowwise(River, Place) %>% 
+  mutate(Middel = rowMeans(pick(where(is.numeric)), na.rm = T))
 ```
 
