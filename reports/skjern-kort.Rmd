@@ -1,0 +1,241 @@
+---
+output: html_document
+title: "Oversigt over fiskevand i Skjern Å"
+editor_options: 
+  chunk_output_type: console
+knit: (function(inputFile, encoding) { 
+      out_dir <- '../docs/skjern';
+      rmarkdown::render(inputFile,
+                        encoding=encoding, 
+                        output_file=file.path(dirname(inputFile), out_dir, 'skjern-kort.html')) })
+---
+
+<!-- File for generating the interactive map for MV-LF (run by GitHub Actions every hour) -->
+<!-- Output is a html file in docs/mv-lf. -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(htmltools)
+library(tidyverse)
+library(leaflet)
+library(leaflet.extras)
+```
+
+
+
+<style>
+  body {
+      padding: 0;
+      margin: 0;
+  }
+  .main-container {
+    max-width: 3000px
+  }
+#header {
+    display: none;
+}
+</style>
+
+
+
+
+```{r, include=FALSE}
+prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
+
+mapAddMarkers <- function(map, group, data) {
+  if (nrow(data) == 0) return(map)
+  map <- map %>% 
+    addMarkers(~long, ~lat, label = ~Desc, popup = ~Desc,
+               icon = ~icons(Icon, iconWidth = 32, iconHeight = 32, iconAnchorX = 16, iconAnchorY = 16), 
+               group = group,
+               clusterOptions = markerClusterOptions(showCoverageOnHover = FALSE, 
+                                                     freezeAtZoom = FALSE),
+               data = data)
+  groups <<- c(groups, group)
+  return(map)
+}
+
+mapAddLines <- function(map, group, data, color, useClub = TRUE) {
+  if (nrow(data) == 0) return(map)
+  dat <- data %>% group_by(LineGroupId, Desc, Club) %>% nest()
+  map(1:nrow(dat), function(i) {
+    group <- if_else(useClub, str_c(dat$Club[i], " (", group, ")"), group)
+    map <<- map %>%
+      addPolylines(~long, ~lat, label = ~Desc, popup = ~Desc,
+                   group = group, color = color, weight = 1.5, opacity = 0.75,
+                   data = dat[i,] %>% unnest(col = c(data)))
+    groups <<- c(groups, group)
+    return(invisible(NULL))
+  })
+  return(map)
+}
+
+datMarkers <- read_csv(paste0(prefix, "data_skjern_mapmarkers.csv"), col_types = "fccddff") %>% 
+  mutate(Desc = str_c(if_else(!is.na(Desc), str_c("<b>", if_else(is.na(Club), "", str_c(Club, " - ")), Desc, "</b>"), "", ""), 
+                       if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
+  mutate(Desc = str_replace(Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>% 
+  mutate(Desc = map(Desc, HTML), Icon = str_c("www/", Icon), Id = 1:n()) %>% 
+  select(-Text) 
+  
+datLines <- read_csv(paste0(prefix, "data_skjern_maplines.csv"), col_types = "fccddif")  %>%  
+  mutate(Desc = str_c("<b>", if_else(is.na(Club), "", str_c(Club, " - ")), if_else(!is.na(Desc), Desc, "", ""), "</b>",
+                       if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
+  mutate(Desc = str_replace(Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>% 
+  mutate(Desc = map(Desc, HTML)) %>% 
+  select(-Text) 
+
+maplet <- leaflet(width = "100%", height = "100vh") %>%
+  # Base groups
+  addTiles(group = "Kort") %>%
+  # addProviderTiles('MtbMap', group = "Kort") %>%
+  addProviderTiles('Esri.WorldImagery', group = "Luftfoto") %>%
+  addProviderTiles("CartoDB.PositronOnlyLabels", group = "Luftfoto")
+  # setView(9.016712672451805, 56.40970340006212,  zoom = 13)
+
+
+groups <- NULL
+## Markers
+# Parkering
+Ids <- datMarkers %>%
+  filter(
+    str_detect(Group, regex("Parkering", ignore_case = T))) %>%
+  pull(Id)
+maplet <- mapAddMarkers(maplet, "Parkering", datMarkers %>% filter(Id %in% Ids))
+datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+
+# # Markers
+# Ids <- datMarkers %>% 
+#   filter(
+#     str_detect(Group, regex("parkering", ignore_case = T)) | 
+#       str_detect(Desc, regex("indhegning", ignore_case = T))) %>% 
+#   pull(Id)
+# maplet <- mapAddMarkers(maplet, "Parkering", datMarkers %>% filter(Id %in% Ids))
+# datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+
+
+# Standpladser
+Ids <- datMarkers %>%
+  filter(
+    str_detect(Group, regex("Standpladser|Sten", ignore_case = T))) %>%
+  pull(Id)
+maplet <- mapAddMarkers(maplet, "Stednavne", datMarkers %>% filter(Id %in% Ids))
+datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+
+# Shelter
+Ids <- datMarkers %>%
+  filter(
+    str_detect(Group, regex("Shelter", ignore_case = T)) |
+    str_detect(Desc, regex("Shelter", ignore_case = T))
+  ) %>%
+  pull(Id)
+maplet <- mapAddMarkers(maplet, "Shelter", datMarkers %>% filter(Id %in% Ids))
+datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+
+# Bro/Spang
+Ids <- datMarkers %>%
+  filter(
+    str_detect(Group, regex("Bro", ignore_case = T)) |
+    str_detect(Desc, regex("bro|spang", ignore_case = T))
+  ) %>%
+  pull(Id)
+maplet <- mapAddMarkers(maplet, "Bro/spang", datMarkers %>% filter(Id %in% Ids))
+datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+
+# Info
+Ids <- datMarkers %>%
+  filter(
+    str_detect(Group, regex("Info", ignore_case = T))) %>%
+  pull(Id)
+maplet <- mapAddMarkers(maplet, "Info", datMarkers %>% filter(Id %in% Ids))
+datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+
+
+# Ids <- datMarkers %>% 
+#   filter(
+#     str_detect(Group, regex("Standpladser|Sten|Spang|Bro|shelter", ignore_case = T)) | 
+#       str_detect(Desc, regex("hytte|laksens hus", ignore_case = T))) %>% 
+#   pull(Id)
+# maplet <- mapAddMarkers(maplet, "Stednavne", datMarkers %>% filter(Id %in% Ids))
+# datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+# 
+# Ids <- datMarkers %>% 
+#   filter(
+#     str_detect(Group, regex("Info", ignore_case = T))) %>% 
+#   pull(Id)
+# maplet <- mapAddMarkers(maplet, "Info", datMarkers %>% filter(Id %in% Ids))
+# datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+
+# Lines
+maplet <- mapAddLines(maplet, group = "Parkering", color = "#eb9834", useClub = FALSE,
+                      data = datLines %>% 
+                        filter(str_detect(Group, regex("parkering", ignore_case = T))))
+maplet <- mapAddLines(maplet, group = "fiskevand", color = "#3C8AE6",
+                      data = datLines %>% 
+                        filter(str_detect(Group, regex("fiskevand", ignore_case = T))))
+maplet <- mapAddLines(maplet, group = "medlem", color = "#EBE053",
+                      data = datLines %>% 
+                        filter(str_detect(Group, regex("medlem", ignore_case = T))))
+maplet <- mapAddLines(maplet, group = "dagkort", color = "#000000",
+                      data = datLines %>% 
+                        filter(str_detect(Group, regex("dagkort", ignore_case = T))))
+maplet <- mapAddLines(maplet, group = "gæstekort", color = "#bf5656",
+                      data = datLines %>% 
+                        filter(str_detect(Group, regex("gæstekort", ignore_case = T))))
+
+maplet <- maplet %>%
+  # Layer control
+  addLayersControl(
+    baseGroups = c("Luftfoto", "Kort"),
+    overlayGroups = unique(groups),
+    options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  hideGroup(groups) %>%
+    showGroup("Stednavne") %>%
+  addFullscreenControl()
+
+
+# 
+# datMarkers <- read_csv(paste0(prefix, "data_mv-lf_mapmarkers.csv"), col_types = "fccddff") %>% 
+#   mutate(Desc = str_c(if_else(!is.na(Desc), str_c("<b>", Desc, "</b>"), "", ""), 
+#                        if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
+#   mutate(Desc = str_replace(Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>% 
+#   mutate(Desc = map(Desc, HTML), Icon = str_c("../docs/mv-lf/www/", Icon), Id = 1:n()) %>% 
+#   select(-Text) 
+#   
+# datLines <- read_csv(paste0(prefix, "data_mv-lf_maplines.csv"), col_types = "fccddif")  %>% 
+#   filter(is.na(Club) | Club == "MV-LF") %>% 
+#   mutate(Desc = str_c("<b>", if_else(!is.na(Desc), Desc, "", ""), "</b>",
+#                        if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
+#   mutate(Desc = str_replace(Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>% 
+#   mutate(Desc = map(Desc, HTML)) %>% 
+#   select(-Text) 
+# 
+
+
+
+
+# 
+# ## Lines
+# maplet <- mapAddLines(maplet, group = "Parkering", color = "#eb9834", useClub = FALSE,
+#                       data = datLines %>% 
+#                         filter(str_detect(Group, regex("parkering", ignore_case = T))))
+# maplet <- mapAddLines(maplet, group = "fiskevand", color = "#3C8AE6",
+#                       data = datLines %>% 
+#                         filter(str_detect(Group, regex("fiskevand", ignore_case = T))))
+# maplet <- mapAddLines(maplet, group = "medlem", color = "#EBE053",
+#                       data = datLines %>% 
+#                         filter(str_detect(Group, regex("medlem", ignore_case = T))))
+# maplet <- mapAddLines(maplet, group = "dagkort", color = "#000000",
+#                       data = datLines %>% 
+#                         filter(str_detect(Group, regex("dagkort", ignore_case = T))))
+# maplet <- mapAddLines(maplet, group = "gæstekort", color = "#bf5656",
+#                       data = datLines %>% 
+#                         filter(str_detect(Group, regex("gæstekort", ignore_case = T))))
+# 
+
+```
+
+```{r}
+maplet
+```
+

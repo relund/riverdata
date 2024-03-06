@@ -176,3 +176,5 @@ datLines <- bind_rows(datLines, lst$datLines)
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
 
+## Render reports
+render("reports/skjern-kort.Rmd",output_dir = "docs/skjern")
