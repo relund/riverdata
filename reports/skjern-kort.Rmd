@@ -187,7 +187,7 @@ maplet <- maplet %>%
   addLayersControl(
     baseGroups = c("Luftfoto", "Kort"),
     overlayGroups = unique(groups),
-    options = layersControlOptions(collapsed = FALSE)
+    options = layersControlOptions(collapsed = TRUE)
   ) %>%
   hideGroup(groups) %>%
     showGroup("Stednavne") %>%
