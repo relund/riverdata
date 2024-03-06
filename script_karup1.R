@@ -7,6 +7,7 @@ library(zoo)
 library(forecast)
 library(tsibble)
 library(fs)
+library(rmarkdown)
 library(conflicted)
 conflicts_prefer(
   dplyr::filter(),
