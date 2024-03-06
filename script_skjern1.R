@@ -147,6 +147,7 @@ datMarkers <- bind_rows(datMarkers, lst$datMarkers)
 datLines <- bind_rows(datLines, lst$datLines)
 
 ## LF1926 (has a map for each place with no layers, try to hack)
+# first add medlem zones
 mapIds <- c("1d8I43tTbY5IyOjzTHpqlY8hd7F0", # Sdr. Felding
             "1lHHXIhjmF23X1wG0MWqLPiazhjg", # Udløbet 
             "1BxltqquXBJRRxj2_GVWzjA1TbhQ", # Skarrild
@@ -165,8 +166,8 @@ for (i in 1:length(mapIds)) {
   datMarkers <- bind_rows(datMarkers, lst$datMarkers)
   datLines <- bind_rows(datLines, lst$datLines)
 }
-lst <- stripKml("1BxltqquXBJRRxj2_GVWzjA1TbhQ", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Skarrild
-lst$datLines <- lst$datLines %>% mutate(Group = if_else(str_detect(Text, fixed('clasonborg', ignore_case=TRUE)), "dagkort", Group))
+# lst <- stripKml("1BxltqquXBJRRxj2_GVWzjA1TbhQ", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Skarrild
+# lst$datLines <- lst$datLines %>% mutate(Group = if_else(str_detect(Text, fixed('clasonborg', ignore_case=TRUE)), "dagkort", Group))
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) %>% 
   filter(!is.na(Icon))
 datLines <- bind_rows(datLines, lst$datLines)
