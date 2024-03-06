@@ -145,14 +145,17 @@ datLines <- bind_rows(datLines, lst$datLines)
 lst <- stripKml("1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD", Club = "BFF")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers)
 datLines <- bind_rows(datLines, lst$datLines)
+
 ## LF1926 (has a map for each place with no layers, try to hack)
 mapIds <- c("1d8I43tTbY5IyOjzTHpqlY8hd7F0", # Sdr. Felding
-            "1lHHXIhjmF23X1wG0MWqLPiazhjg", # Udløbet
+            "1lHHXIhjmF23X1wG0MWqLPiazhjg", # Udløbet 
+            "1BxltqquXBJRRxj2_GVWzjA1TbhQ", # Skarrild
             "1OIEh02I2rpO8a1F05Lq3LijF4O8", # Albæk
             "1kkZdxvxzBZ03pGrDprGEDnHEqS0", # Karstoft Å ved Skarrildhus
             "1MGXP6audGZCH0Dz6iNJ27mHGUOA", # Omme Å ved Farre
             "1q0d_VvbuvqHvHljTSeuv3QkMty9Sjg6O", # Omme Å ved Stovstrup,
             "1tmD0iHbHGayL4GgtiKWyBESDu4uamFmC", # Omme Å ved Rabæk
+            "1ojlbyHZ7lwkeiYrUWFN6nz3Qunw", # Holtum å v Fasterholt
             "12DDsCWF1P8bRYwaDuZa0jhPTetw", # Vorgod Å ved Troldhede
             "1Xoln0k9Xf7qS05QKrFzovBLkOk8" # Vorgod Å nedre
             )
