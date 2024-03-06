@@ -7,6 +7,12 @@ library(zoo)
 library(forecast)
 library(tsibble)
 library(fs)
+library(conflicted)
+conflicts_prefer(
+  dplyr::filter(),
+  dplyr::lag
+)
+
 source("functions.R")
 
 url <- "https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/catches/assoc/A97F957DD48AEDD4C1258814003E71FE/1/"

@@ -8,6 +8,12 @@ library(forecast)
 library(tsibble)
 library(fs)
 library(rmarkdown)
+library(conflicted)
+conflicts_prefer(
+  dplyr::filter(),
+  dplyr::lag
+)
+
 source("functions.R")
 
 
@@ -18,7 +24,7 @@ prefix <- "data/data_mv-lf"
 yr <- year(now())
 
 #### Catch records ####
-writeCatch(url, prefix, yr, species = "All", club = TRUE)
+datCatch <- writeCatch(url, prefix, yr, species = "All", club = TRUE)
 
 #### Map ####
 # Stednavne Karup
