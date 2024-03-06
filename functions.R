@@ -827,7 +827,7 @@ writeCatch <- function(url, prefix, yr, species = "Havørred", club = FALSE) {
   dateStr <- str_c(dateStr$Year, "-", str_pad(dateStr$Month, 2, "left", pad="0"), "-", str_pad(dateStr$Day, 2, "left", pad="0"))
   dat1 <- suppressMessages(bind_cols(Date=dateStr, dat1))
   if (club) dat1 <- dat1 %>% 
-    rename(River = `Unknown...4`)
+    rename(River = Fiskevand)
   if (species == "Havørred") dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Havørred"))
   if (species == "Laks") dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Laks"))
   if (!club) dat2 <- dat1 %>% 
