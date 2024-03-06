@@ -25,15 +25,18 @@ library(leaflet.extras)
 
 <style>
   body {
-      padding: 0;
-      margin: 0;
+      padding: 0 !important;
+      margin: 0 !important;
   }
   .main-container {
-    max-width: 3000px
+    max-width: 4000px
   }
-#header {
-    display: none;
-}
+  .container-fluid {
+      padding: 0 !important;
+  }
+  #header {
+      display: none;
+  }
 </style>
 
 
