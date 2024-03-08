@@ -1,3 +1,13 @@
+---
+title: "Links til statistik"
+---
+
+<style>
+#header {
+    display: none;
+}
+</style>
+
 ### Skjern å
 
   * [Oversigt over fiskevand](skjern/skjern-kort.html)
