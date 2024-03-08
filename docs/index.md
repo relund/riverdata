@@ -4,6 +4,7 @@
   * [Salmometer](skjern/skjern-salmometer.html)
   * [Slusen](skjern/skjern-lock-flow.html)
   * [Dashboard](https://relund.shinyapps.io/skjern)
+  * [Weight report](skjern/skjern-weight.html)
   
 ### Karup Å
 

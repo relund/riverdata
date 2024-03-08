@@ -1,7 +1,7 @@
 ---
-title: "Estimation of salmon and seatrout weight in Skjern Å"
+title: "Estimation of salmon and seatrout weight in Skjern river"
 author: "Lars Relund Nielsen"
-date: "10/4/2020"
+date: "`r Sys.Date()`"
 output: 
   html_document:
     self_contained: true
@@ -18,11 +18,12 @@ editor_options:
 ```{r setup, include=FALSE}
 library(knitr)
 library(tidyverse)
-library(lubridate)
+library(ggstats)
 library(shiny)
 library(DT)
 library(lmtest)
-# library(zoo) 
+# library(zoo)
+library(AICcmodavg)
 
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -40,11 +41,11 @@ Factors that have an impact on the weight of a fish could be length, sex, number
 # Salmon
 
 ```{r Read, include=FALSE}
-prefix <- "https://raw.githubusercontent.com/relund/skjern/master/data/"
-datCatchSalmon <- read_csv(paste0(prefix,"data_skjern_catch_salmon.csv")) 
+prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
+datCatchSalmon <- read_csv(paste0(prefix, "data_skjern_catch_salmon", "_", 2004:year(now()), ".csv"))
 dat <- datCatchSalmon %>% 
   filter(Length > 39 & !is.na(Weight) & Killed) %>% 
-  select(Date, Length, Weight, Sex, Cut, Kelt) %>% 
+  select(Date, Length, Weight, Sex, Cut) %>% 
   mutate(Month = month(Date, label = T), Quarter = paste0("Q",quarter(Date))) %>% 
   mutate(Sex = case_when(
     Sex == "Hun" ~ "Female",
@@ -52,123 +53,46 @@ dat <- datCatchSalmon %>%
     TRUE ~ NA_character_
   )) %>% 
   arrange(Date)
-datKelt <- dat %>% 
-  filter(Kelt == "Ja") %>% 
-  select(-Kelt)
-dat <- dat %>% 
-  filter(Kelt != "Ja") %>% 
-  select(-Kelt)
 ```
 
 We consider salmon catch records from Skjern Å from 2004 to present with both weight and length numbers. A total of `r nrow(dat)` observations with distribution:
 
 ```{r}
-ggplot(dat, aes(x = Month)) + geom_bar(aes(y = (..count..)/sum(..count..))) + 
-  geom_text(aes(label = scales::percent(round((..count..)/sum(..count..),2)),
-                y = (..count..)/sum(..count..)), stat= "count", vjust = -.5) +
-  labs(y = "Percent")
+ggplot(dat, aes(x = Month, fill = Sex)) + 
+  geom_bar() +
+  labs(y = "Count")   # geom_text(
+  #   aes(label = scales::percent(after_stat(prop), accuracy = 1)),
+  #   stat = "prop",
+  #   position = position_stack(.5)
+  # )
 ```
 
-Note we don't have to many observations for months where the qouta is closed. 
-
-## Kelt model
-
-Kelts are considered separately (`r nrow(datKelt)` observations). A kelt indicate a fish that have been a long time in the river. Hence, we don't use month as a factor in the model. Let us have a closer look at the data (`r nrow(datKelt)` observations):
-
-```{r}
-ggplot(datKelt, aes(x = Length, y = Weight, color = Sex)) +
-  geom_point() +
-  stat_summary(fun=mean, geom="line") +
-  labs(title = "Weight given length and mean lines")
-```
-
-We would expect that a female fish loose more weight (the eggs) than a male and we fit `log(Weight) ~ Sex*log(Length)`
-
-```{r Kelt model1}
-modKelt1 <- lm(log(Weight) ~ Sex*log(Length), datKelt)
-summary(modKelt1)
-datP <- expand.grid(Length = 40:145, Sex = c("Female","Male"), Kelt = T, MonthM2 = NA)
-resKelt1 <- predict(modKelt1, datP, interval='prediction', level=0.95) %>% 
-  exp() %>% 
-  as_tibble() %>% 
-  add_column(datP) %>% 
-  rename("Avg" = "fit" , "Lower" = "lwr", "Upper" = "upr") %>% 
-  pivot_longer(1:3)
-ggplot(datKelt %>% filter(Sex != "Unknown"), aes(x = Length, y = Weight, color = Sex)) + 
-  geom_point() + 
-  geom_line(aes(x = Length, y = value, linetype = name, color = Sex), data = resKelt1)  +
-  labs(title = "Kelt model: log(Weight) ~ Sex*log(Length)", linetype = "Estimates") +
-  theme(legend.position="bottom") 
-```
-
-Note we have to few observations for estimating higher weights for males for large lengths. Maybe a model without sex is a better fit:
-
-```{r Kelt model2}
-datP <- expand.grid(Length = 40:145, Sex = NA_character_, Kelt = T, MonthM2 = NA)
-modKelt2 <- lm(log(Weight) ~ log(Length), datKelt)
-summary(modKelt2)
-resKelt2 <- predict(modKelt2, datP, interval='prediction', level=0.95) %>% 
-  exp() %>% 
-  as_tibble() %>% 
-  add_column(datP) %>% 
-  rename("Avg" = "fit" , "Lower" = "lwr", "Upper" = "upr") %>% 
-  pivot_longer(1:3)
-ggplot(datKelt, aes(x = Length, y = Weight)) + 
-  geom_point() + 
-  geom_line(aes(x = Length, y = value, linetype = name), data = resKelt2)  +
-  labs(title = "Kelt model: log(Weight) ~ log(Length)", linetype = "Estimates") +
-  theme(legend.position="bottom") 
-```
-
-The Akaike information criterion (AIC) is a good test for model fit. AIC calculates the information value of each model by balancing the variation explained against the number of parameters used. We compare the information value of each model and choose the one with the lowest AIC value (a lower number means more information explained!)
-
-```{r}
-library(AICcmodavg)
-models <- list(modKelt1, modKelt2)
-aictab(models, modnames = c("With sex", "Without sex"))
-```
-
-It seems that model 1 is best. That is, if sex is known then include it in the model. 
-
-```{r}
-datKeltE <- bind_rows(resKelt1, resKelt2)
-ggplot(datKeltE %>% filter(name == "Avg")) + 
-  geom_line(aes(x = Length, y = value, color = Sex))  +
-  labs(title = "Kelt model: log(Weight) ~ Sex*log(Length)", linetype = "Estimates") +
-  theme(legend.position="bottom") 
-```
+Note we don't have to many observations for months where the quota is closed. 
 
 
 
-## Salmon (kelts excluded)
+Let us first try to plot the data and make some general observations.
 
 ```{r}
 ggplot(dat, aes(x = Length, y = Weight, color = Month)) +
-  geom_jitter(alpha = 0.3) + 
-  labs(title = "Weight given Length") + 
-  guides(alpha = FALSE)
+  geom_jitter(alpha = 0.4) + 
+  labs(title = "Weight given Length") 
 ```
 
 It is clear to see that the biggest salmon in general arrive early (>= 80 cm) and the grilse later (< 80 cm). 
-
 Let us try to visualize the effect of month:
 
 ```{r}
 ggplot(dat, aes(x = Length, y = Weight, color = Month)) +
   geom_smooth(se = F, size = 0.5) + 
   facet_grid(cols = vars(Sex)) + 
-  labs(title = "Weight given Length") + 
-  guides(alpha = FALSE)
+  labs(title = "Weight given Length") 
 ```
 
-It seems that month may be used as an indicator for how long the salmon have been in the river.
+It seems that month have an effect since as months increase the proportion of salmon having stayed in the river for some time increase. That is, fish of the same length have a lower weight as months goes by:
 
 ```{r}
 res <- dat %>% mutate(Length = round(Length)) %>% group_by(Month, Length, Sex) %>% summarise(`Mean weight` = mean(Weight)) %>% arrange(Length)
-# ggplot(res, aes(x = Length, y = `Mean weight`, color = Month)) +
-#   geom_point() +
-#   facet_wrap(vars(Sex)) + 
-#   labs(title = "Mean weight over months", color = "Length")
 ggplot(res, aes(x = Month, y = `Mean weight`)) +
   geom_line(aes(group = factor(Length), color = factor(Length)), na.rm = T) +
   facet_wrap(vars(Sex)) + 
@@ -177,7 +101,7 @@ ggplot(res, aes(x = Month, y = `Mean weight`)) +
   theme(legend.position = "bottom")
 ```
 
-In general weight goes down as months goes by which indicate that month may have an impact on weight.
+
 
 We fit some models taking month (a factor) into account:
 
@@ -226,15 +150,14 @@ resL3 <- pivot_longer(res3, 4:6)
 ```
 
 ```{r}
-datE <- bind_rows(datKeltE, resL3)
+# datE <- bind_rows(datKeltE, resL3)
 ```
 
 
 # Seatrout
 
 ```{r Read data}
-prefix <- "https://raw.githubusercontent.com/relund/skjern/master/data/"
-datCatchTrout <- read_csv(paste0(prefix,"data_skjern_catch_seatrout.csv")) 
+datCatchTrout <- read_csv(paste0(prefix,"data_skjern_catch_seatrout", "_", 2004:year(now()), ".csv"))
 dat <- datCatchTrout %>% 
   filter(Length > 39 & !is.na(Weight) & Killed) %>% 
   select(Date, Length, Weight, Sex) %>% 
@@ -250,9 +173,9 @@ dat <- datCatchTrout %>%
 We consider seatrout catch records from Skjern Å from 2004 to present with both weight and length numbers. A total of `r nrow(dat)` observations:
 
 ```{r}
-ggplot(dat, aes(x = Month)) + geom_bar(aes(y = (..count..)/sum(..count..))) + 
-    geom_text(aes(label = scales::percent(round((..count..)/sum(..count..),2)),
-                   y = (..count..)/sum(..count..)), stat= "count", vjust = -.5) 
+ggplot(dat, aes(x = Month, fill = Sex)) + 
+  geom_bar() +
+  labs(y = "Count") 
 ```
 
 We try different models:
