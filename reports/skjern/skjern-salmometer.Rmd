@@ -1,5 +1,5 @@
 ---
-title: "Skjern Å - Estimat af vægt"
+title: "Skjern Å - Salmometer"
 author: ''
 output:
   flexdashboard::flex_dashboard:
@@ -8,11 +8,11 @@ output:
     orientation: rows
     theme: paper
     vertical_layout: fill
-knit: (function(inputFile, encoding) { 
-      out_dir <- '../docs';
-      rmarkdown::render(inputFile,
-                        encoding=encoding, 
-                        output_file=file.path(dirname(inputFile), out_dir, 'weight-skjern.html')) })
+# knit: (function(inputFile, encoding) { 
+#       out_dir <- '../docs';
+#       rmarkdown::render(inputFile,
+#                         encoding=encoding, 
+#                         output_file=file.path(dirname(inputFile), out_dir, 'weight-skjern.html')) })
 resource_files:
 - www/boy.gif
 - www/c_and_r.gif
@@ -48,10 +48,10 @@ library(kableExtra)
 # library(zoo) 
 library(leaflet)
 library(fs)
-source("functions.R")
+source("../functions.R")
 
 prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
-prefix <- "../data/"
+# prefix <- "../../data/"
 curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
 
 # Weight - Estimates 
