@@ -3,6 +3,7 @@
 ## Skjern å
 
   * [Oversigt over fiskevand i Skjern Å](skjern/skjern-kort.html)
+  * [Salmometer](skjern/skjern-salmometer.html)
   
 
 ## MidtVest Lystfiskerforening
