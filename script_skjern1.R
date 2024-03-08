@@ -178,4 +178,5 @@ write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
 
 ## Render reports
-render("reports/skjern-kort.Rmd",output_dir = "docs/skjern")
+render("reports/skjern/skjern-kort.Rmd",output_dir = "docs/skjern")
+render("reports/skjern/skjern-salmometer.Rmd",output_dir = "docs/skjern")

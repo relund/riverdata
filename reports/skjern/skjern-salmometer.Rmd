@@ -13,14 +13,6 @@ output:
 #       rmarkdown::render(inputFile,
 #                         encoding=encoding, 
 #                         output_file=file.path(dirname(inputFile), out_dir, 'weight-skjern.html')) })
-resource_files:
-- www/boy.gif
-- www/c_and_r.gif
-- www/cut.gif
-- www/foto.gif
-- www/girl.gif
-- www/info.png
-- www/net.gif
 editor_options:
   chunk_output_type: console
 ---
@@ -33,26 +25,26 @@ $(".selectize-input input").prop('readonly','readonly');
 #profvis({rmarkdown::run("karup.Rmd", shiny_args = list(host="0.0.0.0", port=5050))})
 library(knitr)
 knitr::opts_chunk$set(echo = FALSE)
-library(ggplot2)
+# library(ggplot2)
 #library(ggrepel)
-library(directlabels)
-library(plotly)
+# library(directlabels)
+# library(plotly)
 library(flexdashboard)
 library(tidyverse)
-library(lubridate)
+# library(lubridate)
 
 
 # library(formattable)
-library(flextable)
+# library(flextable)
 library(kableExtra)
 # library(zoo) 
-library(leaflet)
-library(fs)
+# library(leaflet)
+# library(fs)
 source("../functions.R")
 
 prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
 # prefix <- "../../data/"
-curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
+# curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
 
 # Weight - Estimates 
 datWeightSea<- read_csv(paste0(prefix, "data_skjern_weight_seatrout.csv"), col_types = "dfddd")
