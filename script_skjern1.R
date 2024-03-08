@@ -180,3 +180,4 @@ write_csv(datLines, str_c(prefix, "_maplines.csv"))
 ## Render reports
 render("reports/skjern/skjern-kort.Rmd",output_dir = "docs/skjern")
 render("reports/skjern/skjern-salmometer.Rmd",output_dir = "docs/skjern")
+render("reports/skjern/skjern-lock-flow.Rmd",output_dir = "docs/skjern")

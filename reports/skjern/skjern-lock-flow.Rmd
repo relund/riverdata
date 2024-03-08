@@ -8,11 +8,11 @@ output:
     orientation: rows
     theme: paper
     vertical_layout: fill
-knit: (function(inputFile, encoding) { 
-      out_dir <- '../docs';
-      rmarkdown::render(inputFile,
-                        encoding=encoding, 
-                        output_file=file.path(dirname(inputFile), out_dir, 'lock-flow.html')) })
+# knit: (function(inputFile, encoding) { 
+#       out_dir <- '../docs';
+#       rmarkdown::render(inputFile,
+#                         encoding=encoding, 
+#                         output_file=file.path(dirname(inputFile), out_dir, 'lock-flow.html')) })
 editor_options:
   chunk_output_type: console
 ---
@@ -30,7 +30,7 @@ library(flexdashboard)
 library(tidyverse)
 library(lubridate)
 library(fs)
-source("functions.R")
+source("../functions.R")
 
 
 Sys.setlocale("LC_ALL", "da_DK.UTF-8")
