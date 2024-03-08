@@ -1227,7 +1227,7 @@ Date,Place,Value
 2024-02-24T18:30:00Z,Fjederholt Å - A18,40.844
 2024-02-24T18:15:00Z,Fjederholt Å - A18,40.8475
 2024-02-24T18:00:00Z,Fjederholt Å - A18,40.851
-2024-02-24T17:45:00Z,Fjederholt Å - A18,40.854
+2024-02-24T17:45:00Z,Fjederholt Å - A18,40.8475
 2024-02-24T17:30:00Z,Fjederholt Å - A18,40.844
 2024-02-24T17:15:00Z,Fjederholt Å - A18,40.849000000000004
 2024-02-24T17:00:00Z,Fjederholt Å - A18,40.849000000000004
@@ -1287,7 +1287,7 @@ Date,Place,Value
 2024-02-24T03:30:00Z,Fjederholt Å - A18,40.84
 2024-02-24T03:15:00Z,Fjederholt Å - A18,40.837
 2024-02-24T03:00:00Z,Fjederholt Å - A18,40.836000000000006
-2024-02-24T02:45:00Z,Fjederholt Å - A18,40.837
+2024-02-24T02:45:00Z,Fjederholt Å - A18,40.8335
 2024-02-24T02:30:00Z,Fjederholt Å - A18,40.831
 2024-02-24T02:15:00Z,Fjederholt Å - A18,40.828
 2024-02-24T02:00:00Z,Fjederholt Å - A18,40.825
@@ -8134,7 +8134,7 @@ Date,Place,Value
 2024-02-26T07:10:00Z,Karstoft Å - Fiskedamme,16.023
 2024-02-26T07:00:00Z,Karstoft Å - Fiskedamme,16.025
 2024-02-26T06:50:00Z,Karstoft Å - Fiskedamme,16.027
-2024-02-26T06:40:00Z,Karstoft Å - Fiskedamme,16.029
+2024-02-26T06:40:00Z,Karstoft Å - Fiskedamme,16.0255
 2024-02-26T06:30:00Z,Karstoft Å - Fiskedamme,16.024
 2024-02-26T06:20:00Z,Karstoft Å - Fiskedamme,16.029
 2024-02-26T06:10:00Z,Karstoft Å - Fiskedamme,16.027
@@ -8284,7 +8284,7 @@ Date,Place,Value
 2024-02-25T06:10:00Z,Karstoft Å - Fiskedamme,15.965
 2024-02-25T06:00:00Z,Karstoft Å - Fiskedamme,15.971
 2024-02-25T05:50:00Z,Karstoft Å - Fiskedamme,15.967
-2024-02-25T05:40:00Z,Karstoft Å - Fiskedamme,15.961
+2024-02-25T05:40:00Z,Karstoft Å - Fiskedamme,15.965
 2024-02-25T05:30:00Z,Karstoft Å - Fiskedamme,15.963
 2024-02-25T05:20:00Z,Karstoft Å - Fiskedamme,15.967
 2024-02-25T05:10:00Z,Karstoft Å - Fiskedamme,15.963
@@ -8453,9 +8453,9 @@ Date,Place,Value
 2024-02-24T02:00:00Z,Karstoft Å - Fiskedamme,16.112000000000002
 2024-02-24T01:50:00Z,Karstoft Å - Fiskedamme,16.11
 2024-02-24T01:40:00Z,Karstoft Å - Fiskedamme,16.108
-2024-02-24T01:30:00Z,Karstoft Å - Fiskedamme,16.113
-2024-02-24T01:20:00Z,Karstoft Å - Fiskedamme,16.112
-2024-02-24T01:10:00Z,Karstoft Å - Fiskedamme,16.111
+2024-02-24T01:30:00Z,Karstoft Å - Fiskedamme,16.1085
+2024-02-24T01:20:00Z,Karstoft Å - Fiskedamme,16.109
+2024-02-24T01:10:00Z,Karstoft Å - Fiskedamme,16.1095
 2024-02-24T01:00:00Z,Karstoft Å - Fiskedamme,16.11
 2024-02-24T00:50:00Z,Karstoft Å - Fiskedamme,16.1095
 2024-02-24T00:40:00Z,Karstoft Å - Fiskedamme,16.108999999999998
@@ -8630,11 +8630,11 @@ Date,Place,Value
 2024-02-22T20:30:00Z,Karstoft Å - Fiskedamme,15.950999999999999
 2024-02-22T20:20:00Z,Karstoft Å - Fiskedamme,15.950000000000001
 2024-02-22T20:10:00Z,Karstoft Å - Fiskedamme,15.952
-2024-02-22T20:00:00Z,Karstoft Å - Fiskedamme,15.956
-2024-02-22T19:50:00Z,Karstoft Å - Fiskedamme,15.954
+2024-02-22T20:00:00Z,Karstoft Å - Fiskedamme,15.951666666666666
+2024-02-22T19:50:00Z,Karstoft Å - Fiskedamme,15.951333333333332
 2024-02-22T19:40:00Z,Karstoft Å - Fiskedamme,15.950999999999999
 2024-02-22T19:30:00Z,Karstoft Å - Fiskedamme,15.948
-2024-02-22T19:20:00Z,Karstoft Å - Fiskedamme,15.954
+2024-02-22T19:20:00Z,Karstoft Å - Fiskedamme,15.948
 2024-02-22T19:10:00Z,Karstoft Å - Fiskedamme,15.953
 2024-02-22T19:00:00Z,Karstoft Å - Fiskedamme,15.952
 2024-02-22T18:50:00Z,Karstoft Å - Fiskedamme,15.952
@@ -16224,6 +16224,30 @@ Date,Place,Value
 2024-01-01T00:20:00Z,Karstoft Å - Fiskedamme,16.0206608154297
 2024-01-01T00:10:00Z,Karstoft Å - Fiskedamme,16.0258983184814
 2024-01-01T00:00:00Z,Karstoft Å - Fiskedamme,16.0286140777588
+2024-03-08T18:20:00Z,Omme Å - Sønderskov bro,3.867
+2024-03-08T18:10:00Z,Omme Å - Sønderskov bro,3.8739999999999997
+2024-03-08T18:00:00Z,Omme Å - Sønderskov bro,3.867
+2024-03-08T17:50:00Z,Omme Å - Sønderskov bro,3.867
+2024-03-08T17:40:00Z,Omme Å - Sønderskov bro,3.8710000000000004
+2024-03-08T17:30:00Z,Omme Å - Sønderskov bro,3.8689999999999998
+2024-03-08T17:20:00Z,Omme Å - Sønderskov bro,3.87
+2024-03-08T17:10:00Z,Omme Å - Sønderskov bro,3.8710000000000004
+2024-03-08T17:00:00Z,Omme Å - Sønderskov bro,3.872
+2024-03-08T16:50:00Z,Omme Å - Sønderskov bro,3.8689999999999998
+2024-03-08T16:40:00Z,Omme Å - Sønderskov bro,3.873
+2024-03-08T16:30:00Z,Omme Å - Sønderskov bro,3.87
+2024-03-08T16:20:00Z,Omme Å - Sønderskov bro,3.873
+2024-03-08T16:10:00Z,Omme Å - Sønderskov bro,3.872
+2024-03-08T16:00:00Z,Omme Å - Sønderskov bro,3.872
+2024-03-08T15:50:00Z,Omme Å - Sønderskov bro,3.875
+2024-03-08T15:40:00Z,Omme Å - Sønderskov bro,3.8710000000000004
+2024-03-08T15:30:00Z,Omme Å - Sønderskov bro,3.867
+2024-03-08T15:20:00Z,Omme Å - Sønderskov bro,3.875
+2024-03-08T15:10:00Z,Omme Å - Sønderskov bro,3.8710000000000004
+2024-03-08T15:00:00Z,Omme Å - Sønderskov bro,3.867
+2024-03-08T14:50:00Z,Omme Å - Sønderskov bro,3.873
+2024-03-08T14:40:00Z,Omme Å - Sønderskov bro,3.872
+2024-03-08T14:30:00Z,Omme Å - Sønderskov bro,3.8710000000000004
 2024-03-08T14:20:00Z,Omme Å - Sønderskov bro,3.8710000000000004
 2024-03-08T14:10:00Z,Omme Å - Sønderskov bro,3.8689999999999998
 2024-03-08T14:00:00Z,Omme Å - Sønderskov bro,3.87
@@ -25945,6 +25969,30 @@ Date,Place,Value
 2024-01-01T00:20:00Z,Omme Å - Sønderskov bro,4.1111671081543
 2024-01-01T00:10:00Z,Omme Å - Sønderskov bro,4.10391369018555
 2024-01-01T00:00:00Z,Omme Å - Sønderskov bro,4.12127834472656
+2024-03-08T18:20:00Z,Rind Å - Arnborg kirke,25.145
+2024-03-08T18:10:00Z,Rind Å - Arnborg kirke,25.146
+2024-03-08T18:00:00Z,Rind Å - Arnborg kirke,25.147
+2024-03-08T17:50:00Z,Rind Å - Arnborg kirke,25.147
+2024-03-08T17:40:00Z,Rind Å - Arnborg kirke,25.146
+2024-03-08T17:30:00Z,Rind Å - Arnborg kirke,25.146
+2024-03-08T17:20:00Z,Rind Å - Arnborg kirke,25.145
+2024-03-08T17:10:00Z,Rind Å - Arnborg kirke,25.149
+2024-03-08T17:00:00Z,Rind Å - Arnborg kirke,25.148000000000003
+2024-03-08T16:50:00Z,Rind Å - Arnborg kirke,25.148000000000003
+2024-03-08T16:40:00Z,Rind Å - Arnborg kirke,25.147
+2024-03-08T16:30:00Z,Rind Å - Arnborg kirke,25.147
+2024-03-08T16:20:00Z,Rind Å - Arnborg kirke,25.145
+2024-03-08T16:10:00Z,Rind Å - Arnborg kirke,25.147
+2024-03-08T16:00:00Z,Rind Å - Arnborg kirke,25.148000000000003
+2024-03-08T15:50:00Z,Rind Å - Arnborg kirke,25.147
+2024-03-08T15:40:00Z,Rind Å - Arnborg kirke,25.149
+2024-03-08T15:30:00Z,Rind Å - Arnborg kirke,25.147
+2024-03-08T15:20:00Z,Rind Å - Arnborg kirke,25.148000000000003
+2024-03-08T15:10:00Z,Rind Å - Arnborg kirke,25.148000000000003
+2024-03-08T15:00:00Z,Rind Å - Arnborg kirke,25.148000000000003
+2024-03-08T14:50:00Z,Rind Å - Arnborg kirke,25.149
+2024-03-08T14:40:00Z,Rind Å - Arnborg kirke,25.148000000000003
+2024-03-08T14:30:00Z,Rind Å - Arnborg kirke,25.147
 2024-03-08T14:20:00Z,Rind Å - Arnborg kirke,25.150000000000002
 2024-03-08T14:10:00Z,Rind Å - Arnborg kirke,25.149
 2024-03-08T14:00:00Z,Rind Å - Arnborg kirke,25.150000000000002
@@ -27105,7 +27153,7 @@ Date,Place,Value
 2024-02-29T13:20:00Z,Rind Å - Arnborg kirke,25.339000000000002
 2024-02-29T13:10:00Z,Rind Å - Arnborg kirke,25.339000000000002
 2024-02-29T13:00:00Z,Rind Å - Arnborg kirke,25.338
-2024-02-29T12:50:00Z,Rind Å - Arnborg kirke,25.337
+2024-02-29T12:50:00Z,Rind Å - Arnborg kirke,25.338
 2024-02-29T12:40:00Z,Rind Å - Arnborg kirke,25.338
 2024-02-29T12:30:00Z,Rind Å - Arnborg kirke,25.337
 2024-02-29T12:20:00Z,Rind Å - Arnborg kirke,25.337
@@ -35666,6 +35714,30 @@ Date,Place,Value
 2024-01-01T00:20:00Z,Rind Å - Arnborg kirke,25.7675666503906
 2024-01-01T00:10:00Z,Rind Å - Arnborg kirke,25.7700877075195
 2024-01-01T00:00:00Z,Rind Å - Arnborg kirke,25.7695057373047
+2024-03-08T18:20:00Z,Skjern Å - Alergaard,7.252000000000001
+2024-03-08T18:10:00Z,Skjern Å - Alergaard,7.256
+2024-03-08T18:00:00Z,Skjern Å - Alergaard,7.254
+2024-03-08T17:50:00Z,Skjern Å - Alergaard,7.25
+2024-03-08T17:40:00Z,Skjern Å - Alergaard,7.256
+2024-03-08T17:30:00Z,Skjern Å - Alergaard,7.252000000000001
+2024-03-08T17:20:00Z,Skjern Å - Alergaard,7.256
+2024-03-08T17:10:00Z,Skjern Å - Alergaard,7.254
+2024-03-08T17:00:00Z,Skjern Å - Alergaard,7.258
+2024-03-08T16:50:00Z,Skjern Å - Alergaard,7.254
+2024-03-08T16:40:00Z,Skjern Å - Alergaard,7.252000000000001
+2024-03-08T16:30:00Z,Skjern Å - Alergaard,7.255
+2024-03-08T16:20:00Z,Skjern Å - Alergaard,7.254
+2024-03-08T16:10:00Z,Skjern Å - Alergaard,7.255
+2024-03-08T16:00:00Z,Skjern Å - Alergaard,7.255
+2024-03-08T15:50:00Z,Skjern Å - Alergaard,7.253
+2024-03-08T15:40:00Z,Skjern Å - Alergaard,7.252000000000001
+2024-03-08T15:30:00Z,Skjern Å - Alergaard,7.254
+2024-03-08T15:20:00Z,Skjern Å - Alergaard,7.258
+2024-03-08T15:10:00Z,Skjern Å - Alergaard,7.251
+2024-03-08T15:00:00Z,Skjern Å - Alergaard,7.254
+2024-03-08T14:50:00Z,Skjern Å - Alergaard,7.246
+2024-03-08T14:40:00Z,Skjern Å - Alergaard,7.253
+2024-03-08T14:30:00Z,Skjern Å - Alergaard,7.255
 2024-03-08T14:20:00Z,Skjern Å - Alergaard,7.255
 2024-03-08T14:10:00Z,Skjern Å - Alergaard,7.25
 2024-03-08T14:00:00Z,Skjern Å - Alergaard,7.255
@@ -37799,7 +37871,7 @@ Date,Place,Value
 2024-02-22T19:20:00Z,Skjern Å - Alergaard,7.692000000000001
 2024-02-22T19:10:00Z,Skjern Å - Alergaard,7.7
 2024-02-22T19:00:00Z,Skjern Å - Alergaard,7.69
-2024-02-22T18:50:00Z,Skjern Å - Alergaard,7.6979999999999995
+2024-02-22T18:50:00Z,Skjern Å - Alergaard,7.698
 2024-02-22T18:40:00Z,Skjern Å - Alergaard,7.686000000000001
 2024-02-22T18:30:00Z,Skjern Å - Alergaard,7.696000000000001
 2024-02-22T18:20:00Z,Skjern Å - Alergaard,7.689
@@ -65077,6 +65149,30 @@ Date,Place,Value
 2024-01-01T00:10:00Z,Skjern Å - Landevejsbroen,2.554
 2024-01-01T00:05:00Z,Skjern Å - Landevejsbroen,2.554
 2024-01-01T00:00:00Z,Skjern Å - Landevejsbroen,2.544
+2024-03-08T18:20:00Z,Skjern Å - Sandfeldvej,28.21
+2024-03-08T18:10:00Z,Skjern Å - Sandfeldvej,28.21
+2024-03-08T18:00:00Z,Skjern Å - Sandfeldvej,28.21
+2024-03-08T17:50:00Z,Skjern Å - Sandfeldvej,28.21
+2024-03-08T17:40:00Z,Skjern Å - Sandfeldvej,28.21
+2024-03-08T17:30:00Z,Skjern Å - Sandfeldvej,28.21
+2024-03-08T17:20:00Z,Skjern Å - Sandfeldvej,28.211
+2024-03-08T17:10:00Z,Skjern Å - Sandfeldvej,28.211
+2024-03-08T17:00:00Z,Skjern Å - Sandfeldvej,28.211
+2024-03-08T16:50:00Z,Skjern Å - Sandfeldvej,28.21
+2024-03-08T16:40:00Z,Skjern Å - Sandfeldvej,28.21
+2024-03-08T16:30:00Z,Skjern Å - Sandfeldvej,28.21
+2024-03-08T16:20:00Z,Skjern Å - Sandfeldvej,28.21
+2024-03-08T16:10:00Z,Skjern Å - Sandfeldvej,28.21
+2024-03-08T16:00:00Z,Skjern Å - Sandfeldvej,28.21
+2024-03-08T15:50:00Z,Skjern Å - Sandfeldvej,28.21
+2024-03-08T15:40:00Z,Skjern Å - Sandfeldvej,28.211
+2024-03-08T15:30:00Z,Skjern Å - Sandfeldvej,28.211
+2024-03-08T15:20:00Z,Skjern Å - Sandfeldvej,28.211
+2024-03-08T15:10:00Z,Skjern Å - Sandfeldvej,28.211
+2024-03-08T15:00:00Z,Skjern Å - Sandfeldvej,28.212
+2024-03-08T14:50:00Z,Skjern Å - Sandfeldvej,28.212
+2024-03-08T14:40:00Z,Skjern Å - Sandfeldvej,28.212
+2024-03-08T14:30:00Z,Skjern Å - Sandfeldvej,28.211
 2024-03-08T14:20:00Z,Skjern Å - Sandfeldvej,28.212
 2024-03-08T14:10:00Z,Skjern Å - Sandfeldvej,28.211
 2024-03-08T14:00:00Z,Skjern Å - Sandfeldvej,28.212
@@ -67208,11 +67304,11 @@ Date,Place,Value
 2024-02-22T19:40:00Z,Skjern Å - Sandfeldvej,28.508000000000003
 2024-02-22T19:30:00Z,Skjern Å - Sandfeldvej,28.508000000000003
 2024-02-22T19:20:00Z,Skjern Å - Sandfeldvej,28.506999999999998
-2024-02-22T19:10:00Z,Skjern Å - Sandfeldvej,28.506999999999998
-2024-02-22T19:00:00Z,Skjern Å - Sandfeldvej,28.506999999999998
-2024-02-22T18:50:00Z,Skjern Å - Sandfeldvej,28.506999999999998
-2024-02-22T18:40:00Z,Skjern Å - Sandfeldvej,28.506999999999998
-2024-02-22T18:30:00Z,Skjern Å - Sandfeldvej,28.506999999999998
+2024-02-22T19:10:00Z,Skjern Å - Sandfeldvej,28.507
+2024-02-22T19:00:00Z,Skjern Å - Sandfeldvej,28.507
+2024-02-22T18:50:00Z,Skjern Å - Sandfeldvej,28.507
+2024-02-22T18:40:00Z,Skjern Å - Sandfeldvej,28.507
+2024-02-22T18:30:00Z,Skjern Å - Sandfeldvej,28.507
 2024-02-22T18:20:00Z,Skjern Å - Sandfeldvej,28.505
 2024-02-22T18:10:00Z,Skjern Å - Sandfeldvej,28.505
 2024-02-22T18:00:00Z,Skjern Å - Sandfeldvej,28.505
