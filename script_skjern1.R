@@ -164,14 +164,14 @@ mapIds <- c("1d8I43tTbY5IyOjzTHpqlY8hd7F0", # Sdr. Felding
 for (i in 1:length(mapIds)) {
   lst <- stripKml(mapIds[i], Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem") 
   lst$datLines$LineGroupId <- lst$datLines$LineGroupId + i*10
-  datMarkers <- bind_rows(datMarkers, lst$datMarkers)
+  datMarkers <- bind_rows(datMarkers, lst$datMarkers) %>% filter(!is.na(Icon))
   datLines <- bind_rows(datLines, lst$datLines)
 }
 # lst <- stripKml("1BxltqquXBJRRxj2_GVWzjA1TbhQ", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Skarrild
 # lst$datLines <- lst$datLines %>% mutate(Group = if_else(str_detect(Text, fixed('clasonborg', ignore_case=TRUE)), "dagkort", Group))
-datMarkers <- bind_rows(datMarkers, lst$datMarkers) %>% 
-  filter(!is.na(Icon))
-datLines <- bind_rows(datLines, lst$datLines)
+# datMarkers <- bind_rows(datMarkers, lst$datMarkers) %>% 
+#   filter(!is.na(Icon))
+# datLines <- bind_rows(datLines, lst$datLines)
 
 ## Write to csv
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))

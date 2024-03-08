@@ -253,12 +253,12 @@ Ids <- datMarkers %>%
 maplet <- mapAddMarkers(maplet, "Stednavne", datMarkers %>% filter(Id %in% Ids))
 datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
 
-Ids <- datMarkers %>% 
-  filter(
-    str_detect(Group, regex("Info", ignore_case = T))) %>% 
-  pull(Id)
-maplet <- mapAddMarkers(maplet, "Info", datMarkers %>% filter(Id %in% Ids))
-datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+  Ids <- datMarkers %>% 
+    filter(
+      str_detect(Group, regex("Info", ignore_case = T))) %>% 
+    pull(Id)
+  maplet <- mapAddMarkers(maplet, "Info", datMarkers %>% filter(Id %in% Ids))
+  datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
 
 # Lines
 maplet <- mapAddLines(maplet, group = "Parkering", color = "#eb9834", useClub = FALSE,
