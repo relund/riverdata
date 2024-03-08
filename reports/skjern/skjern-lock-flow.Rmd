@@ -28,8 +28,8 @@ library(ggplot2)
 library(plotly)
 library(flexdashboard)
 library(tidyverse)
-library(lubridate)
-library(fs)
+# library(lubridate)
+# library(fs)
 source("../functions.R")
 
 
@@ -37,7 +37,7 @@ Sys.setlocale("LC_ALL", "da_DK.UTF-8")
 
 prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
 # prefix <- "../../data/"
-curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
+# curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
 
 
 # Lock flow
@@ -50,7 +50,7 @@ datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock_web.csv"),
 Row
 -----------------------------------------------------------------------
 
-### Sluse flow de seneste 14 dage (strøm ind i fjorden er positiv)
+### Sluse flow de seneste 14 dage
 
 ```{r}
   p <- ggplot(datFlow) + 
