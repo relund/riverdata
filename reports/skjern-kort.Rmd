@@ -124,6 +124,14 @@ Ids <- datMarkers %>%
 maplet <- mapAddMarkers(maplet, "Stednavne", datMarkers %>% filter(Id %in% Ids))
 datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
 
+# Info
+Ids <- datMarkers %>%
+  filter(
+    str_detect(Group, regex("Info", ignore_case = T))) %>%
+  pull(Id)
+maplet <- mapAddMarkers(maplet, "Info", datMarkers %>% filter(Id %in% Ids))
+datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+
 # Shelter
 Ids <- datMarkers %>%
   filter(
@@ -144,13 +152,7 @@ Ids <- datMarkers %>%
 maplet <- mapAddMarkers(maplet, "Bro/spang", datMarkers %>% filter(Id %in% Ids))
 datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
 
-# Info
-Ids <- datMarkers %>%
-  filter(
-    str_detect(Group, regex("Info", ignore_case = T))) %>%
-  pull(Id)
-maplet <- mapAddMarkers(maplet, "Info", datMarkers %>% filter(Id %in% Ids))
-datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+
 
 
 # Ids <- datMarkers %>% 

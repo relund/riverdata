@@ -261,7 +261,7 @@ maplet <- mapAddMarkers(maplet, "Info", datMarkers %>% filter(Id %in% Ids))
 datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
 
 # Lines
-maplet <- mapAddLines(maplet, group = "Parkering", color = "#000000", useClub = FALSE,
+maplet <- mapAddLines(maplet, group = "Parkering", color = "#eb9834", useClub = FALSE,
                       data = datLines %>% 
                         filter(str_detect(Group, regex("parkering", ignore_case = T))))
 maplet <- mapAddLines(maplet, group = "fiskevand", color = "#3C8AE6",
@@ -270,7 +270,7 @@ maplet <- mapAddLines(maplet, group = "fiskevand", color = "#3C8AE6",
 maplet <- mapAddLines(maplet, group = "medlem", color = "#EBE053",
                       data = datLines %>% 
                         filter(str_detect(Group, regex("medlem", ignore_case = T))))
-maplet <- mapAddLines(maplet, group = "dagkort", color = "#eb9834",
+maplet <- mapAddLines(maplet, group = "dagkort", color = "#000000",
                       data = datLines %>% 
                         filter(str_detect(Group, regex("dagkort", ignore_case = T))))
 maplet <- mapAddLines(maplet, group = "gæstekort", color = "#bf5656",
