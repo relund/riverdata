@@ -63,4 +63,4 @@ datMarkers <- datMarkers  %>% filter(!is.na(Icon))
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
 
-render("reports/mv-lf-kort.Rmd",output_dir = "docs/mv-lf")
+render("reports/mv-lf/mv-lf-kort.Rmd",output_dir = "docs/mv-lf")
