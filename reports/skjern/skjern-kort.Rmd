@@ -4,7 +4,7 @@ title: "Oversigt over fiskevand i Skjern Å"
 editor_options: 
   chunk_output_type: console
 knit: (function(inputFile, encoding) { 
-      out_dir <- '../docs/skjern';
+      out_dir <- '../../docs/skjern';
       rmarkdown::render(inputFile,
                         encoding=encoding, 
                         output_file=file.path(dirname(inputFile), out_dir, 'skjern-kort.html')) })
