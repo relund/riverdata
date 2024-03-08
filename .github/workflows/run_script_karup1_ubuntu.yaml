@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - .github/workflows/run_script_karup1_ubuntu.yaml
+      - reports/karup/**
       - script_karup1.R
       - script_mv-lf.R
       - functions.R
