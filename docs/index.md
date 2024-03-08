@@ -1,5 +1,3 @@
-## Statistik fra forskellige åer
-
 ### Skjern å
 
   * [Oversigt over fiskevand](skjern/skjern-kort.html)

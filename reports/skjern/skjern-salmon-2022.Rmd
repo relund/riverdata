@@ -10,13 +10,12 @@ output:
     df_print: paged
 editor_options: 
   chunk_output_type: console
-knit: (function(inputFile, encoding) { 
-      out_dir <- '../docs';
-      rmarkdown::render(inputFile,
-                        encoding=encoding, 
-                        output_file=file.path(dirname(inputFile), out_dir, 'salmon-skjern.html')) })
+# knit: (function(inputFile, encoding) { 
+#       out_dir <- '../docs';
+#       rmarkdown::render(inputFile,
+#                         encoding=encoding, 
+#                         output_file=file.path(dirname(inputFile), out_dir, 'salmon-skjern.html')) })
 ---
-
 
 ```{r, include=FALSE}
 library(knitr)
