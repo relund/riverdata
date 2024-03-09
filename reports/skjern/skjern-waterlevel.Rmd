@@ -1,0 +1,326 @@
+---
+title: "Skjern Å - Vandstand"
+author: ''
+output:
+  flexdashboard::flex_dashboard:
+    css: www/style.css
+    favicon: favicon.png
+    orientation: rows
+    theme: paper
+    vertical_layout: fill
+# knit: (function(inputFile, encoding) { 
+#       rmarkdown::render(inputFile,
+editor_options:
+  chunk_output_type: console
+---
+
+<script>
+$(".selectize-input input").prop('readonly','readonly');
+</script>
+
+```{r, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = FALSE)
+library(plotly)
+library(flexdashboard)
+library(tidyverse)
+library(conflicted)
+conflicts_prefer(
+  plotly::layout,
+  dplyr::filter
+  )
+
+source("../functions.R")
+Sys.setlocale("LC_ALL", "da_DK.UTF-8")
+
+prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
+# prefix <- "../../data/"
+# Water levels
+dat <- read_csv(paste0(prefix, "data_skjern_waterlevel_web.csv"),
+           locale = locale(tz = "CET"),
+           col_types = "Tffdd") 
+dat$YGroup <- factor(dat$YGroup, level = str_sort(levels(dat$YGroup)))
+dat1 <- dat %>% 
+  select(-Level) %>% 
+  pivot_wider(names_from = Place, values_from = LevelRelative)
+dat2 <- dat %>% 
+  select(-LevelRelative) %>% 
+  pivot_wider(names_from = Place, values_from = Level)
+```
+
+```{r}
+plotPlaceRel <- function(place) {
+  tmp <- dat1 %>% 
+    transmute(Dato = Date, YGroup, Place = .data[[place]], Text = str_c(day(Date), " ", month(Date, label = T), " ", YGroup, ": ", Place, " cm"),
+              Width = if_else(YGroup == year(now()), 5, 1)) %>% 
+    filter(!is.na(Place))
+  fig <- plot_ly(tmp, type = 'scatter', mode = 'lines') %>% 
+    add_lines(x = ~Dato, y = ~Place, split = ~YGroup, color = ~YGroup, text = ~Text, line = list(width = if_else(tmp$YGroup == year(now()), 5, 1)),
+              hovertemplate = str_c('%{text}'),
+              data = tmp, visible = T) %>% 
+    layout(
+      # title = place,
+      xaxis = list(domain = c(0, 1), title = NA, tickformat = "%d %b"),
+      yaxis = list(title = "Relativ vandstand"),
+      legend = list(orientation = 'h')
+      # hovermode = "x unified"
+  )
+  return(fig)
+}
+
+plotPlaceAbs <- function(place) {
+  tmp <- dat2 %>% 
+    transmute(Dato = Date, YGroup, Place = .data[[place]], Text = str_c(day(Date), " ", month(Date, label = T), " ", YGroup, ": ", Place, " cm"),
+              Width = if_else(YGroup == year(now()), 5, 1)) %>% 
+    filter(!is.na(Place))
+  fig <- plot_ly(tmp, type = 'scatter', mode = 'lines') %>% 
+    add_lines(x = ~Dato, y = ~Place, split = ~YGroup, color = ~YGroup, text = ~Text, line = list(width = if_else(tmp$YGroup == year(now()), 5, 1)),
+              hovertemplate = str_c('%{text}'),
+              data = tmp, visible = T) %>% 
+    layout(
+      # title = place,
+      xaxis = list(domain = c(0, 1), title = NA, tickformat = "%d %b"),
+      yaxis = list(title = "Vandstand"),
+      legend = list(orientation = 'h')
+      # hovermode = "x unified"
+  )
+  return(fig)
+}
+```
+
+Gjaldbæk bro
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Relativ vandstand
+
+```{r}
+plotPlaceRel("Skjern Å - Gjaldbæk bro")
+```
+
+<!-- Row -->
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- ### Absolut vandstand -->
+
+<!-- ```{r} -->
+<!-- plotPlaceAbs("Skjern Å - Gjaldbæk bro") -->
+<!-- ``` -->
+
+
+Alergaard
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Relativ vandstand
+
+```{r}
+plotPlaceRel("Skjern Å - Alergaard")
+```
+
+
+Landevejsbroen
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Relativ vandstand
+
+```{r}
+plotPlaceRel("Skjern Å - Landevejsbroen")
+```
+
+
+Sandfeldvej
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Relativ vandstand
+
+```{r}
+plotPlaceRel("Skjern Å - Sandfeldvej")
+```
+
+
+Sønderskov bro (Omme Å)
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Relativ vandstand
+
+```{r}
+plotPlaceRel("Omme Å - Sønderskov bro")
+```
+
+
+Arnborg kirke (Rind Å)
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Relativ vandstand
+
+```{r}
+plotPlaceRel("Rind Å - Arnborg kirke")
+```
+
+
+A18 (Fjederholt Å)
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Relativ vandstand
+
+```{r}
+plotPlaceRel("Fjederholt Å - A18")
+```
+
+
+Fiskedamme (Karstoft Å)
+=======================================================================
+
+Row
+-----------------------------------------------------------------------
+
+### Relativ vandstand
+
+```{r}
+plotPlaceRel("Karstoft Å - Fiskedamme")
+```
+                       
+
+
+
+```{r, eval=FALSE}
+create_buttons <- function(df, y_axis_var_names, idxVisible = 6) {
+  vi <- vector("list", length(y_axis_var_names))
+  vi[1:length(vi)] <- F
+  lapply(
+    1:length(y_axis_var_names),
+    FUN = function(idx, df) {
+      vi[idx] <- T
+      if (idx > 1) vi[idx-1] <- F
+      button <- list(
+        method = 'restyle',
+        args = list("visible", vi), 
+        label = y_axis_var_names[idx]
+      )
+    },
+    df
+  )
+}
+y_axis_var_names <- dat %>% distinct(Place) %>% pull(Place) %>% as.character()
+
+idPlaces <- 3:ncol(dat1)
+id <- 6
+tmp <- dat1 %>% 
+  transmute(Dato = Date, YGroup, Place = dat1[[id]], Text = str_c(day(Date), " ", month(Date, label = T), " ", YGroup, ": ", Place, " cm"),
+            Width = if_else(YGroup == year(now()), 10, 15)
+  ) %>% 
+  filter(!is.na(Place))
+idPlaces <- setdiff(idPlaces, id)
+
+
+fig <- plot_ly(dat1, type = 'scatter', mode = 'lines') %>% 
+  add_lines(x = ~Dato, y = ~Place, split = ~YGroup, color = ~YGroup, text = ~Text, line = list(width = if_else(tmp$YGroup == year(now()), 5, 1)),
+          hovertemplate = str_c('%{text}'),
+          data = tmp, visible = T) 
+
+for(id in idPlaces) {
+  tmp <- dat1 %>%
+    transmute(Dato = Date, YGroup, Place = dat1[[id]], Text = str_c(day(Date), " ", month(Date, label = T), " ", YGroup, ": ", Place, " cm"),
+              Width = if_else(YGroup == year(now()), 10, 15)
+    ) %>% 
+    filter(!is.na(Place))
+  fig <- fig %>%   
+    add_lines(x = ~Dato, y = ~Place, split = ~YGroup, color = ~YGroup, text = ~Text, line = list(width = if_else(tmp$YGroup == year(now()), 5, 1)),
+      hovertemplate = str_c('%{text}'),
+      data = tmp, visible = F) 
+    
+    # add_lines( x = ~Dato, y = ~Place, split = ~YGroup, data = tmp, visible = F) 
+}
+
+fig %>% 
+  layout(
+    # title = "",
+    xaxis = list(domain = c(0, 1), title = NA, tickformat = "%d %b"),
+    yaxis = list(title = "Relativ vandstand"),
+    legend = list(orientation = 'h'),
+    # hovermode = "x unified"
+    updatemenus = list(
+      list(
+        y = 1,
+        x = 0.22,
+        buttons = create_buttons(dat1, y_axis_var_names)
+      )
+    )
+)
+```
+
+
+```{r, eval = FALSE}
+create_buttons <- function(menu_names, visiblePlace = "Skjern Å - Alergaard") {
+  # menu_names <- c(visiblePlace, setdiff(menu_names, visiblePlace))
+  # print(menu_names)
+  vi <- vector("list", length(menu_names))
+  vi[1:length(vi)] <- F
+  lapply(
+    1:length(menu_names),
+    FUN = function(idx) {
+      vi[idx] <- T
+      if (idx > 1) vi[idx-1] <- F
+      button <- list(
+        method = 'restyle',
+        args = list("visible", vi), 
+        label = menu_names[idx]
+      )
+    }
+  )
+}
+menu_names <- dat %>% distinct(Place) %>% pull(Place) %>% as.character()
+
+place <- "Karstoft Å - Fiskedamme"
+tmp <- dat1 %>% 
+  transmute(Dato = Date, YGroup, Place = .data[[place]], Text = str_c(day(Date), " ", month(Date, label = T), " ", YGroup, ": ", Place, " cm"),
+            Width = if_else(YGroup == year(now()), 5, 1)) %>% 
+  filter(!is.na(Place))
+places <- setdiff(menu_names, place)
+
+fig <- plot_ly(dat1)
+fig <- fig %>% 
+  add_lines( x = ~Dato, y = ~Place, split = ~YGroup, data = tmp, visible = T) 
+
+for(place in places) {
+  tmp <- dat1 %>%
+  transmute(Dato = Date, YGroup, Place = .data[[place]], Text = str_c(day(Date), " ", month(Date, label = T), " ", YGroup, ": ", Place, " cm"),
+            Width = if_else(YGroup == year(now()), 10, 15)
+  ) %>% 
+  filter(!is.na(Place))
+  fig <- fig %>%
+    add_lines( x = ~Dato, y = ~Place, split = ~YGroup, data = tmp, visible = F) 
+}
+fig %>% 
+  layout(
+    # title = "",
+    xaxis = list(domain = c(0, 1)),
+    yaxis = list(title = "Relativ vandstand"),
+    updatemenus = list(
+      list(
+        y = 1,
+        x = 0.22,
+        buttons = create_buttons(menu_names)
+    )
+  ))
+```

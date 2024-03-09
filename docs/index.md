@@ -13,6 +13,7 @@ title: "Links til statistik"
   * [Oversigt over fiskevand](skjern/skjern-kort.html)
   * [Salmometer](skjern/skjern-salmometer.html)
   * [Slusen](skjern/skjern-lock-flow.html)
+  * [Vandstand](skjern/skjern-waterlevel.html)
   * [Dashboard](https://relund.shinyapps.io/skjern)
   * [Weight report](skjern/skjern-weight.html)
   
