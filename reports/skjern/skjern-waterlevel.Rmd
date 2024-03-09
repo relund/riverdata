@@ -51,11 +51,14 @@ dat2 <- dat %>%
 ```{r}
 plotPlaceRel <- function(place) {
   tmp <- dat1 %>% 
-    transmute(Dato = Date, YGroup, Place = .data[[place]], Text = str_c(day(Date), " ", month(Date, label = T), " ", YGroup, ": ", Place, " cm"),
-              Width = if_else(YGroup == year(now()), 5, 1)) %>% 
+    transmute(Dato = Date, YGroup, Place = .data[[place]], 
+              Text = str_c(day(Date), " ", month(Date, label = T), " ", YGroup, ": ", Place, " cm"),
+              Width = if_else(YGroup == year(now()), "d", "g")) %>% 
     filter(!is.na(Place))
   fig <- plot_ly(tmp, type = 'scatter', mode = 'lines') %>% 
-    add_lines(x = ~Dato, y = ~Place, split = ~YGroup, color = ~YGroup, text = ~Text, line = list(width = if_else(tmp$YGroup == year(now()), 5, 1)),
+    add_lines(x = ~Dato, y = ~Place, split = ~YGroup, color = ~YGroup, 
+              text = ~Text, 
+              line = list(width = 1),
               hovertemplate = str_c('%{text}'),
               data = tmp, visible = T) %>% 
     layout(
@@ -94,7 +97,7 @@ Gjaldbæk bro
 Row
 -----------------------------------------------------------------------
 
-### Relativ vandstand
+### Gjaldbæk bro
 
 ```{r}
 plotPlaceRel("Skjern Å - Gjaldbæk bro")
@@ -116,7 +119,7 @@ Alergaard
 Row
 -----------------------------------------------------------------------
 
-### Relativ vandstand
+### Alergaard
 
 ```{r}
 plotPlaceRel("Skjern Å - Alergaard")
@@ -129,7 +132,7 @@ Landevejsbroen
 Row
 -----------------------------------------------------------------------
 
-### Relativ vandstand
+### Landevejsbroen
 
 ```{r}
 plotPlaceRel("Skjern Å - Landevejsbroen")
@@ -142,7 +145,7 @@ Sandfeldvej
 Row
 -----------------------------------------------------------------------
 
-### Relativ vandstand
+### Sandfeldvej
 
 ```{r}
 plotPlaceRel("Skjern Å - Sandfeldvej")
@@ -155,7 +158,7 @@ Sønderskov bro (Omme Å)
 Row
 -----------------------------------------------------------------------
 
-### Relativ vandstand
+### Sønderskov bro (Omme Å)
 
 ```{r}
 plotPlaceRel("Omme Å - Sønderskov bro")
@@ -168,7 +171,7 @@ Arnborg kirke (Rind Å)
 Row
 -----------------------------------------------------------------------
 
-### Relativ vandstand
+### Arnborg kirke (Rind Å)
 
 ```{r}
 plotPlaceRel("Rind Å - Arnborg kirke")
@@ -181,7 +184,7 @@ A18 (Fjederholt Å)
 Row
 -----------------------------------------------------------------------
 
-### Relativ vandstand
+### A18 (Fjederholt Å)
 
 ```{r}
 plotPlaceRel("Fjederholt Å - A18")
@@ -194,7 +197,7 @@ Fiskedamme (Karstoft Å)
 Row
 -----------------------------------------------------------------------
 
-### Relativ vandstand
+### Fiskedamme (Karstoft Å)
 
 ```{r}
 plotPlaceRel("Karstoft Å - Fiskedamme")
