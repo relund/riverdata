@@ -27,3 +27,14 @@ title: "Links til statistik"
 ### MidtVest Lystfiskerforening
 
   * [Oversigt over MV-LFs fiskevande](mv-lf/mv-lf-kort.html)
+
+Links til statistik lavet af Lars Relund. Forslag til forbedringer kan sendes til lars.relund[at]gmail[dot]com. Alt laves på ikke kommerciel basis. 
+
+
+
+
+
+
+
+
+  
