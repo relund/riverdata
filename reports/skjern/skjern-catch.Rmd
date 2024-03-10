@@ -8,14 +8,6 @@ output:
     orientation: rows
     theme: paper
     vertical_layout: fill
-# resource_files:
-# - www/boy.gif
-# - www/c_and_r.gif
-# - www/cut.gif
-# - www/foto.gif
-# - www/girl.gif
-# - www/info.png
-# - www/net.gif
 editor_options:
   chunk_output_type: console
 ---
@@ -40,22 +32,11 @@ library(fontawesome)
 fa_html_dependency()
 source("../functions.R")
 
-faIcon <- function (name, class = "", title = "", lib = "font-awesome") 
+faIcon <- function (name, prefix = "fa", title = "") 
 {
-    prefixes <- list(`font-awesome` = "fa", glyphicon = "glyphicon")
-    prefix <- prefixes[[lib]]
-    if (is.null(prefix)) {
-        stop("Unknown font library '", lib, "' specified. Must be one of ", 
-            paste0("\"", names(prefixes), "\"", collapse = ", "))
-    }
-    if (class != "") class = paste0(" ", class)
     prefix_class <- prefix
-    if (prefix_class == "fa") prefix_class <- "fas"
-    iconClass <- paste0(prefix_class, " ", prefix, "-", name, class)
+    iconClass <- paste0(prefix_class, " ", prefix, "-", name)
     iconTag <- tags$i(class = iconClass, title = title)
-    htmltools::htmlDependencies(iconTag) <- htmltools::htmlDependency("font-awesome", 
-        "5.3.1", "www/shared/fontawesome", package = "shiny", 
-        stylesheet = c("css/all.min.css", "css/v4-shims.min.css"))
     htmltools::browsable(iconTag)
 }
 Sys.setlocale("LC_ALL", "da_DK.UTF-8")
