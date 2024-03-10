@@ -79,7 +79,7 @@ Row
     select(Date, Place) %>% 
     arrange(desc(Date))
   if (nrow(dat) == 0) {
-    paste0("Ingen fangster endnu.")
+    tags$span("Ingen fangster endnu.")
   } else {
   p <- ggplot(data = dat, aes(x = Date)) +
     geom_bar(aes(fill = Place), width = 0.75) + 
@@ -170,7 +170,7 @@ Row
 ### Tabel for `r curYear`
 
 ```{r}
-cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")), 
+cNames <- c(paste0(faIcon("calendar-alt", title = "Måned")), 
    "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
    paste0(faIcon("mars", title = "Han"),"/",
           faIcon("venus", title = "Hun"), "/",
@@ -246,14 +246,14 @@ Row
 
 ### Fangster den seneste måned
 
-```{r, context = "server"}
+```{r}
   dat <- datCatchSea %>% 
     dplyr::filter(Date > now(tzone = "CET") - days(30)) %>% 
     select(Date, Place) %>% 
     arrange(desc(Date))
 
   if (nrow(dat) == 0) {
-    paste0("Ingen fangster endnu.")
+    tags$span("Ingen fangster endnu.")
   } else {
   p <- ggplot(data = dat, aes(x = Date)) +
     geom_bar(aes(fill = Place)) + 
@@ -339,7 +339,7 @@ Row
 ### Tabel for `r curYear`
 
 ```{r}
-cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")), 
+cNames <- c(paste0(faIcon("calendar-alt", title = "Måned")), 
    "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
    paste0(faIcon("mars", title = "Han"),"/",
           faIcon("venus", title = "Hun"), "/",
@@ -412,7 +412,7 @@ Row
 ### Statistik over år
 
 ```{r}
-cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")), 
+cNames <- c(paste0(faIcon("calendar-alt", title = "Måned")), 
    "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
    paste0(faIcon("mars", title = "Han"),"/",
           faIcon("venus", title = "Hun"), "/",
@@ -535,7 +535,7 @@ Row
 ### Statistik over år
 
 ```{r}
-cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")), 
+cNames <- c(paste0(faIcon("calendar-alt", title = "Måned")), 
    "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
    paste0(faIcon("mars", title = "Han"),"/",
           faIcon("venus", title = "Hun"), "/",
