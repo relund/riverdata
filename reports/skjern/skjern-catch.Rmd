@@ -98,7 +98,7 @@ Row
     select(Date, Place) %>% 
     arrange(desc(Date))
   if (nrow(dat) == 0) {
-    cat("Ingen fangster endnu :-(")
+    paste0("Ingen fangster endnu.")
   } else {
   p <- ggplot(data = dat, aes(x = Date)) +
     geom_bar(aes(fill = Place), width = 0.75) + 
@@ -186,7 +186,7 @@ Tabel `r curYear` {data-navmenu="Laks" #fangster-laks-tabel}
 Row
 -----------------------------------------------------------------------
 
-### Opsumering
+### Tabel for `r curYear`
 
 ```{r}
 cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")), 
@@ -272,7 +272,7 @@ Row
     arrange(desc(Date))
 
   if (nrow(dat) == 0) {
-    cat("Ingen fangster endnu :-(")
+    paste0("Ingen fangster endnu.")
   } else {
   p <- ggplot(data = dat, aes(x = Date)) +
     geom_bar(aes(fill = Place)) + 
@@ -349,13 +349,13 @@ Måned {data-navmenu="Havørred" #fangster-hav-maaned}
 ```
 
 
-Tabel {data-navmenu="Havørred" #fangster-hav-tabel}
+Tabel `r curYear` {data-navmenu="Havørred" #fangster-hav-tabel}
 =======================================================================
 
 Row
 -----------------------------------------------------------------------
 
-### Opsumering
+### Tabel for `r curYear`
 
 ```{r}
 cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")), 

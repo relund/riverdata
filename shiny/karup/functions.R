@@ -23,8 +23,8 @@ readCatch <- function(prefix, datWeight) {
       Misc = paste0(
         if_else(!Killed, "<img src=\"www/c_and_r.gif\" alt=\"C&R\">", "", ""),
         if_else(Cut, "<img src=\"www/cut.gif\" alt=\"Finneklippet\">", "", ""),
-        if_else(Sex == 'Male', '<img src="www/boy.gif" alt="Han">', "", ""),
-        if_else(Sex == 'Female', '<img src="www/girl.gif" alt="Hun">', "", ""),
+        if_else(Sex == 'Han', '<img src="www/boy.gif" alt="Han">', "", ""),
+        if_else(Sex == 'Hun', '<img src="www/girl.gif" alt="Hun">', "", ""),
         if_else(!is.na(Foto),str_c("<a href=\"", Foto, "\", target=\"_blank\"><img src=\"www/foto.gif\" alt=\"Foto\"></a>"),"", "")
       ),
       Month = factor(month(Date, label = T), ordered = F), MonthN = month(Date), Week = isoweek(Date), Year = year(Date), 
@@ -58,8 +58,8 @@ yearlyStat <- function(datCatch) {
     mutate(
       TotalStat = map(data, function(df) {
         summarise(df, Total = n(), 
-                  Female = sum(Sex == "Female", na.rm = T), 
-                  Male = sum(Sex == "Male", na.rm = T),
+                  Female = sum(Sex == "Hun", na.rm = T), 
+                  Male = sum(Sex == "Han", na.rm = T),
                   SexUnknown = Total - Female - Male,
                   Released = sum(!Killed, na.rm = T),
                   Killed = sum(Killed, na.rm = T),
@@ -145,8 +145,8 @@ monthlyStat <- function(datCatch, year) {
     mutate(
       TotalStat = map(data, function(df) {
         summarise(df, Total = n(), 
-                  Female = sum(Sex == "Female", na.rm = T), 
-                  Male = sum(Sex == "Male", na.rm = T),
+                  Female = sum(Sex == "Hun", na.rm = T), 
+                  Male = sum(Sex == "Han", na.rm = T),
                   SexUnknown = Total - Female - Male,
                   Released = sum(!Killed, na.rm = T),
                   Killed = sum(Killed, na.rm = T),
