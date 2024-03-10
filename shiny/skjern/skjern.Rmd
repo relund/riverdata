@@ -515,7 +515,7 @@ cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")),
    ) 
 
 datStatMonthSal %>%
-  kable(col.names = cNames, escape = F, align = "c") %>%
+  kable(col.names = cNames, escape = F, align = "c", format = "html") %>%
   kable_styling(fixed_thead = T, font_size = 10,
                 bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
   add_header_above(c(" " = 2, "Køn", "Område (alle fangster/hjemtaget)" = 2, "Metode", "Genudsat", "Længde", "Vægt", "Kondition"))
