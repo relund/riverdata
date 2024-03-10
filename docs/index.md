@@ -10,13 +10,13 @@ title: "Links til statistik"
 
 ### Skjern å
 
-  * [Fangster](skjern/skjern-catch.html)
-  * [Oversigt over fiskevand](skjern/skjern-kort.html)
-  * [Salmometer](skjern/skjern-salmometer.html)
-  * [Slusen](skjern/skjern-lock-flow.html)
-  * [Vandstand](skjern/skjern-waterlevel.html)
-  * [Dashboard](https://relund.shinyapps.io/skjern)
-  * [Weight report](skjern/skjern-weight.html)
+  * [Fangster](skjern/skjern-catch.html){target="_blank"}
+  * [Oversigt over fiskevand](skjern/skjern-kort.html){target="_blank"}
+  * [Salmometer](skjern/skjern-salmometer.html){target="_blank"}
+  * [Slusen](skjern/skjern-lock-flow.html){target="_blank"}
+  * [Vandstand](skjern/skjern-waterlevel.html){target="_blank"}
+  * [Dashboard](https://relund.shinyapps.io/skjern){target="_blank"}
+  * [Weight report](skjern/skjern-weight.html){target="_blank"}
   
 Vejrkort
 
@@ -39,12 +39,12 @@ Lokale vejrudsigter
   
 ### Karup Å
 
-  * [Dashboard](https://relund.shinyapps.io/karup)
+  * [Dashboard](https://relund.shinyapps.io/karup){target="_blank"}
 
 
 ### MidtVest Lystfiskerforening
 
-  * [Oversigt over MV-LFs fiskevande](mv-lf/mv-lf-kort.html)
+  * [Oversigt over MV-LFs fiskevande](mv-lf/mv-lf-kort.html){target="_blank"}
 
 Links til statistik lavet af Lars Relund. Forslag til forbedringer kan sendes til lars.relund[at]gmail[dot]com. Alt laves på ikke kommerciel basis. 
 

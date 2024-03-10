@@ -3,11 +3,11 @@ output: html_document
 title: "Oversigt over MV-LFs fiskevande"
 editor_options: 
   chunk_output_type: console
-knit: (function(inputFile, encoding) { 
-      out_dir <- '../docs/mv-lf';
-      rmarkdown::render(inputFile,
-                        encoding=encoding, 
-                        output_file=file.path(dirname(inputFile), out_dir, 'mv-lf-kort.html')) })
+# knit: (function(inputFile, encoding) { 
+#       out_dir <- '../docs/mv-lf';
+#       rmarkdown::render(inputFile,
+#                         encoding=encoding, 
+#                         output_file=file.path(dirname(inputFile), out_dir, 'mv-lf-kort.html')) })
 ---
 
 <!-- File for generating the interactive map for MV-LF (run by GitHub Actions every hour) -->
@@ -77,7 +77,7 @@ datMarkers <- read_csv(paste0(prefix, "data_mv-lf_mapmarkers.csv"), col_types = 
   mutate(Desc = str_c(if_else(!is.na(Desc), str_c("<b>", Desc, "</b>"), "", ""), 
                        if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
   mutate(Desc = str_replace(Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>% 
-  mutate(Desc = map(Desc, HTML), Icon = str_c("../docs/mv-lf/www/", Icon), Id = 1:n()) %>% 
+  mutate(Desc = map(Desc, HTML), Icon = str_c("www/", Icon), Id = 1:n()) %>% 
   select(-Text) 
   
 datLines <- read_csv(paste0(prefix, "data_mv-lf_maplines.csv"), col_types = "fccddif")  %>% 
