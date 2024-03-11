@@ -41,8 +41,8 @@ Lokale vejrudsigter
 ### Karup Å
 
   * [Salmometer](karup/karup-salmometer.html){target="_blank"}
-  * [Vandtemperatur](karup/karup-waterlevel.html){target="_blank"}
-  * [Vandstand](karup/karup-watertemp.html){target="_blank"}
+  * [Vandtemperatur](karup/karup-watertemp.html){target="_blank"}
+  * [Vandstand](karup/karup-waterlevel.html){target="_blank"}
   * [Dashboard](https://relund.shinyapps.io/karup){target="_blank"}
 
 Vejrkort
