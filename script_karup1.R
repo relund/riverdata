@@ -97,4 +97,6 @@ write_csv(datLines, str_c(prefix, "_maplines.csv"))
 ## Render reports
 render(here::here("reports/karup/karup-waterlevel.Rmd"), output_dir = "docs/karup")
 render(here::here("reports/karup/karup-watertemp.Rmd"), output_dir = "docs/karup")
+render(here::here("reports/karup/karup-kort.Rmd"), output_dir = "docs/karup")
+render(here::here("reports/karup/karup-salmometer.Rmd"), output_dir = "docs/karup")
 render(here::here("docs/index.md"), output_dir = "docs/")
