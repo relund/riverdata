@@ -76,7 +76,7 @@ Hagebro
 Row
 -----------------------------------------------------------------------
 
-### Gjaldbæk bro
+### Hagebro
 
 ```{r}
 plotPlaceRel("Hagebro")
@@ -90,7 +90,7 @@ Karup By
 Row
 -----------------------------------------------------------------------
 
-### Alergaard
+### Karup By 
 
 ```{r}
 plotPlaceRel("Karup By")
@@ -103,7 +103,7 @@ Nørkærbro
 Row
 -----------------------------------------------------------------------
 
-### Landevejsbroen
+### Nørkærbro
 
 ```{r}
 plotPlaceRel("Nørkærbro")

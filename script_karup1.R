@@ -14,7 +14,8 @@ conflicts_prefer(
   dplyr::lag
 )
 
-source("functions.R")
+here::i_am("script_karup1.R")
+source(here::here("functions.R"))
 
 url <- "https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/catches/assoc/49F1767931B31CD0C1258398007953C0/1/"
 prefix <- "data/data_karup"
@@ -94,5 +95,6 @@ write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
 
 ## Render reports
-render("reports/karup/skjern-waterlevel.Rmd",output_dir = "docs/karup")
-render("docs/index.md",output_dir = "docs/")
+render(here::here("reports/karup/karup-waterlevel.Rmd"),output_dir = "docs/karup")
+render(here::here("reports/karup/karup-watertemp.Rmd"),output_dir = "docs/karup")
+render(here::here("docs/index.md"),output_dir = "docs/")

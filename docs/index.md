@@ -40,7 +40,28 @@ Lokale vejrudsigter
 ### Karup Å
 
   * [Vandstand](karup/karup-waterlevel.html){target="_blank"}
+  * [Vandstand](karup/karup-watertemp.html){target="_blank"}
   * [Dashboard](https://relund.shinyapps.io/karup){target="_blank"}
+
+Vejrkort
+
+* [Windfinder Karup By](https://www.windfinder.com/#13/56.3118/9.0879/sfc){target="_blank"}
+* [Windfinder Sdr Resen](https://www.windfinder.com/#13/56.3794/9.0879/sfc){target="_blank"}
+* [Windfinder Hagebro](https://www.windfinder.com/#13/56.4069/9.0084/sfc){target="_blank"}
+* [Windfinder Vridsted](https://www.windfinder.com/#13/56.4422/9.0065/sfc){target="_blank"}
+* [Windfinder Skive](https://www.windfinder.com/#13/56.5060/8.9910/sfc){target="_blank"}
+* [Windy](https://www.windy.com/56.408/9.011?56.397,9.011,13){target="_blank"}
+
+Lokale vejrudsigter
+
+* [Yr Karup](https://www.yr.no/nb/v%C3%A6rvarsel/graf/2-2619068/Danmark/Region%20Midtjylland/Viborg/Karup){target="_blank"}
+* [DMI Karup](https://www.dmi.dk/lokation/show/DK/2619068/Karup/){target="_blank"}
+* [Yr Hagebro](https://www.yr.no/nb/v%C3%A6rvarsel/graf/2-2620960/Danmark/Region%20Midtjylland/Herning/Haderup){target="_blank"}
+* [DMI Hagebro](https://www.dmi.dk/lokation/show/DK/2620960/Haderup/){target="_blank"}
+* [Yr Vridsted](https://www.yr.no/nb/v%C3%A6rvarsel/graf/2-2609962/Danmark/Region%20Midtjylland/Viborg/Vridsted){target="_blank"}
+* [DMI Vridsted](https://www.dmi.dk/lokation/show/DK/2609962/Vridsted/){target="_blank"}
+* [Yr Skive](https://www.yr.no/nb/v%C3%A6rvarsel/graf/2-2613731/Danmark/Region%20Midtjylland/Skive/Skive){target="_blank"}
+* [DMI Skive](https://www.dmi.dk/lokation/show/DK/2613731/Skive/){target="_blank"}
 
 
 ### MidtVest Lystfiskerforening
