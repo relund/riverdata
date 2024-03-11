@@ -39,6 +39,7 @@ Lokale vejrudsigter
   
 ### Karup Å
 
+  * [Vandstand](karup/karup-waterlevel.html){target="_blank"}
   * [Dashboard](https://relund.shinyapps.io/karup){target="_blank"}
 
 

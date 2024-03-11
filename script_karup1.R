@@ -93,4 +93,6 @@ datMarkers <- datMarkers  %>% filter(!is.na(Icon))
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
 
-
+## Render reports
+render("reports/karup/skjern-waterlevel.Rmd",output_dir = "docs/karup")
+render("docs/index.md",output_dir = "docs/")
