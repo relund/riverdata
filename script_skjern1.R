@@ -173,6 +173,12 @@ for (i in 1:length(mapIds)) {
 #   filter(!is.na(Icon))
 # datLines <- bind_rows(datLines, lst$datLines)
 
+## LFSO
+lst <- stripKml("1epDPyEYZsmz3gGpgUZi5UbnnlPc", Club = "LFSO")
+datMarkers <- bind_rows(datMarkers, lst$datMarkers)
+datLines <- bind_rows(datLines, lst$datLines)
+
+
 ## Write to csv
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
