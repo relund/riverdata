@@ -5,6 +5,7 @@ on:
     paths:
       - .github/workflows/run_script_karup1_ubuntu.yaml
       - reports/karup/**
+      - reports/index.md
       - script_karup1.R
       - script_mv-lf.R
       - functions.R

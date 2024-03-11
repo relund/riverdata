@@ -5,6 +5,7 @@ on:
     paths:
       - .github/workflows/run_script_skjern1_ubuntu.yaml
       - reports/skjern/**
+      - reports/index.md
       - script_skjern1.R
       - functions.R
       - renv.lock
