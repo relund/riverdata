@@ -1,0 +1,95 @@
+---
+title: "Karup Å - Salmometer"
+author: ''
+output:
+  flexdashboard::flex_dashboard:
+    css: www/style.css
+    favicon: favicon.png
+    orientation: rows
+    theme: paper
+    vertical_layout: fill
+# knit: (function(inputFile, encoding) { 
+#       rmarkdown::render(inputFile,
+editor_options:
+  chunk_output_type: console
+---
+
+<script>
+$(".selectize-input input").prop('readonly','readonly');
+</script>
+
+```{r, include=FALSE}
+#profvis({rmarkdown::run("karup.Rmd", shiny_args = list(host="0.0.0.0", port=5050))})
+library(knitr)
+knitr::opts_chunk$set(echo = FALSE)
+# library(ggplot2)
+#library(ggrepel)
+# library(directlabels)
+# library(plotly)
+library(flexdashboard)
+library(tidyverse)
+# library(lubridate)
+
+
+# library(formattable)
+# library(flextable)
+library(kableExtra)
+# library(zoo) 
+# library(leaflet)
+# library(fs)
+source("../functions.R")
+
+prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
+# prefix <- "../../data/"
+# curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
+
+# Weight - Estimates 
+datWeightSea<- read_csv(paste0(prefix, "data_karup_weight_seatrout.csv"), col_types = "dfddd")
+```
+
+  
+Row
+-----------------------------------------------------------------------
+  
+### Estimat af vægt (kg) givet længde (cm) og måned
+  
+```{r}
+tmp <- datWeightSea %>% 
+  mutate(Period = as.character(Period)) %>% 
+  mutate(Period = 
+           case_when(Period == "May" ~ "Maj",
+                     Period == "Oct" ~ "Okt",
+                     TRUE ~ Period))
+
+tab <- tmp %>% 
+  pivot_wider(id_cols = Length, names_from = Period, values_from = Avg) %>% 
+  mutate_at(2:ncol(.), function(x) {
+    format(round(x, 1), 1)
+  })
+
+tab1 <- tmp %>%
+  pivot_wider(id_cols = Length, names_from = Period, values_from = Lower) %>% 
+  mutate_at(2:ncol(.), function(x) {
+    format(round(x, 1), 1)
+  })
+
+tab <- map2_df(tab, tab1, ~ str_c(.x, " [", .y))
+
+tab1 <- tmp %>%
+  pivot_wider(id_cols = Length, names_from = Period, values_from = Upper) %>% 
+  mutate_at(2:ncol(.), function(x) {
+    format(round(x, 1), 1)
+  })
+
+tab <- map2_df(tab, tab1, ~ str_c(.x, ",", .y, "]")) %>% 
+  mutate(Length = str_remove(Length, " .*"))
+  
+# monthNames <- c("Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+colnames(tab)[1] <- c("Længde")
+
+tab %>% 
+  kable(align = "c") %>% 
+  kable_styling(fixed_thead = T, font_size = 10,
+                bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+

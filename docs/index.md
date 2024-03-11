@@ -8,7 +8,7 @@ title: "Links til statistik"
 }
 </style>
 
-### Skjern å
+### Skjern Å
 
   * [Fangster](skjern/skjern-catch.html){target="_blank"}
   * [Oversigt over fiskevand](skjern/skjern-kort.html){target="_blank"}
@@ -37,9 +37,11 @@ Lokale vejrudsigter
 * [DMI Skjern](https://www.dmi.dk/lokation/show/DK/2613715/Skjern/){target="_blank"}
   
   
+  
 ### Karup Å
 
-  * [Vandstand](karup/karup-waterlevel.html){target="_blank"}
+  * [Salmometer](karup/karup-salmometer.html){target="_blank"}
+  * [Vandtemperatur](karup/karup-waterlevel.html){target="_blank"}
   * [Vandstand](karup/karup-watertemp.html){target="_blank"}
   * [Dashboard](https://relund.shinyapps.io/karup){target="_blank"}
 
