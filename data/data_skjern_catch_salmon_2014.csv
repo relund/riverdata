@@ -1,6 +1,6 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2014-10-15,74,3.8,Peter Husted,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
-2014-10-15,86,6.3,Lars Petersen,Andet,Orm,FALSE,NA,FALSE,Han,FALSE
+2014-10-15,86,6.3,Lars Petersen,Ukendt,Orm,FALSE,NA,FALSE,Han,FALSE
 2014-10-15,75,NA,Per Lundvig,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2014-10-15,82,NA,Jesper Ottosen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
 2014-10-15,80,NA,Flemming Hosbjerg,Nedre,Orm,FALSE,NA,FALSE,Hun,FALSE
@@ -35,7 +35,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2014-10-15,84,NA,Keld Eriksen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2014-10-15,62,1.9,Ole Karlskov,Nedre,Spin,TRUE,NA,TRUE,Hun,FALSE
 2014-10-15,70,NA,Dennis Nielsen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
-2014-10-15,65,2.1,Lars Frennesen,Andet,Spin,TRUE,NA,TRUE,Han,FALSE
+2014-10-15,65,2.1,Lars Frennesen,Ukendt,Spin,TRUE,NA,TRUE,Han,FALSE
 2014-10-15,105,NA,Erik Jönsson,Nedre,Spin,TRUE,NA,FALSE,Han,FALSE
 2014-10-15,83,NA,Finn Meldgård,Øvre,Spin,FALSE,NA,FALSE,Hun,TRUE
 2014-10-15,74,NA,Finn Hansen,Nedre,Spin,TRUE,NA,FALSE,Han,FALSE
@@ -107,7 +107,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2014-10-11,75,3.6,Bo Kastner,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
 2014-10-10,80,NA,Daniel Gerard,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
 2014-10-10,52,NA,Lasse Laursen,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
-2014-10-10,54,NA,Ole Eriksen,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2014-10-10,54,NA,Ole Eriksen,Ukendt,Spin,FALSE,NA,FALSE,Han,FALSE
 2014-10-10,62,NA,Troels,Nedre,Flue,FALSE,NA,FALSE,Han,TRUE
 2014-10-10,75,NA,John Pallesen,Omme Å,Orm,FALSE,NA,TRUE,Han,FALSE
 2014-10-10,55,NA,Ronny Lagoni Thomsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
@@ -307,7 +307,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2014-09-19,55,NA,Søren Lang,Nedre,Spin,TRUE,NA,FALSE,Han,FALSE
 2014-09-19,65,NA,Thomas Wiergang,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2014-09-19,60,NA,Thomas Wiergang,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
-2014-09-18,60,NA,Stefan Hansen,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2014-09-18,60,NA,Stefan Hansen,Ukendt,Spin,FALSE,NA,FALSE,Han,FALSE
 2014-09-18,72,NA,Bernd Vieregge,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
 2014-09-18,50,NA,Arne Østergård,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
 2014-09-18,74,NA,Dennis Hynkemejer,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
@@ -336,7 +336,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2014-09-16,55,NA,Keld Eriksen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2014-09-15,73,3.9,Vagn -E. Pedersen,Vorgod Å,Andet,FALSE,NA,TRUE,Hun,FALSE
 2014-09-15,82,NA,Jens Meldgård,Nedre,Spin,TRUE,NA,FALSE,Han,FALSE
-2014-09-15,62,NA,Jens Meldgård,Andet,Spin,FALSE,NA,FALSE,NA,FALSE
+2014-09-15,62,NA,Jens Meldgård,Ukendt,Spin,FALSE,NA,FALSE,NA,FALSE
 2014-09-15,80,NA,Erik Selmer Andersen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2014-09-15,60,NA,Kim Rasmussen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2014-09-15,78,4,Jim Thaysen,Øvre,Flue,FALSE,NA,TRUE,Han,FALSE
@@ -379,7 +379,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2014-09-13,75,NA,Christen F Siversen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2014-09-13,57,NA,Erik O. Kristensen,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
 2014-09-13,75,NA,Charly Kristensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
-2014-09-13,71,3,Ivan Ammitzbøll,Andet,Orm,FALSE,NA,TRUE,Hun,FALSE
+2014-09-13,71,3,Ivan Ammitzbøll,Ukendt,Orm,FALSE,NA,TRUE,Hun,FALSE
 2014-09-13,85,NA,Mads Balle,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
 2014-09-13,56,NA,Keld Eriksen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2014-09-12,60,NA,Claus Borre,Omme Å,Spin,NA,NA,FALSE,NA,FALSE
@@ -430,7 +430,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2014-09-09,60,2,Anders T. Kristensen,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
 2014-09-09,72,2.6,Per Jørgensen,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
 2014-09-09,85,NA,Hans Jørgen Husted,Omme Å,Flue,FALSE,NA,FALSE,NA,FALSE
-2014-09-09,85,NA,Thomas Mosgaard,Andet,Spin,FALSE,NA,FALSE,Han,FALSE
+2014-09-09,85,NA,Thomas Mosgaard,Ukendt,Spin,FALSE,NA,FALSE,Han,FALSE
 2014-09-09,50,NA,Jakob Skov,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2014-09-09,89,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
 2014-09-09,57,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
@@ -542,7 +542,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2014-08-27,NA,NA,Stefan Meldgaard,Nedre,Flue,TRUE,NA,FALSE,Han,FALSE
 2014-08-26,96,NA,Uwe Hüls,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2014-08-26,75,4.3,Per Bangsgaard,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
-2014-08-26,82,NA,Michael Frandsen,Andet,Flue,FALSE,NA,FALSE,NA,FALSE
+2014-08-26,82,NA,Michael Frandsen,Ukendt,Flue,FALSE,NA,FALSE,NA,FALSE
 2014-08-25,80,NA,Søren Lang,Nedre,Spin,TRUE,NA,FALSE,Hun,TRUE
 2014-08-25,75,NA,Søren Lang,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2014-08-25,85,NA,Søren Lang,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
@@ -576,7 +576,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2014-08-23,68,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2014-08-23,87,NA,Mogens Kramer,Omme Å,Spin,NA,NA,FALSE,Hun,FALSE
 2014-08-23,85,NA,Jakob Jespersen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
-2014-08-23,71,3.2,Jesper Jeppesen,Andet,Spin,TRUE,NA,TRUE,Hun,FALSE
+2014-08-23,71,3.2,Jesper Jeppesen,Ukendt,Spin,TRUE,NA,TRUE,Hun,FALSE
 2014-08-23,73,3.4,Ole L. Pedersen,Nedre,Spin,TRUE,NA,TRUE,Hun,FALSE
 2014-08-23,82,NA,Vagn Larsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2014-08-23,75,NA,Birger Hansen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
@@ -701,7 +701,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2014-08-15,82,5,Mogens  Larsen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2014-08-15,75,4.1,Niels Birkedal Thomsen,Nedre,Flue,TRUE,NA,TRUE,Hun,FALSE
 2014-08-14,77,NA,Thomas Weiergang,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
-2014-08-14,78,NA,Jesper Gregers Jensen,Andet,Spin,FALSE,NA,FALSE,Hun,FALSE
+2014-08-14,78,NA,Jesper Gregers Jensen,Ukendt,Spin,FALSE,NA,FALSE,Hun,FALSE
 2014-08-14,67,NA,Stig Christensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2014-08-14,80,NA,Lars Nielsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2014-08-14,80,NA,Rasmus Vemmelund,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
@@ -828,14 +828,14 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2014-07-21,94,7.3,Udo Poetsch,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
 2014-07-20,78,4.2,Iver Kloster,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2014-07-18,70,2.5,Lise Ravn Nielsen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
-2014-07-18,90,NA,Ole Neess,Andet,Spin,FALSE,NA,FALSE,Hun,FALSE
+2014-07-18,90,NA,Ole Neess,Ukendt,Spin,FALSE,NA,FALSE,Hun,FALSE
 2014-07-17,89,NA,Jesper Ottosen,Mellem,Spin,FALSE,NA,FALSE,Han,TRUE
 2014-07-17,83,6.5,Bjarne Nielsen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2014-07-17,88,5.9,John Madsen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
 2014-07-17,74,4.4,Karl H Hamann,Nedre,Spin,TRUE,NA,TRUE,Hun,FALSE
 2014-07-17,85,NA,Klaus Lietzen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2014-07-17,88,6.4,Ole Friis,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
-2014-07-16,77,5.3,Roland Luley,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2014-07-16,77,5.3,Roland Luley,Ukendt,Spin,FALSE,NA,TRUE,Hun,FALSE
 2014-07-16,90,NA,Jesper Ottosen,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
 2014-07-16,63,NA,Stefan Hansen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2014-07-16,72,3.7,Ole Eriksen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
@@ -920,7 +920,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2014-06-20,95,8.6,Bo Fomsgaard,Mellem,Flue,FALSE,NA,TRUE,Han,FALSE
 2014-06-20,89,6.8,Børge Hansen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2014-06-20,100,NA,Torben Smedegaard,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
-2014-06-20,70,3,Erling Nielsen,Andet,Orm,FALSE,NA,FALSE,Hun,FALSE
+2014-06-20,70,3,Erling Nielsen,Ukendt,Orm,FALSE,NA,FALSE,Hun,FALSE
 2014-06-18,90,NA,Jens Meldgård,Nedre,Spin,FALSE,NA,FALSE,Hun,TRUE
 2014-06-17,88,6.5,Leo Andersen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2014-06-17,85,NA,Torben Smedegaard,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
@@ -1039,7 +1039,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2014-04-28,91,7,Jesper Baadsgaard,Øvre,Flue,FALSE,NA,TRUE,Hun,TRUE
 2014-04-28,85,5.8,Søren Celinder,Mellem,Flue,FALSE,NA,TRUE,Hun,TRUE
 2014-04-27,87,6.9,Ole Neess,Nedre,Spin,TRUE,NA,TRUE,Hun,TRUE
-2014-04-26,83,5.5,Ole Frederiksen,Andet,Spin,FALSE,NA,TRUE,Hun,TRUE
+2014-04-26,83,5.5,Ole Frederiksen,Ukendt,Spin,FALSE,NA,TRUE,Hun,TRUE
 2014-04-26,80,5.9,Peter Bilgrav Sørensen,Øvre,Spin,FALSE,NA,TRUE,Hun,TRUE
 2014-04-25,79,NA,Stig Christensen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2014-04-24,91,NA,Stig Christensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
@@ -1065,7 +1065,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2014-04-16,82,5.5,Edhem Salkic,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2014-04-16,73,NA,Oliver Wagener,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
 2014-04-16,92,7.9,Allan Søndergaard,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
-2014-04-16,90,6.7,Allan Poulsen,Andet,Flue,FALSE,NA,TRUE,Han,FALSE
+2014-04-16,90,6.7,Allan Poulsen,Ukendt,Flue,FALSE,NA,TRUE,Han,FALSE
 2014-04-16,94,7.5,Nikolaj Korsholm,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2014-04-16,90,6.7,Jesper S Petersen,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
 2014-04-16,82,5.8,Per Højvang,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE

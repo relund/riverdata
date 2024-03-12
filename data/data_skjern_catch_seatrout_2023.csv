@@ -9,7 +9,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2023-10-15,55,NA,Jesper Ottosen,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
 2023-10-15,55,NA,Jesper Ottosen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2023-10-15,49,NA,Bjørn Jørgensen,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
-2023-10-15,46,NA,Poul Lund Larsen,Andet,Spin,FALSE,NA,FALSE,Hun,FALSE
+2023-10-15,46,NA,Poul Lund Larsen,Ukendt,Spin,FALSE,NA,FALSE,Hun,FALSE
 2023-10-15,53,NA,Torben Pedersen,Vorgod Å,Spin,FALSE,NA,FALSE,Hun,FALSE
 2023-10-15,47,NA,Bue Poulsen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2023-10-15,50,NA,Erling Willumsgaard,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
@@ -125,7 +125,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2023-09-30,45,NA,M Knudsen,Mellem,Flue,NA,NA,FALSE,NA,FALSE
 2023-09-30,56,NA,Lars Korshøj,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
 2023-09-30,50,NA,Svend Åge Andersen,Mellem,Spin,NA,NA,FALSE,Hun,FALSE
-2023-09-30,55,NA,Niels Rohde Ottosen,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-09-30,55,NA,Niels Rohde Ottosen,Ukendt,Flue,FALSE,NA,FALSE,Han,FALSE
 2023-09-30,50,NA,Bjarke Therp,Øvre,Spin,NA,NA,FALSE,NA,TRUE
 2023-09-30,41,NA,Frank Jensen,Vorgod Å,Flue,FALSE,NA,FALSE,Han,FALSE
 2023-09-29,53,NA,Brian Vemmelund,Omme Å,Spin,FALSE,NA,FALSE,Han,FALSE
@@ -137,7 +137,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2023-09-29,58,NA,René Sørup,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/951286948AFE244DC1258A39003B3B4E.jpg,FALSE,Hun,FALSE
 2023-09-28,55,NA,Jørn Andersen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
 2023-09-28,60,NA,Svend Thomsen,Vorgod Å,Spin,FALSE,NA,FALSE,NA,FALSE
-2023-09-27,51,NA,Dennis Heine Sørensen,Andet,Flue,FALSE,NA,FALSE,NA,FALSE
+2023-09-27,51,NA,Dennis Heine Sørensen,Ukendt,Flue,FALSE,NA,FALSE,NA,FALSE
 2023-09-27,69,NA,Danilo Skudelny,Nedre,Spin,TRUE,NA,FALSE,Han,FALSE
 2023-09-27,62,NA,Ole Peder Toppenberg,Vorgod Å,Spin,NA,NA,FALSE,Han,FALSE
 2023-09-27,40,NA,Jimmy Nielsen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
@@ -392,8 +392,8 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2023-08-09,55,NA,Henrik Qvortrup Thygeaen,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
 2023-08-09,50,NA,Lars Hougaard,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
 2023-08-09,53,NA,Henrik Jensen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
-2023-08-09,49,NA,Verner Mortensen,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
-2023-08-09,53,NA,Verner Mortensen,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-09,49,NA,Verner Mortensen,Ukendt,Flue,FALSE,NA,FALSE,Han,FALSE
+2023-08-09,53,NA,Verner Mortensen,Ukendt,Flue,FALSE,NA,FALSE,Han,FALSE
 2023-08-09,50,NA,Jesper Vistesen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2023-08-09,62,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2023-08-09,45,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
@@ -719,7 +719,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2023-06-27,50,NA,Karsten Siggaard,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
 2023-06-27,60,NA,Hans Jørgen Dahl,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2023-06-27,50,NA,Sven Berggreen,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
-2023-06-27,52,NA,Sven Berggreen,Andet,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/FA5691D8B7838D2CC12589DB0056F228.jpg,FALSE,Hun,FALSE
+2023-06-27,52,NA,Sven Berggreen,Ukendt,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/FA5691D8B7838D2CC12589DB0056F228.jpg,FALSE,Hun,FALSE
 2023-06-27,55,NA,Gustav Isen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2023-06-27,55,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2023-06-26,55,NA,Ole Wisler,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
@@ -749,7 +749,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2023-06-24,50,NA,Morten Sussemiehl Pedersen,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
 2023-06-24,49,NA,Brian Jensen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
 2023-06-23,52,NA,Bk Pedersen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
-2023-06-23,55,NA,Jørn From,Andet,Flue,NA,NA,FALSE,Hun,FALSE
+2023-06-23,55,NA,Jørn From,Ukendt,Flue,NA,NA,FALSE,Hun,FALSE
 2023-06-23,70,NA,Erik Just Pedersen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
 2023-06-22,54,NA,Emil Nøhr,Vorgod Å,Spin,NA,NA,FALSE,Hun,TRUE
 2023-06-22,53,NA,Emil Nøhr,Mellem,Flue,NA,NA,FALSE,Han,FALSE

@@ -1,5 +1,5 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
-2022-10-31,88,7.5,Johnny Morell,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2022-10-31,88,7.5,Johnny Morell,Ukendt,Spin,FALSE,NA,TRUE,Hun,FALSE
 2022-10-15,64,NA,Erik O. Kristensen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
 2022-10-15,81,NA,Samuel Hjortsbjerg Morell,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2022-10-15,52,NA,Karsten Siggaard,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
@@ -148,7 +148,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2022-10-08,95,NA,Steffen Arendrup,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
 2022-10-08,65,NA,Frederik Pedersen,Nedre,Spin,TRUE,https://skjernaasam.dk/wp-content/uploads/2022/10/IMG_20221008_130926-768x1024.jpg,FALSE,Han,FALSE
 2022-10-08,55,NA,Jesper Rasmussen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
-2022-10-08,78,NA,Fabian Baltheiser,Andet,Spin,FALSE,NA,FALSE,Hun,FALSE
+2022-10-08,78,NA,Fabian Baltheiser,Ukendt,Spin,FALSE,NA,FALSE,Hun,FALSE
 2022-10-08,75,NA,Henrik Dons Christensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2022-10-08,80,NA,Matthias Schütt,Nedre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/10/FABCAC9E-35D6-45F4-A3DA-8C08210D3DAB-768x1024.jpeg,FALSE,NA,FALSE
 2022-10-08,65,NA,Christian Koehlbrandt,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
@@ -1130,7 +1130,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2022-07-18,86,NA,Søren Fredslund Andersen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2022-07-18,57,NA,Martin Casey,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
 2022-07-18,70,NA,Nicolai Just Jakobsen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
-2022-07-18,78,NA,Jack Christiansen,Andet,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/07/20220718_161312-1-768x1024.jpg,FALSE,Hun,FALSE
+2022-07-18,78,NA,Jack Christiansen,Ukendt,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/07/20220718_161312-1-768x1024.jpg,FALSE,Hun,FALSE
 2022-07-18,67,NA,Tun Weber,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2022-07-18,90,NA,Svend Åge Andersen,Nedre,Andet,FALSE,NA,FALSE,Han,FALSE
 2022-07-18,85,NA,Svend Åge Andersen,Nedre,Spin,TRUE,NA,FALSE,Hun,FALSE
@@ -1866,7 +1866,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2022-04-16,50,NA,Johab Stax Jakobsen,Øvre,Spin,TRUE,NA,FALSE,NA,FALSE
 2022-04-16,86,7.3,Mikkel K Sørensen,Nedre,Spin,TRUE,NA,TRUE,Hun,FALSE
 2022-04-16,75,NA,Flemming Larsen,Øvre,Spin,NA,NA,FALSE,NA,FALSE
-2022-04-16,99,10,Hd,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2022-04-16,99,10,Hd,Ukendt,Spin,FALSE,NA,TRUE,Han,FALSE
 2022-04-16,85,NA,Heiko Wilhelms,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2022-04-16,100,9.3,Anders Meldgaard Andersen,Nedre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/04/20220416_084436-3-1024x768.jpg,TRUE,Han,TRUE
 2022-04-16,87,5,Bjarne Larsen,Nedre,Flue,NA,NA,FALSE,Hun,FALSE

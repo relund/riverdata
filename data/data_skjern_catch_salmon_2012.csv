@@ -396,7 +396,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-08-30,70,3,Finn Dahlin,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
 2012-08-30,98,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2012-08-30,65,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
-2012-08-30,74,4.3,Jesper Mortensen,Andet,Orm,FALSE,NA,TRUE,Hun,TRUE
+2012-08-30,74,4.3,Jesper Mortensen,Ukendt,Orm,FALSE,NA,TRUE,Hun,TRUE
 2012-08-30,91,NA,Per Gylling Hansen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2012-08-29,80,NA,Michael Gehrt,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2012-08-29,78,NA,Ole Damgaard,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
@@ -574,7 +574,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-08-08,75,3.8,Normann Grams,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2012-08-08,74,3.5,Niels Præst,Øvre,Flue,FALSE,NA,TRUE,Hun,TRUE
 2012-08-08,87,NA,Tommy F Hoelgaard,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
-2012-08-08,80,NA,Per Jessen-Klixbüll,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-08-08,80,NA,Per Jessen-Klixbüll,Ukendt,Flue,FALSE,NA,FALSE,Han,FALSE
 2012-08-08,85,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2012-08-08,89,NA,Doris Helt,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
 2012-08-08,86,NA,Gorb Bojsen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
@@ -646,8 +646,8 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-07-30,100,NA,Jens Henning,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2012-07-30,62,NA,Jens Henning,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2012-07-29,65,NA,Jakob Skov,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
-2012-07-29,90,NA,Lars Fly Sevelsted,Andet,Flue,FALSE,NA,FALSE,Han,FALSE
-2012-07-29,75,4.2,Ole Knudsen-Nielsen,Andet,Spin,FALSE,NA,TRUE,Hun,FALSE
+2012-07-29,90,NA,Lars Fly Sevelsted,Ukendt,Flue,FALSE,NA,FALSE,Han,FALSE
+2012-07-29,75,4.2,Ole Knudsen-Nielsen,Ukendt,Spin,FALSE,NA,TRUE,Hun,FALSE
 2012-07-29,69,3.4,Joan B. Madsen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2012-07-29,95,NA,Ejner Kaa,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
 2012-07-29,60,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
@@ -1034,7 +1034,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-04-21,87,6.5,Kai Jørgensen,Øvre,Spin,FALSE,NA,TRUE,Hun,TRUE
 2012-04-21,93,7.6,Kai Beltoft,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2012-04-21,102,10.5,Michael Cederholm,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
-2012-04-21,103,9.9,John Lind,Andet,Orm,FALSE,NA,TRUE,Han,FALSE
+2012-04-21,103,9.9,John Lind,Ukendt,Orm,FALSE,NA,TRUE,Han,FALSE
 2012-04-21,101,8.4,Jan Andreasen,Øvre,Flue,FALSE,NA,TRUE,Han,TRUE
 2012-04-21,99,9.6,Andy Nielsen,Nedre,Orm,FALSE,NA,TRUE,Han,FALSE
 2012-04-21,97,7.7,Torben Madsen,Nedre,Spin,FALSE,NA,TRUE,NA,FALSE
@@ -1152,7 +1152,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-04-16,90,7,Hans Vistrup,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2012-04-16,96,8,Jesper Berg Jensen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2012-04-16,88,6.2,Angel Ottosen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
-2012-04-16,83,6,Niels Esmarch,Andet,Flue,FALSE,NA,TRUE,Hun,FALSE
+2012-04-16,83,6,Niels Esmarch,Ukendt,Flue,FALSE,NA,TRUE,Hun,FALSE
 2012-04-16,91,6.8,Kristian Nøreng,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2012-04-16,90,NA,Vagn Larsen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2012-04-16,97,8.3,Vagn Larsen,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
@@ -1185,9 +1185,9 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-04-16,93,8,Jan Pilgaard,Nedre,Orm,FALSE,NA,TRUE,Han,TRUE
 2012-04-16,90,6.7,Johannes Søgaard Mortensen,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2012-04-16,90,7,Klaus Kristensen,Øvre,Flue,FALSE,NA,TRUE,Han,FALSE
-2012-04-16,87,6,Thue Stampe,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-04-16,87,6,Thue Stampe,Ukendt,Spin,FALSE,NA,TRUE,Han,FALSE
 2012-04-16,70,NA,Per Sunesen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
-2012-04-16,92,8,Søren Rasmussen,Andet,Spin,FALSE,NA,TRUE,Han,FALSE
+2012-04-16,92,8,Søren Rasmussen,Ukendt,Spin,FALSE,NA,TRUE,Han,FALSE
 2012-04-16,85,5.5,Ralf Peters,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
 2012-04-16,91,8,Jens Løntoft,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2012-04-16,84,6,Henrik Falck,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
