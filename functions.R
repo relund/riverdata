@@ -957,9 +957,9 @@ saveHoboData <- function() {
               TempCelcius = `Water Temperature (M-WT 21143788:20833130-3), *C, Laksens Hus`,
               LevelMeters = `Water Level (M-WL04 21143788:20833130-4), meters, Laksens Hus`,
               PressureKPA = `Barometric Pressure (M-BP 21143788:21143788-1), kPa, Laksens Hus`)
-  dat1 <- dat %>% transmute(Date, Place = "Laksens hus", Value = LevelMeters)
-  dat2 <- dat %>% transmute(Date, Place = "Laksens hus", Value = PressureKPA)
-  dat3 <- dat %>% transmute(Date, Place = "Laksens hus", Value = TempCelcius)
+  dat1 <- dat %>% transmute(Date, Place = "Skjern Å - Laksens hus", Value = LevelMeters)
+  dat2 <- dat %>% transmute(Date, Place = "Skjern Å - Laksens hus", Value = PressureKPA)
+  dat3 <- dat %>% transmute(Date, Place = "Skjern Å - Laksens hus", Value = TempCelcius)
   prefix <- "data/data_skjern"
   write_csv(dat1, str_c(prefix, "_waterlevel_hobo.csv"), append = T)
   write_csv(dat2, str_c(prefix, "_pressure_hobo.csv"), append = T)
