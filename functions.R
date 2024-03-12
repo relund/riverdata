@@ -1120,7 +1120,7 @@ fixOldDataFileByYearSkjern <- function() {
         str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
         str_detect(Place, "Vorgod") ~ "Vorgod Å",
         str_detect(Place, "Omme") ~ "Omme Å",
-        TRUE ~ "Andet")) %>% 
+        TRUE ~ "Ukendt")) %>% 
       mutate(Method = case_when(
         str_detect(Method, "(Flue.*)|(Fue)") ~ "Flue",
         str_detect(Method, "(Orm.*)|(Majs)|(Flåd)|(Mede)") ~ "Orm",
@@ -1143,7 +1143,7 @@ fixOldDataFileByYearSkjern <- function() {
         str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
         str_detect(Place, "Vorgod") ~ "Vorgod Å",
         str_detect(Place, "Omme") ~ "Omme Å",
-        TRUE ~ "Andet")) %>% 
+        TRUE ~ "Ukendt")) %>% 
       mutate(Method = case_when(
         str_detect(Method, "(Flue.*)|(Fue)") ~ "Flue",
         str_detect(Method, "(Orm.*)|(Majs)|(Flåd)|(Mede)") ~ "Orm",
@@ -1155,6 +1155,7 @@ fixOldDataFileByYearSkjern <- function() {
     write_csv(dat, fn)
   } 
 }
+
 
 fixOldDataFileByYearKarup <- function() {
   prefix <- "data/data_karup_catch_seatrout"
@@ -1168,7 +1169,7 @@ fixOldDataFileByYearKarup <- function() {
         str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
         str_detect(Place, "Vorgod") ~ "Vorgod Å",
         str_detect(Place, "Omme") ~ "Omme Å",
-        TRUE ~ "Andet")) %>% 
+        TRUE ~ "Ukendt")) %>% 
       mutate(Method = case_when(
         str_detect(Method, "(Flue.*)|(Fue)") ~ "Flue",
         str_detect(Method, "(Orm.*)|(Majs)|(Flåd)|(Mede)") ~ "Orm",
