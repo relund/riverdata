@@ -11,7 +11,8 @@ library(rmarkdown)
 library(conflicted)
 conflicts_prefer(
   dplyr::filter(),
-  dplyr::lag
+  dplyr::lag,
+  plotly::layout
 )
 
 here::i_am("script_karup1.R")
@@ -104,4 +105,5 @@ render(here::here("reports/karup/karup-waterlevel.Rmd"), output_dir = "docs/karu
 render(here::here("reports/karup/karup-watertemp.Rmd"), output_dir = "docs/karup")
 render(here::here("reports/karup/karup-kort.Rmd"), output_dir = "docs/karup")
 render(here::here("reports/karup/karup-salmometer.Rmd"), output_dir = "docs/karup")
+render(here::here("reports/karup/karup-catch.Rmd"), output_dir = "docs/karup")
 render(here::here("docs/index.md"), output_dir = "docs/")

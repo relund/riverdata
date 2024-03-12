@@ -861,7 +861,7 @@ writeCatch <- function(url, prefix, yr, species = "Havørred", club = FALSE) {
                              c("Wobler" = "Spin", "Blink" = "Spin", "Spinner" = "Spin", "Jig" = "Spin", 
                                "Bombarda med flue" = "Spin", "Tørflue" = "Flue", "Pirk/Pilk" = "Spin", 
                                "Mede" = "Orm", "Spinflue" = "Spin", "Spin-flue" = "Spin", 
-                               "Maddike" = "Orm", "Spin-flue" = "Spin", "Majs" = "Orm",
+                               "Maddike" = "Orm", "Spin-flue" = "Spin", "Majs" = "Orm", "Flåd" = "Orm",
                                "Orm, spinner" = "Orm", "Orm,spin" = "Orm"))
            )
  if (!club) dat3 <-dat3 %>% 
