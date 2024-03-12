@@ -872,7 +872,7 @@ writeCatch <- function(url, prefix, yr, species = "Havørred", club = FALSE) {
             str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
             str_detect(Place, "Vorgod") ~ "Vorgod Å",
             str_detect(Place, "Omme") ~ "Omme Å",
-            TRUE ~ "Andet")
+            TRUE ~ Place)
    )
  # dat3 <-dat3 %>% mutate(Sex = str_replace_all(Sex, c("Han" = "Male", "Hun" = "Female", "Ved ikke" = NA)))
  dat3 <-dat3 %>% mutate(Sex = str_replace_all(Sex, c("Ved ikke" = NA_character_)))
@@ -1099,17 +1099,61 @@ splitDataFileByYear <- function(path, prefix) {
 
 
 fixOldDataFileByYearSkjern <- function() {
-  path <- "data/data_skjern_catch_salmon_2004-2022.csv"
-  prefix <- "data/data_skjern_catch_salmon"
-  path <- "data/data_skjern_catch_seatrout_2004-2022.csv"
+  # path <- "data/old_skjern_catch_salmon_2004-2022.csv"
+  # prefix <- "data/data_skjern_catch_salmon"
+  # dat <- read_csv(path) 
+  # dat <- dat %>% transmute(Date, Length, Weight, Name, Place, Method, Cut, Foto, Killed, Sex, Net)
+  # for (y in distinct(dat, year(Date)) %>% pull()) {
+  #   fn <- paste0(prefix, "_", y, ".csv") 
+  #   message("  Write data to ", fn)
+  #   write_csv(filter(dat, year(Date) == y), fn)
+  # }
+  
   prefix <- "data/data_skjern_catch_seatrout"
-  dat <- read_csv(path) 
-  dat <- dat %>% transmute(Date, Length, Weight, Name, Place, Method, Cut, Foto, Killed, Sex, Net)
-  for (y in distinct(dat, year(Date)) %>% pull()) {
+  for (y in 2004:year(now())) {
     fn <- paste0(prefix, "_", y, ".csv") 
+    dat <- read_csv(fn) %>% 
+      mutate(Place = case_when(
+        str_detect(Place, "(Øvre.*)|(Skjern.*Rind)|(Skjern.*opstrøms)") ~ "Øvre",
+        str_detect(Place, "(Mellem.*)|(Skjern.*Tarp.*Borris)") ~ "Mellem",
+        str_detect(Place, "(Nedre.*)|(Skjern.*Borris.*Fjord)") ~ "Nedre",
+        str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
+        str_detect(Place, "Vorgod") ~ "Vorgod Å",
+        str_detect(Place, "Omme") ~ "Omme Å",
+        TRUE ~ "Andet")) %>% 
+      mutate(Method = case_when(
+        str_detect(Method, "(Flue.*)|(Fue)") ~ "Flue",
+        str_detect(Method, "(Orm.*)|(Majs)|(Flåd)|(Mede)") ~ "Orm",
+        str_detect(Method, "(Spin.*)") ~ "Spin",
+        is.na(Method) ~ "Flue",
+        TRUE ~ Method)) 
+    dat <- dat %>% transmute(Date, Length, Weight, Name, Place, Method, Cut, Foto, Killed, Sex, Net)
     message("  Write data to ", fn)
-    write_csv(filter(dat, year(Date) == y), fn)
-  }
+    write_csv(dat, fn)
+  }  
+  
+  prefix <- "data/data_skjern_catch_salmon"
+  for (y in 2004:year(now())) {
+    fn <- paste0(prefix, "_", y, ".csv") 
+    dat <- read_csv(fn) %>% 
+      mutate(Place = case_when(
+        str_detect(Place, "(Øvre.*)|(Skjern.*Rind)|(Skjern.*opstrøms)") ~ "Øvre",
+        str_detect(Place, "(Mellem.*)|(Skjern.*Tarp.*Borris)") ~ "Mellem",
+        str_detect(Place, "(Nedre.*)|(Skjern.*Borris.*Fjord)") ~ "Nedre",
+        str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
+        str_detect(Place, "Vorgod") ~ "Vorgod Å",
+        str_detect(Place, "Omme") ~ "Omme Å",
+        TRUE ~ "Andet")) %>% 
+      mutate(Method = case_when(
+        str_detect(Method, "(Flue.*)|(Fue)") ~ "Flue",
+        str_detect(Method, "(Orm.*)|(Majs)|(Flåd)|(Mede)") ~ "Orm",
+        str_detect(Method, "(Spin.*)") ~ "Spin",
+        is.na(Method) ~ "Flue",
+        TRUE ~ Method)) 
+    dat <- dat %>% transmute(Date, Length, Weight, Name, Place, Method, Cut, Foto, Killed, Sex, Net)
+    message("  Write data to ", fn)
+    write_csv(dat, fn)
+  } 
 }
 
 fixOldDataFileByYearKarup <- function() {
