@@ -408,8 +408,8 @@ yearlyStatKarup <- function(datCatch) {
               Place = paste0(round(100*Nedre/Total, 0), "/", 
                              round(100*Mellem/Total, 0), "/", 
                              round(100*`Øvre`/Total, 0), "/", 
-                             round(100*`Haderup Å`/Total, 0), "/",
-                             round(100*(Total - Nedre - Mellem - `Øvre` - `Haderup Å`)/Total, 0)),
+                             round(100*`Haderis Å`/Total, 0), "/",
+                             round(100*(Total - Nedre - Mellem - `Øvre` - `Haderis Å`)/Total, 0)),
               Method = paste0(round(100*Flue/Total, 0), "/", 
                               round(100*Spin/Total, 0), "/", 
                               round(100*Orm/Total, 0), "/", 
@@ -497,7 +497,7 @@ monthlyStatKarup <- function(datCatch, year) {
   } else {
     # add missing cols
     cNames <- c("Month", "Total", "Male", "Female", "SexUnknown", "Nedre", "Mellem", "Øvre", 
-                "Haderup Å", "Flue", "Spin", "Orm", "Released", "LengthAvg", "LengthMax", 
+                "Haderis Å", "Flue", "Spin", "Orm", "Released", "LengthAvg", "LengthMax", 
                 "WeightAvg", "WeightMax", "FultonAvg", "FultonMax")
     cNames <- cNames[!(cNames %in% names(dat))]
     cols <- rep(0, length(cNames))
@@ -513,8 +513,8 @@ monthlyStatKarup <- function(datCatch, year) {
                 Place = paste0(round(100*Nedre/Total, 0), "/", 
                                round(100*Mellem/Total, 0), "/", 
                                round(100*`Øvre`/Total, 0), "/", 
-                               round(100*`Haderup Å`/Total, 0), "/",
-                               round(100*(Total - Nedre - Mellem - `Øvre` - `Haderup Å`)/Total, 0)),
+                               round(100*`Haderis Å`/Total, 0), "/",
+                               round(100*(Total - Nedre - Mellem - `Øvre` - `Haderis Å`)/Total, 0)),
                 Method = paste0(round(100*Flue/Total, 0), "/", 
                                 round(100*Spin/Total, 0), "/", 
                                 round(100*Orm/Total, 0), "/", 
