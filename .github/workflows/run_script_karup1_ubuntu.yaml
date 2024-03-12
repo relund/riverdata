@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GH_FTP: ${{ secrets.GH_FTP }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4

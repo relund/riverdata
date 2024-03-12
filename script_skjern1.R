@@ -35,6 +35,9 @@ writeWeightEstimates(prefix, seatrout = TRUE)
 writeWeightEstimates(prefix, seatrout = FALSE)
 
 
+#### Hobo station (Laksens hus) ####
+saveHoboData()
+
 #### Waterlevel ####
 stations <-
   tibble(id = c("24717", "24605", "24622", "54559", "24649", "24657", "24601", "468"),
@@ -60,71 +63,15 @@ dat <- writeWaterLevelsWeb(dat, prefix)
 
 
 #### Water temperature ####
-# stations <-
-#   tibble(id = c("470"),
-#          place = c("Fjederholt Å - A18"))
-# 
-# 
-# dat <- read_csv("https://www.hobolink.com/p/129c8db1cac5dff51e4157b3644ad63e#")
-# 
-# 
-# 
-# 
-# 
-# library(httr)
-# # library(rvest)
-# url <- "https://www.hobolink.com/p/129c8db1cac5dff51e4157b3644ad63e#"
-# res <- POST(url,
-#             encode="json",
-#             user_agent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"),
-#             add_headers(`referer`="https://www.hobolink.com/p/129c8db1cac5dff51e4157b3644ad63e"),
-#             # body = "javax.faces.partial.ajax=true&javax.faces.source=hobolink-devices-real-time-plots-form%3Aj_idt198%3Aj_idt333&javax.faces.partial.execute=%40all&javax.faces.partial.render=hobolink-devices-real-time-plots-form%3Aj_idt198%3AdayPlot406715&hobolink-devices-real-time-plots-form%3Aj_idt198%3Aj_idt333=hobolink-devices-real-time-plots-form%3Aj_idt198%3Aj_idt333&hobolink-devices-real-time-plots-form=hobolink-devices-real-time-plots-form&hobolink-devices-real-time-plots-form%3Aj_idt198_activeIndex=0&javax.faces.ViewState=-5503341876077484605%3A8942472651375839520"
-#             body=list(
-#               javax.faces.partial.ajax = "true",
-#               javax.faces.source = "hobolink-devices-real-time-plots-form:j_idt198:j_idt333",
-#               javax.faces.partial.execute = "@all",
-#               javax.faces.partial.render = "hobolink-devices-real-time-plots-form:j_idt198:dayPlot406715",
-#               `hobolink-devices-real-time-plots-form:j_idt198:j_idt333` = "hobolink-devices-real-time-plots-form:j_idt198:j_idt333",
-#               `hobolink-devices-real-time-plots-form` = "hobolink-devices-real-time-plots-form",
-#               `hobolink-devices-real-time-plots-form:j_idt198_activeIndex` = "0",
-#               javax.faces.ViewState = "-5503341876077484605:8942472651375839520"
-# )
-# 
-#               , verbose())
-# 
-# res_t <- content(res, as="text") %>% str_detect("dayGraphData")
-# res_h <- paste0(unlist(strsplit(res_t, "\r\n"))[-1], sep="", collapse="\n")
-# # 
-# # 
-# # 
-# # monthGraphData367929
-# 
-# 
-# 
-# library(httr)
-# # library(rvest)
-# url <- "https://www.hobolink.com/p/129c8db1cac5dff51e4157b3644ad63e#hobolink-devices-real-time-plots-form:j_idt198:week-tab"
-# x <- GET(url, add_headers('user-agent' = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'))
-# xml <- read_html(x)
-# xml %>% xml_find_all('/html/body/div[4]/div/div[2]/div/div[2]/div[2]/div/form/div/div/div[2]/div/div') %>% xml_text()
-# 
-# 
-# 
-# 
-# read_html(x)
-# ids <- html_nodes(page,
-#                   xpath = '/html/body/div[4]/div/div[2]/div/div[2]/div[2]/div/form/div/div/div[2]/div/div/div/div[2]/div/div[4]/script')
-# 
-# page %>% html_elements("script")
-# 
-# 
-# # ## Calc moving average 
-# # dat <- readWTemp(prefix, 2020:year(now()))
-# # rMeans <- calcWaterTempMovAvg(dat, prefix)
-# # 
-# # ## Dataset for web 
-# # dat <- calcWaterTempWeb(dat, rMeans, prefix)
-
+## Add Hobo data
+hobo <- read_csv(str_c(prefix, "_watertemp_hobo.csv"))
+for (y in unique(year(hobo$Date))) {
+  write_csv(hobo %>% filter(year(Date) == y),
+    str_c(prefix, "_watertemp_", y, ".csv"), 
+    append = T)
+}
+hobo <- hobo %>% slice_head(n = 0)
+write_csv(hobo, str_c(prefix, "_watertemp_hobo.csv"))
 
 
 #### Map ####

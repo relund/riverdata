@@ -940,6 +940,41 @@ getAllCatches <- function(prefix) {
 }
 
 
+saveHoboData <- function() {
+  url <- "ftp://web9.gigahost.dk/hobo/"
+  user <- Sys.getenv("GH_FTP")
+  files <- getURL(url, userpwd = user, dirlistonly = TRUE) 
+  files <- str_split(files, "\n")[[1]] %>% str_subset("Skjern")
+  if (length(files) == 0) return(FALSE)
+  dat <- NULL
+  for (f in files) {
+    urlF <- str_c(url, f)
+    str <- getURL(urlF, userpwd = user, ftp.use.epsv = FALSE)
+    dat <- bind_rows(dat, read_csv(str))
+  }
+  dat <- dat %>% 
+    transmute(Date = dmy_hms(Date), 
+              TempCelcius = `Water Temperature (M-WT 21143788:20833130-3), *C, Laksens Hus`,
+              LevelMeters = `Water Level (M-WL04 21143788:20833130-4), meters, Laksens Hus`,
+              PressureKPA = `Barometric Pressure (M-BP 21143788:21143788-1), kPa, Laksens Hus`)
+  dat1 <- dat %>% transmute(Date, Place = "Laksens hus", Value = LevelMeters)
+  dat2 <- dat %>% transmute(Date, Place = "Laksens hus", Value = PressureKPA)
+  dat3 <- dat %>% transmute(Date, Place = "Laksens hus", Value = TempCelcius)
+  prefix <- "data/data_skjern"
+  write_csv(dat1, str_c(prefix, "_waterlevel_hobo.csv"), append = T)
+  write_csv(dat2, str_c(prefix, "_pressure_hobo.csv"), append = T)
+  write_csv(dat3, str_c(prefix, "_watertemp_hobo.csv"), append = T)
+  
+  ## delete files
+  for (f in files) {
+    tmp <- str_c("DELE ", "hobo/", f)
+    curlPerform(url = "ftp://web9.gigahost.dk/", quote = tmp, userpwd = user)
+  }
+  return(TRUE)
+}
+
+
+
 #' Update and save time series data from vandportalen.dk
 #'
 #' @param stations Stations under consideration.
@@ -1003,6 +1038,13 @@ writeTimeSeriesData <- function(stations, prefix, prefix1, days) {
   #   geom_line(aes(x = Date, y = Value), color = "red") +
   #   geom_line(aes(x = Date, y = Value3)) +
   #   facet_wrap(vars(Place), scales = "free", nrow = 3)  
+  ## Add Hobo data
+  hobo <- read_csv(paste0(prefix, "_", prefix1, "_hobo.csv") )
+  dat2 <- bind_rows(dat2, hobo) %>% 
+    arrange(Place, desc(Date)) %>% 
+    distinct()
+  hobo <- hobo %>% slice_head(n = 0)
+  write_csv(hobo, paste0(prefix, "_", prefix1, "_hobo.csv") )
   ## merge and save
   for (y in distinct(dat2, year(Date)) %>% pull()) {
     dat3 <- dat2 %>% filter(year(Date) == y) 
