@@ -62,7 +62,7 @@ plotPlaceRel <- function(place) {
     layout(
       # title = place,
       xaxis = list(domain = c(0, 1), title = NA, tickformat = "%d %b"),
-      yaxis = list(title = "Relativ vandstand"),
+      yaxis = list(title = NA),
       legend = list(orientation = 'h')
       # hovermode = "x unified"
   )

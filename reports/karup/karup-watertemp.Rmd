@@ -62,7 +62,7 @@ plot_ly(tmp, type = 'scatter', mode = 'lines') %>%
     layout(
       # title = place,
       xaxis = list(domain = c(0, 1), title = NA, tickformat = "%d %b"),
-      yaxis = list(title = "Temperatur"),
+      yaxis = list(title = NA),
       legend = list(orientation = 'h')
       # hovermode = "x unified"
     )

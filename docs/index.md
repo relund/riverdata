@@ -40,6 +40,7 @@ Lokale vejrudsigter
   
 ### Karup Å
 
+  * [Fangster](karup/karup-catch.html){target="_blank"}
   * [Oversigt over fiskevand](karup/karup-kort.html){target="_blank"}
   * [Salmometer](karup/karup-salmometer.html){target="_blank"}
   * [Vandtemperatur](karup/karup-watertemp.html){target="_blank"}
