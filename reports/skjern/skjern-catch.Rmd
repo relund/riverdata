@@ -206,11 +206,12 @@ Fangsttabel {data-navmenu="Laks"}
 Row
 -----------------------------------------------------------------------
 
-### Seneste fangster
+### Fangster de seneste 2 år
 
 ```{r}
   DT::datatable(
-    datCatchSal %>% select(Date:Weight, Place, Method, Fulton, Misc, NoWeight),
+    datCatchSal %>% select(Date:Weight, Place, Method, Fulton, Misc, NoWeight) %>% 
+      filter(year(Date) %in% c(curYear, curYear-1)),
     class = 'stripe row-border order-column nowrap compact', # nowrap display compact
     rownames = FALSE,
     filter = 'bottom',
@@ -370,11 +371,12 @@ Fangsttabel {data-navmenu="Havørred"}
 Row
 -----------------------------------------------------------------------
 
-### Seneste fangster
+### Fangster de seneste 2 år
 
 ```{r}
   DT::datatable(
-    datCatchSea %>% select(Date:Weight, Place, Method, Fulton, Misc, NoWeight),
+    datCatchSea %>% select(Date:Weight, Place, Method, Fulton, Misc, NoWeight) %>% 
+      filter(year(Date) %in% c(curYear, curYear-1)),
     class = 'stripe row-border order-column nowrap compact', # nowrap display compact
     rownames = FALSE,
     filter = 'bottom',
