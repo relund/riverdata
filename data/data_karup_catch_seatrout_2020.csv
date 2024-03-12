@@ -6,7 +6,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-10-31,70,4.3,Johan Schulz Petersen,Mellem,Flue,FALSE,NA,TRUE,Female,NA
 2020-10-31,45,0,Jan Andreasen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/7360113462F967D8C1258612006048C2.jpg,FALSE,Male,NA
 2020-10-31,66,NA,Mik Sørensen,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/EEB57A97B597B8C3C12586120054F507.jpg,TRUE,NA,NA
-2020-10-31,46,0,Robert Pedersen,Haderup Å,Spin,FALSE,NA,FALSE,Female,NA
+2020-10-31,46,0,Robert Pedersen,Haderis Å,Spin,FALSE,NA,FALSE,Female,NA
 2020-10-30,45,0,Ole Dich,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2020-10-30,45,0,Flemming Sørensen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
 2020-10-30,59,2.1,Bent Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
@@ -88,7 +88,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-10-11,60,NA,Jan Jørgensen,Mellem,Spin,FALSE,NA,TRUE,Female,NA
 2020-10-11,70,NA,Jan Jørgensen,Mellem,Spin,FALSE,NA,TRUE,Male,NA
 2020-10-11,42,0,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,Male,NA
-2020-10-11,67,3.3,Elvin Frølund Sdr.resen,NA,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/BB9B7F136BEABB09C12585FE00679B43.jpg,TRUE,Female,NA
+2020-10-11,67,3.3,Elvin Frølund Sdr.resen,Andet,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/BB9B7F136BEABB09C12585FE00679B43.jpg,TRUE,Female,NA
 2020-10-11,75,4.7,Ralf Kanstorf,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/596CF8AF0B25487DC12585FE004B436E.jpg,TRUE,Female,NA
 2020-10-11,60,2.5,Allan Bay,Øvre,Spin,FALSE,NA,TRUE,Male,NA
 2020-10-11,60,2,Jesper Moesgaard,Mellem,Spin,FALSE,NA,TRUE,NA,NA
@@ -193,7 +193,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-09-26,76,5.5,Per Hollesen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
 2020-09-26,60,0,Poul E Andersen,Nedre,Spin,FALSE,NA,FALSE,Female,NA
 2020-09-26,42,0,Tom Larsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
-2020-09-26,63,2.8,Mikael Rønsholdt,NA,Flue,FALSE,NA,TRUE,Female,NA
+2020-09-26,63,2.8,Mikael Rønsholdt,Andet,Flue,FALSE,NA,TRUE,Female,NA
 2020-09-25,74,4.55,Alex Hjort,Nedre,Spin,FALSE,NA,TRUE,Male,NA
 2020-09-25,61,0,Henning Sandager,Mellem,Flue,FALSE,NA,FALSE,NA,NA
 2020-09-25,70,0,Allan Nørskov Johansen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/9004C0F884B1B83BC12585EE005EB3EF.jpg,FALSE,Male,NA
@@ -201,7 +201,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-09-25,63,3.4,Ole Maach,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2020-09-25,72,3.877,Morten Hibiscus Knudsen,Mellem,Spin,FALSE,NA,TRUE,Male,NA
 2020-09-24,60,2.24,Johan Lynderup,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/502B65BDD22E9AD2C12585F00070E8D3.jpg,TRUE,Female,NA
-2020-09-24,62,NA,Preben Falkeøje Pilgaard,Haderup Å,Flue,FALSE,NA,TRUE,Female,NA
+2020-09-24,62,NA,Preben Falkeøje Pilgaard,Haderis Å,Flue,FALSE,NA,TRUE,Female,NA
 2020-09-24,64,2.7,Ole Lenler-Eriksen,Øvre,Spin,FALSE,NA,TRUE,Male,NA
 2020-09-23,60,2.2,Anders Larsen,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2020-09-23,49,0,Osman Viba Bejtovic,Nedre,Flue,FALSE,NA,FALSE,Female,NA
@@ -368,7 +368,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-09-04,55,1.9,Jens Henry Hede Jensen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
 2020-09-04,64,2.6,Mogens Styhr,Nedre,Flue,FALSE,NA,TRUE,Male,NA
 2020-09-03,80,5.5,Preben Falkeøje Pilgaard,Mellem,Spin,FALSE,NA,TRUE,Female,NA
-2020-09-03,72,4.5,Preben Falkeøje Pilgaard,Haderup Å,Spin,FALSE,NA,TRUE,Female,NA
+2020-09-03,72,4.5,Preben Falkeøje Pilgaard,Haderis Å,Spin,FALSE,NA,TRUE,Female,NA
 2020-09-03,64,3.2,Steen Bork Larsen,Nedre,Flue,FALSE,NA,TRUE,Male,NA
 2020-09-03,64,3,Elvin Frølund,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A6B876D71721900FC12585D90041730B.jpg,TRUE,NA,NA
 2020-09-03,55,0,Elvin Frølund,Nedre,Flue,FALSE,NA,FALSE,NA,NA
@@ -397,7 +397,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-08-30,55,1.4,Peder Skødt Lundsgaard,Mellem,Spin,FALSE,NA,TRUE,Male,NA
 2020-08-30,69,3.7,Nils Munkgaard,Mellem,Spin,FALSE,NA,TRUE,Male,NA
 2020-08-30,56,0,Frank Bach,Mellem,Flue,FALSE,NA,FALSE,Female,NA
-2020-08-29,65,0,Mikkel Ølund Rasmussen,Haderup Å,Spin,FALSE,NA,FALSE,Male,NA
+2020-08-29,65,0,Mikkel Ølund Rasmussen,Haderis Å,Spin,FALSE,NA,FALSE,Male,NA
 2020-08-29,56,1.7,Vagn Riis-Jensen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2020-08-29,40,0,Kristian Søndergård Andersen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
 2020-08-29,73,NA,Thomas,Mellem,Spin,FALSE,NA,TRUE,NA,NA
@@ -421,13 +421,13 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-08-28,60,2.3,Morten Winther Jensen,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/12C292DDDF391EEDC12585D20071B97F.jpg,TRUE,Female,NA
 2020-08-28,41,0,Philip Berthel,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2020-08-28,60,0,Morten Wølck,Nedre,Flue,FALSE,NA,FALSE,Male,NA
-2020-08-28,66,3.5,Johnny M. F. Nielsen,Haderup Å,Spin,FALSE,NA,TRUE,Female,NA
+2020-08-28,66,3.5,Johnny M. F. Nielsen,Haderis Å,Spin,FALSE,NA,TRUE,Female,NA
 2020-08-28,NA,NA,Carsten Kaasgaard Juhl-Pedersen,Nedre,Orm,FALSE,NA,TRUE,NA,NA
 2020-08-28,53,1.8,Jette Gandrup,Mellem,Spin,FALSE,NA,TRUE,Female,NA
 2020-08-27,53,0,Poul Erik Simonsen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2020-08-27,63,3.3,Bent Agerskov Sørensen,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/F8BB95EDE5EAA1F3C12585D300312E68.jpg,TRUE,Male,NA
 2020-08-27,59,2.2,Poul B. Oddershede,Mellem,Spin,FALSE,NA,TRUE,Female,NA
-2020-08-27,61,NA,Preben Falkeøje Pilgaard,Haderup Å,Spin,FALSE,NA,TRUE,Male,NA
+2020-08-27,61,NA,Preben Falkeøje Pilgaard,Haderis Å,Spin,FALSE,NA,TRUE,Male,NA
 2020-08-27,40,0,Lars Petersen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
 2020-08-27,62,0,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,Male,NA
 2020-08-27,45,0,Allan Nørskov Johansen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
@@ -438,7 +438,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-08-26,50,0,Johan Lynderup,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2020-08-26,62,2.8,Kristian Søndergård Andersen,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/061907CA8CB9A68BC12585D10068BB4D.jpg,TRUE,Male,NA
 2020-08-26,66,3.65,Otto Andersen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
-2020-08-26,54,1.5,Preben Falkeøje Pilgaard,Haderup Å,Spin,FALSE,NA,TRUE,Female,NA
+2020-08-26,54,1.5,Preben Falkeøje Pilgaard,Haderis Å,Spin,FALSE,NA,TRUE,Female,NA
 2020-08-26,76,5.5,Henrik Olsen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/7BA8E85D00F41FE5C12585D000735B07.jpg,TRUE,Male,NA
 2020-08-26,60,2.3,Anders Dalgaard,Nedre,Flue,FALSE,NA,TRUE,Male,NA
 2020-08-26,60,0,Jan Snejbjerg,Mellem,Flue,FALSE,NA,FALSE,Female,NA
@@ -447,7 +447,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-08-26,60,0,Knud Tørnqvist,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2020-08-26,82,6.8,Allan Bay,Mellem,Flue,FALSE,NA,TRUE,Male,NA
 2020-08-25,53,1.75,Tom Johannesen,Mellem,Flue,FALSE,NA,TRUE,Female,NA
-2020-08-25,80,6.2,Kim Mathiasen,Haderup Å,Spin,FALSE,NA,TRUE,Male,NA
+2020-08-25,80,6.2,Kim Mathiasen,Haderis Å,Spin,FALSE,NA,TRUE,Male,NA
 2020-08-24,51,1.5,Villy Andersen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2020-08-24,60,0,Peder Skødt Lundsgaard,Mellem,Spin,FALSE,NA,FALSE,Male,NA
 2020-08-24,60,2.7,Henning Voergaard,Nedre,Flue,FALSE,NA,TRUE,NA,NA
@@ -489,7 +489,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-08-21,61,2.52,Ole Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
 2020-08-20,55,1.5,Jan Nors,Nedre,Spin,FALSE,NA,TRUE,Male,NA
 2020-08-20,57,1.97,Poul B. Oddershede,Mellem,Spin,FALSE,NA,TRUE,Female,NA
-2020-08-20,63,2.8,Preben Falkeøje Pilgaard,Haderup Å,Spin,FALSE,NA,TRUE,Female,NA
+2020-08-20,63,2.8,Preben Falkeøje Pilgaard,Haderis Å,Spin,FALSE,NA,TRUE,Female,NA
 2020-08-20,69,4.2,Steen Nørskov Jensen,Øvre,Flue,FALSE,NA,TRUE,Male,NA
 2020-08-20,53,0,Poul Erik Simonsen,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2020-08-20,61,2.9,Einer Olesen,Mellem,Spin,FALSE,NA,TRUE,Female,NA
@@ -533,7 +533,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-08-14,60,2.5,Gustav Setnik,Nedre,Flue,FALSE,NA,TRUE,Male,NA
 2020-08-14,62,2.7,Steen Søgaard Mortensen,Mellem,Flue,FALSE,NA,TRUE,Female,NA
 2020-08-14,55,0,Peder Skødt Lundsgaard,Mellem,Spin,FALSE,NA,FALSE,Male,NA
-2020-08-13,55,NA,Brian Thomsen,Haderup Å,Orm,FALSE,NA,TRUE,NA,NA
+2020-08-13,55,NA,Brian Thomsen,Haderis Å,Orm,FALSE,NA,TRUE,NA,NA
 2020-08-13,62,2.8,T. Mygind,Nedre,Flue,FALSE,NA,TRUE,Male,NA
 2020-08-13,60,2.6,Poul E Andersen,Nedre,Spin,FALSE,NA,TRUE,Male,NA
 2020-08-12,48,1.3,Uffe Hasselby Dgs,Nedre,Flue,FALSE,NA,TRUE,NA,NA
@@ -554,10 +554,10 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-08-09,55,0,Hugo Nielsen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
 2020-08-08,67,3.3,Karl-Heinz Niemann (Kalle),Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2020-08-08,60,0,Mikkel Ølund Rasmussen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
-2020-08-08,62,2.7,Preben Falkeøje Pilgaard,Haderup Å,Flue,FALSE,NA,TRUE,Female,NA
+2020-08-08,62,2.7,Preben Falkeøje Pilgaard,Haderis Å,Flue,FALSE,NA,TRUE,Female,NA
 2020-08-07,60,0,Sigfred Madsen,Nedre,Spin,FALSE,NA,FALSE,NA,NA
-2020-08-07,63,NA,Rafal Wysocki,Haderup Å,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/72B697DF73A40DB0C12585BF00786BA2.jpg,TRUE,Male,NA
-2020-08-07,60,2.6,Mogens Skaarup,Haderup Å,Spin,FALSE,NA,TRUE,Female,NA
+2020-08-07,63,NA,Rafal Wysocki,Haderis Å,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/72B697DF73A40DB0C12585BF00786BA2.jpg,TRUE,Male,NA
+2020-08-07,60,2.6,Mogens Skaarup,Haderis Å,Spin,FALSE,NA,TRUE,Female,NA
 2020-08-07,60,2.3,Vagn Riis-Jensen,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2020-08-07,55,0,Eric Ottens,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2020-08-06,63,3,Michael Schwennesen,Nedre,Flue,FALSE,NA,TRUE,Male,NA
@@ -599,17 +599,17 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-08-02,63,2.9,Flemming Abel Olesen,Mellem,Orm,FALSE,NA,TRUE,Male,NA
 2020-08-02,84,7,Finn Højgaard,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/2F4C76877DF026A1C12586100038FD4F.jpg,TRUE,Male,NA
 2020-08-02,97,10.96,Stig Jensen,Mellem,Orm,FALSE,NA,TRUE,Male,NA
-2020-08-02,60,0,Peter Wittrup,Haderup Å,Spin,FALSE,NA,FALSE,Female,NA
+2020-08-02,60,0,Peter Wittrup,Haderis Å,Spin,FALSE,NA,FALSE,Female,NA
 2020-08-02,57,2,Lars Korshøj,Mellem,Flue,FALSE,NA,TRUE,Female,NA
 2020-08-02,66,3.3,Jens Peder Madsen,Nedre,Spin,FALSE,NA,TRUE,Male,NA
 2020-08-02,71,4.2,John Hjort,Mellem,Spin,FALSE,NA,TRUE,Female,NA
 2020-08-02,40,0,Jens Lønberg,Nedre,Orm,FALSE,NA,FALSE,NA,NA
 2020-08-02,45,0,Jens Lønberg,Nedre,Orm,FALSE,NA,FALSE,NA,NA
 2020-08-01,61,2.3,Finn Møller Pedersen,Nedre,Spin,FALSE,NA,TRUE,Male,NA
-2020-08-01,56,2.35,Peter Bjerregaard,Haderup Å,Spin,FALSE,NA,TRUE,Female,NA
-2020-08-01,58,2.45,Peter Bjerregaard,Haderup Å,Orm,FALSE,NA,TRUE,Female,NA
-2020-08-01,58,NA,Michael Skovgaard Sørensen,Haderup Å,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/C97DE954899A8122C12585B8003C746B.jpg,TRUE,Male,NA
-2020-08-01,58,NA,Michael Skovgaard Sørensen,Haderup Å,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/6565F182D1EF6E1DC12585B8003C7538.jpg,TRUE,Male,NA
+2020-08-01,56,2.35,Peter Bjerregaard,Haderis Å,Spin,FALSE,NA,TRUE,Female,NA
+2020-08-01,58,2.45,Peter Bjerregaard,Haderis Å,Orm,FALSE,NA,TRUE,Female,NA
+2020-08-01,58,NA,Michael Skovgaard Sørensen,Haderis Å,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/C97DE954899A8122C12585B8003C746B.jpg,TRUE,Male,NA
+2020-08-01,58,NA,Michael Skovgaard Sørensen,Haderis Å,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/6565F182D1EF6E1DC12585B8003C7538.jpg,TRUE,Male,NA
 2020-08-01,60,0,Gary Taylor,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2020-08-01,64,2.54,Gary Taylor,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2020-08-01,45,0,Karl-Ole Frandsen,Mellem,Flue,FALSE,NA,FALSE,NA,NA
@@ -644,7 +644,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-07-30,61,2.8,Flemming Abel Olesen,Nedre,Orm,FALSE,NA,TRUE,Male,NA
 2020-07-30,65,3,Søren Fuglsang,Mellem,Spin,FALSE,NA,TRUE,Male,NA
 2020-07-30,60,3,Lars Relund,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/DFEC821CE0851D84C12585B60038F6C2.jpg,TRUE,Male,NA
-2020-07-30,58,2.2,Mogens Skaarup,Haderup Å,Flue,FALSE,NA,TRUE,Female,NA
+2020-07-30,58,2.2,Mogens Skaarup,Haderis Å,Flue,FALSE,NA,TRUE,Female,NA
 2020-07-30,60,2.8,Poul E Andersen,Nedre,Orm,FALSE,NA,TRUE,Female,NA
 2020-07-30,60,2.4,Johannes Hovmand,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/909E9BBF257AC8F0C12585B500600E23.jpg,TRUE,NA,NA
 2020-07-30,90,9.6,Ole Maach,Nedre,Spin,FALSE,NA,TRUE,Male,NA
@@ -718,12 +718,12 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-07-27,78,6.65,Peder Riisgaard,Nedre,Spin,FALSE,NA,TRUE,Male,NA
 2020-07-27,74,5.4,Mogens Styhr,Mellem,Flue,FALSE,NA,TRUE,Female,NA
 2020-07-27,59,2.1,Peter Skov Johansen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/7C9F4D121D9181C2C12585B20026C38B.jpg,TRUE,Female,NA
-2020-07-26,70,3.7,Claus Holmskov,Haderup Å,Spin,FALSE,NA,TRUE,Male,NA
-2020-07-26,NA,NA,Brian Hovmand,Haderup Å,Flue,FALSE,NA,TRUE,Female,NA
+2020-07-26,70,3.7,Claus Holmskov,Haderis Å,Spin,FALSE,NA,TRUE,Male,NA
+2020-07-26,NA,NA,Brian Hovmand,Haderis Å,Flue,FALSE,NA,TRUE,Female,NA
 2020-07-26,51,1.6,Thomas Andersen,Mellem,Flue,FALSE,NA,TRUE,Female,NA
 2020-07-26,64,3,Allan Bay,Mellem,Flue,FALSE,NA,TRUE,Male,NA
 2020-07-26,95,12.3,Marcus Gjørret,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/4b7cf2fcd8e448c9882696538500dd77.jpg,TRUE,Male,NA
-2020-07-26,61,3,Michael Schwennesen,NA,Flue,FALSE,NA,TRUE,Female,NA
+2020-07-26,61,3,Michael Schwennesen,Andet,Flue,FALSE,NA,TRUE,Female,NA
 2020-07-26,50,0,Morten Wølck,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2020-07-26,50,0,Morten Wølck,Nedre,Flue,FALSE,NA,FALSE,Female,NA
 2020-07-26,45,0,Morten Wølck,Nedre,Flue,FALSE,NA,FALSE,Female,NA
@@ -739,7 +739,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-07-25,65,3,Morten Mortensen,Nedre,Orm,FALSE,NA,TRUE,Female,NA
 2020-07-25,70,4.1,Allan Rosendahl,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B57DB3D0A03217E5C12585B20069AEDE.jpg,TRUE,Female,NA
 2020-07-25,54,1.55,Henrik Krog,Nedre,Flue,FALSE,NA,TRUE,Male,NA
-2020-07-25,57,2.25,Arne Østergård,Haderup Å,Orm,FALSE,NA,TRUE,Female,NA
+2020-07-25,57,2.25,Arne Østergård,Haderis Å,Orm,FALSE,NA,TRUE,Female,NA
 2020-07-25,59,2.3,Per Steen Stengaard Pedersen,Nedre,Spin,FALSE,NA,TRUE,Male,NA
 2020-07-25,46,0,René R. Nielsen,Mellem,Flue,FALSE,NA,FALSE,Female,NA
 2020-07-25,63,3.2,Jørgen Klokker,Nedre,Flue,FALSE,NA,TRUE,Female,NA
@@ -791,8 +791,8 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-07-23,51,0,Knud Tørnqvist,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2020-07-22,74,5,Per Hollesen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
 2020-07-22,40,0,Kent Rehnberg,Nedre,Orm,FALSE,NA,FALSE,NA,NA
-2020-07-22,62,2.7,Brian Thomsen,Haderup Å,Orm,FALSE,NA,TRUE,Female,NA
-2020-07-22,59,2.4,Brian Thomsen,Haderup Å,Orm,FALSE,NA,TRUE,Male,NA
+2020-07-22,62,2.7,Brian Thomsen,Haderis Å,Orm,FALSE,NA,TRUE,Female,NA
+2020-07-22,59,2.4,Brian Thomsen,Haderis Å,Orm,FALSE,NA,TRUE,Male,NA
 2020-07-22,55,1.9,Palle Lundholm Pedersen,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2020-07-22,56,2.1,Steen Nørskov,Øvre,Flue,FALSE,NA,TRUE,Female,NA
 2020-07-22,60,2.2,Verner Kristensen,Mellem,Flue,FALSE,NA,TRUE,Female,NA
@@ -847,22 +847,22 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-07-19,61,2.8,Henning Voergaard,Nedre,Flue,FALSE,NA,TRUE,NA,NA
 2020-07-18,71,3.6,Flemming Abel Olesen,Mellem,Orm,FALSE,NA,TRUE,Male,NA
 2020-07-18,65,3,Dieter Weihser,Nedre,Spin,FALSE,NA,TRUE,Female,NA
-2020-07-18,70,4.1,Søren Fuglsang,Haderup Å,Spin,FALSE,NA,TRUE,Male,NA
+2020-07-18,70,4.1,Søren Fuglsang,Haderis Å,Spin,FALSE,NA,TRUE,Male,NA
 2020-07-18,64,3,Anders Larsen,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2020-07-18,59,2.7,Anders Larsen,Nedre,Flue,FALSE,NA,TRUE,Male,NA
 2020-07-18,59,2.3,Nicolai Sølvberg,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/74E409159D099F50C12585AA005537FE.jpg,TRUE,Male,NA
 2020-07-18,50,0,Johnny Pedersen,Mellem,Spin,FALSE,NA,FALSE,NA,NA
-2020-07-18,60,2.2,Frederik Sølvberg,NA,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/CA03582D0CFDD182C12585AA0041A656.jpg,TRUE,Female,NA
+2020-07-18,60,2.2,Frederik Sølvberg,Andet,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/CA03582D0CFDD182C12585AA0041A656.jpg,TRUE,Female,NA
 2020-07-18,66,3.8,Ole Bernth,Nedre,Orm,FALSE,NA,TRUE,Male,NA
 2020-07-18,78,5.8,Stig Jensen,Mellem,Orm,FALSE,NA,TRUE,Male,NA
 2020-07-18,55,1.7,Kenneth Østergaard,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/43A3B01050BB0C09C12585A9005A9826.jpg,TRUE,Female,NA
 2020-07-18,63,3.3,Steen Nørskov Jensen,Nedre,Flue,FALSE,NA,TRUE,Male,NA
-2020-07-17,50,0,Johan Lynderup,NA,Flue,FALSE,NA,FALSE,NA,NA
+2020-07-17,50,0,Johan Lynderup,Andet,Flue,FALSE,NA,FALSE,NA,NA
 2020-07-17,62,3.15,Kent Rehnberg,Nedre,Orm,FALSE,NA,TRUE,Female,NA
 2020-07-17,44,0,Kent Rehnberg,Nedre,Orm,FALSE,NA,FALSE,NA,NA
 2020-07-17,58,2.4,Brian Thomsen,Nedre,Orm,FALSE,NA,TRUE,Female,NA
 2020-07-17,59,2.8,Jørgen Lauritsen,Nedre,Flue,FALSE,NA,TRUE,Female,NA
-2020-07-17,49,1.15,Arne Østergård,Haderup Å,Orm,FALSE,NA,TRUE,Female,NA
+2020-07-17,49,1.15,Arne Østergård,Haderis Å,Orm,FALSE,NA,TRUE,Female,NA
 2020-07-17,63,2.75,Paul Bæk,Nedre,Spin,FALSE,NA,TRUE,NA,NA
 2020-07-17,69,4.3,Karsten Mikaelsen,Nedre,Flue,FALSE,NA,TRUE,Male,NA
 2020-07-17,41,NA,Edward Mullins,Nedre,Orm,FALSE,NA,TRUE,Female,NA
@@ -880,7 +880,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-07-16,76,5.45,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,Female,NA
 2020-07-16,60,2.8,Ole Maach,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2020-07-16,70,4.3,Henrik Thomsen,Øvre,Spin,FALSE,NA,TRUE,Female,NA
-2020-07-16,42,NA,Peter Bjerregaard,Haderup Å,Orm,FALSE,NA,TRUE,Female,NA
+2020-07-16,42,NA,Peter Bjerregaard,Haderis Å,Orm,FALSE,NA,TRUE,Female,NA
 2020-07-16,70,4.5,Mogens Styhr,Mellem,Flue,FALSE,NA,TRUE,Male,NA
 2020-07-15,45,0,Holger Riis-Jensen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2020-07-15,63,3,Dieter Weihser,Nedre,Spin,FALSE,NA,TRUE,Female,NA
@@ -932,7 +932,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-07-13,77,6.1,Rasmus Ottesen,Mellem,Flue,FALSE,NA,TRUE,Male,NA
 2020-07-13,78,5.4,Carl Knudsen,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/3C7A6501565B8EB9C12585A4007542E5.jpg,TRUE,Male,NA
 2020-07-13,45,0,John Skov,Mellem,Spin,FALSE,NA,FALSE,NA,NA
-2020-07-13,51,1.2,Niels Jørgen Jensen,Haderup Å,Orm,FALSE,NA,TRUE,Female,NA
+2020-07-13,51,1.2,Niels Jørgen Jensen,Haderis Å,Orm,FALSE,NA,TRUE,Female,NA
 2020-07-13,68,3.8,Mikael Rønsholdt,Nedre,Flue,FALSE,NA,TRUE,Female,NA
 2020-07-13,58,2.2,Ole W. Knudsen,Nedre,Spin,FALSE,NA,TRUE,Male,NA
 2020-07-13,49,1.16,Ole Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
@@ -982,7 +982,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-07-11,76,5.25,Hans-Jørn Aggerholm Christensen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2020-07-11,43,0,Jann Kønig,Nedre,Orm,FALSE,NA,FALSE,Female,NA
 2020-07-10,59,2.2,Nils Munkgaard,Nedre,Flue,FALSE,NA,TRUE,Male,NA
-2020-07-10,60,0,Peter Wittrup,Haderup Å,Spin,FALSE,NA,FALSE,Female,NA
+2020-07-10,60,0,Peter Wittrup,Haderis Å,Spin,FALSE,NA,FALSE,Female,NA
 2020-07-10,56,2.1,Poul E Andersen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2020-07-10,55,NA,Hilmar Nielsen,Nedre,Spin,FALSE,NA,TRUE,NA,NA
 2020-07-10,50,NA,Per S Nielsen,Mellem,Spin,FALSE,NA,TRUE,Male,NA
@@ -1069,7 +1069,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-07-08,63,2.9,Flemming Abel Olesen,Nedre,Orm,FALSE,NA,TRUE,Female,NA
 2020-07-08,62,2.8,Flemming Abel Olesen,Nedre,Orm,FALSE,NA,TRUE,Female,NA
 2020-07-08,63,2.4,Mikkel Ølund Rasmussen,Mellem,Spin,FALSE,NA,TRUE,NA,NA
-2020-07-08,42,0,Mikkel Ølund Rasmussen,Haderup Å,Spin,FALSE,NA,FALSE,NA,NA
+2020-07-08,42,0,Mikkel Ølund Rasmussen,Haderis Å,Spin,FALSE,NA,FALSE,NA,NA
 2020-07-08,58,2.55,Willy W. Risgaard,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2020-07-08,67,3.4,Villy Andersen,Øvre,Spin,FALSE,NA,TRUE,NA,NA
 2020-07-08,53,NA,Martin Løntoft,Nedre,Orm,FALSE,NA,TRUE,NA,NA
@@ -1160,12 +1160,12 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-07-05,64,3.6,Magnus Kudahl,Mellem,Orm,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/5D05403C25F39DDDC125859C005ACFD6.jpg,TRUE,Female,NA
 2020-07-05,49,1.9,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,Female,NA
 2020-07-05,57,2.6,Robert Pedersen,Mellem,Spin,FALSE,NA,TRUE,Female,NA
-2020-07-05,75,4.6,Mogens Vad,Haderup Å,Spin,FALSE,NA,TRUE,Female,NA
+2020-07-05,75,4.6,Mogens Vad,Haderis Å,Spin,FALSE,NA,TRUE,Female,NA
 2020-07-04,60,2.5,Hans-Jørn Aggerholm Christensen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2020-07-04,62,NA,Oliver Jonsson,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/691F2A75F0542F50C125859C001BF14B.jpg,TRUE,Male,NA
 2020-07-04,54,1.8,Tom Larsen,Mellem,Flue,FALSE,NA,TRUE,NA,NA
 2020-07-04,53,1.6,Tom Larsen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
-2020-07-04,38,0,Mikkel Rasmussen,Haderup Å,Spin,FALSE,NA,FALSE,NA,NA
+2020-07-04,38,0,Mikkel Rasmussen,Haderis Å,Spin,FALSE,NA,FALSE,NA,NA
 2020-07-04,35,0,Peter Wittrup,Nedre,Spin,FALSE,NA,FALSE,NA,NA
 2020-07-04,58,NA,Mikkel Rasmussen,Nedre,Spin,FALSE,NA,TRUE,Male,NA
 2020-07-04,40,0,Lucas Paetzold,Nedre,Spin,FALSE,NA,FALSE,NA,NA
@@ -1215,7 +1215,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-06-29,73,4.9,Hans-Jørn Aggerholm Christensen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2020-06-29,44,0.9,Hans-Jørn Aggerholm Christensen,Nedre,Spin,FALSE,NA,TRUE,Female,NA
 2020-06-29,60,2.8,Vagn Nielsen,Nedre,Flue,FALSE,NA,TRUE,Female,NA
-2020-06-29,47,0,Peter Wittrup,Haderup Å,Spin,FALSE,NA,FALSE,Female,NA
+2020-06-29,47,0,Peter Wittrup,Haderis Å,Spin,FALSE,NA,FALSE,Female,NA
 2020-06-29,35,0,Peter Wittrup,Mellem,Flue,FALSE,NA,FALSE,Female,NA
 2020-06-28,54,1.65,Ole Sørensen,Nedre,Flue,FALSE,NA,TRUE,NA,NA
 2020-06-28,53,1.9,Bruno Broberg,Mellem,Flue,FALSE,NA,TRUE,Female,NA
@@ -1223,7 +1223,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-06-28,50,0,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
 2020-06-28,49,0,Poul Lauridsen,Nedre,Orm,FALSE,NA,FALSE,NA,NA
 2020-06-27,44,1,Edward Mullins,Mellem,Orm,FALSE,NA,TRUE,NA,NA
-2020-06-27,65,NA,Karl Mayer,NA,Flue,FALSE,NA,TRUE,Male,NA
+2020-06-27,65,NA,Karl Mayer,Andet,Flue,FALSE,NA,TRUE,Male,NA
 2020-06-26,NA,0,Poulerik Simonsen,Nedre,Flue,FALSE,NA,FALSE,NA,NA
 2020-06-26,47,1.3,Brita Broberg,Nedre,Orm,FALSE,NA,TRUE,Female,NA
 2020-06-26,44,NA,Mogens Skaarup,Mellem,Flue,FALSE,NA,TRUE,Male,NA

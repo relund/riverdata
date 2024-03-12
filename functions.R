@@ -939,115 +939,6 @@ getAllCatches <- function(prefix) {
 }
 
 
-#' #' Update catch records for Skjern river
-#' #'
-#' #' @param prefix Path prefix (e.g. data/data_skjern).
-#' #' @param species Either "salmon" or "trout".
-#' #' @param start Year where update records from
-#' #' @param reset If TRUE don't append to the old records!
-#' #'
-#' #' @return The updated catch records appended to the the old records. 
-#' updateCatchSkjern <- function(prefix, species, start = year(now()), reset = F) {
-#'   message("Catch records: Update dataset for ", species, ".")
-#'   foundId <- NULL
-#'   datOld <- NULL
-#'   if (species == "salmon") fn <- paste0(prefix, "_catch_salmon.csv") 
-#'   if (species == "trout") fn <- paste0(prefix, "_catch_seatrout.csv")
-#'   if (file.exists(fn)) {
-#'     datOld <- read_csv(fn, col_types = "DddccccllcclccTd")
-#'     foundId <- datOld %>% pull(Id)
-#'   }
-#'   
-#'   noError <- function(code) {
-#'     tryCatch(code,
-#'              error = function(c) TRUE
-#'     )
-#'   }
-#'   
-#'   curY <- year(now())
-#'   dat <- NULL
-#'   message("  Consider year:", appendLF = F)
-#'   for (y in start:curY) {
-#'     message(" ", y, appendLF = F)
-#'     url <- str_c("http://skjernaasam.dk/catchreport/?getyear=", y, "&species=", species)
-#'     page <- read_html(url)
-#'     ids <- html_nodes(page, xpath = '//*[@id="report-list"]/tbody/tr/@data-id') %>% 
-#'       html_text() %>% as.numeric()
-#'     for (id in ids) {
-#'       if (id %in% foundId & !reset) next
-#'       url <- str_c("http://skjernaasam.dk/ajax/?action=getcatch&id=", id) 
-#'       while (TRUE) {
-#'         val <- noError(jsonlite::fromJSON(url))
-#'         if (!is.logical(val)) break
-#'       }
-#'       if (is.null(val$imageid)) val$imagefile = ""
-#'       val <- val %>% unlist()
-#'       dat <- bind_rows(val, dat)
-#'     }
-#'   }
-#'   message("")
-#'   
-#'   if (!is.null(dat)) {
-#'     dat <- dat %>% select("Id" = id, "Date" = date, "Length" = length_cm, "Weight" = weight_kg, "Sex" = sex, "Place" = location, "Cut" = cut_fin, "Net" = net_injury, "NetDesc" = injury_description, "Killed" = released, "Method" = method, "Notes" = notes, "Kelt" = kelt, "ReportDate" = report_date, "Name" = name, "Foto" = imagefile)
-#'     dat <- dat %>% 
-#'       mutate(Killed = if_else(Killed == "Ja", FALSE, TRUE),  # Since represent released
-#'              Length = str_replace_all(Length, c(".cm" = "", "Ukendt" = NA_character_)),
-#'              Weight = str_replace_all(Weight, c(".kg" = "", "Ukendt" = NA_character_)),
-#'              Cut = case_when(
-#'                Cut %in% c("Ja", "left_pelvic", "right_pelvic", "pelvic", "Fedtfinne", "tail", "pectoral", "anal") ~ TRUE, 
-#'                Cut == "Nej" ~ FALSE,
-#'                TRUE ~ NA),
-#'              Net = if_else(Net == "Ja", TRUE, FALSE),
-#'              Place = case_when(
-#'                str_detect(Place, "Øvre|Rind|Karstoft|Vinbæk|Opstrøms") ~ "Øvre",
-#'                str_detect(Place, "Mellem|Borris Krog bro til Tarp Bro|Felding|Konsortiet") ~ "Mellem",
-#'                str_detect(Place, "Nedre|A11|Albæk|Fjord") ~ "Nedre",
-#'                str_detect(Place, "Vorgod") ~ "Vorgod Å",
-#'                str_detect(Place, "Omme") ~ "Omme Å",
-#'                TRUE ~ "Andet"),
-#'              NetDesc = str_to_sentence(NetDesc),
-#'              Sex = str_replace_all(Sex, c("Ukendt" = NA_character_)),
-#'              Name = str_to_title(Name),
-#'              Notes = str_to_sentence(Notes)) %>% 
-#'       type_convert(col_types = cols(
-#'         Date = col_date(format = ""),
-#'         Length = col_double(),
-#'         Weight = col_double(),
-#'         Name = col_character(),
-#'         Place = col_character(),
-#'         Method = col_character(),
-#'         Sex = col_character(),
-#'         Cut = col_logical(),
-#'         Killed = col_logical(),
-#'         Foto = col_character(),
-#'         Notes = col_character(),
-#'         Net = col_logical(),
-#'         NetDesc = col_character(),
-#'         Kelt = col_character(),
-#'         ReportDate = col_datetime(format = ""),
-#'         Id = col_double()
-#'       )) %>% 
-#'       select(Date, Length, Weight, Name, Place, Method, Sex, Cut, Killed, Foto, Notes, 
-#'              Net, NetDesc, Kelt, ReportDate, Id)
-#'     
-#'     # Try to fix errors
-#'     dat <- dat %>% mutate(Length = if_else(Length < 40 & Weight > 0.5, NA_real_, Length))
-#'     
-#'     if (reset & !is.null(datOld)) datOld <- datOld %>% filter(year(Date) < start)
-#'     dat <- bind_rows(datOld,dat)
-#'     dat <- dat %>% 
-#'       dplyr::filter(Length > 39 | is.na(Length)) %>% 
-#'       mutate(Place = fixStringErrors(Place), Weight = round(Weight,1), Length = round(Length)) %>% 
-#'       arrange(desc(Date), desc(ReportDate))
-#'     message("  Write data to ", fn)
-#'     write_csv(dat, fn)
-#'   } else {
-#'     dat <- datOld
-#'   }
-#'   return(invisible(dat))
-#' }
-
-
 #' Update and save time series data from vandportalen.dk
 #'
 #' @param stations Stations under consideration.
@@ -1224,7 +1115,15 @@ fixOldDataFileByYearKarup <- function() {
   prefix <- "data/data_karup_catch_seatrout"
   for (y in 2003:2022) {
     fn <- paste0(prefix, "_", y, ".csv") 
-    dat <- read_csv(fn) 
+    dat <- read_csv(fn) %>% 
+      mutate(Place = case_when(
+        str_detect(Place, "(Øvre.*)|(Skjern.*Rind)|(Skjern.*opstrøms)") ~ "Øvre",
+        str_detect(Place, "(Mellem.*)|(Skjern.*Tarp.*Borris)") ~ "Mellem",
+        str_detect(Place, "(Nedre.*)|(Skjern.*Borris.*Fjord)") ~ "Nedre",
+        str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
+        str_detect(Place, "Vorgod") ~ "Vorgod Å",
+        str_detect(Place, "Omme") ~ "Omme Å",
+        TRUE ~ "Andet"))
     dat <- dat %>% transmute(Date, Length, Weight, Name, Place, Method, Cut, Foto, Killed, Sex, Net = NA)
     message("  Write data to ", fn)
     write_csv(dat, fn)
