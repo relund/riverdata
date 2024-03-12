@@ -8,6 +8,7 @@ library(forecast)
 library(tsibble)
 library(fs)
 library(rmarkdown)
+library(RCurl)
 library(conflicted)
 conflicts_prefer(
   dplyr::filter(),
