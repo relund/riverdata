@@ -63,7 +63,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2008-08-22,54,NA,Tommy D Eskildsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2008-08-21,46,1.2,Jens Ingemann Michaelsen,Ukendt,Spin,FALSE,NA,TRUE,Hun,FALSE
 2008-08-21,48,1.2,Anders Kousgaard,Ukendt,Spin,FALSE,NA,TRUE,Hun,FALSE
-2008-08-20,56,1.8,Freddy Hald,Ukendt,Andet,FALSE,NA,TRUE,Hun,FALSE
+2008-08-20,56,1.8,Freddy Hald,Ukendt,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2008-08-20,57,2.4,Børge R. Thomsen,Vorgod Å,Orm,FALSE,NA,TRUE,NA,FALSE
 2008-08-20,55,1.5,Erling Willumsgaard,Ukendt,Spin,FALSE,NA,TRUE,Han,FALSE
 2008-08-20,53,1.7,Joe Christiansen,Ukendt,Flue,FALSE,NA,TRUE,Han,FALSE
@@ -175,7 +175,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2008-07-13,53,1.8,Klaus Øgendahl,Ukendt,Spin,FALSE,NA,TRUE,Hun,TRUE
 2008-07-13,52,1.6,Bruno Stamm,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
 2008-07-13,52,1.8,Iver Kloster,Vorgod Å,Flue,FALSE,NA,TRUE,Hun,FALSE
-2008-07-12,79,6.1,Lars Jansen,Nedre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2008-07-12,79,6.1,Lars Jansen,Nedre,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2008-07-12,40,NA,Birger Dam Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,FALSE
 2008-07-12,54,2.3,Birger Dam Jensen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2008-07-12,44,NA,John Poulsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
@@ -185,12 +185,12 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2008-07-11,42,0.9,Thomas Borup Svendsen,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
 2008-07-11,45,1,Christian Malabi Larsen,Ukendt,Spin,FALSE,NA,TRUE,Hun,FALSE
 2008-07-11,51,1.5,Henrik Jensen,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
-2008-07-11,70,4.1,Svend Åge Pedersen,Nedre,Andet,FALSE,NA,TRUE,Han,FALSE
+2008-07-11,70,4.1,Svend Åge Pedersen,Nedre,Ukendt,FALSE,NA,TRUE,Han,FALSE
 2008-07-10,50,1.5,Peter Lund,Ukendt,Flue,FALSE,NA,TRUE,Han,FALSE
-2008-07-10,58,2.7,Leo V Pedersen,Nedre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2008-07-10,58,2.7,Leo V Pedersen,Nedre,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2008-07-09,49,1.4,Michael Matussik,Ukendt,Spin,FALSE,NA,TRUE,Hun,FALSE
 2008-07-09,47,1.1,Verner Mortensen,Nedre,Flue,FALSE,NA,TRUE,NA,FALSE
-2008-07-09,52,1.8,Leo V Pedersen,Nedre,Andet,FALSE,NA,TRUE,Hun,TRUE
+2008-07-09,52,1.8,Leo V Pedersen,Nedre,Ukendt,FALSE,NA,TRUE,Hun,TRUE
 2008-07-08,50,1.4,Åge Markussen,Nedre,Orm,FALSE,NA,TRUE,NA,FALSE
 2008-07-08,68,4,Søren Larsen,Nedre,Flue,FALSE,NA,TRUE,Hun,TRUE
 2008-07-08,54,1.5,Johnni Kæseler,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
@@ -220,7 +220,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2008-06-27,50,1.6,Iver Kloster,Nedre,Spin,FALSE,NA,TRUE,NA,TRUE
 2008-06-27,50,1.6,Flemming Skovdal,Nedre,Spin,FALSE,NA,TRUE,NA,TRUE
 2008-06-27,83,7.2,Ulf Teichmann,Ukendt,Spin,FALSE,NA,TRUE,NA,FALSE
-2008-06-26,48,1.5,Niels Andersen,Nedre,Andet,FALSE,NA,TRUE,NA,FALSE
+2008-06-26,48,1.5,Niels Andersen,Nedre,Ukendt,FALSE,NA,TRUE,NA,FALSE
 2008-06-26,63,3.5,Finn Henriksen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2008-06-26,56,2,Vanwinkelroger,Nedre,Orm,FALSE,NA,TRUE,NA,TRUE
 2008-06-26,49,1.2,Mads Abildtrup,Nedre,Spin,FALSE,NA,TRUE,NA,TRUE
@@ -265,7 +265,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2008-06-09,58,2.5,Finn Hansen,Ukendt,Spin,FALSE,NA,TRUE,NA,TRUE
 2008-06-03,54,2.1,Poul Lauridsen,Nedre,Flue,FALSE,NA,TRUE,NA,TRUE
 2008-06-03,55,2.2,Kai Jørgensen,Ukendt,Spin,FALSE,NA,TRUE,NA,TRUE
-2008-06-02,78,6.5,Kai Jørgensen,Ukendt,Andet,FALSE,NA,TRUE,NA,TRUE
+2008-06-02,78,6.5,Kai Jørgensen,Ukendt,Ukendt,FALSE,NA,TRUE,NA,TRUE
 2008-06-01,60,2.8,Paw Henriksen,Nedre,Spin,FALSE,NA,TRUE,NA,TRUE
 2008-05-31,82,8,Peter Lund,Mellem,Spin,FALSE,NA,TRUE,NA,TRUE
 2008-05-30,43,1,Jan Hartvigsen,Mellem,Spin,FALSE,NA,TRUE,NA,TRUE
@@ -288,7 +288,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2008-04-14,43,1.1,Karl-Friedrich Tappe,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
 2008-04-12,53,1.9,Ole Lauridsen,Mellem,Orm,FALSE,NA,TRUE,Hun,FALSE
 2008-04-12,57,2.1,Hans Jørgen Husted,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
-2008-04-09,66,3.8,Peter Husted,Nedre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2008-04-09,66,3.8,Peter Husted,Nedre,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2008-04-08,47,1.6,Bjarne Kjær,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2008-04-07,49,1.8,Svend Åge Pedersen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2008-04-06,NA,NA,Andreas Michaelsen,Ukendt,Flue,FALSE,NA,FALSE,NA,FALSE
@@ -305,8 +305,8 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2008-04-01,40,NA,Jan Pilgaard,Omme Å,Orm,FALSE,NA,FALSE,NA,FALSE
 2008-04-01,54,1.6,John Lembcke,Omme Å,Spin,FALSE,NA,TRUE,NA,FALSE
 2008-04-01,53,1.5,Verner Andreasen,Ukendt,Flue,FALSE,NA,TRUE,NA,FALSE
-2008-04-01,NA,NA,John Sønderup,Omme Å,Andet,FALSE,NA,FALSE,NA,FALSE
+2008-04-01,NA,NA,John Sønderup,Omme Å,Ukendt,FALSE,NA,FALSE,NA,FALSE
 2008-04-01,NA,NA,James Pedersen,Omme Å,Spin,FALSE,NA,FALSE,NA,FALSE
 2008-04-01,42,0.7,Søren Krøjgaard,Omme Å,Spin,FALSE,NA,TRUE,NA,FALSE
 2008-04-01,43,0.8,Tina Christensen,Omme Å,Spin,FALSE,NA,TRUE,Hun,FALSE
-2008-04-01,44,0.8,Carsten Keis Fomsgård,Omme Å,Andet,FALSE,NA,TRUE,NA,FALSE
+2008-04-01,44,0.8,Carsten Keis Fomsgård,Omme Å,Ukendt,FALSE,NA,TRUE,NA,FALSE

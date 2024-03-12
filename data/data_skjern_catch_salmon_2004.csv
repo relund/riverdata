@@ -53,10 +53,10 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2004-09-01,88,7.4,Svend Nielsen,Nedre,Orm,FALSE,NA,TRUE,NA,FALSE
 2004-08-31,86,5.6,Ib Poulsen,Ukendt,Flue,FALSE,NA,TRUE,NA,FALSE
 2004-08-31,63,2.2,Jesper Andersen,Ukendt,Flue,NA,NA,FALSE,NA,FALSE
-2004-08-31,NA,NA,Leif Jørgensen,Ukendt,Andet,FALSE,NA,TRUE,NA,FALSE
+2004-08-31,NA,NA,Leif Jørgensen,Ukendt,Ukendt,FALSE,NA,TRUE,NA,FALSE
 2004-08-31,65,2.3,Ole Damgård,Øvre,Orm,FALSE,NA,FALSE,NA,FALSE
 2004-08-31,86,5.1,Bent Kjær Jensen,Mellem,Orm,FALSE,NA,TRUE,NA,TRUE
-2004-08-30,NA,NA,Svend Øgendahl,Ukendt,Andet,FALSE,NA,TRUE,NA,FALSE
+2004-08-30,NA,NA,Svend Øgendahl,Ukendt,Ukendt,FALSE,NA,TRUE,NA,FALSE
 2004-08-30,75,4,Lindquist,Nedre,Flue,FALSE,NA,TRUE,NA,FALSE
 2004-08-30,81,5,Finn Hansen,Ukendt,Spin,FALSE,NA,TRUE,NA,FALSE
 2004-08-30,68,2.7,Ole Damgård,Øvre,Orm,FALSE,NA,FALSE,NA,FALSE
@@ -86,7 +86,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2004-08-25,63,1.9,Ole Tolstrup,Nedre,Flue,FALSE,NA,TRUE,NA,FALSE
 2004-08-25,87,6,Poul Lauridsen,Nedre,Orm,FALSE,NA,TRUE,NA,FALSE
 2004-08-24,62,2,Niels P. Larsen,Nedre,Spin,FALSE,NA,TRUE,NA,TRUE
-2004-08-24,67,2.3,Verner Odderskær,Mellem,Andet,FALSE,NA,FALSE,NA,FALSE
+2004-08-24,67,2.3,Verner Odderskær,Mellem,Ukendt,FALSE,NA,FALSE,NA,FALSE
 2004-08-23,75,3.2,Finn Frederiksen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2004-08-23,86,5.2,Birger Jensen,Nedre,Flue,FALSE,NA,TRUE,NA,FALSE
 2004-08-23,94,7.6,Jim Thaysen,Mellem,Flue,FALSE,NA,TRUE,NA,FALSE
@@ -171,7 +171,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2004-06-26,83,6,Jens Meldgård,Ukendt,Spin,FALSE,NA,FALSE,NA,TRUE
 2004-06-24,80,5.5,Fredrik Iversen,Mellem,Orm,FALSE,NA,TRUE,NA,FALSE
 2004-06-20,80,4.9,Preben Madsen,Nedre,Flue,FALSE,NA,TRUE,NA,TRUE
-2004-06-12,85,5,John W Jensen,Vorgod Å,Andet,FALSE,NA,TRUE,NA,FALSE
+2004-06-12,85,5,John W Jensen,Vorgod Å,Ukendt,FALSE,NA,TRUE,NA,FALSE
 2004-06-03,85,5.8,Jens Henning,Nedre,Spin,FALSE,NA,TRUE,NA,FALSE
 2004-06-03,84,4.9,Henning Karlsen,Ukendt,Flue,FALSE,NA,FALSE,NA,FALSE
 2004-05-28,80,4.5,Hans Hansen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE

@@ -1125,6 +1125,7 @@ fixOldDataFileByYearSkjern <- function() {
         str_detect(Method, "(Flue.*)|(Fue)") ~ "Flue",
         str_detect(Method, "(Orm.*)|(Majs)|(Flåd)|(Mede)") ~ "Orm",
         str_detect(Method, "(Spin.*)") ~ "Spin",
+        str_detect(Method, "(Andet.*)") ~ "Ukendt",
         is.na(Method) ~ "Flue",
         TRUE ~ Method)) 
     dat <- dat %>% transmute(Date, Length, Weight, Name, Place, Method, Cut, Foto, Killed, Sex, Net)
@@ -1148,6 +1149,7 @@ fixOldDataFileByYearSkjern <- function() {
         str_detect(Method, "(Flue.*)|(Fue)") ~ "Flue",
         str_detect(Method, "(Orm.*)|(Majs)|(Flåd)|(Mede)") ~ "Orm",
         str_detect(Method, "(Spin.*)") ~ "Spin",
+        str_detect(Method, "(Andet.*)") ~ "Ukendt",
         is.na(Method) ~ "Flue",
         TRUE ~ Method)) 
     dat <- dat %>% transmute(Date, Length, Weight, Name, Place, Method, Cut, Foto, Killed, Sex, Net)
@@ -1174,6 +1176,7 @@ fixOldDataFileByYearKarup <- function() {
         str_detect(Method, "(Flue.*)|(Fue)") ~ "Flue",
         str_detect(Method, "(Orm.*)|(Majs)|(Flåd)|(Mede)") ~ "Orm",
         str_detect(Method, "(Spin.*)") ~ "Spin",
+        str_detect(Method, "(Andet.*)") ~ "Ukendt",
         is.na(Method) ~ "Flue",
         TRUE ~ Method)) 
     dat <- dat %>% transmute(Date, Length, Weight, Name, Place, Method, Cut, Foto, Killed, Sex, Net)

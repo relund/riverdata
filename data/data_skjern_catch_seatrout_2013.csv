@@ -48,7 +48,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2013-10-09,52,NA,Peder Bæk,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2013-10-09,47,NA,Peder Bæk,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2013-10-09,60,1.8,Gerard Daniel,Ukendt,Spin,TRUE,NA,TRUE,Han,FALSE
-2013-10-09,55,NA,Kaj Børge Simonsen,Mellem,Andet,FALSE,NA,FALSE,Hun,FALSE
+2013-10-09,55,NA,Kaj Børge Simonsen,Mellem,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2013-10-08,50,NA,Malte Meyerhof,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2013-10-08,48,NA,Bent Winkler,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2013-10-08,70,NA,Bo Fomsgaard,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
@@ -124,7 +124,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2013-09-24,48,NA,Søren Pedersen,Øvre,Orm,FALSE,NA,FALSE,Hun,FALSE
 2013-09-24,47,NA,Søren Pedersen,Øvre,Orm,FALSE,NA,FALSE,Hun,FALSE
 2013-09-24,50,NA,Frederik Iversen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
-2013-09-24,45,NA,Frank Thygesen,Nedre,Andet,FALSE,NA,FALSE,Hun,FALSE
+2013-09-24,45,NA,Frank Thygesen,Nedre,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2013-09-23,72,NA,Verner Mortensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2013-09-22,45,1,Svend Fabricius-Svendsen,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2013-09-22,NA,NA,Tommy Olinsson,Ukendt,Flue,FALSE,NA,FALSE,NA,FALSE
@@ -144,7 +144,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2013-09-19,61,NA,Stig Christensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2013-09-19,64,NA,Aksel Jensen,Ukendt,Flue,FALSE,NA,FALSE,Hun,FALSE
 2013-09-19,60,NA,Poul Bøjgaard,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
-2013-09-19,65,NA,Kaj Børge Simonsen,Nedre,Andet,FALSE,NA,FALSE,Han,FALSE
+2013-09-19,65,NA,Kaj Børge Simonsen,Nedre,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2013-09-19,48,NA,Finn Meldgård,Øvre,Orm,FALSE,NA,FALSE,Han,FALSE
 2013-09-19,44,NA,Finn Meldgård,Øvre,Orm,FALSE,NA,FALSE,Han,FALSE
 2013-09-19,55,1.7,Jan Heldgaard,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
@@ -168,7 +168,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2013-09-15,65,3,Jørgen Klokker,Nedre,Flue,FALSE,NA,TRUE,Hun,TRUE
 2013-09-15,44,NA,Morten Eskildsen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
 2013-09-15,46,NA,Morten Eskildsen,Øvre,Flue,FALSE,NA,TRUE,NA,FALSE
-2013-09-15,60,NA,Jimmy Nielsen,Nedre,Andet,FALSE,NA,FALSE,Han,FALSE
+2013-09-15,60,NA,Jimmy Nielsen,Nedre,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2013-09-15,56,NA,Kurt Jensen,Ukendt,Spin,FALSE,NA,FALSE,Hun,TRUE
 2013-09-15,62,NA,Bjarne Kjær,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2013-09-15,50,1.5,Peter Ottosen,Mellem,Spin,FALSE,NA,TRUE,NA,FALSE
@@ -246,7 +246,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2013-09-03,52,NA,Kurt Jensen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2013-09-03,50,NA,Henning Bak,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2013-09-03,52,1.9,Bruno Sørensen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
-2013-09-03,56,2.1,Frank Thygesen,Nedre,Andet,FALSE,NA,TRUE,Han,TRUE
+2013-09-03,56,2.1,Frank Thygesen,Nedre,Ukendt,FALSE,NA,TRUE,Han,TRUE
 2013-09-01,53,NA,Ole Andreasen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2013-09-01,50,1.8,Finn Madsen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2013-09-01,48,NA,Thomas Torpe,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE

@@ -143,8 +143,8 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2022-10-09,65,NA,Paul Elberg,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2022-10-09,58,NA,Arne Nørreskov,Mellem,Flue,FALSE,NA,TRUE,Han,FALSE
 2022-10-09,65,NA,Daniel Mikkelsen,Mellem,Flue,NA,NA,FALSE,Han,FALSE
-2022-10-08,75,NA,Sjoerd Huisman,Mellem,Andet,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/10/zalm-1.jpg,FALSE,Han,FALSE
-2022-10-08,75,NA,Sjoerd Huisman,Mellem,Andet,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/10/zalm.jpg,FALSE,Han,FALSE
+2022-10-08,75,NA,Sjoerd Huisman,Mellem,Ukendt,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/10/zalm-1.jpg,FALSE,Han,FALSE
+2022-10-08,75,NA,Sjoerd Huisman,Mellem,Ukendt,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/10/zalm.jpg,FALSE,Han,FALSE
 2022-10-08,95,NA,Steffen Arendrup,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
 2022-10-08,65,NA,Frederik Pedersen,Nedre,Spin,TRUE,https://skjernaasam.dk/wp-content/uploads/2022/10/IMG_20221008_130926-768x1024.jpg,FALSE,Han,FALSE
 2022-10-08,55,NA,Jesper Rasmussen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
@@ -950,7 +950,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2022-08-03,80,NA,Patzer  Ronald,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2022-08-03,90,NA,Kenny Frost,Nedre,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/08/C1A4A6D9-9CB1-4F27-9B42-2DB788230ABC-1-768x1024.jpeg,FALSE,Hun,FALSE
 2022-08-02,90,NA,Niels Bolt,Nedre,Flue,TRUE,NA,FALSE,Han,FALSE
-2022-08-02,90,NA,Henrik Johansen,Mellem,Andet,NA,NA,FALSE,NA,FALSE
+2022-08-02,90,NA,Henrik Johansen,Mellem,Ukendt,NA,NA,FALSE,NA,FALSE
 2022-08-02,80,NA,Torben Hedebol,Mellem,Flue,TRUE,NA,FALSE,Hun,FALSE
 2022-08-02,63,NA,Brian Jensen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2022-08-02,90,NA,Morten Sussemiehl Pedersen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
@@ -1132,7 +1132,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2022-07-18,70,NA,Nicolai Just Jakobsen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
 2022-07-18,78,NA,Jack Christiansen,Ukendt,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/07/20220718_161312-1-768x1024.jpg,FALSE,Hun,FALSE
 2022-07-18,67,NA,Tun Weber,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
-2022-07-18,90,NA,Svend Åge Andersen,Nedre,Andet,FALSE,NA,FALSE,Han,FALSE
+2022-07-18,90,NA,Svend Åge Andersen,Nedre,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2022-07-18,85,NA,Svend Åge Andersen,Nedre,Spin,TRUE,NA,FALSE,Hun,FALSE
 2022-07-18,80,NA,Malthe Bundsbæk,Nedre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/07/1413991B-4BA9-4DB6-8CB0-3938F28AF671-768x1024.jpeg,FALSE,Hun,FALSE
 2022-07-18,70,NA,Johan Bundsbæk,Nedre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/07/2B9C2DB6-DDAC-4E7F-85B5-10AF30594F0C-768x1024.jpeg,FALSE,Han,FALSE
@@ -1641,7 +1641,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2022-05-19,80,NA,Peder Kirkegaard,Vorgod Å,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/3BF29EA8-2812-4D76-8CAB-239AA7F26E44-1-473x1024.png,FALSE,NA,FALSE
 2022-05-19,90,NA,Jan Fredslund Nielsen,Nedre,Spin,TRUE,https://skjernaasam.dk/wp-content/uploads/2022/05/20220519_111759-768x1024.jpg,FALSE,Hun,FALSE
 2022-05-18,91,NA,Claus Kroman,Nedre,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/78E6089C-B92C-4C27-AF52-843FB43B35AB-1-768x1024.jpeg,FALSE,Han,FALSE
-2022-05-18,95,NA,Mikkel Holm,Nedre,Andet,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/7AE2D069-13CF-471E-A1FB-29895B35003B-1024x576.jpeg,FALSE,NA,FALSE
+2022-05-18,95,NA,Mikkel Holm,Nedre,Ukendt,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/7AE2D069-13CF-471E-A1FB-29895B35003B-1024x576.jpeg,FALSE,NA,FALSE
 2022-05-18,88,NA,Mikkel Holm,Nedre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/F0C78C4B-722F-499D-8A35-905CF5181AF0-1024x576.jpeg,FALSE,NA,FALSE
 2022-05-18,80,NA,Michael Holm Sørensen,Mellem,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/05/smuksak-1024x576.jpg,FALSE,Han,FALSE
 2022-05-18,85,NA,Peder Bæk,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE

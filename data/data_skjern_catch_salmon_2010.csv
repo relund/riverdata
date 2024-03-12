@@ -8,7 +8,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-09-30,65,NA,Gert Engholm,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2010-09-30,68,NA,Suljo Sahuric,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2010-09-30,80,NA,Jimmy Nielsen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
-2010-09-30,55,NA,Frank Thygesen,Omme Å,Andet,FALSE,NA,FALSE,Han,FALSE
+2010-09-30,55,NA,Frank Thygesen,Omme Å,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2010-09-30,75,NA,Jan Houborg,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-09-30,72,NA,Jan Houborg,Nedre,Spin,FALSE,NA,FALSE,Han,TRUE
 2010-09-30,67,NA,Jan Houborg,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
@@ -64,7 +64,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-09-26,78,NA,Søren Jansen,Ukendt,Spin,FALSE,NA,FALSE,Han,FALSE
 2010-09-26,90,NA,Per Møller,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-09-26,85,NA,Kristoffer Led Jensen,Ukendt,Spin,FALSE,NA,FALSE,Han,FALSE
-2010-09-26,85,NA,J. Iversen,Mellem,Andet,FALSE,NA,FALSE,Hun,FALSE
+2010-09-26,85,NA,J. Iversen,Mellem,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2010-09-26,73,NA,Brian Jensen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2010-09-26,82,NA,Jimmy Nielsen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-09-26,90,NA,Per Lundvig,Ukendt,Flue,FALSE,NA,FALSE,Hun,FALSE
@@ -79,9 +79,9 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-09-25,70,NA,Anders Bak,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2010-09-25,55,NA,Anders Bak,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2010-09-25,78,NA,Lars Thygesen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
-2010-09-25,70,NA,F. Iversen,Mellem,Andet,FALSE,NA,FALSE,Han,FALSE
-2010-09-25,85,NA,F. Iversen,Mellem,Andet,FALSE,NA,FALSE,Hun,FALSE
-2010-09-25,80,NA,F. Iversen,Mellem,Andet,FALSE,NA,FALSE,Hun,FALSE
+2010-09-25,70,NA,F. Iversen,Mellem,Ukendt,FALSE,NA,FALSE,Han,FALSE
+2010-09-25,85,NA,F. Iversen,Mellem,Ukendt,FALSE,NA,FALSE,Hun,FALSE
+2010-09-25,80,NA,F. Iversen,Mellem,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2010-09-25,70,NA,F. Iversen,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
 2010-09-25,65,NA,R.uecker,Ukendt,Flue,FALSE,NA,FALSE,Han,FALSE
 2010-09-25,65,NA,Dennis G Nielsen,Ukendt,Spin,FALSE,NA,FALSE,Han,FALSE
@@ -138,7 +138,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-09-20,90,NA,Sv.e.øgendahl,Ukendt,Flue,FALSE,NA,FALSE,Hun,FALSE
 2010-09-20,78,NA,T.b.l.,Ukendt,Flue,FALSE,NA,FALSE,Han,FALSE
 2010-09-20,76,NA,Kim Allan Jensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
-2010-09-20,80,NA,Bjarne Kjær,Øvre,Andet,FALSE,NA,FALSE,Hun,FALSE
+2010-09-20,80,NA,Bjarne Kjær,Øvre,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2010-09-20,98,NA,Bjarne Kjær,Øvre,Spin,TRUE,NA,FALSE,Hun,FALSE
 2010-09-20,68,NA,Marc Skovby,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2010-09-19,90,NA,Jakob Skov,Nedre,Flue,FALSE,NA,FALSE,Han,TRUE
@@ -155,7 +155,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-09-19,85,NA,Peters Klaus,Ukendt,Flue,FALSE,NA,FALSE,Hun,FALSE
 2010-09-19,78,NA,Helge Kristensen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2010-09-19,85,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
-2010-09-19,85,NA,Sv.e.øgendahl,Ukendt,Andet,FALSE,NA,FALSE,Hun,FALSE
+2010-09-19,85,NA,Sv.e.øgendahl,Ukendt,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2010-09-18,68,NA,Jakob Skov,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2010-09-18,60,NA,Jimmie Johansen,Ukendt,Orm,FALSE,NA,FALSE,Han,FALSE
 2010-09-18,NA,NA,Kenneth E Fensen,Ukendt,Spin,FALSE,NA,FALSE,Han,FALSE
@@ -170,14 +170,14 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-09-17,113,NA,Johnny Morell,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-09-17,102,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2010-09-17,73,NA,Helge Kristensen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
-2010-09-16,68,NA,Brian Bechmann,Nedre,Andet,FALSE,NA,FALSE,Han,FALSE
+2010-09-16,68,NA,Brian Bechmann,Nedre,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2010-09-16,55,NA,Jimmy Nielsen,Omme Å,Spin,FALSE,NA,FALSE,NA,FALSE
 2010-09-16,77,NA,Jimmy Nielsen,Omme Å,Spin,FALSE,NA,FALSE,Han,FALSE
 2010-09-16,65,NA,Jimmy Nielsen,Omme Å,Spin,FALSE,NA,FALSE,Han,FALSE
 2010-09-16,90,NA,Ole H. Jørgensen,Ukendt,Flue,FALSE,NA,FALSE,Hun,FALSE
 2010-09-15,86,NA,Brian Bechmann,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-09-15,88,NA,Jakob Skov,Nedre,Flue,FALSE,NA,FALSE,Hun,TRUE
-2010-09-14,80,NA,John Balleby,Mellem,Andet,NA,NA,FALSE,NA,FALSE
+2010-09-14,80,NA,John Balleby,Mellem,Ukendt,NA,NA,FALSE,NA,FALSE
 2010-09-14,116,14,Sjønne Sørensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2010-09-14,60,2,Sjønne Sørensen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
 2010-09-14,70,NA,Thomas Torpe,Ukendt,Flue,FALSE,NA,FALSE,Han,FALSE
@@ -232,8 +232,8 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-09-11,59,NA,Brian Bechmann,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2010-09-11,74,3.7,V. Kristensen,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
 2010-09-11,72,NA,Kim Johansen,Ukendt,Flue,FALSE,NA,FALSE,Han,FALSE
-2010-09-11,92,8,F. Iversen,Mellem,Andet,FALSE,NA,FALSE,Hun,FALSE
-2010-09-11,65,NA,Klaus Øgendahl,Ukendt,Andet,FALSE,NA,FALSE,Han,FALSE
+2010-09-11,92,8,F. Iversen,Mellem,Ukendt,FALSE,NA,FALSE,Hun,FALSE
+2010-09-11,65,NA,Klaus Øgendahl,Ukendt,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2010-09-11,85,NA,Orla Bertram-Nielsen,Ukendt,Flue,FALSE,NA,FALSE,Han,FALSE
 2010-09-11,71,NA,Bo Nielsen,Nedre,Flue,FALSE,NA,FALSE,Han,TRUE
 2010-09-11,62,NA,Harry Østergaard,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
@@ -289,7 +289,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-09-09,95,NA,Frank Thygesen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-09-09,75,3.8,Carsten Pedersen,Ukendt,Spin,FALSE,NA,TRUE,Hun,FALSE
 2010-09-09,90,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
-2010-09-09,78,4.7,Sås,Ukendt,Andet,FALSE,NA,TRUE,Han,FALSE
+2010-09-09,78,4.7,Sås,Ukendt,Ukendt,FALSE,NA,TRUE,Han,FALSE
 2010-09-09,74,3.3,H. S. Nielsen,Omme Å,Spin,FALSE,NA,TRUE,Hun,FALSE
 2010-09-08,82,NA,Finn Hansen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-09-08,77,NA,Finn Hansen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
@@ -337,20 +337,20 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-09-05,55,1.5,Ole Damgaard,Ukendt,Spin,FALSE,NA,FALSE,Han,FALSE
 2010-09-05,60,NA,Thomas Torpe,Nedre,Flue,FALSE,NA,FALSE,Han,TRUE
 2010-09-05,74,3.3,Kasper Bjerre,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
-2010-09-05,75,NA,Johnny Morell,Nedre,Andet,FALSE,NA,FALSE,Hun,FALSE
+2010-09-05,75,NA,Johnny Morell,Nedre,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2010-09-05,75,4,Henrik Bojsen,Ukendt,Spin,FALSE,NA,TRUE,Hun,FALSE
 2010-09-05,64,NA,Henrik Bojsen,Ukendt,Spin,FALSE,NA,FALSE,Han,FALSE
 2010-09-05,65,NA,Ole W. Knudsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2010-09-04,60,NA,Jakob Skov,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2010-09-04,NA,NA,Preben Jensen,Ukendt,Spin,FALSE,NA,FALSE,Hun,FALSE
-2010-09-04,63,2,Niels Wang,Ukendt,Andet,FALSE,NA,TRUE,Han,FALSE
+2010-09-04,63,2,Niels Wang,Ukendt,Ukendt,FALSE,NA,TRUE,Han,FALSE
 2010-09-04,74,3.2,Karsten Meiland,Omme Å,Spin,FALSE,NA,TRUE,Hun,FALSE
 2010-09-04,60,1.8,Carsten Barrett,Nedre,Spin,FALSE,NA,TRUE,NA,FALSE
 2010-09-04,74,4.2,Morten B. Mikkelsen,Nedre,Spin,FALSE,NA,TRUE,Han,TRUE
 2010-09-04,57,NA,Bjarne Korshøj Mathiasen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-09-04,55,NA,Bjarne Korshøj Mathiasen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-09-04,80,NA,Morten Petersen,Ukendt,Flue,FALSE,NA,FALSE,Han,TRUE
-2010-09-04,80,NA,Lars Holmgaard,Nedre,Andet,FALSE,NA,FALSE,NA,FALSE
+2010-09-04,80,NA,Lars Holmgaard,Nedre,Ukendt,FALSE,NA,FALSE,NA,FALSE
 2010-09-04,62,2,Mogens Larsen,Vorgod Å,Orm,FALSE,NA,TRUE,Han,FALSE
 2010-09-04,62,NA,Michael Gehrt,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2010-09-04,75,NA,Jan Pilgaard,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
@@ -367,8 +367,8 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-09-03,82,NA,Søren Fredslund Andersen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-09-03,62,NA,Søren Fredslund Andersen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-09-03,57,NA,Søren Fredslund Andersen,Omme Å,Spin,FALSE,NA,FALSE,Han,FALSE
-2010-09-03,90,NA,Johnny Morell,Nedre,Andet,FALSE,NA,FALSE,Hun,FALSE
-2010-09-03,94,NA,Torry Nielsen,Mellem,Andet,FALSE,NA,FALSE,Hun,FALSE
+2010-09-03,90,NA,Johnny Morell,Nedre,Ukendt,FALSE,NA,FALSE,Hun,FALSE
+2010-09-03,94,NA,Torry Nielsen,Mellem,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2010-09-03,72,3.8,Poul Erik Kristiansen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
 2010-09-03,74,3.8,Per Søby Jensen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
 2010-09-03,83,NA,John Poulsen,Nedre,Flue,FALSE,NA,FALSE,Hun,TRUE
@@ -512,7 +512,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-08-27,88,NA,Svend Laursen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2010-08-27,86,NA,Svend Laursen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2010-08-27,80,5,Michael Rousau Kristensen,Mellem,Flue,FALSE,NA,FALSE,Han,TRUE
-2010-08-27,70,3,F. Iversen,Mellem,Andet,FALSE,NA,FALSE,Han,FALSE
+2010-08-27,70,3,F. Iversen,Mellem,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2010-08-27,67,NA,Anders Jespersen,Nedre,Flue,FALSE,NA,FALSE,Hun,TRUE
 2010-08-26,90,6.5,Søren Jansen,Ukendt,Orm,FALSE,NA,FALSE,Hun,TRUE
 2010-08-26,75,4,Frode Krogh,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
@@ -543,7 +543,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-08-25,75,4.3,Leo Andersen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2010-08-25,63,NA,Bjarne Nielsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2010-08-25,72,3.1,P.h Poulsen,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
-2010-08-25,91,7.8,F. Iversen,Mellem,Andet,FALSE,NA,FALSE,Hun,FALSE
+2010-08-25,91,7.8,F. Iversen,Mellem,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2010-08-25,80,4.5,F. Iversen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-08-25,70,3,F. Iversen,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
 2010-08-25,74,4.1,John Kaastrup,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
@@ -978,7 +978,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-04-17,85,6.3,Niels Peder Larsen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2010-04-16,90,8.5,Frank Schvarz,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2010-04-16,100,9.6,Flemming Max Jensen,Ukendt,Spin,FALSE,NA,TRUE,Hun,FALSE
-2010-04-15,92,NA,J Holm,Nedre,Andet,FALSE,NA,FALSE,NA,FALSE
+2010-04-15,92,NA,J Holm,Nedre,Ukendt,FALSE,NA,FALSE,NA,FALSE
 2010-04-15,95,9,Steen Weber,Ukendt,Flue,FALSE,NA,TRUE,Hun,TRUE
 2010-04-15,92,7.1,Vagn Larsen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2010-04-15,78,NA,Sven Damgaard,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
@@ -994,7 +994,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-04-14,93,8.2,Michael Standor,Ukendt,Flue,FALSE,NA,TRUE,Hun,FALSE
 2010-04-13,90,NA,Kjeld R. Nielsen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-04-13,68,2.6,Bruno Karlsen,Ukendt,Spin,FALSE,NA,TRUE,Han,TRUE
-2010-04-13,89,9.5,Bjarne Nielsen,Nedre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2010-04-13,89,9.5,Bjarne Nielsen,Nedre,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2010-04-13,94,8.4,Lars Kjøngerskov,Ukendt,Spin,FALSE,NA,TRUE,Hun,FALSE
 2010-04-13,90,NA,Willy Pedersen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-04-12,75,NA,Jens Meldgård,Ukendt,Spin,FALSE,NA,FALSE,Hun,FALSE
@@ -1040,7 +1040,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-04-08,80,NA,Mustafa Tesnjak,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
 2010-04-08,85,NA,Chr. Bornhøft,Ukendt,Flue,FALSE,NA,FALSE,Hun,FALSE
 2010-04-08,69,1.8,Rene Twepenninckx,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
-2010-04-07,99,10.1,Børge Nielsen,Omme Å,Andet,FALSE,NA,TRUE,Hun,FALSE
+2010-04-07,99,10.1,Børge Nielsen,Omme Å,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2010-04-07,78,NA,Lone Stæhr,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2010-04-07,82,NA,Jacobs Alfred,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2010-04-07,81,NA,Jacobs Alfred,Nedre,Flue,FALSE,NA,FALSE,Han,TRUE
@@ -1094,7 +1094,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-04-02,90,NA,Chris Mikkelsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2010-04-02,85,NA,Jesper Tvilum,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2010-04-02,68,NA,Jan Houborg,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
-2010-04-01,87,NA,Ennio Caualera,Ukendt,Andet,FALSE,NA,FALSE,Hun,FALSE
+2010-04-01,87,NA,Ennio Caualera,Ukendt,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2010-04-01,65,1.9,Kurt Kristensen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
 2010-04-01,77,2.7,Ludwig Timmer,Mellem,Spin,FALSE,NA,TRUE,Hun,FALSE
 2010-04-01,65,3,Ken Østergaard,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
@@ -1108,7 +1108,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-04-01,83,NA,Allan Nielsen - Vestfyn,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2010-04-01,94,NA,Verner Mortensen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2010-04-01,80,NA,Flemming Olesen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
-2010-04-01,100,NA,Christian Vennevold,Nedre,Andet,TRUE,NA,FALSE,NA,FALSE
+2010-04-01,100,NA,Christian Vennevold,Nedre,Ukendt,TRUE,NA,FALSE,NA,FALSE
 2010-04-01,72,NA,Svend-Erik Thye,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2010-04-01,102,10.5,Jan Behrmann,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
 2010-04-01,87,7.5,Bent Jess,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
@@ -1131,7 +1131,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2010-04-01,65,NA,Peter Nissen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2010-04-01,70,3,Lars Bo Nielsen,Ukendt,Flue,FALSE,NA,FALSE,NA,FALSE
 2010-04-01,82,5.4,Erling Bøjgaard,Ukendt,Spin,FALSE,NA,TRUE,Hun,FALSE
-2010-04-01,60,NA,Jesper Christensen,Ukendt,Andet,FALSE,NA,FALSE,NA,FALSE
+2010-04-01,60,NA,Jesper Christensen,Ukendt,Ukendt,FALSE,NA,FALSE,NA,FALSE
 2010-04-01,106,NA,Bjarne Laursen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2010-04-01,92,NA,Jesper Christensen,Ukendt,Orm,FALSE,NA,FALSE,Hun,FALSE
 2010-04-01,71,NA,Jimmy Nielsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE

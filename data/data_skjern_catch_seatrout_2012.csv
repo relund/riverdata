@@ -3,9 +3,9 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-10-15,47,1,Lars,Nedre,Orm,FALSE,NA,TRUE,Hun,FALSE
 2012-10-15,45,NA,Ole Nielsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2012-10-15,48,NA,Ole Nielsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
-2012-10-15,60,2.6,Bent-Aage-Petersen,Øvre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2012-10-15,60,2.6,Bent-Aage-Petersen,Øvre,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2012-10-15,54,1.8,Ole Nielsen,Nedre,Spin,FALSE,NA,TRUE,Hun,TRUE
-2012-10-15,58,1.4,Bent-Aage-Petersen,Øvre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2012-10-15,58,1.4,Bent-Aage-Petersen,Øvre,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2012-10-15,42,NA,Jimmy Nielsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2012-10-15,45,NA,Jimmy Nielsen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2012-10-15,52,NA,Jimmy Nielsen,Omme Å,Spin,FALSE,NA,TRUE,Hun,FALSE
@@ -40,7 +40,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-10-11,51,NA,Mads Kjærgaard,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
 2012-10-11,65,2.6,Kristian Jørgensen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2012-10-11,55,NA,Poul Mortensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
-2012-10-10,50,1.5,Bent-Aage-Petersen,Øvre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2012-10-10,50,1.5,Bent-Aage-Petersen,Øvre,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2012-10-10,48,NA,Boye Pedersen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
 2012-10-10,63,2.9,Svend Thomsen,Øvre,Orm,FALSE,NA,TRUE,Hun,FALSE
 2012-10-10,41,NA,Stig Christensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
@@ -341,7 +341,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-07-15,53,NA,Bruno Stamm,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2012-07-14,54,1.8,Bruno Stamm,Øvre,Flue,FALSE,NA,TRUE,Han,FALSE
 2012-07-14,45,NA,Jørn Benborg,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
-2012-07-14,70,4,Thomas B Jensen,Ukendt,Andet,FALSE,NA,TRUE,Han,FALSE
+2012-07-14,70,4,Thomas B Jensen,Ukendt,Ukendt,FALSE,NA,TRUE,Han,FALSE
 2012-07-14,57,NA,Christian Lykke Flinker,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2012-07-14,60,NA,Marc Skovby,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2012-07-14,60,NA,Dennis Nielsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
@@ -458,7 +458,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-04-18,53,NA,Per Egholm,Nedre,Spin,TRUE,NA,TRUE,Han,FALSE
 2012-04-17,62,NA,Anders Krogager Jørgensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2012-04-17,NA,NA,Alexander Jobski,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
-2012-04-16,50,NA,Hans Knudsen,Nedre,Andet,FALSE,NA,FALSE,NA,FALSE
+2012-04-16,50,NA,Hans Knudsen,Nedre,Ukendt,FALSE,NA,FALSE,NA,FALSE
 2012-04-16,NA,NA,Gunnar Gregesen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
 2012-04-16,55,NA,Klaus Leuner,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2012-04-16,60,NA,Jacob Lyck,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE

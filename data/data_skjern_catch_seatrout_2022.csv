@@ -22,7 +22,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2022-10-09,54,NA,Kent Larsen,Nedre,Flue,NA,NA,FALSE,NA,FALSE
 2022-10-09,45,NA,Uffe Lillebæk,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2022-10-09,54,NA,Bjarke Therp,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
-2022-10-08,55,NA,Sjoerd Huisman,Øvre,Andet,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/10/zeeforel.jpg,FALSE,NA,FALSE
+2022-10-08,55,NA,Sjoerd Huisman,Øvre,Ukendt,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/10/zeeforel.jpg,FALSE,NA,FALSE
 2022-10-08,50,NA,Mikkel Ølund Rasmussen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
 2022-10-08,55,NA,Hans-Joachim Klindt,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
 2022-10-08,55,NA,Kristian Nøreng,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
@@ -104,7 +104,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2022-09-19,59,NA,Peter Kolding,Mellem,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/09/Havørred-19.09.2022-59-cm-1024x566.jpg,FALSE,Han,FALSE
 2022-09-18,60,NA,Mads Birkholt,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
 2022-09-17,45,NA,Morten Eskildsen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
-2022-09-17,55,NA,Lars Jansen,Øvre,Andet,FALSE,NA,FALSE,Hun,FALSE
+2022-09-17,55,NA,Lars Jansen,Øvre,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2022-09-17,50,NA,Christian Brandt,Øvre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/09/07D975BB-E980-497C-AC17-1AC4F0000E65-674x1024.jpeg,FALSE,Han,FALSE
 2022-09-17,55,NA,Sebastian Brammann,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
 2022-09-17,45,NA,Frank Jensen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
@@ -374,7 +374,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2022-06-16,64,NA,Jan Strandmark,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2022-06-16,55,NA,Jørgen Jepsen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2022-06-16,60,NA,Keld Dahl,Nedre,Spin,TRUE,NA,FALSE,NA,FALSE
-2022-06-16,75,6,Philip Marturin Knudsen,Nedre,Andet,FALSE,NA,FALSE,NA,FALSE
+2022-06-16,75,6,Philip Marturin Knudsen,Nedre,Ukendt,FALSE,NA,FALSE,NA,FALSE
 2022-06-15,62,NA,Von Euw Martin,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2022-06-15,60,NA,Matthias Nitsche,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2022-06-15,56,NA,Claus Skeldal,Nedre,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2022/06/Fisk-1024x576.jpg,FALSE,Hun,FALSE

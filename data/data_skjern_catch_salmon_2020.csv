@@ -5,7 +5,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-10-15,85,5,Torben Høiberg,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2020-10-15,65,NA,Einar Hem,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2020-10-15,63,NA,Rasmus Hebsgård Vemmelund,Mellem,Flue,FALSE,NA,TRUE,Han,FALSE
-2020-10-15,78,NA,Lars Jansen,Øvre,Andet,FALSE,NA,FALSE,Hun,FALSE
+2020-10-15,78,NA,Lars Jansen,Øvre,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2020-10-15,75,NA,Per Nørgaard,Øvre,Flue,NA,https://skjernaasam.dk/wp-content/uploads/2020/10/Laks-15.-oktober-2020-rotated.jpeg,FALSE,Hun,FALSE
 2020-10-15,60,NA,Michael Vind Pedersen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
 2020-10-15,70,NA,Peter Moesgaard,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
@@ -271,8 +271,8 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-09-19,70,NA,Laust Houmann,Øvre,Spin,NA,NA,FALSE,Han,FALSE
 2020-09-19,91,NA,Laust Houmann,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2020-09-19,90,NA,Morten Schiønning,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
-2020-09-19,80,NA,Niels Rohde Ottosen,Omme Å,Andet,FALSE,NA,FALSE,Hun,FALSE
-2020-09-19,95,NA,Niels Rohde Ottosen,Nedre,Andet,FALSE,NA,FALSE,Hun,FALSE
+2020-09-19,80,NA,Niels Rohde Ottosen,Omme Å,Ukendt,FALSE,NA,FALSE,Hun,FALSE
+2020-09-19,95,NA,Niels Rohde Ottosen,Nedre,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2020-09-19,60,NA,Jesper Ottosen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2020-09-19,115,NA,Niels Jacob Tobler,Mellem,Spin,TRUE,NA,FALSE,Han,FALSE
 2020-09-19,65,NA,Steen Andersen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
@@ -1106,7 +1106,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-07-04,88,NA,Klaus Lietzen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2020-07-03,92,8,Gert Engholm,Nedre,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2020/07/IMG_3830-1024x768.jpg,TRUE,Hun,FALSE
 2020-07-03,81,4.7,John Broe Rasmussen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
-2020-07-03,89,7.8,Svendåge,Mellem,Andet,FALSE,NA,TRUE,Hun,FALSE
+2020-07-03,89,7.8,Svendåge,Mellem,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2020-07-03,76,4.1,Per Andersen,Nedre,Flue,FALSE,NA,TRUE,Han,TRUE
 2020-07-03,75,NA,Jofes Muller,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
 2020-07-02,94,8.5,Lars Gudnason,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
@@ -1492,7 +1492,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-05-10,98,NA,Lars Erik Olsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2020-05-09,100,NA,Hans Jørgen Dahl Nielsen,Mellem,Spin,FALSE,NA,FALSE,Hun,TRUE
 2020-05-09,92,NA,Simon Wulff Frederiksen,Nedre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2020/05/20200509_193943-1024x576.jpg,FALSE,NA,FALSE
-2020-05-09,86,5.7,Henrik Rønn-Nielsen,Øvre,Andet,TRUE,NA,TRUE,Hun,FALSE
+2020-05-09,86,5.7,Henrik Rønn-Nielsen,Øvre,Ukendt,TRUE,NA,TRUE,Hun,FALSE
 2020-05-09,90,NA,Steen Fløe,Nedre,Flue,TRUE,https://skjernaasam.dk/wp-content/uploads/2020/05/20200509_113740-1024x768.jpg,FALSE,NA,FALSE
 2020-05-09,95,NA,Allan Nørskov Johansen,Øvre,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2020/05/VideoCapture_20200509-140433-1024x581.jpg,FALSE,Han,FALSE
 2020-05-08,92,NA,Enrico Augustinus,Mellem,Flue,TRUE,NA,FALSE,Hun,FALSE
@@ -1517,7 +1517,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2020-05-05,85,NA,Keld Bertelsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2020-05-04,95,8.4,Kennet Petersen,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2020-05-04,100,NA,Kim Christian Larsen,Øvre,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2020/05/C77FB78C-785B-41B9-81D9-98699B6C36F5-1024x768.jpeg,FALSE,Han,FALSE
-2020-05-02,90,8.6,Mogens Larsen,Øvre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2020-05-02,90,8.6,Mogens Larsen,Øvre,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2020-05-01,93,NA,Simon Torntoft,Nedre,Flue,NA,NA,FALSE,NA,FALSE
 2020-05-01,100,NA,Claus Mølhede,Mellem,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2020/05/BF390839-8E8C-4CFC-9CED-7275B08F7FC7.jpeg,FALSE,Han,FALSE
 2020-05-01,100,NA,Flemming Hansen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE

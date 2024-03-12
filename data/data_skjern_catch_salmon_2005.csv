@@ -22,14 +22,14 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2005-09-10,80,4.5,Ib Poulsen,Ukendt,Flue,TRUE,NA,TRUE,Hun,FALSE
 2005-09-10,62,NA,Thomas Tannebæk,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2005-09-09,74,NA,Åge Martinsen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
-2005-09-07,65,2.5,Steen Hedemann,Ukendt,Andet,FALSE,NA,FALSE,Han,FALSE
+2005-09-07,65,2.5,Steen Hedemann,Ukendt,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2005-09-07,73,3.3,Jens Åge Olsen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
 2005-09-07,101,10,Eskild Dam Nielsen,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
 2005-09-06,69,3,Mikael Bork,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2005-09-06,75,NA,Brian Størup,Ukendt,Flue,FALSE,NA,FALSE,Han,FALSE
 2005-09-06,66,NA,Helge Kristensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
 2005-09-05,63,NA,Niels Thomsen,Ukendt,Flue,FALSE,NA,TRUE,Han,TRUE
-2005-09-05,67,NA,Frederik Iversen,Mellem,Andet,FALSE,NA,FALSE,Han,FALSE
+2005-09-05,67,NA,Frederik Iversen,Mellem,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2005-09-04,62,1.9,Flemming Olsen,Mellem,Orm,FALSE,NA,TRUE,Han,FALSE
 2005-09-02,90,6.4,Svend Åge Pedersen,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
 2005-09-01,65,NA,Harald Frandsen,Mellem,Orm,FALSE,NA,FALSE,Han,FALSE
@@ -39,7 +39,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2005-08-31,62,NA,Kim Mikkelsen,Ukendt,Flue,FALSE,NA,FALSE,NA,TRUE
 2005-08-31,83,5,Brian Jensen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
 2005-08-31,62,1.9,Jens B Sørensen,Ukendt,Orm,FALSE,NA,TRUE,Han,FALSE
-2005-08-29,85,NA,Frederik Iversen,Mellem,Andet,FALSE,NA,FALSE,Hun,TRUE
+2005-08-29,85,NA,Frederik Iversen,Mellem,Ukendt,FALSE,NA,FALSE,Hun,TRUE
 2005-08-28,69,2.7,Mogens Thomassen,Øvre,Flue,FALSE,NA,TRUE,Han,FALSE
 2005-08-28,70,3,Henrik Pedersen,Ukendt,Orm,FALSE,NA,FALSE,NA,FALSE
 2005-08-28,65,3,Tom Nielsen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
@@ -99,7 +99,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2005-08-14,69,2.8,Henning Karlsen,Ukendt,Flue,FALSE,NA,FALSE,Hun,FALSE
 2005-08-14,68,NA,Erik Just Pedersen,Ukendt,Flue,NA,NA,FALSE,Han,FALSE
 2005-08-14,107,11,Åge Martinsen,Nedre,Spin,FALSE,NA,TRUE,Han,TRUE
-2005-08-13,87,5.8,Charley Kristensen,Nedre,Andet,NA,NA,TRUE,Han,FALSE
+2005-08-13,87,5.8,Charley Kristensen,Nedre,Ukendt,NA,NA,TRUE,Han,FALSE
 2005-08-13,85,5,Teddy Øhlenschlæger,Ukendt,Orm,FALSE,NA,TRUE,Hun,TRUE
 2005-08-13,NA,0.7,Anders S F Jensen,Nedre,Orm,FALSE,NA,FALSE,Hun,FALSE
 2005-08-13,64,2.1,Anders S F Jensen,Nedre,Orm,FALSE,NA,FALSE,Hun,FALSE
@@ -111,11 +111,11 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2005-08-13,95,NA,Frederik Iversen,Mellem,Orm,FALSE,NA,FALSE,Hun,FALSE
 2005-08-13,65,2.5,Ib Poulsen,Ukendt,Flue,FALSE,NA,FALSE,Han,FALSE
 2005-08-12,65,2.5,Jan Holm,Ukendt,Spin,FALSE,NA,FALSE,Han,FALSE
-2005-08-12,82,5.8,Michael Johnsen,Ukendt,Andet,FALSE,NA,TRUE,Hun,FALSE
+2005-08-12,82,5.8,Michael Johnsen,Ukendt,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2005-08-12,59,NA,Rene Hermansen,Ukendt,Spin,FALSE,NA,FALSE,Hun,FALSE
 2005-08-12,72,NA,Helge Kristensen,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
 2005-08-12,71,3.2,Lars Vedsø,Mellem,Spin,NA,NA,TRUE,Han,FALSE
-2005-08-11,67,2.2,Carsten Lund Jensen,Nedre,Andet,FALSE,NA,TRUE,NA,FALSE
+2005-08-11,67,2.2,Carsten Lund Jensen,Nedre,Ukendt,FALSE,NA,TRUE,NA,FALSE
 2005-08-11,69,3.4,Roni Hermansen,Ukendt,Spin,FALSE,NA,TRUE,Hun,FALSE
 2005-08-11,78,4.5,Poul Lauridsen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2005-08-10,60,NA,Herluf Sørensen,Ukendt,Spin,FALSE,NA,FALSE,Han,FALSE

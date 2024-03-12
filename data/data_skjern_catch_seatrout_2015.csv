@@ -62,7 +62,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2015-10-12,40,NA,Carsten Aasted Gad,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
 2015-10-12,50,NA,Ole Eriksen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2015-10-12,60,2.4,Harry Østergaard,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
-2015-10-12,67,NA,Hans J Damgaard,Nedre,Andet,FALSE,NA,FALSE,Han,FALSE
+2015-10-12,67,NA,Hans J Damgaard,Nedre,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2015-10-12,47,1.1,Norman Grams,Vorgod Å,Flue,FALSE,NA,TRUE,Hun,FALSE
 2015-10-12,52,NA,Norman Grams,Vorgod Å,Flue,FALSE,NA,FALSE,Han,FALSE
 2015-10-11,NA,NA,Michael Gramkow,Ukendt,Spin,FALSE,NA,FALSE,NA,FALSE
@@ -122,7 +122,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2015-10-09,53,1.7,Jens Løntoft,Øvre,Flue,FALSE,NA,TRUE,Han,FALSE
 2015-10-09,53,NA,Finn Meldgård,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
 2015-10-08,65,NA,Jarek Many,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
-2015-10-08,45,1,Neus Yvan,Mellem,Andet,FALSE,NA,FALSE,Hun,FALSE
+2015-10-08,45,1,Neus Yvan,Mellem,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2015-10-08,55,NA,Ukendt,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
 2015-10-08,52,1.8,Jannik Stachnau,Nedre,Flue,FALSE,NA,TRUE,NA,FALSE
 2015-10-08,57,2.1,Jannik Stachnau,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
@@ -292,7 +292,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2015-09-20,NA,NA,Brian Vemmelund,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
 2015-09-20,41,NA,Brian Vemmelund,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2015-09-20,53,1.6,Berthel Jensen,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
-2015-09-20,49,NA,Verner Odderskjær Jensen,Mellem,Andet,FALSE,NA,FALSE,Hun,FALSE
+2015-09-20,49,NA,Verner Odderskjær Jensen,Mellem,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2015-09-20,47,NA,Morten Poulsen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2015-09-20,49,1.2,Morten Poulsen,Øvre,Orm,FALSE,NA,TRUE,Hun,FALSE
 2015-09-20,66,3.5,Torben Albertsen,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
@@ -334,7 +334,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2015-09-15,45,NA,Torben Smedegaard,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
 2015-09-15,55,NA,Christer Jensen,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
 2015-09-15,65,NA,Lars Thygesen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
-2015-09-15,73,4.9,Svend Overby,Øvre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2015-09-15,73,4.9,Svend Overby,Øvre,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2015-09-15,48,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
 2015-09-15,43,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
 2015-09-15,50,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE

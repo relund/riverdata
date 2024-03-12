@@ -208,13 +208,13 @@ yearlyStat <- function(datCatch) {
                              round(100*`TotalP_Øvre`/Total, digits = 0), "/", 
                              round(100*`TotalP_Vorgod Å`/Total, digits = 0), "/",
                              round(100*`TotalP_Omme Å`/Total, digits = 0), "/",
-                             round(100*`TotalP_Andet`/Total, digits = 0)),
+                             round(100*`TotalP_Ukendt`/Total, digits = 0)),
               PlaceK = paste0(round(100*KilledP_Nedre/Killed, digits = 0), "/", 
                               round(100*KilledP_Mellem/Killed, digits = 0), "/", 
                               round(100*`KilledP_Øvre`/Killed, digits = 0), "/", 
                               round(100*`KilledP_Vorgod Å`/Killed, digits = 0), "/",
                               round(100*`KilledP_Omme Å`/Killed, digits = 0), "/",
-                              round(100*`KilledP_Andet`/Killed, digits = 0)),
+                              round(100*`KilledP_Ukendt`/Killed, digits = 0)),
               Method = paste0(round(100*Flue/Total, digits = 0), "/", 
                               round(100*Spin/Total, digits = 0), "/", 
                               round(100*Orm/Total, digits = 0), "/", 
@@ -303,9 +303,9 @@ monthlyStat <- function(datCatch, year) {
   } else {
     # add missing cols
     cNames <- c("Month", "Total", "Male", "Female", "SexUnknown", "TotalP_Nedre", "TotalP_Mellem", 
-                "TotalP_Øvre", "TotalP_Vorgod Å", "TotalP_Omme Å", "TotalP_Andet", 
+                "TotalP_Øvre", "TotalP_Vorgod Å", "TotalP_Omme Å", "TotalP_Ukendt", 
                 "KilledP_Nedre", "KilledP_Mellem", "KilledP_Øvre", "KilledP_Vorgod Å", 
-                "KilledP_Omme Å", "KilledP_Andet", "Flue", "Spin", "Orm", "Andet", "Released", 
+                "KilledP_Omme Å", "KilledP_Ukendt", "Flue", "Spin", "Orm", "Andet", "Released", 
                 "Killed", "LengthAvg", "LengthMax", "WeightAvg", "WeightMax", "FultonAvg", "FultonMax")
     cNames <- cNames[!(cNames %in% names(dat))]
     cols <- rep(0, length(cNames))
@@ -323,13 +323,13 @@ monthlyStat <- function(datCatch, year) {
                                round(100*`TotalP_Øvre`/Total, digits = 0), "/", 
                                round(100*`TotalP_Vorgod Å`/Total, digits = 0), "/",
                                round(100*`TotalP_Omme Å`/Total, digits = 0), "/",
-                               round(100*`TotalP_Andet`/Total, digits = 0)),
+                               round(100*`TotalP_Ukendt`/Total, digits = 0)),
                 PlaceK = paste0(round(100*KilledP_Nedre/Killed, digits = 0), "/", 
                                 round(100*KilledP_Mellem/Killed, digits = 0), "/", 
                                 round(100*`KilledP_Øvre`/Killed, digits = 0), "/", 
                                 round(100*`KilledP_Vorgod Å`/Killed, digits = 0), "/",
                                 round(100*`KilledP_Omme Å`/Killed, digits = 0), "/",
-                                round(100*`KilledP_Andet`/Killed, digits = 0)),
+                                round(100*`KilledP_Ukendt`/Killed, digits = 0)),
                 Method = paste0(round(100*Flue/Total, digits = 0), "/", 
                                 round(100*Spin/Total, digits = 0), "/", 
                                 round(100*Orm/Total, digits = 0), "/", 
@@ -397,7 +397,7 @@ yearlyStatKarup <- function(datCatch) {
   
   dat <- 
     # check for missing columns
-    if (!("TotalP_Andet" %in% names(dat))) dat <- dat %>% mutate(TotalP_Andet = 0, KilledP_Andet = 0)
+    if (!("TotalP_Ukendt" %in% names(dat))) dat <- dat %>% mutate(TotalP_Ukendt = 0, KilledP_Ukendt = 0)
   dat <- 
     dat  %>% 
     ungroup() %>% 

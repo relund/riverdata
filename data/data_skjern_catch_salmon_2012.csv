@@ -105,7 +105,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-10-06,60,NA,Henning Dam,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
 2012-10-06,70,NA,Heine Fausing,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2012-10-06,60,2,Niels Østerby Olesen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
-2012-10-06,75,NA,Kasper Emil Nielsen,Øvre,Andet,FALSE,NA,FALSE,Han,FALSE
+2012-10-06,75,NA,Kasper Emil Nielsen,Øvre,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2012-10-06,77,NA,Sylwester Brzękowski,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
 2012-10-06,108,NA,Bo Bisgaard,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2012-10-06,91,NA,Bent Smedegaard,Øvre,Spin,FALSE,NA,FALSE,Han,FALSE
@@ -303,14 +303,14 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-09-09,61,NA,Karl Pedersen,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
 2012-09-09,70,NA,Hans Jørgen Husted,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2012-09-09,81,NA,Morten Garly Andersen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
-2012-09-09,77,NA,Mikkel Johannesen,Mellem,Andet,FALSE,NA,FALSE,Han,FALSE
+2012-09-09,77,NA,Mikkel Johannesen,Mellem,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2012-09-09,105,NA,Thomas Torpe,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2012-09-09,90,NA,Bjarne Nicolaisen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2012-09-09,85,NA,Rene' Lumby,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
-2012-09-09,85,NA,Frederik Iversen,Mellem,Andet,FALSE,NA,FALSE,Han,FALSE
+2012-09-09,85,NA,Frederik Iversen,Mellem,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2012-09-09,91,NA,Mogens Skoven Nielsen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2012-09-08,104,NA,Jens Meldgård,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
-2012-09-08,67,NA,Mikkel Johannesen,Omme Å,Andet,TRUE,NA,FALSE,Han,FALSE
+2012-09-08,67,NA,Mikkel Johannesen,Omme Å,Ukendt,TRUE,NA,FALSE,Han,FALSE
 2012-09-08,67,2.9,Lars Reffstrup,Mellem,Spin,FALSE,NA,TRUE,Han,TRUE
 2012-09-08,65,NA,Arly Kristiansen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2012-09-08,65,NA,Per Gylling Hansen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
@@ -379,7 +379,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-09-01,55,NA,Lars Nielsen,Nedre,Flue,FALSE,NA,FALSE,Han,TRUE
 2012-09-01,90,NA,Christian Tamcke,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2012-09-01,95,NA,Kurt Jensen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
-2012-08-31,102,NA,Jens Meldgård,Nedre,Andet,FALSE,NA,FALSE,Han,FALSE
+2012-08-31,102,NA,Jens Meldgård,Nedre,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2012-08-31,49,NA,Torben Skødeberg Pedersen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2012-08-31,100,NA,Boye Pedersen,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
 2012-08-31,75,4,Erik Hummelmose,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
@@ -890,7 +890,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-05-17,106,NA,Børge Jensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2012-05-17,95,NA,Kenny Frost,Mellem,Flue,FALSE,NA,FALSE,Han,TRUE
 2012-05-16,87,NA,Dennis Nielsen,Nedre,Spin,FALSE,NA,FALSE,Hun,TRUE
-2012-05-15,93,6.5,Mogens Hansen,Mellem,Andet,FALSE,NA,FALSE,Hun,TRUE
+2012-05-15,93,6.5,Mogens Hansen,Mellem,Ukendt,FALSE,NA,FALSE,Hun,TRUE
 2012-05-15,86,NA,Morten Vestergaard,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2012-05-15,86,NA,Tim Byfoged Larsen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
 2012-05-15,92,NA,Ole Søndergård Pedersen,Nedre,Spin,FALSE,NA,FALSE,Han,TRUE
@@ -1017,19 +1017,19 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-04-22,100,NA,Erik Asmussen,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
 2012-04-22,96,8.6,Erik Asmussen,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
 2012-04-22,88,6.6,Torben Skødeberg Pedersen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
-2012-04-22,97,NA,Kasper Emil Nielsen,Øvre,Andet,FALSE,NA,FALSE,Han,FALSE
+2012-04-22,97,NA,Kasper Emil Nielsen,Øvre,Ukendt,FALSE,NA,FALSE,Han,FALSE
 2012-04-22,94,7.5,Brian Antonsen,Mellem,Flue,FALSE,NA,TRUE,Hun,TRUE
 2012-04-22,98,9.3,Asbjørn Schlosser,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
 2012-04-22,90,8.1,Jesper Rasmussen,Mellem,Flue,FALSE,NA,TRUE,Han,TRUE
 2012-04-22,86,6.1,Torben Skødeberg Pedersen,Nedre,Spin,FALSE,NA,TRUE,Hun,TRUE
-2012-04-22,95,8.6,Lars Isaksen,Nedre,Andet,FALSE,NA,TRUE,Han,FALSE
+2012-04-22,95,8.6,Lars Isaksen,Nedre,Ukendt,FALSE,NA,TRUE,Han,FALSE
 2012-04-22,97,9.7,Leif Bjerg Petersen,Øvre,Spin,FALSE,NA,TRUE,Han,FALSE
 2012-04-22,NA,NA,Einer Olesen,Nedre,Orm,FALSE,NA,FALSE,Han,FALSE
 2012-04-22,90,7,Verner Mortensen,Omme Å,Flue,FALSE,NA,TRUE,Hun,FALSE
 2012-04-22,103,10,Morten Sørensen,Øvre,Spin,FALSE,NA,TRUE,Han,TRUE
 2012-04-22,98,NA,Jakob Skov,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2012-04-21,93,NA,Tomas Salwin,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
-2012-04-21,111,12.5,Jakob Kristensen,Nedre,Andet,FALSE,NA,TRUE,Han,FALSE
+2012-04-21,111,12.5,Jakob Kristensen,Nedre,Ukendt,FALSE,NA,TRUE,Han,FALSE
 2012-04-21,92,6.7,John Madsen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
 2012-04-21,87,6.5,Kai Jørgensen,Øvre,Spin,FALSE,NA,TRUE,Hun,TRUE
 2012-04-21,93,7.6,Kai Beltoft,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
@@ -1101,8 +1101,8 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-04-17,88,6.5,Mikkel Johannesen,Øvre,Flue,FALSE,NA,TRUE,Hun,TRUE
 2012-04-17,89,7.8,Torben Høiberg,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
 2012-04-17,91,8.2,Karsten Munch Andersen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
-2012-04-17,97,8.6,Verner Jensen,Omme Å,Andet,FALSE,NA,TRUE,Hun,FALSE
-2012-04-17,NA,NA,Verner Jensen,Omme Å,Andet,FALSE,NA,FALSE,NA,FALSE
+2012-04-17,97,8.6,Verner Jensen,Omme Å,Ukendt,FALSE,NA,TRUE,Hun,FALSE
+2012-04-17,NA,NA,Verner Jensen,Omme Å,Ukendt,FALSE,NA,FALSE,NA,FALSE
 2012-04-17,90,6.5,Frank Jensen,Nedre,Flue,FALSE,NA,TRUE,Han,TRUE
 2012-04-17,115,16,Matt Peschcke-Køedt,Mellem,Spin,FALSE,NA,TRUE,Han,FALSE
 2012-04-17,115,14.9,Bo Bisgaard,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
@@ -1136,7 +1136,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2012-04-16,88,6.8,Jeppe Jørgensen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2012-04-16,85,6.2,Henrik Venø,Mellem,Flue,FALSE,NA,TRUE,NA,FALSE
 2012-04-16,94,7.2,David Christensen,Nedre,Spin,FALSE,NA,TRUE,Han,FALSE
-2012-04-16,92,7.6,Kasper Emil Nielsen,Øvre,Andet,FALSE,NA,TRUE,Han,FALSE
+2012-04-16,92,7.6,Kasper Emil Nielsen,Øvre,Ukendt,FALSE,NA,TRUE,Han,FALSE
 2012-04-16,92,NA,Helge Kristensen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
 2012-04-16,100,10,Karsten Kjeldsen,Mellem,Flue,FALSE,NA,TRUE,Han,FALSE
 2012-04-16,89,8,Ejner Kaa,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE

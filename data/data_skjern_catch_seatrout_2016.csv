@@ -23,8 +23,8 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2016-10-13,60,NA,Peter Moesgaard,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
 2016-10-13,56,1.8,Gert Eriksen,Nedre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2016-10-13,70,3.8,Torben Jensen,Nedre,Flue,FALSE,NA,TRUE,Han,FALSE
-2016-10-13,52,NA,Bjarne Kjær,Øvre,Andet,FALSE,NA,FALSE,Han,FALSE
-2016-10-13,48,NA,Bjarne Kjær,Øvre,Andet,FALSE,NA,FALSE,Hun,FALSE
+2016-10-13,52,NA,Bjarne Kjær,Øvre,Ukendt,FALSE,NA,FALSE,Han,FALSE
+2016-10-13,48,NA,Bjarne Kjær,Øvre,Ukendt,FALSE,NA,FALSE,Hun,FALSE
 2016-10-13,43,NA,Bjarne Kjær,Øvre,Spin,TRUE,NA,FALSE,Hun,FALSE
 2016-10-13,42,NA,Bjarne Kjær,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2016-10-13,67,3.5,Karl Nielsen,Mellem,Spin,FALSE,NA,TRUE,Hun,TRUE
@@ -106,7 +106,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2016-09-30,52,NA,Rasmus Vemmelund,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
 2016-09-30,54,NA,Keld Eriksen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2016-09-30,54,NA,Ronald Patzer,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
-2016-09-28,63,2.6,Verner O. Jensen,Mellem,Andet,FALSE,NA,TRUE,Hun,FALSE
+2016-09-28,63,2.6,Verner O. Jensen,Mellem,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2016-09-28,NA,NA,Uwe Hüls,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2016-09-28,65,NA,Anders Kronborg Jensen,Nedre,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2016/03/image-83-1024x768.jpeg,FALSE,Han,FALSE
 2016-09-28,67,NA,Koehler,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
@@ -130,10 +130,10 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2016-09-20,53,1.6,Jens Løntoft,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
 2016-09-20,44,NA,Keld Lyager,Nedre,Flue,FALSE,NA,FALSE,NA,FALSE
 2016-09-19,52,NA,Kim Matthiesen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
-2016-09-18,58,2.5,Heinz Stoyke,Øvre,Andet,FALSE,NA,TRUE,Hun,FALSE
+2016-09-18,58,2.5,Heinz Stoyke,Øvre,Ukendt,FALSE,NA,TRUE,Hun,FALSE
 2016-09-18,50,NA,Peter Malmbak Kjeldsen,Øvre,Spin,FALSE,NA,TRUE,Hun,FALSE
-2016-09-17,50,NA,Ryan Lund,Mellem,Andet,FALSE,NA,TRUE,Hun,FALSE
-2016-09-17,48,1.2,Kjeld Nielsen,Øvre,Andet,FALSE,NA,TRUE,Han,FALSE
+2016-09-17,50,NA,Ryan Lund,Mellem,Ukendt,FALSE,NA,TRUE,Hun,FALSE
+2016-09-17,48,1.2,Kjeld Nielsen,Øvre,Ukendt,FALSE,NA,TRUE,Han,FALSE
 2016-09-17,56,2.1,Søren Larsen,Øvre,Spin,FALSE,https://skjernaasam.dk/wp-content/uploads/2016/03/17092016_SkjernÅ-1-1024x576.jpg,TRUE,Hun,FALSE
 2016-09-17,47,NA,Jan Houborg,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2016-09-16,62,3,Stefan Mahlau,Øvre,Flue,FALSE,NA,TRUE,Hun,FALSE
@@ -172,7 +172,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2016-09-07,48,NA,Jørn Kjær Iversen,Mellem,Flue,FALSE,NA,TRUE,Hun,FALSE
 2016-09-07,57,NA,Uffe Hansen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2016-09-06,46,NA,Brian Vemmelund,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
-2016-09-06,54,NA,Svend Thomsen,Vorgod Å,Andet,FALSE,NA,FALSE,NA,FALSE
+2016-09-06,54,NA,Svend Thomsen,Vorgod Å,Ukendt,FALSE,NA,FALSE,NA,FALSE
 2016-09-06,48,NA,Brian Petrowski,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2016-09-06,51,NA,Ryan Van Der Eijk,Nedre,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2016/03/20160906_073615-1024x576.jpg,FALSE,NA,FALSE
 2016-09-06,50,2.1,Frank Thygesen,Nedre,Spin,FALSE,NA,TRUE,Hun,FALSE
@@ -191,8 +191,8 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2016-09-03,55,NA,Niels Rohde Ottosen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2016-09-03,52,NA,Boye Pedersen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2016-09-03,60,NA,Ole Damgaard,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
-2016-09-03,60,NA,Jens Lygum,Nedre,Andet,NA,NA,FALSE,Han,FALSE
-2016-09-03,NA,NA,Torben Krath,Øvre,Andet,FALSE,NA,FALSE,NA,FALSE
+2016-09-03,60,NA,Jens Lygum,Nedre,Ukendt,NA,NA,FALSE,Han,FALSE
+2016-09-03,NA,NA,Torben Krath,Øvre,Ukendt,FALSE,NA,FALSE,NA,FALSE
 2016-09-03,50,NA,Svend Thomsen,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
 2016-09-03,62,NA,Kim Stampe,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
 2016-09-03,70,3.6,Anders Stuke,Ukendt,Spin,FALSE,NA,TRUE,Hun,FALSE
@@ -215,7 +215,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2016-08-23,50,NA,Anders Kronborg Jensen,Øvre,Flue,FALSE,NA,FALSE,NA,FALSE
 2016-08-23,60,2.1,Ole Bak,Øvre,Orm,FALSE,NA,TRUE,Hun,FALSE
 2016-08-23,70,3.7,Henrik Nielsen-Refs,Mellem,Flue,FALSE,https://skjernaasam.dk/wp-content/uploads/2016/03/14114464_10210658406515719_1891062063_o.jpg,TRUE,Han,FALSE
-2016-08-23,57,1.7,Rune Eriksen,Mellem,Andet,FALSE,https://skjernaasam.dk/wp-content/uploads/2016/03/image-71-1024x768.jpeg,TRUE,Hun,FALSE
+2016-08-23,57,1.7,Rune Eriksen,Mellem,Ukendt,FALSE,https://skjernaasam.dk/wp-content/uploads/2016/03/image-71-1024x768.jpeg,TRUE,Hun,FALSE
 2016-08-23,48,NA,Anders Kristensen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
 2016-08-23,50,NA,Anders Kristensen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2016-08-22,50,NA,Henning Povlsen,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
