@@ -860,7 +860,8 @@ writeCatch <- function(url, prefix, yr, species = "Havørred", club = FALSE) {
     mutate(Method = str_replace_all(Method, 
                              c("Wobler" = "Spin", "Blink" = "Spin", "Spinner" = "Spin", "Jig" = "Spin", 
                                "Bombarda med flue" = "Spin", "Tørflue" = "Flue", "Pirk/Pilk" = "Spin", 
-                               "Mede" = "Orm", "Spinflue" = "Spin", "Spin-flue" = "Spin", "Maddike" = "Orm", 
+                               "Mede" = "Orm", "Spinflue" = "Spin", "Spin-flue" = "Spin", 
+                               "Maddike" = "Orm", "Spin-flue" = "Spin", "Majs" = "Orm",
                                "Orm, spinner" = "Orm", "Orm,spin" = "Orm"))
            )
  if (!club) dat3 <-dat3 %>% 
@@ -1127,7 +1128,8 @@ fixOldDataFileByYearKarup <- function() {
       mutate(Method = case_when(
         str_detect(Method, "(Flue.*)|(Fue)") ~ "Flue",
         str_detect(Method, "(Orm.*)|(Majs)|(Flåd)|(Mede)") ~ "Orm",
-        str_detect(Method, "(Nedre.*)|(Skjern.*Borris.*Fjord)") ~ "Spin",
+        str_detect(Method, "(Spin.*)") ~ "Spin",
+        is.na(Method) ~ "Flue",
         TRUE ~ Method)) 
     dat <- dat %>% transmute(Date, Length, Weight, Name, Place, Method, Cut, Foto, Killed, Sex, Net)
     message("  Write data to ", fn)
