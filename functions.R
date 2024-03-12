@@ -320,6 +320,7 @@ readWTemp <- function(prefix, years) {
 
 # mov avg function
 movAvg <- function(x, days = 90){ 
+  if (length(x) < 90) return(x)
   n <- days
   stats::filter(x, rep(1 / n, n), sides = 2, circular = T)
 }
@@ -334,8 +335,7 @@ movAvg <- function(x, days = 90){
 writeWaterMovAvg <- function(dat, prefix) {
   message("Waterlevel: Update moving averages.")
   fn <- paste0(prefix, "_waterlevel_avg90.csv")
-
-    tmp <- dat %>% 
+  tmp <- dat %>% 
     select(Date, Place, Value) %>% 
     mutate(Day = yday(Date)) %>% 
     group_by(Day, Place) %>% 
@@ -1039,12 +1039,15 @@ writeTimeSeriesData <- function(stations, prefix, prefix1, days) {
   #   geom_line(aes(x = Date, y = Value3)) +
   #   facet_wrap(vars(Place), scales = "free", nrow = 3)  
   ## Add Hobo data
-  hobo <- read_csv(paste0(prefix, "_", prefix1, "_hobo.csv") )
-  dat2 <- bind_rows(dat2, hobo) %>% 
-    arrange(Place, desc(Date)) %>% 
-    distinct()
-  hobo <- hobo %>% slice_head(n = 0)
-  write_csv(hobo, paste0(prefix, "_", prefix1, "_hobo.csv") )
+  fn <- paste0(prefix, "_", prefix1, "_hobo.csv") 
+  if (fs::file_exists(fn)) {
+    hobo <- read_csv(fn)
+    dat2 <- bind_rows(dat2, hobo) %>% 
+      arrange(Place, desc(Date)) %>% 
+      distinct()
+    hobo <- hobo %>% slice_head(n = 0)
+    write_csv(hobo, paste0(prefix, "_", prefix1, "_hobo.csv") )
+  }
   ## merge and save
   for (y in distinct(dat2, year(Date)) %>% pull()) {
     dat3 <- dat2 %>% filter(year(Date) == y) 
