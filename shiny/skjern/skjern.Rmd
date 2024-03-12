@@ -500,9 +500,9 @@ cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")),
    paste0(faIcon("mars", title = "Han"),"/",
           faIcon("venus", title = "Hun"), "/",
           faIcon("question", title = "Ukendt"), " (%)"),
-   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Andet'>A</span> (%)",
-   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Andet'>A</span> (%)",
-   "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Andet'>A</span> (%)",
+   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Ukendt'>U</span> (%)",
+   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Ukendt'>U</span> (%)",
+   "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Ukendt'>U</span> (%)",
    paste0(faIcon("sync", title = "C&R"),"/",
           faIcon("times", title = "Hjemtaget"), " (%)"),
    paste0(faIcon("ruler-horizontal", title="Gens længde"), "/",
@@ -755,9 +755,9 @@ cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")),
    paste0(faIcon("mars", title = "Han"),"/",
           faIcon("venus", title = "Hun"), "/",
           faIcon("question", title = "Ukendt"), " (%)"),
-   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Andet'>A</span> (%)",
-   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Andet'>A</span> (%)",
-   "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Andet'>A</span> (%)",
+   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Ukendt'>U</span> (%)",
+   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Ukendt'>U</span> (%)",
+   "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Ukendt'>U</span> (%)",
    paste0(faIcon("sync", title = "C&R"),"/",
           faIcon("times", title = "Hjemtaget"), " (%)"),
    paste0(faIcon("ruler-horizontal", title="Gens længde"), "/",
@@ -927,9 +927,9 @@ cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")),
    paste0(faIcon("mars", title = "Han"),"/",
           faIcon("venus", title = "Hun"), "/",
           faIcon("question", title = "Ukendt"), " (%)"),
-   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Andet'>A</span> (%)",
-   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Andet'>A</span> (%)",
-   "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Andet'>A</span> (%)",
+   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Ukendt'>U</span> (%)",
+   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Ukendt'>U</span> (%)",
+   "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Ukendt'>U</span> (%)",
    paste0(faIcon("sync", title = "C&R"),"/",
           faIcon("times", title = "Hjemtaget"), " (%)"),
    paste0(faIcon("ruler-horizontal", title="Gens længde"), "/",
@@ -1087,9 +1087,9 @@ cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")),
    paste0(faIcon("mars", title = "Han"),"/",
           faIcon("venus", title = "Hun"), "/",
           faIcon("question", title = "Ukendt"), " (%)"),
-   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Andet'>A</span> (%)",
-   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Andet'>A</span> (%)",
-   "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Andet'>A</span> (%)",
+   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Ukendt'>U</span> (%)",
+   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Ukendt'>U</span> (%)",
+   "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Ukendt'>U</span> (%)",
    paste0(faIcon("sync", title = "C&R"),"/",
           faIcon("times", title = "Hjemtaget"), " (%)"),
    paste0(faIcon("ruler-horizontal", title="Gens længde"), "/",
@@ -1102,7 +1102,7 @@ cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")),
    ) 
 
 datStatYearSea %>% 
-  kable(col.names = cNames, escape = F, align = "c") %>% 
+  kable(col.names = cNames, escape = F, align = "c", format = "html") %>% 
   kable_styling(fixed_thead = T, font_size = 10,
                 bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
   add_header_above(c(" " = 2, "Køn", "Område (alle fangster/hjemtaget)" = 2, "Metode", "Genudsat", "Længde", "Vægt", "Kondition"))
@@ -1688,7 +1688,7 @@ Row
 
 Dette dashboard er lavet af Lars Relund og giver information omkring fiskeriet i Skjern Å. Data er hentet fra forskellige kilder. 
 
-Fangst data er fra [SÅS](https://skjernaasam.dk/catchreport/?species=salmon). Der er data fra 2004. Kun laks og havørred over mindstemålet vises under fangster. Å systemet er opdelt i zoner *Nedre* (fra udløbet of opstrøms til Borris Krog bro), *Mellem* (fra Borris Krog Bro til Tarp Bro), *Øvre* (Opstrøms Tarp Bro), *Vorgod Å*, *Omme Å* samt *Andet* (andre områder). Kondition er beregnet udfra [Fultons formel](http://ulnits.dk/biologi/the-k-factor/). Du kan sammenligne de forskellige år under både *Havørred* og *Laks* menuerne.
+Fangst data er fra [SÅS](https://skjernaasam.dk/catchreport/?species=salmon). Der er data fra 2004. Kun laks og havørred over mindstemålet vises under fangster. Å systemet er opdelt i zoner *Nedre* (fra udløbet of opstrøms til Borris Krog bro), *Mellem* (fra Borris Krog Bro til Tarp Bro), *Øvre* (Opstrøms Tarp Bro), *Vorgod Å*, *Omme Å* samt *Ukendt* (andre områder). Kondition er beregnet udfra [Fultons formel](http://ulnits.dk/biologi/the-k-factor/). Du kan sammenligne de forskellige år under både *Havørred* og *Laks* menuerne.
 
 <!-- Vægten for genudsatte fisk er [estimeret](#estimat-af-vægt) udfra tidligere fangster og givet i en anden farve.  -->
 

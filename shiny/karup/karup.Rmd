@@ -49,25 +49,11 @@ library(htmltools)
 library(fs)
 source("functions.R")
 
-faIcon <- function (name, class = "", title = "", lib = "font-awesome") 
+faIcon <- function (name, prefix = "fa", title = "") 
 {
-    prefixes <- list(`font-awesome` = "fa", glyphicon = "glyphicon")
-    prefix <- prefixes[[lib]]
-    if (is.null(prefix)) {
-        stop("Unknown font library '", lib, "' specified. Must be one of ", 
-            paste0("\"", names(prefixes), "\"", collapse = ", "))
-    }
-    if (class != "") class = paste0(" ", class)
     prefix_class <- prefix
-    # if (prefix_class == "fa" && name %in% shiny:::font_awesome_brands) {
-    #     prefix_class <- "fab"
-    # } else if (prefix_class == "fa") prefix_class <- "fas"
-    if (prefix_class == "fa") prefix_class <- "fas"
-    iconClass <- paste0(prefix_class, " ", prefix, "-", name, class)
+    iconClass <- paste0(prefix_class, " ", prefix, "-", name)
     iconTag <- tags$i(class = iconClass, title = title)
-    htmltools::htmlDependencies(iconTag) <- htmltools::htmlDependency("font-awesome", 
-        "5.3.1", "www/shared/fontawesome", package = "shiny", 
-        stylesheet = c("css/all.min.css", "css/v4-shims.min.css"))
     htmltools::browsable(iconTag)
 }
 addResourcePath('www', paste0(getwd(), "/www"))
@@ -418,13 +404,13 @@ Row
 ### Opsumering
 
 ```{r}
-cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")), 
+cNames <- c(paste0(faIcon("calendar-alt", title = "Måned")), 
    "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
    paste0(faIcon("mars", title = "Han"),"/",
           faIcon("venus", title = "Hun"), "/",
           faIcon("question", title = "Ukendt"), " (%)"),
-   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Haderis Å'>H</span>/<span title='Andet'>A</span> (%)",
-   "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Andet'>A</span> (%)",
+   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Haderis Å'>H</span>/<span title='Ukendt'>U</span> (%)",
+   "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Ukendt'>U</span> (%)",
    paste0(faIcon("sync", title = "C&R"),"/",
           faIcon("times", title = "Hjemtaget"), " (%)"),
    paste0(faIcon("ruler-horizontal", title="Gens længde"), "/",
@@ -437,7 +423,7 @@ cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")),
    ) 
 
 datStatMonthSea %>%
-  kable(col.names = cNames, escape = F, align = "c") %>%
+  kable(col.names = cNames, escape = F, align = "c", format = "html") %>%
   kable_styling(fixed_thead = T, font_size = 10,
                 bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
   add_header_above(c(" " = 2, "Køn", "Område", "Metode", "Genudsat", "Længde", "Vægt", "Kondition"))
@@ -626,13 +612,13 @@ Row
 ### Statistik over år
 
 ```{r, context = "data"}
-cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "År")), 
+cNames <- c(paste0(faIcon("calendar-alt", title = "År")), 
    "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
    paste0(faIcon("mars", title = "Han"),"/",
           faIcon("venus", title = "Hun"), "/",
           faIcon("question", title = "Ukendt"), " (%)"),
-   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Haderis Å'>H</span>/<span title='Andet'>A</span> (%)",
-   "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Andet'>A</span> (%)",
+   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Haderis Å'>H</span>/<span title='Ukendt'>U</span> (%)",
+   "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Ukendt'>U</span> (%)",
    paste0(faIcon("sync", title = "C&R"),"/",
           faIcon("times", title = "Hjemtaget"), " (%)"),
    paste0(faIcon("ruler-horizontal", title="Gens længde"), "/",
@@ -645,7 +631,7 @@ cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "År")),
    ) 
 
 datStatYearSea %>% 
-  kable(col.names = cNames, escape = F, align = "c") %>% 
+  kable(col.names = cNames, escape = F, align = "c", format = "html") %>% 
   kable_styling(fixed_thead = T, font_size = 10,
                 bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
   add_header_above(c(" " = 2, "Køn", "Område", "Metode", "Genudsat", "Længde", "Vægt", "Kondition"))
