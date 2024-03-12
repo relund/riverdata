@@ -218,7 +218,7 @@ yearlyStat <- function(datCatch) {
               Method = paste0(round(100*Flue/Total, digits = 0), "/", 
                               round(100*Spin/Total, digits = 0), "/", 
                               round(100*Orm/Total, digits = 0), "/", 
-                              round(100*Andet/Total, digits = 0)),
+                              round(100*Ukendt/Total, digits = 0)),
               Released = paste0(round(100*Released/Total, 0), "/", 
                                 round(100*Killed/Total, 0)),
               Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)), 
@@ -305,7 +305,7 @@ monthlyStat <- function(datCatch, year) {
     cNames <- c("Month", "Total", "Male", "Female", "SexUnknown", "TotalP_Nedre", "TotalP_Mellem", 
                 "TotalP_Øvre", "TotalP_Vorgod Å", "TotalP_Omme Å", "TotalP_Ukendt", 
                 "KilledP_Nedre", "KilledP_Mellem", "KilledP_Øvre", "KilledP_Vorgod Å", 
-                "KilledP_Omme Å", "KilledP_Ukendt", "Flue", "Spin", "Orm", "Andet", "Released", 
+                "KilledP_Omme Å", "KilledP_Ukendt", "Flue", "Spin", "Orm", "Ukendt", "Released", 
                 "Killed", "LengthAvg", "LengthMax", "WeightAvg", "WeightMax", "FultonAvg", "FultonMax")
     cNames <- cNames[!(cNames %in% names(dat))]
     cols <- rep(0, length(cNames))
@@ -333,7 +333,7 @@ monthlyStat <- function(datCatch, year) {
                 Method = paste0(round(100*Flue/Total, digits = 0), "/", 
                                 round(100*Spin/Total, digits = 0), "/", 
                                 round(100*Orm/Total, digits = 0), "/", 
-                                round(100*Andet/Total, digits = 0)),
+                                round(100*Ukendt/Total, digits = 0)),
                 Released = paste0(round(100*Released/Total, 0), "/", 
                                   round(100*Killed/Total, 0)),
                 Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)), 
