@@ -1113,7 +1113,7 @@ fixOldDataFileByYearSkjern <- function() {
 
 fixOldDataFileByYearKarup <- function() {
   prefix <- "data/data_karup_catch_seatrout"
-  for (y in 2003:2022) {
+  for (y in 2003:year(now())) {
     fn <- paste0(prefix, "_", y, ".csv") 
     dat <- read_csv(fn) %>% 
       mutate(Place = case_when(
@@ -1123,8 +1123,13 @@ fixOldDataFileByYearKarup <- function() {
         str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
         str_detect(Place, "Vorgod") ~ "Vorgod Å",
         str_detect(Place, "Omme") ~ "Omme Å",
-        TRUE ~ "Andet"))
-    dat <- dat %>% transmute(Date, Length, Weight, Name, Place, Method, Cut, Foto, Killed, Sex, Net = NA)
+        TRUE ~ "Andet")) %>% 
+      mutate(Method = case_when(
+        str_detect(Method, "(Flue.*)|(Fue)") ~ "Flue",
+        str_detect(Method, "(Orm.*)|(Majs)|(Flåd)|(Mede)") ~ "Orm",
+        str_detect(Method, "(Nedre.*)|(Skjern.*Borris.*Fjord)") ~ "Spin",
+        TRUE ~ Method)) 
+    dat <- dat %>% transmute(Date, Length, Weight, Name, Place, Method, Cut, Foto, Killed, Sex, Net)
     message("  Write data to ", fn)
     write_csv(dat, fn)
   }
