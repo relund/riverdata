@@ -956,7 +956,8 @@ saveHoboData <- function() {
     transmute(Date = dmy_hms(Date), 
               TempCelcius = `Water Temperature (M-WT 21143788:20833130-3), *C, Laksens Hus`,
               LevelMeters = `Water Level (M-WL04 21143788:20833130-4), meters, Laksens Hus`,
-              PressureKPA = `Barometric Pressure (M-BP 21143788:21143788-1), kPa, Laksens Hus`)
+              PressureKPA = `Barometric Pressure (M-BP 21143788:21143788-1), kPa, Laksens Hus`) %>% 
+    mutate(Date = Date - hours(1))  # fix time in CET
   dat1 <- dat %>% transmute(Date, Place = "Skjern Å - Laksens hus", Value = 100 * LevelMeters)
   dat2 <- dat %>% transmute(Date, Place = "Skjern Å - Laksens hus", Value = PressureKPA)
   dat3 <- dat %>% transmute(Date, Place = "Skjern Å - Laksens hus", Value = TempCelcius)
@@ -984,68 +985,69 @@ saveHoboData <- function() {
 #'
 #' @note Stations can be found at https://vandportalen.dk/ (look at the url). 
 #' @return Data set (tibble).
-writeTimeSeriesData <- function(stations, prefix, prefix1, days) {
+writeTimeSeriesData <- function(stations = NULL, prefix, prefix1, days) {
   message("Retrive ", prefix1, " time series data.")
-  iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
-  dat <- NULL
-  for (i in 1:nrow(stations)) {
-    id <- stations$id[i]
-    place <- stations$place[i]
-    tmp <- fromJSON(paste0("https://vandportalen.dk/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=", days, "&pw=10000000"))
-    if (length(tmp$PlotRecs) == 0) next
-    tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
-    tmp <- tmp %>% filter(!(is.nan(V) | is.na(V)))
-    colnames(tmp) <- c("Date", "Value")
-    tmp <- tmp %>% mutate(Place = place, Serie = i)
-    dat <- bind_rows(dat, tmp)
+  dat2 <-NULL
+  if (!is.null(stations)) {
+    iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
+    dat <- NULL
+    for (i in 1:nrow(stations)) {
+      id <- stations$id[i]
+      place <- stations$place[i]
+      tmp <- fromJSON(paste0("https://vandportalen.dk/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=", days, "&pw=10000000"))
+      if (length(tmp$PlotRecs) == 0) next
+      tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
+      tmp <- tmp %>% filter(!(is.nan(V) | is.na(V)))
+      colnames(tmp) <- c("Date", "Value")
+      tmp <- tmp %>% mutate(Place = place, Serie = i)
+      dat <- bind_rows(dat, tmp)
+    }
+    dat <- dat %>% 
+      mutate(Date = ymd_hms(Date, tz = "UTC")) %>% 
+      arrange(Place, desc(Date)) 
+    # ggplot(dat %>% filter(year(Date) == 2022), aes(x = Date, y = Value, color = Serie)) + geom_line() + facet_wrap(vars(Place, Serie), scales = "free", nrow = 4)
+    # remove outliers
+    dat1 <- as_tsibble(dat, key = Serie, index = Date) %>%
+      group_by_key() %>%
+      mutate(Value = tsclean(Value, replace.missing = FALSE)) %>%
+      as_tibble() 
+    # ggplot(data = dat1 %>% filter(year(Date) %in% 2017:2023)) +
+    #   geom_point(aes(x = Date, y = Value, color = Serie), alpha = 0.5) +
+    #   geom_line(aes(x = Date, y = Value), color = "red") +
+    #   geom_line(aes(x = Date, y = Value1)) +
+    #   facet_wrap(vars(Serie), scales = "free", nrow = 4)
+    ## average data if more than one serie
+    dat2 <- dat1 %>% 
+      filter(!is.na(Value)) %>% 
+      # mutate(Date2 = round_date(Date, unit = "6 hour")) %>%
+      group_by(Date, Place) %>% 
+      mutate(Value = mean(Value)) %>% 
+      ungroup() %>% 
+      select(Date, Place, Value)
+    # ggplot(data = dat2 %>% filter(year(Date) %in% 2017:2023) %>% ungroup()) +
+    #   # geom_point(aes(x = Date, y = Value, color = Serie), alpha = 0.15) +
+    #   # geom_line(aes(x = Date, y = Value), alpha = 0.5) +
+    #   geom_line(aes(x = Date, y = Value), color = "red") +
+    #   facet_wrap(vars(Place), scales = "free", nrow = 4)
+    # dat3 <- dat2 %>%
+    #   group_by(Place) %>%
+    #   nest() %>%
+    #   mutate(data = map(data, function(df) {
+    #     df %>% mutate(Value3 = movAvg(Value, days = 30))
+    #   })) %>%
+    #   unnest(cols = c(data))
+    # ggplot(data = dat3 %>% filter(year(Date) %in% 2022)) +
+    #   # geom_point(aes(x = Date, y = Value, color = Serie), alpha = 0.15) +
+    #   geom_line(aes(x = Date, y = Value), color = "red") +
+    #   geom_line(aes(x = Date, y = Value3)) +
+    #   facet_wrap(vars(Place), scales = "free", nrow = 3)  
   }
-  dat <- dat %>% 
-    mutate(Date = ymd_hms(Date, tz = "UTC")) %>% 
-    arrange(Place, desc(Date)) 
-  # ggplot(dat %>% filter(year(Date) == 2022), aes(x = Date, y = Value, color = Serie)) + geom_line() + facet_wrap(vars(Place, Serie), scales = "free", nrow = 4)
-  # remove outliers
-  dat1 <- as_tsibble(dat, key = Serie, index = Date) %>%
-    group_by_key() %>%
-    mutate(Value = tsclean(Value, replace.missing = FALSE)) %>%
-    as_tibble() 
-  # ggplot(data = dat1 %>% filter(year(Date) %in% 2017:2023)) +
-  #   geom_point(aes(x = Date, y = Value, color = Serie), alpha = 0.5) +
-  #   geom_line(aes(x = Date, y = Value), color = "red") +
-  #   geom_line(aes(x = Date, y = Value1)) +
-  #   facet_wrap(vars(Serie), scales = "free", nrow = 4)
-  ## average data if more than one serie
-  dat2 <- dat1 %>% 
-    filter(!is.na(Value)) %>% 
-    # mutate(Date2 = round_date(Date, unit = "6 hour")) %>%
-    group_by(Date, Place) %>% 
-    mutate(Value = mean(Value)) %>% 
-    ungroup() %>% 
-    select(Date, Place, Value)
-  # ggplot(data = dat2 %>% filter(year(Date) %in% 2017:2023) %>% ungroup()) +
-  #   # geom_point(aes(x = Date, y = Value, color = Serie), alpha = 0.15) +
-  #   # geom_line(aes(x = Date, y = Value), alpha = 0.5) +
-  #   geom_line(aes(x = Date, y = Value), color = "red") +
-  #   facet_wrap(vars(Place), scales = "free", nrow = 4)
-  # dat3 <- dat2 %>%
-  #   group_by(Place) %>%
-  #   nest() %>%
-  #   mutate(data = map(data, function(df) {
-  #     df %>% mutate(Value3 = movAvg(Value, days = 30))
-  #   })) %>%
-  #   unnest(cols = c(data))
-  # ggplot(data = dat3 %>% filter(year(Date) %in% 2022)) +
-  #   # geom_point(aes(x = Date, y = Value, color = Serie), alpha = 0.15) +
-  #   geom_line(aes(x = Date, y = Value), color = "red") +
-  #   geom_line(aes(x = Date, y = Value3)) +
-  #   facet_wrap(vars(Place), scales = "free", nrow = 3)  
   ## Add Hobo data
   fn <- paste0(prefix, "_", prefix1, "_hobo.csv") 
   if (fs::file_exists(fn)) {
-    hobo <- read_csv(fn, col_types = "Tcd") %>% 
-      mutate(Date = Date - hours(1))  # fix time in CET
+    hobo <- read_csv(fn, col_types = "Tcd") 
     dat2 <- bind_rows(dat2, hobo) %>% 
-      arrange(Place, desc(Date)) %>% 
-      distinct()
+      arrange(Place, desc(Date))
     hobo <- hobo %>% slice_head(n = 0)
     write_csv(hobo, paste0(prefix, "_", prefix1, "_hobo.csv") )
   }
@@ -1239,8 +1241,7 @@ fixHoboData <- function() {
     dat <- read_csv(fn) %>% 
       mutate(Place = case_when(
         str_detect(Place, "Laksens") ~ "Skjern Å - Laksens hus",
-        TRUE ~ Place),
-        Value = if_else(Place == "Skjern å - Laksens hus", 100*Value, Value))
+        TRUE ~ Place))
     # dat <- dat %>% mutate(Date = if_else(Place == "Skjern å - Laksens hus", Date - hours(1), Date))
     message("  Write data to ", fn)
     write_csv(dat, fn)

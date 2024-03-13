@@ -64,15 +64,15 @@ dat <- writeWaterLevelsWeb(dat, prefix)
 
 
 #### Water temperature ####
-## Add Hobo data
-hobo <- read_csv(str_c(prefix, "_watertemp_hobo.csv"))
-for (y in unique(year(hobo$Date))) {
-  write_csv(hobo %>% filter(year(Date) == y),
-    str_c(prefix, "_watertemp_", y, ".csv"), 
-    append = T)
-}
-hobo <- hobo %>% slice_head(n = 0)
-write_csv(hobo, str_c(prefix, "_watertemp_hobo.csv"))
+stations <- NULL
+writeTimeSeriesData(stations, prefix, prefix1 = "watertemp", days = 15)  
+
+## Calc moving average 
+dat <- readWTemp(prefix, 2022:year(now()))
+rMeans <- writeWaterTempMovAvg(dat, prefix)
+
+## Dataset for web 
+dat <- writeWaterTempWeb(dat, rMeans, prefix)
 
 
 #### Map ####
