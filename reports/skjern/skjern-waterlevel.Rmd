@@ -34,7 +34,7 @@ source("../functions.R")
 Sys.setlocale("LC_ALL", "da_DK.UTF-8")
 
 prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
-prefix <- "../../data/"
+# prefix <- "../../data/"
 # Water levels
 dat <- read_csv(paste0(prefix, "data_skjern_waterlevel_web.csv"),
            locale = locale(tz = "CET"),
@@ -69,7 +69,7 @@ plotPlaceRel <- function(place) {
 }
 ```
 
-Gjaldbæk bro
+Gjaldbæk bro {data-navmenu="Skjern Å" #gjaldbaek}
 =======================================================================
 
 Row
@@ -91,7 +91,7 @@ plotPlaceRel("Skjern Å - Gjaldbæk bro")
 <!-- ``` -->
 
 
-Alergaard
+Alergaard  {data-navmenu="Skjern Å" #alergaard}
 =======================================================================
 
 Row
@@ -104,7 +104,7 @@ plotPlaceRel("Skjern Å - Alergaard")
 ```
 
 
-Landevejsbroen
+Landevejsbroen {data-navmenu="Skjern Å" #landevejsbroen}
 =======================================================================
 
 Row
@@ -117,7 +117,7 @@ plotPlaceRel("Skjern Å - Landevejsbroen")
 ```
 
 
-Sandfeldvej
+Sandfeldvej  {data-navmenu="Skjern Å" #sandfeldvej}
 =======================================================================
 
 Row
@@ -130,7 +130,7 @@ plotPlaceRel("Skjern Å - Sandfeldvej")
 ```
 
 
-Sønderskov bro (Omme Å)
+Sønderskov bro (Omme Å)  {data-navmenu="Omme Å" #soenderskov}
 =======================================================================
 
 Row
@@ -143,7 +143,7 @@ plotPlaceRel("Omme Å - Sønderskov bro")
 ```
 
 
-Arnborg kirke (Rind Å)
+Arnborg kirke (Rind Å) {data-navmenu="Rind Å" #arnborg}
 =======================================================================
 
 Row
@@ -156,7 +156,7 @@ plotPlaceRel("Rind Å - Arnborg kirke")
 ```
 
 
-A18 (Fjederholt Å)
+A18 (Fjederholt Å) {data-navmenu="Fjederholt Å" #a11}
 =======================================================================
 
 Row
@@ -169,7 +169,7 @@ plotPlaceRel("Fjederholt Å - A18")
 ```
 
 
-Fiskedamme (Karstoft Å)
+Fiskedamme (Karstoft Å)  {data-navmenu="Karstoft Å" #fiskedamme}
 =======================================================================
 
 Row
@@ -182,7 +182,7 @@ plotPlaceRel("Karstoft Å - Fiskedamme")
 ```
                        
 
-Laksens hus
+Laksens hus  {data-navmenu="Skjern Å" #laksens}
 =======================================================================
 
 Row
@@ -191,5 +191,5 @@ Row
 ### Laksens hus
 
 ```{r}
-#plotPlaceRel("Skjern Å - Laksens hus")
+plotPlaceRel("Skjern Å - Laksens hus")
 ```
