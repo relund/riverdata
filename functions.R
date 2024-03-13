@@ -958,7 +958,7 @@ saveHoboData <- function() {
               LevelMeters = `Water Level (M-WL04 21143788:20833130-4), meters, Laksens Hus`,
               PressureKPA = `Barometric Pressure (M-BP 21143788:21143788-1), kPa, Laksens Hus`) %>% 
     mutate(Date = Date - hours(1))  # fix time in CET
-  dat1 <- dat %>% transmute(Date, Place = "Skjern Å - Laksens hus", Value = 100 * LevelMeters)
+  dat1 <- dat %>% transmute(Date, Place = "Skjern Å - Laksens hus", Value = LevelMeters)
   dat2 <- dat %>% transmute(Date, Place = "Skjern Å - Laksens hus", Value = PressureKPA)
   dat3 <- dat %>% transmute(Date, Place = "Skjern Å - Laksens hus", Value = TempCelcius)
   prefix <- "data/data_skjern"
@@ -1239,9 +1239,10 @@ fixHoboData <- function() {
   for (y in 2022:year(now())) {
     fn <- paste0(prefix, "_", y, ".csv") 
     dat <- read_csv(fn) %>% 
-      mutate(Place = case_when(
-        str_detect(Place, "Laksens") ~ "Skjern Å - Laksens hus",
-        TRUE ~ Place))
+      mutate(Value = if_else(Place == "Skjern Å - Laksens hus", Value/100, Value))
+      # mutate(Place = case_when(
+      #   str_detect(Place, "Laksens") ~ "Skjern Å - Laksens hus",
+      #   TRUE ~ Place))
     # dat <- dat %>% mutate(Date = if_else(Place == "Skjern å - Laksens hus", Date - hours(1), Date))
     message("  Write data to ", fn)
     write_csv(dat, fn)
