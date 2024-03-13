@@ -2,17 +2,17 @@ name: R script Skjern 1
 
 on: 
   push:
-  #   paths:
-  #     - .github/workflows/run_script_skjern1_ubuntu.yaml
-  #     - reports/skjern/**
-  #     - reports/index.md
-  #     - script_skjern1.R
-  #     - functions.R
-  #     - renv.lock
-  # schedule:
-  #   - cron: '0 * * * *'  # every hour
-  branches-ignore:
-      - '**'
+    paths:
+      - .github/workflows/run_script_skjern1_ubuntu.yaml
+      - reports/skjern/**
+      - reports/index.md
+      - script_skjern1.R
+      - functions.R
+      - renv.lock
+  schedule:
+    - cron: '0 * * * *'  # every hour
+  # branches-ignore:
+  #     - '**'
 jobs:
   render:
     name: Run script_skjern1.R

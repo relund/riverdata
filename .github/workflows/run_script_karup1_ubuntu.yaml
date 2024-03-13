@@ -2,18 +2,18 @@ name: R script Karup 1
 
 on: 
   push:
-  #   paths:
-  #     - .github/workflows/run_script_karup1_ubuntu.yaml
-  #     - reports/karup/**
-  #     - reports/index.md
-  #     - script_karup1.R
-  #     - script_mv-lf.R
-  #     - functions.R
-  #     - renv.lock
-  # schedule:
-  #   - cron: '30 * * * *'  # every hour
-  branches-ignore:
-      - '**'
+    paths:
+      - .github/workflows/run_script_karup1_ubuntu.yaml
+      - reports/karup/**
+      - reports/index.md
+      - script_karup1.R
+      - script_mv-lf.R
+      - functions.R
+      - renv.lock
+  schedule:
+    - cron: '30 * * * *'  # every hour
+  # branches-ignore:
+  #     - '**'
 jobs:
   render:
     name: Run script for Karup river
