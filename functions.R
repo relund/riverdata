@@ -1041,7 +1041,8 @@ writeTimeSeriesData <- function(stations, prefix, prefix1, days) {
   ## Add Hobo data
   fn <- paste0(prefix, "_", prefix1, "_hobo.csv") 
   if (fs::file_exists(fn)) {
-    hobo <- read_csv(fn)
+    hobo <- read_csv(fn, col_types = "Tcd") %>% 
+      mutate(Date = Date - hours(1))  # fix time in CET
     dat2 <- bind_rows(dat2, hobo) %>% 
       arrange(Place, desc(Date)) %>% 
       distinct()
@@ -1225,6 +1226,21 @@ fixOldDataFileByYearKarup <- function() {
         is.na(Method) ~ "Flue",
         TRUE ~ Method)) 
     dat <- dat %>% transmute(Date, Length, Weight, Name, Place, Method, Cut, Foto, Killed, Sex, Net)
+    message("  Write data to ", fn)
+    write_csv(dat, fn)
+  }
+}
+
+
+fixHoboData <- function() {
+  prefix <- "data/data_skjern_watertemp"
+  for (y in 2022:year(now())) {
+    fn <- paste0(prefix, "_", y, ".csv") 
+    dat <- read_csv(fn) %>% 
+      mutate(Place = case_when(
+        str_detect(Place, "Laksens") ~ "Skjern å - Laksens hus",
+        TRUE ~ Place)) 
+    dat <- dat %>% mutate(Date = if_else(Place == "Skjern å - Laksens hus", Date - hours(1), Date))
     message("  Write data to ", fn)
     write_csv(dat, fn)
   }

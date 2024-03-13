@@ -36,7 +36,7 @@ writeWeightEstimates(prefix, seatrout = TRUE)
 writeWeightEstimates(prefix, seatrout = FALSE)
 
 
-#### Hobo station (Laksens hus) ####
+#### Hobo station (Laksens hus) - Save data to hobo csv files ####
 saveHoboData()
 
 #### Waterlevel ####
