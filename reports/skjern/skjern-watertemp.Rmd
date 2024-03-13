@@ -1,5 +1,5 @@
 ---
-title: "Karup Å - Vandtemperatur"
+title: "Skjern Å - Vandtemperatur"
 author: ''
 output:
   flexdashboard::flex_dashboard:
@@ -38,7 +38,7 @@ prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
 # prefix <- "../../data/"
 
 dat <- 
-  read_csv(paste0(prefix, "data_karup_watertemp_web.csv"), locale = locale(tz = "CET"), col_types = "Tffd") 
+  read_csv(paste0(prefix, "data_skjern_watertemp_web.csv"), locale = locale(tz = "CET"), col_types = "Tffd") 
 dat$YGroup <- factor(dat$YGroup, level = str_sort(levels(dat$YGroup)))
 dat <- dat %>% group_by(Date, Place, YGroup) %>% slice_head(n = 1) %>% ungroup()
 dat1 <- dat %>% 
@@ -71,9 +71,9 @@ plotPlace <- function(place) {
 Row
 -----------------------------------------------------------------------
 
-### Hagebro
+### Laksens hus
 
 ```{r}
-plotPlace("Hagebro")
+plotPlace("Skjern Å - Laksens hus")
 ```
 
