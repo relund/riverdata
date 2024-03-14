@@ -814,74 +814,78 @@ writeCatch <- function(url, prefix, yr, species = "Havørred", club = FALSE) {
   cols <- dat$cols
   cols$label[is.na(cols$label)] <- "Unknown"
   rows <- dat$rows$c
-  if (is.null(rows)) return(NULL)
-  rows <- lapply(rows, FUN = function(x) {x[,1]})
-  dat1 <-  suppressMessages(t(map_dfc(rows, ~ .x)))
-  colnames(dat1) <- cols$label
-  dat1 <- suppressMessages(as_tibble(dat1, .name_repair = "universal"))
-  dateStr <- dat1$Dato %>% str_extract_all("(?<=\\().+?(?=\\))", simplify = T) %>%
-    str_split(",", simplify = TRUE) %>% as_tibble(.name_repair = "minimal")
-  colnames(dateStr) <- c("Year", "Month", "Day")
-  dateStr <- suppressMessages(type_convert(dateStr))
-  dateStr <- mutate(dateStr, Month = Month + 1)
-  dateStr <- str_c(dateStr$Year, "-", str_pad(dateStr$Month, 2, "left", pad="0"), "-", str_pad(dateStr$Day, 2, "left", pad="0"))
-  dat1 <- suppressMessages(bind_cols(Date=dateStr, dat1))
-  if (club) dat1 <- dat1 %>% 
-    rename(River = Fiskevand)
-  if (species == "Havørred") dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Havørred"))
-  if (species == "Laks") dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Laks"))
-  if (!club) dat2 <- dat1 %>% 
-    transmute(Date, Length = `Længde`, Weight = `Vægt`, Name = Navn, Place = Zone, Method = Agn, 
-              Cut = NA_character_, Foto = Foto, Killed = (Hjemtaget == "Ja"), Sex = `Køn`, Net = Garnskadet)
-  if (club) dat2 <- dat1 %>% 
-    transmute(Date, Species = Art, Length = `Længde`, Weight = `Vægt`, Name = Navn, River, Place = Strækning.sted, Method = Agn, 
-              Cut = NA_character_, Foto = Foto, Killed = (Hjemtaget == "Ja"), Sex = `Køn`, Net = Garnskadet)
-  if ("Fedtfinne.klippet" %in% colnames(dat1)) dat2$Cut = dat1$Fedtfinne.klippet
-  dat2 <- suppressMessages(type_convert(dat2))
-  
-  ### Merge and tidy
- dat3 <- dat2 %>% mutate(Weight = if_else(Length >= 40, Weight, NA_real_)) %>% 
-   filter(Length >= 40 | is.na(Length))
- if (!club) {
-   ## Remove weight outliers
-   if (species == "Havørred") res <- read_csv(str_c(prefix, "_weight_seatrout.csv"), show_col_types = FALSE) 
-   if (species == "Laks") res <- read_csv(str_c(prefix, "_weight_salmon.csv"), show_col_types = FALSE) 
-    res <- res %>% 
-      group_by(Length) %>% 
-      summarise(Lower = min(Lower), Upper = max(Upper))
-   dat3 <- left_join(dat3, res, by = join_by(Length))
-    #dat3 %>% filter( !((Weight >= 0.8 * Lower & Weight <= 1.2 * Upper) | is.na(Weight) ))
-   dat3 <-dat3 %>% 
-      mutate(Weight = if_else(Weight >= 0.8 * Lower & Weight <= 1.2 * Upper, Weight, NA_real_, NA_real_)) %>% 
-      select(-Upper, -Lower)
- }
-  ## Fix custom errors
- dat3 <-dat3 %>% 
-    mutate(Method = str_replace_all(Method, 
-                             c("Wobler" = "Spin", "Blink" = "Spin", "Spinner" = "Spin", "Jig" = "Spin", 
-                               "Bombarda med flue" = "Spin", "Tørflue" = "Flue", "Pirk/Pilk" = "Spin", 
-                               "Mede" = "Orm", "Spinflue" = "Spin", "Spin-flue" = "Spin", 
-                               "Maddike" = "Orm", "Spin-flue" = "Spin", "Majs" = "Orm", "Flåd" = "Orm",
-                               "Orm, spinner" = "Orm", "Orm,spin" = "Orm"))
-           )
- if (!club) dat3 <-dat3 %>% 
-   mutate(Place = case_when(
-            str_detect(Place, "(Øvre.*)|(Skjern.*Rind)|(Skjern.*opstrøms)") ~ "Øvre",
-            str_detect(Place, "(Mellem.*)|(Skjern.*Tarp.*Borris)") ~ "Mellem",
-            str_detect(Place, "(Nedre.*)|(Skjern.*Borris.*Fjord)") ~ "Nedre",
-            str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
-            str_detect(Place, "Vorgod") ~ "Vorgod Å",
-            str_detect(Place, "Omme") ~ "Omme Å",
-            TRUE ~ Place)
-   )
- # dat3 <-dat3 %>% mutate(Sex = str_replace_all(Sex, c("Han" = "Male", "Hun" = "Female", "Ved ikke" = NA)))
- dat3 <-dat3 %>% mutate(Sex = str_replace_all(Sex, c("Ved ikke" = NA_character_)))
- dat3 <-dat3 %>% mutate(Cut = if_else(Cut == "Ja", TRUE, if_else(Cut == "Nej", FALSE, NA)))
-  # unique(dat3$Sex)
- dat3 <-dat3 %>% mutate(Name = str_to_title(str_replace_all(Name, c("Ikke oplyst" = NA, "Mogens Styhr Rasmussen" = "Mogens Styhr", "Ikke Oplyst" = NA, "Poul Godt Godt" = "Poul Godt", "KÅS [0-9 ]* " = "", "Kås [0-9 ]* " = "", ", Vridsted, 2017123" = "", "Xx Yy" = NA))))
- dat3 <-dat3 %>% mutate(Name = str_replace(Name, fixed("**********"), NA)) %>% mutate(Name = str_replace(Name, "Xx Yy", NA_character_))
-  # unique(dat3$Place)
-  
+  if (is.null(rows)) {  
+    fn <- str_c(prefix, "_catch_salmon_", yr-1, ".csv")
+    dat3 <- read_csv(fn, col_types = "Dddcfflclfl") %>% 
+      slice_head(n = 0)  # get col names from last year
+  } else {
+    rows <- lapply(rows, FUN = function(x) {x[,1]})
+    dat1 <-  suppressMessages(t(map_dfc(rows, ~ .x)))
+    colnames(dat1) <- cols$label
+    dat1 <- suppressMessages(as_tibble(dat1, .name_repair = "universal"))
+    dateStr <- dat1$Dato %>% str_extract_all("(?<=\\().+?(?=\\))", simplify = T) %>%
+      str_split(",", simplify = TRUE) %>% as_tibble(.name_repair = "minimal")
+    colnames(dateStr) <- c("Year", "Month", "Day")
+    dateStr <- suppressMessages(type_convert(dateStr))
+    dateStr <- mutate(dateStr, Month = Month + 1)
+    dateStr <- str_c(dateStr$Year, "-", str_pad(dateStr$Month, 2, "left", pad="0"), "-", str_pad(dateStr$Day, 2, "left", pad="0"))
+    dat1 <- suppressMessages(bind_cols(Date=dateStr, dat1))
+    if (club) dat1 <- dat1 %>% 
+      rename(River = Fiskevand)
+    if (species == "Havørred") dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Havørred"))
+    if (species == "Laks") dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Laks"))
+    if (!club) dat2 <- dat1 %>% 
+      transmute(Date, Length = `Længde`, Weight = `Vægt`, Name = Navn, Place = Zone, Method = Agn, 
+                Cut = NA_character_, Foto = Foto, Killed = (Hjemtaget == "Ja"), Sex = `Køn`, Net = Garnskadet)
+    if (club) dat2 <- dat1 %>% 
+      transmute(Date, Species = Art, Length = `Længde`, Weight = `Vægt`, Name = Navn, River, Place = Strækning.sted, Method = Agn, 
+                Cut = NA_character_, Foto = Foto, Killed = (Hjemtaget == "Ja"), Sex = `Køn`, Net = Garnskadet)
+    if ("Fedtfinne.klippet" %in% colnames(dat1)) dat2$Cut = dat1$Fedtfinne.klippet
+    dat2 <- suppressMessages(type_convert(dat2))
+    
+    ### Merge and tidy
+    dat3 <- dat2 %>% mutate(Weight = if_else(Length >= 40, Weight, NA_real_)) %>% 
+     filter(Length >= 40 | is.na(Length))
+    if (!club) {
+     ## Remove weight outliers
+     if (species == "Havørred") res <- read_csv(str_c(prefix, "_weight_seatrout.csv"), show_col_types = FALSE) 
+     if (species == "Laks") res <- read_csv(str_c(prefix, "_weight_salmon.csv"), show_col_types = FALSE) 
+      res <- res %>% 
+        group_by(Length) %>% 
+        summarise(Lower = min(Lower), Upper = max(Upper))
+     dat3 <- left_join(dat3, res, by = join_by(Length))
+      #dat3 %>% filter( !((Weight >= 0.8 * Lower & Weight <= 1.2 * Upper) | is.na(Weight) ))
+     dat3 <-dat3 %>% 
+        mutate(Weight = if_else(Weight >= 0.8 * Lower & Weight <= 1.2 * Upper, Weight, NA_real_, NA_real_)) %>% 
+        select(-Upper, -Lower)
+    }
+    ## Fix custom errors
+    dat3 <-dat3 %>% 
+      mutate(Method = str_replace_all(Method, 
+                               c("Wobler" = "Spin", "Blink" = "Spin", "Spinner" = "Spin", "Jig" = "Spin", 
+                                 "Bombarda med flue" = "Spin", "Tørflue" = "Flue", "Pirk/Pilk" = "Spin", 
+                                 "Mede" = "Orm", "Spinflue" = "Spin", "Spin-flue" = "Spin", 
+                                 "Maddike" = "Orm", "Spin-flue" = "Spin", "Majs" = "Orm", "Flåd" = "Orm",
+                                 "Orm, spinner" = "Orm", "Orm,spin" = "Orm"))
+             )
+    if (!club) dat3 <-dat3 %>% 
+     mutate(Place = case_when(
+              str_detect(Place, "(Øvre.*)|(Skjern.*Rind)|(Skjern.*opstrøms)") ~ "Øvre",
+              str_detect(Place, "(Mellem.*)|(Skjern.*Tarp.*Borris)") ~ "Mellem",
+              str_detect(Place, "(Nedre.*)|(Skjern.*Borris.*Fjord)") ~ "Nedre",
+              str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
+              str_detect(Place, "Vorgod") ~ "Vorgod Å",
+              str_detect(Place, "Omme") ~ "Omme Å",
+              TRUE ~ Place)
+     )
+    # dat3 <-dat3 %>% mutate(Sex = str_replace_all(Sex, c("Han" = "Male", "Hun" = "Female", "Ved ikke" = NA)))
+    dat3 <-dat3 %>% mutate(Sex = str_replace_all(Sex, c("Ved ikke" = NA_character_)))
+    dat3 <-dat3 %>% mutate(Cut = if_else(Cut == "Ja", TRUE, if_else(Cut == "Nej", FALSE, NA)))
+    # unique(dat3$Sex)
+    dat3 <-dat3 %>% mutate(Name = str_to_title(str_replace_all(Name, c("Ikke oplyst" = NA, "Mogens Styhr Rasmussen" = "Mogens Styhr", "Ikke Oplyst" = NA, "Poul Godt Godt" = "Poul Godt", "KÅS [0-9 ]* " = "", "Kås [0-9 ]* " = "", ", Vridsted, 2017123" = "", "Xx Yy" = NA))))
+    dat3 <-dat3 %>% mutate(Name = str_replace(Name, fixed("**********"), NA)) %>% mutate(Name = str_replace(Name, "Xx Yy", NA_character_))
+    # unique(dat3$Place)
+  }
   ## Save to file
   res <- tolower(species)
   if (species == "Havørred") res <- "seatrout"
