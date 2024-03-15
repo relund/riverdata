@@ -3,11 +3,6 @@ output: html_document
 title: "Oversigt over fiskevand i Skjern Å"
 editor_options: 
   chunk_output_type: console
-knit: (function(inputFile, encoding) { 
-      out_dir <- '../../docs/skjern';
-      rmarkdown::render(inputFile,
-                        encoding=encoding, 
-                        output_file=file.path(dirname(inputFile), out_dir, 'skjern-kort.html')) })
 ---
 
 <!-- File for generating the interactive map for MV-LF (run by GitHub Actions every hour) -->
@@ -101,20 +96,23 @@ groups <- NULL
 # Parkering
 Ids <- datMarkers %>%
   filter(
-    str_detect(Group, regex("Parkering", ignore_case = T))) %>%
+    str_detect(Icon, regex("park", ignore_case = T))) %>%
   pull(Id)
 maplet <- mapAddMarkers(maplet, "Parkering", datMarkers %>% filter(Id %in% Ids))
 datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
 
-# # Markers
-# Ids <- datMarkers %>% 
-#   filter(
-#     str_detect(Group, regex("parkering", ignore_case = T)) | 
-#       str_detect(Desc, regex("indhegning", ignore_case = T))) %>% 
-#   pull(Id)
-# maplet <- mapAddMarkers(maplet, "Parkering", datMarkers %>% filter(Id %in% Ids))
-# datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
-
+# Shelter
+Ids <- datMarkers %>%
+  filter(
+    str_detect(Icon, regex("shelter", ignore_case = T))) %>%
+  pull(Id)
+Ids1 <- datMarkers %>%
+  filter(
+    str_detect(Icon, regex("shelter", ignore_case = T))) %>%
+  filter(is.na(Club)) %>% 
+  pull(Id)
+maplet <- mapAddMarkers(maplet, "Shelter", datMarkers %>% filter(Id %in% Ids1))
+datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
 
 # Standpladser
 Ids <- datMarkers %>%
@@ -124,51 +122,27 @@ Ids <- datMarkers %>%
 maplet <- mapAddMarkers(maplet, "Stednavne", datMarkers %>% filter(Id %in% Ids))
 datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
 
-# Info
-Ids <- datMarkers %>%
-  filter(
-    str_detect(Group, regex("Info", ignore_case = T))) %>%
-  pull(Id)
-maplet <- mapAddMarkers(maplet, "Info", datMarkers %>% filter(Id %in% Ids))
-datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
-
-# Shelter
-Ids <- datMarkers %>%
-  filter(
-    str_detect(Group, regex("Shelter", ignore_case = T)) |
-    str_detect(Desc, regex("Shelter", ignore_case = T))
-  ) %>%
-  pull(Id)
-maplet <- mapAddMarkers(maplet, "Shelter", datMarkers %>% filter(Id %in% Ids))
-datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
-
 # Bro/Spang
 Ids <- datMarkers %>%
   filter(
-    str_detect(Group, regex("Bro", ignore_case = T)) |
-    str_detect(Desc, regex("bro|spang", ignore_case = T))
-  ) %>%
+    str_detect(Icon, regex("bridge", ignore_case = T))) %>%
   pull(Id)
-maplet <- mapAddMarkers(maplet, "Bro/spang", datMarkers %>% filter(Id %in% Ids))
+Ids1 <- datMarkers %>%
+  filter(
+    str_detect(Icon, regex("bridge", ignore_case = T))) %>%
+  filter(is.na(Club)) %>% 
+  pull(Id)
+maplet <- mapAddMarkers(maplet, "Bro/spang", datMarkers %>% filter(Id %in% Ids1))
 datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
 
-
-
-
-# Ids <- datMarkers %>% 
-#   filter(
-#     str_detect(Group, regex("Standpladser|Sten|Spang|Bro|shelter", ignore_case = T)) | 
-#       str_detect(Desc, regex("hytte|laksens hus", ignore_case = T))) %>% 
-#   pull(Id)
-# maplet <- mapAddMarkers(maplet, "Stednavne", datMarkers %>% filter(Id %in% Ids))
-# datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
-# 
-# Ids <- datMarkers %>% 
-#   filter(
-#     str_detect(Group, regex("Info", ignore_case = T))) %>% 
-#   pull(Id)
-# maplet <- mapAddMarkers(maplet, "Info", datMarkers %>% filter(Id %in% Ids))
-# datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+# Info
+Ids <- datMarkers %>%
+  # filter(
+  #   str_detect(Group, regex("Info", ignore_case = T)) |
+  #   str_detect(Desc, regex("indhegning", ignore_case = T))) %>% 
+  pull(Id)
+maplet <- mapAddMarkers(maplet, "Info", datMarkers %>% filter(Id %in% Ids))
+datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
 
 # Lines
 maplet <- mapAddLines(maplet, group = "Parkering", color = "#eb9834", useClub = FALSE,
@@ -197,47 +171,6 @@ maplet <- maplet %>%
   hideGroup(groups) %>%
     showGroup("Stednavne") %>%
   addFullscreenControl()
-
-
-# 
-# datMarkers <- read_csv(paste0(prefix, "data_mv-lf_mapmarkers.csv"), col_types = "fccddff") %>% 
-#   mutate(Desc = str_c(if_else(!is.na(Desc), str_c("<b>", Desc, "</b>"), "", ""), 
-#                        if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
-#   mutate(Desc = str_replace(Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>% 
-#   mutate(Desc = map(Desc, HTML), Icon = str_c("../docs/mv-lf/www/", Icon), Id = 1:n()) %>% 
-#   select(-Text) 
-#   
-# datLines <- read_csv(paste0(prefix, "data_mv-lf_maplines.csv"), col_types = "fccddif")  %>% 
-#   filter(is.na(Club) | Club == "MV-LF") %>% 
-#   mutate(Desc = str_c("<b>", if_else(!is.na(Desc), Desc, "", ""), "</b>",
-#                        if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
-#   mutate(Desc = str_replace(Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>% 
-#   mutate(Desc = map(Desc, HTML)) %>% 
-#   select(-Text) 
-# 
-
-
-
-
-# 
-# ## Lines
-# maplet <- mapAddLines(maplet, group = "Parkering", color = "#eb9834", useClub = FALSE,
-#                       data = datLines %>% 
-#                         filter(str_detect(Group, regex("parkering", ignore_case = T))))
-# maplet <- mapAddLines(maplet, group = "fiskevand", color = "#3C8AE6",
-#                       data = datLines %>% 
-#                         filter(str_detect(Group, regex("fiskevand", ignore_case = T))))
-# maplet <- mapAddLines(maplet, group = "medlem", color = "#EBE053",
-#                       data = datLines %>% 
-#                         filter(str_detect(Group, regex("medlem", ignore_case = T))))
-# maplet <- mapAddLines(maplet, group = "dagkort", color = "#000000",
-#                       data = datLines %>% 
-#                         filter(str_detect(Group, regex("dagkort", ignore_case = T))))
-# maplet <- mapAddLines(maplet, group = "gæstekort", color = "#bf5656",
-#                       data = datLines %>% 
-#                         filter(str_detect(Group, regex("gæstekort", ignore_case = T))))
-# 
-
 ```
 
 ```{r}
