@@ -80,7 +80,6 @@ stations <- NULL
 writeTimeSeriesData(stations, prefix, prefix1 = "pressure", days = 15)  
 
 
-
 #### Map ####
 lst <- stripKml("135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ")  # Places
 datMarkers <- lst$datMarkers
@@ -144,5 +143,6 @@ render("reports/skjern/skjern-lock-flow.Rmd",output_dir = "docs/skjern")
 render("reports/skjern/skjern-weight.Rmd",output_dir = "docs/skjern")
 render("reports/skjern/skjern-watertemp.Rmd",output_dir = "docs/skjern")
 render("reports/skjern/skjern-waterlevel.Rmd",output_dir = "docs/skjern")
+render("reports/skjern/skjern-pressure.Rmd",output_dir = "docs/skjern")
 render("reports/skjern/skjern-catch.Rmd",output_dir = "docs/skjern")
 render("docs/index.md",output_dir = "docs/")

@@ -1,0 +1,86 @@
+---
+title: "Skjern Å - Lufttryk"
+author: ''
+output:
+  flexdashboard::flex_dashboard:
+    css: www/style.css
+    favicon: favicon.png
+    orientation: rows
+    theme: paper
+    vertical_layout: fill
+# knit: (function(inputFile, encoding) { 
+#       rmarkdown::render(inputFile,
+editor_options:
+  chunk_output_type: console
+---
+
+<script>
+$(".selectize-input input").prop('readonly','readonly');
+</script>
+
+```{r, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = FALSE)
+library(plotly)
+library(flexdashboard)
+library(tidyverse)
+library(conflicted)
+conflicts_prefer(
+  plotly::layout,
+  dplyr::filter
+  )
+
+here::i_am("reports/skjern/skjern-pressure.Rmd")
+source(here::here("reports/functions.R"))
+Sys.setlocale("LC_ALL", "da_DK.UTF-8")
+
+# prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
+prefix <- "../../data/"
+
+readDataFiles <- function(pattern) {
+  f <- fs::dir_ls(prefix, regexp = pattern)
+  dat <- read_csv(f, col_types = "Tfd") %>% 
+    arrange(Date)
+  return(dat)
+}
+curDay <- as.numeric(date(paste0(year(now()), "-", month(now()), "-", day(now()))))
+dat <- readDataFiles("data_skjern_pressure_[0-9]{4}") %>% 
+  mutate(DaysSince = as.numeric(date(Date))) %>% 
+  filter(DaysSince >= curDay - 15) %>% 
+  select(-DaysSince) 
+dat1 <- dat %>% 
+  pivot_wider(names_from = Place, values_from = Value)
+```
+
+```{r}
+plotPlace <- function(place) {
+  tmp <- dat1 %>% 
+    transmute(Dato = Date, Place = .data[[place]], 
+              Text = str_c(day(Date), " ", month(Date, label = T), " ", ": ", Place, " kPa")) %>% 
+    filter(!is.na(Place))
+  fig <- plot_ly(tmp, type = 'scatter', mode = 'lines') %>% 
+    add_lines(x = ~Dato, y = ~Place, 
+              text = ~Text, 
+              line = list(width = 1),
+              hovertemplate = str_c('%{text}'),
+              data = tmp, visible = T, showlegend = FALSE) %>% 
+    layout(
+      # title = place,
+      xaxis = list(domain = c(0, 1), title = NA, tickformat = "%d %b"),
+      yaxis = list(title = "kPa"),
+      legend = list(orientation = 'h')
+      # hovermode = "x unified"
+  )
+  return(fig)
+}
+```
+
+Row
+-----------------------------------------------------------------------
+
+### Laksens hus
+
+```{r}
+plotPlace("Skjern Å - Laksens hus")
+```
+
