@@ -75,6 +75,12 @@ rMeans <- writeWaterTempMovAvg(dat, prefix)
 dat <- writeWaterTempWeb(dat, rMeans, prefix)
 
 
+#### Pressure ####
+stations <- NULL
+writeTimeSeriesData(stations, prefix, prefix1 = "pressure", days = 15)  
+
+
+
 #### Map ####
 lst <- stripKml("135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ")  # Places
 datMarkers <- lst$datMarkers
