@@ -16,6 +16,7 @@ title: "Links til statistik"
   * [Slusen](skjern/skjern-lock-flow.html){target="_blank"}
   * [Vandtemperatur](skjern/skjern-watertemp.html){target="_blank"}
   * [Vandstand](skjern/skjern-waterlevel.html){target="_blank"}
+  * [Lufttryk](skjern/skjern-pressure.html){target="_blank"}
   * [Dashboard](https://relund.shinyapps.io/skjern){target="_blank"}
   * [Weight report](skjern/skjern-weight.html){target="_blank"}
   
