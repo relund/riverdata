@@ -6,6 +6,12 @@
 		<script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/luxon/build/global/luxon.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/kitcode.js" crossorigin="anonymous"></script>
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 	</head>
 	<body>
 	  <div id="catch-table"></div>
@@ -23,10 +29,16 @@
           } 
           target.Dato = eval("new " + target.Dato).toLocaleDateString();
           target.Navn = target.Navn.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+          target.Misc = '<i class="fa-solid fa-camera" style="color: #74C0FC;"></i>'
           return target; 
         });
         return rows;
       }            
+              
+      //custom formatter definition
+      var miscCol = function(cell, formatterParams, onRendered){ //plain text value
+          return "<i class='fa fa-print'></i>";
+      };              
               
     	var table = new Tabulator("#catch-table", {
     		height:600, // set height of table to enable virtual DOM
@@ -42,7 +54,7 @@
     		  	{title:"Agn", field:"Agn", sorter:"string", hozAlign:"center"},
     			  {title:"Navn", field:"Navn", sorter:"string", hozAlign:"left"},
     			  {title:"Bemærkning", field:"Bemærkning", sorter:null, hozAlign:"left"},
-    			  {title:"Misc", field:"Hjemtaget", sorter:"string", hozAlign:"center"},
+    			  {title:"Misc", field:"Misc", sorter:"string", hozAlign:"center", formatter:"html"},
     		],
     	});
 
