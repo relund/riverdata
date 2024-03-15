@@ -730,8 +730,8 @@ stripKml <- function(mapId, Club = NA, GroupNameMarkers = NULL, GroupNameLines =
       mutate(Icon = case_when(
         str_detect(Group, fixed('parkering', ignore_case=TRUE)) ~ "park.png",
         str_detect(Group, fixed('standpladser', ignore_case=TRUE)) ~ "fish.png",
-        str_detect(Group, fixed('bro', ignore_case=TRUE)) ~ "bridge.png",
-        str_detect(Group, fixed('spang', ignore_case=TRUE)) ~ "footbridge.png",
+        # str_detect(Group, fixed('bro', ignore_case=TRUE)) ~ "bridge.png",
+        # str_detect(Group, fixed('spang', ignore_case=TRUE)) ~ "footbridge.png",
         str_detect(Group, fixed('shelter', ignore_case=TRUE)) ~ "shelter.png",
         str_detect(Group, fixed('sten', ignore_case=TRUE)) ~ "rock.png",
         str_detect(Desc, fixed('hytte', ignore_case=TRUE)) ~ "cottage.png",
