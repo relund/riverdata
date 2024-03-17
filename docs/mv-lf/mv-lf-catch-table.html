@@ -8,7 +8,6 @@
 		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e159d290ce.js" crossorigin="anonymous"></script>
 <style>
-  /* custom styling for all icons */
   .fa,
   .fa-solid,
   .fa-brands,
@@ -16,6 +15,15 @@
     color: #74C0FC;
     cursor: pointer;
     padding-left: 5px;
+  }
+  
+  @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 667px) 
+ { 
+     .tabulator{ 
+       font-size:40px;
+     }
   }
 </style>
 	</head>
@@ -51,7 +59,7 @@
           if (target.Garnskadet) {
             str = str + '<i class="fa-solid fa-triangle-exclamation" title = "Garnskadet"></i>';
           }
-          target.Misc = str;
+          target.Art = target.Art + " " + str;
           return target; 
         });
         return rows;
@@ -63,25 +71,45 @@
       };              
               
     	var table = new Tabulator("#catch-table", {
-    		height: 800, // set height of table to enable virtual DOM
-        layout:"fitDataFill",
-        frozenRows:1,
-        //responsiveLayout:true, // enable responsive layout
-
+    		//height: 800, // set height of table to enable virtual DOM
+        //pagination:true, //enable.
+        //paginationSize:10, // this option can take any positive integer value
+        layout:"fitDataFill",   
+        //layout:"fitColumns", 
+        layoutColumnsOnNewData:true,
+        frozenRows:0,
         responsiveLayout:"collapse",
-        responsiveLayoutCollapseStartOpen:false,
+        //responsiveLayoutCollapseStartOpen:false,
+        responsiveLayoutCollapseFormatter: function(data) {
+          //data - an array of objects containing the column title and value for each cell
+          //console.log(data);
+          addRow = false;
+          var list = document.createElement("span");
+          data.forEach(function(col){
+            let item = document.createElement("span");
+            if (col.value == "&nbsp;") item.innerHTML = "";
+            else {
+              item.innerHTML = "<strong>" + col.title + "</strong> - " + col.value + "&nbsp;";
+              addRow = true;
+            }
+            list.appendChild(item);
+          }); 
+          console.log(list);
+          if (addRow) return list; 
+          else return "";
+        },
     		columns:[ //Define Table Columns
-    		    {formatter:"responsiveCollapse", headerSort:false},
+    		    //{formatter:"responsiveCollapse", headerSort:false},
     		  	{title:"Dato", field:"Dato", sorter:"date",  hozAlign:"center", sorterParams:{format:"dd/MM/yyyy", alignEmptyValues:"top",}, resizable:false},
-    		  	{title:"Art", field:"Art", sorter:"string", hozAlign:"center"},
+    		  	{title:"Art", field:"Art", sorter:"string", hozAlign:"center", formatter:"html"},
     		  	{title:"Længde", field:"Længde", sorter:"number", hozAlign:"center"},
     		  	{title:"Vægt", field:"Vægt", sorter:"string", hozAlign:"center"},
     		  	{title:"Agn", field:"Agn", sorter:"string", hozAlign:"center"},
     			  {title:"Navn", field:"Navn", sorter:"string", hozAlign:"left"},
-    			  {title:"Misc", field:"Misc", sorter:"string", hozAlign:"center", formatter:"html"},
+    			  //{title:null, field:"Misc", hozAlign:"center", formatter:"html", headerSort:false},
     		  	{title:"Fiskevand", field:"Fiskevand", sorter:"string", hozAlign:"center"},
     		  	{title:"Strækning", field:"Strækning/sted", sorter:"string", hozAlign:"center"},
-    			  {title:"Bemærkning", field:"Bemærkning", sorter:null, hozAlign:"left"},
+    			  {title:"Bemærkning", field:"Bemærkning", headerSort:false, hozAlign:"left"},
     		],
     	});
 
