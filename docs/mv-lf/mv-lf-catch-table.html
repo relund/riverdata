@@ -19,11 +19,17 @@
   
   @media only screen 
     and (min-device-width: 375px) 
-    and (max-device-width: 667px) 
- { 
+    and (max-device-width: 667px) { 
      .tabulator{ 
-       font-size:40px;
+       font-size:30px;
      }
+  }
+
+  .tabulator-responsive-collapse {
+    border: 2px solid #74C0FC !important;
+    border-radius: 10px;
+    margin: 0px 10px 10px 10px;
+    width: fit-content !important;
   }
 </style>
 	</head>
@@ -81,20 +87,17 @@
         responsiveLayout:"collapse",
         //responsiveLayoutCollapseStartOpen:false,
         responsiveLayoutCollapseFormatter: function(data) {
-          //data - an array of objects containing the column title and value for each cell
-          //console.log(data);
           addRow = false;
           var list = document.createElement("span");
           data.forEach(function(col){
             let item = document.createElement("span");
             if (col.value == "&nbsp;") item.innerHTML = "";
             else {
-              item.innerHTML = "<strong>" + col.title + "</strong> - " + col.value + "&nbsp;";
+              item.innerHTML = col.title + ": " + col.value + "<br/>";
               addRow = true;
             }
             list.appendChild(item);
           }); 
-          console.log(list);
           if (addRow) return list; 
           else return "";
         },
@@ -115,8 +118,8 @@
 
       $.getJSON("https://fangstjournalen.dtu.dk/fangst.nsf/service.xsp?open&club=37E6FB0707BAE0A1C1257F3A003FF013&type=1", function(data){
               tableData = jsonToTable(data)
-              str = JSON.stringify(tableData, null, 4); // (Optional) beautiful indented output.
-              console.log(str); // Logs output to dev tools console.
+              //str = JSON.stringify(tableData, null, 4); // (Optional) beautiful indented output.
+              //console.log(str); // Logs output to dev tools console.
               table.setData(tableData);
           }).fail(function(){
               console.log("An error has occurred.");
