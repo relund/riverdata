@@ -2,16 +2,22 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
-		<script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+    <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator_bootstrap5.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/luxon/build/global/luxon.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/kitcode.js" crossorigin="anonymous"></script>
-    
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <script src="https://kit.fontawesome.com/e159d290ce.js" crossorigin="anonymous"></script>
+<style>
+  /* custom styling for all icons */
+  .fa,
+  .fa-solid,
+  .fa-brands,
+  .fa-sharp-solid {
+    color: #74C0FC;
+    cursor: pointer;
+    padding-left: 5px;
+  }
+</style>
 	</head>
 	<body>
 	  <div id="catch-table"></div>
@@ -29,7 +35,23 @@
           } 
           target.Dato = eval("new " + target.Dato).toLocaleDateString();
           target.Navn = target.Navn.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
-          target.Misc = '<i class="fa-solid fa-camera" style="color: #74C0FC;"></i>'
+          var str = ""
+          if (target.Køn == "Han") {
+              str = str + '<i class="fa-solid fa-mars" title = "Han"></i>';
+          }
+          if (target.Køn == "Hun") {
+              str = str + '<i class="fa-solid fa-venus" title = "Hun"></i>';
+          }
+          if (!(target.Foto === undefined)) {
+            str = str + '<a target = "_blank" href="' + target.Foto + '"><i class="fa-solid fa-camera" title = "Foto"></i></a>';
+          }
+          if (target.Hjemtaget == "Nej") {
+            str = str + '<i class="fa-solid fa-recycle" title = "Genudsat"></i>';
+          }
+          if (target.Garnskadet) {
+            str = str + '<i class="fa-solid fa-triangle-exclamation" title = "Garnskadet"></i>';
+          }
+          target.Misc = str;
           return target; 
         });
         return rows;
@@ -41,46 +63,40 @@
       };              
               
     	var table = new Tabulator("#catch-table", {
-    		height:600, // set height of table to enable virtual DOM
-    		layout:"fitColumns", //fit columns to width of table (optional),
-    		responsiveLayout:"hide",
+    		height: 800, // set height of table to enable virtual DOM
+        layout:"fitDataFill",
+        frozenRows:1,
+        //responsiveLayout:true, // enable responsive layout
+
+        responsiveLayout:"collapse",
+        responsiveLayoutCollapseStartOpen:false,
     		columns:[ //Define Table Columns
-    		  	{title:"Dato", field:"Dato", sorter:"date",  hozAlign:"center", sorterParams:{format:"dd/MM/yyyy", alignEmptyValues:"top",}},
-    		  	{title:"Fiskevand", field:"Fiskevand", sorter:"string", hozAlign:"center"},
-    		  	{title:"Strækning", field:"Strækning/sted", sorter:"string", hozAlign:"center"},
+    		    {formatter:"responsiveCollapse", headerSort:false},
+    		  	{title:"Dato", field:"Dato", sorter:"date",  hozAlign:"center", sorterParams:{format:"dd/MM/yyyy", alignEmptyValues:"top",}, resizable:false},
     		  	{title:"Art", field:"Art", sorter:"string", hozAlign:"center"},
     		  	{title:"Længde", field:"Længde", sorter:"number", hozAlign:"center"},
     		  	{title:"Vægt", field:"Vægt", sorter:"string", hozAlign:"center"},
     		  	{title:"Agn", field:"Agn", sorter:"string", hozAlign:"center"},
     			  {title:"Navn", field:"Navn", sorter:"string", hozAlign:"left"},
-    			  {title:"Bemærkning", field:"Bemærkning", sorter:null, hozAlign:"left"},
     			  {title:"Misc", field:"Misc", sorter:"string", hozAlign:"center", formatter:"html"},
+    		  	{title:"Fiskevand", field:"Fiskevand", sorter:"string", hozAlign:"center"},
+    		  	{title:"Strækning", field:"Strækning/sted", sorter:"string", hozAlign:"center"},
+    			  {title:"Bemærkning", field:"Bemærkning", sorter:null, hozAlign:"left"},
     		],
     	});
 
       $.getJSON("https://fangstjournalen.dtu.dk/fangst.nsf/service.xsp?open&club=37E6FB0707BAE0A1C1257F3A003FF013&type=1", function(data){
-              //str = JSON.stringify(data, null, 4); // (Optional) beautiful indented output.
-              //console.log(str); // Logs output to dev tools console.
               tableData = jsonToTable(data)
-              //str = JSON.stringify(tableData, null, 4); // (Optional) beautiful indented output.
-              //console.log(str); // Logs output to dev tools console.
+              str = JSON.stringify(tableData, null, 4); // (Optional) beautiful indented output.
+              console.log(str); // Logs output to dev tools console.
               table.setData(tableData);
           }).fail(function(){
               console.log("An error has occurred.");
           });
           
-	  //var tmp = Date.parse('Date(2024,2,9)')
-	  //tmp = new Date(2024,2,9)
-	  //tmp = new {eval('Date(2024,2,9)')};
-	  str = "Date(2024,2,9)"
-	  tmp = eval("new " + str)
-	  //tmp = tmp.toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"}); 
-// "Friday, Jul 2, 2021";
-    //str = JSON.stringify(tmp, null, 4); // (Optional) beautiful indented output.
+	  //str = "Date(2024,2,9)"
+	  //tmp = eval("new " + str)
     //console.log(tmp) // Logs output to dev tools console.
     </script> 	  
-	 
-
-</script>	  
 	</body>
 </html>
