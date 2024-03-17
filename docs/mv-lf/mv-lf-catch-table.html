@@ -19,9 +19,8 @@
   
 /* Portrait and Landscape */
 @media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
+  and (min-device-width: 200px) 
+  and (max-device-width: 736px) { 
      .tabulator{ 
        font-size:35px;
      }
@@ -79,10 +78,10 @@
       };              
               
     	var table = new Tabulator("#catch-table", {
-    		//height: 800, // set height of table to enable virtual DOM
+    		height: 1200, // set height of table to enable virtual DOM
     		resizable: false,
-        pagination:true, //enable.
-        paginationSize:20, // this option can take any positive integer value
+        //pagination:true, //enable.
+        //paginationSize:20, // this option can take any positive integer value
         layout:"fitDataFill",   
         //layout:"fitColumns", 
         layoutColumnsOnNewData:true,
