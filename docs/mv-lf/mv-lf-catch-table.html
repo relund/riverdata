@@ -32,23 +32,25 @@
            }
         }
         
-        @media (pointer: coarse), (hover: none) {
+        /*@media (pointer: coarse), (hover: none) {
           [title] {
             position: relative;
             display: inline-flex;
             justify-content: center;
+            z-index:inherit !important;
           }
           [title]:focus::after {
             content: attr(title);
-            position: absolute;
+            //position: absolute;
             top: 90%;
             color: #000;
             background-color: #fff;
-            border: 1px solid;
-            width: fit-content;
-            padding: 3px;
+            //border: 1px solid;
+            //width: fit-content;
+            //padding: 3px;
+            z-index:1000 !important;
           }
-        }
+        }*/
     
       .tabulator-responsive-collapse {
         border: 2px solid #74C0FC !important;
@@ -77,19 +79,19 @@
           target.Navn = target.Navn.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
           var str = ""
           if (target.Køn == "Han") {
-              str = str + '<i class="fa-solid fa-mars" title = "Han"></i>';
+              str = str + '<i class="fa-solid fa-mars" title = "Han" tabindex = "0"></i>';
           }
           if (target.Køn == "Hun") {
-              str = str + '<i class="fa-solid fa-venus" title = "Hun"></i>';
+              str = str + '<i class="fa-solid fa-venus" title = "Hun" tabindex = "0"></i>';
           }
           if (!(target.Foto === undefined)) {
-            str = str + '<a target = "_blank" href="' + target.Foto + '"><i class="fa-solid fa-camera" title = "Foto"></i></a>';
+            str = str + '<a target = "_blank" href="' + target.Foto + '"><i class="fa-solid fa-camera" title = "Foto" tabindex = "0"></i></a>';
           }
           if (target.Hjemtaget == "Nej") {
-            str = str + '<i class="fa-solid fa-recycle" title = "Genudsat"></i>';
+            str = str + '<i class="fa-solid fa-recycle" title = "Genudsat" tabindex = "0"></i>';
           }
           if (target.Garnskadet) {
-            str = str + '<i class="fa-solid fa-triangle-exclamation" title = "Garnskadet"></i>';
+            str = str + '<i class="fa-solid fa-triangle-exclamation" title = "Garnskadet" tabindex = "0"></i>';
           }
           target.Art = target.Art + " " + str;
           return target; 
