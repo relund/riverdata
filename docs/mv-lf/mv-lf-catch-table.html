@@ -34,7 +34,8 @@
     
       .tabulator-responsive-collapse {
         border: 2px solid #74C0FC !important;
-        border-radius: 10px;
+        padding: 10px !important;
+        border-radius: 7px;
         margin: 0px 10px 10px 10px;
         width: fit-content !important;
       }
@@ -84,13 +85,12 @@
       };              
               
     	var table = new Tabulator("#catch-table", {
-    		height: "100%", // set height of table to enable virtual DOM
+    		//height: "100%", // set height of table to enable virtual DOM
     		height: 1700, // set height of table to enable virtual DOM
     		resizable: false,
         //pagination:true, //enable.
         //paginationSize:20, // this option can take any positive integer value
         layout:"fitDataFill",   
-        //layout:"fitColumns", 
         layoutColumnsOnNewData:true,
         frozenRows:0,
         responsiveLayout:"collapse",
@@ -112,15 +112,15 @@
         },
     		columns:[ //Define Table Columns
     		    //{formatter:"responsiveCollapse", headerSort:false},
-    		  	{title:"Dato", field:"Dato", sorter:"date",  hozAlign:"center", sorterParams:{format:"dd/MM/yyyy", alignEmptyValues:"top",}, resizable:false},
-    		  	{title:"Art", field:"Art", sorter:"string", hozAlign:"center", formatter:"html"},
+    		  	{title:"Dato", field:"Dato", sorter:"date",  hozAlign:"left", sorterParams:{format:"dd/MM/yyyy", alignEmptyValues:"top",}, resizable:false},
+    		  	{title:"Art", field:"Art", sorter:"string", hozAlign:"left", formatter:"html", minWidth: 250},
     		  	{title:"Længde", field:"Længde", sorter:"number", hozAlign:"center"},
-    		  	{title:"Vægt", field:"Vægt", sorter:"string", hozAlign:"center"},
-    		  	{title:"Agn", field:"Agn", sorter:"string", hozAlign:"center"},
+    		  	{title:"Vægt", field:"Vægt", sorter:"number", hozAlign:"center"},
+    		  	{title:"Agn", field:"Agn", sorter:"string", hozAlign:"left"},
     			  {title:"Navn", field:"Navn", sorter:"string", hozAlign:"left"},
     			  //{title:null, field:"Misc", hozAlign:"center", formatter:"html", headerSort:false},
-    		  	{title:"Fiskevand", field:"Fiskevand", sorter:"string", hozAlign:"center"},
-    		  	{title:"Strækning", field:"Strækning/sted", sorter:"string", hozAlign:"center"},
+    		  	{title:"Fiskevand", field:"Fiskevand", sorter:"string", hozAlign:"left"},
+    		  	{title:"Strækning", field:"Strækning/sted", sorter:"string", hozAlign:"left"},
     			  {title:"Bemærkning", field:"Bemærkning", headerSort:false, hozAlign:"left"},
     		],
     	});
