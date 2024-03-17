@@ -7,32 +7,38 @@
 		<script src="https://cdn.jsdelivr.net/npm/luxon/build/global/luxon.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e159d290ce.js" crossorigin="anonymous"></script>
-<style>
-  .fa,
-  .fa-solid,
-  .fa-brands,
-  .fa-sharp-solid {
-    color: #74C0FC;
-    cursor: pointer;
-    padding-left: 5px;
-  }
-  
-  @media only screen 
-    and (min-device-width: 200px) 
-    and (max-device-width: 736px) 
-    and (orientation: portrait) { 
-       .tabulator{ 
-         font-size:35px;
-       }
-    }
-
-  .tabulator-responsive-collapse {
-    border: 2px solid #74C0FC !important;
-    border-radius: 10px;
-    margin: 0px 10px 10px 10px;
-    width: fit-content !important;
-  }
-</style>
+    <script type="text/javascript">
+      $(window).bind('orientationchange', function (event) {
+        location.reload(true);
+      });
+    </script>
+    
+    <style>
+      .fa,
+      .fa-solid,
+      .fa-brands,
+      .fa-sharp-solid {
+        color: #74C0FC;
+        cursor: pointer;
+        padding-left: 5px;
+      }
+      
+      @media only screen 
+        and (min-device-width: 200px) 
+        and (max-device-width: 736px) 
+        and (orientation: portrait) { 
+           .tabulator{ 
+             font-size:35px;
+           }
+        }
+    
+      .tabulator-responsive-collapse {
+        border: 2px solid #74C0FC !important;
+        border-radius: 10px;
+        margin: 0px 10px 10px 10px;
+        width: fit-content !important;
+      }
+    </style>
 	</head>
 	<body>
 	  <div id="catch-table"></div>
