@@ -17,14 +17,14 @@
     padding-left: 5px;
   }
   
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 200px) 
-  and (max-device-width: 736px) { 
-     .tabulator{ 
-       font-size:35px;
-     }
-  }
+  @media only screen 
+    and (min-device-width: 200px) 
+    and (max-device-width: 736px) 
+    and (orientation: portrait) { 
+       .tabulator{ 
+         font-size:35px;
+       }
+    }
 
   .tabulator-responsive-collapse {
     border: 2px solid #74C0FC !important;
