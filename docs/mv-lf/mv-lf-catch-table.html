@@ -17,11 +17,13 @@
     padding-left: 5px;
   }
   
-  @media only screen 
-    and (min-device-width: 375px) 
-    and (max-device-width: 667px) { 
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
      .tabulator{ 
-       font-size:30px;
+       font-size:35px;
      }
   }
 
@@ -78,8 +80,9 @@
               
     	var table = new Tabulator("#catch-table", {
     		//height: 800, // set height of table to enable virtual DOM
-        //pagination:true, //enable.
-        //paginationSize:10, // this option can take any positive integer value
+    		resizable: false,
+        pagination:true, //enable.
+        paginationSize:20, // this option can take any positive integer value
         layout:"fitDataFill",   
         //layout:"fitColumns", 
         layoutColumnsOnNewData:true,
