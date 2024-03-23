@@ -1,0 +1,20 @@
+.fa, .fas, .fab {
+    color: #3399ff;
+    font-style: normal;
+    font-weight: 900;
+}
+
+.selectize-dropdown, .selectize-input, .selectize-input input {
+    position: static !important; 
+}
+
+.leaflet-tooltip {
+  white-space: normal; 
+  min-width: 150px;
+  max-width: 250px;
+}
+
+.leaflet-tooltip img {
+  max-width: 240px; 
+  height:auto;
+}
