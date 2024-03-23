@@ -84,10 +84,10 @@ datLines <- read_csv(paste0(prefix, "data_skjern_maplines.csv"), col_types = "fc
 
 maplet <- leaflet(width = "100%", height = "100vh") %>%
   # Base groups
-  addTiles(group = "Kort") %>%
+  addTiles(group = "Kort", options = providerTileOptions(maxZoom = 19)) %>%
   # addProviderTiles('MtbMap', group = "Kort") %>%
-  addProviderTiles('Esri.WorldImagery', group = "Luftfoto") %>%
-  addProviderTiles("CartoDB.PositronOnlyLabels", group = "Luftfoto")
+  addProviderTiles('Esri.WorldImagery', group = "Luftfoto", options = providerTileOptions(maxZoom = 19)) %>%  
+  addProviderTiles("CartoDB.PositronOnlyLabels", group = "Luftfoto", options = providerTileOptions(maxZoom = 19))
   # setView(9.016712672451805, 56.40970340006212,  zoom = 13)
 
 

@@ -88,13 +88,13 @@ datLines <- read_csv(paste0(prefix, "data_mv-lf_maplines.csv"), col_types = "fcc
   mutate(Desc = map(Desc, HTML)) %>% 
   select(-Text) 
 
-maplet <- leaflet(width = "100%", height = "100vh") %>% 
+maplet <- leaflet(width = "100%", height = "100vh") %>%
   # Base groups
-  addTiles(group = "Kort") %>%
-  # addProviderTiles('MtbMap', group = "Kort") %>% 
-  addProviderTiles('Esri.WorldImagery', group = "Luftfoto") %>% 
-  addProviderTiles("CartoDB.PositronOnlyLabels", group = "Luftfoto") 
-  # setView(9.016712672451805, 56.40970340006212,  zoom = 13) 
+  addTiles(group = "Kort", options = providerTileOptions(maxZoom = 19)) %>%
+  # addProviderTiles('MtbMap', group = "Kort") %>%
+  addProviderTiles('Esri.WorldImagery', group = "Luftfoto", options = providerTileOptions(maxZoom = 19)) %>%  
+  addProviderTiles("CartoDB.PositronOnlyLabels", group = "Luftfoto", options = providerTileOptions(maxZoom = 19))
+  # setView(9.016712672451805, 56.40970340006212,  zoom = 13)
 
 groups <- NULL
 ## Markers
