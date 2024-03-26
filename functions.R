@@ -914,7 +914,7 @@ writeWeightEstimates <- function(prefix, seatrout = TRUE) {
   maxLength <- max(dat$Length, na.rm = TRUE)
   dat <- dat %>% 
     filter(Length > minLength - 1 & Killed) %>% 
-    mutate(Period = factor(month(Date, label = T), ordered = F)) %>% 
+    mutate(Period = factor(month(Date, label = T), ordered = F), MonthN = month(Date)) %>% 
     group_by(Period) %>% filter(n() > 5) # at least 6 obs
   mod <- lm(log(Weight) ~ Period*log(Length), dat)
   datP <- expand_grid(Length = minLength:maxLength, Period = unique(dat$Period))
@@ -925,6 +925,7 @@ writeWeightEstimates <- function(prefix, seatrout = TRUE) {
   colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
   res <- res %>% 
     mutate(Avg = round(Avg,3), Lower = round(Lower, 3), Upper = round(Upper, 3))
+  res <-  left_join(res, dat %>% ungroup() %>% distinct(Period, MonthN))
   fn <- str_c(prefix, "_weight_", species, ".csv")
   message("  Write data to ", fn)
   write_csv(res, fn)
