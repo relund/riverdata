@@ -33,13 +33,13 @@ readCatch <- function(prefix, datWeight) {
                   "-",
                   formatC(MDay, width = 2, flag = "0"))
     )
-  datWeight <- datWeight %>%
-    mutate(Period = as.character(Period)) %>%
-    mutate(Period =
-             case_when(Period == "May" ~ "Maj",
-                       Period == "Oct" ~ "Okt",
-                       TRUE ~ Period))
-  datCatch <- left_join(datCatch, datWeight, by = c("Length", "Month" = "Period")) %>% 
+  # datWeight <- datWeight %>%
+  #   mutate(Period = as.character(Period)) %>%
+  #   mutate(Period =
+  #            case_when(Period == "May" ~ "Maj",
+  #                      Period == "Oct" ~ "Okt",
+  #                      TRUE ~ Period))
+  datCatch <- left_join(datCatch, datWeight, by = c("Length", "MonthN"))  %>% 
     mutate(Weight = if_else(is.na(Weight), round(Avg,1), Weight)) %>% 
     mutate(Fulton = Weight*100000/Length^3) %>% 
     mutate(Month = month(Date, label = T))
