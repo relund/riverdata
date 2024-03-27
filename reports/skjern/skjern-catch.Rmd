@@ -216,7 +216,7 @@ Row
     rownames = FALSE,
     filter = 'bottom',
     escape = FALSE,
-    options = list(pageLength = 15, order = list(list(0, 'desc')),
+    options = list(pageLength = 20, order = list(list(0, 'desc')),
                    list(visible=FALSE, targets="NoWeight"),
                    # autoWidth = TRUE,
                    columnDefs = list(
@@ -381,7 +381,7 @@ Row
     rownames = FALSE,
     filter = 'bottom',
     escape = FALSE,
-    options = list(pageLength = 15, order = list(list(0, 'desc')),
+    options = list(pageLength = 20, order = list(list(0, 'desc')),
                    list(visible=FALSE, targets="NoWeight"),
                    # autoWidth = TRUE,
                    columnDefs = list(
