@@ -51,6 +51,7 @@ jobs:
           git config user.email "junk@relund.dk"
           git config user.name "Lars Relund"
           git add \*.csv
+          git add \*.html
           git commit --allow-empty -am 'gHA build: ${{github.run_number}}' || echo "No changes to commit"
           git pull --rebase
           git push origin || echo "No changes to commit"
