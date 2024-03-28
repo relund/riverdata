@@ -415,23 +415,22 @@ plotOutput("plotCatchSalMonth")
 
 ```{r, context = "server"}
 output$plotCatchSalMonth <- renderPlot({
-  # url <- str_c(
-  #   # session$clientData$url_protocol, "://", 
-  #   # session$clientData$url_hostname,
-  #   session$clientData$url_pathname, 
-  #   "#section-fangster-sal"
-  # )
-  # updateQueryString(url) 
-  
-  dat <- datCatchSal %>% 
-    dplyr::filter(Date > now(tzone = "CET") - days(30)) %>% 
-    select(Date, Place) %>% 
+  dat <- datCatchSal %>%
+    dplyr::filter(Date > now(tzone = "CET") - days(30)) %>%
+    select(Date, Place) %>%
     arrange(desc(Date))
-
+  lastDate <- date(now() + ddays(1))
+  if (nrow(dat) == 0) {
+    dat <- datCatchSal %>%
+      mutate(DayCtr = max(Date) - Date) %>% 
+      dplyr::filter(DayCtr <= 30) %>% 
+      arrange(desc(Date)) 
+    lastDate <- max(dat$Date) + ddays(1)
+  }
   ggplot(data = dat, aes(x = Date)) +
     geom_bar(aes(fill = Place), width = 0.75) + 
     geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) + #  vjust = -0.5
-    scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(NA_Date_, date(now()+ddays(1)))) + # now()+ddays(1)
+    scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(NA_Date_, lastDate)) + 
     labs(fill = "") + xlab("Dato") + ylab("Antal fangster") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
  })
@@ -685,14 +684,21 @@ plotOutput("plotCatchSeaMonth")
 ```{r, context = "server"}
 output$plotCatchSeaMonth <- renderPlot({
   dat <- datCatchSea %>% 
-    dplyr::filter(Date > now(tzone = "CET") - days(30)) %>% 
-    select(Date, Place) %>% 
+    dplyr::filter(Date > now(tzone = "CET") - days(30)) %>%
+    select(Date, Place) %>%
     arrange(desc(Date))
-
+  lastDate <- date(now() + ddays(1))
+  if (nrow(dat) == 0) {
+    dat <- datCatchSea %>%
+      mutate(DayCtr = max(Date) - Date) %>% 
+      dplyr::filter(DayCtr <= 30) %>% 
+      arrange(desc(Date)) 
+    lastDate <- max(dat$Date) + ddays(1)
+  }
   ggplot(data = dat, aes(x = Date)) +
     geom_bar(aes(fill = Place)) + 
     geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) +
-    scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(NA_Date_, date(now()+ddays(1)))) + 
+    scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", limits = c(NA_Date_, lastDate)) + 
     labs(fill = "") + xlab("Dato") + ylab("Antal fangster") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
  })
@@ -770,7 +776,7 @@ cNames <- c(paste0(faIcon("calendar-alt", class = "far", title = "Måned")),
    ) 
 
 datStatMonthSea %>%
-  kable(col.names = cNames, escape = F, align = "c") %>%
+  kable(col.names = cNames, escape = F, align = "c", format = "html") %>%
   kable_styling(fixed_thead = T, font_size = 10,
                 bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
   add_header_above(c(" " = 2, "Køn", "Område (alle fangster/hjemtaget)" = 2, "Metode", "Genudsat", "Længde", "Vægt", "Kondition"))
