@@ -18,7 +18,7 @@ $(".selectize-input input").prop('readonly','readonly');
 
 ```{r, include=FALSE}
 library(knitr)
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, fig.height = 7, out.width = "100%")
 # library(directlabels)
 library(plotly)
 library(flexdashboard)
@@ -44,7 +44,7 @@ Sys.setlocale("LC_ALL", "da_DK.UTF-8")
 
 
 ```{r, include=FALSE} 
-prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
+# prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
 prefix <- "../../data/"
 curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
 
@@ -208,7 +208,7 @@ datStatMonthSal %>%
 Fangsttabel {data-navmenu="Laks"}
 =======================================================================
 
-Row
+Row {data-height=850}
 -----------------------------------------------------------------------
 
 ### Fangster de seneste 2 år
@@ -373,7 +373,7 @@ datStatMonthSea %>%
 Fangsttabel {data-navmenu="Havørred"}
 =======================================================================
 
-Row
+Row {data-height=850}
 -----------------------------------------------------------------------
 
 ### Fangster de seneste 2 år
@@ -407,13 +407,15 @@ Row
 
 
 
-Statistik over år {data-navmenu="Laks"}
+Statistik over år {data-orientation=columns data-navmenu="Laks"}
 =======================================================================
 
-Row
+Column{ vertical_layout: scroll}
 -----------------------------------------------------------------------
 
-### Statistik over år
+##### Statistik over år
+
+____
 
 ```{r}
 cNames <- c(paste0(faIcon("calendar-alt", title = "Måned")), 
@@ -444,12 +446,46 @@ datStatYearSal %>%
 ```
 
 
+##### Fangster over år givet sted
+
+____
+
+```{r}
+  titleFont <- list(size = 14)
+  dat <- datCatchSal %>% select(Year, Place)
+  p <- ggplot(data = dat, aes(x = Year, fill = Place)) +
+    geom_bar() +
+    labs(fill = "") + xlab(NULL) + ylab(NULL) + 
+    guides(fill = guide_legend(ncol = 6)) + 
+    theme(legend.position="bottom")  
+  ggplotly(p, tooltip = NULL) %>% 
+    layout(
+      legend = list(orientation = 'h')
+  )
+```
 
 
-Row
------------------------------------------------------------------------
+##### Fangster over år givet metode
 
-### Månedlige fangster givet sted 2004-`r year(now())`
+____
+
+```{r}
+  dat <- datCatchSal %>% select(Year, Method)
+  p <- ggplot(data = dat, aes(x = Year, fill = Method)) +
+    geom_bar() +
+    labs(fill = "") + xlab(NULL) + ylab(NULL) + 
+    guides(fill = guide_legend(ncol = 6)) + 
+    theme(legend.position="bottom")  
+  ggplotly(p, tooltip = NULL) %>% 
+    layout(
+      legend = list(orientation = 'h')
+  )
+```
+
+
+##### Månedlige fangster givet sted 
+
+____
 
 ```{r}
   dat <- datCatchSal %>% 
@@ -474,7 +510,9 @@ Row
   )
 ```
 
-### Månedlige fangster givet metode 2004-`r year(now())`
+##### Månedlige fangster givet metode 
+
+____
 
 ```{r}
   dat <- datCatchSal %>% 
@@ -500,10 +538,10 @@ Row
 ```
 
 
-Row
------------------------------------------------------------------------
 
-### Månedlige fangster givet størrelse 2004-`r year(now())`
+##### Månedlige fangster givet størrelse 
+
+____
 
 ```{r}
   dat <- datCatchSal %>% 
@@ -530,13 +568,15 @@ Row
 ```
 
 
-Statistik over år {data-navmenu="Havørred"}
+Statistik over år {data-orientation=columns data-navmenu="Havørred"}
 =======================================================================
 
-Row
+Column{ vertical_layout: scroll}
 -----------------------------------------------------------------------
 
-### Statistik over år
+##### Statistik over år
+
+____
 
 ```{r}
 cNames <- c(paste0(faIcon("calendar-alt", title = "Måned")), 
@@ -567,12 +607,48 @@ datStatYearSea %>%
 ```
 
 
+##### Fangster over år givet sted
+
+____
+
+```{r}
+  titleFont <- list(size = 14)
+  dat <- datCatchSea %>% select(Year, Place)
+  p <- ggplot(data = dat, aes(x = Year, fill = Place)) +
+    geom_bar() +
+    labs(fill = "") + xlab(NULL) + ylab(NULL) + 
+    guides(fill = guide_legend(ncol = 6)) + 
+    theme(legend.position="bottom")  
+  ggplotly(p, tooltip = NULL) %>% 
+    layout(
+      legend = list(orientation = 'h')
+  )
+```
 
 
-Row
------------------------------------------------------------------------
+##### Fangster over år givet metode
 
-### Månedlige fangster givet sted 2004-`r year(now())`
+____
+
+```{r}
+  dat <- datCatchSea %>% select(Year, Method)
+  p <- ggplot(data = dat, aes(x = Year, fill = Method)) +
+    geom_bar() +
+    labs(fill = "") + xlab(NULL) + ylab(NULL) + 
+    guides(fill = guide_legend(ncol = 6)) + 
+    theme(legend.position="bottom")  
+  ggplotly(p, tooltip = NULL) %>% 
+    layout(
+      legend = list(orientation = 'h')
+  )
+```
+
+
+
+
+##### Månedlige fangster givet sted 
+
+____
 
 ```{r}
   dat <- datCatchSea %>% select(Month, Place)
@@ -595,7 +671,9 @@ Row
   )
 ```
 
-### Månedlige fangster givet metode 2004-`r year(now())`
+##### Månedlige fangster givet metode 
+
+____
 
 ```{r}
   dat <- datCatchSea %>% select(Month, Method)
