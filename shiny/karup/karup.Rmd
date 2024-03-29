@@ -324,7 +324,7 @@ output$cSeaBig <- renderValueBox({
 Row
 -----------------------------------------------------------------------
 
-### Fangster den seneste måned
+### Fangster den seneste måned `r curYear`
 
 ```{r}
 plotOutput("plotCatchSeaMonth")

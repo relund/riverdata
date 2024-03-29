@@ -68,7 +68,7 @@ Dag {data-navmenu="Havørred" #fangster-hav-dag}
 Row
 -----------------------------------------------------------------------
 
-### Fangster den seneste måned
+### Fangster den seneste måned `r curYear`
 
 ```{r}
   dat <- datCatchSea %>% 

@@ -71,7 +71,7 @@ Dag {data-navmenu="Laks" #fangster-laks-dag}
 Row
 -----------------------------------------------------------------------
 
-### Fangster den seneste måned
+### Fangster den seneste måned `r curYear`
 
 ```{r}
   dat <- datCatchSal %>%
