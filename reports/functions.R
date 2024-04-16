@@ -294,6 +294,7 @@ monthlyStat <- function(datCatch, year) {
         Total = "0/0",
         Sex = "0/0/0",
         Place = "0/0/0/0/0/0",
+        PlaceK = "0/0/0/0/0/0",
         Method = "0/0/0/0",
         Released = "0/0",
         Length = "0/0",
