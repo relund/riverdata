@@ -3802,10 +3802,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-05-23T20:25:00Z,Karstoft Å - Fiskedamme,2024,1551.4,8.5
 2020-05-23T21:25:00Z,Karstoft Å - Fiskedamme,2024,1552.2,9.2
 2020-05-23T22:25:00Z,Karstoft Å - Fiskedamme,2024,1552.7,9.7
-2020-05-23T23:25:00Z,Karstoft Å - Fiskedamme,2024,1553.3,10.3
+2020-05-23T23:25:00Z,Karstoft Å - Fiskedamme,2024,1553.2,10.2
 2020-05-24T00:25:00Z,Karstoft Å - Fiskedamme,2024,1553.7,10.9
-2020-05-24T01:25:00Z,Karstoft Å - Fiskedamme,2024,1553.9,11.1
-2020-05-24T02:25:00Z,Karstoft Å - Fiskedamme,2024,1554,11.2
+2020-05-24T01:25:00Z,Karstoft Å - Fiskedamme,2024,1553.8,10.9
+2020-05-24T02:25:00Z,Karstoft Å - Fiskedamme,2024,1553.9,11.1
 2020-05-24T03:25:00Z,Karstoft Å - Fiskedamme,2024,1554,11.2
 2020-05-24T04:25:00Z,Karstoft Å - Fiskedamme,2024,1553.8,11
 2020-05-24T05:25:00Z,Karstoft Å - Fiskedamme,2024,1553.5,10.8
@@ -12278,6 +12278,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-06-05T05:27:30Z,Skjern Å - Laksens hus,2023,68.8,-25.5
 2020-06-05T06:27:30Z,Skjern Å - Laksens hus,2023,68.8,-25.5
 2020-06-05T07:27:30Z,Skjern Å - Laksens hus,2023,68.8,-25.5
+2020-06-05T08:27:30Z,Skjern Å - Laksens hus,2023,68.8,-25.5
 2020-05-21T00:27:30Z,Skjern Å - Laksens hus,2024,120.5,17.6
 2020-05-21T01:27:30Z,Skjern Å - Laksens hus,2024,120.2,17.3
 2020-05-21T02:27:30Z,Skjern Å - Laksens hus,2024,120.2,17.3
@@ -12646,7 +12647,8 @@ Date,Place,YGroup,Level,LevelRelative
 2020-06-05T05:27:30Z,Skjern Å - Laksens hus,2024,126.4,32.7
 2020-06-05T06:27:30Z,Skjern Å - Laksens hus,2024,126.9,33.2
 2020-06-05T07:27:30Z,Skjern Å - Laksens hus,2024,127.6,33.9
-2020-06-05T08:05:00Z,Skjern Å - Laksens hus,2024,128.3,34.6
+2020-06-05T08:27:30Z,Skjern Å - Laksens hus,2024,128.4,34.7
+2020-06-05T09:05:00Z,Skjern Å - Laksens hus,2024,129.1,35.3
 2020-05-21T00:30:00Z,Skjern Å - Landevejsbroen,2021,182.4,-7.4
 2020-05-21T01:25:00Z,Skjern Å - Landevejsbroen,2021,182.4,-7.4
 2020-05-21T02:28:00Z,Skjern Å - Landevejsbroen,2021,182.4,-7.4
@@ -14564,19 +14566,19 @@ Date,Place,YGroup,Level,LevelRelative
 2020-05-30T22:25:00Z,Skjern Å - Sandfeldvej,2024,2792.8,24.3
 2020-05-30T23:25:00Z,Skjern Å - Sandfeldvej,2024,2792.3,23.8
 2020-05-31T00:25:00Z,Skjern Å - Sandfeldvej,2024,2791.9,23.8
-2020-05-31T01:25:00Z,Skjern Å - Sandfeldvej,2024,2791.9,23.8
-2020-05-31T02:25:00Z,Skjern Å - Sandfeldvej,2024,2792.2,24.1
-2020-05-31T03:25:00Z,Skjern Å - Sandfeldvej,2024,2792.6,24.4
-2020-05-31T04:25:00Z,Skjern Å - Sandfeldvej,2024,2792.9,24.8
+2020-05-31T01:25:00Z,Skjern Å - Sandfeldvej,2024,2791.8,23.7
+2020-05-31T02:25:00Z,Skjern Å - Sandfeldvej,2024,2792.1,24
+2020-05-31T03:25:00Z,Skjern Å - Sandfeldvej,2024,2792.5,24.4
+2020-05-31T04:25:00Z,Skjern Å - Sandfeldvej,2024,2792.8,24.7
 2020-05-31T05:25:00Z,Skjern Å - Sandfeldvej,2024,2793.2,25
 2020-05-31T06:25:00Z,Skjern Å - Sandfeldvej,2024,2793.9,25.8
 2020-05-31T07:25:00Z,Skjern Å - Sandfeldvej,2024,2795.2,27.1
 2020-05-31T08:25:00Z,Skjern Å - Sandfeldvej,2024,2797.2,29.1
 2020-05-31T09:25:00Z,Skjern Å - Sandfeldvej,2024,2799.3,31.2
 2020-05-31T10:25:00Z,Skjern Å - Sandfeldvej,2024,2801.3,33.2
-2020-05-31T11:25:00Z,Skjern Å - Sandfeldvej,2024,2802.7,34.6
-2020-05-31T12:25:00Z,Skjern Å - Sandfeldvej,2024,2803.2,35.1
-2020-05-31T13:25:00Z,Skjern Å - Sandfeldvej,2024,2803.7,35.5
+2020-05-31T11:25:00Z,Skjern Å - Sandfeldvej,2024,2802.8,34.6
+2020-05-31T12:25:00Z,Skjern Å - Sandfeldvej,2024,2803.3,35.2
+2020-05-31T13:25:00Z,Skjern Å - Sandfeldvej,2024,2803.7,35.6
 2020-05-31T14:25:00Z,Skjern Å - Sandfeldvej,2024,2804.1,36
 2020-05-31T15:25:00Z,Skjern Å - Sandfeldvej,2024,2804.3,36.2
 2020-05-31T16:25:00Z,Skjern Å - Sandfeldvej,2024,2804.1,36
