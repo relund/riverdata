@@ -3926,10 +3926,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-05-31T15:25:00Z,Karstoft Å - Fiskedamme,2024,1559.2,17.9
 2020-05-31T16:25:00Z,Karstoft Å - Fiskedamme,2024,1560.2,18.9
 2020-05-31T17:25:00Z,Karstoft Å - Fiskedamme,2024,1560.8,19.5
-2020-05-31T18:25:00Z,Karstoft Å - Fiskedamme,2024,1560.9,19.6
-2020-05-31T19:25:00Z,Karstoft Å - Fiskedamme,2024,1561.2,19.9
-2020-05-31T20:25:00Z,Karstoft Å - Fiskedamme,2024,1561.6,20.2
-2020-05-31T21:25:00Z,Karstoft Å - Fiskedamme,2024,1561.6,20.2
+2020-05-31T18:25:00Z,Karstoft Å - Fiskedamme,2024,1561,19.7
+2020-05-31T19:25:00Z,Karstoft Å - Fiskedamme,2024,1561.4,20.1
+2020-05-31T20:25:00Z,Karstoft Å - Fiskedamme,2024,1561.7,20.4
+2020-05-31T21:25:00Z,Karstoft Å - Fiskedamme,2024,1561.6,20.3
 2020-05-31T22:25:00Z,Karstoft Å - Fiskedamme,2024,1561.6,20.2
 2020-05-31T23:25:00Z,Karstoft Å - Fiskedamme,2024,1561.3,20
 2020-06-01T00:25:00Z,Karstoft Å - Fiskedamme,2024,1560.8,19.7
@@ -4027,8 +4027,8 @@ Date,Place,YGroup,Level,LevelRelative
 2020-06-04T20:25:00Z,Karstoft Å - Fiskedamme,2024,1550.2,9.8
 2020-06-04T21:25:00Z,Karstoft Å - Fiskedamme,2024,1550.3,9.9
 2020-06-04T22:25:00Z,Karstoft Å - Fiskedamme,2024,1550.6,10.2
-2020-06-04T23:25:00Z,Karstoft Å - Fiskedamme,2024,1551,10.6
-2020-06-05T00:25:00Z,Karstoft Å - Fiskedamme,2024,1551.7,11.5
+2020-06-04T23:25:00Z,Karstoft Å - Fiskedamme,2024,1551.2,10.8
+2020-06-05T00:25:00Z,Karstoft Å - Fiskedamme,2024,1551.8,11.7
 2020-06-05T01:25:00Z,Karstoft Å - Fiskedamme,2024,1552.4,12.2
 2020-06-05T02:25:00Z,Karstoft Å - Fiskedamme,2024,1553.5,13.3
 2020-06-05T03:25:00Z,Karstoft Å - Fiskedamme,2024,1554,13.8
@@ -4109,13 +4109,13 @@ Date,Place,YGroup,Level,LevelRelative
 2020-06-08T06:25:00Z,Karstoft Å - Fiskedamme,2024,1564.2,24.5
 2020-06-08T07:25:00Z,Karstoft Å - Fiskedamme,2024,1564.9,25.2
 2020-06-08T08:25:00Z,Karstoft Å - Fiskedamme,2024,1565.3,25.6
-2020-06-08T09:25:00Z,Karstoft Å - Fiskedamme,2024,1566.1,26.4
-2020-06-08T10:25:00Z,Karstoft Å - Fiskedamme,2024,1567.1,27.4
-2020-06-08T11:25:00Z,Karstoft Å - Fiskedamme,2024,1568.2,28.5
-2020-06-08T12:25:00Z,Karstoft Å - Fiskedamme,2024,1569.2,29.5
-2020-06-08T13:25:00Z,Karstoft Å - Fiskedamme,2024,1570.3,30.6
-2020-06-08T14:25:00Z,Karstoft Å - Fiskedamme,2024,1571.4,31.7
-2020-06-08T15:25:00Z,Karstoft Å - Fiskedamme,2024,1572.5,32.8
+2020-06-08T09:25:00Z,Karstoft Å - Fiskedamme,2024,1566,26.3
+2020-06-08T10:25:00Z,Karstoft Å - Fiskedamme,2024,1566.8,27.1
+2020-06-08T11:25:00Z,Karstoft Å - Fiskedamme,2024,1567.9,28.1
+2020-06-08T12:25:00Z,Karstoft Å - Fiskedamme,2024,1568.9,29.2
+2020-06-08T13:25:00Z,Karstoft Å - Fiskedamme,2024,1569.9,30.2
+2020-06-08T14:25:00Z,Karstoft Å - Fiskedamme,2024,1570.9,31.2
+2020-06-08T15:25:00Z,Karstoft Å - Fiskedamme,2024,1572.2,32.5
 2020-06-08T16:25:00Z,Karstoft Å - Fiskedamme,2024,1574,34.3
 2020-06-08T17:25:00Z,Karstoft Å - Fiskedamme,2024,1576,36.3
 2020-06-08T18:25:00Z,Karstoft Å - Fiskedamme,2024,1577.8,38.1
@@ -8601,7 +8601,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-06-08T08:25:00Z,Rind Å - Arnborg kirke,2024,2514.1,37.3
 2020-06-08T09:25:00Z,Rind Å - Arnborg kirke,2024,2515.3,38.5
 2020-06-08T10:25:00Z,Rind Å - Arnborg kirke,2024,2516.6,39.8
-2020-06-08T11:25:00Z,Rind Å - Arnborg kirke,2024,2518.1,41.2
+2020-06-08T11:25:00Z,Rind Å - Arnborg kirke,2024,2518,41.2
 2020-06-08T12:25:00Z,Rind Å - Arnborg kirke,2024,2520.4,43.6
 2020-06-08T13:25:00Z,Rind Å - Arnborg kirke,2024,2523.1,46.3
 2020-06-08T14:25:00Z,Rind Å - Arnborg kirke,2024,2525.9,49.1
