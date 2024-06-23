@@ -18,7 +18,7 @@ $(".selectize-input input").prop('readonly','readonly');
 
 ```{r, include=FALSE}
 library(knitr)
-knitr::opts_chunk$set(echo = FALSE, fig.height = 7, out.width = "100%")
+knitr::opts_chunk$set(echo = FALSE, fig.height = 5.5, out.width = "100%")
 # library(directlabels)
 library(plotly)
 library(flexdashboard)
@@ -65,7 +65,7 @@ datStatMonthSea <- monthlyStatKarup(datCatchSea, curYear)
 Dag {data-navmenu="Havørred" #fangster-hav-dag}
 =======================================================================
 
-Row
+Row 
 -----------------------------------------------------------------------
 
 ### Fangster den seneste måned `r curYear`
@@ -75,7 +75,7 @@ Row
     dplyr::filter(Date > now(tzone = "CET") - days(30)) %>%
     select(Date, Place) %>%
     arrange(desc(Date))
-  lastDate <- date(now() + ddays(1))
+  lastDate <- date(now())  #  + ddays(1)
   if (nrow(dat) == 0) {
     dat <- datCatchSea %>%
       mutate(DayCtr = max(Date) - Date) %>% 
@@ -86,18 +86,23 @@ Row
   p <- ggplot(data = dat, aes(x = Date)) +
     geom_bar(aes(fill = Place), width = 0.75) + 
     geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) + #  vjust = -0.5
-    scale_x_date(date_labels = "%e. %b", date_breaks = "1 day", 
+    scale_x_date(date_labels = "%e. %b", date_breaks = "2 days", 
                  limits = c(NA_Date_, lastDate)) + # date(now()+ddays(1))
-    labs(fill = "") + xlab("Dato") + ylab("") + 
+    labs(fill = "") + xlab("") + ylab("") + 
     theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
-  ggplotly(p) %>% 
+  ggplotly(p, dynamicTicks = TRUE, tooltip = NULL) %>% 
       layout(
-        # title = place,
-        # xaxis = list(domain = c(0, 1), title = NA, tickformat = "%d %b"),
+        xaxis = list(domain = c(0, 1), title = NA, tickformat = "%d %b"),
         # yaxis = list(title = "Relativ vandstand"),
-        legend = list(orientation = 'h')
-        # hovermode = "x unified"
-    )
+        legend = list(orientation = 'h'),
+        #hovermode = "x unified",
+        dragmode = "orbit"
+    ) |> 
+  config(
+    displayModeBar = FALSE,
+    displaylogo = FALSE, 
+    modeBarButtonsToRemove = c("lasso2d", "toImage", "select2d", "hoverClosestCartesian", "hoverCompareCartesian")
+  )
 ```
 
 
