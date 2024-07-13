@@ -1,4 +1,14 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
+2024-07-13,60,NA,Gustav Isen,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
+2024-07-13,53,1.85,Tom Larsen,Nedre,Flue,NA,NA,TRUE,NA,FALSE
+2024-07-13,72,NA,Jakob Larsen,Nedre,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/CF9BDA869E738AA4C1258B5900489305.jpg,FALSE,Hun,FALSE
+2024-07-13,57,2.1,Hans-Jørn Aggerholm Christensen,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2024-07-13,60,2.87,Paul Bæk,Nedre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/88466A292D361F44C1258B59003100A9.jpg,TRUE,Han,FALSE
+2024-07-13,60,NA,Peder Skødt Lundsgaard,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2024-07-13,54,NA,Jeppe Risum,Haderis Å,Orm,NA,NA,TRUE,NA,TRUE
+2024-07-12,73,5,Osman Viba Bejtovic,Nedre,Flue,NA,NA,TRUE,Han,FALSE
+2024-07-12,60,2,Kristian Rasmussen,Nedre,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/D545677E28CAA68FC1258B59003E0069.jpg,TRUE,NA,TRUE
+2024-07-12,62,NA,Patrick Boel,Mellem,Flue,NA,NA,FALSE,NA,FALSE
 2024-07-12,52,1.5,Mogens Pallesen,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
 2024-07-12,70,NA,Carsten Velling,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
 2024-07-12,49,1.3,Sigfred Madsen,Nedre,Flue,NA,NA,TRUE,Hun,FALSE
@@ -13,6 +23,9 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2024-07-12,54,1.75,Jakob Larsen,Nedre,Flue,NA,NA,TRUE,Hun,FALSE
 2024-07-12,76,6,Jeppe Crenzien,Mellem,Flue,NA,NA,TRUE,Han,FALSE
 2024-07-12,60,NA,Jeppe Crenzien,Mellem,Flue,NA,NA,FALSE,Han,FALSE
+2024-07-11,52,NA,Dennis Deleuran,Øvre,Flue,NA,NA,FALSE,NA,FALSE
+2024-07-11,60,NA,Allan Jacobsen,Nedre,Flue,NA,NA,TRUE,NA,FALSE
+2024-07-11,54,NA,Allan Jacobsen,Nedre,Flue,NA,NA,TRUE,NA,FALSE
 2024-07-11,63,2.5,Ivan Henriksen,Mellem,Flue,NA,NA,TRUE,Hun,FALSE
 2024-07-11,58,2.1,Flemming Frandsen,Nedre,Flue,NA,NA,TRUE,NA,FALSE
 2024-07-11,63,3,Søren Thomsen,Mellem,Flue,NA,NA,TRUE,Han,FALSE
@@ -41,6 +54,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2024-07-10,71,4.3,Claus Holmskov,Haderis Å,Spin,NA,NA,TRUE,Hun,FALSE
 2024-07-10,75,4.75,Per S Nielsen,Nedre,Spin,NA,NA,TRUE,Han,FALSE
 2024-07-10,75,5.4,Søren Nordmand,Nedre,Flue,NA,NA,TRUE,Hun,FALSE
+2024-07-09,50,NA,Peder Meyer,Nedre,Orm,NA,NA,TRUE,NA,FALSE
 2024-07-09,75,5.3,Anker Ravn,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
 2024-07-09,73,4.2,Aleksandar Lazic,Nedre,Spin,NA,NA,TRUE,NA,FALSE
 2024-07-09,89,9.2,Jonas Weiss Gustavsen,Nedre,Spin,NA,NA,TRUE,NA,FALSE
