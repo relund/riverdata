@@ -1,4 +1,18 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
+2024-07-14,59,2.1,Gorm Hald,Nedre,Flue,NA,NA,TRUE,Han,FALSE
+2024-07-14,76,5.3,Steven Magnus,Nedre,Flue,NA,NA,TRUE,NA,FALSE
+2024-07-14,80,6.4,Georg Vinther,Nedre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A13A0D987FA4CE61C1258B5A0073D622.jpg,TRUE,Han,FALSE
+2024-07-14,52,1.7,Daniel Andersen,Nedre,Spin,NA,NA,TRUE,Han,FALSE
+2024-07-14,60,NA,Frederik Taastrøm,Nedre,Spin,NA,NA,TRUE,NA,FALSE
+2024-07-14,68,NA,Frederik Taastrøm,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2024-07-14,58,NA,Alex Hjort,Mellem,Spin,NA,NA,FALSE,Hun,FALSE
+2024-07-14,58,NA,Alex Hjort,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2024-07-14,65,3.2,Alex Hjort,Nedre,Spin,NA,NA,TRUE,Han,FALSE
+2024-07-14,65,3.2,Alex Hjort,Nedre,Spin,NA,NA,TRUE,Han,FALSE
+2024-07-14,65,3.2,Alex Hjort,Nedre,Spin,NA,NA,TRUE,Han,FALSE
+2024-07-14,84,7.4,Hans Henrik Hansen,Mellem,Spin,NA,NA,TRUE,Han,FALSE
+2024-07-14,45,NA,Robert Pedersen,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2024-07-14,46,NA,John Kaastrup,Nedre,Orm,NA,NA,FALSE,Hun,FALSE
 2024-07-14,58,2.5,Benny Larsen,Nedre,Spin,NA,NA,TRUE,Han,FALSE
 2024-07-14,61,NA,Einer Olesen,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
 2024-07-14,65,NA,Peder Skødt Lundsgaard,Mellem,Spin,NA,NA,FALSE,Hun,FALSE
@@ -7,6 +21,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2024-07-14,60,2.5,Flemming Olesen,Nedre,Orm,NA,NA,TRUE,Hun,FALSE
 2024-07-14,72,4.9,Paul Bæk,Nedre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/E53F529272EEC93DC1258B5A0033D9A5.jpg,TRUE,Hun,FALSE
 2024-07-14,70,4.2,Oliver Gravesen,Øvre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/778B1647B1DBF470C1258B5A002299D3.jpg,TRUE,Han,FALSE
+2024-07-13,50,NA,Jørgen Klokker,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
 2024-07-13,77,5.5,Ivan Møller Knudsen,Mellem,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/9797C600D15C5BDFC1258B5A004E6116.jpg,TRUE,Han,FALSE
 2024-07-13,77,5.5,Ivan Møller Knudsen,Mellem,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/AE78427BDB04C86FC1258B5A004E28D0.jpg,TRUE,Han,FALSE
 2024-07-13,77,5.5,Ivan Møller Knudsen,Mellem,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/0B3CE1AA8E3D72F5C1258B5A004DCDE9.jpg,TRUE,Han,FALSE
@@ -27,6 +42,8 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2024-07-13,60,2.87,Paul Bæk,Nedre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/88466A292D361F44C1258B59003100A9.jpg,TRUE,Han,FALSE
 2024-07-13,60,NA,Peder Skødt Lundsgaard,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
 2024-07-13,54,NA,Jeppe Risum,Haderis Å,Orm,NA,NA,TRUE,NA,TRUE
+2024-07-12,60,1.98,Johan Lynderup,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2024-07-12,60,1.98,Johan Lynderup,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
 2024-07-12,59,2.6,Ole Bernth,Nedre,Orm,NA,NA,TRUE,Hun,FALSE
 2024-07-12,73,5,Osman Viba Bejtovic,Nedre,Flue,NA,NA,TRUE,Han,FALSE
 2024-07-12,60,2,Kristian Rasmussen,Nedre,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/D545677E28CAA68FC1258B59003E0069.jpg,TRUE,NA,TRUE
