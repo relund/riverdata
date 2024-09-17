@@ -138,13 +138,13 @@ datCatchKarup <- datCatch |>
 dat1 <- datCatchKarup |> 
   filter(Year == yr, Killed == T) |> 
   filter(Weight == max(Weight, na.rm = T)) |> 
-  mutate(Name = str_flatten_comma(Name, ", and ")) |> 
+  mutate(Name = str_flatten_comma(Name, " og ")) |> 
   slice_head(n = 1) |> 
   mutate(str = str_c(Weight, " kg, ", Length, " cm af ", Name, " på ", Method))
 dat2 <- datCatchKarup |> 
   filter(Year == yr, Killed == F) |> 
   filter(Weight == max(Weight, na.rm = T)) |> 
-  mutate(Name = str_flatten_comma(Name, ", and ")) |> 
+  mutate(Name = str_flatten_comma(Name, " og ")) |> 
   slice_head(n = 1) |> 
   mutate(str = str_c(Weight, " kg, ", Length, " cm af ", Name, " på ", Method))
 dat3 <- datCatchPlaceYear |> 
@@ -268,13 +268,13 @@ datCatchKarup <- datCatch
 dat1 <- datCatchKarup |> 
   filter(Year == yr, Killed == T) |> 
   filter(Weight == max(Weight, na.rm = T)) |> 
-  mutate(Name = str_flatten_comma(Name, ", and ")) |> 
+  mutate(Name = str_flatten_comma(Name, " og ")) |> 
   slice_head(n = 1) |> 
   mutate(str = str_c(Weight, " kg, ", Length, " cm af ", Name, " på ", Method))
 dat2 <- datCatchKarup |> 
   filter(Year == yr, Killed == F) |> 
   filter(Weight == max(Weight, na.rm = T)) |> 
-  mutate(Name = str_flatten_comma(Name, ", and ")) |> 
+  mutate(Name = str_flatten_comma(Name, " og ")) |> 
   slice_head(n = 1) |> 
   mutate(str = str_c(Weight, " kg, ", Length, " cm af ", Name, " på ", Method))
 dat3 <- datCatchPlaceYear |> 
@@ -344,23 +344,22 @@ datCatchKarup |>
 
 ### Effekter af kvoter
 
-Der har været en diskussion omkring mådehold ved åen. For at holde denne diskussion på rette spor er lavet følgende analyse. 
-
-Bemærk denne analyse er ikke ment som et argument for eller imod kvoter, men kan bruges til at holde diskussionen i forhold til faktiske data.
+Der har været en diskussion omkring mådehold ved åen. For at holde denne diskussion på rette spor er lavet følgende analyse. Bemærk denne analyse er ikke ment som et argument for eller imod kvoter, men kan bruges til at holde diskussionen i forhold til faktiske data.
 
 Hvis vi antager at der laves et kvote system hvor max $y$ antal fisk må hjemtages over $x$ cm, kan der givet dette års fangster udregnes hvad effekten af at indføre et kvotesystem ville have været. 
 
 Antagelser
 
-  * Vi filtrer fangsterne så kun kigger på hjemtaget fisk og hunner
-  * Tallene er for de nuværende fangster i året.
-  * Vi kigger herefter på fisk over grænsen i cm og fjerner de første fangster givet et maks antal der må fanges per fisker.
+  * Kigger på fangster for nuværende år.
+  * Vi filtrer fangsterne så kun kigger på hjemtaget fisk.
+  * Vi kigger herefter på fisk over grænsen i cm og fjerner de første fangster givet et maks antal, der må fanges per fisker.
   * Vi har herefter fangsterne der (hvis kvoten gælder) skulle have være genudsat.
+  * Vi filtrer for hunner.
   * For hver fisk estimeres vægt og antal æg fisken ville have lagt.
   * Det antages at 0.25% - 1% af disse æg bliver til tilbagevendende fisk (er ikke sikker på disse tal), dvs. gennemsnitligt 0.5%. 
 
 ```{r}
-kbl(datEggT, col.names = c("Længde", "Antal æg"), caption = str_c("Antal æg givet længde")) %>%
+kbl(datEggT, col.names = c("Længde", "Antal æg"), caption = str_c("Estimat af antal æg givet havørredens længde (kilde ukendt)")) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
@@ -368,11 +367,12 @@ kbl(datEggT, col.names = c("Længde", "Antal æg"), caption = str_c("Antal æg g
 ```{r}
 calcLimitStat <- function(limitCm, limitCtr, suvivalRateMax = 0.01, suvivalRateMin = 0.0025, suvivalRateMean = 0.005) {
   tmp <- datCatch |> 
-    filter(Killed, Length > limitCm, Sex == "Hun") |> 
+    filter(Killed, Length > limitCm) |> 
     group_by(Name) |> 
     arrange(Name, Date) |> 
     filter(row_number() > limitCtr) |> 
     ungroup() |> 
+    filter(Sex == "Hun") |> 
     summarise(Antal = n(), TotalKg = sum(Weight), Eggs = round(sum(Eggs)), 
               AntalTilbageMean = round(Eggs * suvivalRateMean), 
               AntalTilbageMin = round(Eggs * suvivalRateMin), 
