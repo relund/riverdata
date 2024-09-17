@@ -1,0 +1,401 @@
+---
+title: "Årsrapport fangster MV-LF"
+# author: "Lars Relund Nielsen"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    self_contained: true
+    theme: united
+    highlight: tango
+    df_print: paged
+    # code_folding: show
+    # toc: true
+    # toc_float: true
+    number_sections: true
+lang : da
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(tidyverse)
+library(lubridate)
+library(DT)
+# library(zoo) 
+library(jsonlite)
+library(here)
+library(kableExtra)
+library(RColorBrewer)
+library(wesanderson)
+library(scales)
+here::i_am("reports/mv-lf/mv-lf-report.Rmd")
+
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning=FALSE, message=FALSE, 
+  include = TRUE, echo = FALSE, 
+  cache = TRUE, #autodep = TRUE,
+  out.width = "99%", fig.width = 8, fig.align = "center", fig.asp = 0.62
+)
+
+urlFileExist <- function(url){
+  HTTP_STATUS_OK <- 200
+  hd <- httr::HEAD(url)
+  status <- hd$all_headers[[1]]$status
+  lst <- list(exists = status == HTTP_STATUS_OK, status = status)
+  return(lst$exists)
+}
+
+options(scipen = 7)
+options(ggplot2.discrete.fill = wes_palette("FantasticFox1"))
+
+theme_river <- function () { 
+    ggplot() +
+    theme_bw(base_size=12) +
+    scale_color_manual(values=wes_palette(n=3, name="GrandBudapest1"))
+}
+```
+
+```{r}
+## Henter alle strækninger og åer for MV-LF
+library(rvest)
+url <- "https://fangstjournalen.dtu.dk/fangst.nsf/extEntry.xsp?open&club=37E6FB0707BAE0A1C1257F3A003FF013"
+page <- read_html(url)
+tmp <- page %>%
+  html_elements(xpath = '//*[@id="view:_id1:inputClubLocation"]') %>% 
+  html_elements("option") %>% 
+  html_text() 
+tmp <- unique(tmp[tmp != ""])
+river <- str_extract(tmp, "^.*\\((.*)\\)$", group = 1)
+river[is.na(river)] <- tmp[is.na(river)]
+place <- str_extract(tmp, "^(.*)\\((.*)\\)$", group = 1) %>% 
+  str_trim()
+place[is.na(place)] <- tmp[is.na(place)]
+datPlaces <- tibble(River = river, Place = place)
+```
+
+```{r}
+## Henter alle fangster for MV-LF
+prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/data_mv-lf"
+yr <- year(now())
+datCatch <- NULL
+for (y in 2016:yr) {
+  fn <- paste0(prefix, "_catch_all_", y, ".csv")
+  if (urlFileExist(fn)) datCatch <- bind_rows(datCatch, read_csv(fn, col_types = "Tfd"))
+}
+datCatch <- datCatch %>% 
+  mutate(Year = year(Date), Month = month(Date))
+
+## Remove catch with no place in Skjern and Karup å
+datCatch <- datCatch %>% 
+  filter(Species %in% c("Havørred", "Laks", "Bækørred", "Stalling", "Aborre", "Gedde", "Ål")) %>% 
+  filter(!(River == "Skjern Å" & is.na(Place))) %>% 
+  filter(!(River == "Karup Å" & is.na(Place))) %>% 
+  mutate(Place = if_else(is.na(Place), River, Place)) 
+
+## Stræknings datasæt (antal besøg givet år)
+datCatchPlaceYear <- datCatch %>% 
+  count(River, Place, Year) %>% 
+  full_join(datPlaces) %>% 
+  replace_na(list(Year = 2023, n = 0)) 
+
+## Stræknings datasæt (antal besøg over år samt nuværende)
+datCatchPlace <- datCatchPlaceYear |> 
+  group_by(River, Place) |> 
+  mutate(Mean = mean(n), Min = min(n), Max = max(n)) |> 
+  filter(Year == yr)
+
+## Stræknings tabel (antal besøg over år)
+datCatchPlaceYearTable <- datCatchPlaceYear %>% 
+  pivot_wider(names_from = Year, values_from = n, names_sort = T) %>% 
+  rowwise(River, Place) %>% 
+  mutate(Middel = rowMeans(pick(where(is.numeric)), na.rm = T))
+```
+
+
+# Karup Å systemet
+
+## MV-LF
+
+Vi betragter fangstdata fra MV-LF i Karup Å. 
+
+```{r}
+## parameters
+yr <- 2024
+
+## Weight estimates
+dat <- read_csv(file = here("data/data_karup_weight_seatrout.csv"))
+
+# Karup Å dataset
+datCatchKarup <- datCatch |> 
+  filter(River %in% c("Karup Å", "Haderup/Haderis Å"), Species %in% c("Havørred")) |> 
+  left_join(dat, by = join_by(Month == MonthN, Length == Length)) |> 
+  mutate(Weight = if_else(is.na(Weight), round(Avg,2), Weight)) 
+
+## This year data summary
+dat1 <- datCatchKarup |> 
+  filter(Year == yr, Killed == T) |> 
+  filter(Weight == max(Weight, na.rm = T)) |> 
+  mutate(Name = str_flatten_comma(Name, ", and ")) |> 
+  slice_head(n = 1) |> 
+  mutate(str = str_c(Weight, " kg, ", Length, " cm af ", Name, " på ", Method))
+dat2 <- datCatchKarup |> 
+  filter(Year == yr, Killed == F) |> 
+  filter(Weight == max(Weight, na.rm = T)) |> 
+  mutate(Name = str_flatten_comma(Name, ", and ")) |> 
+  slice_head(n = 1) |> 
+  mutate(str = str_c(Weight, " kg, ", Length, " cm af ", Name, " på ", Method))
+dat3 <- datCatchPlaceYear |> 
+  filter(Year == yr, n == max(n))
+dat4 <- datCatchKarup |> 
+  group_by(Killed) |> 
+  summarise(Mean = mean(Weight))
+
+## Summary table
+datTable <- datCatchKarup |> 
+  filter(River %in% c("Karup Å", "Haderup/Haderis Å"), Year == yr) |> 
+  ungroup() |> 
+  summarise(`Antal fanget` = n(), 
+            Genudsat = str_c(round(100 * sum(Killed == F) / n(), 0), " %"),
+            Gennesnitsvægt = mean(Weight),
+            `Gennesnitsvægt hjemtaget` = dat4 |> filter(Killed == T) |> pull(Mean),
+            `Gennesnitsvægt genudsat` = dat4 |> filter(Killed == F) |> pull(Mean),
+            `Største havørred hjemtaget` = dat1 |> pull(str),
+            `Største havørred genudsat` = dat2 |> pull(str) |> str_flatten_comma()
+            ) |> 
+  mutate(across(where(is.numeric), \(x) round(x, digits = 2))) |> 
+  mutate(across(where(is.numeric), as.character)) |> 
+  pivot_longer(cols = everything()) |> 
+  add_row(name = "Strækninger", value = datPlaces |> filter(River %in% c("Karup Å", "Haderup/Haderis Å")) |> nrow() |> as.character()) |> 
+  add_row(name = "Bedste strækning", value = dat3 |> pull(Place))
+```
+
+```{r}
+kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr)) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+
+```{r}
+## Bar chart over places
+datCatchPlace |> 
+  filter(River %in% c("Karup Å", "Haderup/Haderis Å")) |> 
+  ggplot(aes(x = reorder(Place, -n), y = n, fill = "")) +
+  geom_col() + 
+  geom_errorbar(aes(ymin = Mean, ymax = Mean)) +
+  labs(title = str_c("Antal fangster for ", yr, " samt gennemsnit over tidligere år (sort linje)"),
+       x = NULL,
+       y = NULL,
+       fill = NULL) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1), legend.position="none")
+```
+
+
+```{r}
+datCatchKarup |> 
+  filter(Killed, Year == yr) |> 
+  group_by(Name) |> 
+  summarise(Antal = n(), TotalKg = sum(Weight)) |> 
+  group_by(Antal) |> 
+  count() |> 
+  ggplot(aes(x = factor(Antal), y = n, fill = "")) + 
+  geom_col() + 
+  labs(title = str_c("Fordelingen af fisk hjemtaget (", yr, ")"),
+       x = "Antal fisk hjemtaget",
+       y = "Antal fiskere identificeret ved navn",
+       fill = NULL) +
+  theme(legend.position="none") 
+  # scale_y_continuous(breaks = breaks_pretty())
+
+datCatchKarup |> 
+  filter(Killed, Year == yr) |> 
+  group_by(Name) |> 
+  summarise(Antal = n(), TotalKg = sum(Weight)) |> 
+  ggplot(aes(x = TotalKg, fill = "")) + 
+  geom_histogram(binwidth = 1) + 
+  labs(title = str_c("Fordelingen af kg fisk hjemtaget (", yr, ")"),
+       x = "Antal kg hjemtaget",
+       y = "Antal fiskere identificeret ved navn",
+       fill = NULL) +
+  theme(legend.position="none")
+```
+
+
+
+## Alle foreninger
+
+Vi kigger her på fangstdata for hele Karup Å systemet
+
+```{r}
+# Henter alle fangster
+prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/data_karup_catch_seatrout_"
+fn <- paste0(prefix, yr, ".csv")
+if (urlFileExist(fn)) datCatch <- read_csv(fn)
+datCatch <- datCatch %>% 
+  mutate(Year = year(Date), Month = month(Date), Length = as.numeric(Length)) 
+
+## Weight estimates
+datWeight <- read_csv(file = here("data/data_karup_weight_seatrout.csv"))
+
+## Egg estimates
+datEgg <- tibble(
+  Length = c(30, 40, 50, 60, 70, 80, 90),
+  Eggs = c(700, 1700, 3200, 5500, 8700, 12900, 18300)
+) 
+datEggT <- datEgg 
+# datEgg |> 
+#   ggplot(aes(Length, Eggs)) + geom_line()
+fit <- lm(Eggs ~ -1 + I(Length^2) + I(Length^3), datEgg)
+# summary(fit)
+# egg predictions
+tmp <- tibble(Length = 30:100) 
+datEgg <- bind_cols(tmp, tibble(Eggs = predict(fit, tmp)))
+
+datCatch <- datCatch |> 
+  left_join(datWeight, by = join_by(Month == MonthN, Length == Length)) |> 
+  mutate(Weight = if_else(is.na(Weight), round(Avg,2), Weight)) |> 
+  left_join(datEgg)
+```
+
+
+```{r}
+# Karup Å dataset
+datCatchKarup <- datCatch 
+
+## This year data summary
+dat1 <- datCatchKarup |> 
+  filter(Year == yr, Killed == T) |> 
+  filter(Weight == max(Weight, na.rm = T)) |> 
+  mutate(Name = str_flatten_comma(Name, ", and ")) |> 
+  slice_head(n = 1) |> 
+  mutate(str = str_c(Weight, " kg, ", Length, " cm af ", Name, " på ", Method))
+dat2 <- datCatchKarup |> 
+  filter(Year == yr, Killed == F) |> 
+  filter(Weight == max(Weight, na.rm = T)) |> 
+  mutate(Name = str_flatten_comma(Name, ", and ")) |> 
+  slice_head(n = 1) |> 
+  mutate(str = str_c(Weight, " kg, ", Length, " cm af ", Name, " på ", Method))
+dat3 <- datCatchPlaceYear |> 
+  filter(Year == yr, n == max(n))
+dat4 <- datCatchKarup |> 
+  group_by(Killed) |> 
+  summarise(Mean = mean(Weight))
+
+## Summary table
+datTable <- datCatchKarup |> 
+  filter(Year == yr) |> 
+  ungroup() |> 
+  summarise(`Antal fanget` = n(), 
+            Genudsat = str_c(round(100 * sum(Killed == F) / n(), 0), " %"),
+            Gennesnitsvægt = mean(Weight),
+            `Gennesnitsvægt hjemtaget` = dat4 |> filter(Killed == T) |> pull(Mean),
+            `Gennesnitsvægt genudsat` = dat4 |> filter(Killed == F) |> pull(Mean),
+            `Største havørred hjemtaget` = dat1 |> pull(str),
+            `Største havørred genudsat` = dat2 |> pull(str) |> str_flatten_comma()
+            ) |> 
+  mutate(across(where(is.numeric), \(x) round(x, digits = 2))) |> 
+  mutate(across(where(is.numeric), as.character)) |> 
+  pivot_longer(cols = everything()) 
+```
+
+```{r}
+kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr)) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+
+
+```{r}
+datCatchKarup |> 
+  filter(Killed) |> 
+  group_by(Name) |> 
+  summarise(Antal = n(), TotalKg = sum(Weight)) |> 
+  group_by(Antal) |> 
+  count() |> 
+  ggplot(aes(x = factor(Antal), y = n, fill = "")) + 
+  geom_col() + 
+  labs(title = str_c("Fordelingen af fisk hjemtaget (", yr, ")"),
+       x = "Antal fisk hjemtaget",
+       y = "Antal fiskere identificeret ved navn",
+       fill = NULL) +
+  theme(legend.position="none") 
+  # scale_y_continuous(breaks = breaks_pretty())
+
+datCatchKarup |> 
+  filter(Killed) |> 
+  group_by(Name) |> 
+  summarise(Antal = n(), TotalKg = sum(Weight)) |> 
+  ggplot(aes(x = TotalKg, fill = "")) + 
+  geom_histogram(binwidth = 1) + 
+  labs(title = str_c("Fordelingen af kg fisk hjemtaget (", yr, ")"),
+       x = "Antal kg hjemtaget",
+       y = "Antal fiskere identificeret ved navn",
+       fill = NULL) +
+  theme(legend.position="none")
+
+# datCatchKarup |> 
+#   filter(Killed) |> 
+#   group_by(Name) |> 
+#   summarise(Antal = n(), TotalKg = sum(Weight)) |> 
+#   filter(TotalKg>40)
+```
+
+### Effekter af kvoter
+
+Der har været en diskussion omkring mådehold ved åen. For at holde denne diskussion på rette spor er lavet følgende analyse. 
+
+Bemærk denne analyse er ikke ment som et argument for eller imod kvoter, men kan bruges til at holde diskussionen i forhold til faktiske data.
+
+Hvis vi antager at der laves et kvote system hvor max $y$ antal fisk må hjemtages over $x$ cm, kan der givet dette års fangster udregnes hvad effekten af at indføre et kvotesystem ville have været. 
+
+Antagelser
+
+  * Vi filtrer fangsterne så kun kigger på hjemtaget fisk og hunner
+  * Tallene er for de nuværende fangster i året.
+  * Vi kigger herefter på fisk over grænsen i cm og fjerner de første fangster givet et maks antal der må fanges per fisker.
+  * Vi har herefter fangsterne der (hvis kvoten gælder) skulle have være genudsat.
+  * For hver fisk estimeres vægt og antal æg fisken ville have lagt.
+  * Det antages at 0.25% - 1% af disse æg bliver til tilbagevendende fisk (er ikke sikker på disse tal), dvs. gennemsnitligt 0.5%. 
+
+```{r}
+kbl(datEggT, col.names = c("Længde", "Antal æg"), caption = str_c("Antal æg givet længde")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+
+```{r}
+calcLimitStat <- function(limitCm, limitCtr, suvivalRateMax = 0.01, suvivalRateMin = 0.0025, suvivalRateMean = 0.005) {
+  tmp <- datCatch |> 
+    filter(Killed, Length > limitCm, Sex == "Hun") |> 
+    group_by(Name) |> 
+    arrange(Name, Date) |> 
+    filter(row_number() > limitCtr) |> 
+    ungroup() |> 
+    summarise(Antal = n(), TotalKg = sum(Weight), Eggs = round(sum(Eggs)), 
+              AntalTilbageMean = round(Eggs * suvivalRateMean), 
+              AntalTilbageMin = round(Eggs * suvivalRateMin), 
+              AntalTilbageMax = round(Eggs * suvivalRateMax)) |> 
+    mutate(limitCm = limitCm, limitCtr = limitCtr)
+  return(tmp)
+}
+
+dat <- expand_grid(limitCm = c(70,75), limitCtr = 1:5) #|> left_join(datWeight |> filter(MonthN == 7), by = join_by(limitCm == Length))
+dat <- map2_df(dat$limitCm, dat$limitCtr, \(a, b) calcLimitStat(a,b))
+dat <- dat |> 
+  mutate(AntalTilbage = str_c(AntalTilbageMean, " [", AntalTilbageMin, ", ", AntalTilbageMax,"]")) |> 
+  select(`>cm` = limitCm, `Max antal` = limitCtr, Fisk = Antal, Kg = TotalKg, `Æg` = Eggs, Retur = AntalTilbage)
+
+res <- dat |> filter(`>cm` == 70, `Max antal` == 3)
+```
+
+Effekten af kvoterne kan ses i nedenstående tabel, fx hvis man kun måtte hjemtage 3 fisk over 70 cm vil effekten være at `r res$Fisk[1]` fisk ville have været genudsat, disse vejede tilsammen `r res$Kg[1]` kg. Fiskene ville lægge `r round(res$Æg[1])` æg der ville give ca `r res$Retur[1]` fisk som vente tilbage (intervallet er givet i firkantet parenteser). Bemærk at hvis er optræder nuller alle steder under effekt tallene betyder det at kvoterne ikke har nogen effekt. 
+
+
+```{r}
+kbl(dat, caption = str_c("Effekt af kvoter"), align=c(rep('c', 5), "r")) %>%
+  add_header_above(c("Kvote" = 2, "Effekt" = 4)) |> 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
