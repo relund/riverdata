@@ -30,6 +30,7 @@ library(kableExtra)
 library(htmltools)
 library(fontawesome)
 fa_html_dependency()
+library(riverdata)
 source("../functions.R")
 
 faIcon <- function (name, prefix = "fa", title = "") 
@@ -71,38 +72,39 @@ Row
 ### Fangster den seneste måned `r curYear`
 
 ```{r}
-  dat <- datCatchSea %>% 
-    dplyr::filter(Date > now(tzone = "CET") - days(30)) %>%
-    select(Date, Place) %>%
-    arrange(desc(Date))
-  lastDate <- date(now())  #  + ddays(1)
-  if (nrow(dat) == 0) {
-    dat <- datCatchSea %>%
-      mutate(DayCtr = max(Date) - Date) %>% 
-      dplyr::filter(DayCtr <= 30) %>% 
-      arrange(desc(Date)) 
-    lastDate <- max(dat$Date) + ddays(1)
-  }
-  p <- ggplot(data = dat, aes(x = Date)) +
-    geom_bar(aes(fill = Place), width = 0.75) + 
-    geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) + #  vjust = -0.5
-    scale_x_date(date_labels = "%e. %b", date_breaks = "2 days", 
-                 limits = c(NA_Date_, lastDate)) + # date(now()+ddays(1))
-    labs(fill = "") + xlab("") + ylab("") + 
-    theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
-  ggplotly(p, dynamicTicks = TRUE, tooltip = NULL) %>% 
-      layout(
-        xaxis = list(domain = c(0, 1), title = NA, tickformat = "%d %b"),
-        # yaxis = list(title = "Relativ vandstand"),
-        legend = list(orientation = 'h'),
-        #hovermode = "x unified",
-        dragmode = "orbit"
-    ) |> 
-  config(
-    displayModeBar = FALSE,
-    displaylogo = FALSE, 
-    modeBarButtonsToRemove = c("lasso2d", "toImage", "select2d", "hoverClosestCartesian", "hoverCompareCartesian")
-  )
+snip_plot_catch(datCatchSea)
+  # dat <- datCatchSea %>% 
+  #   dplyr::filter(Date > now(tzone = "CET") - days(30)) %>%
+  #   select(Date, Place) %>%
+  #   arrange(desc(Date))
+  # lastDate <- date(now())  #  + ddays(1)
+  # if (nrow(dat) == 0) {
+  #   dat <- datCatchSea %>%
+  #     mutate(DayCtr = max(Date) - Date) %>% 
+  #     dplyr::filter(DayCtr <= 30) %>% 
+  #     arrange(desc(Date)) 
+  #   lastDate <- max(dat$Date) + ddays(1)
+  # }
+  # p <- ggplot(data = dat, aes(x = Date)) +
+  #   geom_bar(aes(fill = Place), width = 0.75) + 
+  #   geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) + #  vjust = -0.5
+  #   scale_x_date(date_labels = "%e. %b", date_breaks = "2 days", 
+  #                limits = c(NA_Date_, lastDate)) + # date(now()+ddays(1))
+  #   labs(fill = "") + xlab("") + ylab("") + 
+  #   theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
+  # ggplotly(p, dynamicTicks = TRUE, tooltip = NULL) %>% 
+  #     layout(
+  #       xaxis = list(domain = c(0, 1), title = NA, tickformat = "%d %b"),
+  #       # yaxis = list(title = "Relativ vandstand"),
+  #       legend = list(orientation = 'h'),
+  #       #hovermode = "x unified",
+  #       dragmode = "orbit"
+  #   ) |> 
+  # config(
+  #   displayModeBar = FALSE,
+  #   displaylogo = FALSE, 
+  #   modeBarButtonsToRemove = c("lasso2d", "toImage", "select2d", "hoverClosestCartesian", "hoverCompareCartesian")
+  # )
 ```
 
 
