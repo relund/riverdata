@@ -163,7 +163,8 @@ datWeightSea<- read_csv(paste0(prefix, "data_skjern_weight_seatrout.csv"), col_t
 datWeightSal <- read_csv(paste0(prefix, "data_skjern_weight_salmon.csv"), col_types = "dfddd")
 
 # Catch - Records 
-datCatchSal <- readCatch(paste0(prefix, "data_skjern_catch_salmon"), datWeightSal)
+datCatchSal <- readCatch(paste0(prefix, "data_skjern_catch_salmon"), datWeightSal) |> 
+  mutate(`>73cm` = Length > 73)
 datCatchSea <- readCatch(paste0(prefix, "data_skjern_catch_seatrout"), datWeightSea)
 
 # Catch - Yearly statistics
@@ -1225,6 +1226,8 @@ dat <-
 if (input$iDataSal == "KilledTrue") dat <- dat %>% dplyr::filter(Killed)
 if (input$iDataSal == "KilledFalse") dat <- dat %>% dplyr::filter(!Killed)
 if (input$iDataSal == "WeightTrue") dat <- dat %>% dplyr::filter(NoWeight == 0)
+if (input$iDataSal == ">73False") dat <- dat %>% dplyr::filter(!`>73cm`)
+if (input$iDataSal == ">73True") dat <- dat %>% dplyr::filter(`>73cm`)
 dat <- dat %>% 
   mutate(None = "", xV = if (iXUnitSal == "All") None else str_c(.data[[iXUnitSal]], " ", Year), grp = .data[[input$iGroupSal]]) %>% 
   group_by_at(c("xV", "grp", input$iXUnitSal)) %>%
@@ -1289,13 +1292,16 @@ selectInput("iYUnitSal", "Vælg enhed på y-aksen:", cIYUnit, selectize = FALSE)
 cIData <- c("Alle fangster" = "All",
             "Hjemtagne fisk" = "KilledTrue",
             "Genudsatte fisk" = "KilledFalse",
-            "Fangster med vægt angivelse" = "WeightTrue")
+            "Fangster med vægt angivelse" = "WeightTrue",
+            "> 73 cm" = ">73True",
+            "<= 73 cm" = ">73False")
 selectInput("iDataSal", "Vælg datasæt:", cIData, "All", selectize = FALSE)
 cIGroup <- c("Område" = "Place",
             "Metode" = "Method",
             "Køn" = "Sex",
             "Hjemtaget" = "Killed",
             "Garnskadet" = "Net",
+            "> 73 cm" = ">73cm",
             "Ingen" = "None")
 selectInput("iGroupSal", "Vælg gruppeinddeling:", cIGroup, "None", selectize = FALSE)
 ```
