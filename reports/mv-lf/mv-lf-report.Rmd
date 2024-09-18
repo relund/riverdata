@@ -9,10 +9,12 @@ output:
     highlight: tango
     df_print: paged
     # code_folding: show
-    # toc: true
+    toc: true
     # toc_float: true
     number_sections: true
 lang : da
+params:
+  yr: !r lubridate::year(lubridate::now())
 editor_options: 
   chunk_output_type: console
 ---
@@ -56,6 +58,8 @@ theme_river <- function () {
     theme_bw(base_size=12) +
     scale_color_manual(values=wes_palette(n=3, name="GrandBudapest1"))
 }
+yr <- params$yr
+# yr <- year(now())
 ```
 
 ```{r}
@@ -73,45 +77,96 @@ river[is.na(river)] <- tmp[is.na(river)]
 place <- str_extract(tmp, "^(.*)\\((.*)\\)$", group = 1) %>% 
   str_trim()
 place[is.na(place)] <- tmp[is.na(place)]
-datPlaces <- tibble(River = river, Place = place)
+datPlaces <- tibble(River = river, Place = place) 
 ```
 
 ```{r}
 ## Henter alle fangster for MV-LF
 prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/data_mv-lf"
-yr <- year(now())
-datCatch <- NULL
+dat <- NULL
 for (y in 2016:yr) {
   fn <- paste0(prefix, "_catch_all_", y, ".csv")
-  if (urlFileExist(fn)) datCatch <- bind_rows(datCatch, read_csv(fn, col_types = "Tfd"))
+  if (urlFileExist(fn)) dat <- bind_rows(dat, read_csv(fn, col_types = "Tfd"))
 }
-datCatch <- datCatch %>% 
+datCatchMVLF <- dat %>% 
   mutate(Year = year(Date), Month = month(Date))
 
 ## Remove catch with no place in Skjern and Karup å
-datCatch <- datCatch %>% 
+datCatchMVLF <- datCatchMVLF %>% 
   filter(Species %in% c("Havørred", "Laks", "Bækørred", "Stalling", "Aborre", "Gedde", "Ål")) %>% 
   filter(!(River == "Skjern Å" & is.na(Place))) %>% 
   filter(!(River == "Karup Å" & is.na(Place))) %>% 
   mutate(Place = if_else(is.na(Place), River, Place)) 
 
 ## Stræknings datasæt (antal besøg givet år)
-datCatchPlaceYear <- datCatch %>% 
+dat <- datCatchMVLF %>% 
+  filter(Species %in% c("Havørred")) |> 
   count(River, Place, Year) %>% 
-  full_join(datPlaces) %>% 
-  replace_na(list(Year = 2023, n = 0)) 
-
-## Stræknings datasæt (antal besøg over år samt nuværende)
-datCatchPlace <- datCatchPlaceYear |> 
   group_by(River, Place) |> 
-  mutate(Mean = mean(n), Min = min(n), Max = max(n)) |> 
-  filter(Year == yr)
+  summarise(Mean = sum(n)/(yr-2016+1))
 
-## Stræknings tabel (antal besøg over år)
-datCatchPlaceYearTable <- datCatchPlaceYear %>% 
-  pivot_wider(names_from = Year, values_from = n, names_sort = T) %>% 
-  rowwise(River, Place) %>% 
-  mutate(Middel = rowMeans(pick(where(is.numeric)), na.rm = T))
+datCatchMVLFPlaceSea <- datCatchMVLF |> 
+  filter(Year == yr, Species %in% c("Havørred")) |> 
+  count(River, Place) |> 
+  full_join(datPlaces) |> 
+  left_join(dat) |> 
+  replace_na(list(n = 0, Mean = 0, Min = 0, Max = 0)) |> 
+  filter(Place %in% datPlaces$Place) |> 
+  ungroup() 
+
+
+dat <- datCatchMVLF %>% 
+  filter(Species %in% c("Laks")) |> 
+  count(River, Place, Year) %>% 
+  group_by(River, Place) |> 
+  summarise(Mean = sum(n)/(yr-2016+1))
+
+datCatchMVLFPlaceSal <- datCatchMVLF |> 
+  filter(Year == yr, Species %in% c("Laks")) |> 
+  count(River, Place) |> 
+  full_join(datPlaces) |> 
+  left_join(dat) |> 
+  replace_na(list(n = 0, Mean = 0, Min = 0, Max = 0)) |> 
+  filter(Place %in% datPlaces$Place) |> 
+  ungroup() 
+  
+## Stræknings datasæt (antal besøg givet år)
+dat <- datCatchMVLF %>% 
+  filter(Species %in% c("Bækørred")) |> 
+  count(River, Place, Year) %>% 
+  group_by(River, Place) |> 
+  summarise(Mean = sum(n)/(yr-2016+1))
+
+datCatchMVLFPlaceT <- datCatchMVLF |> 
+  filter(Year == yr, Species %in% c("Bækørred")) |> 
+  count(River, Place) |> 
+  full_join(datPlaces) |> 
+  left_join(dat) |> 
+  replace_na(list(n = 0, Mean = 0, Min = 0, Max = 0)) |> 
+  filter(Place %in% datPlaces$Place) |> 
+  ungroup() 
+
+## Stræknings datasæt (antal besøg givet år)
+dat <- datCatchMVLF %>% 
+  filter(Species %in% c("Stalling")) |> 
+  count(River, Place, Year) %>% 
+  group_by(River, Place) |> 
+  summarise(Mean = sum(n)/(yr-2016+1))
+
+datCatchMVLFPlaceS <- datCatchMVLF |> 
+  filter(Year == yr, Species %in% c("Stalling")) |> 
+  count(River, Place) |> 
+  full_join(datPlaces) |> 
+  left_join(dat) |> 
+  replace_na(list(n = 0, Mean = 0, Min = 0, Max = 0)) |> 
+  filter(Place %in% datPlaces$Place) |> 
+  ungroup() 
+
+# ## Stræknings tabel (antal besøg over år)
+# datCatchMVLFPlaceYearTable <- datCatchMVLFPlaceYear %>% 
+#   pivot_wider(names_from = Year, values_from = n, names_sort = T) %>% 
+#   rowwise(River, Place) %>% 
+#   mutate(Middel = rowMeans(pick(where(is.numeric)), na.rm = T))
 ```
 
 
@@ -119,60 +174,72 @@ datCatchPlaceYearTable <- datCatchPlaceYear %>%
 
 ## MV-LF
 
-Vi betragter fangstdata fra MV-LF i Karup Å. 
+Vi betragter fangstdata fra MV-LF i Karup Å systemet. 
 
 ```{r}
-## parameters
-yr <- 2024
+rivers <- c("Karup Å", "Haderup/Haderis Å")
 
 ## Weight estimates
 dat <- read_csv(file = here("data/data_karup_weight_seatrout.csv"))
 
 # Karup Å dataset
-datCatchKarup <- datCatch |> 
-  filter(River %in% c("Karup Å", "Haderup/Haderis Å"), Species %in% c("Havørred")) |> 
+datCatchKarup <- datCatchMVLF |> 
+  filter(River %in% rivers, Species %in% c("Havørred")) |> 
   left_join(dat, by = join_by(Month == MonthN, Length == Length)) |> 
   mutate(Weight = if_else(is.na(Weight), round(Avg,2), Weight)) 
 
-## This year data summary
-dat1 <- datCatchKarup |> 
-  filter(Year == yr, Killed == T) |> 
-  filter(Weight == max(Weight, na.rm = T)) |> 
-  mutate(Name = str_flatten_comma(Name, " og ")) |> 
-  slice_head(n = 1) |> 
-  mutate(str = str_c(Weight, " kg, ", Length, " cm af ", Name, " på ", Method))
-dat2 <- datCatchKarup |> 
-  filter(Year == yr, Killed == F) |> 
-  filter(Weight == max(Weight, na.rm = T)) |> 
-  mutate(Name = str_flatten_comma(Name, " og ")) |> 
-  slice_head(n = 1) |> 
-  mutate(str = str_c(Weight, " kg, ", Length, " cm af ", Name, " på ", Method))
-dat3 <- datCatchPlaceYear |> 
-  filter(Year == yr, n == max(n))
-dat4 <- datCatchKarup |> 
-  group_by(Killed) |> 
-  summarise(Mean = mean(Weight))
-
-## Summary table
-datTable <- datCatchKarup |> 
-  filter(River %in% c("Karup Å", "Haderup/Haderis Å"), Year == yr) |> 
-  ungroup() |> 
-  summarise(`Antal fanget` = n(), 
-            Genudsat = str_c(round(100 * sum(Killed == F) / n(), 0), " %"),
-            Gennesnitsvægt = mean(Weight),
-            `Gennesnitsvægt hjemtaget` = dat4 |> filter(Killed == T) |> pull(Mean),
-            `Gennesnitsvægt genudsat` = dat4 |> filter(Killed == F) |> pull(Mean),
-            `Største havørred hjemtaget` = dat1 |> pull(str),
-            `Største havørred genudsat` = dat2 |> pull(str) |> str_flatten_comma()
-            ) |> 
-  mutate(across(where(is.numeric), \(x) round(x, digits = 2))) |> 
-  mutate(across(where(is.numeric), as.character)) |> 
-  pivot_longer(cols = everything()) |> 
-  add_row(name = "Strækninger", value = datPlaces |> filter(River %in% c("Karup Å", "Haderup/Haderis Å")) |> nrow() |> as.character()) |> 
-  add_row(name = "Bedste strækning", value = dat3 |> pull(Place))
+getTableOverview <- function(dat, datPlace, rivers) {
+  dat <- dat |> filter(Year == yr)
+  dat1 <- dat |> 
+    filter(Killed == T) |> 
+    filter(Weight == max(Weight, na.rm = T)) |> 
+    mutate(Name = str_flatten_comma(Name, " og ")) |> 
+    slice_head(n = 1) |> 
+    mutate(str = str_c(Weight, " kg, ", Length, " cm af ", Name, " på ", Method))
+  if (nrow(dat1) == 0) dat1 <- dat1 |> add_row()
+  dat2 <- dat |> 
+    filter(Killed == F) |> 
+    filter(Weight == max(Weight, na.rm = T)) |> 
+    mutate(Name = str_flatten_comma(Name, " og ")) |> 
+    slice_head(n = 1) |> 
+    mutate(str = str_c(Weight, " kg, ", Length, " cm af ", Name, " på ", Method))
+  if (nrow(dat2) == 0) dat2 <- dat2 |> add_row()
+  dat3 <- datPlace |> 
+    filter(River %in% rivers) |> 
+    filter(n == max(n)) |> 
+    mutate(Place = str_flatten_comma(Place, " og ")) |> 
+    slice_head(n = 1)
+  # if ((dat3$n) == 0) dat3 <- dat3 |> add_row()
+  dat4 <- dat |> 
+    group_by(Killed) |> 
+    summarise(Mean = mean(Weight))
+  if (nrow(dat4 |> filter(Killed)) == 0) dat4 <- dat4 |> add_row(Killed = T)
+  if (nrow(dat4 |> filter(!Killed)) == 0) dat4 <- dat4 |> add_row(Killed = F)
+                                                                 
+  
+  ## Summary table
+  datTable <- dat |> 
+    filter(Year == yr) |> 
+    ungroup() |> 
+    summarise(`Antal fanget` = n(), 
+              Genudsat = str_c(round(100 * sum(Killed == F) / n(), 0), " %"),
+              Gennesnitsvægt = mean(Weight),
+              `Gennesnitsvægt hjemtaget` = dat4 |> filter(Killed == T) |> pull(Mean),
+              `Gennesnitsvægt genudsat` = dat4 |> filter(Killed == F) |> pull(Mean),
+              `Største fisk hjemtaget` = dat1 |> pull(str),
+              `Største fisk genudsat` = dat2 |> pull(str) |> str_flatten_comma()
+              ) |> 
+    mutate(across(where(is.numeric), \(x) round(x, digits = 2))) |> 
+    mutate(across(where(is.numeric), as.character)) |> 
+    pivot_longer(cols = everything()) |> 
+    add_row(name = "Strækninger", value = datPlace |> filter(River %in% rivers) |> nrow() |> as.character()) |> 
+    add_row(name = "Bedste strækning", value = dat3 |> pull(Place))
+  return(datTable)
+}
 ```
 
 ```{r}
+datTable <- getTableOverview(datCatchKarup, datCatchMVLFPlaceSea, rivers) 
 kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr)) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
@@ -180,53 +247,63 @@ kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ",
 
 ```{r}
 ## Bar chart over places
-datCatchPlace |> 
-  filter(River %in% c("Karup Å", "Haderup/Haderis Å")) |> 
-  ggplot(aes(x = reorder(Place, -n), y = n, fill = "")) +
-  geom_col() + 
-  geom_errorbar(aes(ymin = Mean, ymax = Mean)) +
-  labs(title = str_c("Antal fangster for ", yr, " samt gennemsnit over tidligere år (sort linje)"),
-       x = NULL,
-       y = NULL,
-       fill = NULL) +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1), legend.position="none")
+plotPlacesOverview <- function(dat, rivers) {
+  dat |> 
+    filter(River %in% rivers) |> 
+    ggplot(aes(x = reorder(Place, -n), y = n, fill = "")) +
+    geom_col() + 
+    geom_errorbar(aes(ymin = Mean, ymax = Mean)) +
+    labs(title = str_c("Antal fangster for ", yr, " samt gennemsnit over tidligere år (sort linje)"),
+         x = NULL,
+         y = NULL,
+         fill = NULL) +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1), legend.position="none")  
+  }
+plotPlacesOverview(datCatchMVLFPlaceSea, rivers)
 ```
 
 
 ```{r}
-datCatchKarup |> 
-  filter(Killed, Year == yr) |> 
-  group_by(Name) |> 
-  summarise(Antal = n(), TotalKg = sum(Weight)) |> 
-  group_by(Antal) |> 
-  count() |> 
-  ggplot(aes(x = factor(Antal), y = n, fill = "")) + 
-  geom_col() + 
-  labs(title = str_c("Fordelingen af fisk hjemtaget (", yr, ")"),
-       x = "Antal fisk hjemtaget",
-       y = "Antal fiskere identificeret ved navn",
-       fill = NULL) +
-  theme(legend.position="none") 
-  # scale_y_continuous(breaks = breaks_pretty())
+plotCatchAmountDist <- function(dat) {
+  dat |> 
+    filter(Killed, Year == yr) |> 
+    group_by(Name) |> 
+    summarise(Antal = n(), TotalKg = sum(Weight)) |> 
+    group_by(Antal) |> 
+    count() |> 
+    ggplot(aes(x = factor(Antal), y = n, fill = "")) + 
+    geom_col() + 
+    labs(title = str_c("Fordelingen af fisk hjemtaget (", yr, ")"),
+         x = "Antal fisk hjemtaget",
+         y = "Antal fiskere identificeret ved navn",
+         fill = NULL) +
+    theme(legend.position="none") 
+    # scale_y_continuous(breaks = breaks_pretty())
+}
+plotCatchAmountDist(datCatchKarup)
 
-datCatchKarup |> 
-  filter(Killed, Year == yr) |> 
-  group_by(Name) |> 
-  summarise(Antal = n(), TotalKg = sum(Weight)) |> 
-  ggplot(aes(x = TotalKg, fill = "")) + 
-  geom_histogram(binwidth = 1) + 
-  labs(title = str_c("Fordelingen af kg fisk hjemtaget (", yr, ")"),
-       x = "Antal kg hjemtaget",
-       y = "Antal fiskere identificeret ved navn",
-       fill = NULL) +
-  theme(legend.position="none")
+
+plotCatchWeightDist <- function(dat) {
+  dat |> 
+    filter(Killed, Year == yr) |> 
+    group_by(Name) |> 
+    summarise(Antal = n(), TotalKg = sum(Weight)) |> 
+    ggplot(aes(x = TotalKg, fill = "")) + 
+    geom_histogram(binwidth = 1) + 
+    labs(title = str_c("Fordelingen af kg fisk hjemtaget (", yr, ")"),
+         x = "Antal kg hjemtaget",
+         y = "Antal fiskere identificeret ved navn",
+         fill = NULL) +
+    theme(legend.position="none")
+}
+plotCatchWeightDist(datCatchKarup)
 ```
 
 
 
-## Alle foreninger
+## Hele Karup Å systemet
 
-Vi kigger her på fangstdata for hele Karup Å systemet
+Vi kigger her på fangstdata for hele Karup Å systemet (alle foreninger).
 
 ```{r}
 # Henter alle fangster
@@ -253,54 +330,20 @@ fit <- lm(Eggs ~ -1 + I(Length^2) + I(Length^3), datEgg)
 tmp <- tibble(Length = 30:100) 
 datEgg <- bind_cols(tmp, tibble(Eggs = predict(fit, tmp)))
 
-datCatch <- datCatch |> 
+datCatchKarupAll <- datCatch |> 
   left_join(datWeight, by = join_by(Month == MonthN, Length == Length)) |> 
-  mutate(Weight = if_else(is.na(Weight), round(Avg,2), Weight)) |> 
+  mutate(Weight = if_else(is.na(Weight), round(Avg,2), Weight)) |>  
   left_join(datEgg)
+
+datKarupZones <- datCatchKarupAll |> 
+  count(Place) %>% 
+  filter(!is.na(Place)) |> 
+  mutate(River = "Karup Å") # just to hack 
 ```
 
 
 ```{r}
-# Karup Å dataset
-datCatchKarup <- datCatch 
-
-## This year data summary
-dat1 <- datCatchKarup |> 
-  filter(Year == yr, Killed == T) |> 
-  filter(Weight == max(Weight, na.rm = T)) |> 
-  mutate(Name = str_flatten_comma(Name, " og ")) |> 
-  slice_head(n = 1) |> 
-  mutate(str = str_c(Weight, " kg, ", Length, " cm af ", Name, " på ", Method))
-dat2 <- datCatchKarup |> 
-  filter(Year == yr, Killed == F) |> 
-  filter(Weight == max(Weight, na.rm = T)) |> 
-  mutate(Name = str_flatten_comma(Name, " og ")) |> 
-  slice_head(n = 1) |> 
-  mutate(str = str_c(Weight, " kg, ", Length, " cm af ", Name, " på ", Method))
-dat3 <- datCatchPlaceYear |> 
-  filter(Year == yr, n == max(n))
-dat4 <- datCatchKarup |> 
-  group_by(Killed) |> 
-  summarise(Mean = mean(Weight))
-
-## Summary table
-datTable <- datCatchKarup |> 
-  filter(Year == yr) |> 
-  ungroup() |> 
-  summarise(`Antal fanget` = n(), 
-            Genudsat = str_c(round(100 * sum(Killed == F) / n(), 0), " %"),
-            Gennesnitsvægt = mean(Weight),
-            `Gennesnitsvægt hjemtaget` = dat4 |> filter(Killed == T) |> pull(Mean),
-            `Gennesnitsvægt genudsat` = dat4 |> filter(Killed == F) |> pull(Mean),
-            `Største havørred hjemtaget` = dat1 |> pull(str),
-            `Største havørred genudsat` = dat2 |> pull(str) |> str_flatten_comma()
-            ) |> 
-  mutate(across(where(is.numeric), \(x) round(x, digits = 2))) |> 
-  mutate(across(where(is.numeric), as.character)) |> 
-  pivot_longer(cols = everything()) 
-```
-
-```{r}
+datTable <- getTableOverview(datCatchKarupAll, datKarupZones, rivers)
 kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr)) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
@@ -308,32 +351,8 @@ kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ",
 
 
 ```{r}
-datCatchKarup |> 
-  filter(Killed) |> 
-  group_by(Name) |> 
-  summarise(Antal = n(), TotalKg = sum(Weight)) |> 
-  group_by(Antal) |> 
-  count() |> 
-  ggplot(aes(x = factor(Antal), y = n, fill = "")) + 
-  geom_col() + 
-  labs(title = str_c("Fordelingen af fisk hjemtaget (", yr, ")"),
-       x = "Antal fisk hjemtaget",
-       y = "Antal fiskere identificeret ved navn",
-       fill = NULL) +
-  theme(legend.position="none") 
-  # scale_y_continuous(breaks = breaks_pretty())
-
-datCatchKarup |> 
-  filter(Killed) |> 
-  group_by(Name) |> 
-  summarise(Antal = n(), TotalKg = sum(Weight)) |> 
-  ggplot(aes(x = TotalKg, fill = "")) + 
-  geom_histogram(binwidth = 1) + 
-  labs(title = str_c("Fordelingen af kg fisk hjemtaget (", yr, ")"),
-       x = "Antal kg hjemtaget",
-       y = "Antal fiskere identificeret ved navn",
-       fill = NULL) +
-  theme(legend.position="none")
+plotCatchAmountDist(datCatchKarupAll) 
+plotCatchWeightDist(datCatchKarupAll) 
 
 # datCatchKarup |> 
 #   filter(Killed) |> 
@@ -354,7 +373,7 @@ Antagelser
   * Vi filtrer fangsterne så kun kigger på hjemtaget fisk.
   * Vi kigger herefter på fisk over grænsen i cm og fjerner de første fangster givet et maks antal, der må fanges per fisker.
   * Vi har herefter fangsterne der (hvis kvoten gælder) skulle have være genudsat.
-  * Vi filtrer for hunner.
+  * Vi filtrer for hunner eller ukendt køn (antages hun).
   * For hver fisk estimeres vægt og antal æg fisken ville have lagt.
   * Det antages at 0.25% - 1% af disse æg bliver til tilbagevendende fisk (er ikke sikker på disse tal), dvs. gennemsnitligt 0.5%. 
 
@@ -365,14 +384,14 @@ kbl(datEggT, col.names = c("Længde", "Antal æg"), caption = str_c("Estimat af 
 
 
 ```{r}
-calcLimitStat <- function(limitCm, limitCtr, suvivalRateMax = 0.01, suvivalRateMin = 0.0025, suvivalRateMean = 0.005) {
-  tmp <- datCatch |> 
+calcLimitStat <- function(limitCm, limitCtr, suvivalRateMax = 0.01, suvivalRateMin = 0.0025, suvivalRateMean = 0.005, dat = datCatchKarupAll) {
+  tmp <- dat |> 
     filter(Killed, Length > limitCm) |> 
     group_by(Name) |> 
     arrange(Name, Date) |> 
     filter(row_number() > limitCtr) |> 
     ungroup() |> 
-    filter(Sex == "Hun") |> 
+    filter(Sex == "Hun" | is.na(Sex)) |> 
     summarise(Antal = n(), TotalKg = sum(Weight), Eggs = round(sum(Eggs)), 
               AntalTilbageMean = round(Eggs * suvivalRateMean), 
               AntalTilbageMin = round(Eggs * suvivalRateMin), 
@@ -399,3 +418,89 @@ kbl(dat, caption = str_c("Effekt af kvoter"), align=c(rep('c', 5), "r")) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
+
+
+# Skjern Å systemet
+
+## MV-LF
+
+Vi betragter fangstdata fra MV-LF i Skjern Å systemet. 
+
+```{r}
+rivers <- c("Skjern Å", "Vorgod Å", "Fjederholt Å", "Rind Å", "Karstoft Å", "Brande Å")
+
+## Weight estimates
+dat <- read_csv(file = here("data/data_skjern_weight_seatrout.csv"))
+dat1 <- read_csv(file = here("data/data_skjern_weight_salmon.csv"))
+
+# Skjern Å dataset
+datCatchSkjernSea <- datCatchMVLF |> 
+  filter(River %in% rivers, Species %in% c("Havørred")) |> 
+  left_join(dat, by = join_by(Month == MonthN, Length == Length)) |> 
+  mutate(Weight = if_else(is.na(Weight), round(Avg,2), Weight)) 
+datCatchSkjernSal <- datCatchMVLF |> 
+  filter(River %in% rivers, Species %in% c("Laks")) |> 
+  left_join(dat1, by = join_by(Month == MonthN, Length == Length)) |> 
+  mutate(Weight = if_else(is.na(Weight), round(Avg,2), Weight)) 
+datCatchSkjernT <- datCatchMVLF |> 
+  filter(River %in% rivers, Species %in% c("Bækørred")) |> 
+  left_join(dat, by = join_by(Month == MonthN, Length == Length)) |> 
+  mutate(Weight = if_else(is.na(Weight), round(Avg,2), Weight)) 
+datCatchSkjernS <- datCatchMVLF |> 
+  filter(River %in% rivers, Species %in% c("Stalling")) |> 
+  left_join(dat, by = join_by(Month == MonthN, Length == Length)) |> 
+  mutate(Weight = if_else(is.na(Weight), round(Avg,2), Weight)) 
+```
+
+
+### Laks
+
+```{r}
+datTable <- getTableOverview(datCatchSkjernSal, datCatchMVLFPlaceSal, rivers)
+kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr)) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+```{r}
+plotPlacesOverview(datCatchMVLFPlaceSal, rivers)
+```
+
+
+### Havørred
+
+```{r}
+datTable <- getTableOverview(datCatchSkjernSea, datCatchMVLFPlaceSea, rivers)
+kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr)) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+```{r}
+plotPlacesOverview(datCatchMVLFPlaceSea, rivers)
+```
+
+
+### Bækørred
+
+```{r}
+datTable <- getTableOverview(datCatchSkjernT, datCatchMVLFPlaceT, rivers)
+kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr)) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+```{r}
+plotPlacesOverview(datCatchMVLFPlaceT, rivers)
+```
+
+
+
+### Stalling
+
+```{r}
+datTable <- getTableOverview(datCatchSkjernS, datCatchMVLFPlaceS, rivers)
+kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr)) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+```{r}
+plotPlacesOverview(datCatchMVLFPlaceS, rivers)
+```
