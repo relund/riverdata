@@ -831,6 +831,9 @@ writeCatch <- function(url, prefix, yr, species = "Havørred", club = FALSE) {
     dateStr <- mutate(dateStr, Month = Month + 1)
     dateStr <- str_c(dateStr$Year, "-", str_pad(dateStr$Month, 2, "left", pad="0"), "-", str_pad(dateStr$Day, 2, "left", pad="0"))
     dat1 <- suppressMessages(bind_cols(Date=dateStr, dat1))
+    ## fix that there may be two Køn cols
+    idx <- str_which(colnames(dat1), "Køn")
+    colnames(dat1)[idx[1]] <- "Køn"
     if (club) dat1 <- dat1 %>% 
       rename(River = Fiskevand)
     if (species == "Havørred") dat1 <- dat1 %>% dplyr::filter(str_detect(Art, "Havørred"))
