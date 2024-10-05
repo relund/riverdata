@@ -63,4 +63,7 @@ datMarkers <- datMarkers  %>% filter(!is.na(Icon))
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
 
-render("reports/mv-lf/mv-lf-kort.Rmd",output_dir = "docs/mv-lf")
+yr <- year(lubridate::now())
+render("reports/mv-lf/mv-lf-kort.Rmd", output_dir = "docs/mv-lf")
+render("reports/mv-lf/mv-lf-report.Rmd", output_dir = "docs/mv-lf", 
+       output_file = str_c("mv-lf-report-", yr), params = list(yr = yr))
