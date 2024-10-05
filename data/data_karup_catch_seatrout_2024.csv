@@ -1,4 +1,57 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
+2024-10-04,55,NA,Tommy Hannibal Jensen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2024-10-04,58,1.9,Tommy Hannibal Jensen,Nedre,Spin,NA,NA,TRUE,Han,FALSE
+2024-10-04,65,NA,Michael Hansen,Mellem,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A9AD7D37635EE466C1258BAC0050337E.jpg,FALSE,NA,FALSE
+2024-10-04,57,1.7,Carsten Albers,Øvre,Spin,NA,NA,TRUE,Hun,FALSE
+2024-10-03,50,NA,Edhem Edo Salkic,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2024-10-03,40,NA,Lars Petersen,Mellem,Flue,NA,NA,FALSE,Han,FALSE
+2024-10-03,78,5.9,Lars Uhre Bruun,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2024-10-03,62,NA,Lars Uhre Bruun,NA,Spin,NA,NA,FALSE,Hun,FALSE
+2024-10-03,59,NA,Lars Uhre Bruun,NA,Spin,NA,NA,FALSE,Hun,FALSE
+2024-10-03,42,NA,Lars Uhre Bruun,Nedre,Spin,NA,NA,FALSE,Han,FALSE
+2024-10-03,56,2.3,Bjarke Therp Jensen,Øvre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/3FA11C2A05D390BFC1258BAB005FFD80.jpg,TRUE,Han,FALSE
+2024-10-02,67,NA,Allan Bay,Mellem,Flue,NA,NA,FALSE,Han,FALSE
+2024-10-02,53,1.4,Eigil Amlund,Øvre,Flue,NA,NA,TRUE,Hun,FALSE
+2024-10-02,92,NA,Niles Jørgen Plougmann,Mellem,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/11DA4DD292D6241AC1258BAA0053E1B6.jpg,FALSE,Han,FALSE
+2024-10-01,65,NA,Asbjørn Schlosser,Nedre,Spin,NA,NA,FALSE,Hun,FALSE
+2024-10-01,70,NA,Tommy Hannibal Jensen,Mellem,Spin,NA,NA,FALSE,Han,FALSE
+2024-10-01,73,NA,Tommy Hoelgaard,Øvre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/84088C14EA531212C1258BA900631FED.jpg,FALSE,Hun,FALSE
+2024-10-01,51,2.1,Kurt Juel,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2024-10-01,65,NA,Thomas Stax Jakobsen,Nedre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8A3ACD8127B39131C1258BA9003F8CB2.jpg,TRUE,NA,FALSE
+2024-10-01,74,4.3,Torben Jensen,Mellem,Flue,NA,NA,TRUE,NA,FALSE
+2024-09-30,56,1.8,Jørgen Bylov,Mellem,Spin,NA,NA,TRUE,Hun,FALSE
+2024-09-29,48,NA,Karsten Simonsen,Nedre,Spin,NA,NA,FALSE,NA,FALSE
+2024-09-29,62,3.6,Allan Bilstrup,Nedre,Spin,NA,NA,TRUE,Hun,FALSE
+2024-09-29,75,NA,Gustav Isen,Øvre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B2571203F014DCCAC1258BA70060B474.jpg,FALSE,Hun,FALSE
+2024-09-29,60,2.3,Peder Riisgaard,Nedre,Spin,NA,NA,TRUE,Han,FALSE
+2024-09-29,65,NA,Sebastian Lavendt,Øvre,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B89F1334BD8887B9C1258BA700373785.jpg,FALSE,Han,FALSE
+2024-09-28,62,NA,Viktor Holm,Mellem,Spin,NA,NA,TRUE,Han,FALSE
+2024-09-28,46,NA,Tage Gamborg Holm,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2024-09-28,57,1.7,Tage Gamborg Holm,Mellem,Spin,NA,NA,TRUE,NA,FALSE
+2024-09-28,65,NA,Jesper Moesgaard,Mellem,Spin,NA,NA,FALSE,Han,FALSE
+2024-09-28,58,NA,Frederik Taylor,Mellem,Spin,NA,NA,FALSE,NA,FALSE
+2024-09-27,65,3.2,Knud Pedersen,Mellem,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A7BE76E36AE1412AC1258BA60068DC2C.jpg,TRUE,Hun,FALSE
+2024-09-27,60,NA,Michael Hansen,Nedre,Spin,NA,NA,TRUE,NA,FALSE
+2024-09-26,47,NA,Kasper Knudsen,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2024-09-26,64,NA,Kasper Knudsen,Øvre,Spin,NA,NA,FALSE,NA,FALSE
+2024-09-26,70,NA,Kim Birkeholm,Nedre,Flue,NA,NA,FALSE,Han,FALSE
+2024-09-26,66,NA,Kaj O. Christensen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2024-09-25,45,NA,Edhem Edo Salkic,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2024-09-25,65,NA,Allan Bay,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2024-09-24,60,2.5,Ole Maach,Mellem,Spin,NA,NA,TRUE,Han,FALSE
+2024-09-24,57,2,Harald Kröger,Nedre,Flue,NA,NA,TRUE,Han,FALSE
+2024-09-23,60,NA,Lars Petersen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2024-09-22,45,NA,Bo Fomsgaard,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2024-09-22,55,NA,Osman Vibba Bejtovic,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2024-09-21,50,NA,Tommy Hoelgaard,Mellem,Flue,NA,NA,FALSE,NA,FALSE
+2024-09-21,60,NA,Sven Sylvest,Øvre,Spin,NA,NA,FALSE,Han,FALSE
+2024-09-20,60,NA,Osman Vibba Bejtovic,Nedre,Flue,NA,NA,FALSE,NA,FALSE
+2024-09-20,84,NA,Rasmus Trettenes,Nedre,Spin,NA,NA,FALSE,Han,FALSE
+2024-09-19,60,NA,Allan Bay,Mellem,Flue,NA,NA,FALSE,Han,FALSE
+2024-09-19,60,NA,Allan Bay,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
+2024-09-18,44,NA,Michael Hansen,Mellem,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/80987DD10B7550FDC1258B9C0058DF65.jpg,FALSE,NA,FALSE
+2024-09-17,58,2,Henrik Bønnelykke,Nedre,Orm,NA,NA,TRUE,Han,FALSE
+2024-09-17,58,NA,Dgs Jan Lyster,Mellem,Spin,NA,NA,FALSE,Han,FALSE
 2024-09-17,57,2.3,Daniel Andersen,Nedre,Spin,NA,NA,TRUE,Han,FALSE
 2024-09-17,57,2,Alexander Bjerg,Mellem,Spin,NA,NA,TRUE,NA,FALSE
 2024-09-17,58,1.9,Vagn Sandfeld,Mellem,Spin,NA,NA,TRUE,NA,FALSE
@@ -17,6 +70,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2024-09-15,70,NA,Gustav Isen,Øvre,Spin,NA,NA,FALSE,Han,FALSE
 2024-09-15,81,NA,Gustav Isen,Øvre,Spin,NA,NA,FALSE,Han,FALSE
 2024-09-15,51,NA,Jesper Christiansen,Mellem,Flue,NA,NA,TRUE,Hun,FALSE
+2024-09-14,64,NA,Mads-Emil Mogensen,Øvre,Spin,NA,NA,TRUE,Hun,FALSE
 2024-09-14,81,6.6,Ole Jensrn,Mellem,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A812E6AC9C1F8446C1258B980075649F.jpg,TRUE,Han,FALSE
 2024-09-14,60,NA,Mikkel Rasmussen,Mellem,Spin,NA,NA,FALSE,NA,FALSE
 2024-09-14,50,NA,Mikkel Rasmussen,Mellem,Spin,NA,NA,FALSE,NA,FALSE
