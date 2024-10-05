@@ -1,4 +1,43 @@
 Date,Species,Length,Weight,Name,River,Place,Method,Cut,Foto,Killed,Sex,Net
+2024-10-04,Havørred,55,NA,Tommy Hannibal Jensen,Karup Å,Karup Å (nedre øst),Spin,NA,NA,FALSE,NA,FALSE
+2024-10-04,Havørred,58,1.9,Tommy Hannibal Jensen,Karup Å,Karup Å (nedre øst),Spin,NA,NA,TRUE,Han,FALSE
+2024-10-04,Havørred,65,NA,Michael Hansen,Karup Å,Vormstrup,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A9AD7D37635EE466C1258BAC0050337E.jpg,FALSE,NA,FALSE
+2024-10-04,Havørred,65,NA,Steen Jørgen Mortensen,Skjern Å,Skjernåvej 137,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/136210CA04DCEE2CC1258BAC004F9740.jpg,FALSE,Hun,TRUE
+2024-10-04,Havørred,57,1.7,Carsten Albers,Karup Å,Uhre (vest),Spin,NA,NA,TRUE,Hun,FALSE
+2024-10-03,Havørred,40,NA,Lars Petersen,Karup Å,Høstrup,Flue,NA,NA,FALSE,Han,FALSE
+2024-10-03,Havørred,56,2.3,Bjarke Therp Jensen,Karup Å,Agerskov (vest),Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/3FA11C2A05D390BFC1258BAB005FFD80.jpg,TRUE,Han,FALSE
+2024-10-02,Havørred,67,NA,Allan Bay,Karup Å,Hessellund,Flue,NA,NA,FALSE,Han,FALSE
+2024-10-02,Havørred,40,NA,Thor,Skjern Å,Tjæreovenene,Flue,NA,NA,FALSE,NA,FALSE
+2024-10-02,Havørred,92,NA,Niles Jørgen Plougmann,Karup Å,Vormstrup,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/11DA4DD292D6241AC1258BAA0053E1B6.jpg,FALSE,Han,FALSE
+2024-10-01,Havørred,65,NA,Asbjørn Schlosser,Karup Å,Hagebro (øst),Spin,NA,NA,FALSE,Hun,FALSE
+2024-10-01,Havørred,70,NA,Tommy Hannibal Jensen,Karup Å,Sdr. Resen (nedstrøms broen),Spin,NA,NA,FALSE,Han,FALSE
+2024-10-01,Havørred,73,NA,Tommy Hoelgaard,Karup Å,Agerskov (vest),Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/84088C14EA531212C1258BA900631FED.jpg,FALSE,Hun,FALSE
+2024-10-01,Havørred,74,4.3,Torben Jensen,Karup Å,Sdr. Resen Naturpark,Flue,NA,NA,TRUE,NA,FALSE
+2024-09-30,Havørred,56,1.8,Jørgen Bylov,Karup Å,Ålykke,Spin,NA,NA,TRUE,Hun,FALSE
+2024-09-29,Havørred,50,NA,Lars Relund,Skjern Å,Skarrild (nordsiden af Øvig),Flue,NA,NA,FALSE,Han,FALSE
+2024-09-29,Regnbueørred,50,NA,Bjarke Therp Jensen,Karup Å,Agerskov (vest),Spin,NA,NA,TRUE,NA,FALSE
+2024-09-29,Havørred,65,NA,Sebastian Lavendt,Karup Å,Kronborgstykket,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B89F1334BD8887B9C1258BA700373785.jpg,FALSE,Han,FALSE
+2024-09-28,Havørred,62,NA,Viktor Holm,Karup Å,Sdr. Resen (nedstrøms broen),Spin,NA,NA,TRUE,Han,FALSE
+2024-09-28,Havørred,46,NA,Tage Gamborg Holm,Karup Å,Høstrup,Spin,NA,NA,FALSE,NA,FALSE
+2024-09-28,Havørred,57,1.7,Tage Gamborg Holm,Karup Å,Høstrup,Spin,NA,NA,TRUE,NA,FALSE
+2024-09-28,Havørred,45,NA,Morten Winther,Skjern Å,Skarrild (nordsiden af Øvig),Flue,NA,NA,FALSE,Hun,FALSE
+2024-09-28,Havørred,50,NA,Morten Winther,Skjern Å,Skarrild (nordsiden af Øvig),Flue,NA,NA,FALSE,Hun,FALSE
+2024-09-28,Havørred,65,NA,Jesper Moesgaard,Karup Å,Ålykke,Spin,NA,NA,FALSE,Han,FALSE
+2024-09-27,Havørred,65,3.2,Knud Pedersen,Karup Å,Hyttestykket,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A7BE76E36AE1412AC1258BA60068DC2C.jpg,TRUE,Hun,FALSE
+2024-09-27,Laks,73,NA,Marc Skovby,Skjern Å,Skjernåvej 115,Flue,NA,NA,FALSE,Han,FALSE
+2024-09-27,Laks,105,NA,Kenny Frost,Skjern Å,Greenvej,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/EBA4F17AA2B31311C1258BA500557879.jpg,FALSE,Han,FALSE
+2024-09-26,Laks,90,NA,Kenny Frost,Skjern Å,Tjæreovenene,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/03C7622A66EA5478C1258BA400475A33.jpg,FALSE,Han,FALSE
+2024-09-26,Havørred,50,NA,Karl-Ole Frandsen Frandsen,Skjern Å,Forvirringen,Flue,NA,NA,FALSE,Hun,FALSE
+2024-09-26,Laks,65,NA,Karl-Ole Frandsen Frandsen,Skjern Å,Forvirringen,Flue,NA,NA,FALSE,Han,FALSE
+2024-09-23,Havørred,60,NA,Lars Petersen,Karup Å,Høstrup,Flue,NA,NA,FALSE,Hun,FALSE
+2024-09-22,Havørred,45,NA,Bo Fomsgaard,Karup Å,Rensningsanlægget,Flue,NA,NA,FALSE,NA,FALSE
+2024-09-21,Havørred,50,NA,Tommy Hoelgaard,Karup Å,Hyttestykket,Flue,NA,NA,FALSE,NA,FALSE
+2024-09-21,Havørred,60,NA,Sven Sylvest,Karup Å,Rosenborgstykket,Spin,NA,NA,FALSE,Han,FALSE
+2024-09-21,Havørred,45,NA,Henrik Jacobsen,Skjern Å,Skarrild (nordsiden af Øvig),Flue,NA,NA,FALSE,Han,FALSE
+2024-09-20,Laks,90,NA,Nicolai Just Jakobsen,Skjern Å,Sdr Felding (v den gule gård),Spin,NA,NA,FALSE,Hun,FALSE
+2024-09-19,Havørred,60,NA,Allan Bay,Karup Å,Hyttestykket,Flue,NA,NA,FALSE,Han,FALSE
+2024-09-19,Havørred,60,NA,Allan Bay,Karup Å,Hyttestykket,Flue,NA,NA,FALSE,Hun,FALSE
+2024-09-18,Havørred,45,NA,P.o Damsgaard,Skjern Å,Transformatoren,Spin,NA,NA,FALSE,Han,FALSE
 2024-09-17,Havørred,60,NA,Casper Hansen,Skjern Å,Hesselvig,Flue,NA,NA,FALSE,NA,FALSE
 2024-09-17,Havørred,57,2,Alexander Bjerg,Karup Å,Hyttestykket,Spin,NA,NA,TRUE,NA,FALSE
 2024-09-17,Havørred,58,1.9,Vagn Sandfeld,Karup Å,Sdr. Resen (nedstrøms broen),Spin,NA,NA,TRUE,NA,FALSE
@@ -13,6 +52,7 @@ Date,Species,Length,Weight,Name,River,Place,Method,Cut,Foto,Killed,Sex,Net
 2024-09-15,Laks,86,NA,Morten Winther,Skjern Å,Transformatoren,Flue,NA,NA,FALSE,Hun,FALSE
 2024-09-15,Havørred,51,NA,Jesper Christiansen,Karup Å,Sandvilhus,Flue,NA,NA,TRUE,Hun,FALSE
 2024-09-15,Laks,79,NA,Erik Jensen,Vorgod Å,Vorgod Nedre (vestsiden),Spin,NA,NA,FALSE,Han,FALSE
+2024-09-14,Havørred,64,NA,Mads-Emil Mogensen,Karup Å,Rosenborgstykket,Spin,NA,NA,TRUE,Hun,FALSE
 2024-09-14,Havørred,81,6.6,Ole Jensrn,Karup Å,Høstrup,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A812E6AC9C1F8446C1258B980075649F.jpg,TRUE,Han,FALSE
 2024-09-14,Havørred,60,NA,Mikkel Rasmussen,Karup Å,Ålykke,Spin,NA,NA,FALSE,NA,FALSE
 2024-09-14,Havørred,50,NA,Mikkel Rasmussen,Karup Å,Ålykke,Spin,NA,NA,FALSE,NA,FALSE
