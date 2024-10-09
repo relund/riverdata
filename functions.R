@@ -1013,7 +1013,8 @@ writeTimeSeriesData <- function(stations = NULL, prefix, prefix1, days) {
     }
     dat <- dat %>% 
       mutate(Date = ymd_hms(Date, tz = "UTC")) %>% 
-      arrange(Place, desc(Date)) 
+      arrange(Place, desc(Date)) |> 
+      distinct(Date, Value, Place, Serie)
     # ggplot(dat %>% filter(year(Date) == 2022), aes(x = Date, y = Value, color = Serie)) + geom_line() + facet_wrap(vars(Place, Serie), scales = "free", nrow = 4)
     # remove outliers
     dat1 <- as_tsibble(dat, key = Serie, index = Date) %>%
