@@ -5646,8 +5646,8 @@ Date,Place,YGroup,Level,LevelRelative
 2020-09-26T13:25:00Z,Omme Å - Sønderskov bro,2024,329.6,5
 2020-09-26T14:25:00Z,Omme Å - Sønderskov bro,2024,329.9,5.3
 2020-09-26T15:25:00Z,Omme Å - Sønderskov bro,2024,330.2,5.6
-2020-09-26T16:25:00Z,Omme Å - Sønderskov bro,2024,330.5,5.9
-2020-09-26T17:25:00Z,Omme Å - Sønderskov bro,2024,331.1,6.5
+2020-09-26T16:25:00Z,Omme Å - Sønderskov bro,2024,330.6,6
+2020-09-26T17:25:00Z,Omme Å - Sønderskov bro,2024,331.1,6.6
 2020-09-26T18:25:00Z,Omme Å - Sønderskov bro,2024,332,7.4
 2020-09-26T19:25:00Z,Omme Å - Sønderskov bro,2024,332.7,8.1
 2020-09-26T20:25:00Z,Omme Å - Sønderskov bro,2024,333.5,8.8
@@ -9756,22 +9756,22 @@ Date,Place,YGroup,Level,LevelRelative
 2020-09-28T03:25:00Z,Skjern Å - Alergaard,2024,695.5,21.8
 2020-09-28T04:25:00Z,Skjern Å - Alergaard,2024,696.7,22.9
 2020-09-28T05:25:00Z,Skjern Å - Alergaard,2024,697.9,24.1
-2020-09-28T06:25:00Z,Skjern Å - Alergaard,2024,698.9,25.1
-2020-09-28T07:25:00Z,Skjern Å - Alergaard,2024,699.4,25.7
-2020-09-28T08:25:00Z,Skjern Å - Alergaard,2024,699.9,26.1
-2020-09-28T09:25:00Z,Skjern Å - Alergaard,2024,700.3,26.6
-2020-09-28T10:25:00Z,Skjern Å - Alergaard,2024,700.8,27
-2020-09-28T11:25:00Z,Skjern Å - Alergaard,2024,701.2,27.5
-2020-09-28T12:25:00Z,Skjern Å - Alergaard,2024,701.7,27.9
-2020-09-28T13:25:00Z,Skjern Å - Alergaard,2024,702.2,28.3
-2020-09-28T14:25:00Z,Skjern Å - Alergaard,2024,702.6,28.8
-2020-09-28T15:25:00Z,Skjern Å - Alergaard,2024,703.1,29.2
-2020-09-28T16:25:00Z,Skjern Å - Alergaard,2024,703.5,29.7
-2020-09-28T17:25:00Z,Skjern Å - Alergaard,2024,704,30.1
-2020-09-28T18:25:00Z,Skjern Å - Alergaard,2024,704.4,30.6
-2020-09-28T19:25:00Z,Skjern Å - Alergaard,2024,704.6,30.8
-2020-09-28T20:25:00Z,Skjern Å - Alergaard,2024,704.6,30.8
-2020-09-28T21:25:00Z,Skjern Å - Alergaard,2024,704.4,30.6
+2020-09-28T06:25:00Z,Skjern Å - Alergaard,2024,698.8,25
+2020-09-28T07:25:00Z,Skjern Å - Alergaard,2024,699.2,25.4
+2020-09-28T08:25:00Z,Skjern Å - Alergaard,2024,699.6,25.8
+2020-09-28T09:25:00Z,Skjern Å - Alergaard,2024,700,26.2
+2020-09-28T10:25:00Z,Skjern Å - Alergaard,2024,700.5,26.7
+2020-09-28T11:25:00Z,Skjern Å - Alergaard,2024,700.9,27.1
+2020-09-28T12:25:00Z,Skjern Å - Alergaard,2024,701.3,27.5
+2020-09-28T13:25:00Z,Skjern Å - Alergaard,2024,701.7,27.9
+2020-09-28T14:25:00Z,Skjern Å - Alergaard,2024,702.2,28.4
+2020-09-28T15:25:00Z,Skjern Å - Alergaard,2024,702.6,28.8
+2020-09-28T16:25:00Z,Skjern Å - Alergaard,2024,703,29.2
+2020-09-28T17:25:00Z,Skjern Å - Alergaard,2024,703.4,29.6
+2020-09-28T18:25:00Z,Skjern Å - Alergaard,2024,703.9,30.1
+2020-09-28T19:25:00Z,Skjern Å - Alergaard,2024,704.3,30.5
+2020-09-28T20:25:00Z,Skjern Å - Alergaard,2024,704.4,30.6
+2020-09-28T21:25:00Z,Skjern Å - Alergaard,2024,704.3,30.5
 2020-09-28T22:25:00Z,Skjern Å - Alergaard,2024,704.1,30.3
 2020-09-28T23:25:00Z,Skjern Å - Alergaard,2024,704,30.1
 2020-09-29T00:25:00Z,Skjern Å - Alergaard,2024,703.6,29.6
@@ -10416,6 +10416,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-10T04:22:30Z,Skjern Å - Gjaldbæk bro,2017,504.6,40.7
 2020-10-10T05:22:30Z,Skjern Å - Gjaldbæk bro,2017,504.2,40.3
 2020-10-10T06:22:30Z,Skjern Å - Gjaldbæk bro,2017,504,40.1
+2020-10-10T07:22:30Z,Skjern Å - Gjaldbæk bro,2017,503.7,39.8
+2020-10-10T08:22:30Z,Skjern Å - Gjaldbæk bro,2017,503.5,39.6
+2020-10-10T09:22:30Z,Skjern Å - Gjaldbæk bro,2017,503.3,39.4
+2020-10-10T10:22:30Z,Skjern Å - Gjaldbæk bro,2017,502.9,39
 2020-09-25T00:22:30Z,Skjern Å - Gjaldbæk bro,2018,450.2,-9.8
 2020-09-25T01:22:30Z,Skjern Å - Gjaldbæk bro,2018,449.8,-10.2
 2020-09-25T02:22:30Z,Skjern Å - Gjaldbæk bro,2018,449.7,-10.3
@@ -10783,6 +10787,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-10T04:22:30Z,Skjern Å - Gjaldbæk bro,2018,439,-24.9
 2020-10-10T05:22:30Z,Skjern Å - Gjaldbæk bro,2018,438.8,-25.1
 2020-10-10T06:22:30Z,Skjern Å - Gjaldbæk bro,2018,438.7,-25.1
+2020-10-10T07:22:30Z,Skjern Å - Gjaldbæk bro,2018,438.6,-25.4
+2020-10-10T08:22:30Z,Skjern Å - Gjaldbæk bro,2018,438.4,-25.5
+2020-10-10T09:22:30Z,Skjern Å - Gjaldbæk bro,2018,438.2,-25.7
+2020-10-10T10:22:30Z,Skjern Å - Gjaldbæk bro,2018,438.1,-25.8
 2020-09-25T00:22:30Z,Skjern Å - Gjaldbæk bro,2020,447.7,-12.6
 2020-09-25T01:22:30Z,Skjern Å - Gjaldbæk bro,2020,447.9,-12.4
 2020-09-25T02:22:30Z,Skjern Å - Gjaldbæk bro,2020,448.1,-12.2
@@ -11150,6 +11158,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-10T04:22:30Z,Skjern Å - Gjaldbæk bro,2020,460,-3.8
 2020-10-10T05:22:30Z,Skjern Å - Gjaldbæk bro,2020,460.6,-3.2
 2020-10-10T06:22:30Z,Skjern Å - Gjaldbæk bro,2020,460.9,-2.9
+2020-10-10T07:22:30Z,Skjern Å - Gjaldbæk bro,2020,461.4,-2.5
+2020-10-10T08:22:30Z,Skjern Å - Gjaldbæk bro,2020,461.8,-2.1
+2020-10-10T09:22:30Z,Skjern Å - Gjaldbæk bro,2020,462.2,-1.7
+2020-10-10T10:22:30Z,Skjern Å - Gjaldbæk bro,2020,462.7,-1.1
 2020-09-25T00:22:30Z,Skjern Å - Gjaldbæk bro,2021,435.3,-24.7
 2020-09-25T01:22:30Z,Skjern Å - Gjaldbæk bro,2021,435.2,-24.9
 2020-09-25T02:22:30Z,Skjern Å - Gjaldbæk bro,2021,435.1,-25
@@ -11517,6 +11529,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-10T04:22:30Z,Skjern Å - Gjaldbæk bro,2021,466.2,2.3
 2020-10-10T05:22:30Z,Skjern Å - Gjaldbæk bro,2021,466,2.1
 2020-10-10T06:22:30Z,Skjern Å - Gjaldbæk bro,2021,465.7,1.8
+2020-10-10T07:22:30Z,Skjern Å - Gjaldbæk bro,2021,465.4,1.6
+2020-10-10T08:22:30Z,Skjern Å - Gjaldbæk bro,2021,465.2,1.3
+2020-10-10T09:22:30Z,Skjern Å - Gjaldbæk bro,2021,465.1,1.2
+2020-10-10T10:22:30Z,Skjern Å - Gjaldbæk bro,2021,464.9,1
 2020-09-25T00:25:00Z,Skjern Å - Gjaldbæk bro,2022,428.2,-31.8
 2020-09-25T01:25:00Z,Skjern Å - Gjaldbæk bro,2022,428.1,-31.9
 2020-09-25T02:25:00Z,Skjern Å - Gjaldbæk bro,2022,428.1,-31.9
@@ -11884,6 +11900,10 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-10T04:25:00Z,Skjern Å - Gjaldbæk bro,2022,452.8,-11.1
 2020-10-10T05:25:00Z,Skjern Å - Gjaldbæk bro,2022,452.7,-11.2
 2020-10-10T06:25:00Z,Skjern Å - Gjaldbæk bro,2022,452.4,-11.5
+2020-10-10T07:25:00Z,Skjern Å - Gjaldbæk bro,2022,452.4,-11.5
+2020-10-10T08:25:00Z,Skjern Å - Gjaldbæk bro,2022,452,-11.9
+2020-10-10T09:25:00Z,Skjern Å - Gjaldbæk bro,2022,451.8,-12.1
+2020-10-10T10:25:00Z,Skjern Å - Gjaldbæk bro,2022,451.4,-12.5
 2020-09-25T00:25:00Z,Skjern Å - Gjaldbæk bro,2024,458.4,-1.9
 2020-09-25T01:25:00Z,Skjern Å - Gjaldbæk bro,2024,458.6,-1.7
 2020-09-25T02:25:00Z,Skjern Å - Gjaldbæk bro,2024,459,-1.3
@@ -11918,12 +11938,12 @@ Date,Place,YGroup,Level,LevelRelative
 2020-09-26T07:25:00Z,Skjern Å - Gjaldbæk bro,2024,457.4,-3.5
 2020-09-26T08:25:00Z,Skjern Å - Gjaldbæk bro,2024,457.3,-3.5
 2020-09-26T09:25:00Z,Skjern Å - Gjaldbæk bro,2024,457.2,-3.6
-2020-09-26T10:25:00Z,Skjern Å - Gjaldbæk bro,2024,457.4,-3.4
+2020-09-26T10:25:00Z,Skjern Å - Gjaldbæk bro,2024,457.5,-3.3
 2020-09-26T11:25:00Z,Skjern Å - Gjaldbæk bro,2024,457.7,-3.1
-2020-09-26T12:25:00Z,Skjern Å - Gjaldbæk bro,2024,457.9,-2.9
+2020-09-26T12:25:00Z,Skjern Å - Gjaldbæk bro,2024,458,-2.8
 2020-09-26T13:25:00Z,Skjern Å - Gjaldbæk bro,2024,458.2,-2.6
-2020-09-26T14:25:00Z,Skjern Å - Gjaldbæk bro,2024,458.4,-2.4
-2020-09-26T15:25:00Z,Skjern Å - Gjaldbæk bro,2024,458.7,-2.1
+2020-09-26T14:25:00Z,Skjern Å - Gjaldbæk bro,2024,458.5,-2.3
+2020-09-26T15:25:00Z,Skjern Å - Gjaldbæk bro,2024,458.8,-2
 2020-09-26T16:25:00Z,Skjern Å - Gjaldbæk bro,2024,459.4,-1.4
 2020-09-26T17:25:00Z,Skjern Å - Gjaldbæk bro,2024,460,-0.8
 2020-09-26T18:25:00Z,Skjern Å - Gjaldbæk bro,2024,460.4,-0.4
@@ -11933,8 +11953,8 @@ Date,Place,YGroup,Level,LevelRelative
 2020-09-26T22:25:00Z,Skjern Å - Gjaldbæk bro,2024,461.8,1
 2020-09-26T23:25:00Z,Skjern Å - Gjaldbæk bro,2024,462.1,1.3
 2020-09-27T00:25:00Z,Skjern Å - Gjaldbæk bro,2024,462.5,1.4
-2020-09-27T01:25:00Z,Skjern Å - Gjaldbæk bro,2024,462.8,1.8
-2020-09-27T02:25:00Z,Skjern Å - Gjaldbæk bro,2024,463.4,2.3
+2020-09-27T01:25:00Z,Skjern Å - Gjaldbæk bro,2024,462.9,1.8
+2020-09-27T02:25:00Z,Skjern Å - Gjaldbæk bro,2024,463.5,2.4
 2020-09-27T03:25:00Z,Skjern Å - Gjaldbæk bro,2024,464,2.9
 2020-09-27T04:25:00Z,Skjern Å - Gjaldbæk bro,2024,464.6,3.5
 2020-09-27T05:25:00Z,Skjern Å - Gjaldbæk bro,2024,465.2,4.1
@@ -11961,30 +11981,30 @@ Date,Place,YGroup,Level,LevelRelative
 2020-09-28T02:25:00Z,Skjern Å - Gjaldbæk bro,2024,479.9,18.5
 2020-09-28T03:25:00Z,Skjern Å - Gjaldbæk bro,2024,480.8,19.4
 2020-09-28T04:25:00Z,Skjern Å - Gjaldbæk bro,2024,481.8,20.4
-2020-09-28T05:25:00Z,Skjern Å - Gjaldbæk bro,2024,482.6,21.2
-2020-09-28T06:25:00Z,Skjern Å - Gjaldbæk bro,2024,483,21.6
-2020-09-28T07:25:00Z,Skjern Å - Gjaldbæk bro,2024,483.2,21.9
-2020-09-28T08:25:00Z,Skjern Å - Gjaldbæk bro,2024,483.5,22.1
-2020-09-28T09:25:00Z,Skjern Å - Gjaldbæk bro,2024,483.8,22.4
-2020-09-28T10:25:00Z,Skjern Å - Gjaldbæk bro,2024,484.1,22.7
-2020-09-28T11:25:00Z,Skjern Å - Gjaldbæk bro,2024,484.4,23
-2020-09-28T12:25:00Z,Skjern Å - Gjaldbæk bro,2024,484.7,23.3
-2020-09-28T13:25:00Z,Skjern Å - Gjaldbæk bro,2024,485,23.5
-2020-09-28T14:25:00Z,Skjern Å - Gjaldbæk bro,2024,485.3,23.8
-2020-09-28T15:25:00Z,Skjern Å - Gjaldbæk bro,2024,485.5,24.1
-2020-09-28T16:25:00Z,Skjern Å - Gjaldbæk bro,2024,485.8,24.4
-2020-09-28T17:25:00Z,Skjern Å - Gjaldbæk bro,2024,486.1,24.7
-2020-09-28T18:25:00Z,Skjern Å - Gjaldbæk bro,2024,486.4,25
-2020-09-28T19:25:00Z,Skjern Å - Gjaldbæk bro,2024,486.7,25.3
-2020-09-28T20:25:00Z,Skjern Å - Gjaldbæk bro,2024,487,25.6
-2020-09-28T21:25:00Z,Skjern Å - Gjaldbæk bro,2024,487.3,25.9
-2020-09-28T22:25:00Z,Skjern Å - Gjaldbæk bro,2024,487.5,26.2
-2020-09-28T23:25:00Z,Skjern Å - Gjaldbæk bro,2024,487.8,26.5
-2020-09-29T00:25:00Z,Skjern Å - Gjaldbæk bro,2024,488.1,26.4
-2020-09-29T01:25:00Z,Skjern Å - Gjaldbæk bro,2024,488.4,26.7
-2020-09-29T02:25:00Z,Skjern Å - Gjaldbæk bro,2024,488.7,27
-2020-09-29T03:25:00Z,Skjern Å - Gjaldbæk bro,2024,489,27.3
-2020-09-29T04:25:00Z,Skjern Å - Gjaldbæk bro,2024,488.9,27.2
+2020-09-28T05:25:00Z,Skjern Å - Gjaldbæk bro,2024,482.4,21
+2020-09-28T06:25:00Z,Skjern Å - Gjaldbæk bro,2024,482.7,21.3
+2020-09-28T07:25:00Z,Skjern Å - Gjaldbæk bro,2024,483,21.6
+2020-09-28T08:25:00Z,Skjern Å - Gjaldbæk bro,2024,483.3,21.9
+2020-09-28T09:25:00Z,Skjern Å - Gjaldbæk bro,2024,483.6,22.1
+2020-09-28T10:25:00Z,Skjern Å - Gjaldbæk bro,2024,483.9,22.4
+2020-09-28T11:25:00Z,Skjern Å - Gjaldbæk bro,2024,484.1,22.8
+2020-09-28T12:25:00Z,Skjern Å - Gjaldbæk bro,2024,484.4,23
+2020-09-28T13:25:00Z,Skjern Å - Gjaldbæk bro,2024,484.7,23.3
+2020-09-28T14:25:00Z,Skjern Å - Gjaldbæk bro,2024,485,23.6
+2020-09-28T15:25:00Z,Skjern Å - Gjaldbæk bro,2024,485.3,23.9
+2020-09-28T16:25:00Z,Skjern Å - Gjaldbæk bro,2024,485.6,24.2
+2020-09-28T17:25:00Z,Skjern Å - Gjaldbæk bro,2024,485.9,24.4
+2020-09-28T18:25:00Z,Skjern Å - Gjaldbæk bro,2024,486.2,24.8
+2020-09-28T19:25:00Z,Skjern Å - Gjaldbæk bro,2024,486.4,25
+2020-09-28T20:25:00Z,Skjern Å - Gjaldbæk bro,2024,486.7,25.3
+2020-09-28T21:25:00Z,Skjern Å - Gjaldbæk bro,2024,487,25.6
+2020-09-28T22:25:00Z,Skjern Å - Gjaldbæk bro,2024,487.3,25.9
+2020-09-28T23:25:00Z,Skjern Å - Gjaldbæk bro,2024,487.6,26.2
+2020-09-29T00:25:00Z,Skjern Å - Gjaldbæk bro,2024,487.9,26.2
+2020-09-29T01:25:00Z,Skjern Å - Gjaldbæk bro,2024,488.2,26.5
+2020-09-29T02:25:00Z,Skjern Å - Gjaldbæk bro,2024,488.4,26.8
+2020-09-29T03:25:00Z,Skjern Å - Gjaldbæk bro,2024,488.7,27
+2020-09-29T04:25:00Z,Skjern Å - Gjaldbæk bro,2024,488.8,27.2
 2020-09-29T05:25:00Z,Skjern Å - Gjaldbæk bro,2024,488.6,26.9
 2020-09-29T06:25:00Z,Skjern Å - Gjaldbæk bro,2024,488.4,26.7
 2020-09-29T07:25:00Z,Skjern Å - Gjaldbæk bro,2024,488.2,26.5
@@ -12251,7 +12271,11 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-10T04:25:00Z,Skjern Å - Gjaldbæk bro,2024,461.7,-2.1
 2020-10-10T05:25:00Z,Skjern Å - Gjaldbæk bro,2024,461.7,-2.1
 2020-10-10T06:25:00Z,Skjern Å - Gjaldbæk bro,2024,461.8,-2
-2020-10-10T07:10:00Z,Skjern Å - Gjaldbæk bro,2024,461.9,-1.9
+2020-10-10T07:25:00Z,Skjern Å - Gjaldbæk bro,2024,461.9,-1.9
+2020-10-10T08:25:00Z,Skjern Å - Gjaldbæk bro,2024,462,-1.8
+2020-10-10T09:25:00Z,Skjern Å - Gjaldbæk bro,2024,462.1,-1.7
+2020-10-10T10:25:00Z,Skjern Å - Gjaldbæk bro,2024,462.1,-1.7
+2020-10-10T11:10:00Z,Skjern Å - Gjaldbæk bro,2024,462.3,-1.5
 2020-09-25T00:27:30Z,Skjern Å - Laksens hus,2023,145.7,21.2
 2020-09-25T01:27:30Z,Skjern Å - Laksens hus,2023,145.2,20.7
 2020-09-25T02:27:30Z,Skjern Å - Laksens hus,2023,145,20.5
@@ -12372,30 +12396,30 @@ Date,Place,YGroup,Level,LevelRelative
 2020-09-29T21:27:30Z,Skjern Å - Laksens hus,2023,101.9,-24.9
 2020-09-29T22:27:30Z,Skjern Å - Laksens hus,2023,101.8,-25
 2020-09-29T23:27:30Z,Skjern Å - Laksens hus,2023,101.5,-25.3
-2020-09-30T00:27:30Z,Skjern Å - Laksens hus,2023,101.2,-26.1
-2020-09-30T01:27:30Z,Skjern Å - Laksens hus,2023,101.3,-26
-2020-09-30T02:27:30Z,Skjern Å - Laksens hus,2023,101.3,-26
-2020-09-30T03:27:30Z,Skjern Å - Laksens hus,2023,101.2,-26.1
-2020-09-30T04:27:30Z,Skjern Å - Laksens hus,2023,101.3,-26
-2020-09-30T05:27:30Z,Skjern Å - Laksens hus,2023,101.2,-26.1
-2020-09-30T06:27:30Z,Skjern Å - Laksens hus,2023,101.3,-26
-2020-09-30T07:27:30Z,Skjern Å - Laksens hus,2023,101.2,-26.1
-2020-09-30T08:27:30Z,Skjern Å - Laksens hus,2023,101.2,-26.1
-2020-09-30T09:27:30Z,Skjern Å - Laksens hus,2023,101.2,-26.1
-2020-09-30T10:27:30Z,Skjern Å - Laksens hus,2023,101.3,-26
-2020-09-30T11:27:30Z,Skjern Å - Laksens hus,2023,101.1,-26.2
-2020-09-30T12:27:30Z,Skjern Å - Laksens hus,2023,101.3,-26
-2020-09-30T13:27:30Z,Skjern Å - Laksens hus,2023,101.4,-25.9
-2020-09-30T14:27:30Z,Skjern Å - Laksens hus,2023,101.6,-25.7
-2020-09-30T15:27:30Z,Skjern Å - Laksens hus,2023,101.5,-25.8
-2020-09-30T16:27:30Z,Skjern Å - Laksens hus,2023,101.6,-25.7
-2020-09-30T17:27:30Z,Skjern Å - Laksens hus,2023,101.5,-25.8
-2020-09-30T18:27:30Z,Skjern Å - Laksens hus,2023,101.3,-26
-2020-09-30T19:27:30Z,Skjern Å - Laksens hus,2023,101.4,-25.9
-2020-09-30T20:27:30Z,Skjern Å - Laksens hus,2023,101.1,-26.2
-2020-09-30T21:27:30Z,Skjern Å - Laksens hus,2023,100.9,-26.4
-2020-09-30T22:27:30Z,Skjern Å - Laksens hus,2023,100.9,-26.4
-2020-09-30T23:27:30Z,Skjern Å - Laksens hus,2023,100.6,-26.7
+2020-09-30T00:27:30Z,Skjern Å - Laksens hus,2023,101.2,-26
+2020-09-30T01:27:30Z,Skjern Å - Laksens hus,2023,101.3,-25.9
+2020-09-30T02:27:30Z,Skjern Å - Laksens hus,2023,101.3,-25.9
+2020-09-30T03:27:30Z,Skjern Å - Laksens hus,2023,101.2,-26
+2020-09-30T04:27:30Z,Skjern Å - Laksens hus,2023,101.3,-25.9
+2020-09-30T05:27:30Z,Skjern Å - Laksens hus,2023,101.2,-26
+2020-09-30T06:27:30Z,Skjern Å - Laksens hus,2023,101.3,-25.9
+2020-09-30T07:27:30Z,Skjern Å - Laksens hus,2023,101.2,-26
+2020-09-30T08:27:30Z,Skjern Å - Laksens hus,2023,101.2,-26
+2020-09-30T09:27:30Z,Skjern Å - Laksens hus,2023,101.2,-26
+2020-09-30T10:27:30Z,Skjern Å - Laksens hus,2023,101.3,-25.9
+2020-09-30T11:27:30Z,Skjern Å - Laksens hus,2023,101.1,-26
+2020-09-30T12:27:30Z,Skjern Å - Laksens hus,2023,101.3,-25.9
+2020-09-30T13:27:30Z,Skjern Å - Laksens hus,2023,101.4,-25.8
+2020-09-30T14:27:30Z,Skjern Å - Laksens hus,2023,101.6,-25.6
+2020-09-30T15:27:30Z,Skjern Å - Laksens hus,2023,101.5,-25.7
+2020-09-30T16:27:30Z,Skjern Å - Laksens hus,2023,101.6,-25.6
+2020-09-30T17:27:30Z,Skjern Å - Laksens hus,2023,101.5,-25.7
+2020-09-30T18:27:30Z,Skjern Å - Laksens hus,2023,101.3,-25.9
+2020-09-30T19:27:30Z,Skjern Å - Laksens hus,2023,101.4,-25.8
+2020-09-30T20:27:30Z,Skjern Å - Laksens hus,2023,101.1,-26.1
+2020-09-30T21:27:30Z,Skjern Å - Laksens hus,2023,100.9,-26.3
+2020-09-30T22:27:30Z,Skjern Å - Laksens hus,2023,100.9,-26.3
+2020-09-30T23:27:30Z,Skjern Å - Laksens hus,2023,100.6,-26.6
 2020-10-01T00:27:30Z,Skjern Å - Laksens hus,2023,100.4,-27.5
 2020-10-01T01:27:30Z,Skjern Å - Laksens hus,2023,100.3,-27.6
 2020-10-01T02:27:30Z,Skjern Å - Laksens hus,2023,100.2,-27.7
@@ -12468,30 +12492,30 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-03T21:27:30Z,Skjern Å - Laksens hus,2023,144.1,14.8
 2020-10-03T22:27:30Z,Skjern Å - Laksens hus,2023,145.4,16.1
 2020-10-03T23:27:30Z,Skjern Å - Laksens hus,2023,146.5,17.2
-2020-10-04T00:27:30Z,Skjern Å - Laksens hus,2023,147.4,17.4
-2020-10-04T01:27:30Z,Skjern Å - Laksens hus,2023,148.6,18.6
-2020-10-04T02:27:30Z,Skjern Å - Laksens hus,2023,149.2,19.1
-2020-10-04T03:27:30Z,Skjern Å - Laksens hus,2023,149.9,19.9
-2020-10-04T04:27:30Z,Skjern Å - Laksens hus,2023,150.6,20.6
-2020-10-04T05:27:30Z,Skjern Å - Laksens hus,2023,151.3,21.3
-2020-10-04T06:27:30Z,Skjern Å - Laksens hus,2023,151.9,21.9
-2020-10-04T07:27:30Z,Skjern Å - Laksens hus,2023,152.5,22.5
-2020-10-04T08:27:30Z,Skjern Å - Laksens hus,2023,153.2,23.2
-2020-10-04T09:27:30Z,Skjern Å - Laksens hus,2023,153.8,23.8
-2020-10-04T10:27:30Z,Skjern Å - Laksens hus,2023,154.3,24.3
-2020-10-04T11:27:30Z,Skjern Å - Laksens hus,2023,155.5,25.5
-2020-10-04T12:27:30Z,Skjern Å - Laksens hus,2023,156.4,26.4
-2020-10-04T13:27:30Z,Skjern Å - Laksens hus,2023,157.2,27.2
-2020-10-04T14:27:30Z,Skjern Å - Laksens hus,2023,158.1,28.1
+2020-10-04T00:27:30Z,Skjern Å - Laksens hus,2023,147.4,17.5
+2020-10-04T01:27:30Z,Skjern Å - Laksens hus,2023,148.6,18.7
+2020-10-04T02:27:30Z,Skjern Å - Laksens hus,2023,149.2,19.2
+2020-10-04T03:27:30Z,Skjern Å - Laksens hus,2023,149.9,20
+2020-10-04T04:27:30Z,Skjern Å - Laksens hus,2023,150.6,20.8
+2020-10-04T05:27:30Z,Skjern Å - Laksens hus,2023,151.3,21.4
+2020-10-04T06:27:30Z,Skjern Å - Laksens hus,2023,151.9,22
+2020-10-04T07:27:30Z,Skjern Å - Laksens hus,2023,152.5,22.6
+2020-10-04T08:27:30Z,Skjern Å - Laksens hus,2023,153.2,23.3
+2020-10-04T09:27:30Z,Skjern Å - Laksens hus,2023,153.8,23.9
+2020-10-04T10:27:30Z,Skjern Å - Laksens hus,2023,154.3,24.4
+2020-10-04T11:27:30Z,Skjern Å - Laksens hus,2023,155.5,25.6
+2020-10-04T12:27:30Z,Skjern Å - Laksens hus,2023,156.4,26.5
+2020-10-04T13:27:30Z,Skjern Å - Laksens hus,2023,157.2,27.3
+2020-10-04T14:27:30Z,Skjern Å - Laksens hus,2023,158.1,28.2
 2020-10-04T15:27:30Z,Skjern Å - Laksens hus,2023,159,29
-2020-10-04T16:27:30Z,Skjern Å - Laksens hus,2023,159.9,29.9
-2020-10-04T17:27:30Z,Skjern Å - Laksens hus,2023,161,31
-2020-10-04T18:27:30Z,Skjern Å - Laksens hus,2023,161.6,31.6
-2020-10-04T19:27:30Z,Skjern Å - Laksens hus,2023,162.4,32.4
-2020-10-04T20:27:30Z,Skjern Å - Laksens hus,2023,163.5,33.5
-2020-10-04T21:27:30Z,Skjern Å - Laksens hus,2023,164.6,34.6
-2020-10-04T22:27:30Z,Skjern Å - Laksens hus,2023,165.2,35.2
-2020-10-04T23:27:30Z,Skjern Å - Laksens hus,2023,166.1,36.1
+2020-10-04T16:27:30Z,Skjern Å - Laksens hus,2023,159.9,30
+2020-10-04T17:27:30Z,Skjern Å - Laksens hus,2023,161,31.1
+2020-10-04T18:27:30Z,Skjern Å - Laksens hus,2023,161.6,31.7
+2020-10-04T19:27:30Z,Skjern Å - Laksens hus,2023,162.4,32.5
+2020-10-04T20:27:30Z,Skjern Å - Laksens hus,2023,163.5,33.6
+2020-10-04T21:27:30Z,Skjern Å - Laksens hus,2023,164.6,34.7
+2020-10-04T22:27:30Z,Skjern Å - Laksens hus,2023,165.2,35.3
+2020-10-04T23:27:30Z,Skjern Å - Laksens hus,2023,166.1,36.2
 2020-10-05T00:27:30Z,Skjern Å - Laksens hus,2023,167.1,36.5
 2020-10-05T01:27:30Z,Skjern Å - Laksens hus,2023,168.3,37.7
 2020-10-05T02:27:30Z,Skjern Å - Laksens hus,2023,168.7,38.1
@@ -12588,30 +12612,30 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-08T21:27:30Z,Skjern Å - Laksens hus,2023,162.3,29.8
 2020-10-08T22:27:30Z,Skjern Å - Laksens hus,2023,161.9,29.4
 2020-10-08T23:27:30Z,Skjern Å - Laksens hus,2023,161.3,28.9
-2020-10-09T00:27:30Z,Skjern Å - Laksens hus,2023,160.8,27.7
-2020-10-09T01:27:30Z,Skjern Å - Laksens hus,2023,160.4,27.3
-2020-10-09T02:27:30Z,Skjern Å - Laksens hus,2023,159.8,26.7
-2020-10-09T03:27:30Z,Skjern Å - Laksens hus,2023,159,25.9
-2020-10-09T04:27:30Z,Skjern Å - Laksens hus,2023,158.5,25.4
-2020-10-09T05:27:30Z,Skjern Å - Laksens hus,2023,157.9,24.8
-2020-10-09T06:27:30Z,Skjern Å - Laksens hus,2023,157.1,24
-2020-10-09T07:27:30Z,Skjern Å - Laksens hus,2023,156.5,23.4
-2020-10-09T08:27:30Z,Skjern Å - Laksens hus,2023,156.1,23
-2020-10-09T09:27:30Z,Skjern Å - Laksens hus,2023,155.5,22.4
-2020-10-09T10:27:30Z,Skjern Å - Laksens hus,2023,154.9,21.8
-2020-10-09T11:27:30Z,Skjern Å - Laksens hus,2023,154.2,21.1
-2020-10-09T12:27:30Z,Skjern Å - Laksens hus,2023,153.8,20.7
-2020-10-09T13:27:30Z,Skjern Å - Laksens hus,2023,153,19.9
-2020-10-09T14:27:30Z,Skjern Å - Laksens hus,2023,152.4,19.4
-2020-10-09T15:27:30Z,Skjern Å - Laksens hus,2023,151.8,18.7
-2020-10-09T16:27:30Z,Skjern Å - Laksens hus,2023,151.2,18.1
-2020-10-09T17:27:30Z,Skjern Å - Laksens hus,2023,150.7,17.6
-2020-10-09T18:27:30Z,Skjern Å - Laksens hus,2023,150.2,17.1
-2020-10-09T19:27:30Z,Skjern Å - Laksens hus,2023,149.7,16.6
-2020-10-09T20:27:30Z,Skjern Å - Laksens hus,2023,149.2,16.1
-2020-10-09T21:27:30Z,Skjern Å - Laksens hus,2023,148.7,15.6
-2020-10-09T22:27:30Z,Skjern Å - Laksens hus,2023,148.2,15.1
-2020-10-09T23:27:30Z,Skjern Å - Laksens hus,2023,147.7,14.5
+2020-10-09T00:27:30Z,Skjern Å - Laksens hus,2023,160.8,27.8
+2020-10-09T01:27:30Z,Skjern Å - Laksens hus,2023,160.4,27.4
+2020-10-09T02:27:30Z,Skjern Å - Laksens hus,2023,159.8,26.8
+2020-10-09T03:27:30Z,Skjern Å - Laksens hus,2023,159,26
+2020-10-09T04:27:30Z,Skjern Å - Laksens hus,2023,158.5,25.5
+2020-10-09T05:27:30Z,Skjern Å - Laksens hus,2023,157.9,24.9
+2020-10-09T06:27:30Z,Skjern Å - Laksens hus,2023,157.1,24.1
+2020-10-09T07:27:30Z,Skjern Å - Laksens hus,2023,156.5,23.5
+2020-10-09T08:27:30Z,Skjern Å - Laksens hus,2023,156.1,23.1
+2020-10-09T09:27:30Z,Skjern Å - Laksens hus,2023,155.5,22.5
+2020-10-09T10:27:30Z,Skjern Å - Laksens hus,2023,154.9,21.9
+2020-10-09T11:27:30Z,Skjern Å - Laksens hus,2023,154.2,21.2
+2020-10-09T12:27:30Z,Skjern Å - Laksens hus,2023,153.8,20.8
+2020-10-09T13:27:30Z,Skjern Å - Laksens hus,2023,153,20
+2020-10-09T14:27:30Z,Skjern Å - Laksens hus,2023,152.4,19.5
+2020-10-09T15:27:30Z,Skjern Å - Laksens hus,2023,151.8,18.8
+2020-10-09T16:27:30Z,Skjern Å - Laksens hus,2023,151.2,18.2
+2020-10-09T17:27:30Z,Skjern Å - Laksens hus,2023,150.7,17.7
+2020-10-09T18:27:30Z,Skjern Å - Laksens hus,2023,150.2,17.2
+2020-10-09T19:27:30Z,Skjern Å - Laksens hus,2023,149.7,16.7
+2020-10-09T20:27:30Z,Skjern Å - Laksens hus,2023,149.2,16.2
+2020-10-09T21:27:30Z,Skjern Å - Laksens hus,2023,148.7,15.7
+2020-10-09T22:27:30Z,Skjern Å - Laksens hus,2023,148.2,15.2
+2020-10-09T23:27:30Z,Skjern Å - Laksens hus,2023,147.7,14.6
 2020-10-10T00:27:30Z,Skjern Å - Laksens hus,2023,147.2,13.7
 2020-10-10T01:27:30Z,Skjern Å - Laksens hus,2023,146.7,13.2
 2020-10-10T02:27:30Z,Skjern Å - Laksens hus,2023,145.9,12.4
@@ -12623,6 +12647,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-10T08:27:30Z,Skjern Å - Laksens hus,2023,143.7,10.2
 2020-10-10T09:27:30Z,Skjern Å - Laksens hus,2023,143,9.5
 2020-10-10T10:27:30Z,Skjern Å - Laksens hus,2023,142.7,9.2
+2020-10-10T11:27:30Z,Skjern Å - Laksens hus,2023,142.3,8.8
 2020-09-25T00:27:30Z,Skjern Å - Laksens hus,2024,99.9,-25.2
 2020-09-25T01:27:30Z,Skjern Å - Laksens hus,2024,100.4,-24.7
 2020-09-25T02:27:30Z,Skjern Å - Laksens hus,2024,100.8,-24.3
@@ -12719,30 +12744,30 @@ Date,Place,YGroup,Level,LevelRelative
 2020-09-28T21:27:30Z,Skjern Å - Laksens hus,2024,129.2,2.4
 2020-09-28T22:27:30Z,Skjern Å - Laksens hus,2024,129.3,2.5
 2020-09-28T23:27:30Z,Skjern Å - Laksens hus,2024,129.3,2.5
-2020-09-29T00:27:30Z,Skjern Å - Laksens hus,2024,129.1,1.8
-2020-09-29T01:27:30Z,Skjern Å - Laksens hus,2024,129,1.7
-2020-09-29T02:27:30Z,Skjern Å - Laksens hus,2024,129.3,2
-2020-09-29T03:27:30Z,Skjern Å - Laksens hus,2024,129.1,1.8
+2020-09-29T00:27:30Z,Skjern Å - Laksens hus,2024,129.1,1.9
+2020-09-29T01:27:30Z,Skjern Å - Laksens hus,2024,129,1.8
+2020-09-29T02:27:30Z,Skjern Å - Laksens hus,2024,129.3,2.1
+2020-09-29T03:27:30Z,Skjern Å - Laksens hus,2024,129.1,1.9
 2020-09-29T04:27:30Z,Skjern Å - Laksens hus,2024,129.3,2.1
-2020-09-29T05:27:30Z,Skjern Å - Laksens hus,2024,129.2,1.9
-2020-09-29T06:27:30Z,Skjern Å - Laksens hus,2024,128.8,1.5
-2020-09-29T07:27:30Z,Skjern Å - Laksens hus,2024,128.9,1.6
-2020-09-29T08:27:30Z,Skjern Å - Laksens hus,2024,128.6,1.3
-2020-09-29T09:27:30Z,Skjern Å - Laksens hus,2024,128.5,1.2
-2020-09-29T10:27:30Z,Skjern Å - Laksens hus,2024,128.4,1.1
-2020-09-29T11:27:30Z,Skjern Å - Laksens hus,2024,128.3,1
-2020-09-29T12:27:30Z,Skjern Å - Laksens hus,2024,128.1,0.8
-2020-09-29T13:27:30Z,Skjern Å - Laksens hus,2024,127.9,0.6
-2020-09-29T14:27:30Z,Skjern Å - Laksens hus,2024,127.9,0.6
-2020-09-29T15:27:30Z,Skjern Å - Laksens hus,2024,127.7,0.4
-2020-09-29T16:27:30Z,Skjern Å - Laksens hus,2024,127.5,0.2
-2020-09-29T17:27:30Z,Skjern Å - Laksens hus,2024,127.4,0.1
-2020-09-29T18:27:30Z,Skjern Å - Laksens hus,2024,127.2,-0.1
-2020-09-29T19:27:30Z,Skjern Å - Laksens hus,2024,127.1,-0.2
-2020-09-29T20:27:30Z,Skjern Å - Laksens hus,2024,126.7,-0.6
-2020-09-29T21:27:30Z,Skjern Å - Laksens hus,2024,126.4,-0.9
-2020-09-29T22:27:30Z,Skjern Å - Laksens hus,2024,126.4,-0.9
-2020-09-29T23:27:30Z,Skjern Å - Laksens hus,2024,126.1,-1.2
+2020-09-29T05:27:30Z,Skjern Å - Laksens hus,2024,129.2,2
+2020-09-29T06:27:30Z,Skjern Å - Laksens hus,2024,128.8,1.6
+2020-09-29T07:27:30Z,Skjern Å - Laksens hus,2024,128.9,1.7
+2020-09-29T08:27:30Z,Skjern Å - Laksens hus,2024,128.6,1.4
+2020-09-29T09:27:30Z,Skjern Å - Laksens hus,2024,128.5,1.3
+2020-09-29T10:27:30Z,Skjern Å - Laksens hus,2024,128.4,1.2
+2020-09-29T11:27:30Z,Skjern Å - Laksens hus,2024,128.3,1.1
+2020-09-29T12:27:30Z,Skjern Å - Laksens hus,2024,128.1,0.9
+2020-09-29T13:27:30Z,Skjern Å - Laksens hus,2024,127.9,0.7
+2020-09-29T14:27:30Z,Skjern Å - Laksens hus,2024,127.9,0.7
+2020-09-29T15:27:30Z,Skjern Å - Laksens hus,2024,127.7,0.5
+2020-09-29T16:27:30Z,Skjern Å - Laksens hus,2024,127.5,0.3
+2020-09-29T17:27:30Z,Skjern Å - Laksens hus,2024,127.4,0.2
+2020-09-29T18:27:30Z,Skjern Å - Laksens hus,2024,127.2,-0
+2020-09-29T19:27:30Z,Skjern Å - Laksens hus,2024,127.1,-0.1
+2020-09-29T20:27:30Z,Skjern Å - Laksens hus,2024,126.7,-0.5
+2020-09-29T21:27:30Z,Skjern Å - Laksens hus,2024,126.4,-0.8
+2020-09-29T22:27:30Z,Skjern Å - Laksens hus,2024,126.4,-0.8
+2020-09-29T23:27:30Z,Skjern Å - Laksens hus,2024,126.1,-1.1
 2020-09-30T00:27:30Z,Skjern Å - Laksens hus,2024,125.6,-2.2
 2020-09-30T01:27:30Z,Skjern Å - Laksens hus,2024,125.4,-2.5
 2020-09-30T02:27:30Z,Skjern Å - Laksens hus,2024,125.3,-2.6
@@ -12813,21 +12838,21 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-02T20:02:30Z,Skjern Å - Laksens hus,2024,110.2,-19.1
 2020-10-02T22:32:30Z,Skjern Å - Laksens hus,2024,109.9,-19.4
 2020-10-02T23:27:30Z,Skjern Å - Laksens hus,2024,109.7,-19.6
-2020-10-03T00:27:30Z,Skjern Å - Laksens hus,2024,109.5,-20.5
-2020-10-03T01:27:30Z,Skjern Å - Laksens hus,2024,109.5,-20.5
+2020-10-03T00:27:30Z,Skjern Å - Laksens hus,2024,109.5,-20.4
+2020-10-03T01:27:30Z,Skjern Å - Laksens hus,2024,109.5,-20.4
 2020-10-03T02:27:30Z,Skjern Å - Laksens hus,2024,109.1,-20.8
-2020-10-03T03:02:30Z,Skjern Å - Laksens hus,2024,109.2,-20.8
-2020-10-03T04:32:30Z,Skjern Å - Laksens hus,2024,108.6,-21.4
-2020-10-03T05:27:30Z,Skjern Å - Laksens hus,2024,108.7,-21.3
-2020-10-03T06:02:30Z,Skjern Å - Laksens hus,2024,108.8,-21.2
-2020-10-03T09:32:30Z,Skjern Å - Laksens hus,2024,108.2,-21.8
-2020-10-03T10:27:30Z,Skjern Å - Laksens hus,2024,107.9,-22.1
-2020-10-03T11:27:30Z,Skjern Å - Laksens hus,2024,107.6,-22.4
-2020-10-03T12:02:30Z,Skjern Å - Laksens hus,2024,107.5,-22.6
-2020-10-03T16:30:00Z,Skjern Å - Laksens hus,2024,107.4,-22.6
-2020-10-03T17:00:00Z,Skjern Å - Laksens hus,2024,107.3,-22.7
-2020-10-03T19:30:00Z,Skjern Å - Laksens hus,2024,106.6,-23.4
-2020-10-03T20:00:00Z,Skjern Å - Laksens hus,2024,106.5,-23.5
+2020-10-03T03:02:30Z,Skjern Å - Laksens hus,2024,109.2,-20.7
+2020-10-03T04:32:30Z,Skjern Å - Laksens hus,2024,108.6,-21.3
+2020-10-03T05:27:30Z,Skjern Å - Laksens hus,2024,108.7,-21.2
+2020-10-03T06:02:30Z,Skjern Å - Laksens hus,2024,108.8,-21.1
+2020-10-03T09:32:30Z,Skjern Å - Laksens hus,2024,108.2,-21.7
+2020-10-03T10:27:30Z,Skjern Å - Laksens hus,2024,107.9,-22
+2020-10-03T11:27:30Z,Skjern Å - Laksens hus,2024,107.6,-22.2
+2020-10-03T12:02:30Z,Skjern Å - Laksens hus,2024,107.5,-22.4
+2020-10-03T16:30:00Z,Skjern Å - Laksens hus,2024,107.4,-22.5
+2020-10-03T17:00:00Z,Skjern Å - Laksens hus,2024,107.3,-22.6
+2020-10-03T19:30:00Z,Skjern Å - Laksens hus,2024,106.6,-23.3
+2020-10-03T20:00:00Z,Skjern Å - Laksens hus,2024,106.5,-23.4
 2020-10-04T01:30:00Z,Skjern Å - Laksens hus,2024,105.6,-25
 2020-10-04T02:27:30Z,Skjern Å - Laksens hus,2024,105.3,-25.3
 2020-10-04T03:27:30Z,Skjern Å - Laksens hus,2024,105.3,-25.3
@@ -12918,13 +12943,13 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-07T21:27:30Z,Skjern Å - Laksens hus,2024,100.3,-32.2
 2020-10-07T22:27:30Z,Skjern Å - Laksens hus,2024,100.4,-32.1
 2020-10-07T23:27:30Z,Skjern Å - Laksens hus,2024,100.4,-32.1
-2020-10-08T00:27:30Z,Skjern Å - Laksens hus,2024,100.4,-32.7
-2020-10-08T01:27:30Z,Skjern Å - Laksens hus,2024,100.6,-32.5
-2020-10-08T02:27:30Z,Skjern Å - Laksens hus,2024,100.8,-32.3
-2020-10-08T03:27:30Z,Skjern Å - Laksens hus,2024,100.9,-32.2
-2020-10-08T04:27:30Z,Skjern Å - Laksens hus,2024,100.9,-32.2
-2020-10-08T05:27:30Z,Skjern Å - Laksens hus,2024,101.2,-31.9
-2020-10-08T06:17:30Z,Skjern Å - Laksens hus,2024,101.3,-31.8
+2020-10-08T00:27:30Z,Skjern Å - Laksens hus,2024,100.4,-32.6
+2020-10-08T01:27:30Z,Skjern Å - Laksens hus,2024,100.6,-32.4
+2020-10-08T02:27:30Z,Skjern Å - Laksens hus,2024,100.8,-32.2
+2020-10-08T03:27:30Z,Skjern Å - Laksens hus,2024,100.9,-32.1
+2020-10-08T04:27:30Z,Skjern Å - Laksens hus,2024,100.9,-32.1
+2020-10-08T05:27:30Z,Skjern Å - Laksens hus,2024,101.2,-31.8
+2020-10-08T06:17:30Z,Skjern Å - Laksens hus,2024,101.3,-31.7
 2020-10-09T06:42:30Z,Skjern Å - Laksens hus,2024,103.2,-30.3
 2020-10-09T07:27:30Z,Skjern Å - Laksens hus,2024,102.9,-30.6
 2020-10-09T08:27:30Z,Skjern Å - Laksens hus,2024,102.9,-30.6
@@ -12954,7 +12979,8 @@ Date,Place,YGroup,Level,LevelRelative
 2020-10-10T08:27:30Z,Skjern Å - Laksens hus,2024,104.8,-29.3
 2020-10-10T09:27:30Z,Skjern Å - Laksens hus,2024,104.6,-29.5
 2020-10-10T10:27:30Z,Skjern Å - Laksens hus,2024,104.8,-29.3
-2020-10-10T11:10:00Z,Skjern Å - Laksens hus,2024,104.5,-29.6
+2020-10-10T11:27:30Z,Skjern Å - Laksens hus,2024,104.7,-29.4
+2020-10-10T12:10:00Z,Skjern Å - Laksens hus,2024,104.3,-29.8
 2020-09-25T00:08:00Z,Skjern Å - Landevejsbroen,2021,164.4,-7.5
 2020-09-25T01:42:00Z,Skjern Å - Landevejsbroen,2021,164.4,-7.5
 2020-09-25T02:14:00Z,Skjern Å - Landevejsbroen,2021,163.4,-8.5
@@ -15225,7 +15251,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-09-26T02:25:00Z,Skjern Å - Sandfeldvej,2024,2763.3,-1
 2020-09-26T03:25:00Z,Skjern Å - Sandfeldvej,2024,2763.1,-1.2
 2020-09-26T04:25:00Z,Skjern Å - Sandfeldvej,2024,2762.9,-1.4
-2020-09-26T05:25:00Z,Skjern Å - Sandfeldvej,2024,2762.8,-1.5
+2020-09-26T05:25:00Z,Skjern Å - Sandfeldvej,2024,2762.9,-1.4
 2020-09-26T06:25:00Z,Skjern Å - Sandfeldvej,2024,2763,-1.3
 2020-09-26T07:25:00Z,Skjern Å - Sandfeldvej,2024,2763.5,-0.8
 2020-09-26T08:25:00Z,Skjern Å - Sandfeldvej,2024,2764,-0.3
@@ -15261,13 +15287,13 @@ Date,Place,YGroup,Level,LevelRelative
 2020-09-27T14:25:00Z,Skjern Å - Sandfeldvej,2024,2784,19.6
 2020-09-27T15:25:00Z,Skjern Å - Sandfeldvej,2024,2786.1,21.7
 2020-09-27T16:25:00Z,Skjern Å - Sandfeldvej,2024,2788.3,23.9
-2020-09-27T17:25:00Z,Skjern Å - Sandfeldvej,2024,2790.2,25.9
-2020-09-27T18:25:00Z,Skjern Å - Sandfeldvej,2024,2791.6,27.2
-2020-09-27T19:25:00Z,Skjern Å - Sandfeldvej,2024,2792.3,27.9
-2020-09-27T20:25:00Z,Skjern Å - Sandfeldvej,2024,2792.9,28.5
-2020-09-27T21:25:00Z,Skjern Å - Sandfeldvej,2024,2793.6,29.2
-2020-09-27T22:25:00Z,Skjern Å - Sandfeldvej,2024,2794.3,29.9
-2020-09-27T23:25:00Z,Skjern Å - Sandfeldvej,2024,2795,30.6
+2020-09-27T17:25:00Z,Skjern Å - Sandfeldvej,2024,2790.2,25.8
+2020-09-27T18:25:00Z,Skjern Å - Sandfeldvej,2024,2791.2,26.8
+2020-09-27T19:25:00Z,Skjern Å - Sandfeldvej,2024,2792,27.6
+2020-09-27T20:25:00Z,Skjern Å - Sandfeldvej,2024,2792.7,28.3
+2020-09-27T21:25:00Z,Skjern Å - Sandfeldvej,2024,2793.4,29
+2020-09-27T22:25:00Z,Skjern Å - Sandfeldvej,2024,2794.1,29.7
+2020-09-27T23:25:00Z,Skjern Å - Sandfeldvej,2024,2794.9,30.5
 2020-09-28T00:25:00Z,Skjern Å - Sandfeldvej,2024,2795.6,31.2
 2020-09-28T01:25:00Z,Skjern Å - Sandfeldvej,2024,2796.3,31.9
 2020-09-28T02:25:00Z,Skjern Å - Sandfeldvej,2024,2796.6,32.2
@@ -15285,12 +15311,12 @@ Date,Place,YGroup,Level,LevelRelative
 2020-09-28T14:25:00Z,Skjern Å - Sandfeldvej,2024,2799,34.6
 2020-09-28T15:25:00Z,Skjern Å - Sandfeldvej,2024,2799.6,35.1
 2020-09-28T16:25:00Z,Skjern Å - Sandfeldvej,2024,2799.8,35.4
-2020-09-28T17:25:00Z,Skjern Å - Sandfeldvej,2024,2800.2,35.8
-2020-09-28T18:25:00Z,Skjern Å - Sandfeldvej,2024,2800.2,35.8
-2020-09-28T19:25:00Z,Skjern Å - Sandfeldvej,2024,2800,35.6
-2020-09-28T20:25:00Z,Skjern Å - Sandfeldvej,2024,2799.8,35.4
-2020-09-28T21:25:00Z,Skjern Å - Sandfeldvej,2024,2799.6,35.2
-2020-09-28T22:25:00Z,Skjern Å - Sandfeldvej,2024,2799.3,34.9
+2020-09-28T17:25:00Z,Skjern Å - Sandfeldvej,2024,2800,35.6
+2020-09-28T18:25:00Z,Skjern Å - Sandfeldvej,2024,2799.7,35.3
+2020-09-28T19:25:00Z,Skjern Å - Sandfeldvej,2024,2799.6,35.1
+2020-09-28T20:25:00Z,Skjern Å - Sandfeldvej,2024,2799.4,35
+2020-09-28T21:25:00Z,Skjern Å - Sandfeldvej,2024,2799.2,34.8
+2020-09-28T22:25:00Z,Skjern Å - Sandfeldvej,2024,2799.1,34.7
 2020-09-28T23:25:00Z,Skjern Å - Sandfeldvej,2024,2798.7,34.3
 2020-09-29T00:25:00Z,Skjern Å - Sandfeldvej,2024,2797.9,33.5
 2020-09-29T01:25:00Z,Skjern Å - Sandfeldvej,2024,2797.1,32.7
