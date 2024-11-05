@@ -107,5 +107,4 @@ render(here::here("reports/karup/karup-watertemp.Rmd"), output_dir = "docs/karup
 render(here::here("reports/karup/karup-kort.Rmd"), output_dir = "docs/karup")
 render(here::here("reports/karup/karup-salmometer.Rmd"), output_dir = "docs/karup")
 render(here::here("reports/karup/karup-catch.Rmd"), output_dir = "docs/karup")
-render(here::here("reports/mv-lf/mv-lf-report.Rmd"), output_file = here::here(str_c("docs/mv-lf/mv-lf-report-", yr, ".html")), params = list(yr = yr))
 render(here::here("docs/index.md"), output_dir = "docs/")
