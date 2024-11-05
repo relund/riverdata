@@ -1,9 +1,9 @@
 ---
-title: "Årsrapport fangster MV-LF"
+title: "`r paste0('Årsrapport fangster MV-LF ', params$yr)`"
 # author: "Lars Relund Nielsen"
 date: "`r Sys.Date()`"
 output: 
-  html_document:
+  bookdown::html_document2:
     self_contained: yes
     theme: united
     highlight: tango
@@ -169,12 +169,14 @@ datCatchMVLFPlaceS <- datCatchMVLF |>
 #   mutate(Middel = rowMeans(pick(where(is.numeric)), na.rm = T))
 ```
 
+Denne rapport giver et overblik over fangsterne for `r yr` og kan bruges til at besvare spørgsmål som: På hvilke strækninger bliver der fanget fisk? Hvor mange blev genudsat? Den kan derfor bruges af bestyrelsen til at lave mere valide beslutninger om fx hvilke fiskevande der skal opsiges mm
+
 
 # Karup Å systemet
 
-## MV-LF
+Vi betragter fangst data for Karup Å systemet og kigger på data for foreningen (sektion 2.1) og samlet for hele systemet (sektion 2.2).
 
-Vi betragter fangstdata fra MV-LF i Karup Å systemet. 
+## MV-LF
 
 ```{r}
 rivers <- c("Karup Å", "Haderup/Haderis Å")
@@ -238,12 +240,17 @@ getTableOverview <- function(dat, datPlace, rivers) {
 }
 ```
 
-```{r}
+Vi betragter fangstdata fra MV-LF i Karup Å systemet. Et overblik er givet i Tabel \@ref(tab:karup-overview). Bemærk at vægten for alle genudsatte fisk er estimeret baseret på [vægt data for Karup Å](https://relund.github.io/riverdata/karup/karup-salmometer.html).
+
+```{r karup-overview}
 datTable <- getTableOverview(datCatchKarup, datCatchMVLFPlaceSea, rivers) 
-kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr)) %>%
+kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr, " (MV-LF)")) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
+### Fordeling af fangster over strækninger
+
+Bemærk at der helt sikkert vil være nogle fangster som er indrapporteret på de forkerte strækninger. Da det er første år i foreningen har der i nogle tilfælde været forvirring om hvilken strækning en fisk er fanget på. Dette vil blive bedre med tiden.
 
 ```{r}
 ## Bar chart over places
@@ -263,6 +270,10 @@ plotPlacesOverview(datCatchMVLFPlaceSea, rivers)
 ```
 
 
+### Fordeling af antal fisk hjemtaget
+
+Bemærk det er antaget at folk har angivet samme navn. Der er en risiko for at folk der hjemtager mange fisk vælger at skrive deres navn forskelligt, så det er svære at identificere hjemtagelse af mange fisk.
+
 ```{r}
 plotCatchAmountDist <- function(dat) {
   dat |> 
@@ -281,15 +292,21 @@ plotCatchAmountDist <- function(dat) {
     # scale_y_continuous(breaks = breaks_pretty())
 }
 plotCatchAmountDist(datCatchKarup)
+```
 
 
+### Fordeling af antal kg hjemtaget
+
+Her kigger vi på det totale antal kg fiske hjemtaget, da 5 små havørreder jo vejer mindre end 5 store. 
+
+```{r}
 plotCatchWeightDist <- function(dat) {
   dat |> 
     filter(Killed, Year == yr) |> 
     group_by(Name) |> 
     summarise(Antal = n(), TotalKg = sum(Weight)) |> 
     ggplot(aes(x = TotalKg, fill = "")) + 
-    geom_histogram(binwidth = 1) + 
+    geom_histogram(binwidth = 1, linewidth = 0.5, color = "black") + 
     labs(title = str_c("Fordelingen af kg fisk hjemtaget (", yr, ")"),
          x = "Antal kg hjemtaget",
          y = "Antal fiskere identificeret ved navn",
@@ -344,7 +361,7 @@ datKarupZones <- datCatchKarupAll |>
 
 ```{r}
 datTable <- getTableOverview(datCatchKarupAll, datKarupZones, rivers)
-kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr)) %>%
+kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr, "(hele å systemet)")) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
@@ -422,9 +439,11 @@ kbl(dat, caption = str_c("Effekt af kvoter"), align=c(rep('c', 5), "r")) %>%
 
 # Skjern Å systemet
 
+Vi betragter fangst data for Karup Å systemet og kigger på data for foreningen.
+
 ## MV-LF
 
-Vi betragter fangstdata fra MV-LF i Skjern Å systemet. 
+Vi betragter fangstdata fra MV-LF i Skjern Å systemet. Bemærk at vægten for alle genudsatte fisk er estimeret baseret på [vægt data for Skjern Å](https://relund.github.io/riverdata/skjern/skjern-salmometer.html).
 
 ```{r}
 rivers <- c("Skjern Å", "Vorgod Å", "Fjederholt Å", "Rind Å", "Karstoft Å", "Brande Å")
@@ -455,11 +474,15 @@ datCatchSkjernS <- datCatchMVLF |>
 
 ### Laks
 
-```{r}
+Et overblik er givet i Tabel \@ref(tab:skjern-overview). 
+
+```{r skjern-overview}
 datTable <- getTableOverview(datCatchSkjernSal, datCatchMVLFPlaceSal, rivers)
-kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr)) %>%
+kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr, " (MV-LF)")) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
+
+#### Fordeling af fangster over strækninger
 
 ```{r}
 plotPlacesOverview(datCatchMVLFPlaceSal, rivers)
@@ -474,6 +497,9 @@ kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ",
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
+
+#### Fordeling af fangster over strækninger
+
 ```{r}
 plotPlacesOverview(datCatchMVLFPlaceSea, rivers)
 ```
@@ -486,6 +512,9 @@ datTable <- getTableOverview(datCatchSkjernT, datCatchMVLFPlaceT, rivers)
 kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr)) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
+
+
+#### Fordeling af fangster over strækninger
 
 ```{r}
 plotPlacesOverview(datCatchMVLFPlaceT, rivers)
@@ -500,6 +529,9 @@ datTable <- getTableOverview(datCatchSkjernS, datCatchMVLFPlaceS, rivers)
 kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr)) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
+
+
+#### Fordeling af fangster over strækninger
 
 ```{r}
 plotPlacesOverview(datCatchMVLFPlaceS, rivers)
