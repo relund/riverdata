@@ -100,8 +100,10 @@ datMarkers <- datMarkers  %>% filter(!is.na(Icon))
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
 
+
+
+#### Render reports ####
 yr <- lubridate::year(lubridate::now())
-## Render reports
 render(here::here("reports/karup/karup-waterlevel.Rmd"), output_dir = "docs/karup")
 render(here::here("reports/karup/karup-watertemp.Rmd"), output_dir = "docs/karup")
 render(here::here("reports/karup/karup-kort.Rmd"), output_dir = "docs/karup")

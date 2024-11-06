@@ -136,7 +136,8 @@ datLines <- bind_rows(datLines, lst$datLines)
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))
 
-## Render reports
+
+#### Render reports ####
 render("reports/skjern/skjern-kort.Rmd",output_dir = "docs/skjern")
 render("reports/skjern/skjern-salmometer.Rmd",output_dir = "docs/skjern")
 render("reports/skjern/skjern-lock-flow.Rmd",output_dir = "docs/skjern")

@@ -1,22 +1,21 @@
-name: R script Karup 1
+name: R script Skjern 1
 
 on: 
   push:
     paths:
-      - .github/workflows/run_script_karup1_ubuntu.yaml
-      - reports/karup/**
+      - .github/workflows/run_script_skjern_ubuntu.yaml
+      - reports/skjern/**
       - reports/index.md
-      - script_karup1.R
-      - script_mv-lf.R
+      - script_skjern1.R
       - functions.R
       - renv.lock
   schedule:
-    - cron: '30 * * * *'  # every hour
+    - cron: '0 * * * *'  # every hour
   # branches-ignore:
   #     - '**'
 jobs:
   render:
-    name: Run script for Karup river
+    name: Run script_skjern1.R
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -34,17 +33,13 @@ jobs:
     
       - name: Install dependices
         run: |
-          sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
-          sudo apt-get -y update
-          sudo apt-get install -y libgdal-dev libgeos-dev libproj-dev libsqlite3-dev
+          sudo apt-get update
+          sudo apt-get install -y libproj-dev libgdal-dev
           
       - uses: r-lib/actions/setup-renv@v2
           
       - name: Run R script
-        run: Rscript --verbose script_karup1.R
-        
-      - name: Run R script
-        run: Rscript --verbose script_mv-lf.R
+        run: Rscript script_skjern1.R
         
       - name: Commit results
         run: |
