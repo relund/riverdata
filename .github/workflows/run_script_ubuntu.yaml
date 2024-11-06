@@ -1,4 +1,4 @@
-name: R script Karup 1
+name: Run R scripts
 
 on: 
   push:
@@ -20,7 +20,7 @@ on:
   #     - '**'
 jobs:
   render:
-    name: Run script for Karup river
+    name: Run scripts
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -48,19 +48,19 @@ jobs:
           
       - uses: r-lib/actions/setup-renv@v2
           
-      - name: Run R script
+      - name: Run R script Karup
         run: Rscript --verbose script_karup.R
         
-      - name: Run R script
-        run: Rscript --verbose script_skjern1.R
+      - name: Run R script Skjern
+        run: Rscript --verbose script_skjern.R
         
-      - name: Run R script
+      - name: Run R script MV-LF
         run: Rscript --verbose script_mv-lf.R
         
       - name: Commit results
         run: |
-          git config user.email "junk@relund.dk"
-          git config user.name "Lars Relund"
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add \*.csv
           git add \*.html
           git commit --allow-empty -am 'gHA build: ${{github.run_number}}' || echo "No changes to commit"
