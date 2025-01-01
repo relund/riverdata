@@ -324,9 +324,11 @@ Vi kigger her på fangstdata for hele Karup Å systemet (alle foreninger).
 
 ```{r}
 # Henter alle fangster
-prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/data_karup_catch_seatrout_"
-fn <- paste0(prefix, yr, ".csv")
-if (urlFileExist(fn)) datCatch <- read_csv(fn)
+# prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/data_karup_catch_seatrout_"
+prefix <- "data/data_karup_catch_seatrout_"
+fn <- here::here(paste0(prefix, yr, ".csv"))
+# if (urlFileExist(fn)) datCatch <- read_csv(fn)
+if (fs::file_exists(fn)) datCatch <- read_csv(fn)
 datCatch <- datCatch %>% 
   mutate(Year = year(Date), Month = month(Date), Length = as.numeric(Length)) 
 
@@ -349,7 +351,7 @@ datEgg <- bind_cols(tmp, tibble(Eggs = predict(fit, tmp)))
 
 datCatchKarupAll <- datCatch |> 
   left_join(datWeight, by = join_by(Month == MonthN, Length == Length)) |> 
-  mutate(Weight = if_else(is.na(Weight), round(Avg,2), Weight)) |>  
+  mutate(Weight = ifelse(is.na(Weight), round(Avg,2), Weight)) |>  
   left_join(datEgg)
 
 datKarupZones <- datCatchKarupAll |> 

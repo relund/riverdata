@@ -41,8 +41,9 @@ Factors that have an impact on the weight of a fish could be length, sex, number
 # Salmon
 
 ```{r Read, include=FALSE}
-prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
-datCatchSalmon <- read_csv(paste0(prefix, "data_skjern_catch_salmon", "_", 2004:year(now()), ".csv"))
+# prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
+prefix <- "data/"
+datCatchSalmon <- read_csv(here::here(paste0(prefix, "data_skjern_catch_salmon", "_", 2004:year(now()), ".csv")))
 dat <- datCatchSalmon %>% 
   filter(Length > 39 & !is.na(Weight) & Killed) %>% 
   select(Date, Length, Weight, Sex, Cut) %>% 
@@ -157,7 +158,7 @@ resL3 <- pivot_longer(res3, 4:6)
 # Seatrout
 
 ```{r Read data}
-datCatchTrout <- read_csv(paste0(prefix,"data_skjern_catch_seatrout", "_", 2004:year(now()), ".csv"))
+datCatchTrout <- read_csv(here::here(paste0(prefix,"data_skjern_catch_seatrout", "_", 2004:year(now()), ".csv")))
 dat <- datCatchTrout %>% 
   filter(Length > 39 & !is.na(Weight) & Killed) %>% 
   select(Date, Length, Weight, Sex) %>% 

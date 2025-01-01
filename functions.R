@@ -816,9 +816,10 @@ writeCatch <- function(url, prefix, yr, species = "Havørred", club = FALSE) {
   rows <- dat$rows$c
   if (species == "Havørred") res <- "seatrout"
   if (species == "Laks") res <- "salmon"
+  if (species == "All") res <- "all"
   if (is.null(rows)) {  
     fn <- str_c(prefix, "_catch_", res, "_", yr-1, ".csv")
-    dat3 <- read_csv(fn, col_types = "Dddcfflclfl") %>% 
+    dat3 <- read_csv(fn) %>% # col_types = "Dddcfflclfl"
       slice_head(n = 0)  # get col names from last year
   } else {
     rows <- lapply(rows, FUN = function(x) {x[,1]})

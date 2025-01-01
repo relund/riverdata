@@ -66,5 +66,5 @@ write_csv(datLines, str_c(prefix, "_maplines.csv"))
 #### Generate reports ####
 yr <- year(lubridate::now())
 render("reports/mv-lf/mv-lf-kort.Rmd", output_dir = "docs/mv-lf")
-render("reports/mv-lf/mv-lf-report.Rmd", output_dir = "docs/mv-lf", output_file = str_c("mv-lf-report-", yr), params = list(yr = yr))
+if (month(lubridate::now()) > 3) render("reports/mv-lf/mv-lf-report.Rmd", output_dir = "docs/mv-lf", output_file = str_c("mv-lf-report-", yr), params = list(yr = yr))
 # render(here::here("reports/mv-lf/mv-lf-report.Rmd"), output_file = here::here(str_c("docs/mv-lf/mv-lf-report-", yr, ".html")), params = list(yr = yr))
