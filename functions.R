@@ -311,8 +311,7 @@ readWTemp <- function(prefix, years) {
   dat <- NULL
   for (y in years) {
     fn <- paste0(prefix, "_watertemp_", y, ".csv")
-    dat <- 
-      bind_rows(dat, read_csv(fn, col_types = "Tfd"))
+    if (file.exists(fn)) dat <- bind_rows(dat, read_csv(fn, col_types = "Tfd"))
   }
   return(dat)
 }
@@ -1063,6 +1062,7 @@ writeTimeSeriesData <- function(stations = NULL, prefix, prefix1, days) {
     hobo <- hobo %>% slice_head(n = 0)
     write_csv(hobo, paste0(prefix, "_", prefix1, "_hobo.csv") )
   }
+
   ## merge and save
   for (y in distinct(dat2, year(Date)) %>% pull()) {
     dat3 <- dat2 %>% filter(year(Date) == y) 
