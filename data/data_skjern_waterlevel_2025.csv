@@ -213,9 +213,9 @@ Date,Place,Value
 2025-01-24T18:50:00Z,Karstoft Å - Fiskedamme,15.850999999999999
 2025-01-24T18:40:00Z,Karstoft Å - Fiskedamme,15.846
 2025-01-24T18:30:00Z,Karstoft Å - Fiskedamme,15.848
-2025-01-24T18:20:00Z,Karstoft Å - Fiskedamme,15.84725
-2025-01-24T18:10:00Z,Karstoft Å - Fiskedamme,15.8465
-2025-01-24T18:00:00Z,Karstoft Å - Fiskedamme,15.84575
+2025-01-24T18:20:00Z,Karstoft Å - Fiskedamme,15.845
+2025-01-24T18:10:00Z,Karstoft Å - Fiskedamme,15.842
+2025-01-24T18:00:00Z,Karstoft Å - Fiskedamme,15.8435
 2025-01-24T17:50:00Z,Karstoft Å - Fiskedamme,15.845
 2025-01-24T17:40:00Z,Karstoft Å - Fiskedamme,15.844000000000001
 2025-01-24T17:30:00Z,Karstoft Å - Fiskedamme,15.842
@@ -969,7 +969,7 @@ Date,Place,Value
 2025-01-19T12:50:00Z,Karstoft Å - Fiskedamme,15.708
 2025-01-19T12:40:00Z,Karstoft Å - Fiskedamme,15.71
 2025-01-19T12:30:00Z,Karstoft Å - Fiskedamme,15.712000000000002
-2025-01-19T12:20:00Z,Karstoft Å - Fiskedamme,15.710500000000001
+2025-01-19T12:20:00Z,Karstoft Å - Fiskedamme,15.714
 2025-01-19T12:10:00Z,Karstoft Å - Fiskedamme,15.709000000000001
 2025-01-19T12:00:00Z,Karstoft Å - Fiskedamme,15.714
 2025-01-19T11:50:00Z,Karstoft Å - Fiskedamme,15.71325
@@ -2150,7 +2150,7 @@ Date,Place,Value
 2025-01-11T08:00:00Z,Karstoft Å - Fiskedamme,15.869000000000002
 2025-01-11T07:50:00Z,Karstoft Å - Fiskedamme,15.870999999999999
 2025-01-11T07:40:00Z,Karstoft Å - Fiskedamme,15.867
-2025-01-11T07:30:00Z,Karstoft Å - Fiskedamme,15.870999999999999
+2025-01-11T07:30:00Z,Karstoft Å - Fiskedamme,15.871
 2025-01-11T07:20:00Z,Karstoft Å - Fiskedamme,15.867
 2025-01-11T07:10:00Z,Karstoft Å - Fiskedamme,15.872000000000002
 2025-01-11T07:00:00Z,Karstoft Å - Fiskedamme,15.874
@@ -13071,7 +13071,7 @@ Date,Place,Value
 2025-01-11T07:10:00Z,Skjern Å - Alergaard,7.732
 2025-01-11T07:00:00Z,Skjern Å - Alergaard,7.735
 2025-01-11T06:50:00Z,Skjern Å - Alergaard,7.737000000000001
-2025-01-11T06:40:00Z,Skjern Å - Alergaard,7.7379999999999995
+2025-01-11T06:40:00Z,Skjern Å - Alergaard,7.738
 2025-01-11T06:30:00Z,Skjern Å - Alergaard,7.746
 2025-01-11T06:20:00Z,Skjern Å - Alergaard,7.742999999999999
 2025-01-11T06:10:00Z,Skjern Å - Alergaard,7.749
@@ -14552,10 +14552,34 @@ Date,Place,Value
 2025-01-01T00:20:00Z,Skjern Å - Alergaard,7.405
 2025-01-01T00:10:00Z,Skjern Å - Alergaard,7.403
 2025-01-01T00:00:00Z,Skjern Å - Alergaard,7.399
-2025-01-26T03:20:00Z,Skjern Å - Gjaldbæk bro,5.2170000000000005
+2025-01-26T07:20:00Z,Skjern Å - Gjaldbæk bro,5.191000000000001
+2025-01-26T07:10:00Z,Skjern Å - Gjaldbæk bro,5.194
+2025-01-26T07:00:00Z,Skjern Å - Gjaldbæk bro,5.193
+2025-01-26T06:50:00Z,Skjern Å - Gjaldbæk bro,5.195
+2025-01-26T06:40:00Z,Skjern Å - Gjaldbæk bro,5.1979999999999995
+2025-01-26T06:30:00Z,Skjern Å - Gjaldbæk bro,5.195
+2025-01-26T06:20:00Z,Skjern Å - Gjaldbæk bro,5.199
+2025-01-26T06:10:00Z,Skjern Å - Gjaldbæk bro,5.197000000000001
+2025-01-26T06:00:00Z,Skjern Å - Gjaldbæk bro,5.1979999999999995
+2025-01-26T05:50:00Z,Skjern Å - Gjaldbæk bro,5.2010000000000005
+2025-01-26T05:40:00Z,Skjern Å - Gjaldbæk bro,5.202999999999999
+2025-01-26T05:30:00Z,Skjern Å - Gjaldbæk bro,5.202999999999999
+2025-01-26T05:20:00Z,Skjern Å - Gjaldbæk bro,5.205
+2025-01-26T05:10:00Z,Skjern Å - Gjaldbæk bro,5.202999999999999
+2025-01-26T05:00:00Z,Skjern Å - Gjaldbæk bro,5.204
+2025-01-26T04:50:00Z,Skjern Å - Gjaldbæk bro,5.206
+2025-01-26T04:40:00Z,Skjern Å - Gjaldbæk bro,5.207000000000001
+2025-01-26T04:30:00Z,Skjern Å - Gjaldbæk bro,5.207000000000001
+2025-01-26T04:20:00Z,Skjern Å - Gjaldbæk bro,5.206
+2025-01-26T04:10:00Z,Skjern Å - Gjaldbæk bro,5.211
+2025-01-26T04:00:00Z,Skjern Å - Gjaldbæk bro,5.209
+2025-01-26T03:50:00Z,Skjern Å - Gjaldbæk bro,5.2139999999999995
+2025-01-26T03:40:00Z,Skjern Å - Gjaldbæk bro,5.212000000000001
+2025-01-26T03:30:00Z,Skjern Å - Gjaldbæk bro,5.2139999999999995
+2025-01-26T03:20:00Z,Skjern Å - Gjaldbæk bro,5.215
 2025-01-26T03:10:00Z,Skjern Å - Gjaldbæk bro,5.2170000000000005
 2025-01-26T03:00:00Z,Skjern Å - Gjaldbæk bro,5.2170000000000005
-2025-01-26T02:50:00Z,Skjern Å - Gjaldbæk bro,5.2175
+2025-01-26T02:50:00Z,Skjern Å - Gjaldbæk bro,5.215
 2025-01-26T02:40:00Z,Skjern Å - Gjaldbæk bro,5.218
 2025-01-26T02:30:00Z,Skjern Å - Gjaldbæk bro,5.219
 2025-01-26T02:20:00Z,Skjern Å - Gjaldbæk bro,5.2170000000000005
@@ -14590,11 +14614,11 @@ Date,Place,Value
 2025-01-25T21:30:00Z,Skjern Å - Gjaldbæk bro,5.247000000000001
 2025-01-25T21:20:00Z,Skjern Å - Gjaldbæk bro,5.245
 2025-01-25T21:10:00Z,Skjern Å - Gjaldbæk bro,5.245
-2025-01-25T21:00:00Z,Skjern Å - Gjaldbæk bro,5.251
+2025-01-25T21:00:00Z,Skjern Å - Gjaldbæk bro,5.247
 2025-01-25T20:50:00Z,Skjern Å - Gjaldbæk bro,5.249
 2025-01-25T20:40:00Z,Skjern Å - Gjaldbæk bro,5.249
 2025-01-25T20:30:00Z,Skjern Å - Gjaldbæk bro,5.249
-2025-01-25T20:20:00Z,Skjern Å - Gjaldbæk bro,5.252999999999999
+2025-01-25T20:20:00Z,Skjern Å - Gjaldbæk bro,5.249
 2025-01-25T20:10:00Z,Skjern Å - Gjaldbæk bro,5.249
 2025-01-25T20:00:00Z,Skjern Å - Gjaldbæk bro,5.25
 2025-01-25T19:50:00Z,Skjern Å - Gjaldbæk bro,5.247999999999999
@@ -14612,7 +14636,7 @@ Date,Place,Value
 2025-01-25T17:50:00Z,Skjern Å - Gjaldbæk bro,5.254
 2025-01-25T17:40:00Z,Skjern Å - Gjaldbæk bro,5.252000000000001
 2025-01-25T17:30:00Z,Skjern Å - Gjaldbæk bro,5.255
-2025-01-25T17:20:00Z,Skjern Å - Gjaldbæk bro,5.257000000000001
+2025-01-25T17:20:00Z,Skjern Å - Gjaldbæk bro,5.255
 2025-01-25T17:10:00Z,Skjern Å - Gjaldbæk bro,5.255
 2025-01-25T17:00:00Z,Skjern Å - Gjaldbæk bro,5.255
 2025-01-25T16:50:00Z,Skjern Å - Gjaldbæk bro,5.252999999999999
@@ -18173,6 +18197,18 @@ Date,Place,Value
 2025-01-01T00:20:00Z,Skjern Å - Gjaldbæk bro,5.254
 2025-01-01T00:10:00Z,Skjern Å - Gjaldbæk bro,5.252000000000001
 2025-01-01T00:00:00Z,Skjern Å - Gjaldbæk bro,5.251
+2025-01-26T06:25:00Z,Skjern Å - Laksens hus,155088
+2025-01-26T06:20:00Z,Skjern Å - Laksens hus,155390
+2025-01-26T06:15:00Z,Skjern Å - Laksens hus,154828
+2025-01-26T06:10:00Z,Skjern Å - Laksens hus,155562
+2025-01-26T06:05:00Z,Skjern Å - Laksens hus,154790
+2025-01-26T06:00:00Z,Skjern Å - Laksens hus,155223
+2025-01-26T05:55:00Z,Skjern Å - Laksens hus,154701
+2025-01-26T05:50:00Z,Skjern Å - Laksens hus,154792
+2025-01-26T05:45:00Z,Skjern Å - Laksens hus,155509
+2025-01-26T05:40:00Z,Skjern Å - Laksens hus,155419
+2025-01-26T05:35:00Z,Skjern Å - Laksens hus,155057
+2025-01-26T05:30:00Z,Skjern Å - Laksens hus,155290
 2025-01-26T05:25:00Z,Skjern Å - Laksens hus,155512
 2025-01-26T05:20:00Z,Skjern Å - Laksens hus,155020
 2025-01-26T05:15:00Z,Skjern Å - Laksens hus,155757
@@ -27232,7 +27268,7 @@ Date,Place,Value
 2025-01-11T08:00:00Z,Skjern Å - Sandfeldvej,28.329
 2025-01-11T07:50:00Z,Skjern Å - Sandfeldvej,28.330000000000002
 2025-01-11T07:40:00Z,Skjern Å - Sandfeldvej,28.333000000000002
-2025-01-11T07:30:00Z,Skjern Å - Sandfeldvej,28.333000000000002
+2025-01-11T07:30:00Z,Skjern Å - Sandfeldvej,28.333
 2025-01-11T07:20:00Z,Skjern Å - Sandfeldvej,28.331999999999997
 2025-01-11T07:10:00Z,Skjern Å - Sandfeldvej,28.334000000000003
 2025-01-11T07:00:00Z,Skjern Å - Sandfeldvej,28.335
