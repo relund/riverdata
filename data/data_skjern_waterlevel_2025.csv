@@ -367,7 +367,7 @@ Date,Place,Value
 2025-01-24T17:10:00Z,Karstoft Å - Fiskedamme,15.842
 2025-01-24T17:00:00Z,Karstoft Å - Fiskedamme,15.845
 2025-01-24T16:50:00Z,Karstoft Å - Fiskedamme,15.845
-2025-01-24T16:40:00Z,Karstoft Å - Fiskedamme,15.842
+2025-01-24T16:40:00Z,Karstoft Å - Fiskedamme,15.837000000000002
 2025-01-24T16:30:00Z,Karstoft Å - Fiskedamme,15.839
 2025-01-24T16:20:00Z,Karstoft Å - Fiskedamme,15.839
 2025-01-24T16:10:00Z,Karstoft Å - Fiskedamme,15.839
@@ -2134,10 +2134,10 @@ Date,Place,Value
 2025-01-12T10:40:00Z,Karstoft Å - Fiskedamme,15.772
 2025-01-12T10:30:00Z,Karstoft Å - Fiskedamme,15.773
 2025-01-12T10:20:00Z,Karstoft Å - Fiskedamme,15.776
-2025-01-12T10:10:00Z,Karstoft Å - Fiskedamme,15.774000000000001
+2025-01-12T10:10:00Z,Karstoft Å - Fiskedamme,15.774
 2025-01-12T10:00:00Z,Karstoft Å - Fiskedamme,15.772
 2025-01-12T09:50:00Z,Karstoft Å - Fiskedamme,15.773
-2025-01-12T09:40:00Z,Karstoft Å - Fiskedamme,15.774000000000001
+2025-01-12T09:40:00Z,Karstoft Å - Fiskedamme,15.774
 2025-01-12T09:30:00Z,Karstoft Å - Fiskedamme,15.774
 2025-01-12T09:20:00Z,Karstoft Å - Fiskedamme,15.779000000000002
 2025-01-12T09:10:00Z,Karstoft Å - Fiskedamme,15.776
@@ -5916,10 +5916,10 @@ Date,Place,Value
 2025-01-12T10:50:00Z,Omme Å - Sønderskov bro,3.9930000000000003
 2025-01-12T10:40:00Z,Omme Å - Sønderskov bro,4.004
 2025-01-12T10:30:00Z,Omme Å - Sønderskov bro,4.001
-2025-01-12T10:20:00Z,Omme Å - Sønderskov bro,3.9960000000000004
+2025-01-12T10:20:00Z,Omme Å - Sønderskov bro,3.996
 2025-01-12T10:10:00Z,Omme Å - Sønderskov bro,4
 2025-01-12T10:00:00Z,Omme Å - Sønderskov bro,4
-2025-01-12T09:50:00Z,Omme Å - Sønderskov bro,3.9989999999999997
+2025-01-12T09:50:00Z,Omme Å - Sønderskov bro,3.999
 2025-01-12T09:40:00Z,Omme Å - Sønderskov bro,4
 2025-01-12T09:30:00Z,Omme Å - Sønderskov bro,4
 2025-01-12T09:20:00Z,Omme Å - Sønderskov bro,4
@@ -8109,58 +8109,58 @@ Date,Place,Value
 2025-01-23T11:50:00Z,Rind Å - Arnborg kirke,25.13
 2025-01-23T11:40:00Z,Rind Å - Arnborg kirke,25.128000000000004
 2025-01-23T11:30:00Z,Rind Å - Arnborg kirke,25.128000000000004
-2025-01-23T11:20:00Z,Rind Å - Arnborg kirke,25.12666666666667
-2025-01-23T11:10:00Z,Rind Å - Arnborg kirke,25.125333333333337
-2025-01-23T11:00:00Z,Rind Å - Arnborg kirke,25.124000000000002
-2025-01-23T10:50:00Z,Rind Å - Arnborg kirke,25.122666666666667
-2025-01-23T10:40:00Z,Rind Å - Arnborg kirke,25.121333333333336
-2025-01-23T10:30:00Z,Rind Å - Arnborg kirke,25.12
-2025-01-23T10:20:00Z,Rind Å - Arnborg kirke,25.118666666666666
-2025-01-23T10:10:00Z,Rind Å - Arnborg kirke,25.117333333333335
-2025-01-23T10:00:00Z,Rind Å - Arnborg kirke,25.116
-2025-01-23T09:50:00Z,Rind Å - Arnborg kirke,25.11283870967742
-2025-01-23T09:40:00Z,Rind Å - Arnborg kirke,25.10967741935484
-2025-01-23T09:30:00Z,Rind Å - Arnborg kirke,25.106516129032258
-2025-01-23T09:20:00Z,Rind Å - Arnborg kirke,25.103354838709677
-2025-01-23T09:10:00Z,Rind Å - Arnborg kirke,25.100193548387097
-2025-01-23T09:00:00Z,Rind Å - Arnborg kirke,25.097032258064516
-2025-01-23T08:50:00Z,Rind Å - Arnborg kirke,25.093870967741935
-2025-01-23T08:40:00Z,Rind Å - Arnborg kirke,25.090709677419355
-2025-01-23T08:30:00Z,Rind Å - Arnborg kirke,25.087548387096774
-2025-01-23T08:20:00Z,Rind Å - Arnborg kirke,25.084387096774194
-2025-01-23T08:10:00Z,Rind Å - Arnborg kirke,25.081225806451613
-2025-01-23T08:00:00Z,Rind Å - Arnborg kirke,25.078064516129032
-2025-01-23T07:50:00Z,Rind Å - Arnborg kirke,25.07490322580645
-2025-01-23T07:40:00Z,Rind Å - Arnborg kirke,25.07174193548387
-2025-01-23T07:30:00Z,Rind Å - Arnborg kirke,25.06858064516129
-2025-01-23T07:20:00Z,Rind Å - Arnborg kirke,25.06541935483871
-2025-01-23T07:10:00Z,Rind Å - Arnborg kirke,25.06225806451613
-2025-01-23T07:00:00Z,Rind Å - Arnborg kirke,25.05909677419355
-2025-01-23T06:50:00Z,Rind Å - Arnborg kirke,25.055935483870968
-2025-01-23T06:40:00Z,Rind Å - Arnborg kirke,25.052774193548387
-2025-01-23T06:30:00Z,Rind Å - Arnborg kirke,25.049612903225807
-2025-01-23T06:20:00Z,Rind Å - Arnborg kirke,25.046451612903226
-2025-01-23T06:10:00Z,Rind Å - Arnborg kirke,25.043290322580646
-2025-01-23T06:00:00Z,Rind Å - Arnborg kirke,25.040129032258065
-2025-01-23T05:50:00Z,Rind Å - Arnborg kirke,25.036967741935484
-2025-01-23T05:40:00Z,Rind Å - Arnborg kirke,25.033806451612904
-2025-01-23T05:30:00Z,Rind Å - Arnborg kirke,25.030645161290323
-2025-01-23T05:20:00Z,Rind Å - Arnborg kirke,25.027483870967743
-2025-01-23T05:10:00Z,Rind Å - Arnborg kirke,25.024322580645162
-2025-01-23T05:00:00Z,Rind Å - Arnborg kirke,25.02116129032258
+2025-01-23T11:20:00Z,Rind Å - Arnborg kirke,25.124970588235296
+2025-01-23T11:10:00Z,Rind Å - Arnborg kirke,25.121941176470592
+2025-01-23T11:00:00Z,Rind Å - Arnborg kirke,25.118911764705885
+2025-01-23T10:50:00Z,Rind Å - Arnborg kirke,25.11588235294118
+2025-01-23T10:40:00Z,Rind Å - Arnborg kirke,25.112852941176474
+2025-01-23T10:30:00Z,Rind Å - Arnborg kirke,25.109823529411766
+2025-01-23T10:20:00Z,Rind Å - Arnborg kirke,25.106794117647063
+2025-01-23T10:10:00Z,Rind Å - Arnborg kirke,25.103764705882355
+2025-01-23T10:00:00Z,Rind Å - Arnborg kirke,25.10073529411765
+2025-01-23T09:50:00Z,Rind Å - Arnborg kirke,25.097705882352944
+2025-01-23T09:40:00Z,Rind Å - Arnborg kirke,25.09467647058824
+2025-01-23T09:30:00Z,Rind Å - Arnborg kirke,25.091647058823533
+2025-01-23T09:20:00Z,Rind Å - Arnborg kirke,25.088617647058825
+2025-01-23T09:10:00Z,Rind Å - Arnborg kirke,25.08558823529412
+2025-01-23T09:00:00Z,Rind Å - Arnborg kirke,25.082558823529414
+2025-01-23T08:50:00Z,Rind Å - Arnborg kirke,25.07952941176471
+2025-01-23T08:40:00Z,Rind Å - Arnborg kirke,25.076500000000003
+2025-01-23T08:30:00Z,Rind Å - Arnborg kirke,25.073470588235296
+2025-01-23T08:20:00Z,Rind Å - Arnborg kirke,25.07044117647059
+2025-01-23T08:10:00Z,Rind Å - Arnborg kirke,25.067411764705884
+2025-01-23T08:00:00Z,Rind Å - Arnborg kirke,25.06438235294118
+2025-01-23T07:50:00Z,Rind Å - Arnborg kirke,25.061352941176473
+2025-01-23T07:40:00Z,Rind Å - Arnborg kirke,25.058323529411766
+2025-01-23T07:30:00Z,Rind Å - Arnborg kirke,25.055294117647062
+2025-01-23T07:20:00Z,Rind Å - Arnborg kirke,25.052264705882354
+2025-01-23T07:10:00Z,Rind Å - Arnborg kirke,25.04923529411765
+2025-01-23T07:00:00Z,Rind Å - Arnborg kirke,25.046205882352943
+2025-01-23T06:50:00Z,Rind Å - Arnborg kirke,25.04317647058824
+2025-01-23T06:40:00Z,Rind Å - Arnborg kirke,25.040147058823532
+2025-01-23T06:30:00Z,Rind Å - Arnborg kirke,25.037117647058825
+2025-01-23T06:20:00Z,Rind Å - Arnborg kirke,25.03408823529412
+2025-01-23T06:10:00Z,Rind Å - Arnborg kirke,25.031058823529413
+2025-01-23T06:00:00Z,Rind Å - Arnborg kirke,25.02802941176471
+2025-01-23T05:50:00Z,Rind Å - Arnborg kirke,25.025000000000002
+2025-01-23T05:40:00Z,Rind Å - Arnborg kirke,25.023833333333336
+2025-01-23T05:30:00Z,Rind Å - Arnborg kirke,25.02266666666667
+2025-01-23T05:20:00Z,Rind Å - Arnborg kirke,25.021500000000003
+2025-01-23T05:10:00Z,Rind Å - Arnborg kirke,25.020333333333333
+2025-01-23T05:00:00Z,Rind Å - Arnborg kirke,25.019166666666667
 2025-01-23T04:50:00Z,Rind Å - Arnborg kirke,25.018
-2025-01-23T04:40:00Z,Rind Å - Arnborg kirke,25.016750000000002
-2025-01-23T04:30:00Z,Rind Å - Arnborg kirke,25.015500000000003
-2025-01-23T04:20:00Z,Rind Å - Arnborg kirke,25.01425
+2025-01-23T04:40:00Z,Rind Å - Arnborg kirke,25.015
+2025-01-23T04:30:00Z,Rind Å - Arnborg kirke,25.014333333333333
+2025-01-23T04:20:00Z,Rind Å - Arnborg kirke,25.01366666666667
 2025-01-23T04:10:00Z,Rind Å - Arnborg kirke,25.013
 2025-01-23T04:00:00Z,Rind Å - Arnborg kirke,25.012
 2025-01-23T03:50:00Z,Rind Å - Arnborg kirke,25.012
 2025-01-23T03:40:00Z,Rind Å - Arnborg kirke,25.012
 2025-01-23T03:30:00Z,Rind Å - Arnborg kirke,25.009
-2025-01-23T03:20:00Z,Rind Å - Arnborg kirke,25.006500000000003
+2025-01-23T03:20:00Z,Rind Å - Arnborg kirke,25.005
 2025-01-23T03:10:00Z,Rind Å - Arnborg kirke,25.004
 2025-01-23T03:00:00Z,Rind Å - Arnborg kirke,25.009
-2025-01-23T02:50:00Z,Rind Å - Arnborg kirke,25.006
+2025-01-23T02:50:00Z,Rind Å - Arnborg kirke,25.001
 2025-01-23T02:40:00Z,Rind Å - Arnborg kirke,25.003000000000004
 2025-01-23T02:30:00Z,Rind Å - Arnborg kirke,25.002
 2025-01-23T02:20:00Z,Rind Å - Arnborg kirke,25.001
@@ -9494,15 +9494,15 @@ Date,Place,Value
 2025-01-13T21:00:00Z,Rind Å - Arnborg kirke,25.029
 2025-01-13T20:50:00Z,Rind Å - Arnborg kirke,25.028000000000002
 2025-01-13T20:40:00Z,Rind Å - Arnborg kirke,25.026999999999997
-2025-01-13T20:30:00Z,Rind Å - Arnborg kirke,25.028
+2025-01-13T20:30:00Z,Rind Å - Arnborg kirke,25.026999999999997
 2025-01-13T20:20:00Z,Rind Å - Arnborg kirke,25.029
 2025-01-13T20:10:00Z,Rind Å - Arnborg kirke,25.033
 2025-01-13T20:00:00Z,Rind Å - Arnborg kirke,25.0325
 2025-01-13T19:50:00Z,Rind Å - Arnborg kirke,25.032
-2025-01-13T19:40:00Z,Rind Å - Arnborg kirke,25.033
-2025-01-13T19:30:00Z,Rind Å - Arnborg kirke,25.034
-2025-01-13T19:20:00Z,Rind Å - Arnborg kirke,25.035
-2025-01-13T19:10:00Z,Rind Å - Arnborg kirke,25.035999999999998
+2025-01-13T19:40:00Z,Rind Å - Arnborg kirke,25.032
+2025-01-13T19:30:00Z,Rind Å - Arnborg kirke,25.03325
+2025-01-13T19:20:00Z,Rind Å - Arnborg kirke,25.0345
+2025-01-13T19:10:00Z,Rind Å - Arnborg kirke,25.03575
 2025-01-13T19:00:00Z,Rind Å - Arnborg kirke,25.037
 2025-01-13T18:50:00Z,Rind Å - Arnborg kirke,25.038000000000004
 2025-01-13T18:40:00Z,Rind Å - Arnborg kirke,25.04011764705883
@@ -9697,11 +9697,11 @@ Date,Place,Value
 2025-01-12T11:00:00Z,Rind Å - Arnborg kirke,25.32
 2025-01-12T10:50:00Z,Rind Å - Arnborg kirke,25.323000000000004
 2025-01-12T10:40:00Z,Rind Å - Arnborg kirke,25.323000000000004
-2025-01-12T10:30:00Z,Rind Å - Arnborg kirke,25.326999999999998
+2025-01-12T10:30:00Z,Rind Å - Arnborg kirke,25.327
 2025-01-12T10:20:00Z,Rind Å - Arnborg kirke,25.326
 2025-01-12T10:10:00Z,Rind Å - Arnborg kirke,25.325
 2025-01-12T10:00:00Z,Rind Å - Arnborg kirke,25.326
-2025-01-12T09:50:00Z,Rind Å - Arnborg kirke,25.326999999999998
+2025-01-12T09:50:00Z,Rind Å - Arnborg kirke,25.327
 2025-01-12T09:40:00Z,Rind Å - Arnborg kirke,25.329
 2025-01-12T09:30:00Z,Rind Å - Arnborg kirke,25.327
 2025-01-12T09:20:00Z,Rind Å - Arnborg kirke,25.329
@@ -11560,7 +11560,7 @@ Date,Place,Value
 2025-01-25T19:00:00Z,Skjern Å - Alergaard,7.43
 2025-01-25T18:50:00Z,Skjern Å - Alergaard,7.426
 2025-01-25T18:40:00Z,Skjern Å - Alergaard,7.43
-2025-01-25T18:30:00Z,Skjern Å - Alergaard,7.4305
+2025-01-25T18:30:00Z,Skjern Å - Alergaard,7.432
 2025-01-25T18:20:00Z,Skjern Å - Alergaard,7.431
 2025-01-25T18:10:00Z,Skjern Å - Alergaard,7.432
 2025-01-25T18:00:00Z,Skjern Å - Alergaard,7.432
@@ -13484,7 +13484,7 @@ Date,Place,Value
 2025-01-12T10:20:00Z,Skjern Å - Alergaard,7.42
 2025-01-12T10:10:00Z,Skjern Å - Alergaard,7.425
 2025-01-12T10:00:00Z,Skjern Å - Alergaard,7.426
-2025-01-12T09:50:00Z,Skjern Å - Alergaard,7.4270000000000005
+2025-01-12T09:50:00Z,Skjern Å - Alergaard,7.427
 2025-01-12T09:40:00Z,Skjern Å - Alergaard,7.429
 2025-01-12T09:30:00Z,Skjern Å - Alergaard,7.431
 2025-01-12T09:20:00Z,Skjern Å - Alergaard,7.437
@@ -18917,6 +18917,18 @@ Date,Place,Value
 2025-01-01T00:20:00Z,Skjern Å - Gjaldbæk bro,5.254
 2025-01-01T00:10:00Z,Skjern Å - Gjaldbæk bro,5.252000000000001
 2025-01-01T00:00:00Z,Skjern Å - Gjaldbæk bro,5.251
+2025-01-27T09:15:00Z,Skjern Å - Laksens hus,146205
+2025-01-27T09:10:00Z,Skjern Å - Laksens hus,146998
+2025-01-27T09:05:00Z,Skjern Å - Laksens hus,146827
+2025-01-27T09:00:00Z,Skjern Å - Laksens hus,146645
+2025-01-27T08:55:00Z,Skjern Å - Laksens hus,146861
+2025-01-27T08:50:00Z,Skjern Å - Laksens hus,146448
+2025-01-27T08:45:00Z,Skjern Å - Laksens hus,146748
+2025-01-27T08:40:00Z,Skjern Å - Laksens hus,146836
+2025-01-27T08:35:00Z,Skjern Å - Laksens hus,147177
+2025-01-27T08:30:00Z,Skjern Å - Laksens hus,146444
+2025-01-27T08:25:00Z,Skjern Å - Laksens hus,146603
+2025-01-27T08:20:00Z,Skjern Å - Laksens hus,147034
 2025-01-27T08:15:00Z,Skjern Å - Laksens hus,146943
 2025-01-27T08:10:00Z,Skjern Å - Laksens hus,147002
 2025-01-27T08:05:00Z,Skjern Å - Laksens hus,147161
@@ -26925,13 +26937,13 @@ Date,Place,Value
 2025-01-21T20:50:00Z,Skjern Å - Sandfeldvej,27.88
 2025-01-21T20:40:00Z,Skjern Å - Sandfeldvej,27.88
 2025-01-21T20:30:00Z,Skjern Å - Sandfeldvej,27.878000000000004
-2025-01-21T20:20:00Z,Skjern Å - Sandfeldvej,27.8775
-2025-01-21T20:10:00Z,Skjern Å - Sandfeldvej,27.877
-2025-01-21T20:00:00Z,Skjern Å - Sandfeldvej,27.877
-2025-01-21T19:50:00Z,Skjern Å - Sandfeldvej,27.877
-2025-01-21T19:40:00Z,Skjern Å - Sandfeldvej,27.877
+2025-01-21T20:20:00Z,Skjern Å - Sandfeldvej,27.878000000000004
+2025-01-21T20:10:00Z,Skjern Å - Sandfeldvej,27.878000000000004
+2025-01-21T20:00:00Z,Skjern Å - Sandfeldvej,27.878000000000004
+2025-01-21T19:50:00Z,Skjern Å - Sandfeldvej,27.878000000000004
+2025-01-21T19:40:00Z,Skjern Å - Sandfeldvej,27.878000000000004
 2025-01-21T19:30:00Z,Skjern Å - Sandfeldvej,27.878000000000004
-2025-01-21T19:20:00Z,Skjern Å - Sandfeldvej,27.877
+2025-01-21T19:20:00Z,Skjern Å - Sandfeldvej,27.878500000000003
 2025-01-21T19:10:00Z,Skjern Å - Sandfeldvej,27.879
 2025-01-21T19:00:00Z,Skjern Å - Sandfeldvej,27.88
 2025-01-21T18:50:00Z,Skjern Å - Sandfeldvej,27.881999999999998
@@ -28284,7 +28296,7 @@ Date,Place,Value
 2025-01-12T10:20:00Z,Skjern Å - Sandfeldvej,28.199
 2025-01-12T10:10:00Z,Skjern Å - Sandfeldvej,28.2
 2025-01-12T10:00:00Z,Skjern Å - Sandfeldvej,28.201
-2025-01-12T09:50:00Z,Skjern Å - Sandfeldvej,28.201999999999998
+2025-01-12T09:50:00Z,Skjern Å - Sandfeldvej,28.202
 2025-01-12T09:40:00Z,Skjern Å - Sandfeldvej,28.203000000000003
 2025-01-12T09:30:00Z,Skjern Å - Sandfeldvej,28.204
 2025-01-12T09:20:00Z,Skjern Å - Sandfeldvej,28.204
