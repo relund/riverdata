@@ -1755,9 +1755,9 @@ Date,Place,Value
 2025-01-25T01:50:00Z,Karstoft Å - Fiskedamme,15.905830508474574
 2025-01-25T01:40:00Z,Karstoft Å - Fiskedamme,15.905915254237287
 2025-01-25T01:30:00Z,Karstoft Å - Fiskedamme,15.905999999999999
-2025-01-25T01:20:00Z,Karstoft Å - Fiskedamme,15.905249999999999
-2025-01-25T01:10:00Z,Karstoft Å - Fiskedamme,15.904499999999999
-2025-01-25T01:00:00Z,Karstoft Å - Fiskedamme,15.90375
+2025-01-25T01:20:00Z,Karstoft Å - Fiskedamme,15.905666666666667
+2025-01-25T01:10:00Z,Karstoft Å - Fiskedamme,15.905333333333333
+2025-01-25T01:00:00Z,Karstoft Å - Fiskedamme,15.905000000000001
 2025-01-25T00:50:00Z,Karstoft Å - Fiskedamme,15.903
 2025-01-25T00:40:00Z,Karstoft Å - Fiskedamme,15.9
 2025-01-25T00:30:00Z,Karstoft Å - Fiskedamme,15.9
@@ -7368,7 +7368,7 @@ Date,Place,Value
 2025-01-22T08:50:00Z,Omme Å - Sønderskov bro,3.752
 2025-01-22T08:40:00Z,Omme Å - Sønderskov bro,3.752
 2025-01-22T08:30:00Z,Omme Å - Sønderskov bro,3.752
-2025-01-22T08:20:00Z,Omme Å - Sønderskov bro,3.7510000000000003
+2025-01-22T08:20:00Z,Omme Å - Sønderskov bro,3.751
 2025-01-22T08:10:00Z,Omme Å - Sønderskov bro,3.753
 2025-01-22T08:00:00Z,Omme Å - Sønderskov bro,3.752
 2025-01-22T07:50:00Z,Omme Å - Sønderskov bro,3.755
@@ -12590,11 +12590,11 @@ Date,Place,Value
 2025-01-22T09:00:00Z,Rind Å - Arnborg kirke,24.941
 2025-01-22T08:50:00Z,Rind Å - Arnborg kirke,24.941
 2025-01-22T08:40:00Z,Rind Å - Arnborg kirke,24.94
-2025-01-22T08:30:00Z,Rind Å - Arnborg kirke,24.938000000000002
+2025-01-22T08:30:00Z,Rind Å - Arnborg kirke,24.938
 2025-01-22T08:20:00Z,Rind Å - Arnborg kirke,24.94
-2025-01-22T08:10:00Z,Rind Å - Arnborg kirke,24.938000000000002
-2025-01-22T08:00:00Z,Rind Å - Arnborg kirke,24.938000000000002
-2025-01-22T07:50:00Z,Rind Å - Arnborg kirke,24.935000000000002
+2025-01-22T08:10:00Z,Rind Å - Arnborg kirke,24.938
+2025-01-22T08:00:00Z,Rind Å - Arnborg kirke,24.938
+2025-01-22T07:50:00Z,Rind Å - Arnborg kirke,24.935
 2025-01-22T07:40:00Z,Rind Å - Arnborg kirke,24.934
 2025-01-22T07:30:00Z,Rind Å - Arnborg kirke,24.934
 2025-01-22T07:20:00Z,Rind Å - Arnborg kirke,24.935
@@ -26116,6 +26116,18 @@ Date,Place,Value
 2025-01-01T00:20:00Z,Skjern Å - Gjaldbæk bro,5.254
 2025-01-01T00:10:00Z,Skjern Å - Gjaldbæk bro,5.252000000000001
 2025-01-01T00:00:00Z,Skjern Å - Gjaldbæk bro,5.251
+2025-02-06T06:45:00Z,Skjern Å - Laksens hus,124928
+2025-02-06T06:40:00Z,Skjern Å - Laksens hus,125674
+2025-02-06T06:35:00Z,Skjern Å - Laksens hus,125213
+2025-02-06T06:30:00Z,Skjern Å - Laksens hus,124854
+2025-02-06T06:25:00Z,Skjern Å - Laksens hus,125609
+2025-02-06T06:20:00Z,Skjern Å - Laksens hus,125418
+2025-02-06T06:15:00Z,Skjern Å - Laksens hus,125308
+2025-02-06T06:10:00Z,Skjern Å - Laksens hus,125319
+2025-02-06T06:05:00Z,Skjern Å - Laksens hus,125660
+2025-02-06T06:00:00Z,Skjern Å - Laksens hus,126004
+2025-02-06T05:55:00Z,Skjern Å - Laksens hus,125289
+2025-02-06T05:50:00Z,Skjern Å - Laksens hus,125574
 2025-02-06T05:45:00Z,Skjern Å - Laksens hus,125543
 2025-02-06T05:40:00Z,Skjern Å - Laksens hus,125435
 2025-02-06T05:35:00Z,Skjern Å - Laksens hus,125987
@@ -37889,13 +37901,13 @@ Date,Place,Value
 2025-01-25T04:20:00Z,Skjern Å - Sandfeldvej,28.239
 2025-01-25T04:10:00Z,Skjern Å - Sandfeldvej,28.238000000000003
 2025-01-25T04:00:00Z,Skjern Å - Sandfeldvej,28.237
-2025-01-25T03:50:00Z,Skjern Å - Sandfeldvej,28.237
-2025-01-25T03:40:00Z,Skjern Å - Sandfeldvej,28.237
-2025-01-25T03:30:00Z,Skjern Å - Sandfeldvej,28.23633333333333
-2025-01-25T03:20:00Z,Skjern Å - Sandfeldvej,28.235666666666667
-2025-01-25T03:10:00Z,Skjern Å - Sandfeldvej,28.235
-2025-01-25T03:00:00Z,Skjern Å - Sandfeldvej,28.233999999999998
-2025-01-25T02:50:00Z,Skjern Å - Sandfeldvej,28.233
+2025-01-25T03:50:00Z,Skjern Å - Sandfeldvej,28.236375
+2025-01-25T03:40:00Z,Skjern Å - Sandfeldvej,28.23575
+2025-01-25T03:30:00Z,Skjern Å - Sandfeldvej,28.235125
+2025-01-25T03:20:00Z,Skjern Å - Sandfeldvej,28.234499999999997
+2025-01-25T03:10:00Z,Skjern Å - Sandfeldvej,28.233874999999998
+2025-01-25T03:00:00Z,Skjern Å - Sandfeldvej,28.233249999999998
+2025-01-25T02:50:00Z,Skjern Å - Sandfeldvej,28.232625
 2025-01-25T02:40:00Z,Skjern Å - Sandfeldvej,28.232
 2025-01-25T02:30:00Z,Skjern Å - Sandfeldvej,28.230999999999998
 2025-01-25T02:20:00Z,Skjern Å - Sandfeldvej,28.229000000000003
@@ -38236,15 +38248,15 @@ Date,Place,Value
 2025-01-22T18:30:00Z,Skjern Å - Sandfeldvej,28.048000000000002
 2025-01-22T18:20:00Z,Skjern Å - Sandfeldvej,28.049000000000003
 2025-01-22T18:10:00Z,Skjern Å - Sandfeldvej,28.048000000000002
-2025-01-22T18:00:00Z,Skjern Å - Sandfeldvej,28.047400000000003
-2025-01-22T17:50:00Z,Skjern Å - Sandfeldvej,28.0468
-2025-01-22T17:40:00Z,Skjern Å - Sandfeldvej,28.0462
-2025-01-22T17:30:00Z,Skjern Å - Sandfeldvej,28.0456
-2025-01-22T17:20:00Z,Skjern Å - Sandfeldvej,28.045
-2025-01-22T17:10:00Z,Skjern Å - Sandfeldvej,28.0444
-2025-01-22T17:00:00Z,Skjern Å - Sandfeldvej,28.043799999999997
-2025-01-22T16:50:00Z,Skjern Å - Sandfeldvej,28.0432
-2025-01-22T16:40:00Z,Skjern Å - Sandfeldvej,28.0426
+2025-01-22T18:00:00Z,Skjern Å - Sandfeldvej,28.049000000000003
+2025-01-22T17:50:00Z,Skjern Å - Sandfeldvej,28.048000000000002
+2025-01-22T17:40:00Z,Skjern Å - Sandfeldvej,28.04757142857143
+2025-01-22T17:30:00Z,Skjern Å - Sandfeldvej,28.04714285714286
+2025-01-22T17:20:00Z,Skjern Å - Sandfeldvej,28.046714285714287
+2025-01-22T17:10:00Z,Skjern Å - Sandfeldvej,28.046285714285716
+2025-01-22T17:00:00Z,Skjern Å - Sandfeldvej,28.045857142857145
+2025-01-22T16:50:00Z,Skjern Å - Sandfeldvej,28.045428571428573
+2025-01-22T16:40:00Z,Skjern Å - Sandfeldvej,28.045
 2025-01-22T16:30:00Z,Skjern Å - Sandfeldvej,28.041999999999998
 2025-01-22T16:20:00Z,Skjern Å - Sandfeldvej,28.041
 2025-01-22T16:10:00Z,Skjern Å - Sandfeldvej,28.039
@@ -38295,7 +38307,7 @@ Date,Place,Value
 2025-01-22T08:40:00Z,Skjern Å - Sandfeldvej,27.975
 2025-01-22T08:30:00Z,Skjern Å - Sandfeldvej,27.974
 2025-01-22T08:20:00Z,Skjern Å - Sandfeldvej,27.974
-2025-01-22T08:10:00Z,Skjern Å - Sandfeldvej,27.971999999999998
+2025-01-22T08:10:00Z,Skjern Å - Sandfeldvej,27.972
 2025-01-22T08:00:00Z,Skjern Å - Sandfeldvej,27.97
 2025-01-22T07:50:00Z,Skjern Å - Sandfeldvej,27.97
 2025-01-22T07:40:00Z,Skjern Å - Sandfeldvej,27.97
