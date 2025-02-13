@@ -59,7 +59,7 @@ theme_river <- function () {
     scale_color_manual(values=wes_palette(n=3, name="GrandBudapest1"))
 }
 yr <- params$yr
-# yr <- year(now())
+if (month(lubridate::now()) < 5)  yr <- yr - 1
 ```
 
 ```{r}
@@ -363,7 +363,7 @@ datKarupZones <- datCatchKarupAll |>
 
 ```{r}
 datTable <- getTableOverview(datCatchKarupAll, datKarupZones, rivers)
-kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr, "(hele å systemet)")) %>%
+kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ", yr, " (hele å systemet)")) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
@@ -537,4 +537,65 @@ kbl(datTable, col.names = NULL, caption = str_c("Overblik over fangstdata for ",
 
 ```{r}
 plotPlacesOverview(datCatchMVLFPlaceS, rivers)
+```
+
+
+## Hele Skjern Å systemet
+
+Vi kigger her på fangstdata for hele Skjern Å systemet (alle foreninger).
+
+```{r}
+# Henter alle fangster
+# prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/data_karup_catch_seatrout_"
+prefix <- "data/data_skjern_catch_seatrout_"
+fn <- here::here(paste0(prefix, yr, ".csv"))
+# if (urlFileExist(fn)) datCatch <- read_csv(fn)
+if (fs::file_exists(fn)) datCatch <- read_csv(fn)
+datCatch <- datCatch %>% 
+  mutate(Year = year(Date), Month = month(Date), Length = as.numeric(Length)) 
+
+## Weight estimates
+datWeight <- read_csv(file = here("data/data_skjern_weight_seatrout.csv"))
+
+datCatchSkjernAll <- datCatch |> 
+  left_join(datWeight, by = join_by(Month == MonthN, Length == Length)) |> 
+  mutate(Weight = ifelse(is.na(Weight), round(Avg,2), Weight)) 
+
+datSkjernZones <- datCatchSkjernAll |> 
+  count(Place) %>% 
+  filter(!is.na(Place)) |> 
+  mutate(River = "Skjern Å") # just to hack 
+
+datTable <- getTableOverview(datCatchSkjernAll, datSkjernZones, rivers)
+kbl(datTable, col.names = NULL, caption = str_c("Havørred: Overblik over fangstdata for ", yr, " (hele å systemet)")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+```{r}
+# Henter alle fangster
+# prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/data_karup_catch_seatrout_"
+prefix <- "data/data_skjern_catch_salmon_"
+fn <- here::here(paste0(prefix, yr, ".csv"))
+# if (urlFileExist(fn)) datCatch <- read_csv(fn)
+if (fs::file_exists(fn)) datCatch <- read_csv(fn)
+datCatch <- datCatch %>% 
+  mutate(Year = year(Date), Month = month(Date), Length = as.numeric(Length)) 
+
+## Weight estimates
+datWeight <- read_csv(file = here("data/data_skjern_weight_salmon.csv"))
+
+datCatchSkjernAll <- datCatch |> 
+  left_join(datWeight, by = join_by(Month == MonthN, Length == Length)) |> 
+  mutate(Weight = ifelse(is.na(Weight), round(Avg,2), Weight)) 
+
+datSkjernZones <- datCatchSkjernAll |> 
+  count(Place) %>% 
+  filter(!is.na(Place)) |> 
+  mutate(River = "Skjern Å") # just to hack 
+
+datTable <- getTableOverview(datCatchSkjernAll, datSkjernZones, rivers)
+kbl(datTable, col.names = NULL, caption = str_c("Laks: Overblik over fangstdata for ", yr, " (hele å systemet)")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+plotCatchWeightDist(datCatchSkjernAll) 
 ```
