@@ -59,7 +59,7 @@ theme_river <- function () {
     scale_color_manual(values=wes_palette(n=3, name="GrandBudapest1"))
 }
 yr <- params$yr
-if (month(lubridate::now()) < 5)  yr <- yr - 1
+# if (month(lubridate::now()) < 5)  yr <- yr - 1
 ```
 
 ```{r}
