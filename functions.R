@@ -893,9 +893,9 @@ writeCatch <- function(url, prefix, yr, species = "Havørred", club = FALSE) {
     # unique(dat3$Place)
   }
   ## Save to file
-  # res <- tolower(species)
-  # if (species == "Havørred") res <- "seatrout"
-  # if (species == "Laks") res <- "salmon"
+  res <- tolower(species)
+  if (species == "Havørred") res <- "seatrout"
+  if (species == "Laks") res <- "salmon"
   fn <- str_c(prefix, "_catch_", res, "_", yr, ".csv")
   message("  Write data to ", fn)
   write_csv(dat3, fn)
