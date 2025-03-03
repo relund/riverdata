@@ -411,13 +411,13 @@ Date,Place,Value
 2025-02-28T09:50:00Z,Karstoft Å - Fiskedamme,15.632000000000001
 2025-02-28T09:40:00Z,Karstoft Å - Fiskedamme,15.633000000000003
 2025-02-28T09:30:00Z,Karstoft Å - Fiskedamme,15.634000000000002
-2025-02-28T09:20:00Z,Karstoft Å - Fiskedamme,15.634625000000002
-2025-02-28T09:10:00Z,Karstoft Å - Fiskedamme,15.635250000000003
-2025-02-28T09:00:00Z,Karstoft Å - Fiskedamme,15.635875000000002
-2025-02-28T08:50:00Z,Karstoft Å - Fiskedamme,15.636500000000002
-2025-02-28T08:40:00Z,Karstoft Å - Fiskedamme,15.637125000000001
-2025-02-28T08:30:00Z,Karstoft Å - Fiskedamme,15.63775
-2025-02-28T08:20:00Z,Karstoft Å - Fiskedamme,15.638375000000002
+2025-02-28T09:20:00Z,Karstoft Å - Fiskedamme,15.633000000000001
+2025-02-28T09:10:00Z,Karstoft Å - Fiskedamme,15.632000000000001
+2025-02-28T09:00:00Z,Karstoft Å - Fiskedamme,15.631
+2025-02-28T08:50:00Z,Karstoft Å - Fiskedamme,15.6326
+2025-02-28T08:40:00Z,Karstoft Å - Fiskedamme,15.6342
+2025-02-28T08:30:00Z,Karstoft Å - Fiskedamme,15.635800000000001
+2025-02-28T08:20:00Z,Karstoft Å - Fiskedamme,15.637400000000001
 2025-02-28T08:10:00Z,Karstoft Å - Fiskedamme,15.639000000000001
 2025-02-28T08:00:00Z,Karstoft Å - Fiskedamme,15.65
 2025-02-28T07:50:00Z,Karstoft Å - Fiskedamme,15.658
@@ -2152,9 +2152,9 @@ Date,Place,Value
 2025-02-16T07:40:00Z,Karstoft Å - Fiskedamme,15.573
 2025-02-16T07:30:00Z,Karstoft Å - Fiskedamme,15.573
 2025-02-16T07:20:00Z,Karstoft Å - Fiskedamme,15.581
-2025-02-16T07:10:00Z,Karstoft Å - Fiskedamme,15.575999999999999
+2025-02-16T07:10:00Z,Karstoft Å - Fiskedamme,15.576
 2025-02-16T07:00:00Z,Karstoft Å - Fiskedamme,15.574000000000002
-2025-02-16T06:50:00Z,Karstoft Å - Fiskedamme,15.575000000000001
+2025-02-16T06:50:00Z,Karstoft Å - Fiskedamme,15.575
 2025-02-16T06:40:00Z,Karstoft Å - Fiskedamme,15.575
 2025-02-16T06:30:00Z,Karstoft Å - Fiskedamme,15.577
 2025-02-16T06:20:00Z,Karstoft Å - Fiskedamme,15.576
@@ -35287,6 +35287,30 @@ Date,Place,Value
 2025-01-01T00:20:00Z,Skjern Å - Alergaard,7.405
 2025-01-01T00:10:00Z,Skjern Å - Alergaard,7.403
 2025-01-01T00:00:00Z,Skjern Å - Alergaard,7.399
+2025-03-03T07:20:00Z,Skjern Å - Gjaldbæk bro,4.723
+2025-03-03T07:10:00Z,Skjern Å - Gjaldbæk bro,4.7250000000000005
+2025-03-03T07:00:00Z,Skjern Å - Gjaldbæk bro,4.728000000000001
+2025-03-03T06:50:00Z,Skjern Å - Gjaldbæk bro,4.7250000000000005
+2025-03-03T06:40:00Z,Skjern Å - Gjaldbæk bro,4.723
+2025-03-03T06:30:00Z,Skjern Å - Gjaldbæk bro,4.724
+2025-03-03T06:20:00Z,Skjern Å - Gjaldbæk bro,4.728000000000001
+2025-03-03T06:10:00Z,Skjern Å - Gjaldbæk bro,4.721
+2025-03-03T06:00:00Z,Skjern Å - Gjaldbæk bro,4.7250000000000005
+2025-03-03T05:50:00Z,Skjern Å - Gjaldbæk bro,4.7250000000000005
+2025-03-03T05:40:00Z,Skjern Å - Gjaldbæk bro,4.7250000000000005
+2025-03-03T05:30:00Z,Skjern Å - Gjaldbæk bro,4.722
+2025-03-03T05:20:00Z,Skjern Å - Gjaldbæk bro,4.724
+2025-03-03T05:10:00Z,Skjern Å - Gjaldbæk bro,4.727
+2025-03-03T05:00:00Z,Skjern Å - Gjaldbæk bro,4.727
+2025-03-03T04:50:00Z,Skjern Å - Gjaldbæk bro,4.721
+2025-03-03T04:40:00Z,Skjern Å - Gjaldbæk bro,4.722
+2025-03-03T04:30:00Z,Skjern Å - Gjaldbæk bro,4.726
+2025-03-03T04:20:00Z,Skjern Å - Gjaldbæk bro,4.723
+2025-03-03T04:10:00Z,Skjern Å - Gjaldbæk bro,4.724
+2025-03-03T04:00:00Z,Skjern Å - Gjaldbæk bro,4.7250000000000005
+2025-03-03T03:50:00Z,Skjern Å - Gjaldbæk bro,4.723
+2025-03-03T03:40:00Z,Skjern Å - Gjaldbæk bro,4.724
+2025-03-03T03:30:00Z,Skjern Å - Gjaldbæk bro,4.7250000000000005
 2025-03-03T03:20:00Z,Skjern Å - Gjaldbæk bro,4.726
 2025-03-03T03:10:00Z,Skjern Å - Gjaldbæk bro,4.722
 2025-03-03T03:00:00Z,Skjern Å - Gjaldbæk bro,4.726
