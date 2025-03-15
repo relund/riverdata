@@ -52,7 +52,7 @@ lst <- stripKml("1_xtzzPTUUiecahNG71C_4rOY_izwVmU", Club = "MV-LF")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)
 
-# Lake
+# Lake 
 lst <- stripKml("14vdqfI93frzgB0jmm44GPP3bIu5aVH8", Club = "MV-LF") 
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)

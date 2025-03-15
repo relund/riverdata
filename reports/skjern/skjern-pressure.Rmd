@@ -54,6 +54,7 @@ dat1 <- dat %>%
 
 ```{r}
 plotPlace <- function(place) {
+  if (nrow(dat1) == 0) return(cat("Data ikke tilgængelig"))
   tmp <- dat1 %>% 
     transmute(Dato = Date, Place = .data[[place]], 
               Text = str_c(day(Date), " ", month(Date, label = T), " ", ": ", Place, " kPa")) %>% 
