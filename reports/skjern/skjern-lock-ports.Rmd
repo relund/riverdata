@@ -1,0 +1,125 @@
+---
+title: "Skjern Å - Sluse ports åbninger"
+author: "Lars Relund Nielsen"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    self_contained: true
+    theme: united
+    highlight: tango
+    df_print: paged
+    code_folding: show
+    toc: false
+    toc_float: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(
+  echo = FALSE, 
+  out.width="100%"
+)
+library(ggplot2)
+library(plotly)
+library(tidyverse)
+# library(lubridate)
+# library(fs)
+# source("../functions.R")
+
+
+Sys.setlocale("LC_ALL", "da_DK.UTF-8")
+
+# prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
+# prefix <- "../../data/"
+# curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
+
+
+# Lock flow
+datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock_web.csv"), 
+                    locale = locale(tz = "CET"),
+                    col_types = "Tdd")
+str0 <- format(now()-months(3), "%d%m%y")
+str1 <- format(now(), "%d%m%y")
+datPorts <- read_csv(str_c("https://kystatlas.kyst.dk/data/sluse/HVS_log_api.aspx?startdate=", str0, "&enddate=", str1, "&format=csv"))  #read_csv("ports.csv")# 
+datPorts <- datPorts |> 
+  mutate(Begrundelse = str_replace_na(Begrundelse, "")) |> 
+  mutate(`Port 14` = str_c(`Port 14`, " - ", Begrundelse)) 
+names(datPorts) <- names(datPorts)[c(1,3:17,2)]
+datPorts <- datPorts |> 
+  select(-Aabning) |> 
+  rownames_to_column(var = "id") |> 
+  mutate(id = as.numeric(id)) |> 
+  rename(Hændelse = Begrundelse)
+
+datPortsLong <- datPorts |> pivot_longer(contains("Port"), names_to = "Port")
+```
+
+
+
+### Beskrivelse af data
+
+Data er tilgængelig fra https://kystatlas.kyst.dk/data/sluse/Sluse_webtjeneste.html:
+
+```{r}
+datPorts
+# tmp <- datPorts |> unlist() |> as.numeric()  
+# any(tmp < 0, na.rm = T)
+```
+
+```{r, eval=FALSE}
+#Hvor mange hændelser er der pr dag:
+datPorts |> 
+  count(Dato) |> 
+  ggplot(aes(x = Dato, y = n)) +
+  geom_col()
+
+# Antal forskellige port værdier per hændelse: 
+datPortsLong |> group_by(id) |> summarize(min = min(value, na.rm = T), max = max(value, na.rm = T), chk = min == max) #|> pull(chk) |> all()
+```
+
+Der er en række for hver hændelse (fx udstrøm, pejling, fiskeriet) og en række for hver port (`Port X`). Tallene under port søjlerne er åbning i meter. Nogle gange er disse 0 og andre gange er værdien `NA`. Hændelserne er i omvendt rækkefølge altså første række svarer til seneste hændelse.
+
+Datasættet er uklart på følgende punkter:
+
+  * Det er uklart hvad de forskellige hændelser betyder.
+  * Dato for hændelse er givet, men ikke tid. Tiden mellem hændelser kan derfor ikke beregnes. Dette må være en fejl i generering af datasættet da https://kystatlas.kyst.dk/data/sluse/sluse.html indeholder tidspunkter.
+  * På siden https://kystatlas.kyst.dk/data/sluse/Sluselog_HVS.html skulle der kunnes hentes en komplet log, men denne virker ikke.
+  * Hvis man kigger på https://kystatlas.kyst.dk/data/sluse/sluse.html kan man se at nogle hændelser har samme tidsstempel. Der kan altså logges flere hændelser på samme tidpunkt. 
+  * Tallene under port søjlerne er åbning i meter. Nogle gange er disse 0 og andre gange er værdien `NA`. Det er ukendt om 0 betyder lukket og at `NA` det samme.
+  
+  
+### Undersøgelse af slusepraksis
+
+Hvidesandes [slusepraksis](https://kyst.dk/hav-og-anlaeg/vedligehold-af-havneanlaeg-sluser-daemning-og-sejlloeb/hvide-sande-og-thorsminde-sluser/slusepraksis) har følgende praksis mht. fiskeriet:
+
+  A) Der holdes en port åben på 2 meter for fiskepassage
+  B) Ved vendestrøm (+/- 10 cm i forhold til fjorden) åbnes så vidt muligt alle porte minimum 1 gang i døgnet for at tilgodese fiskepassagen.
+
+Lad os plotte maksimal antal porte åbne på en dato. For hver hændelse tæller vi antal porte åbne (værdi > 0) og vælger så den hændelse med størst antal porte åbne på en given dato:
+
+```{r}
+p <- datPortsLong |>
+  group_by(Dato, id) |>
+  filter(value>0) |> 
+  count() |> 
+  group_by(Dato) |> summarise(max_åbne = max(n)) |> 
+  ggplot(aes(x = Dato, y = max_åbne)) +
+  geom_col() +
+  labs(y = "Max antal åbne porte per dag") 
+plotly::ggplotly(p)
+```
+
+Hvis vi først kigger på praksis A. Kan vi se at de fleste dage er der mindst en port åben, men da vi ikke har tidsstempler for hver hændelse kan vi ikke måle om der altid er en port åben.
+
+Hvis vi kigger på praksis B skal max antal porte være 14 hver dag. Bemærk her kan vi heller ikke se hvor mange timer i døgnet alle porte er åbne, da vi mangler tidsstempel for hændelserne.
+
+### Konklusioner
+
+Da data er mangelfuld mht til tidsstempel kan der ikke konkluderes så meget. Derfor burde fejlen på webtjenesten https://kystatlas.kyst.dk/data/sluse/Sluse_webtjeneste.html rettes.
+
+
+
+
+
