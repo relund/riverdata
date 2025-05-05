@@ -19,7 +19,8 @@ editor_options:
 library(knitr)
 knitr::opts_chunk$set(
   echo = FALSE, 
-  out.width="100%"
+  out.width="100%",
+  message = F
 )
 library(ggplot2)
 library(plotly)
@@ -32,29 +33,107 @@ library(tidyverse)
 Sys.setlocale("LC_ALL", "da_DK.UTF-8")
 
 # prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
-# prefix <- "../../data/"
+prefix <- "../../data/"
 # curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
 
 
 # Lock flow
-datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock_web.csv"), 
-                    locale = locale(tz = "CET"),
-                    col_types = "Tdd")
-str0 <- format(now()-months(3), "%d%m%y")
+# datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock.csv"), 
+#                     locale = locale(tz = "CET"),  # convert to danish time including daylight saving
+#                     col_types = "Tdd")
+# # datFlow |> filter(DateTime >="2025-03-30 00:00:00") |> arrange(DateTime) |> view()
+# # From UTC to CET
+# datFlowKyst <- read_csv("15_flow_data.csv") |> 
+#   mutate(DateTime = dmy_hm(Dato))
+# # datFlowKyst |> filter(Dato>="2025-03-30 00:00:00")
+# 
+# 
+# ## check flow data
+# p <- datFlow |> filter(DateTime >="2025-02-01 00:00:00") |> 
+#   ggplot(aes(x = DateTime, y = Flow)) + 
+#   geom_line() +
+#   geom_line(aes(x = DateTime, y = Flow), data = datFlowKyst, color = "red", alpha = 0.5) 
+# ggplotly(p)
+# 
+# # str14 <- format(min(datFlow$DateTime), "%d%m%y")
+```
+
+
+```{r, include=FALSE, eval=FALSE}
+### Get port data from web and save it to csv
+
+# str0 <- format(now()-months(3), "%d%m%y")
 str1 <- format(now(), "%d%m%y")
-datPorts <- read_csv(str_c("https://kystatlas.kyst.dk/data/sluse/HVS_log_api.aspx?startdate=", str0, "&enddate=", str1, "&format=csv"))  #read_csv("ports.csv")# 
+datPorts <- read_csv(
+  str_c("https://kystatlas.kyst.dk/data/sluse/HVS_log_api.aspx?startdate=010225&enddate=", str1, "&format=csv")
+)  
+# unclear about daylight saving?? Think time is CET without daylight saving
+
 datPorts <- datPorts |> 
   mutate(Begrundelse = str_replace_na(Begrundelse, "")) |> 
   mutate(`Port 14` = str_c(`Port 14`, " - ", Begrundelse)) 
 names(datPorts) <- names(datPorts)[c(1,3:17,2)]
+
 datPorts <- datPorts |> 
   select(-Aabning) |> 
-  rownames_to_column(var = "id") |> 
-  mutate(id = as.numeric(id)) |> 
-  rename(Hændelse = Begrundelse)
-
-datPortsLong <- datPorts |> pivot_longer(contains("Port"), names_to = "Port")
+  rename(Hændelse = Begrundelse) |> 
+  arrange(Dato) |> 
+  mutate(Dato = force_tz(Dato, tz = "CET")) #|> view()
+write_csv(datPorts, "ports.csv")
 ```
+
+
+
+
+
+```{r, include=FALSE}
+datPorts <- read_csv("ports.csv", locale = locale(tz = "CET"))
+
+datPorts <- datPorts |>
+  rownames_to_column(var = "id") |>
+  mutate(id = as.numeric(id)) |> 
+  mutate(tdiff = lead(Dato)- Dato) 
+
+datPortsNew <- datPorts
+# make a dublicate if runs over midnight
+original <- datPortsNew
+result <- list()
+for (i in 1:(nrow(original) - 1)) {
+  result[[length(result) + 1]] <- original[i, ]
+  current_day <- as_date(original$Dato[i])
+  next_day <- as_date(original$Dato[i + 1])
+  if (current_day != next_day) {
+    # print(as.numeric(next_day-current_day, units = "days") > 1) 
+    # indsæt en kopi af rækken før skiftet
+    result[[length(result) + 1]] <- original[i, ]
+    result[[length(result)]]$Dato <- next_day
+    result[[length(result)]]$id <- NA
+  }
+}
+# Tilføj sidste række
+result[[length(result) + 1]] <- original[nrow(original), ]
+# Kombiner til ét datasæt
+datPortsNew <- bind_rows(result) |> 
+  mutate(tdiff = lead(Dato)- Dato) 
+datPortsNew <- datPortsNew[-nrow(datPorts), ]  # dropper sidste række hvor tdiff er NA
+
+# # Bemærk ikke alle dage summer til 86400
+# datPortsNew |> 
+#   group_by(DatoStamp = date(Dato)) |>
+#   mutate(sec = sum(tdiff)) |> 
+#   filter(sec != 86400) |> view()
+
+
+
+datPortsNew <- datPortsNew |> 
+  rowwise() |> 
+  mutate(open = sum(c_across(contains("Port")) > 0, na.rm = T)) 
+
+# datPortsLong <- datPorts |> pivot_longer(contains("Port"), names_to = "Port")
+```
+
+
+
 
 
 
@@ -69,55 +148,141 @@ datPorts
 ```
 
 ```{r, eval=FALSE}
-#Hvor mange hændelser er der pr dag:
-datPorts |> 
-  count(Dato) |> 
-  ggplot(aes(x = Dato, y = n)) +
-  geom_col()
-
-# Antal forskellige port værdier per hændelse: 
-datPortsLong |> group_by(id) |> summarize(min = min(value, na.rm = T), max = max(value, na.rm = T), chk = min == max) #|> pull(chk) |> all()
+# #Hvor mange hændelser er der pr dag:
+# datPorts |> 
+#   count(Dato = date(Dato)) |> 
+#   ggplot(aes(x = Dato, y = n)) +
+#   geom_col()
+# 
+# # Antal forskellige port værdier per hændelse: 
+# datPortsLong |> group_by(id) |> summarize(min = min(value, na.rm = T), max = max(value, na.rm = T), chk = min == max) #|> pull(chk) |> all()
 ```
 
-Der er en række for hver hændelse (fx udstrøm, pejling, fiskeriet) og en række for hver port (`Port X`). Tallene under port søjlerne er åbning i meter. Nogle gange er disse 0 og andre gange er værdien `NA`. Hændelserne er i omvendt rækkefølge altså første række svarer til seneste hændelse.
+Der er en række for hver hændelse (fx udstrøm, pejling, fiskeriet) og en række for hver port (`Port X`). Tallene under port søjlerne er åbning i meter. Hændelserne er i kronologisk rækkefølge altså første række svarer til ældste hændelse.
 
 Datasættet er uklart på følgende punkter:
 
   * Det er uklart hvad de forskellige hændelser betyder.
-  * Dato for hændelse er givet, men ikke tid. Tiden mellem hændelser kan derfor ikke beregnes. Dette må være en fejl i generering af datasættet da https://kystatlas.kyst.dk/data/sluse/sluse.html indeholder tidspunkter.
-  * På siden https://kystatlas.kyst.dk/data/sluse/Sluselog_HVS.html skulle der kunnes hentes en komplet log, men denne virker ikke.
   * Hvis man kigger på https://kystatlas.kyst.dk/data/sluse/sluse.html kan man se at nogle hændelser har samme tidsstempel. Der kan altså logges flere hændelser på samme tidpunkt. 
-  * Tallene under port søjlerne er åbning i meter. Nogle gange er disse 0 og andre gange er værdien `NA`. Det er ukendt om 0 betyder lukket og at `NA` det samme.
+  * Tallene under port søjlerne er åbning i meter. Nogle gange er disse 0 og andre gange er værdien `NA`. Værdien 0 må betyde at porten er lukket, men om `NA` betyder det samme er uklart.
+  
+  
+```{r, eval=FALSE}
+# datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock.csv"), 
+#                     locale = locale(tz = "CET"),  # convert to danish time including daylight saving
+#                     col_types = "Tdd") |> 
+#   filter(DateTime >="2025-02-01 00:00:00") 
+# 
+p <- ggplot(datPorts) +
+  # geom_bar(aes(x = DateTime, y = 100*Open), stat = "identity") +
+  # geom_hline(yintercept = 0, linewidth = 0.25) +
+  # geom_line(aes(x = DateTime, y = Flow), color = "#3399ff") + #, colour = Open
+  # geom_step(aes(x = DateTime, y = 10 * Open), color = "red") +
+  geom_step(mapping = aes(x = Dato, y = open)) +
+  # scale_colour_gradient2(low = "red", mid = "yellow", high = "green", na.value = NA, midpoint = 1, guide = "legend") +
+  # geom_point(aes(x = DateTime, y = Flow), data = dat[findPeaks(dat$Flow),]) +
+  #scale_colour_gradient(low = "red", high = "green", na.value = NA, guide = "legend", breaks = c(0,1,2), name = "", labels = c("Lukket", "Delvis åben", "Åben")) +
+  # guide_coloursteps(even.steps = TRUE, show.limits = NULL, ticks = FALSE) +
+  theme(axis.text.x  = element_text(angle=90, hjust = 1, vjust = 1), legend.position="none") +
+  # scale_x_datetime(date_labels = "%e. %b", date_breaks = "1 day") +
+  labs(x = "Dato", y = "Åbne porte")  #title = "Sluseflow Hvide Sande"
+ggplotly(p)
+```
+
   
   
 ### Undersøgelse af slusepraksis
 
 Hvidesandes [slusepraksis](https://kyst.dk/hav-og-anlaeg/vedligehold-af-havneanlaeg-sluser-daemning-og-sejlloeb/hvide-sande-og-thorsminde-sluser/slusepraksis) har følgende praksis mht. fiskeriet:
 
-  A) Der holdes en port åben på 2 meter for fiskepassage
+  A) Der holdes en port åben på 2 meter for fiskepassage.
   B) Ved vendestrøm (+/- 10 cm i forhold til fjorden) åbnes så vidt muligt alle porte minimum 1 gang i døgnet for at tilgodese fiskepassagen.
 
-Lad os plotte maksimal antal porte åbne på en dato. For hver hændelse tæller vi antal porte åbne (værdi > 0) og vælger så den hændelse med størst antal porte åbne på en given dato:
+Lad os undersøge data under antagelse af at `NA` værdier svarer til at porten er lukket. Først plotter vi maksimal antal porte åbne på en dato, dvs. for hver hændelse tæller vi antal porte åbne (værdi > 0) og vælger så den hændelse med størst antal porte åbne på en given dato:
 
 ```{r}
-p <- datPortsLong |>
-  group_by(Dato, id) |>
-  filter(value>0) |> 
-  count() |> 
-  group_by(Dato) |> summarise(max_åbne = max(n)) |> 
+datPorts <- datPorts |> 
+  rowwise() |> 
+  mutate(open = sum(c_across(contains("Port")) > 0, na.rm = T)) 
+
+p <- datPorts |>
+  group_by(Dato = date(Dato)) |>
+  summarise(max_åbne = max(open)) |>
   ggplot(aes(x = Dato, y = max_åbne)) +
   geom_col() +
-  labs(y = "Max antal åbne porte per dag") 
-plotly::ggplotly(p)
+  labs(y = "Max antal åbne porte per dag")
+ggplotly(p)
 ```
 
-Hvis vi først kigger på praksis A. Kan vi se at de fleste dage er der mindst en port åben, men da vi ikke har tidsstempler for hver hændelse kan vi ikke måle om der altid er en port åben.
+Observationer:
 
-Hvis vi kigger på praksis B skal max antal porte være 14 hver dag. Bemærk her kan vi heller ikke se hvor mange timer i døgnet alle porte er åbne, da vi mangler tidsstempel for hændelserne.
+  * Der er ikke er 14 porte åbne alle dage. Dog sker dette i de fleste dage og praksis B ser ud til at bruges.
+  * Ca. midt i april ser 2 porte ud til ikke at bruges.
+  * Bemærk her kan vi ikke se hvor mange timer i døgnet alle porte er åbne.
 
-### Konklusioner
+Lad os nu kigge på fordelingen af timer i døgnet der er x antal porte åbne eller mere: For hver dato udregnes procent af døgnet x eller flere porte er åbne, fx hvis $x=3$ og værdien er 0.3 så er der 3 eller flere porte åbne i 30% a døgnet. Herefter findes gennemsnittet af disse tal of alle døgn:
 
-Da data er mangelfuld mht til tidsstempel kan der ikke konkluderes så meget. Derfor burde fejlen på webtjenesten https://kystatlas.kyst.dk/data/sluse/Sluse_webtjeneste.html rettes.
+```{r}
+dat1 <- datPortsNew |> 
+  group_by(Dato = date(Dato)) |>
+  mutate(
+    total = as.numeric(sum(tdiff), units = "hours"),
+    min_åbne = min(open), 
+    max_åbne = max(open)
+  ) |> 
+  group_by(Dato, open) |> 
+  summarise(
+    hours = as.numeric(sum(tdiff), units = "hours"), 
+    pct = hours/mean(total),
+    min_åbne = first(min_åbne), 
+    max_åbne = first(max_åbne),
+    timer = first(total)
+  )
+
+dat2 <- expand_grid(Dato = unique(dat1$Dato), open = 0:14) |> 
+  left_join(dat1) |> 
+  replace_na(list(hours = 0, pct = 0)) |> 
+  arrange(Dato, open) |> 
+  group_by(Dato) |> 
+  mutate(cum_pct = cumsum(pct), upper = 1-cum_pct+pct) 
+
+p <- dat2 |>
+  group_by(open) |> 
+  summarise(pct = mean(upper)) |> 
+  ggplot(aes(x = open, y = 100*pct)) +
+  geom_col() +
+  labs(x = "Porte åbne", y = "Pct af døgnets timer x eller flere porte åbne")
+ggplotly(p)
+  
+```
+
+Observationer:
+
+  * Hvis $x=3$ er $y=31$. Altså gennemsnitlig over alle de døgn vi betragter er der 3 eller flere porte åbne i 31% af døgnet.
+  * Der er 1 eller flere porte åbne i 70% af døgnet. Altså er praksis A ikke altid overholdt, da denne skulle være tæt på 100% så. 
+
+Hvor mange dag er praksis A overholdt:
+
+```{r}
+p <- dat2 |> 
+  filter(open == 1) |>
+  ggplot(aes(x = upper)) +
+  geom_histogram(binwidth = 0.1, aes(y = after_stat(count))) +
+  # scale_y_continuous(labels = scales::percent_format()) +
+  labs(x = "Pct af døgnets timer 1 eller flere porte åbne", y = "Antal dage hvor det er opfyldt",
+  title = "Histogram over fordelingen af dage hvor 1 eller flere porte åbne")
+ggplotly(p)
+```
+
+Observationer
+
+  * Hvis vi betragter den sidste søjle er der 25 dage hvor 'pct af døgnets timer 1 eller flere porte åbne' ligger mellem 90% og 100%.
+
+
+
+### Disclamer
+
+Hvordan `NA` skal fortolkes er ukendt. I denne rapport er disse værdier behandlet som at porten er lukket.
 
 
 
