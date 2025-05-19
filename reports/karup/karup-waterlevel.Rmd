@@ -35,7 +35,7 @@ source(here::here("reports/functions.R"))
 Sys.setlocale("LC_ALL", "da_DK.UTF-8")
 
 prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
-# prefix <- "../../data/"
+prefix <- "../../data/"
 # Water levels
 dat <- read_csv(paste0(prefix, "data_karup_waterlevel_web.csv"),
            locale = locale(tz = "CET"),

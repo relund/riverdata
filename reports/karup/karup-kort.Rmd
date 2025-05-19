@@ -44,6 +44,7 @@ library(leaflet.extras)
 
 ```{r, include=FALSE}
 prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
+prefix <- "../../data/"
 
 mapAddMarkers <- function(map, group, data) {
   if (nrow(data) == 0) return(map)

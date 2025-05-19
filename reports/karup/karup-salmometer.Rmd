@@ -40,7 +40,7 @@ library(kableExtra)
 source("../functions.R")
 
 prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
-# prefix <- "../../data/"
+prefix <- "../../data/"
 # curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
 
 # Weight - Estimates 
