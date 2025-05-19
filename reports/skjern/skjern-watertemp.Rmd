@@ -34,8 +34,8 @@ here::i_am("reports/karup/karup-waterlevel.Rmd")
 source(here::here("reports/functions.R"))
 Sys.setlocale("LC_ALL", "da_DK.UTF-8")
 
-prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
-# prefix <- "../../data/"
+# prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
+prefix <- "../../data/"
 
 dat <- 
   read_csv(paste0(prefix, "data_skjern_watertemp_web.csv"), locale = locale(tz = "CET"), col_types = "Tffd") 
