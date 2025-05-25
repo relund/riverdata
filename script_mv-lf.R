@@ -10,8 +10,9 @@ library(fs)
 library(rmarkdown)
 library(conflicted)
 conflicts_prefer(
-  dplyr::filter(),
-  dplyr::lag
+  dplyr::filter,
+  dplyr::lag,
+  plotly::layout
 )
 
 source("functions.R")
@@ -68,4 +69,5 @@ yr <- year(lubridate::now())
 if (month(lubridate::now()) < 5)  yr <- yr - 1
 render("reports/mv-lf/mv-lf-kort.Rmd", output_dir = "docs/mv-lf")
 render("reports/mv-lf/mv-lf-report.Rmd", output_dir = "docs/mv-lf", output_file = str_c("mv-lf-report-", yr), params = list(yr = yr))
+render("reports/relund/dashboard.Rmd", output_dir = "docs/relund")
 # render(here::here("reports/mv-lf/mv-lf-report.Rmd"), output_file = here::here(str_c("docs/mv-lf/mv-lf-report-", yr, ".html")), params = list(yr = yr))
