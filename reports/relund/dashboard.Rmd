@@ -17,7 +17,10 @@ $(".selectize-input input").prop('readonly','readonly');
 
 ```{r, include=FALSE}
 library(knitr)
-knitr::opts_chunk$set(echo = FALSE, fig.height = 5.5, out.width = "100%")
+knitr::opts_chunk$set(echo = FALSE, 
+                      fig.height = 3.5, 
+                      out.width = "100%",
+                      out.height = "500px")
 # library(directlabels)
 library(plotly)
 library(flexdashboard)
