@@ -5,10 +5,10 @@ date: "`r Sys.Date()`"
 output: 
   html_document:
     self_contained: true
-    theme: united
-    highlight: tango
+    # theme: united
+    # highlight: tango
     df_print: paged
-    code_folding: show
+    # code_folding: show
     toc: false
     toc_float: true
 editor_options: 
@@ -80,6 +80,18 @@ datPorts <- datPorts |>
   arrange(Dato) |> 
   mutate(Dato = force_tz(Dato, tz = "CET")) #|> view()
 write_csv(datPorts, "ports.csv")
+
+
+
+#### try to get all data from https://kystatlas.kyst.dk/data/sluse/HVS_sluselog_response.aspx
+datPorts <- vroom::vroom("https://kystatlas.kyst.dk/data/sluse/HVS_sluselog_response.aspx", col_names = F)  
+# unclear about daylight saving?? Think time is CET without daylight saving
+names(datPorts) <- c("Dato", "Port 1", "Port 2", "Port 3", "Port 4", "Port 5", "Port 6", "Port 7", "Port 8", "Port 9", "Port 10", "Port 11", "Port 12", "Port 13", "Port 14", "Hændelse")
+
+datPorts <- datPorts |> 
+  arrange(Dato) |> 
+  mutate(Dato = force_tz(Dato, tz = "CET")) #|> view()
+write_csv(datPorts, "ports-all.csv")
 ```
 
 
@@ -130,6 +142,7 @@ datPortsNew <- datPortsNew |>
   mutate(open = sum(c_across(contains("Port")) > 0, na.rm = T)) 
 
 # datPortsLong <- datPorts |> pivot_longer(contains("Port"), names_to = "Port")
+
 ```
 
 
@@ -139,7 +152,7 @@ datPortsNew <- datPortsNew |>
 
 ### Beskrivelse af data
 
-Data er tilgængelig fra https://kystatlas.kyst.dk/data/sluse/Sluse_webtjeneste.html:
+Data er hentet fra https://kystatlas.kyst.dk/data/sluse/Sluse_webtjeneste.html den 2025-05-05. Bemærk at dette link IKKE længere giver adgang til disse data som nu kan findes via https://kystatlas.kyst.dk/data/sluse/HVS_sluselog_response.aspx 
 
 ```{r}
 datPorts
@@ -222,7 +235,7 @@ Observationer:
 
 Lad os nu kigge på fordelingen af timer i døgnet der er x antal porte åbne eller mere: For hver dato udregnes procent af døgnet x eller flere porte er åbne, fx hvis $x=3$ og værdien er 0.3 så er der 3 eller flere porte åbne i 30% a døgnet. Herefter findes gennemsnittet af disse tal of alle døgn:
 
-```{r}
+```{r tail}
 dat1 <- datPortsNew |> 
   group_by(Dato = date(Dato)) |>
   mutate(
@@ -244,39 +257,71 @@ dat2 <- expand_grid(Dato = unique(dat1$Dato), open = 0:14) |>
   replace_na(list(hours = 0, pct = 0)) |> 
   arrange(Dato, open) |> 
   group_by(Dato) |> 
-  mutate(cum_pct = cumsum(pct), upper = 1-cum_pct+pct) 
+  mutate(cum_pct = cumsum(pct), upper = 1-cum_pct+pct, upper_h = upper * 24)
 
 p <- dat2 |>
   group_by(open) |> 
-  summarise(pct = mean(upper)) |> 
-  ggplot(aes(x = open, y = 100*pct)) +
+  # summarise(pct = mean(upper)) |> 
+  # ggplot(aes(x = open, y = 100*pct)) +
+  summarise(h = mean(upper_h)) |> 
+  ggplot(aes(x = open, y = h)) +
   geom_col() +
-  labs(x = "Porte åbne", y = "Pct af døgnets timer x eller flere porte åbne")
+  labs(x = "Porte åbne (x)", y = "Timer x eller flere porte åbne (y)")
+       # title = "Histogram over fordelingen af dage hvor 1 eller flere porte åbne")
 ggplotly(p)
-  
 ```
 
 Observationer:
 
-  * Hvis $x=3$ er $y=31$. Altså gennemsnitlig over alle de døgn vi betragter er der 3 eller flere porte åbne i 31% af døgnet.
-  * Der er 1 eller flere porte åbne i 70% af døgnet. Altså er praksis A ikke altid overholdt, da denne skulle være tæt på 100% så. 
-
-Hvor mange dag er praksis A overholdt:
-
+  * Hvis $x=3$ er $y=7.4$. Altså gennemsnitlig over alle de døgn vi betragter er der 3 eller flere porte åbne i 7.4 timer af døgnet.
+  * Der er 1 eller flere porte åbne i ca. 16.9 timer af døgnet. Altså er praksis A ikke altid overholdt, da denne skulle være tæt på 24 timer.
+  * Der er 1 eller flere porte åbne i ca. 16.9 timer af døgnet. Altså gennemsnitlig over de dage vi kigger på, er en port eller mere åben i over 12 timer per døgn.
+  * Der er 2 eller flere porte åbne i ca. 7.4 timer af døgnet. Altså hvis vi kigger på flere end 1 port åben, sker det i ca. 1/3 af døgnets timer.
+  
 ```{r}
-p <- dat2 |> 
-  filter(open == 1) |>
-  ggplot(aes(x = upper)) +
-  geom_histogram(binwidth = 0.1, aes(y = after_stat(count))) +
-  # scale_y_continuous(labels = scales::percent_format()) +
-  labs(x = "Pct af døgnets timer 1 eller flere porte åbne", y = "Antal dage hvor det er opfyldt",
-  title = "Histogram over fordelingen af dage hvor 1 eller flere porte åbne")
-ggplotly(p)
+tmp <- dat1 |> 
+  ungroup() |> 
+  mutate(days = n_distinct(Dato)) |> 
+  filter(open != 0) |> 
+  group_by(Dato, days) |> 
+  summarise(hours = sum(hours), ok = if_else(hours >= 12, 1, 0)) |> 
+  ungroup() |> 
+  filter(ok == 1) |> 
+  summarise(days_12h_open = n(), days = first(days))
 ```
 
-Observationer
+Bemærk dette er gennemsnits betragtninger over alle dage i datasættet. Hvis vi finder **dage med mindst en åben port i 12 timer eller mere** fås at `r tmp$days_12h_open` dage ud af de `r tmp$days` dage datasættet kigger på opfylder dette kriterie (`r round(100*tmp$days_12h_open/tmp$days, 0)` % af dagene).
 
-  * Hvis vi betragter den sidste søjle er der 25 dage hvor 'pct af døgnets timer 1 eller flere porte åbne' ligger mellem 90% og 100%.
+```{r}
+tmp <- dat2 |> 
+  group_by(open) |> 
+  summarise(hours = mean(hours)) |> 
+  filter(open == 1)
+```
+
+Bemærk at hvis man kigger på datasættet er der ofte kun en port åben på 2 meter for fiskepassage (den kan åbnes til 5 meter). Over alle dagene er der **præcis en port åben** i `r round(tmp$hours, 1)` timer i gennemsnit per dag.
+
+
+
+
+
+
+<!-- Hvor mange dag er praksis A overholdt: -->
+
+<!-- ```{r} -->
+<!-- p <- dat2 |>  -->
+<!--   filter(open == 1) |> -->
+<!--   ggplot(aes(x = upper)) + -->
+<!--   geom_histogram(binwidth = 0.1, aes(y = after_stat(count))) + -->
+<!--   # scale_y_continuous(labels = scales::percent_format()) + -->
+<!--   labs(x = "Pct af døgnets timer 1 eller flere porte åbne", y = "Antal dage hvor det er opfyldt", -->
+<!--   title = "Histogram over fordelingen af dage hvor 1 eller flere porte åbne") -->
+<!-- ggplotly(p) -->
+<!-- ``` -->
+
+<!-- Observationer -->
+
+<!--   * Hvis vi betragter den sidste søjle er der 25 dage hvor 'pct af døgnets timer 1 eller flere porte åbne' ligger mellem 90% og 100%. -->
 
 
 
