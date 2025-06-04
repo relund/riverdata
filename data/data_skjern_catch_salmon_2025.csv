@@ -1,4 +1,41 @@
 Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
+2025-06-04,85,NA,Torben Bjørn,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
+2025-06-03,80,NA,Lars Kjøngerskov,Mellem,Spin,FALSE,NA,FALSE,NA,FALSE
+2025-06-03,80,NA,Asbjørn Skovmand Rasmussen,Mellem,Orm,TRUE,NA,FALSE,Hun,FALSE
+2025-06-02,95,NA,Kjeld Tommy Jensen,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
+2025-06-01,84,NA,Stefan Mahlau,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2025-06-01,80,NA,Frank Schwarz,Mellem,Flue,NA,NA,FALSE,NA,TRUE
+2025-06-01,90,NA,Dariusz Slominski,Nedre,Flue,FALSE,NA,FALSE,Hun,TRUE
+2025-05-31,82,NA,Louis Sørensen Geertsen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2025-05-31,90,NA,Andrea Pedersen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2025-05-31,85,NA,Mikkel Lundhøj Jensen,Øvre,Spin,TRUE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/05a25ceeb3ec46f6ba1f27ee3f7705d4.jpg,FALSE,Hun,FALSE
+2025-05-31,98,NA,Hendrik Weiner,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
+2025-05-31,93,NA,Nicolai Frahm,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2025-05-31,90,NA,Brian Jensen,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2025-05-31,71,NA,Kliszcz Jacek,Nedre,Flue,TRUE,NA,FALSE,Han,FALSE
+2025-05-30,90,NA,Jens Rasmussen,Nedre,Flue,TRUE,NA,FALSE,Han,FALSE
+2025-05-30,88,NA,Henrik Pöhls,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/E4438826DE308DCBC1258C9A00678415.jpg,FALSE,NA,FALSE
+2025-05-30,80,NA,Maks Severin Pedersen,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2025-05-30,85,NA,Torben Pedersen,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
+2025-05-30,83,NA,Karsten Dahl,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
+2025-05-30,87,NA,Karl Stjernegaard,Nedre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/A330B1BBA3700922C1258C9A00358B70.jpg,FALSE,Han,FALSE
+2025-05-29,75,NA,Tobias Rudolph,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2025-05-29,85,NA,Rune Rask,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2025-05-29,85,NA,Søren Rahbek Hansen,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2025-05-28,95,NA,Nico Lindenmayer,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
+2025-05-28,95,NA,Niels Gerner Andersen,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/44A3F54113254D9EC1258C9800611A5B.jpg,FALSE,Han,FALSE
+2025-05-28,85,NA,Finn Meldgaard,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2025-05-28,107,NA,Christian Møller,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
+2025-05-27,131,NA,Ariejan Kool,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2025-05-27,99,NA,Lukas Lørup,Nedre,Orm,FALSE,NA,FALSE,Han,FALSE
+2025-05-27,90,NA,Oliver Tews,Nedre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2025-05-27,96,NA,Lars Jansen,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
+2025-05-27,100,NA,Klaus Lietzen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
+2025-05-26,90,NA,Frederik Thor,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
+2025-05-26,95,NA,Per Gylling,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/E605E10AB4B340A9C1258C96003A7A7F.jpg,FALSE,Han,FALSE
+2025-05-26,97,NA,Børge Jensen,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/9549C71E9FB4C021C1258C960039A035.jpg,FALSE,Hun,FALSE
+2025-05-26,96,NA,Torben Bjørn,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
+2025-05-26,83,NA,Lars Erik Olsen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2025-05-25,85,NA,Tomasz Chwedorowicz,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
 2025-05-24,94,NA,Jens Chr. Andersen,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2025-05-24,95,NA,Jens Pedersen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
@@ -10,7 +47,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2025-05-23,89,NA,Anders Kousgaard,Nedre,Spin,TRUE,NA,FALSE,Han,FALSE
 2025-05-23,112,NA,Rajko Kruse,Nedre,Flue,TRUE,NA,FALSE,Han,FALSE
 2025-05-23,95,NA,Dennis Nielsen,Nedre,Spin,FALSE,NA,FALSE,Han,FALSE
-2025-05-23,124,NA,Jørgen Topp-Jørgensen,Nedre,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/5525CEDE1980E781C1258C9300361019.jpg,FALSE,NA,FALSE
+2025-05-23,124,NA,Jørgen Topp-Jørgensen,Nedre,Flue,NA,NA,FALSE,NA,FALSE
 2025-05-23,94,NA,Rainer Albers,Nedre,Flue,TRUE,NA,FALSE,Hun,FALSE
 2025-05-23,98,NA,Torben Smedegaard,Mellem,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/AF0F37880FF2C1FEC1258C93002E37AC.jpg,FALSE,Hun,FALSE
 2025-05-22,91,NA,Thor B Nielsen,Nedre,Flue,FALSE,NA,FALSE,Hun,TRUE
