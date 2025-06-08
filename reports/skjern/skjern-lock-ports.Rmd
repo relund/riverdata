@@ -33,7 +33,7 @@ library(tidyverse)
 Sys.setlocale("LC_ALL", "da_DK.UTF-8")
 
 # prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
-prefix <- "../../data/"
+# prefix <- "../../data/"
 # curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
 
 
@@ -60,6 +60,30 @@ prefix <- "../../data/"
 
 
 ```{r, include=FALSE, eval=FALSE}
+#### Get port data from https://kystatlas.kyst.dk/data/sluse/HVS_log_api.aspx from 1/2/25 (new format)####
+str1 <- format(now(), "%d%m%y")
+datPorts <- read_csv(
+  str_c("https://kystatlas.kyst.dk/data/sluse/HVS_log_api.aspx?startdate=010225&enddate=", str1, "&format=csv")
+) |> view()
+datPorts <- datPorts |> 
+  arrange(Datotid, Ident) |> 
+  mutate(Datotid = force_tz(Datotid, tz = "CET")) |> # unclear about daylight saving?? Think time is CET without daylight saving
+  view()
+write_csv(datPorts, "ports-long.csv")
+
+
+
+#### try to get all data from https://kystatlas.kyst.dk/data/sluse/HVS_sluselog_response.aspx
+datPorts <- vroom::vroom("https://kystatlas.kyst.dk/data/sluse/HVS_sluselog_response.aspx", col_names = F)  
+# unclear about daylight saving?? Think time is CET without daylight saving
+names(datPorts) <- c("Dato", "Port 1", "Port 2", "Port 3", "Port 4", "Port 5", "Port 6", "Port 7", "Port 8", "Port 9", "Port 10", "Port 11", "Port 12", "Port 13", "Port 14", "Hændelse")
+
+datPorts <- datPorts |> 
+  arrange(Dato) |> 
+  mutate(Dato = force_tz(Dato, tz = "CET")) #|> view()
+write_csv(datPorts, "ports-all.csv")
+
+
 ### Get port data from web and save it to csv
 
 # str0 <- format(now()-months(3), "%d%m%y")
@@ -98,7 +122,8 @@ write_csv(datPorts, "ports-all.csv")
 
 
 
-```{r, include=FALSE}
+```{r, include=FALSE, eval=FALSE}
+#### OLD DATA !!!
 datPorts <- read_csv("ports.csv", locale = locale(tz = "CET"))
 
 datPorts <- datPorts |>
@@ -146,18 +171,75 @@ datPortsNew <- datPortsNew |>
 ```
 
 
+```{r}
+# Ser ud til at der er en observation for hver 10ende min dvs der er altid en obs til midnat
+datPortsRaw <- read_csv("ports-long.csv", locale = locale(tz = "CET"))
+datPorts <- datPortsRaw |>
+  rename(date_time = Datotid) |> 
+  filter(!is.na(date_time), !is.na(date_time)) |> 
+  mutate(if_else(Aabning <= 50, 0, Aabning)) |> 
+  arrange(Ident, date_time) 
+
+## Tjek: nogle tidspkt hvor ikke måling for alle porte
+if (datPorts |> count(date_time) |> filter(n != 14) |> nrow() != 0) stop("Missing port observations")
+
+## Fletter porte for samme tidsstempel
+datPorts <- datPorts |> 
+  group_by(date_time) |> 
+  summarise(closed = sum(Aabning == 0), open = 14 - closed, avg_height = if_else(open > 0, sum(Aabning)/open, 0)) |> 
+  # mutate(h = hour(date_time), min = minute(date_time), d = date(date_time)) |>
+  mutate(tdiff = lead(date_time) - date_time) |> 
+  filter(!is.na(tdiff)) |> 
+  ungroup() #|> view()
+
+## Fletter rækker med samme antal porte åbne
+datPorts <- datPorts |> 
+  mutate(different = if_else(closed != lag(closed), 1, 0, 0), grp = cumsum(different)) |>
+  group_by(closed, open, grp) |>
+  summarise(date_time = first(date_time), avg_height = mean(avg_height), duration = sum(tdiff)) |> 
+  arrange(date_time) |> 
+  ungroup()
+
+
+
+
+
+
+# p <- datPorts |> filter(date_time <= "2025-04-16", date_time >= "2025-04-14") |> 
+#   ggplot() +
+#   # geom_bar(aes(x = DateTime, y = 100*Open), stat = "identity") +
+#   # geom_hline(yintercept = 0, linewidth = 0.25) +
+#   # geom_line(aes(x = DateTime, y = Flow), color = "#3399ff") + #, colour = Open
+#   # geom_step(aes(x = DateTime, y = 10 * Open), color = "red") +
+#   geom_step(mapping = aes(x = date_time, y = open)) +
+#   # scale_colour_gradient2(low = "red", mid = "yellow", high = "green", na.value = NA, midpoint = 1, guide = "legend") +
+#   # geom_point(aes(x = DateTime, y = Flow), data = dat[findPeaks(dat$Flow),]) +
+#   #scale_colour_gradient(low = "red", high = "green", na.value = NA, guide = "legend", breaks = c(0,1,2), name = "", labels = c("Lukket", "Delvis åben", "Åben")) +
+#   # guide_coloursteps(even.steps = TRUE, show.limits = NULL, ticks = FALSE) +
+#   theme(axis.text.x  = element_text(angle=90, hjust = 1, vjust = 1), legend.position="none") +
+#   # scale_x_datetime(date_labels = "%e. %b", date_breaks = "1 day") +
+#   labs(x = "Dato", y = "Åbne porte")  #title = "Sluseflow Hvide Sande"
+# ggplotly(p)
+
+# p <- datPorts |>
+#   group_by(Dato = date(date_time)) |>
+#   summarise(max_åbne = max(open)) |>
+#   ggplot(aes(x = Dato, y = max_åbne)) +
+#   geom_col() +
+#   labs(y = "Max antal åbne porte per dag")
+# ggplotly(p)
+```
+
 
 
 
 
 ### Beskrivelse af data
 
-Data er hentet fra https://kystatlas.kyst.dk/data/sluse/Sluse_webtjeneste.html den 2025-05-05. Bemærk at dette link IKKE længere giver adgang til disse data som nu kan findes via https://kystatlas.kyst.dk/data/sluse/HVS_sluselog_response.aspx 
+Data er hentet fra https://kystatlas.kyst.dk/data/sluse/Sluse_webtjeneste.html. Bemærk at dette link har en nu data i et andet format end tidligere. For det gamle format se https://kystatlas.kyst.dk/data/sluse/HVS_sluselog_response.aspx 
 
 ```{r}
-datPorts
-# tmp <- datPorts |> unlist() |> as.numeric()  
-# any(tmp < 0, na.rm = T)
+datPortsRaw
 ```
 
 ```{r, eval=FALSE}
@@ -171,15 +253,8 @@ datPorts
 # datPortsLong |> group_by(id) |> summarize(min = min(value, na.rm = T), max = max(value, na.rm = T), chk = min == max) #|> pull(chk) |> all()
 ```
 
-Der er en række for hver hændelse (fx udstrøm, pejling, fiskeriet) og en række for hver port (`Port X`). Tallene under port søjlerne er åbning i meter. Hændelserne er i kronologisk rækkefølge altså første række svarer til ældste hændelse.
+Der er en række for hvert 10'ende minut (`Datotid`) for hver port (`Ident`) med åbning i meter (`Aabning`). Hændelserne er i kronologisk rækkefølge altså første række svarer til ældste hændelse.
 
-Datasættet er uklart på følgende punkter:
-
-  * Det er uklart hvad de forskellige hændelser betyder.
-  * Hvis man kigger på https://kystatlas.kyst.dk/data/sluse/sluse.html kan man se at nogle hændelser har samme tidsstempel. Der kan altså logges flere hændelser på samme tidpunkt. 
-  * Tallene under port søjlerne er åbning i meter. Nogle gange er disse 0 og andre gange er værdien `NA`. Værdien 0 må betyde at porten er lukket, men om `NA` betyder det samme er uklart.
-  
-  
 ```{r, eval=FALSE}
 # datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock.csv"), 
 #                     locale = locale(tz = "CET"),  # convert to danish time including daylight saving
@@ -202,104 +277,188 @@ p <- ggplot(datPorts) +
 ggplotly(p)
 ```
 
-  
-  
-### Undersøgelse af slusepraksis
+Vi kan transformere data om til følgende format: 
+
+```{r}
+datPorts |> ungroup() |> select(date_time, open, avg_height, duration)
+```
+
+Her svarer en række til en periode hvor antal åbne porte er ens. Søjlerne er
+
+  * `date_time`: Tidsstempel for start af perioden.
+  * `open`: Antal åbne porte.
+  * `avg_height`: Gennemsnitlig åbning af hver port i perioden (ligger mellem 0 og 500 cm).
+  * `duration`: længden af perioden.
+
+Datasættet er fra `r date(min(datPorts$date_time))` til `r date(max(datPorts$date_time))`, altså `r length(unique(date(datPorts$date_time)))` dage.
+
+### Slusepraksis
 
 Hvidesandes [slusepraksis](https://kyst.dk/hav-og-anlaeg/vedligehold-af-havneanlaeg-sluser-daemning-og-sejlloeb/hvide-sande-og-thorsminde-sluser/slusepraksis) har følgende praksis mht. fiskeriet:
 
   A) Der holdes en port åben på 2 meter for fiskepassage.
   B) Ved vendestrøm (+/- 10 cm i forhold til fjorden) åbnes så vidt muligt alle porte minimum 1 gang i døgnet for at tilgodese fiskepassagen.
 
-Lad os undersøge data under antagelse af at `NA` værdier svarer til at porten er lukket. Først plotter vi maksimal antal porte åbne på en dato, dvs. for hver hændelse tæller vi antal porte åbne (værdi > 0) og vælger så den hændelse med størst antal porte åbne på en given dato:
+Lad os forsøge at besvare nogle spørgsmål relateret til praksis.
+
+### Hvad er fordelingen af den gennemsnitlige tid x antal porte er åbne? 
+
+Givet de forskellige perioder grupperer vi dem efter antal åbne porte og finder relevant summary statistik:
 
 ```{r}
-datPorts <- datPorts |> 
-  rowwise() |> 
-  mutate(open = sum(c_across(contains("Port")) > 0, na.rm = T)) 
-
-p <- datPorts |>
-  group_by(Dato = date(Dato)) |>
-  summarise(max_åbne = max(open)) |>
-  ggplot(aes(x = Dato, y = max_åbne)) +
-  geom_col() +
-  labs(y = "Max antal åbne porte per dag")
-ggplotly(p)
-```
-
-Observationer:
-
-  * Der er ikke er 14 porte åbne alle dage. Dog sker dette i de fleste dage og praksis B ser ud til at bruges.
-  * Ca. midt i april ser 2 porte ud til ikke at bruges.
-  * Bemærk her kan vi ikke se hvor mange timer i døgnet alle porte er åbne.
-
-Lad os nu kigge på fordelingen af timer i døgnet der er x antal porte åbne eller mere: For hver dato udregnes procent af døgnet x eller flere porte er åbne, fx hvis $x=3$ og værdien er 0.3 så er der 3 eller flere porte åbne i 30% a døgnet. Herefter findes gennemsnittet af disse tal of alle døgn:
-
-```{r tail}
-dat1 <- datPortsNew |> 
-  group_by(Dato = date(Dato)) |>
-  mutate(
-    total = as.numeric(sum(tdiff), units = "hours"),
-    min_åbne = min(open), 
-    max_åbne = max(open)
-  ) |> 
-  group_by(Dato, open) |> 
-  summarise(
-    hours = as.numeric(sum(tdiff), units = "hours"), 
-    pct = hours/mean(total),
-    min_åbne = first(min_åbne), 
-    max_åbne = first(max_åbne),
-    timer = first(total)
-  )
-
-dat2 <- expand_grid(Dato = unique(dat1$Dato), open = 0:14) |> 
-  left_join(dat1) |> 
-  replace_na(list(hours = 0, pct = 0)) |> 
-  arrange(Dato, open) |> 
-  group_by(Dato) |> 
-  mutate(cum_pct = cumsum(pct), upper = 1-cum_pct+pct, upper_h = upper * 24)
-
-p <- dat2 |>
+## Fordeling præcis åben
+dat <- datPorts |> 
   group_by(open) |> 
-  # summarise(pct = mean(upper)) |> 
-  # ggplot(aes(x = open, y = 100*pct)) +
-  summarise(h = mean(upper_h)) |> 
-  ggplot(aes(x = open, y = h)) +
-  geom_col() +
-  labs(x = "Porte åbne (x)", y = "Timer x eller flere porte åbne (y)")
-       # title = "Histogram over fordelingen af dage hvor 1 eller flere porte åbne")
-ggplotly(p)
+  summarise(n = n(), avg_period_length = as.numeric(mean(duration), units = "hours"), avg_height = mean(avg_height)) 
+dat
+```
+
+Her er `n` antal perioder i datasættet med præcis x porte åbne, `avg_period_length` den gennemsnitlige længde på perioden og `avg_height` den gennemsnitlige åbningshøjde på porten. 
+
+Observationer:
+
+  * Der er 98 perioder med ingen porte åbne og disse har en gennemsnitlig længde på ca. 4 timer.
+  * Ofte er der 1 port åben for fiskeriet (235 perioder med en gens. længde på 6 timer). Porten er for det meste åben ca. 2 meter (under halvt åben).
+
+
+### Er der perioder hvor portene er lukket i 12 timer eller mere?
+
+Ovenstående er gennemsnitstal. Hvis vi finder perioder hvor alle porte er lukkede i mindst 12 timer fås:
+
+```{r}
+datPorts |> 
+  ungroup() |> 
+  filter(open == 0, duration >= hours(12)) |> 
+  transmute(startstidspunkt = date_time, timer = as.numeric(duration, units = "hours"))
 ```
 
 Observationer:
 
-  * Hvis $x=3$ er $y=7.4$. Altså gennemsnitlig over alle de døgn vi betragter er der 3 eller flere porte åbne i 7.4 timer af døgnet.
-  * Der er 1 eller flere porte åbne i ca. 16.9 timer af døgnet. Altså er praksis A ikke altid overholdt, da denne skulle være tæt på 24 timer.
-  * Der er 1 eller flere porte åbne i ca. 16.9 timer af døgnet. Altså gennemsnitlig over de dage vi kigger på, er en port eller mere åben i over 12 timer per døgn.
-  * Der er 2 eller flere porte åbne i ca. 7.4 timer af døgnet. Altså hvis vi kigger på flere end 1 port åben, sker det i ca. 1/3 af døgnets timer.
+  * Der er perioder hvor dette sker (kunne fx være pga en storm). 
+  * I det værste tilfælde er slusen lukket i 20.5 time.
+
+
+### Hvis vi kigger på sammenhængende perioder med enten 0 eller 1 port åben. Hvad er tallene der?
+
+Antag vi er i tvivl om, om kun en port åben er godt for fiskenes vandring. Her kan vi kigge på problematiske perioder, som sammenhængende perioder med enten 0 eller 1 port åben (0-1 perioder). Altså fx hvis der først er 0 porte åbne i 2 timer herefter 1 port åben i 3 timer, så har der været en sammenhængende periode med 0 eller 1 port åben i 5 timer.
+
+```{r}
+## Fletter rækker med 0 eller 1 port åbne
+dat <- datPorts |> 
+  ungroup() |> 
+  mutate(grp10 = if_else(open %in% range(0,1) & lag(open) %in% range(0,1), lag(grp), grp, NA), open = if_else(open == 1 | open == 0, "0-1", as.character(open))) |> 
+  group_by(open, grp10) |>
+  mutate(fraction = as.numeric(duration, units = "hours")/as.numeric(sum(duration), units = "hours")) |> 
+  summarise(date_time = first(date_time), duration = sum(duration), avg_height = sum(avg_height*fraction)) |> 
+  arrange(date_time) |> 
+  filter(open == "0-1") |> 
+  ungroup() 
+```
+
+Observationer:
+
+  * Den gennemsnitlige 0-1 periode længde er `r dat |> summarise(avg_time = as.numeric(mean(duration), units = "hours")) |> pull(avg_time)` timer. 
+  * 0-1 perioder på mindst 12 timer er: 
+```{r}
+dat1 <- dat |> 
+  ungroup() |> 
+  filter(duration >= hours(12)) |> 
+  transmute(startstidspunkt = date_time, timer = as.numeric(duration, units = "hours"))
+dat1
+```
+   Her er der betydelige flere perioder hvor grænsen på 12 timer overskrides. 
   
-```{r}
-tmp <- dat1 |> 
-  ungroup() |> 
-  mutate(days = n_distinct(Dato)) |> 
-  filter(open != 0) |> 
-  group_by(Dato, days) |> 
-  summarise(hours = sum(hours), ok = if_else(hours >= 12, 1, 0)) |> 
-  ungroup() |> 
-  filter(ok == 1) |> 
-  summarise(days_12h_open = n(), days = first(days))
-```
+  * Den længste peride er på `r max(dat1$timer)` timer.
 
-Bemærk dette er gennemsnits betragtninger over alle dage i datasættet. Hvis vi finder **dage med mindst en åben port i 12 timer eller mere** fås at `r tmp$days_12h_open` dage ud af de `r tmp$days` dage datasættet kigger på opfylder dette kriterie (`r round(100*tmp$days_12h_open/tmp$days, 0)` % af dagene).
 
-```{r}
-tmp <- dat2 |> 
-  group_by(open) |> 
-  summarise(hours = mean(hours)) |> 
-  filter(open == 1)
-```
 
-Bemærk at hvis man kigger på datasættet er der ofte kun en port åben på 2 meter for fiskepassage (den kan åbnes til 5 meter). Over alle dagene er der **præcis en port åben** i `r round(tmp$hours, 1)` timer i gennemsnit per dag.
+<!-- Først plotter vi maksimal antal porte åbne på en dato, dvs. for hver hændelse tæller vi antal porte åbne (værdi > 0) og vælger så den hændelse med størst antal porte åbne på en given dato: -->
+
+<!-- ```{r} -->
+<!-- datPorts <- datPorts |>  -->
+<!--   rowwise() |>  -->
+<!--   mutate(open = sum(c_across(contains("Port")) > 0, na.rm = T))  -->
+
+<!-- p <- datPorts |> -->
+<!--   group_by(Dato = date(date_time)) |> -->
+<!--   summarise(max_åbne = max(open)) |> -->
+<!--   ggplot(aes(x = Dato, y = max_åbne)) + -->
+<!--   geom_col() + -->
+<!--   labs(y = "Max antal åbne porte per dag") -->
+<!-- ggplotly(p) -->
+<!-- ``` -->
+
+<!-- Observationer: -->
+
+<!--   * Der er ikke er 14 porte åbne alle dage. Dog sker dette i de fleste dage og praksis B ser ud til at bruges. -->
+<!--   * Ca. midt i april ser 2 porte ud til ikke at bruges. -->
+<!--   * Bemærk her kan vi ikke se hvor mange timer i døgnet alle porte er åbne. -->
+
+<!-- Lad os nu kigge på fordelingen af timer i døgnet der er x antal porte åbne eller mere: For hver dato udregnes procent af døgnet x eller flere porte er åbne, fx hvis $x=3$ og værdien er 0.3 så er der 3 eller flere porte åbne i 30% a døgnet. Herefter findes gennemsnittet af disse tal of alle døgn: -->
+
+<!-- ```{r tail} -->
+<!-- dat1 <- datPortsNew |>  -->
+<!--   group_by(Dato = date(Dato)) |> -->
+<!--   mutate( -->
+<!--     total = as.numeric(sum(tdiff), units = "hours"), -->
+<!--     min_åbne = min(open),  -->
+<!--     max_åbne = max(open) -->
+<!--   ) |>  -->
+<!--   group_by(Dato, open) |>  -->
+<!--   summarise( -->
+<!--     hours = as.numeric(sum(tdiff), units = "hours"),  -->
+<!--     pct = hours/mean(total), -->
+<!--     min_åbne = first(min_åbne),  -->
+<!--     max_åbne = first(max_åbne), -->
+<!--     timer = first(total) -->
+<!--   ) -->
+
+<!-- dat2 <- expand_grid(Dato = unique(dat1$Dato), open = 0:14) |>  -->
+<!--   left_join(dat1) |>  -->
+<!--   replace_na(list(hours = 0, pct = 0)) |>  -->
+<!--   arrange(Dato, open) |>  -->
+<!--   group_by(Dato) |>  -->
+<!--   mutate(cum_pct = cumsum(pct), upper = 1-cum_pct+pct, upper_h = upper * 24) -->
+
+<!-- p <- dat2 |> -->
+<!--   group_by(open) |>  -->
+<!--   # summarise(pct = mean(upper)) |>  -->
+<!--   # ggplot(aes(x = open, y = 100*pct)) + -->
+<!--   summarise(h = mean(upper_h)) |>  -->
+<!--   ggplot(aes(x = open, y = h)) + -->
+<!--   geom_col() + -->
+<!--   labs(x = "Porte åbne (x)", y = "Timer x eller flere porte åbne (y)") -->
+<!--        # title = "Histogram over fordelingen af dage hvor 1 eller flere porte åbne") -->
+<!-- ggplotly(p) -->
+<!-- ``` -->
+
+<!-- Observationer: -->
+
+<!--   * Hvis $x=3$ er $y=7.4$. Altså gennemsnitlig over alle de døgn vi betragter er der 3 eller flere porte åbne i 7.4 timer af døgnet. -->
+<!--   * Der er 1 eller flere porte åbne i ca. 16.9 timer af døgnet. Altså er praksis A ikke altid overholdt, da denne skulle være tæt på 24 timer. -->
+<!--   * Der er 1 eller flere porte åbne i ca. 16.9 timer af døgnet. Altså gennemsnitlig over de dage vi kigger på, er en port eller mere åben i over 12 timer per døgn. -->
+<!--   * Der er 2 eller flere porte åbne i ca. 7.4 timer af døgnet. Altså hvis vi kigger på flere end 1 port åben, sker det i ca. 1/3 af døgnets timer. -->
+
+<!-- ```{r} -->
+<!-- tmp <- dat1 |>  -->
+<!--   ungroup() |>  -->
+<!--   mutate(days = n_distinct(Dato)) |>  -->
+<!--   filter(open != 0) |>  -->
+<!--   group_by(Dato, days) |>  -->
+<!--   summarise(hours = sum(hours), ok = if_else(hours >= 12, 1, 0)) |>  -->
+<!--   ungroup() |>  -->
+<!--   filter(ok == 1) |>  -->
+<!--   summarise(days_12h_open = n(), days = first(days)) -->
+<!-- ``` -->
+
+
+<!-- ```{r} -->
+<!-- tmp <- dat2 |>  -->
+<!--   group_by(open) |>  -->
+<!--   summarise(hours = mean(hours)) |>  -->
+<!--   filter(open == 1) -->
+<!-- ``` -->
+
 
 
 
@@ -325,9 +484,9 @@ Bemærk at hvis man kigger på datasættet er der ofte kun en port åben på 2 m
 
 
 
-### Disclamer
+<!-- ### Disclamer -->
 
-Hvordan `NA` skal fortolkes er ukendt. I denne rapport er disse værdier behandlet som at porten er lukket.
+<!-- Hvordan `NA` skal fortolkes er ukendt. I denne rapport er disse værdier behandlet som at porten er lukket. -->
 
 
 
