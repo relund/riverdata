@@ -320,6 +320,22 @@ Observationer:
   * Der er 98 perioder med ingen porte åbne og disse har en gennemsnitlig længde på ca. 4 timer.
   * Ofte er der 1 port åben for fiskeriet (235 perioder med en gens. længde på 6 timer). Porten er for det meste åben ca. 2 meter (under halvt åben).
 
+### Hvor langt tid er der x antal porte åbne relativ til den totale længde af datasættet?
+
+Først udregnes den totale tid x antal porte åbne. Denne divideres så med den total længde af datasættet. 
+
+```{r}
+datPorts |> 
+  group_by(open) |> 
+  summarise(pct = as.numeric(sum(duration))/as.numeric(sum(datPorts$duration)))
+```
+
+Observationer:
+
+  * Der er 0 porte åbne i ca. 13% af tiden.
+  * Der er 0 eller 1 port åben i ca. 60% af tiden (12.8 + 47.0).
+
+
 
 ### Er der perioder hvor portene er lukket i 12 timer eller mere?
 
