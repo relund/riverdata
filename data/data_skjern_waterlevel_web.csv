@@ -4796,6 +4796,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:22:30Z,Omme Å - Sønderskov bro,2018,293.1,-24
 2020-08-26T02:22:30Z,Omme Å - Sønderskov bro,2018,293.2,-23.8
 2020-08-26T03:22:30Z,Omme Å - Sønderskov bro,2018,293.3,-23.8
+2020-08-26T04:22:30Z,Omme Å - Sønderskov bro,2018,293.5,-23.6
 2020-08-11T00:22:30Z,Omme Å - Sønderskov bro,2020,312,-2.2
 2020-08-11T01:22:30Z,Omme Å - Sønderskov bro,2020,311.9,-2.3
 2020-08-11T02:22:30Z,Omme Å - Sønderskov bro,2020,311.8,-2.4
@@ -5160,6 +5161,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:22:30Z,Omme Å - Sønderskov bro,2020,321.8,4.4
 2020-08-26T02:22:30Z,Omme Å - Sønderskov bro,2020,322.2,4.8
 2020-08-26T03:22:30Z,Omme Å - Sønderskov bro,2020,322.7,5.2
+2020-08-26T04:22:30Z,Omme Å - Sønderskov bro,2020,323.2,5.8
 2020-08-11T00:22:30Z,Omme Å - Sønderskov bro,2021,312.1,-2.2
 2020-08-11T01:22:30Z,Omme Å - Sønderskov bro,2021,312,-2.3
 2020-08-11T02:22:30Z,Omme Å - Sønderskov bro,2021,311.8,-2.5
@@ -5524,6 +5526,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:22:30Z,Omme Å - Sønderskov bro,2021,305.6,-11.5
 2020-08-26T02:22:30Z,Omme Å - Sønderskov bro,2021,305.5,-11.6
 2020-08-26T03:22:30Z,Omme Å - Sønderskov bro,2021,305.4,-11.7
+2020-08-26T04:22:30Z,Omme Å - Sønderskov bro,2021,305.4,-11.7
 2020-08-11T00:25:00Z,Omme Å - Sønderskov bro,2022,285.2,-29.1
 2020-08-11T01:25:00Z,Omme Å - Sønderskov bro,2022,285.2,-29.1
 2020-08-11T02:25:00Z,Omme Å - Sønderskov bro,2022,285.3,-29
@@ -5888,6 +5891,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:25:00Z,Omme Å - Sønderskov bro,2022,278,-39.1
 2020-08-26T02:25:00Z,Omme Å - Sønderskov bro,2022,278,-39.1
 2020-08-26T03:25:00Z,Omme Å - Sønderskov bro,2022,278,-39.1
+2020-08-26T04:25:00Z,Omme Å - Sønderskov bro,2022,278,-39.1
 2020-08-11T00:25:00Z,Omme Å - Sønderskov bro,2024,346.4,32.2
 2020-08-11T01:25:00Z,Omme Å - Sønderskov bro,2024,346.3,32.1
 2020-08-11T02:25:00Z,Omme Å - Sønderskov bro,2024,346.2,32
@@ -6252,6 +6256,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:25:00Z,Omme Å - Sønderskov bro,2024,390.3,72.9
 2020-08-26T02:25:00Z,Omme Å - Sønderskov bro,2024,390.6,73.2
 2020-08-26T03:25:00Z,Omme Å - Sønderskov bro,2024,390.9,73.5
+2020-08-26T04:25:00Z,Omme Å - Sønderskov bro,2024,391.2,73.8
 2020-08-11T00:25:00Z,Omme Å - Sønderskov bro,2025,307.2,-7.1
 2020-08-11T01:25:00Z,Omme Å - Sønderskov bro,2025,307,-7.2
 2020-08-11T02:25:00Z,Omme Å - Sønderskov bro,2025,306.9,-7.4
@@ -6614,7 +6619,8 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:25:00Z,Omme Å - Sønderskov bro,2025,285.2,-31.9
 2020-08-26T02:25:00Z,Omme Å - Sønderskov bro,2025,285.1,-32
 2020-08-26T03:25:00Z,Omme Å - Sønderskov bro,2025,285.3,-31.8
-2020-08-26T04:00:00Z,Omme Å - Sønderskov bro,2025,285.3,-31.8
+2020-08-26T04:25:00Z,Omme Å - Sønderskov bro,2025,285.2,-31.9
+2020-08-26T05:00:00Z,Omme Å - Sønderskov bro,2025,285.3,-31.8
 2020-08-11T00:22:30Z,Rind Å - Arnborg kirke,2017,2492,8
 2020-08-11T01:22:30Z,Rind Å - Arnborg kirke,2017,2491.8,7.8
 2020-08-11T02:22:30Z,Rind Å - Arnborg kirke,2017,2491.6,7.6
@@ -9632,30 +9638,30 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-15T21:22:30Z,Skjern Å - Alergaard,2020,647.2,-18
 2020-08-15T22:22:30Z,Skjern Å - Alergaard,2020,647.3,-18
 2020-08-15T23:22:30Z,Skjern Å - Alergaard,2020,647.1,-18.1
-2020-08-16T00:22:30Z,Skjern Å - Alergaard,2020,647.2,-18.3
-2020-08-16T01:22:30Z,Skjern Å - Alergaard,2020,647.3,-18.1
-2020-08-16T02:22:30Z,Skjern Å - Alergaard,2020,647.3,-18.2
-2020-08-16T03:22:30Z,Skjern Å - Alergaard,2020,647.4,-18.1
-2020-08-16T04:22:30Z,Skjern Å - Alergaard,2020,647.2,-18.4
-2020-08-16T05:22:30Z,Skjern Å - Alergaard,2020,647.2,-18.3
-2020-08-16T06:22:30Z,Skjern Å - Alergaard,2020,647.2,-18.3
-2020-08-16T07:22:30Z,Skjern Å - Alergaard,2020,647,-18.5
-2020-08-16T08:22:30Z,Skjern Å - Alergaard,2020,647.2,-18.3
-2020-08-16T09:22:30Z,Skjern Å - Alergaard,2020,647.1,-18.4
-2020-08-16T10:22:30Z,Skjern Å - Alergaard,2020,647.1,-18.4
-2020-08-16T11:22:30Z,Skjern Å - Alergaard,2020,646.9,-18.6
-2020-08-16T12:22:30Z,Skjern Å - Alergaard,2020,646.8,-18.7
+2020-08-16T00:22:30Z,Skjern Å - Alergaard,2020,647.2,-18.2
+2020-08-16T01:22:30Z,Skjern Å - Alergaard,2020,647.3,-18
+2020-08-16T02:22:30Z,Skjern Å - Alergaard,2020,647.3,-18.1
+2020-08-16T03:22:30Z,Skjern Å - Alergaard,2020,647.4,-18
+2020-08-16T04:22:30Z,Skjern Å - Alergaard,2020,647.2,-18.2
+2020-08-16T05:22:30Z,Skjern Å - Alergaard,2020,647.2,-18.2
+2020-08-16T06:22:30Z,Skjern Å - Alergaard,2020,647.2,-18.2
+2020-08-16T07:22:30Z,Skjern Å - Alergaard,2020,647,-18.4
+2020-08-16T08:22:30Z,Skjern Å - Alergaard,2020,647.2,-18.2
+2020-08-16T09:22:30Z,Skjern Å - Alergaard,2020,647.1,-18.2
+2020-08-16T10:22:30Z,Skjern Å - Alergaard,2020,647.1,-18.3
+2020-08-16T11:22:30Z,Skjern Å - Alergaard,2020,646.9,-18.5
+2020-08-16T12:22:30Z,Skjern Å - Alergaard,2020,646.8,-18.6
 2020-08-16T13:22:30Z,Skjern Å - Alergaard,2020,647,-18.4
-2020-08-16T14:22:30Z,Skjern Å - Alergaard,2020,647,-18.5
-2020-08-16T15:22:30Z,Skjern Å - Alergaard,2020,647.1,-18.4
-2020-08-16T16:22:30Z,Skjern Å - Alergaard,2020,646.7,-18.8
-2020-08-16T17:22:30Z,Skjern Å - Alergaard,2020,646.8,-18.8
-2020-08-16T18:22:30Z,Skjern Å - Alergaard,2020,646.6,-18.9
-2020-08-16T19:22:30Z,Skjern Å - Alergaard,2020,646.6,-19
-2020-08-16T20:22:30Z,Skjern Å - Alergaard,2020,646.8,-18.7
+2020-08-16T14:22:30Z,Skjern Å - Alergaard,2020,647,-18.4
+2020-08-16T15:22:30Z,Skjern Å - Alergaard,2020,647.1,-18.3
+2020-08-16T16:22:30Z,Skjern Å - Alergaard,2020,646.7,-18.7
+2020-08-16T17:22:30Z,Skjern Å - Alergaard,2020,646.8,-18.6
+2020-08-16T18:22:30Z,Skjern Å - Alergaard,2020,646.6,-18.8
+2020-08-16T19:22:30Z,Skjern Å - Alergaard,2020,646.6,-18.9
+2020-08-16T20:22:30Z,Skjern Å - Alergaard,2020,646.8,-18.6
 2020-08-16T21:22:30Z,Skjern Å - Alergaard,2020,646.8,-18.6
-2020-08-16T22:22:30Z,Skjern Å - Alergaard,2020,647,-18.5
-2020-08-16T23:22:30Z,Skjern Å - Alergaard,2020,647.5,-18
+2020-08-16T22:22:30Z,Skjern Å - Alergaard,2020,647,-18.4
+2020-08-16T23:22:30Z,Skjern Å - Alergaard,2020,647.5,-17.9
 2020-08-17T00:22:30Z,Skjern Å - Alergaard,2020,647.6,-18.1
 2020-08-17T01:22:30Z,Skjern Å - Alergaard,2020,647.5,-18.2
 2020-08-17T02:22:30Z,Skjern Å - Alergaard,2020,647.5,-18.2
@@ -9876,6 +9882,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:22:30Z,Skjern Å - Alergaard,2020,660.8,-5.9
 2020-08-26T02:22:30Z,Skjern Å - Alergaard,2020,660.9,-5.8
 2020-08-26T03:22:30Z,Skjern Å - Alergaard,2020,661.2,-5.5
+2020-08-26T04:22:30Z,Skjern Å - Alergaard,2020,661.4,-5.3
 2020-08-11T00:22:30Z,Skjern Å - Alergaard,2021,664.7,-0.5
 2020-08-11T01:22:30Z,Skjern Å - Alergaard,2021,665.4,0.2
 2020-08-11T02:22:30Z,Skjern Å - Alergaard,2021,665.9,0.7
@@ -10020,30 +10027,30 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-16T21:22:30Z,Skjern Å - Alergaard,2021,675.4,10.1
 2020-08-16T22:22:30Z,Skjern Å - Alergaard,2021,675.9,10.6
 2020-08-16T23:22:30Z,Skjern Å - Alergaard,2021,676.3,11
-2020-08-17T00:22:30Z,Skjern Å - Alergaard,2021,677.1,11.6
+2020-08-17T00:22:30Z,Skjern Å - Alergaard,2021,677.1,11.7
 2020-08-17T01:22:30Z,Skjern Å - Alergaard,2021,677.6,12.2
-2020-08-17T02:22:30Z,Skjern Å - Alergaard,2021,678.6,13.1
-2020-08-17T03:22:30Z,Skjern Å - Alergaard,2021,679.6,14.1
-2020-08-17T04:22:30Z,Skjern Å - Alergaard,2021,680.4,14.9
-2020-08-17T05:22:30Z,Skjern Å - Alergaard,2021,681.4,15.9
-2020-08-17T06:22:30Z,Skjern Å - Alergaard,2021,682.3,16.8
-2020-08-17T07:22:30Z,Skjern Å - Alergaard,2021,682.6,17.1
-2020-08-17T08:22:30Z,Skjern Å - Alergaard,2021,683.7,18.2
-2020-08-17T09:22:30Z,Skjern Å - Alergaard,2021,684,18.5
-2020-08-17T10:22:30Z,Skjern Å - Alergaard,2021,684.6,19.1
-2020-08-17T11:22:30Z,Skjern Å - Alergaard,2021,685.1,19.6
-2020-08-17T12:22:30Z,Skjern Å - Alergaard,2021,685.4,19.9
-2020-08-17T13:22:30Z,Skjern Å - Alergaard,2021,685.3,19.9
-2020-08-17T14:22:30Z,Skjern Å - Alergaard,2021,685.4,19.9
-2020-08-17T15:22:30Z,Skjern Å - Alergaard,2021,685.7,20.2
-2020-08-17T16:22:30Z,Skjern Å - Alergaard,2021,685.7,20.2
-2020-08-17T17:22:30Z,Skjern Å - Alergaard,2021,685.2,19.8
-2020-08-17T18:22:30Z,Skjern Å - Alergaard,2021,685,19.5
-2020-08-17T19:22:30Z,Skjern Å - Alergaard,2021,684.7,19.3
-2020-08-17T20:22:30Z,Skjern Å - Alergaard,2021,684,18.5
-2020-08-17T21:22:30Z,Skjern Å - Alergaard,2021,684.1,18.6
-2020-08-17T22:22:30Z,Skjern Å - Alergaard,2021,683.5,18
-2020-08-17T23:22:30Z,Skjern Å - Alergaard,2021,682.5,17
+2020-08-17T02:22:30Z,Skjern Å - Alergaard,2021,678.6,13.2
+2020-08-17T03:22:30Z,Skjern Å - Alergaard,2021,679.6,14.2
+2020-08-17T04:22:30Z,Skjern Å - Alergaard,2021,680.4,15
+2020-08-17T05:22:30Z,Skjern Å - Alergaard,2021,681.4,16
+2020-08-17T06:22:30Z,Skjern Å - Alergaard,2021,682.3,16.9
+2020-08-17T07:22:30Z,Skjern Å - Alergaard,2021,682.6,17.2
+2020-08-17T08:22:30Z,Skjern Å - Alergaard,2021,683.7,18.3
+2020-08-17T09:22:30Z,Skjern Å - Alergaard,2021,684,18.6
+2020-08-17T10:22:30Z,Skjern Å - Alergaard,2021,684.6,19.2
+2020-08-17T11:22:30Z,Skjern Å - Alergaard,2021,685.1,19.7
+2020-08-17T12:22:30Z,Skjern Å - Alergaard,2021,685.4,20
+2020-08-17T13:22:30Z,Skjern Å - Alergaard,2021,685.3,20
+2020-08-17T14:22:30Z,Skjern Å - Alergaard,2021,685.4,20
+2020-08-17T15:22:30Z,Skjern Å - Alergaard,2021,685.7,20.3
+2020-08-17T16:22:30Z,Skjern Å - Alergaard,2021,685.7,20.3
+2020-08-17T17:22:30Z,Skjern Å - Alergaard,2021,685.2,19.9
+2020-08-17T18:22:30Z,Skjern Å - Alergaard,2021,685,19.6
+2020-08-17T19:22:30Z,Skjern Å - Alergaard,2021,684.7,19.4
+2020-08-17T20:22:30Z,Skjern Å - Alergaard,2021,684,18.6
+2020-08-17T21:22:30Z,Skjern Å - Alergaard,2021,684.1,18.7
+2020-08-17T22:22:30Z,Skjern Å - Alergaard,2021,683.5,18.1
+2020-08-17T23:22:30Z,Skjern Å - Alergaard,2021,682.5,17.1
 2020-08-18T00:22:30Z,Skjern Å - Alergaard,2021,681.9,16.2
 2020-08-18T01:22:30Z,Skjern Å - Alergaard,2021,681.4,15.7
 2020-08-18T02:22:30Z,Skjern Å - Alergaard,2021,680.9,15.3
@@ -10240,6 +10247,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:22:30Z,Skjern Å - Alergaard,2021,656.1,-10.5
 2020-08-26T02:22:30Z,Skjern Å - Alergaard,2021,656.3,-10.2
 2020-08-26T03:22:30Z,Skjern Å - Alergaard,2021,656.3,-10.3
+2020-08-26T04:22:30Z,Skjern Å - Alergaard,2021,656.1,-10.5
 2020-08-11T00:25:00Z,Skjern Å - Alergaard,2022,644.8,-20.4
 2020-08-11T01:25:00Z,Skjern Å - Alergaard,2022,644.8,-20.4
 2020-08-11T02:25:00Z,Skjern Å - Alergaard,2022,644.6,-20.5
@@ -10384,30 +10392,30 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-16T21:25:00Z,Skjern Å - Alergaard,2022,639.3,-26
 2020-08-16T22:25:00Z,Skjern Å - Alergaard,2022,639.4,-26
 2020-08-16T23:25:00Z,Skjern Å - Alergaard,2022,639.4,-26
-2020-08-17T00:25:00Z,Skjern Å - Alergaard,2022,639.4,-26.1
-2020-08-17T01:25:00Z,Skjern Å - Alergaard,2022,639.3,-26.2
-2020-08-17T02:25:00Z,Skjern Å - Alergaard,2022,639.3,-26.2
-2020-08-17T03:25:00Z,Skjern Å - Alergaard,2022,639.3,-26.2
-2020-08-17T04:25:00Z,Skjern Å - Alergaard,2022,639.2,-26.3
-2020-08-17T05:25:00Z,Skjern Å - Alergaard,2022,639.1,-26.4
-2020-08-17T06:25:00Z,Skjern Å - Alergaard,2022,639.4,-26.1
-2020-08-17T07:25:00Z,Skjern Å - Alergaard,2022,639.4,-26.1
-2020-08-17T08:25:00Z,Skjern Å - Alergaard,2022,639.3,-26.1
-2020-08-17T09:25:00Z,Skjern Å - Alergaard,2022,639.6,-25.9
-2020-08-17T10:25:00Z,Skjern Å - Alergaard,2022,639.6,-25.9
-2020-08-17T11:25:00Z,Skjern Å - Alergaard,2022,639.4,-26.1
-2020-08-17T12:25:00Z,Skjern Å - Alergaard,2022,639.7,-25.8
-2020-08-17T13:25:00Z,Skjern Å - Alergaard,2022,639.6,-26
-2020-08-17T14:25:00Z,Skjern Å - Alergaard,2022,639.6,-25.9
-2020-08-17T15:25:00Z,Skjern Å - Alergaard,2022,639.6,-25.9
-2020-08-17T16:25:00Z,Skjern Å - Alergaard,2022,639.7,-25.8
-2020-08-17T17:25:00Z,Skjern Å - Alergaard,2022,639.5,-26
-2020-08-17T18:25:00Z,Skjern Å - Alergaard,2022,639.6,-25.9
+2020-08-17T00:25:00Z,Skjern Å - Alergaard,2022,639.4,-26
+2020-08-17T01:25:00Z,Skjern Å - Alergaard,2022,639.3,-26.1
+2020-08-17T02:25:00Z,Skjern Å - Alergaard,2022,639.3,-26.1
+2020-08-17T03:25:00Z,Skjern Å - Alergaard,2022,639.3,-26.1
+2020-08-17T04:25:00Z,Skjern Å - Alergaard,2022,639.2,-26.2
+2020-08-17T05:25:00Z,Skjern Å - Alergaard,2022,639.1,-26.3
+2020-08-17T06:25:00Z,Skjern Å - Alergaard,2022,639.4,-26
+2020-08-17T07:25:00Z,Skjern Å - Alergaard,2022,639.4,-26
+2020-08-17T08:25:00Z,Skjern Å - Alergaard,2022,639.3,-26
+2020-08-17T09:25:00Z,Skjern Å - Alergaard,2022,639.6,-25.8
+2020-08-17T10:25:00Z,Skjern Å - Alergaard,2022,639.6,-25.8
+2020-08-17T11:25:00Z,Skjern Å - Alergaard,2022,639.4,-26
+2020-08-17T12:25:00Z,Skjern Å - Alergaard,2022,639.7,-25.7
+2020-08-17T13:25:00Z,Skjern Å - Alergaard,2022,639.6,-25.9
+2020-08-17T14:25:00Z,Skjern Å - Alergaard,2022,639.6,-25.8
+2020-08-17T15:25:00Z,Skjern Å - Alergaard,2022,639.6,-25.8
+2020-08-17T16:25:00Z,Skjern Å - Alergaard,2022,639.7,-25.7
+2020-08-17T17:25:00Z,Skjern Å - Alergaard,2022,639.5,-25.9
+2020-08-17T18:25:00Z,Skjern Å - Alergaard,2022,639.6,-25.8
 2020-08-17T19:25:00Z,Skjern Å - Alergaard,2022,639.3,-26.2
-2020-08-17T20:25:00Z,Skjern Å - Alergaard,2022,639.4,-26.1
-2020-08-17T21:25:00Z,Skjern Å - Alergaard,2022,639.1,-26.4
-2020-08-17T22:25:00Z,Skjern Å - Alergaard,2022,639,-26.5
-2020-08-17T23:25:00Z,Skjern Å - Alergaard,2022,639.3,-26.2
+2020-08-17T20:25:00Z,Skjern Å - Alergaard,2022,639.4,-26
+2020-08-17T21:25:00Z,Skjern Å - Alergaard,2022,639.1,-26.3
+2020-08-17T22:25:00Z,Skjern Å - Alergaard,2022,639,-26.4
+2020-08-17T23:25:00Z,Skjern Å - Alergaard,2022,639.3,-26
 2020-08-18T00:25:00Z,Skjern Å - Alergaard,2022,639.2,-26.5
 2020-08-18T01:25:00Z,Skjern Å - Alergaard,2022,639.5,-26.2
 2020-08-18T02:25:00Z,Skjern Å - Alergaard,2022,639.4,-26.3
@@ -10604,6 +10612,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:25:00Z,Skjern Å - Alergaard,2022,638.9,-27.7
 2020-08-26T02:25:00Z,Skjern Å - Alergaard,2022,639,-27.5
 2020-08-26T03:25:00Z,Skjern Å - Alergaard,2022,639,-27.6
+2020-08-26T04:25:00Z,Skjern Å - Alergaard,2022,639.1,-27.5
 2020-08-11T00:25:00Z,Skjern Å - Alergaard,2024,694,28.9
 2020-08-11T01:25:00Z,Skjern Å - Alergaard,2024,693.6,28.5
 2020-08-11T02:25:00Z,Skjern Å - Alergaard,2024,693.2,28.1
@@ -10724,30 +10733,30 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-15T21:25:00Z,Skjern Å - Alergaard,2024,697,31.7
 2020-08-15T22:25:00Z,Skjern Å - Alergaard,2024,696.8,31.4
 2020-08-15T23:25:00Z,Skjern Å - Alergaard,2024,696.2,30.9
-2020-08-16T00:25:00Z,Skjern Å - Alergaard,2024,695.9,30.4
-2020-08-16T01:25:00Z,Skjern Å - Alergaard,2024,696,30.5
-2020-08-16T02:25:00Z,Skjern Å - Alergaard,2024,695.3,29.8
-2020-08-16T03:25:00Z,Skjern Å - Alergaard,2024,695.1,29.6
-2020-08-16T04:25:00Z,Skjern Å - Alergaard,2024,694.9,29.4
-2020-08-16T05:25:00Z,Skjern Å - Alergaard,2024,694.8,29.2
-2020-08-16T06:25:00Z,Skjern Å - Alergaard,2024,694.7,29.2
-2020-08-16T07:25:00Z,Skjern Å - Alergaard,2024,694.5,29
-2020-08-16T08:25:00Z,Skjern Å - Alergaard,2024,694.3,28.8
-2020-08-16T09:25:00Z,Skjern Å - Alergaard,2024,694,28.5
-2020-08-16T10:25:00Z,Skjern Å - Alergaard,2024,693.5,28
-2020-08-16T11:25:00Z,Skjern Å - Alergaard,2024,693.3,27.8
-2020-08-16T12:25:00Z,Skjern Å - Alergaard,2024,693.1,27.6
-2020-08-16T13:25:00Z,Skjern Å - Alergaard,2024,692.9,27.4
-2020-08-16T14:25:00Z,Skjern Å - Alergaard,2024,692.6,27.1
-2020-08-16T15:25:00Z,Skjern Å - Alergaard,2024,692.7,27.2
-2020-08-16T16:25:00Z,Skjern Å - Alergaard,2024,692.3,26.8
-2020-08-16T17:25:00Z,Skjern Å - Alergaard,2024,692.3,26.8
-2020-08-16T18:25:00Z,Skjern Å - Alergaard,2024,692.1,26.7
-2020-08-16T19:25:00Z,Skjern Å - Alergaard,2024,692,26.6
-2020-08-16T20:25:00Z,Skjern Å - Alergaard,2024,692.2,26.8
-2020-08-16T21:25:00Z,Skjern Å - Alergaard,2024,692.1,26.6
-2020-08-16T22:25:00Z,Skjern Å - Alergaard,2024,692.1,26.6
-2020-08-16T23:25:00Z,Skjern Å - Alergaard,2024,692.3,26.8
+2020-08-16T00:25:00Z,Skjern Å - Alergaard,2024,695.9,30.5
+2020-08-16T01:25:00Z,Skjern Å - Alergaard,2024,696,30.6
+2020-08-16T02:25:00Z,Skjern Å - Alergaard,2024,695.3,29.9
+2020-08-16T03:25:00Z,Skjern Å - Alergaard,2024,695.1,29.7
+2020-08-16T04:25:00Z,Skjern Å - Alergaard,2024,694.9,29.5
+2020-08-16T05:25:00Z,Skjern Å - Alergaard,2024,694.8,29.3
+2020-08-16T06:25:00Z,Skjern Å - Alergaard,2024,694.7,29.3
+2020-08-16T07:25:00Z,Skjern Å - Alergaard,2024,694.5,29.1
+2020-08-16T08:25:00Z,Skjern Å - Alergaard,2024,694.3,28.9
+2020-08-16T09:25:00Z,Skjern Å - Alergaard,2024,694,28.6
+2020-08-16T10:25:00Z,Skjern Å - Alergaard,2024,693.5,28.1
+2020-08-16T11:25:00Z,Skjern Å - Alergaard,2024,693.3,27.9
+2020-08-16T12:25:00Z,Skjern Å - Alergaard,2024,693.1,27.7
+2020-08-16T13:25:00Z,Skjern Å - Alergaard,2024,692.9,27.5
+2020-08-16T14:25:00Z,Skjern Å - Alergaard,2024,692.6,27.2
+2020-08-16T15:25:00Z,Skjern Å - Alergaard,2024,692.7,27.3
+2020-08-16T16:25:00Z,Skjern Å - Alergaard,2024,692.3,26.9
+2020-08-16T17:25:00Z,Skjern Å - Alergaard,2024,692.3,26.9
+2020-08-16T18:25:00Z,Skjern Å - Alergaard,2024,692.1,26.8
+2020-08-16T19:25:00Z,Skjern Å - Alergaard,2024,692,26.7
+2020-08-16T20:25:00Z,Skjern Å - Alergaard,2024,692.2,26.9
+2020-08-16T21:25:00Z,Skjern Å - Alergaard,2024,692.1,26.7
+2020-08-16T22:25:00Z,Skjern Å - Alergaard,2024,692.1,26.7
+2020-08-16T23:25:00Z,Skjern Å - Alergaard,2024,692.3,26.9
 2020-08-17T00:25:00Z,Skjern Å - Alergaard,2024,692.3,26.6
 2020-08-17T01:25:00Z,Skjern Å - Alergaard,2024,692.7,27
 2020-08-17T02:25:00Z,Skjern Å - Alergaard,2024,693,27.3
@@ -10968,6 +10977,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:25:00Z,Skjern Å - Alergaard,2024,742.5,75.8
 2020-08-26T02:25:00Z,Skjern Å - Alergaard,2024,743,76.3
 2020-08-26T03:25:00Z,Skjern Å - Alergaard,2024,743.2,76.5
+2020-08-26T04:25:00Z,Skjern Å - Alergaard,2024,743.4,76.7
 2020-08-11T00:25:00Z,Skjern Å - Alergaard,2025,658,-7.1
 2020-08-11T01:25:00Z,Skjern Å - Alergaard,2025,657.9,-7.3
 2020-08-11T02:25:00Z,Skjern Å - Alergaard,2025,657.8,-7.4
@@ -11112,30 +11122,30 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-16T21:25:00Z,Skjern Å - Alergaard,2025,649,-16.3
 2020-08-16T22:25:00Z,Skjern Å - Alergaard,2025,648.8,-16.5
 2020-08-16T23:25:00Z,Skjern Å - Alergaard,2025,649,-16.3
-2020-08-17T00:25:00Z,Skjern Å - Alergaard,2025,649.2,-16.3
-2020-08-17T01:25:00Z,Skjern Å - Alergaard,2025,649.4,-16.1
-2020-08-17T02:25:00Z,Skjern Å - Alergaard,2025,649.5,-16
-2020-08-17T03:25:00Z,Skjern Å - Alergaard,2025,649.9,-15.6
-2020-08-17T04:25:00Z,Skjern Å - Alergaard,2025,649.9,-15.6
-2020-08-17T05:25:00Z,Skjern Å - Alergaard,2025,649.9,-15.6
+2020-08-17T00:25:00Z,Skjern Å - Alergaard,2025,649.2,-16.2
+2020-08-17T01:25:00Z,Skjern Å - Alergaard,2025,649.4,-16
+2020-08-17T02:25:00Z,Skjern Å - Alergaard,2025,649.5,-15.8
+2020-08-17T03:25:00Z,Skjern Å - Alergaard,2025,649.9,-15.5
+2020-08-17T04:25:00Z,Skjern Å - Alergaard,2025,649.9,-15.5
+2020-08-17T05:25:00Z,Skjern Å - Alergaard,2025,649.9,-15.5
 2020-08-17T06:25:00Z,Skjern Å - Alergaard,2025,649.6,-15.8
-2020-08-17T07:25:00Z,Skjern Å - Alergaard,2025,649.4,-16.1
-2020-08-17T08:25:00Z,Skjern Å - Alergaard,2025,649.3,-16.2
-2020-08-17T09:25:00Z,Skjern Å - Alergaard,2025,649,-16.5
-2020-08-17T10:25:00Z,Skjern Å - Alergaard,2025,648.9,-16.6
-2020-08-17T11:25:00Z,Skjern Å - Alergaard,2025,648.8,-16.7
-2020-08-17T12:25:00Z,Skjern Å - Alergaard,2025,648.7,-16.8
-2020-08-17T13:25:00Z,Skjern Å - Alergaard,2025,648.7,-16.8
-2020-08-17T14:25:00Z,Skjern Å - Alergaard,2025,648.6,-16.9
-2020-08-17T15:25:00Z,Skjern Å - Alergaard,2025,648.6,-16.9
+2020-08-17T07:25:00Z,Skjern Å - Alergaard,2025,649.4,-16
+2020-08-17T08:25:00Z,Skjern Å - Alergaard,2025,649.3,-16.1
+2020-08-17T09:25:00Z,Skjern Å - Alergaard,2025,649,-16.4
+2020-08-17T10:25:00Z,Skjern Å - Alergaard,2025,648.9,-16.4
+2020-08-17T11:25:00Z,Skjern Å - Alergaard,2025,648.8,-16.6
+2020-08-17T12:25:00Z,Skjern Å - Alergaard,2025,648.7,-16.7
+2020-08-17T13:25:00Z,Skjern Å - Alergaard,2025,648.7,-16.7
+2020-08-17T14:25:00Z,Skjern Å - Alergaard,2025,648.6,-16.8
+2020-08-17T15:25:00Z,Skjern Å - Alergaard,2025,648.6,-16.8
 2020-08-17T16:25:00Z,Skjern Å - Alergaard,2025,648.4,-17
-2020-08-17T17:25:00Z,Skjern Å - Alergaard,2025,648.2,-17.2
-2020-08-17T18:25:00Z,Skjern Å - Alergaard,2025,647.9,-17.6
-2020-08-17T19:25:00Z,Skjern Å - Alergaard,2025,647.6,-17.9
-2020-08-17T20:25:00Z,Skjern Å - Alergaard,2025,647.5,-18
-2020-08-17T21:25:00Z,Skjern Å - Alergaard,2025,647.3,-18.2
-2020-08-17T22:25:00Z,Skjern Å - Alergaard,2025,647.4,-18.1
-2020-08-17T23:25:00Z,Skjern Å - Alergaard,2025,647.6,-17.9
+2020-08-17T17:25:00Z,Skjern Å - Alergaard,2025,648.2,-17.1
+2020-08-17T18:25:00Z,Skjern Å - Alergaard,2025,647.9,-17.5
+2020-08-17T19:25:00Z,Skjern Å - Alergaard,2025,647.6,-17.8
+2020-08-17T20:25:00Z,Skjern Å - Alergaard,2025,647.5,-17.9
+2020-08-17T21:25:00Z,Skjern Å - Alergaard,2025,647.3,-18.1
+2020-08-17T22:25:00Z,Skjern Å - Alergaard,2025,647.4,-18
+2020-08-17T23:25:00Z,Skjern Å - Alergaard,2025,647.6,-17.8
 2020-08-18T00:25:00Z,Skjern Å - Alergaard,2025,647.5,-18.2
 2020-08-18T01:25:00Z,Skjern Å - Alergaard,2025,647.7,-18
 2020-08-18T02:25:00Z,Skjern Å - Alergaard,2025,647.9,-17.8
@@ -11329,7 +11339,8 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:25:00Z,Skjern Å - Alergaard,2025,643.4,-23.2
 2020-08-26T02:25:00Z,Skjern Å - Alergaard,2025,643.7,-22.9
 2020-08-26T03:25:00Z,Skjern Å - Alergaard,2025,643.8,-22.8
-2020-08-26T04:00:00Z,Skjern Å - Alergaard,2025,643.5,-23.1
+2020-08-26T04:25:00Z,Skjern Å - Alergaard,2025,643.5,-23.1
+2020-08-26T05:00:00Z,Skjern Å - Alergaard,2025,643.8,-22.8
 2020-08-11T00:22:30Z,Skjern Å - Gjaldbæk bro,2017,451.9,6
 2020-08-11T01:22:30Z,Skjern Å - Gjaldbæk bro,2017,451.7,5.8
 2020-08-11T02:22:30Z,Skjern Å - Gjaldbæk bro,2017,451.7,5.8
@@ -11694,6 +11705,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:22:30Z,Skjern Å - Gjaldbæk bro,2017,454.5,4.2
 2020-08-26T02:22:30Z,Skjern Å - Gjaldbæk bro,2017,454.3,4
 2020-08-26T03:22:30Z,Skjern Å - Gjaldbæk bro,2017,454,3.7
+2020-08-26T04:22:30Z,Skjern Å - Gjaldbæk bro,2017,453.7,3.4
 2020-08-11T00:22:30Z,Skjern Å - Gjaldbæk bro,2018,420.3,-25.7
 2020-08-11T01:22:30Z,Skjern Å - Gjaldbæk bro,2018,420.5,-25.4
 2020-08-11T02:22:30Z,Skjern Å - Gjaldbæk bro,2018,421.2,-24.8
@@ -12058,6 +12070,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:22:30Z,Skjern Å - Gjaldbæk bro,2018,431.5,-18.8
 2020-08-26T02:22:30Z,Skjern Å - Gjaldbæk bro,2018,431.8,-18.5
 2020-08-26T03:22:30Z,Skjern Å - Gjaldbæk bro,2018,432,-18.3
+2020-08-26T04:22:30Z,Skjern Å - Gjaldbæk bro,2018,432.3,-18
 2020-08-11T00:22:30Z,Skjern Å - Gjaldbæk bro,2020,435.5,-10.5
 2020-08-11T01:22:30Z,Skjern Å - Gjaldbæk bro,2020,435.5,-10.5
 2020-08-11T02:22:30Z,Skjern Å - Gjaldbæk bro,2020,435.4,-10.6
@@ -12422,6 +12435,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:22:30Z,Skjern Å - Gjaldbæk bro,2020,447,-3.6
 2020-08-26T02:22:30Z,Skjern Å - Gjaldbæk bro,2020,447.1,-3.5
 2020-08-26T03:22:30Z,Skjern Å - Gjaldbæk bro,2020,447.3,-3.3
+2020-08-26T04:22:30Z,Skjern Å - Gjaldbæk bro,2020,447.4,-3.2
 2020-08-11T00:22:30Z,Skjern Å - Gjaldbæk bro,2021,444.3,-1.6
 2020-08-11T01:22:30Z,Skjern Å - Gjaldbæk bro,2021,445.2,-0.7
 2020-08-11T02:22:30Z,Skjern Å - Gjaldbæk bro,2021,445.8,-0.2
@@ -12786,6 +12800,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:22:30Z,Skjern Å - Gjaldbæk bro,2021,434.5,-15.8
 2020-08-26T02:22:30Z,Skjern Å - Gjaldbæk bro,2021,434.3,-16
 2020-08-26T03:22:30Z,Skjern Å - Gjaldbæk bro,2021,434.4,-15.8
+2020-08-26T04:22:30Z,Skjern Å - Gjaldbæk bro,2021,434.3,-16
 2020-08-11T00:25:00Z,Skjern Å - Gjaldbæk bro,2022,425,-20.8
 2020-08-11T01:25:00Z,Skjern Å - Gjaldbæk bro,2022,425,-21
 2020-08-11T02:25:00Z,Skjern Å - Gjaldbæk bro,2022,424.9,-21
@@ -13150,6 +13165,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:25:00Z,Skjern Å - Gjaldbæk bro,2022,420.4,-29.9
 2020-08-26T02:25:00Z,Skjern Å - Gjaldbæk bro,2022,420.4,-29.9
 2020-08-26T03:25:00Z,Skjern Å - Gjaldbæk bro,2022,420.4,-29.9
+2020-08-26T04:25:00Z,Skjern Å - Gjaldbæk bro,2022,420.5,-29.8
 2020-08-11T00:25:00Z,Skjern Å - Gjaldbæk bro,2024,481.8,35.8
 2020-08-11T01:25:00Z,Skjern Å - Gjaldbæk bro,2024,481.5,35.5
 2020-08-11T02:25:00Z,Skjern Å - Gjaldbæk bro,2024,481,35
@@ -13514,6 +13530,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:25:00Z,Skjern Å - Gjaldbæk bro,2024,532.9,82.3
 2020-08-26T02:25:00Z,Skjern Å - Gjaldbæk bro,2024,533.6,83
 2020-08-26T03:25:00Z,Skjern Å - Gjaldbæk bro,2024,533.8,83.2
+2020-08-26T04:25:00Z,Skjern Å - Gjaldbæk bro,2024,534.1,83.5
 2020-08-11T00:25:00Z,Skjern Å - Gjaldbæk bro,2025,435.1,-10.8
 2020-08-11T01:25:00Z,Skjern Å - Gjaldbæk bro,2025,435,-10.9
 2020-08-11T02:25:00Z,Skjern Å - Gjaldbæk bro,2025,435,-10.9
@@ -13878,7 +13895,8 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:25:00Z,Skjern Å - Gjaldbæk bro,2025,418.7,-31.6
 2020-08-26T02:25:00Z,Skjern Å - Gjaldbæk bro,2025,419,-31.4
 2020-08-26T03:25:00Z,Skjern Å - Gjaldbæk bro,2025,419.2,-31.1
-2020-08-26T04:00:00Z,Skjern Å - Gjaldbæk bro,2025,419.4,-30.9
+2020-08-26T04:25:00Z,Skjern Å - Gjaldbæk bro,2025,419.4,-30.9
+2020-08-26T05:00:00Z,Skjern Å - Gjaldbæk bro,2025,419.4,-30.9
 2020-08-11T00:27:30Z,Skjern Å - Laksens hus,2023,97.9,-11.2
 2020-08-11T01:27:30Z,Skjern Å - Laksens hus,2023,97.6,-11.5
 2020-08-11T02:27:30Z,Skjern Å - Laksens hus,2023,97,-12.1
@@ -15745,6 +15763,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:22:30Z,Skjern Å - Sandfeldvej,2018,2762.5,0.7
 2020-08-26T02:22:30Z,Skjern Å - Sandfeldvej,2018,2761.9,0
 2020-08-26T03:22:30Z,Skjern Å - Sandfeldvej,2018,2761.6,-0.2
+2020-08-26T04:22:30Z,Skjern Å - Sandfeldvej,2018,2761.3,-0.5
 2020-08-11T00:22:30Z,Skjern Å - Sandfeldvej,2020,2751.8,-8.7
 2020-08-11T01:22:30Z,Skjern Å - Sandfeldvej,2020,2751.8,-8.7
 2020-08-11T02:22:30Z,Skjern Å - Sandfeldvej,2020,2751.8,-8.7
@@ -16109,6 +16128,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:22:30Z,Skjern Å - Sandfeldvej,2020,2756.2,-5.7
 2020-08-26T02:22:30Z,Skjern Å - Sandfeldvej,2020,2757.3,-4.6
 2020-08-26T03:22:30Z,Skjern Å - Sandfeldvej,2020,2758.6,-3.3
+2020-08-26T04:22:30Z,Skjern Å - Sandfeldvej,2020,2760.2,-1.8
 2020-08-11T00:22:30Z,Skjern Å - Sandfeldvej,2021,2775.4,14.9
 2020-08-11T01:22:30Z,Skjern Å - Sandfeldvej,2021,2775.4,14.8
 2020-08-11T02:22:30Z,Skjern Å - Sandfeldvej,2021,2775.2,14.7
@@ -16473,6 +16493,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:22:30Z,Skjern Å - Sandfeldvej,2021,2761.9,0.1
 2020-08-26T02:22:30Z,Skjern Å - Sandfeldvej,2021,2761.8,-0
 2020-08-26T03:22:30Z,Skjern Å - Sandfeldvej,2021,2761.7,-0.1
+2020-08-26T04:22:30Z,Skjern Å - Sandfeldvej,2021,2761.5,-0.2
 2020-08-11T00:25:00Z,Skjern Å - Sandfeldvej,2022,2744.6,-15.9
 2020-08-11T01:25:00Z,Skjern Å - Sandfeldvej,2022,2744.6,-15.9
 2020-08-11T02:25:00Z,Skjern Å - Sandfeldvej,2022,2744.5,-16
@@ -16837,6 +16858,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:25:00Z,Skjern Å - Sandfeldvej,2022,2757.8,-4
 2020-08-26T02:25:00Z,Skjern Å - Sandfeldvej,2022,2758.2,-3.6
 2020-08-26T03:25:00Z,Skjern Å - Sandfeldvej,2022,2758.3,-3.5
+2020-08-26T04:25:00Z,Skjern Å - Sandfeldvej,2022,2758.1,-3.7
 2020-08-11T00:25:00Z,Skjern Å - Sandfeldvej,2024,2784.4,24
 2020-08-11T01:25:00Z,Skjern Å - Sandfeldvej,2024,2784.1,23.6
 2020-08-11T02:25:00Z,Skjern Å - Sandfeldvej,2024,2783.8,23.3
@@ -17201,6 +17223,7 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:25:00Z,Skjern Å - Sandfeldvej,2024,2814.4,52.5
 2020-08-26T02:25:00Z,Skjern Å - Sandfeldvej,2024,2814.4,52.5
 2020-08-26T03:25:00Z,Skjern Å - Sandfeldvej,2024,2814.2,52.3
+2020-08-26T04:25:00Z,Skjern Å - Sandfeldvej,2024,2814,52.1
 2020-08-11T00:25:00Z,Skjern Å - Sandfeldvej,2025,2746.9,-13.6
 2020-08-11T01:25:00Z,Skjern Å - Sandfeldvej,2025,2746.9,-13.6
 2020-08-11T02:25:00Z,Skjern Å - Sandfeldvej,2025,2747.1,-13.4
@@ -17565,4 +17588,5 @@ Date,Place,YGroup,Level,LevelRelative
 2020-08-26T01:25:00Z,Skjern Å - Sandfeldvej,2025,2738.9,-22.9
 2020-08-26T02:25:00Z,Skjern Å - Sandfeldvej,2025,2738.3,-23.5
 2020-08-26T03:25:00Z,Skjern Å - Sandfeldvej,2025,2737.9,-23.9
-2020-08-26T04:00:00Z,Skjern Å - Sandfeldvej,2025,2737.7,-24.1
+2020-08-26T04:25:00Z,Skjern Å - Sandfeldvej,2025,2737.3,-24.5
+2020-08-26T05:00:00Z,Skjern Å - Sandfeldvej,2025,2737.4,-24.4
