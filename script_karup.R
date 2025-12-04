@@ -102,6 +102,7 @@ write_csv(datLines, str_c(prefix, "_maplines.csv"))
 
 
 
+
 #### Render reports ####
 yr <- lubridate::year(lubridate::now())
 render(here::here("reports/karup/karup-waterlevel.Rmd"), output_dir = "docs/karup")
