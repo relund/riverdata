@@ -54,13 +54,13 @@ jobs:
       - uses: r-lib/actions/setup-renv@v2
           
       - name: Run R script Karup
-        run: Rscript --verbose script_karup.R
+        run: Rscript script_karup.R
         
       - name: Run R script Skjern
-        run: Rscript --verbose script_skjern.R
+        run: Rscript script_skjern.R
         
       - name: Run R script MV-LF
-        run: Rscript --verbose script_mv-lf.R
+        run: Rscript script_mv-lf.R
         
       - name: Check disk usage
         run: |
