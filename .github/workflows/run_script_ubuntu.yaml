@@ -69,6 +69,11 @@ jobs:
           echo "Largest directories:"
           du -h . | sort -h | tail -n 30
           
+      - name: Clean R caches
+        run: |
+          Rscript -e 'cat("renv cache:", renv::paths$cache(), "\n"); unlink(renv::paths$cache(), recursive = TRUE, force = TRUE)'
+          Rscript -e 'unlink(tempdir(), recursive = TRUE, force = TRUE)'
+          
       - name: Commit results
         run: |
           git config --local user.name "$GITHUB_ACTOR"
