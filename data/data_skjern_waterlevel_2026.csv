@@ -502,12 +502,12 @@ Date,Place,Value
 2026-01-15T14:40:00Z,Karstoft Å - Fiskedamme,15.638
 2026-01-15T14:30:00Z,Karstoft Å - Fiskedamme,15.638
 2026-01-15T14:20:00Z,Karstoft Å - Fiskedamme,15.638
-2026-01-15T14:10:00Z,Karstoft Å - Fiskedamme,15.637857142857143
-2026-01-15T14:00:00Z,Karstoft Å - Fiskedamme,15.637714285714285
-2026-01-15T13:50:00Z,Karstoft Å - Fiskedamme,15.637571428571428
-2026-01-15T13:40:00Z,Karstoft Å - Fiskedamme,15.637428571428572
-2026-01-15T13:30:00Z,Karstoft Å - Fiskedamme,15.637285714285715
-2026-01-15T13:20:00Z,Karstoft Å - Fiskedamme,15.637142857142857
+2026-01-15T14:10:00Z,Karstoft Å - Fiskedamme,15.635
+2026-01-15T14:00:00Z,Karstoft Å - Fiskedamme,15.635
+2026-01-15T13:50:00Z,Karstoft Å - Fiskedamme,15.635
+2026-01-15T13:40:00Z,Karstoft Å - Fiskedamme,15.6355
+2026-01-15T13:30:00Z,Karstoft Å - Fiskedamme,15.636
+2026-01-15T13:20:00Z,Karstoft Å - Fiskedamme,15.6365
 2026-01-15T13:10:00Z,Karstoft Å - Fiskedamme,15.637
 2026-01-15T13:00:00Z,Karstoft Å - Fiskedamme,15.636
 2026-01-15T12:50:00Z,Karstoft Å - Fiskedamme,15.637
@@ -585,7 +585,7 @@ Date,Place,Value
 2026-01-15T00:50:00Z,Karstoft Å - Fiskedamme,15.677999999999999
 2026-01-15T00:40:00Z,Karstoft Å - Fiskedamme,15.679000000000002
 2026-01-15T00:30:00Z,Karstoft Å - Fiskedamme,15.679000000000002
-2026-01-15T00:20:00Z,Karstoft Å - Fiskedamme,15.677000000000001
+2026-01-15T00:20:00Z,Karstoft Å - Fiskedamme,15.683
 2026-01-15T00:10:00Z,Karstoft Å - Fiskedamme,15.675
 2026-01-15T00:00:00Z,Karstoft Å - Fiskedamme,15.682
 2026-01-14T23:50:00Z,Karstoft Å - Fiskedamme,15.682
@@ -778,7 +778,7 @@ Date,Place,Value
 2026-01-13T16:40:00Z,Karstoft Å - Fiskedamme,15.496333333333334
 2026-01-13T16:30:00Z,Karstoft Å - Fiskedamme,15.495000000000001
 2026-01-13T16:20:00Z,Karstoft Å - Fiskedamme,15.494000000000002
-2026-01-13T16:10:00Z,Karstoft Å - Fiskedamme,15.495000000000001
+2026-01-13T16:10:00Z,Karstoft Å - Fiskedamme,15.493
 2026-01-13T16:00:00Z,Karstoft Å - Fiskedamme,15.495999999999999
 2026-01-13T15:50:00Z,Karstoft Å - Fiskedamme,15.495000000000001
 2026-01-13T15:40:00Z,Karstoft Å - Fiskedamme,15.491
@@ -2073,18 +2073,18 @@ Date,Place,Value
 2026-01-04T05:00:00Z,Karstoft Å - Fiskedamme,15.517000000000001
 2026-01-04T04:50:00Z,Karstoft Å - Fiskedamme,15.514000000000001
 2026-01-04T04:40:00Z,Karstoft Å - Fiskedamme,15.514000000000001
-2026-01-04T04:30:00Z,Karstoft Å - Fiskedamme,15.514000000000001
+2026-01-04T04:30:00Z,Karstoft Å - Fiskedamme,15.514
 2026-01-04T04:20:00Z,Karstoft Å - Fiskedamme,15.518
-2026-01-04T04:10:00Z,Karstoft Å - Fiskedamme,15.514000000000001
+2026-01-04T04:10:00Z,Karstoft Å - Fiskedamme,15.514
 2026-01-04T04:00:00Z,Karstoft Å - Fiskedamme,15.516
 2026-01-04T03:50:00Z,Karstoft Å - Fiskedamme,15.516
 2026-01-04T03:40:00Z,Karstoft Å - Fiskedamme,15.516
 2026-01-04T03:30:00Z,Karstoft Å - Fiskedamme,15.52
 2026-01-04T03:20:00Z,Karstoft Å - Fiskedamme,15.519000000000002
 2026-01-04T03:10:00Z,Karstoft Å - Fiskedamme,15.519000000000002
-2026-01-04T03:00:00Z,Karstoft Å - Fiskedamme,15.517000000000001
-2026-01-04T02:50:00Z,Karstoft Å - Fiskedamme,15.517000000000001
-2026-01-04T02:40:00Z,Karstoft Å - Fiskedamme,15.517000000000001
+2026-01-04T03:00:00Z,Karstoft Å - Fiskedamme,15.517
+2026-01-04T02:50:00Z,Karstoft Å - Fiskedamme,15.517
+2026-01-04T02:40:00Z,Karstoft Å - Fiskedamme,15.517
 2026-01-04T02:30:00Z,Karstoft Å - Fiskedamme,15.517
 2026-01-04T02:20:00Z,Karstoft Å - Fiskedamme,15.52
 2026-01-04T02:10:00Z,Karstoft Å - Fiskedamme,15.518
@@ -2533,6 +2533,18 @@ Date,Place,Value
 2026-01-01T00:20:00Z,Karstoft Å - Fiskedamme,15.508
 2026-01-01T00:10:00Z,Karstoft Å - Fiskedamme,15.499
 2026-01-01T00:00:00Z,Karstoft Å - Fiskedamme,15.503
+2026-01-19T04:00:00Z,Omme Å - Sønderskov bro,3.571
+2026-01-19T03:50:00Z,Omme Å - Sønderskov bro,3.574
+2026-01-19T03:40:00Z,Omme Å - Sønderskov bro,3.574
+2026-01-19T03:30:00Z,Omme Å - Sønderskov bro,3.571
+2026-01-19T03:20:00Z,Omme Å - Sønderskov bro,3.574
+2026-01-19T03:10:00Z,Omme Å - Sønderskov bro,3.574
+2026-01-19T03:00:00Z,Omme Å - Sønderskov bro,3.577
+2026-01-19T02:50:00Z,Omme Å - Sønderskov bro,3.577
+2026-01-19T02:40:00Z,Omme Å - Sønderskov bro,3.5789999999999997
+2026-01-19T02:30:00Z,Omme Å - Sønderskov bro,3.575
+2026-01-19T02:20:00Z,Omme Å - Sønderskov bro,3.583
+2026-01-19T02:10:00Z,Omme Å - Sønderskov bro,3.5789999999999997
 2026-01-19T02:00:00Z,Omme Å - Sønderskov bro,3.5810000000000004
 2026-01-19T01:50:00Z,Omme Å - Sønderskov bro,3.583
 2026-01-19T01:40:00Z,Omme Å - Sønderskov bro,3.58
@@ -6863,75 +6875,75 @@ Date,Place,Value
 2026-01-06T15:20:00Z,Rind Å - Arnborg kirke,24.724
 2026-01-06T15:10:00Z,Rind Å - Arnborg kirke,24.723000000000003
 2026-01-06T15:00:00Z,Rind Å - Arnborg kirke,24.723000000000003
-2026-01-06T14:50:00Z,Rind Å - Arnborg kirke,24.72551428571429
-2026-01-06T14:40:00Z,Rind Å - Arnborg kirke,24.728028571428574
-2026-01-06T14:30:00Z,Rind Å - Arnborg kirke,24.730542857142858
-2026-01-06T14:20:00Z,Rind Å - Arnborg kirke,24.733057142857145
-2026-01-06T14:10:00Z,Rind Å - Arnborg kirke,24.735571428571433
-2026-01-06T14:00:00Z,Rind Å - Arnborg kirke,24.738085714285717
-2026-01-06T13:50:00Z,Rind Å - Arnborg kirke,24.7406
-2026-01-06T13:40:00Z,Rind Å - Arnborg kirke,24.743114285714288
-2026-01-06T13:30:00Z,Rind Å - Arnborg kirke,24.745628571428576
-2026-01-06T13:20:00Z,Rind Å - Arnborg kirke,24.74814285714286
-2026-01-06T13:10:00Z,Rind Å - Arnborg kirke,24.750657142857143
-2026-01-06T13:00:00Z,Rind Å - Arnborg kirke,24.75317142857143
-2026-01-06T12:50:00Z,Rind Å - Arnborg kirke,24.75568571428572
-2026-01-06T12:40:00Z,Rind Å - Arnborg kirke,24.758200000000002
-2026-01-06T12:30:00Z,Rind Å - Arnborg kirke,24.760714285714286
-2026-01-06T12:20:00Z,Rind Å - Arnborg kirke,24.763228571428574
-2026-01-06T12:10:00Z,Rind Å - Arnborg kirke,24.76574285714286
-2026-01-06T12:00:00Z,Rind Å - Arnborg kirke,24.768257142857145
-2026-01-06T11:50:00Z,Rind Å - Arnborg kirke,24.77077142857143
-2026-01-06T11:40:00Z,Rind Å - Arnborg kirke,24.773285714285716
-2026-01-06T11:30:00Z,Rind Å - Arnborg kirke,24.775800000000004
-2026-01-06T11:20:00Z,Rind Å - Arnborg kirke,24.778314285714288
-2026-01-06T11:10:00Z,Rind Å - Arnborg kirke,24.780828571428575
-2026-01-06T11:00:00Z,Rind Å - Arnborg kirke,24.78334285714286
-2026-01-06T10:50:00Z,Rind Å - Arnborg kirke,24.785857142857143
-2026-01-06T10:40:00Z,Rind Å - Arnborg kirke,24.78837142857143
-2026-01-06T10:30:00Z,Rind Å - Arnborg kirke,24.790885714285714
-2026-01-06T10:20:00Z,Rind Å - Arnborg kirke,24.793400000000002
-2026-01-06T10:10:00Z,Rind Å - Arnborg kirke,24.79591428571429
-2026-01-06T10:00:00Z,Rind Å - Arnborg kirke,24.798428571428573
-2026-01-06T09:50:00Z,Rind Å - Arnborg kirke,24.800942857142857
-2026-01-06T09:40:00Z,Rind Å - Arnborg kirke,24.803457142857145
-2026-01-06T09:30:00Z,Rind Å - Arnborg kirke,24.805971428571432
-2026-01-06T09:20:00Z,Rind Å - Arnborg kirke,24.808485714285716
-2026-01-06T09:10:00Z,Rind Å - Arnborg kirke,24.811
-2026-01-06T09:00:00Z,Rind Å - Arnborg kirke,24.813514285714287
-2026-01-06T08:50:00Z,Rind Å - Arnborg kirke,24.816028571428575
-2026-01-06T08:40:00Z,Rind Å - Arnborg kirke,24.81854285714286
-2026-01-06T08:30:00Z,Rind Å - Arnborg kirke,24.821057142857143
-2026-01-06T08:20:00Z,Rind Å - Arnborg kirke,24.82357142857143
-2026-01-06T08:10:00Z,Rind Å - Arnborg kirke,24.826085714285718
-2026-01-06T08:00:00Z,Rind Å - Arnborg kirke,24.8286
-2026-01-06T07:50:00Z,Rind Å - Arnborg kirke,24.831114285714285
-2026-01-06T07:40:00Z,Rind Å - Arnborg kirke,24.833628571428573
-2026-01-06T07:30:00Z,Rind Å - Arnborg kirke,24.83614285714286
-2026-01-06T07:20:00Z,Rind Å - Arnborg kirke,24.838657142857144
-2026-01-06T07:10:00Z,Rind Å - Arnborg kirke,24.84117142857143
-2026-01-06T07:00:00Z,Rind Å - Arnborg kirke,24.843685714285716
-2026-01-06T06:50:00Z,Rind Å - Arnborg kirke,24.846200000000003
-2026-01-06T06:40:00Z,Rind Å - Arnborg kirke,24.848714285714287
-2026-01-06T06:30:00Z,Rind Å - Arnborg kirke,24.851228571428575
-2026-01-06T06:20:00Z,Rind Å - Arnborg kirke,24.85374285714286
-2026-01-06T06:10:00Z,Rind Å - Arnborg kirke,24.856257142857146
-2026-01-06T06:00:00Z,Rind Å - Arnborg kirke,24.85877142857143
-2026-01-06T05:50:00Z,Rind Å - Arnborg kirke,24.861285714285714
-2026-01-06T05:40:00Z,Rind Å - Arnborg kirke,24.8638
-2026-01-06T05:30:00Z,Rind Å - Arnborg kirke,24.86631428571429
-2026-01-06T05:20:00Z,Rind Å - Arnborg kirke,24.868828571428573
-2026-01-06T05:10:00Z,Rind Å - Arnborg kirke,24.871342857142857
-2026-01-06T05:00:00Z,Rind Å - Arnborg kirke,24.873857142857144
-2026-01-06T04:50:00Z,Rind Å - Arnborg kirke,24.87637142857143
-2026-01-06T04:40:00Z,Rind Å - Arnborg kirke,24.878885714285715
-2026-01-06T04:30:00Z,Rind Å - Arnborg kirke,24.8814
-2026-01-06T04:20:00Z,Rind Å - Arnborg kirke,24.883914285714287
-2026-01-06T04:10:00Z,Rind Å - Arnborg kirke,24.886428571428574
-2026-01-06T04:00:00Z,Rind Å - Arnborg kirke,24.888942857142858
-2026-01-06T03:50:00Z,Rind Å - Arnborg kirke,24.891457142857142
-2026-01-06T03:40:00Z,Rind Å - Arnborg kirke,24.89397142857143
-2026-01-06T03:30:00Z,Rind Å - Arnborg kirke,24.896485714285717
+2026-01-06T14:50:00Z,Rind Å - Arnborg kirke,24.7235
+2026-01-06T14:40:00Z,Rind Å - Arnborg kirke,24.724
+2026-01-06T14:30:00Z,Rind Å - Arnborg kirke,24.726573529411766
+2026-01-06T14:20:00Z,Rind Å - Arnborg kirke,24.72914705882353
+2026-01-06T14:10:00Z,Rind Å - Arnborg kirke,24.731720588235294
+2026-01-06T14:00:00Z,Rind Å - Arnborg kirke,24.73429411764706
+2026-01-06T13:50:00Z,Rind Å - Arnborg kirke,24.736867647058823
+2026-01-06T13:40:00Z,Rind Å - Arnborg kirke,24.73944117647059
+2026-01-06T13:30:00Z,Rind Å - Arnborg kirke,24.742014705882355
+2026-01-06T13:20:00Z,Rind Å - Arnborg kirke,24.744588235294117
+2026-01-06T13:10:00Z,Rind Å - Arnborg kirke,24.747161764705883
+2026-01-06T13:00:00Z,Rind Å - Arnborg kirke,24.74973529411765
+2026-01-06T12:50:00Z,Rind Å - Arnborg kirke,24.75230882352941
+2026-01-06T12:40:00Z,Rind Å - Arnborg kirke,24.754882352941177
+2026-01-06T12:30:00Z,Rind Å - Arnborg kirke,24.757455882352943
+2026-01-06T12:20:00Z,Rind Å - Arnborg kirke,24.760029411764705
+2026-01-06T12:10:00Z,Rind Å - Arnborg kirke,24.76260294117647
+2026-01-06T12:00:00Z,Rind Å - Arnborg kirke,24.765176470588237
+2026-01-06T11:50:00Z,Rind Å - Arnborg kirke,24.76775
+2026-01-06T11:40:00Z,Rind Å - Arnborg kirke,24.770323529411765
+2026-01-06T11:30:00Z,Rind Å - Arnborg kirke,24.77289705882353
+2026-01-06T11:20:00Z,Rind Å - Arnborg kirke,24.775470588235294
+2026-01-06T11:10:00Z,Rind Å - Arnborg kirke,24.77804411764706
+2026-01-06T11:00:00Z,Rind Å - Arnborg kirke,24.780617647058826
+2026-01-06T10:50:00Z,Rind Å - Arnborg kirke,24.783191176470588
+2026-01-06T10:40:00Z,Rind Å - Arnborg kirke,24.785764705882354
+2026-01-06T10:30:00Z,Rind Å - Arnborg kirke,24.78833823529412
+2026-01-06T10:20:00Z,Rind Å - Arnborg kirke,24.790911764705882
+2026-01-06T10:10:00Z,Rind Å - Arnborg kirke,24.793485294117648
+2026-01-06T10:00:00Z,Rind Å - Arnborg kirke,24.796058823529414
+2026-01-06T09:50:00Z,Rind Å - Arnborg kirke,24.798632352941176
+2026-01-06T09:40:00Z,Rind Å - Arnborg kirke,24.801205882352942
+2026-01-06T09:30:00Z,Rind Å - Arnborg kirke,24.803779411764708
+2026-01-06T09:20:00Z,Rind Å - Arnborg kirke,24.80635294117647
+2026-01-06T09:10:00Z,Rind Å - Arnborg kirke,24.808926470588236
+2026-01-06T09:00:00Z,Rind Å - Arnborg kirke,24.811500000000002
+2026-01-06T08:50:00Z,Rind Å - Arnborg kirke,24.814073529411765
+2026-01-06T08:40:00Z,Rind Å - Arnborg kirke,24.81664705882353
+2026-01-06T08:30:00Z,Rind Å - Arnborg kirke,24.819220588235293
+2026-01-06T08:20:00Z,Rind Å - Arnborg kirke,24.82179411764706
+2026-01-06T08:10:00Z,Rind Å - Arnborg kirke,24.824367647058825
+2026-01-06T08:00:00Z,Rind Å - Arnborg kirke,24.826941176470587
+2026-01-06T07:50:00Z,Rind Å - Arnborg kirke,24.829514705882353
+2026-01-06T07:40:00Z,Rind Å - Arnborg kirke,24.83208823529412
+2026-01-06T07:30:00Z,Rind Å - Arnborg kirke,24.83466176470588
+2026-01-06T07:20:00Z,Rind Å - Arnborg kirke,24.837235294117647
+2026-01-06T07:10:00Z,Rind Å - Arnborg kirke,24.839808823529413
+2026-01-06T07:00:00Z,Rind Å - Arnborg kirke,24.842382352941176
+2026-01-06T06:50:00Z,Rind Å - Arnborg kirke,24.84495588235294
+2026-01-06T06:40:00Z,Rind Å - Arnborg kirke,24.847529411764707
+2026-01-06T06:30:00Z,Rind Å - Arnborg kirke,24.85010294117647
+2026-01-06T06:20:00Z,Rind Å - Arnborg kirke,24.852676470588236
+2026-01-06T06:10:00Z,Rind Å - Arnborg kirke,24.85525
+2026-01-06T06:00:00Z,Rind Å - Arnborg kirke,24.857823529411764
+2026-01-06T05:50:00Z,Rind Å - Arnborg kirke,24.86039705882353
+2026-01-06T05:40:00Z,Rind Å - Arnborg kirke,24.862970588235296
+2026-01-06T05:30:00Z,Rind Å - Arnborg kirke,24.865544117647058
+2026-01-06T05:20:00Z,Rind Å - Arnborg kirke,24.868117647058824
+2026-01-06T05:10:00Z,Rind Å - Arnborg kirke,24.87069117647059
+2026-01-06T05:00:00Z,Rind Å - Arnborg kirke,24.873264705882352
+2026-01-06T04:50:00Z,Rind Å - Arnborg kirke,24.87583823529412
+2026-01-06T04:40:00Z,Rind Å - Arnborg kirke,24.878411764705884
+2026-01-06T04:30:00Z,Rind Å - Arnborg kirke,24.880985294117647
+2026-01-06T04:20:00Z,Rind Å - Arnborg kirke,24.883558823529413
+2026-01-06T04:10:00Z,Rind Å - Arnborg kirke,24.88613235294118
+2026-01-06T04:00:00Z,Rind Å - Arnborg kirke,24.88870588235294
+2026-01-06T03:50:00Z,Rind Å - Arnborg kirke,24.891279411764707
+2026-01-06T03:40:00Z,Rind Å - Arnborg kirke,24.893852941176473
+2026-01-06T03:30:00Z,Rind Å - Arnborg kirke,24.896426470588235
 2026-01-06T03:20:00Z,Rind Å - Arnborg kirke,24.899
 2026-01-06T03:10:00Z,Rind Å - Arnborg kirke,24.900000000000002
 2026-01-06T03:00:00Z,Rind Å - Arnborg kirke,24.899
@@ -7673,6 +7685,18 @@ Date,Place,Value
 2026-01-01T00:20:00Z,Rind Å - Arnborg kirke,24.84
 2026-01-01T00:10:00Z,Rind Å - Arnborg kirke,24.841
 2026-01-01T00:00:00Z,Rind Å - Arnborg kirke,24.841
+2026-01-19T04:00:00Z,Skjern Å - Alergaard,6.905
+2026-01-19T03:50:00Z,Skjern Å - Alergaard,6.912000000000001
+2026-01-19T03:40:00Z,Skjern Å - Alergaard,6.912999999999999
+2026-01-19T03:30:00Z,Skjern Å - Alergaard,6.9110000000000005
+2026-01-19T03:20:00Z,Skjern Å - Alergaard,6.907000000000001
+2026-01-19T03:10:00Z,Skjern Å - Alergaard,6.909
+2026-01-19T03:00:00Z,Skjern Å - Alergaard,6.9079999999999995
+2026-01-19T02:50:00Z,Skjern Å - Alergaard,6.912999999999999
+2026-01-19T02:40:00Z,Skjern Å - Alergaard,6.914
+2026-01-19T02:30:00Z,Skjern Å - Alergaard,6.915
+2026-01-19T02:20:00Z,Skjern Å - Alergaard,6.915
+2026-01-19T02:10:00Z,Skjern Å - Alergaard,6.912999999999999
 2026-01-19T02:00:00Z,Skjern Å - Alergaard,6.912000000000001
 2026-01-19T01:50:00Z,Skjern Å - Alergaard,6.915
 2026-01-19T01:40:00Z,Skjern Å - Alergaard,6.915
@@ -8127,7 +8151,7 @@ Date,Place,Value
 2026-01-15T22:50:00Z,Skjern Å - Alergaard,7.008
 2026-01-15T22:40:00Z,Skjern Å - Alergaard,7.009
 2026-01-15T22:30:00Z,Skjern Å - Alergaard,7.01
-2026-01-15T22:20:00Z,Skjern Å - Alergaard,7.0095
+2026-01-15T22:20:00Z,Skjern Å - Alergaard,7.008
 2026-01-15T22:10:00Z,Skjern Å - Alergaard,7.009
 2026-01-15T22:00:00Z,Skjern Å - Alergaard,7.011
 2026-01-15T21:50:00Z,Skjern Å - Alergaard,7.0115
@@ -8395,17 +8419,17 @@ Date,Place,Value
 2026-01-14T02:10:00Z,Skjern Å - Alergaard,6.7764
 2026-01-14T02:00:00Z,Skjern Å - Alergaard,6.7742000000000004
 2026-01-14T01:50:00Z,Skjern Å - Alergaard,6.772
-2026-01-14T01:40:00Z,Skjern Å - Alergaard,6.7701
-2026-01-14T01:30:00Z,Skjern Å - Alergaard,6.7682
-2026-01-14T01:20:00Z,Skjern Å - Alergaard,6.7663
-2026-01-14T01:10:00Z,Skjern Å - Alergaard,6.7644
-2026-01-14T01:00:00Z,Skjern Å - Alergaard,6.7625
-2026-01-14T00:50:00Z,Skjern Å - Alergaard,6.7606
-2026-01-14T00:40:00Z,Skjern Å - Alergaard,6.7587
-2026-01-14T00:30:00Z,Skjern Å - Alergaard,6.7568
-2026-01-14T00:20:00Z,Skjern Å - Alergaard,6.7549
+2026-01-14T01:40:00Z,Skjern Å - Alergaard,6.7700000000000005
+2026-01-14T01:30:00Z,Skjern Å - Alergaard,6.768
+2026-01-14T01:20:00Z,Skjern Å - Alergaard,6.766
+2026-01-14T01:10:00Z,Skjern Å - Alergaard,6.764
+2026-01-14T01:00:00Z,Skjern Å - Alergaard,6.762
+2026-01-14T00:50:00Z,Skjern Å - Alergaard,6.76
+2026-01-14T00:40:00Z,Skjern Å - Alergaard,6.75825
+2026-01-14T00:30:00Z,Skjern Å - Alergaard,6.7565
+2026-01-14T00:20:00Z,Skjern Å - Alergaard,6.75475
 2026-01-14T00:10:00Z,Skjern Å - Alergaard,6.753
-2026-01-14T00:00:00Z,Skjern Å - Alergaard,6.7515
+2026-01-14T00:00:00Z,Skjern Å - Alergaard,6.751
 2026-01-13T23:50:00Z,Skjern Å - Alergaard,6.75
 2026-01-13T23:40:00Z,Skjern Å - Alergaard,6.749
 2026-01-13T23:30:00Z,Skjern Å - Alergaard,6.747999999999999
@@ -8428,7 +8452,7 @@ Date,Place,Value
 2026-01-13T20:40:00Z,Skjern Å - Alergaard,6.721
 2026-01-13T20:30:00Z,Skjern Å - Alergaard,6.718
 2026-01-13T20:20:00Z,Skjern Å - Alergaard,6.716
-2026-01-13T20:10:00Z,Skjern Å - Alergaard,6.715
+2026-01-13T20:10:00Z,Skjern Å - Alergaard,6.7139999999999995
 2026-01-13T20:00:00Z,Skjern Å - Alergaard,6.7139999999999995
 2026-01-13T19:50:00Z,Skjern Å - Alergaard,6.715
 2026-01-13T19:40:00Z,Skjern Å - Alergaard,6.712000000000001
@@ -10207,6 +10231,18 @@ Date,Place,Value
 2026-01-01T00:20:00Z,Skjern Å - Alergaard,6.68
 2026-01-01T00:10:00Z,Skjern Å - Alergaard,6.682
 2026-01-01T00:00:00Z,Skjern Å - Alergaard,6.679
+2026-01-19T04:00:00Z,Skjern Å - Gjaldbæk bro,4.711
+2026-01-19T03:50:00Z,Skjern Å - Gjaldbæk bro,4.71
+2026-01-19T03:40:00Z,Skjern Å - Gjaldbæk bro,4.712
+2026-01-19T03:30:00Z,Skjern Å - Gjaldbæk bro,4.712
+2026-01-19T03:20:00Z,Skjern Å - Gjaldbæk bro,4.715
+2026-01-19T03:10:00Z,Skjern Å - Gjaldbæk bro,4.7139999999999995
+2026-01-19T03:00:00Z,Skjern Å - Gjaldbæk bro,4.713
+2026-01-19T02:50:00Z,Skjern Å - Gjaldbæk bro,4.7139999999999995
+2026-01-19T02:40:00Z,Skjern Å - Gjaldbæk bro,4.716
+2026-01-19T02:30:00Z,Skjern Å - Gjaldbæk bro,4.715
+2026-01-19T02:20:00Z,Skjern Å - Gjaldbæk bro,4.717
+2026-01-19T02:10:00Z,Skjern Å - Gjaldbæk bro,4.716
 2026-01-19T02:00:00Z,Skjern Å - Gjaldbæk bro,4.717
 2026-01-19T01:50:00Z,Skjern Å - Gjaldbæk bro,4.718
 2026-01-19T01:40:00Z,Skjern Å - Gjaldbæk bro,4.719
@@ -10532,7 +10568,7 @@ Date,Place,Value
 2026-01-16T20:20:00Z,Skjern Å - Gjaldbæk bro,4.942
 2026-01-16T20:10:00Z,Skjern Å - Gjaldbæk bro,4.941000000000001
 2026-01-16T20:00:00Z,Skjern Å - Gjaldbæk bro,4.941000000000001
-2026-01-16T19:50:00Z,Skjern Å - Gjaldbæk bro,4.94
+2026-01-16T19:50:00Z,Skjern Å - Gjaldbæk bro,4.941000000000001
 2026-01-16T19:40:00Z,Skjern Å - Gjaldbæk bro,4.939
 2026-01-16T19:30:00Z,Skjern Å - Gjaldbæk bro,4.939
 2026-01-16T19:20:00Z,Skjern Å - Gjaldbæk bro,4.938000000000001
@@ -10613,67 +10649,67 @@ Date,Place,Value
 2026-01-16T06:00:00Z,Skjern Å - Gjaldbæk bro,4.861000000000001
 2026-01-16T05:50:00Z,Skjern Å - Gjaldbæk bro,4.861000000000001
 2026-01-16T05:40:00Z,Skjern Å - Gjaldbæk bro,4.861000000000001
-2026-01-16T05:30:00Z,Skjern Å - Gjaldbæk bro,4.86
+2026-01-16T05:30:00Z,Skjern Å - Gjaldbæk bro,4.859
 2026-01-16T05:20:00Z,Skjern Å - Gjaldbæk bro,4.859
-2026-01-16T05:10:00Z,Skjern Å - Gjaldbæk bro,4.85901724137931
-2026-01-16T05:00:00Z,Skjern Å - Gjaldbæk bro,4.859034482758621
-2026-01-16T04:50:00Z,Skjern Å - Gjaldbæk bro,4.859051724137931
-2026-01-16T04:40:00Z,Skjern Å - Gjaldbæk bro,4.859068965517241
-2026-01-16T04:30:00Z,Skjern Å - Gjaldbæk bro,4.859086206896552
-2026-01-16T04:20:00Z,Skjern Å - Gjaldbæk bro,4.859103448275862
-2026-01-16T04:10:00Z,Skjern Å - Gjaldbæk bro,4.859120689655173
-2026-01-16T04:00:00Z,Skjern Å - Gjaldbæk bro,4.859137931034483
-2026-01-16T03:50:00Z,Skjern Å - Gjaldbæk bro,4.859155172413793
-2026-01-16T03:40:00Z,Skjern Å - Gjaldbæk bro,4.859172413793104
-2026-01-16T03:30:00Z,Skjern Å - Gjaldbæk bro,4.859189655172414
-2026-01-16T03:20:00Z,Skjern Å - Gjaldbæk bro,4.859206896551724
-2026-01-16T03:10:00Z,Skjern Å - Gjaldbæk bro,4.859224137931035
-2026-01-16T03:00:00Z,Skjern Å - Gjaldbæk bro,4.859241379310345
-2026-01-16T02:50:00Z,Skjern Å - Gjaldbæk bro,4.859258620689655
-2026-01-16T02:40:00Z,Skjern Å - Gjaldbæk bro,4.859275862068966
-2026-01-16T02:30:00Z,Skjern Å - Gjaldbæk bro,4.859293103448276
-2026-01-16T02:20:00Z,Skjern Å - Gjaldbæk bro,4.859310344827587
-2026-01-16T02:10:00Z,Skjern Å - Gjaldbæk bro,4.859327586206897
-2026-01-16T02:00:00Z,Skjern Å - Gjaldbæk bro,4.859344827586207
-2026-01-16T01:50:00Z,Skjern Å - Gjaldbæk bro,4.859362068965518
-2026-01-16T01:40:00Z,Skjern Å - Gjaldbæk bro,4.859379310344828
-2026-01-16T01:30:00Z,Skjern Å - Gjaldbæk bro,4.859396551724138
-2026-01-16T01:20:00Z,Skjern Å - Gjaldbæk bro,4.859413793103449
-2026-01-16T01:10:00Z,Skjern Å - Gjaldbæk bro,4.859431034482759
-2026-01-16T01:00:00Z,Skjern Å - Gjaldbæk bro,4.859448275862069
-2026-01-16T00:50:00Z,Skjern Å - Gjaldbæk bro,4.85946551724138
-2026-01-16T00:40:00Z,Skjern Å - Gjaldbæk bro,4.85948275862069
-2026-01-16T00:30:00Z,Skjern Å - Gjaldbæk bro,4.859500000000001
-2026-01-16T00:20:00Z,Skjern Å - Gjaldbæk bro,4.859517241379311
-2026-01-16T00:10:00Z,Skjern Å - Gjaldbæk bro,4.859534482758621
-2026-01-16T00:00:00Z,Skjern Å - Gjaldbæk bro,4.859551724137932
-2026-01-15T23:50:00Z,Skjern Å - Gjaldbæk bro,4.859568965517242
-2026-01-15T23:40:00Z,Skjern Å - Gjaldbæk bro,4.859586206896552
-2026-01-15T23:30:00Z,Skjern Å - Gjaldbæk bro,4.8596034482758625
-2026-01-15T23:20:00Z,Skjern Å - Gjaldbæk bro,4.859620689655173
-2026-01-15T23:10:00Z,Skjern Å - Gjaldbæk bro,4.859637931034483
-2026-01-15T23:00:00Z,Skjern Å - Gjaldbæk bro,4.8596551724137935
-2026-01-15T22:50:00Z,Skjern Å - Gjaldbæk bro,4.8596724137931036
-2026-01-15T22:40:00Z,Skjern Å - Gjaldbæk bro,4.859689655172414
-2026-01-15T22:30:00Z,Skjern Å - Gjaldbæk bro,4.8597068965517245
-2026-01-15T22:20:00Z,Skjern Å - Gjaldbæk bro,4.8597241379310345
-2026-01-15T22:10:00Z,Skjern Å - Gjaldbæk bro,4.8597413793103454
-2026-01-15T22:00:00Z,Skjern Å - Gjaldbæk bro,4.8597586206896555
-2026-01-15T21:50:00Z,Skjern Å - Gjaldbæk bro,4.8597758620689655
-2026-01-15T21:40:00Z,Skjern Å - Gjaldbæk bro,4.859793103448276
-2026-01-15T21:30:00Z,Skjern Å - Gjaldbæk bro,4.8598103448275864
-2026-01-15T21:20:00Z,Skjern Å - Gjaldbæk bro,4.8598275862068965
-2026-01-15T21:10:00Z,Skjern Å - Gjaldbæk bro,4.859844827586207
-2026-01-15T21:00:00Z,Skjern Å - Gjaldbæk bro,4.859862068965517
-2026-01-15T20:50:00Z,Skjern Å - Gjaldbæk bro,4.8598793103448275
-2026-01-15T20:40:00Z,Skjern Å - Gjaldbæk bro,4.859896551724138
-2026-01-15T20:30:00Z,Skjern Å - Gjaldbæk bro,4.859913793103448
-2026-01-15T20:20:00Z,Skjern Å - Gjaldbæk bro,4.859931034482759
-2026-01-15T20:10:00Z,Skjern Å - Gjaldbæk bro,4.859948275862069
-2026-01-15T20:00:00Z,Skjern Å - Gjaldbæk bro,4.859965517241379
-2026-01-15T19:50:00Z,Skjern Å - Gjaldbæk bro,4.85998275862069
+2026-01-16T05:10:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T05:00:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T04:50:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T04:40:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T04:30:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T04:20:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T04:10:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T04:00:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T03:50:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T03:40:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T03:30:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T03:20:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T03:10:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T03:00:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T02:50:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T02:40:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T02:30:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T02:20:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T02:10:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T02:00:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T01:50:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T01:40:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T01:30:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T01:20:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T01:10:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T01:00:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T00:50:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T00:40:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T00:30:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T00:20:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T00:10:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-16T00:00:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T23:50:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T23:40:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T23:30:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T23:20:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T23:10:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T23:00:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T22:50:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T22:40:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T22:30:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T22:20:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T22:10:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T22:00:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T21:50:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T21:40:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T21:30:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T21:20:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T21:10:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T21:00:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T20:50:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T20:40:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T20:30:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T20:20:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T20:10:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T20:00:00Z,Skjern Å - Gjaldbæk bro,4.859
+2026-01-15T19:50:00Z,Skjern Å - Gjaldbæk bro,4.859500000000001
 2026-01-15T19:40:00Z,Skjern Å - Gjaldbæk bro,4.86
-2026-01-15T19:30:00Z,Skjern Å - Gjaldbæk bro,4.861000000000001
+2026-01-15T19:30:00Z,Skjern Å - Gjaldbæk bro,4.86
 2026-01-15T19:20:00Z,Skjern Å - Gjaldbæk bro,4.862
 2026-01-15T19:10:00Z,Skjern Å - Gjaldbæk bro,4.861000000000001
 2026-01-15T19:00:00Z,Skjern Å - Gjaldbæk bro,4.863
@@ -10875,7 +10911,7 @@ Date,Place,Value
 2026-01-14T10:20:00Z,Skjern Å - Gjaldbæk bro,4.727231707317074
 2026-01-14T10:10:00Z,Skjern Å - Gjaldbæk bro,4.726115853658537
 2026-01-14T10:00:00Z,Skjern Å - Gjaldbæk bro,4.7250000000000005
-2026-01-14T09:50:00Z,Skjern Å - Gjaldbæk bro,4.726
+2026-01-14T09:50:00Z,Skjern Å - Gjaldbæk bro,4.723000000000001
 2026-01-14T09:40:00Z,Skjern Å - Gjaldbæk bro,4.721
 2026-01-14T09:30:00Z,Skjern Å - Gjaldbæk bro,4.716
 2026-01-14T09:20:00Z,Skjern Å - Gjaldbæk bro,4.713
@@ -10905,69 +10941,69 @@ Date,Place,Value
 2026-01-14T05:20:00Z,Skjern Å - Gjaldbæk bro,4.63
 2026-01-14T05:10:00Z,Skjern Å - Gjaldbæk bro,4.627
 2026-01-14T05:00:00Z,Skjern Å - Gjaldbæk bro,4.624
-2026-01-14T04:50:00Z,Skjern Å - Gjaldbæk bro,4.621695652173913
-2026-01-14T04:40:00Z,Skjern Å - Gjaldbæk bro,4.619391304347825
-2026-01-14T04:30:00Z,Skjern Å - Gjaldbæk bro,4.617086956521739
-2026-01-14T04:20:00Z,Skjern Å - Gjaldbæk bro,4.614782608695652
-2026-01-14T04:10:00Z,Skjern Å - Gjaldbæk bro,4.6124782608695645
-2026-01-14T04:00:00Z,Skjern Å - Gjaldbæk bro,4.610173913043478
-2026-01-14T03:50:00Z,Skjern Å - Gjaldbæk bro,4.607869565217391
-2026-01-14T03:40:00Z,Skjern Å - Gjaldbæk bro,4.605565217391304
-2026-01-14T03:30:00Z,Skjern Å - Gjaldbæk bro,4.603260869565217
-2026-01-14T03:20:00Z,Skjern Å - Gjaldbæk bro,4.60095652173913
-2026-01-14T03:10:00Z,Skjern Å - Gjaldbæk bro,4.5986521739130435
-2026-01-14T03:00:00Z,Skjern Å - Gjaldbæk bro,4.596347826086956
-2026-01-14T02:50:00Z,Skjern Å - Gjaldbæk bro,4.594043478260869
-2026-01-14T02:40:00Z,Skjern Å - Gjaldbæk bro,4.5917391304347825
-2026-01-14T02:30:00Z,Skjern Å - Gjaldbæk bro,4.589434782608695
-2026-01-14T02:20:00Z,Skjern Å - Gjaldbæk bro,4.587130434782608
-2026-01-14T02:10:00Z,Skjern Å - Gjaldbæk bro,4.584826086956522
-2026-01-14T02:00:00Z,Skjern Å - Gjaldbæk bro,4.582521739130435
-2026-01-14T01:50:00Z,Skjern Å - Gjaldbæk bro,4.580217391304347
-2026-01-14T01:40:00Z,Skjern Å - Gjaldbæk bro,4.577913043478261
-2026-01-14T01:30:00Z,Skjern Å - Gjaldbæk bro,4.575608695652174
-2026-01-14T01:20:00Z,Skjern Å - Gjaldbæk bro,4.573304347826086
-2026-01-14T01:10:00Z,Skjern Å - Gjaldbæk bro,4.571
-2026-01-14T01:00:00Z,Skjern Å - Gjaldbæk bro,4.568695652173913
-2026-01-14T00:50:00Z,Skjern Å - Gjaldbæk bro,4.5663913043478255
-2026-01-14T00:40:00Z,Skjern Å - Gjaldbæk bro,4.564086956521739
-2026-01-14T00:30:00Z,Skjern Å - Gjaldbæk bro,4.561782608695652
-2026-01-14T00:20:00Z,Skjern Å - Gjaldbæk bro,4.5594782608695645
-2026-01-14T00:10:00Z,Skjern Å - Gjaldbæk bro,4.557173913043478
-2026-01-14T00:00:00Z,Skjern Å - Gjaldbæk bro,4.554869565217391
-2026-01-13T23:50:00Z,Skjern Å - Gjaldbæk bro,4.5525652173913045
-2026-01-13T23:40:00Z,Skjern Å - Gjaldbæk bro,4.550260869565217
-2026-01-13T23:30:00Z,Skjern Å - Gjaldbæk bro,4.54795652173913
-2026-01-13T23:20:00Z,Skjern Å - Gjaldbæk bro,4.5456521739130435
-2026-01-13T23:10:00Z,Skjern Å - Gjaldbæk bro,4.543347826086956
-2026-01-13T23:00:00Z,Skjern Å - Gjaldbæk bro,4.541043478260869
-2026-01-13T22:50:00Z,Skjern Å - Gjaldbæk bro,4.538739130434783
-2026-01-13T22:40:00Z,Skjern Å - Gjaldbæk bro,4.536434782608695
-2026-01-13T22:30:00Z,Skjern Å - Gjaldbæk bro,4.534130434782608
-2026-01-13T22:20:00Z,Skjern Å - Gjaldbæk bro,4.531826086956522
-2026-01-13T22:10:00Z,Skjern Å - Gjaldbæk bro,4.529521739130435
-2026-01-13T22:00:00Z,Skjern Å - Gjaldbæk bro,4.527217391304347
-2026-01-13T21:50:00Z,Skjern Å - Gjaldbæk bro,4.524913043478261
-2026-01-13T21:40:00Z,Skjern Å - Gjaldbæk bro,4.522608695652174
-2026-01-13T21:30:00Z,Skjern Å - Gjaldbæk bro,4.5203043478260865
+2026-01-14T04:50:00Z,Skjern Å - Gjaldbæk bro,4.6209999999999996
+2026-01-14T04:40:00Z,Skjern Å - Gjaldbæk bro,4.618
+2026-01-14T04:30:00Z,Skjern Å - Gjaldbæk bro,4.615
+2026-01-14T04:20:00Z,Skjern Å - Gjaldbæk bro,4.612500000000001
+2026-01-14T04:10:00Z,Skjern Å - Gjaldbæk bro,4.61
+2026-01-14T04:00:00Z,Skjern Å - Gjaldbæk bro,4.607717948717949
+2026-01-14T03:50:00Z,Skjern Å - Gjaldbæk bro,4.605435897435898
+2026-01-14T03:40:00Z,Skjern Å - Gjaldbæk bro,4.603153846153846
+2026-01-14T03:30:00Z,Skjern Å - Gjaldbæk bro,4.600871794871795
+2026-01-14T03:20:00Z,Skjern Å - Gjaldbæk bro,4.598589743589744
+2026-01-14T03:10:00Z,Skjern Å - Gjaldbæk bro,4.596307692307692
+2026-01-14T03:00:00Z,Skjern Å - Gjaldbæk bro,4.594025641025642
+2026-01-14T02:50:00Z,Skjern Å - Gjaldbæk bro,4.59174358974359
+2026-01-14T02:40:00Z,Skjern Å - Gjaldbæk bro,4.5894615384615385
+2026-01-14T02:30:00Z,Skjern Å - Gjaldbæk bro,4.587179487179488
+2026-01-14T02:20:00Z,Skjern Å - Gjaldbæk bro,4.584897435897436
+2026-01-14T02:10:00Z,Skjern Å - Gjaldbæk bro,4.5826153846153845
+2026-01-14T02:00:00Z,Skjern Å - Gjaldbæk bro,4.580333333333334
+2026-01-14T01:50:00Z,Skjern Å - Gjaldbæk bro,4.578051282051282
+2026-01-14T01:40:00Z,Skjern Å - Gjaldbæk bro,4.575769230769231
+2026-01-14T01:30:00Z,Skjern Å - Gjaldbæk bro,4.57348717948718
+2026-01-14T01:20:00Z,Skjern Å - Gjaldbæk bro,4.571205128205128
+2026-01-14T01:10:00Z,Skjern Å - Gjaldbæk bro,4.568923076923077
+2026-01-14T01:00:00Z,Skjern Å - Gjaldbæk bro,4.566641025641026
+2026-01-14T00:50:00Z,Skjern Å - Gjaldbæk bro,4.564358974358974
+2026-01-14T00:40:00Z,Skjern Å - Gjaldbæk bro,4.562076923076924
+2026-01-14T00:30:00Z,Skjern Å - Gjaldbæk bro,4.559794871794872
+2026-01-14T00:20:00Z,Skjern Å - Gjaldbæk bro,4.55751282051282
+2026-01-14T00:10:00Z,Skjern Å - Gjaldbæk bro,4.55523076923077
+2026-01-14T00:00:00Z,Skjern Å - Gjaldbæk bro,4.552948717948718
+2026-01-13T23:50:00Z,Skjern Å - Gjaldbæk bro,4.550666666666666
+2026-01-13T23:40:00Z,Skjern Å - Gjaldbæk bro,4.548384615384616
+2026-01-13T23:30:00Z,Skjern Å - Gjaldbæk bro,4.546102564102564
+2026-01-13T23:20:00Z,Skjern Å - Gjaldbæk bro,4.5438205128205125
+2026-01-13T23:10:00Z,Skjern Å - Gjaldbæk bro,4.541538461538462
+2026-01-13T23:00:00Z,Skjern Å - Gjaldbæk bro,4.53925641025641
+2026-01-13T22:50:00Z,Skjern Å - Gjaldbæk bro,4.5369743589743585
+2026-01-13T22:40:00Z,Skjern Å - Gjaldbæk bro,4.534692307692308
+2026-01-13T22:30:00Z,Skjern Å - Gjaldbæk bro,4.532410256410256
+2026-01-13T22:20:00Z,Skjern Å - Gjaldbæk bro,4.5301282051282055
+2026-01-13T22:10:00Z,Skjern Å - Gjaldbæk bro,4.527846153846154
+2026-01-13T22:00:00Z,Skjern Å - Gjaldbæk bro,4.525564102564102
+2026-01-13T21:50:00Z,Skjern Å - Gjaldbæk bro,4.5232820512820515
+2026-01-13T21:40:00Z,Skjern Å - Gjaldbæk bro,4.521
+2026-01-13T21:30:00Z,Skjern Å - Gjaldbæk bro,4.5195
 2026-01-13T21:20:00Z,Skjern Å - Gjaldbæk bro,4.518
-2026-01-13T21:10:00Z,Skjern Å - Gjaldbæk bro,4.516111111111111
-2026-01-13T21:00:00Z,Skjern Å - Gjaldbæk bro,4.514222222222222
-2026-01-13T20:50:00Z,Skjern Å - Gjaldbæk bro,4.512333333333333
-2026-01-13T20:40:00Z,Skjern Å - Gjaldbæk bro,4.5104444444444445
-2026-01-13T20:30:00Z,Skjern Å - Gjaldbæk bro,4.508555555555556
-2026-01-13T20:20:00Z,Skjern Å - Gjaldbæk bro,4.506666666666667
-2026-01-13T20:10:00Z,Skjern Å - Gjaldbæk bro,4.504777777777778
-2026-01-13T20:00:00Z,Skjern Å - Gjaldbæk bro,4.502888888888889
+2026-01-13T21:10:00Z,Skjern Å - Gjaldbæk bro,4.516
+2026-01-13T21:00:00Z,Skjern Å - Gjaldbæk bro,4.514
+2026-01-13T20:50:00Z,Skjern Å - Gjaldbæk bro,4.512
+2026-01-13T20:40:00Z,Skjern Å - Gjaldbæk bro,4.51
+2026-01-13T20:30:00Z,Skjern Å - Gjaldbæk bro,4.508
+2026-01-13T20:20:00Z,Skjern Å - Gjaldbæk bro,4.506
+2026-01-13T20:10:00Z,Skjern Å - Gjaldbæk bro,4.504
+2026-01-13T20:00:00Z,Skjern Å - Gjaldbæk bro,4.502
 2026-01-13T19:50:00Z,Skjern Å - Gjaldbæk bro,4.501
 2026-01-13T19:40:00Z,Skjern Å - Gjaldbæk bro,4.5
 2026-01-13T19:30:00Z,Skjern Å - Gjaldbæk bro,4.497
 2026-01-13T19:20:00Z,Skjern Å - Gjaldbæk bro,4.496
-2026-01-13T19:10:00Z,Skjern Å - Gjaldbæk bro,4.4945
+2026-01-13T19:10:00Z,Skjern Å - Gjaldbæk bro,4.493
 2026-01-13T19:00:00Z,Skjern Å - Gjaldbæk bro,4.493
 2026-01-13T18:50:00Z,Skjern Å - Gjaldbæk bro,4.4910000000000005
 2026-01-13T18:40:00Z,Skjern Å - Gjaldbæk bro,4.489
-2026-01-13T18:30:00Z,Skjern Å - Gjaldbæk bro,4.4879999999999995
+2026-01-13T18:30:00Z,Skjern Å - Gjaldbæk bro,4.486000000000001
 2026-01-13T18:20:00Z,Skjern Å - Gjaldbæk bro,4.487
 2026-01-13T18:10:00Z,Skjern Å - Gjaldbæk bro,4.484
 2026-01-13T18:00:00Z,Skjern Å - Gjaldbæk bro,4.484
@@ -12736,6 +12772,18 @@ Date,Place,Value
 2026-01-01T00:20:00Z,Skjern Å - Gjaldbæk bro,4.452
 2026-01-01T00:10:00Z,Skjern Å - Gjaldbæk bro,4.452
 2026-01-01T00:00:00Z,Skjern Å - Gjaldbæk bro,4.452
+2026-01-19T04:00:00Z,Skjern Å - Sandfeldvej,27.674000000000003
+2026-01-19T03:50:00Z,Skjern Å - Sandfeldvej,27.671
+2026-01-19T03:40:00Z,Skjern Å - Sandfeldvej,27.673000000000002
+2026-01-19T03:30:00Z,Skjern Å - Sandfeldvej,27.676
+2026-01-19T03:20:00Z,Skjern Å - Sandfeldvej,27.675
+2026-01-19T03:10:00Z,Skjern Å - Sandfeldvej,27.676
+2026-01-19T03:00:00Z,Skjern Å - Sandfeldvej,27.675
+2026-01-19T02:50:00Z,Skjern Å - Sandfeldvej,27.68
+2026-01-19T02:40:00Z,Skjern Å - Sandfeldvej,27.677
+2026-01-19T02:30:00Z,Skjern Å - Sandfeldvej,27.678
+2026-01-19T02:20:00Z,Skjern Å - Sandfeldvej,27.68
+2026-01-19T02:10:00Z,Skjern Å - Sandfeldvej,27.68
 2026-01-19T02:00:00Z,Skjern Å - Sandfeldvej,27.676
 2026-01-19T01:50:00Z,Skjern Å - Sandfeldvej,27.678
 2026-01-19T01:40:00Z,Skjern Å - Sandfeldvej,27.676
@@ -13424,9 +13472,9 @@ Date,Place,Value
 2026-01-14T07:50:00Z,Skjern Å - Sandfeldvej,27.771857142857144
 2026-01-14T07:40:00Z,Skjern Å - Sandfeldvej,27.770428571428575
 2026-01-14T07:30:00Z,Skjern Å - Sandfeldvej,27.769000000000002
-2026-01-14T07:20:00Z,Skjern Å - Sandfeldvej,27.767000000000003
-2026-01-14T07:10:00Z,Skjern Å - Sandfeldvej,27.765
-2026-01-14T07:00:00Z,Skjern Å - Sandfeldvej,27.762999999999998
+2026-01-14T07:20:00Z,Skjern Å - Sandfeldvej,27.767666666666667
+2026-01-14T07:10:00Z,Skjern Å - Sandfeldvej,27.766333333333336
+2026-01-14T07:00:00Z,Skjern Å - Sandfeldvej,27.765
 2026-01-14T06:50:00Z,Skjern Å - Sandfeldvej,27.761
 2026-01-14T06:40:00Z,Skjern Å - Sandfeldvej,27.7595
 2026-01-14T06:30:00Z,Skjern Å - Sandfeldvej,27.758
@@ -14816,18 +14864,18 @@ Date,Place,Value
 2026-01-04T05:00:00Z,Skjern Å - Sandfeldvej,27.576999999999998
 2026-01-04T04:50:00Z,Skjern Å - Sandfeldvej,27.576999999999998
 2026-01-04T04:40:00Z,Skjern Å - Sandfeldvej,27.575
-2026-01-04T04:30:00Z,Skjern Å - Sandfeldvej,27.580000000000002
-2026-01-04T04:20:00Z,Skjern Å - Sandfeldvej,27.576999999999998
+2026-01-04T04:30:00Z,Skjern Å - Sandfeldvej,27.58
+2026-01-04T04:20:00Z,Skjern Å - Sandfeldvej,27.577
 2026-01-04T04:10:00Z,Skjern Å - Sandfeldvej,27.578000000000003
 2026-01-04T04:00:00Z,Skjern Å - Sandfeldvej,27.576
-2026-01-04T03:50:00Z,Skjern Å - Sandfeldvej,27.580000000000002
-2026-01-04T03:40:00Z,Skjern Å - Sandfeldvej,27.580000000000002
-2026-01-04T03:30:00Z,Skjern Å - Sandfeldvej,27.580000000000002
+2026-01-04T03:50:00Z,Skjern Å - Sandfeldvej,27.58
+2026-01-04T03:40:00Z,Skjern Å - Sandfeldvej,27.58
+2026-01-04T03:30:00Z,Skjern Å - Sandfeldvej,27.58
 2026-01-04T03:20:00Z,Skjern Å - Sandfeldvej,27.581
 2026-01-04T03:10:00Z,Skjern Å - Sandfeldvej,27.581
-2026-01-04T03:00:00Z,Skjern Å - Sandfeldvej,27.583000000000002
+2026-01-04T03:00:00Z,Skjern Å - Sandfeldvej,27.583
 2026-01-04T02:50:00Z,Skjern Å - Sandfeldvej,27.581999999999997
-2026-01-04T02:40:00Z,Skjern Å - Sandfeldvej,27.583000000000002
+2026-01-04T02:40:00Z,Skjern Å - Sandfeldvej,27.583
 2026-01-04T02:30:00Z,Skjern Å - Sandfeldvej,27.581999999999997
 2026-01-04T02:20:00Z,Skjern Å - Sandfeldvej,27.584000000000003
 2026-01-04T02:10:00Z,Skjern Å - Sandfeldvej,27.583
