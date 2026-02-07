@@ -2148,8 +2148,8 @@ Date,Place,Value
 2026-01-23T08:10:00Z,Karstoft Å - Fiskedamme,15.505
 2026-01-23T08:00:00Z,Karstoft Å - Fiskedamme,15.504000000000001
 2026-01-23T07:50:00Z,Karstoft Å - Fiskedamme,15.506
-2026-01-23T07:40:00Z,Karstoft Å - Fiskedamme,15.507000000000001
-2026-01-23T07:30:00Z,Karstoft Å - Fiskedamme,15.504000000000001
+2026-01-23T07:40:00Z,Karstoft Å - Fiskedamme,15.507
+2026-01-23T07:30:00Z,Karstoft Å - Fiskedamme,15.504
 2026-01-23T07:20:00Z,Karstoft Å - Fiskedamme,15.511
 2026-01-23T07:10:00Z,Karstoft Å - Fiskedamme,15.508
 2026-01-23T07:00:00Z,Karstoft Å - Fiskedamme,15.509000000000002
@@ -5292,6 +5292,12 @@ Date,Place,Value
 2026-01-01T00:20:00Z,Karstoft Å - Fiskedamme,15.508
 2026-01-01T00:10:00Z,Karstoft Å - Fiskedamme,15.499
 2026-01-01T00:00:00Z,Karstoft Å - Fiskedamme,15.503
+2026-02-07T07:00:00Z,Omme Å - Sønderskov bro,3.065
+2026-02-07T06:50:00Z,Omme Å - Sønderskov bro,3.0660000000000003
+2026-02-07T06:40:00Z,Omme Å - Sønderskov bro,3.063
+2026-02-07T06:30:00Z,Omme Å - Sønderskov bro,3.067
+2026-02-07T06:20:00Z,Omme Å - Sønderskov bro,3.064
+2026-02-07T06:10:00Z,Omme Å - Sønderskov bro,3.064
 2026-02-07T06:00:00Z,Omme Å - Sønderskov bro,3.065
 2026-02-07T05:50:00Z,Omme Å - Sønderskov bro,3.064
 2026-02-07T05:40:00Z,Omme Å - Sønderskov bro,3.064
@@ -12810,8 +12816,8 @@ Date,Place,Value
 2026-01-23T08:00:00Z,Rind Å - Arnborg kirke,24.813000000000002
 2026-01-23T07:50:00Z,Rind Å - Arnborg kirke,24.810000000000002
 2026-01-23T07:40:00Z,Rind Å - Arnborg kirke,24.815
-2026-01-23T07:30:00Z,Rind Å - Arnborg kirke,24.810000000000002
-2026-01-23T07:20:00Z,Rind Å - Arnborg kirke,24.813000000000002
+2026-01-23T07:30:00Z,Rind Å - Arnborg kirke,24.81
+2026-01-23T07:20:00Z,Rind Å - Arnborg kirke,24.813
 2026-01-23T07:10:00Z,Rind Å - Arnborg kirke,24.817
 2026-01-23T07:00:00Z,Rind Å - Arnborg kirke,24.813
 2026-01-23T06:50:00Z,Rind Å - Arnborg kirke,24.815
@@ -15952,6 +15958,12 @@ Date,Place,Value
 2026-01-01T00:20:00Z,Rind Å - Arnborg kirke,24.84
 2026-01-01T00:10:00Z,Rind Å - Arnborg kirke,24.841
 2026-01-01T00:00:00Z,Rind Å - Arnborg kirke,24.841
+2026-02-07T07:00:00Z,Skjern Å - Alergaard,6.588
+2026-02-07T06:50:00Z,Skjern Å - Alergaard,6.5889999999999995
+2026-02-07T06:40:00Z,Skjern Å - Alergaard,6.587000000000001
+2026-02-07T06:30:00Z,Skjern Å - Alergaard,6.585
+2026-02-07T06:20:00Z,Skjern Å - Alergaard,6.588
+2026-02-07T06:10:00Z,Skjern Å - Alergaard,6.585
 2026-02-07T06:00:00Z,Skjern Å - Alergaard,6.587000000000001
 2026-02-07T05:50:00Z,Skjern Å - Alergaard,6.5889999999999995
 2026-02-07T05:40:00Z,Skjern Å - Alergaard,6.59
@@ -21246,6 +21258,12 @@ Date,Place,Value
 2026-01-01T00:20:00Z,Skjern Å - Alergaard,6.68
 2026-01-01T00:10:00Z,Skjern Å - Alergaard,6.682
 2026-01-01T00:00:00Z,Skjern Å - Alergaard,6.679
+2026-02-07T07:00:00Z,Skjern Å - Gjaldbæk bro,4.338
+2026-02-07T06:50:00Z,Skjern Å - Gjaldbæk bro,4.334
+2026-02-07T06:40:00Z,Skjern Å - Gjaldbæk bro,4.338
+2026-02-07T06:30:00Z,Skjern Å - Gjaldbæk bro,4.3389999999999995
+2026-02-07T06:20:00Z,Skjern Å - Gjaldbæk bro,4.336
+2026-02-07T06:10:00Z,Skjern Å - Gjaldbæk bro,4.342
 2026-02-07T06:00:00Z,Skjern Å - Gjaldbæk bro,4.3389999999999995
 2026-02-07T05:50:00Z,Skjern Å - Gjaldbæk bro,4.338
 2026-02-07T05:40:00Z,Skjern Å - Gjaldbæk bro,4.337
@@ -26525,32 +26543,50 @@ Date,Place,Value
 2026-01-01T00:20:00Z,Skjern Å - Gjaldbæk bro,4.452
 2026-01-01T00:10:00Z,Skjern Å - Gjaldbæk bro,4.452
 2026-01-01T00:00:00Z,Skjern Å - Gjaldbæk bro,4.452
+2026-02-07T07:00:00Z,Skjern Å - Sandfeldvej,27.424000000000003
+2026-02-07T06:50:00Z,Skjern Å - Sandfeldvej,27.424000000000003
+2026-02-07T06:40:00Z,Skjern Å - Sandfeldvej,27.423000000000002
+2026-02-07T06:30:00Z,Skjern Å - Sandfeldvej,27.427
+2026-02-07T06:20:00Z,Skjern Å - Sandfeldvej,27.423000000000002
+2026-02-07T06:10:00Z,Skjern Å - Sandfeldvej,27.424000000000003
+2026-02-07T06:00:00Z,Skjern Å - Sandfeldvej,27.425
+2026-02-07T05:50:00Z,Skjern Å - Sandfeldvej,27.421999999999997
+2026-02-07T05:40:00Z,Skjern Å - Sandfeldvej,27.421
+2026-02-07T05:30:00Z,Skjern Å - Sandfeldvej,27.421
+2026-02-07T05:20:00Z,Skjern Å - Sandfeldvej,27.421
+2026-02-07T05:10:00Z,Skjern Å - Sandfeldvej,27.42
+2026-02-07T05:00:00Z,Skjern Å - Sandfeldvej,27.421999999999997
+2026-02-07T04:50:00Z,Skjern Å - Sandfeldvej,27.419
+2026-02-07T04:40:00Z,Skjern Å - Sandfeldvej,27.418000000000003
+2026-02-07T04:30:00Z,Skjern Å - Sandfeldvej,27.416999999999998
+2026-02-07T04:20:00Z,Skjern Å - Sandfeldvej,27.419
+2026-02-07T04:10:00Z,Skjern Å - Sandfeldvej,27.419
 2026-02-07T04:00:00Z,Skjern Å - Sandfeldvej,27.416999999999998
-2026-02-07T03:50:00Z,Skjern Å - Sandfeldvej,27.417461538461538
-2026-02-07T03:40:00Z,Skjern Å - Sandfeldvej,27.417923076923074
-2026-02-07T03:30:00Z,Skjern Å - Sandfeldvej,27.418384615384614
-2026-02-07T03:20:00Z,Skjern Å - Sandfeldvej,27.418846153846154
-2026-02-07T03:10:00Z,Skjern Å - Sandfeldvej,27.41930769230769
-2026-02-07T03:00:00Z,Skjern Å - Sandfeldvej,27.41976923076923
-2026-02-07T02:50:00Z,Skjern Å - Sandfeldvej,27.42023076923077
-2026-02-07T02:40:00Z,Skjern Å - Sandfeldvej,27.420692307692306
-2026-02-07T02:30:00Z,Skjern Å - Sandfeldvej,27.421153846153846
-2026-02-07T02:20:00Z,Skjern Å - Sandfeldvej,27.421615384615386
-2026-02-07T02:10:00Z,Skjern Å - Sandfeldvej,27.422076923076922
-2026-02-07T02:00:00Z,Skjern Å - Sandfeldvej,27.422538461538462
-2026-02-07T01:50:00Z,Skjern Å - Sandfeldvej,27.423000000000002
-2026-02-07T01:40:00Z,Skjern Å - Sandfeldvej,27.423461538461538
-2026-02-07T01:30:00Z,Skjern Å - Sandfeldvej,27.423923076923078
-2026-02-07T01:20:00Z,Skjern Å - Sandfeldvej,27.424384615384614
-2026-02-07T01:10:00Z,Skjern Å - Sandfeldvej,27.424846153846154
-2026-02-07T01:00:00Z,Skjern Å - Sandfeldvej,27.425307692307694
-2026-02-07T00:50:00Z,Skjern Å - Sandfeldvej,27.42576923076923
-2026-02-07T00:40:00Z,Skjern Å - Sandfeldvej,27.42623076923077
-2026-02-07T00:30:00Z,Skjern Å - Sandfeldvej,27.42669230769231
-2026-02-07T00:20:00Z,Skjern Å - Sandfeldvej,27.427153846153846
-2026-02-07T00:10:00Z,Skjern Å - Sandfeldvej,27.427615384615386
-2026-02-07T00:00:00Z,Skjern Å - Sandfeldvej,27.428076923076926
-2026-02-06T23:50:00Z,Skjern Å - Sandfeldvej,27.428538461538462
+2026-02-07T03:50:00Z,Skjern Å - Sandfeldvej,27.414
+2026-02-07T03:40:00Z,Skjern Å - Sandfeldvej,27.415
+2026-02-07T03:30:00Z,Skjern Å - Sandfeldvej,27.414
+2026-02-07T03:20:00Z,Skjern Å - Sandfeldvej,27.415
+2026-02-07T03:10:00Z,Skjern Å - Sandfeldvej,27.413000000000004
+2026-02-07T03:00:00Z,Skjern Å - Sandfeldvej,27.413000000000004
+2026-02-07T02:50:00Z,Skjern Å - Sandfeldvej,27.414
+2026-02-07T02:40:00Z,Skjern Å - Sandfeldvej,27.415
+2026-02-07T02:30:00Z,Skjern Å - Sandfeldvej,27.414
+2026-02-07T02:20:00Z,Skjern Å - Sandfeldvej,27.411
+2026-02-07T02:10:00Z,Skjern Å - Sandfeldvej,27.415
+2026-02-07T02:00:00Z,Skjern Å - Sandfeldvej,27.414
+2026-02-07T01:50:00Z,Skjern Å - Sandfeldvej,27.415
+2026-02-07T01:40:00Z,Skjern Å - Sandfeldvej,27.418000000000003
+2026-02-07T01:30:00Z,Skjern Å - Sandfeldvej,27.415
+2026-02-07T01:20:00Z,Skjern Å - Sandfeldvej,27.416
+2026-02-07T01:10:00Z,Skjern Å - Sandfeldvej,27.42
+2026-02-07T01:00:00Z,Skjern Å - Sandfeldvej,27.419
+2026-02-07T00:50:00Z,Skjern Å - Sandfeldvej,27.42
+2026-02-07T00:40:00Z,Skjern Å - Sandfeldvej,27.421999999999997
+2026-02-07T00:30:00Z,Skjern Å - Sandfeldvej,27.421999999999997
+2026-02-07T00:20:00Z,Skjern Å - Sandfeldvej,27.423000000000002
+2026-02-07T00:10:00Z,Skjern Å - Sandfeldvej,27.423000000000002
+2026-02-07T00:00:00Z,Skjern Å - Sandfeldvej,27.426
+2026-02-06T23:50:00Z,Skjern Å - Sandfeldvej,27.427
 2026-02-06T23:40:00Z,Skjern Å - Sandfeldvej,27.429000000000002
 2026-02-06T23:30:00Z,Skjern Å - Sandfeldvej,27.431
 2026-02-06T23:20:00Z,Skjern Å - Sandfeldvej,27.434
@@ -26567,7 +26603,7 @@ Date,Place,Value
 2026-02-06T21:30:00Z,Skjern Å - Sandfeldvej,27.461
 2026-02-06T21:20:00Z,Skjern Å - Sandfeldvej,27.461
 2026-02-06T21:10:00Z,Skjern Å - Sandfeldvej,27.459000000000003
-2026-02-06T21:00:00Z,Skjern Å - Sandfeldvej,27.468000000000004
+2026-02-06T21:00:00Z,Skjern Å - Sandfeldvej,27.462500000000002
 2026-02-06T20:50:00Z,Skjern Å - Sandfeldvej,27.466
 2026-02-06T20:40:00Z,Skjern Å - Sandfeldvej,27.466409090909092
 2026-02-06T20:30:00Z,Skjern Å - Sandfeldvej,27.466818181818184
@@ -28666,7 +28702,7 @@ Date,Place,Value
 2026-01-23T07:40:00Z,Skjern Å - Sandfeldvej,27.566
 2026-01-23T07:30:00Z,Skjern Å - Sandfeldvej,27.565
 2026-01-23T07:20:00Z,Skjern Å - Sandfeldvej,27.569000000000003
-2026-01-23T07:10:00Z,Skjern Å - Sandfeldvej,27.576999999999998
+2026-01-23T07:10:00Z,Skjern Å - Sandfeldvej,27.577
 2026-01-23T07:00:00Z,Skjern Å - Sandfeldvej,27.57
 2026-01-23T06:50:00Z,Skjern Å - Sandfeldvej,27.575
 2026-01-23T06:40:00Z,Skjern Å - Sandfeldvej,27.567
