@@ -33,3 +33,93 @@ get_catch_table <- function(datCatch, datWeight) {
       mutate(Month = month(Date, label = T))
    return(datCatch)
 }
+
+#' Calculate yearly catch statistics
+#'
+#' @param dat_catch Catch records.
+#'
+#' @return Yearly summary statistics.
+#' @examples
+#' \dontrun{
+#' yearly_stat(dat_catch)
+#' }
+yearly_stat <- function(dat_catch) {
+  yearlyStat(dat_catch)
+}
+
+#' Calculate monthly catch statistics
+#'
+#' @param dat_catch Catch records.
+#' @param year Year under consideration.
+#'
+#' @return Monthly summary statistics.
+#' @examples
+#' \dontrun{
+#' monthly_stat(dat_catch, 2025)
+#' }
+monthly_stat <- function(dat_catch, year) {
+  monthlyStat(dat_catch, year)
+}
+
+#' Calculate yearly catch statistics for Karup
+#'
+#' @param dat_catch Catch records.
+#'
+#' @return Yearly summary statistics.
+#' @examples
+#' \dontrun{
+#' yearly_stat_karup(dat_catch)
+#' }
+yearly_stat_karup <- function(dat_catch) {
+  yearlyStatKarup(dat_catch)
+}
+
+#' Calculate monthly catch statistics for Karup
+#'
+#' @param dat_catch Catch records.
+#' @param year Year under consideration.
+#'
+#' @return Monthly summary statistics.
+#' @examples
+#' \dontrun{
+#' monthly_stat_karup(dat_catch, 2025)
+#' }
+monthly_stat_karup <- function(dat_catch, year) {
+  monthlyStatKarup(dat_catch, year)
+}
+
+#' Calculate relative water levels
+#'
+#' @param dat Water level data.
+#' @param r_means Moving-average reference table.
+#' @param prefix File prefix.
+#'
+#' @return Relative water-level data.
+#' @examples
+#' \dontrun{
+#' calc_water_level_relative(dat, r_means, "data/data_karup")
+#' }
+calc_water_level_relative <- function(dat, r_means, prefix) {
+  calcWaterLevelRelative(dat, r_means, prefix)
+}
+
+#' Parse KML map data into marker/line tables
+#'
+#' @param map_id Google map ID.
+#' @param club Optional club label.
+#' @param group_name_markers Optional marker group name filter.
+#' @param group_name_lines Optional line group name filter.
+#'
+#' @return List with `datMarkers` and `datLines`.
+#' @examples
+#' \dontrun{
+#' strip_kml("1XJoAUKY_-kbmhZgovPpLgi82Gn8")
+#' }
+strip_kml <- function(
+    map_id,
+    club = NA,
+    group_name_markers = NULL,
+    group_name_lines = NULL
+) {
+  stripKml(map_id, club, group_name_markers, group_name_lines)
+}

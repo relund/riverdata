@@ -23,4 +23,46 @@ read_data <- function(
    return(dat)
 }
 
+#' Read and prepare catch records
+#'
+#' Wrapper around legacy catch reader.
+#'
+#' @param prefix Prefix to csv files, e.g. `"data/data_skjern_catch_salmon"`.
+#' @param dat_weight Weight estimate table.
+#'
+#' @return Catch records.
+#' @examples
+#' \dontrun{
+#' read_catch("data/data_karup_catch_seatrout", tibble::tibble())
+#' }
+read_catch <- function(prefix, dat_weight) {
+  readCatch(prefix, dat_weight)
+}
+
+#' Read yearly water temperature files
+#'
+#' @param prefix File prefix.
+#' @param years Integer vector of years.
+#'
+#' @return Combined water temperature data.
+#' @examples
+#' \dontrun{
+#' read_w_temp("data/data_karup", 2020:2025)
+#' }
+read_w_temp <- function(prefix, years) {
+  readWTemp(prefix, years)
+}
+
+#' Read and combine data files by filename pattern
+#'
+#' @param pattern Regex pattern used to match files in `data/`.
+#'
+#' @return Combined data table.
+#' @examples
+#' \dontrun{
+#' read_data_files("data_karup_waterlevel_[0-9]{4}")
+#' }
+read_data_files <- function(pattern) {
+  readDataFiles(pattern)
+}
 
