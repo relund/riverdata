@@ -1,4 +1,4 @@
-exportPattern("^[[:alpha:]]+")
+exportPattern("^[a-z][a-z0-9_]+$")
 import(dplyr)
 import(stringr)
 import(jsonlite)

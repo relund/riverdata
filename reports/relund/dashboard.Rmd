@@ -57,13 +57,13 @@ curYear <- if_else(month(now())*100 + day(now()) < 301, year(now())-1, year(now(
 datWeightSea<- read_csv(paste0(prefix, "data_karup_weight_seatrout.csv"), col_types = "dfddd")
 
 # Catch - Records 
-datCatchSea <- readCatch(paste0(prefix, "data_karup_catch_seatrout"), datWeightSea)
+datCatchSea <- read_catch(paste0(prefix, "data_karup_catch_seatrout"), datWeightSea)
 
 # Catch - Yearly statistics
-datStatYearSea <- yearlyStatKarup(datCatchSea)
+datStatYearSea <- yearly_stat_karup(datCatchSea)
 
 # Catch - Monthly statistics
-datStatMonthSea <- monthlyStatKarup(datCatchSea, curYear)
+datStatMonthSea <- monthly_stat_karup(datCatchSea, curYear)
 
 
 ## LFSO
@@ -75,10 +75,10 @@ datCatchSeaLfso <- riverdata::write_catch(url, prefix = "", curYear, species = "
 datCatchSeaLfso <- riverdata::get_catch_table(datCatchSeaLfso, datWeightSea)
 # 
 # # Catch - Yearly statistics
-# datStatYearSeaLfso <- yearlyStatKarup(datCatchSeaLfso)
+# datStatYearSeaLfso <- yearly_stat_karup(datCatchSeaLfso)
 # 
 # # Catch - Monthly statistics
-# datStatMonthSeaLfso <- monthlyStatKarup(datCatchSea, curYear)
+# datStatMonthSeaLfso <- monthly_stat_karup(datCatchSea, curYear)
 
 
 # MV-LF
