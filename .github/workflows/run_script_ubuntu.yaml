@@ -88,6 +88,6 @@ jobs:
           commit_message: "gHA build: ${{ github.run_number }}"
           commit_user_name: github-actions[bot]
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
-          file_pattern: "data/**/*.csv docs/**/*.html"
+          file_pattern: "data/*.csv docs/**/*.html"
           skip_fetch: false
           skip_dirty_check: false
