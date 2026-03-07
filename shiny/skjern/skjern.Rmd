@@ -189,7 +189,7 @@ datFlow <- read_csv(paste0(prefix, "data_skjern_flow_lock_web.csv"),
 # Maps data
 mapAddMarkers <- function(map, group, data) {
   if (nrow(data) == 0) return(map)
-  if (group == "Parkering") {
+  if (group %in% c("Parkering", "Shelter")) {
     data <- data %>%
       mutate(
         MapsUrl = str_c("https://www.google.com/maps/dir/?api=1&destination=", lat, ",", long),
