@@ -42,6 +42,27 @@ library(leaflet.extras)
 prefix <- "../../data/"
 mapAddMarkers <- function(map, group, data) {
   if (nrow(data) == 0) return(map)
+  if (group == "Parkering") {
+    data <- data %>%
+      mutate(
+        MapsUrl = str_c("https://www.google.com/maps/dir/?api=1&destination=", lat, ",", long),
+        MapsUrlEnc = map_chr(MapsUrl, ~ URLencode(.x, reserved = TRUE)),
+        Desc = pmap(
+          list(Desc, MapsUrl, MapsUrlEnc),
+          function(desc, maps_url, maps_url_enc) {
+            HTML(
+              str_c(
+                as.character(desc),
+                "<br/><br/><a href='", maps_url, "' target='_blank' rel='noopener noreferrer'>Rute i Google Maps</a>",
+                "<br/><img src='https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=", maps_url_enc,
+                "' alt='QR kode til rute'/>"
+              )
+            )
+          }
+        )
+      ) %>%
+      select(-MapsUrl, -MapsUrlEnc)
+  }
   map <- map %>% 
     addMarkers(~long, ~lat, label = ~Desc, popup = ~Desc,
                icon = ~icons(Icon, iconWidth = 32, iconHeight = 32, iconAnchorX = 16, iconAnchorY = 16), 
@@ -176,4 +197,3 @@ maplet <- maplet %>%
 ```{r}
 maplet
 ```
-
