@@ -1,0 +1,32 @@
+Package: riverdata
+Title: R package used by riverdata repo
+Version: 0.0.0.9001
+Authors@R: person("Lars", "Relund Nielsen", email = "lars@relund.dk", role = c("aut", "cre"), 
+    comment = c(ORCID = "0000-0002-4802-3071"))
+Description: Package for riverdata repo at Github.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Depends: R (>= 4.3.0)
+Imports:
+    dplyr,
+    stringr,
+    jsonlite,
+    readr,
+    purrr,
+    tibble,
+    lubridate,
+    ggplot2,
+    plotly,
+    tidyr,
+    forcats,
+    rvest,
+    xml2,
+    zoo,
+    forecast,
+    tsibble,
+    fs,
+    rmarkdown,
+    RCurl,
+    rlang

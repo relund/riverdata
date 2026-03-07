@@ -59,6 +59,9 @@ jobs:
           sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
           
       - uses: r-lib/actions/setup-renv@v2
+
+      - name: Install local riverdata package
+        run: R CMD INSTALL riverdata-package
           
       - name: Run R script Karup
         run: Rscript script_karup.R

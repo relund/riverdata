@@ -15,7 +15,7 @@ conflicts_prefer(
   plotly::layout
 )
 
-source("functions.R")
+library(riverdata)
 
 
 #### Catch ####

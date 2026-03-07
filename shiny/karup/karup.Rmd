@@ -47,7 +47,7 @@ library(leaflet)
 library(xml2)
 library(htmltools)
 library(fs)
-source("functions.R")
+library(riverdata)
 
 faIcon <- function (name, prefix = "fa", title = "") 
 {

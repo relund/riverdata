@@ -15,7 +15,7 @@ conflicts_prefer(
   dplyr::lag
 )
 
-source("functions.R")
+library(riverdata)
 
 url <- "https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/catches/assoc/A97F957DD48AEDD4C1258814003E71FE/1/"
 prefix <- "data/data_skjern"

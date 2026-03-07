@@ -30,7 +30,7 @@ conflicts_prefer(
   dplyr::filter
   )
 
-source("../functions.R")
+library(riverdata)
 Sys.setlocale("LC_ALL", "da_DK.UTF-8")
 
 # prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"

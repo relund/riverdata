@@ -16,7 +16,7 @@ conflicts_prefer(
 )
 
 here::i_am("script_karup.R")
-source(here::here("functions.R"))
+library(riverdata)
 
 url <- "https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/catches/assoc/49F1767931B31CD0C1258398007953C0/1/"
 prefix <- "data/data_karup"

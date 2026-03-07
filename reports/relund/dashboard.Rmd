@@ -33,7 +33,7 @@ library(htmltools)
 library(fontawesome)
 fa_html_dependency()
 # library(riverdata)
-source("../functions.R")
+library(riverdata)
 
 faIcon <- function (name, prefix = "fa", title = "") 
 {

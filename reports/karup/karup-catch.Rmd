@@ -31,7 +31,6 @@ library(htmltools)
 library(fontawesome)
 fa_html_dependency()
 library(riverdata)
-source("../functions.R")
 
 faIcon <- function (name, prefix = "fa", title = "") 
 {
@@ -358,4 +357,3 @@ ____
       # hovermode = "x unified"
   )
 ```
-
