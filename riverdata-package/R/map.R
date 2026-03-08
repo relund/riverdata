@@ -94,6 +94,7 @@ map_add_lines <- function(map, group, data, color, useClub = TRUE) {
 #' @param club Optional club label.
 #' @param group_name_markers Optional marker group name filter.
 #' @param group_name_lines Optional line group name filter.
+#' @param start_ctr Counter for line group IDs used up till now (to avoid duplicates when combining multiple maps).
 #'
 #' @return List with `datMarkers` and `datLines`.
 #' @examples
@@ -104,7 +105,8 @@ map_strip_kml <- function(
     map_id,
     club = NA,
     group_name_markers = NULL,
-    group_name_lines = NULL
+    group_name_lines = NULL,
+    start_ctr = 0
 ) {
   kml <- read_xml(str_c("https://www.google.com/maps/d/u/0/kml?mid=", map_id, "&forcekml=1"))
   xml_ns_strip(kml)
@@ -151,7 +153,7 @@ map_strip_kml <- function(
 
   datLines <- NULL
   if (length(xml_find_all(x, ".//LineString")) > 0) {
-    ctr <- 0
+    ctr <- start_ctr
     datLines <- bind_rows(map(x, function(n) {  # for each Folder
       folderName <- xml_text(xml_find_all(n, "./name"))  # Folder name
       y <- xml_find_all(n, "./Placemark[LineString]")

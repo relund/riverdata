@@ -51,7 +51,7 @@ snip_plot_catch <- function(datCatch, .days = 30, .plotly = TRUE) {
 
 
 
-snip_leaflet <- function(prefix) {
+snip_leaflet <- function(prefix, show_groups = "Stednavne") {
    datMarkers <- read_csv(paste0(prefix, "mapmarkers.csv"), col_types = "fccddff") %>% 
       mutate(Desc = str_c(if_else(!is.na(Desc), str_c("<b>", if_else(is.na(Club), "", str_c(Club, " - ")), Desc, "</b>"), "", ""), 
                           if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
@@ -124,23 +124,8 @@ snip_leaflet <- function(prefix) {
       maplet <- lst$map
       grp <- unique(c(grp, lst$groups))
    }
-   # 
-   # 
-   # maplet <- mapAddLines(maplet, group = "Parkering", color = "#eb9834", useClub = FALSE,
-   #                       data = datLines %>% 
-   #                         filter(str_detect(Group, regex("parkering", ignore_case = T))))
-   # maplet <- mapAddLines(maplet, group = "fiskevand", color = "#3C8AE6",
-   #                       data = datLines %>% 
-   #                         filter(str_detect(Group, regex("fiskevand", ignore_case = T))))
-   # maplet <- mapAddLines(maplet, group = "medlem", color = "#EBE053",
-   #                       data = datLines %>% 
-   #                         filter(str_detect(Group, regex("medlem", ignore_case = T))))
-   # maplet <- mapAddLines(maplet, group = "dagkort", color = "#000000",
-   #                       data = datLines %>% 
-   #                         filter(str_detect(Group, regex("dagkort", ignore_case = T))))
-   # maplet <- mapAddLines(maplet, group = "gæstekort", color = "#bf5656",
-   #                       data = datLines %>% 
-   #                         filter(str_detect(Group, regex("gæstekort", ignore_case = T))))
+   
+   show_groups <- show_groups[show_groups %in% grp]
    maplet <- maplet %>%
       # Layer control
       addLayersControl(
@@ -149,7 +134,7 @@ snip_leaflet <- function(prefix) {
          options = layersControlOptions(collapsed = TRUE)
       ) %>%
       hideGroup(grp) %>%
-      showGroup("Stednavne") %>%
+      showGroup(show_groups) %>%
       addFullscreenControl()
    
    return(maplet)
