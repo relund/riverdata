@@ -1,20 +1,21 @@
-library(xml2)
-library(rvest)
-library(jsonlite)
-library(tidyverse)
-library(lubridate)
-library(zoo)
-library(forecast)
-library(tsibble)
-library(fs)
-library(rmarkdown)
-library(RCurl)
-library(conflicted)
-conflicts_prefer(
-  dplyr::filter(),
-  dplyr::lag
-)
+# library(xml2)
+# library(rvest)
+# library(jsonlite)
+# library(tidyverse)
+# library(lubridate)
+# library(zoo)
+# library(forecast)
+# library(tsibble)
+# library(fs)
+# library(rmarkdown)
+# library(RCurl)
+# library(conflicted)
+# conflicts_prefer(
+#   dplyr::filter(),
+#   dplyr::lag
+# )
 
+here::i_am("script_skjern.R")
 library(riverdata)
 
 url <- "https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/catches/assoc/A97F957DD48AEDD4C1258814003E71FE/1/"
@@ -81,24 +82,33 @@ write_time_series_data(stations, prefix, prefix1 = "pressure", days = 15)
 
 
 #### Map ####
-lst <- map_strip_kml("135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ")  # Places
-datMarkers <- lst$datMarkers
-datLines <- lst$datLines
+datLines <- tibble()
+datMarkers <- tibble()
+lineId <- 0
 
-## MV-LF
-lst <- map_strip_kml("1NiY_55Mw_GUULepLXq6Wjt0Gtu2K2c0", club = "MV-LF")
+# Places
+lst <- map_strip_kml("135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ", start_ctr = lineId)  
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)
+if (nrow(datLines) != 0) {lineId <- max(datLines$LineGroupId)}
+
+## MV-LF
+lst <- map_strip_kml("1NiY_55Mw_GUULepLXq6Wjt0Gtu2K2c0", club = "MV-LF", start_ctr = lineId)  
+datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
+datLines <- bind_rows(datLines, lst$datLines)
+if (nrow(datLines) != 0) {lineId <- max(datLines$LineGroupId)}
 
 ## Skj-LF
-lst <- map_strip_kml("1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF", club = "Skj-LF")
+lst <- map_strip_kml("1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF", club = "Skj-LF", start_ctr = lineId)  
 datMarkers <- bind_rows(datMarkers, lst$datMarkers)
 datLines <- bind_rows(datLines, lst$datLines)
+if (nrow(datLines) != 0) {lineId <- max(datLines$LineGroupId)}
 
 ## BFF
-lst <- map_strip_kml("1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD", club = "BFF")
+lst <- map_strip_kml("1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD", club = "BFF", start_ctr = lineId)  
 datMarkers <- bind_rows(datMarkers, lst$datMarkers)
 datLines <- bind_rows(datLines, lst$datLines)
+if (nrow(datLines) != 0) {lineId <- max(datLines$LineGroupId)}
 
 ## LF1926 (has a map for each place with no layers, try to hack)
 # first add medlem zones
@@ -115,10 +125,11 @@ mapIds <- c("1d8I43tTbY5IyOjzTHpqlY8hd7F0", # Sdr. Felding
             "1Xoln0k9Xf7qS05QKrFzovBLkOk8" # Vorgod Å nedre
             )
 for (i in 1:length(mapIds)) {
-  lst <- map_strip_kml(mapIds[i], club = "LF1926", group_name_lines = "medlem") 
+  lst <- map_strip_kml(mapIds[i], club = "LF1926", group_name_lines = "medlem", start_ctr = lineId)  
   lst$datLines$LineGroupId <- lst$datLines$LineGroupId + i*10
   datMarkers <- bind_rows(datMarkers, lst$datMarkers) %>% filter(!is.na(Icon))
   datLines <- bind_rows(datLines, lst$datLines)
+  if (nrow(datLines) != 0) {lineId <- max(datLines$LineGroupId)}
 }
 # lst <- map_strip_kml("1BxltqquXBJRRxj2_GVWzjA1TbhQ", club = "LF1926", group_name_markers = "parkering", group_name_lines = "medlem")  # Skarrild
 # lst$datLines <- lst$datLines %>% mutate(Group = if_else(str_detect(Text, fixed('clasonborg', ignore_case=TRUE)), "dagkort", Group))
@@ -127,10 +138,10 @@ for (i in 1:length(mapIds)) {
 # datLines <- bind_rows(datLines, lst$datLines)
 
 ## LFSO
-lst <- map_strip_kml("1epDPyEYZsmz3gGpgUZi5UbnnlPc", club = "LFSO")
+lst <- map_strip_kml("1epDPyEYZsmz3gGpgUZi5UbnnlPc", club = "LFSO", start_ctr = lineId)  
 datMarkers <- bind_rows(datMarkers, lst$datMarkers)
 datLines <- bind_rows(datLines, lst$datLines)
-
+if (nrow(datLines) != 0) {lineId <- max(datLines$LineGroupId)}
 
 ## Write to csv
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))

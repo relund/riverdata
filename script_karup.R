@@ -1,19 +1,19 @@
-library(xml2)
-library(rvest)
-library(jsonlite)
-library(tidyverse)
-library(lubridate)
-library(zoo)
-library(forecast)
-library(tsibble)
-library(fs)
-library(rmarkdown)
-library(conflicted)
-conflicts_prefer(
-  dplyr::filter(),
-  dplyr::lag,
-  plotly::layout
-)
+# library(xml2)
+# library(rvest)
+# library(jsonlite)
+# library(tidyverse)
+# library(lubridate)
+# library(zoo)
+# library(forecast)
+# library(tsibble)
+# library(fs)
+# library(rmarkdown)
+# library(conflicted)
+# conflicts_prefer(
+#   dplyr::filter(),
+#   dplyr::lag,
+#   plotly::layout
+# )
 
 here::i_am("script_karup.R")
 library(riverdata)
@@ -65,20 +65,27 @@ dat <- write_water_temp_web(dat, rMeans, prefix)
 
 
 #### Map ####
+datLines <- tibble()
+datMarkers <- tibble()
+lineId <- 0
+
 # Places
-lst <- map_strip_kml("1XJoAUKY_-kbmhZgovPpLgi82Gn8")  
-datMarkers <- lst$datMarkers
-datLines <- lst$datLines
+lst <- map_strip_kml("1XJoAUKY_-kbmhZgovPpLgi82Gn8", start_ctr = lineId)  
+datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
+datLines <- bind_rows(datLines, lst$datLines)
+if (nrow(datLines) != 0) {lineId <- max(datLines$LineGroupId)}
 
 # MV-LF
-lst <- map_strip_kml("1A1Oi7hPeFbAU2ahS_zWgg6Fqcxa5Gbg", club = "MV-LF")
+lst <- map_strip_kml("1A1Oi7hPeFbAU2ahS_zWgg6Fqcxa5Gbg", club = "MV-LF", start_ctr = lineId)  
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)
+if (nrow(datLines) != 0) {lineId <- max(datLines$LineGroupId)}
 
 # LFSO - Use my own maps since otherwise cannot identify dagkort/medlem
-lst <- map_strip_kml("17UJPQS6LtN9BITZnTsUahZ9g1icjmGk", club = "LFSO")
+lst <- map_strip_kml("17UJPQS6LtN9BITZnTsUahZ9g1icjmGk", club = "LFSO", start_ctr = lineId)  
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)
+if (nrow(datLines) != 0) {lineId <- max(datLines$LineGroupId)}
 
 ## LF1926 (has a map for each place with no layers, try to hack)
 # first add medlem zones
@@ -90,12 +97,14 @@ mapIds <- c("1LI-ffNiZ8Dpsy1NpzFETFx2wDCE", # Karup by
             "1BRFJOIFKxM-zaHNc80HtjfN1cVc" # Estvad
 )
 for (i in 1:length(mapIds)) {
-  lst <- map_strip_kml(mapIds[i], club = "LF1926", group_name_lines = "medlem") 
+  lst <- map_strip_kml(mapIds[i], club = "LF1926", group_name_lines = "medlem", start_ctr = lineId)  
   lst$datLines$LineGroupId <- lst$datLines$LineGroupId + i*10
   datMarkers <- bind_rows(datMarkers, lst$datMarkers) %>% filter(!is.na(Icon))
   datLines <- bind_rows(datLines, lst$datLines)
+  if (nrow(datLines) != 0) {lineId <- max(datLines$LineGroupId)}
 }
 
+# Save map data to csv files (for use in leaflet map in report)
 datMarkers <- datMarkers  %>% filter(!is.na(Icon))
 write_csv(datMarkers, str_c(prefix, "_mapmarkers.csv"))
 write_csv(datLines, str_c(prefix, "_maplines.csv"))

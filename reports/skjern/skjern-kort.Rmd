@@ -10,13 +10,12 @@ editor_options:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-library(htmltools)
-library(tidyverse)
-library(leaflet)
-library(leaflet.extras)
+# library(htmltools)
+# library(tidyverse)
+# library(leaflet)
+# library(leaflet.extras)
+library(riverdata)
 ```
-
-
 
 <style>
   body {
@@ -34,10 +33,13 @@ library(leaflet.extras)
   }
 </style>
 
+```{r}
+prefix <- "../../data/data_skjern_"
+snip_leaflet(prefix)
+```
 
 
-
-```{r, include=FALSE}
+```{r, include=FALSE, eval=FALSE}
 # prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
 prefix <- "../../data/"
 mapAddMarkers <- function(map, group, data) {
@@ -194,6 +196,6 @@ maplet <- maplet %>%
   addFullscreenControl()
 ```
 
-```{r}
+```{r, eval=FALSE}
 maplet
 ```
