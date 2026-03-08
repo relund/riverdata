@@ -44,7 +44,81 @@ get_catch_table <- function(datCatch, datWeight) {
 #' yearly_stat(dat_catch)
 #' }
 yearly_stat <- function(dat_catch) {
-  yearlyStat(dat_catch)
+  dat <- dat_catch %>%
+    mutate(Year = year(Date)) %>% group_by(Year) %>% nest() %>%
+    mutate(
+      TotalStat = map(data, function(df) {
+        summarise(df, Total = n(),
+                  Female = sum(Sex == "Hun", na.rm = T),
+                  Male = sum(Sex == "Han", na.rm = T),
+                  SexUnknown = Total - Female - Male,
+                  Released = sum(!Killed, na.rm = T),
+                  Killed = sum(Killed, na.rm = T),
+                  KilledUnknown = Total - Released - Killed,
+                  LengthAvg = mean(Length, na.rm = T),
+                  LengthMax = max(Length, na.rm = T),
+                  WeightAvg = mean(Weight, na.rm = T),
+                  WeightMax = max(Weight, na.rm = T),
+                  Kg = sum(Weight, na.rm = T),
+                  FultonAvg = mean(Fulton, na.rm = T),
+                  FultonMax = max(Fulton, na.rm = T)
+        )
+      }),
+      PlaceStat =
+        map(data,
+            function(df) {
+              df %>%
+                group_by(Place) %>%
+                summarize(TotalP = n(),
+                          KilledP = sum(Killed))}),
+      MethodStat =
+        map(data,
+            function(df) {
+              df %>%
+                group_by(Method) %>%
+                summarize(TotalM = n())})
+    )
+
+  dat <- dat %>%
+    mutate(PlaceStat =
+             map(PlaceStat, function(df) {
+               pivot_wider(df, names_from = Place, values_from = c(TotalP, KilledP))}),
+           MethodStat =
+             map(MethodStat, function(df) {
+               pivot_wider(df, names_from = Method, values_from = c(TotalM))})
+    ) %>%
+    unnest(cols = c(TotalStat, PlaceStat, MethodStat)) %>% select(-data) %>%
+    replace(., is.na(.), 0)
+
+  dat <-
+    dat  %>%
+    ungroup() %>%
+    transmute(Year, Total,
+              Sex = paste0(round(100*Male/Total, digits = 0), "/",
+                           round(100*Female/Total, digits = 0), "/",
+                           round(100*SexUnknown/Total, digits = 0)),
+              Place = paste0(round(100*TotalP_Nedre/Total, digits = 0), "/",
+                             round(100*TotalP_Mellem/Total, digits = 0), "/",
+                             round(100*`TotalP_Øvre`/Total, digits = 0), "/",
+                             round(100*`TotalP_Vorgod Å`/Total, digits = 0), "/",
+                             round(100*`TotalP_Omme Å`/Total, digits = 0), "/",
+                             round(100*`TotalP_Ukendt`/Total, digits = 0)),
+              PlaceK = paste0(round(100*KilledP_Nedre/Killed, digits = 0), "/",
+                              round(100*KilledP_Mellem/Killed, digits = 0), "/",
+                              round(100*`KilledP_Øvre`/Killed, digits = 0), "/",
+                              round(100*`KilledP_Vorgod Å`/Killed, digits = 0), "/",
+                              round(100*`KilledP_Omme Å`/Killed, digits = 0), "/",
+                              round(100*`KilledP_Ukendt`/Killed, digits = 0)),
+              Method = paste0(round(100*Flue/Total, digits = 0), "/",
+                              round(100*Spin/Total, digits = 0), "/",
+                              round(100*Orm/Total, digits = 0), "/",
+                              round(100*Ukendt/Total, digits = 0)),
+              Released = paste0(round(100*Released/Total, 0), "/",
+                                round(100*Killed/Total, 0)),
+              Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)),
+              Weight = paste0(round(WeightAvg,1), "/", round(WeightMax,1), "/", round(Kg,0)),
+              Fulton = paste0(round(FultonAvg,2), "/", round(FultonMax,2))) %>%
+    mutate_if(is.character, str_replace_all, pattern = "NaN|NA", replacement = "0")
 }
 
 #' Calculate monthly catch statistics
@@ -58,7 +132,111 @@ yearly_stat <- function(dat_catch) {
 #' monthly_stat(dat_catch, 2025)
 #' }
 monthly_stat <- function(dat_catch, year) {
-  monthlyStat(dat_catch, year)
+  dat <- dat_catch %>%
+    filter(year(Date) == year) %>%
+    mutate(Month = month(Date, label = TRUE)) %>% group_by(Month) %>% nest() %>%
+    mutate(keep = map_lgl(data, function(df) { # remove months where no weight or length
+      if_else(nrow(df) == sum(is.na(df$Length)) | nrow(df) == sum(is.na(df$Weight)), FALSE, TRUE)
+    })) %>%
+    filter(keep) %>%
+    mutate(
+      TotalStat = map(data, function(df) {
+        summarise(df, Total = n(),
+                  Female = sum(Sex == "Hun", na.rm = T),
+                  Male = sum(Sex == "Han", na.rm = T),
+                  SexUnknown = Total - Female - Male,
+                  Released = sum(!Killed, na.rm = T),
+                  Killed = sum(Killed, na.rm = T),
+                  KilledUnknown = Total - Released - Killed,
+                  LengthAvg = mean(Length, na.rm = T),
+                  LengthMax = max(Length, na.rm = T),
+                  WeightAvg = mean(Weight, na.rm = T),
+                  WeightMax = max(Weight, na.rm = T),
+                  Kg = sum(Weight, na.rm = T),
+                  FultonAvg = mean(Fulton, na.rm = T),
+                  FultonMax = max(Fulton, na.rm = T)
+        )
+      }),
+      PlaceStat =
+        map(data,
+            function(df) {
+              df %>%
+                group_by(Place) %>%
+                summarize(TotalP = n(),
+                          KilledP = sum(Killed))}),
+      MethodStat =
+        map(data,
+            function(df) {
+              df %>%
+                group_by(Method) %>%
+                summarize(TotalM = n())})
+    )
+
+  dat <- dat %>%
+    mutate(PlaceStat =
+             map(PlaceStat, function(df) {
+               pivot_wider(df, names_from = Place, values_from = c(TotalP, KilledP))}),
+           MethodStat =
+             map(MethodStat, function(df) {
+               pivot_wider(df, names_from = Method, values_from = c(TotalM))})
+    ) %>%
+    unnest(cols = c(TotalStat, PlaceStat, MethodStat)) %>% select(-data) %>%
+    replace(., is.na(.), 0)
+
+  if (nrow(dat) == 0) {
+    dat <-
+      tibble(
+        Month = month(now(), label = T),
+        Total = "0/0",
+        Sex = "0/0/0",
+        Place = "0/0/0/0/0/0",
+        PlaceK = "0/0/0/0/0/0",
+        Method = "0/0/0/0",
+        Released = "0/0",
+        Length = "0/0",
+        Weight = "0/0/0",
+        Fulton = "0/0"
+      )
+  } else {
+    cNames <- c("Month", "Total", "Male", "Female", "SexUnknown", "TotalP_Nedre", "TotalP_Mellem",
+                "TotalP_Øvre", "TotalP_Vorgod Å", "TotalP_Omme Å", "TotalP_Ukendt",
+                "KilledP_Nedre", "KilledP_Mellem", "KilledP_Øvre", "KilledP_Vorgod Å",
+                "KilledP_Omme Å", "KilledP_Ukendt", "Flue", "Spin", "Orm", "Ukendt", "Released",
+                "Killed", "LengthAvg", "LengthMax", "WeightAvg", "WeightMax", "FultonAvg", "FultonMax")
+    cNames <- cNames[!(cNames %in% names(dat))]
+    cols <- rep(0, length(cNames))
+    names(cols) = cNames
+    dat <- dat %>% add_column(!!!cols)
+    dat <-
+      dat  %>%
+      ungroup() %>%
+      transmute(Month, Total,
+                Sex = paste0(round(100*Male/Total, digits = 0), "/",
+                             round(100*Female/Total, digits = 0), "/",
+                             round(100*SexUnknown/Total, digits = 0)),
+                Place = paste0(round(100*TotalP_Nedre/Total, digits = 0), "/",
+                               round(100*TotalP_Mellem/Total, digits = 0), "/",
+                               round(100*`TotalP_Øvre`/Total, digits = 0), "/",
+                               round(100*`TotalP_Vorgod Å`/Total, digits = 0), "/",
+                               round(100*`TotalP_Omme Å`/Total, digits = 0), "/",
+                               round(100*`TotalP_Ukendt`/Total, digits = 0)),
+                PlaceK = paste0(round(100*KilledP_Nedre/Killed, digits = 0), "/",
+                                round(100*KilledP_Mellem/Killed, digits = 0), "/",
+                                round(100*`KilledP_Øvre`/Killed, digits = 0), "/",
+                                round(100*`KilledP_Vorgod Å`/Killed, digits = 0), "/",
+                                round(100*`KilledP_Omme Å`/Killed, digits = 0), "/",
+                                round(100*`KilledP_Ukendt`/Killed, digits = 0)),
+                Method = paste0(round(100*Flue/Total, digits = 0), "/",
+                                round(100*Spin/Total, digits = 0), "/",
+                                round(100*Orm/Total, digits = 0), "/",
+                                round(100*Ukendt/Total, digits = 0)),
+                Released = paste0(round(100*Released/Total, 0), "/",
+                                  round(100*Killed/Total, 0)),
+                Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)),
+                Weight = paste0(round(WeightAvg,1), "/", round(WeightMax,1), "/", round(Kg,0)),
+                Fulton = paste0(round(FultonAvg,2), "/", round(FultonMax,2))) %>%
+      mutate_if(is.character, str_replace_all, pattern = "NaN|NA", replacement = "0")
+  }
 }
 
 #' Calculate yearly catch statistics for Karup
@@ -71,7 +249,76 @@ monthly_stat <- function(dat_catch, year) {
 #' yearly_stat_karup(dat_catch)
 #' }
 yearly_stat_karup <- function(dat_catch) {
-  yearlyStatKarup(dat_catch)
+  dat <- dat_catch %>%
+    mutate(Year = year(Date)) %>% group_by(Year) %>% nest() %>%
+    mutate(
+      TotalStat = map(data, function(df) {
+        summarise(df, Total = n(),
+                  Female = sum(Sex == "Hun", na.rm = T),
+                  Male = sum(Sex == "Han", na.rm = T),
+                  SexUnknown = Total - Female - Male,
+                  Released = sum(!Killed, na.rm = T),
+                  Killed = sum(Killed, na.rm = T),
+                  KilledUnknown = Total - Released - Killed,
+                  LengthAvg = mean(Length, na.rm = T),
+                  LengthMax = max(Length, na.rm = T),
+                  WeightAvg = mean(Weight, na.rm = T),
+                  WeightMax = max(Weight, na.rm = T),
+                  Kg = sum(Weight, na.rm = T),
+                  FultonAvg = mean(Fulton, na.rm = T),
+                  FultonMax = max(Fulton, na.rm = T)
+        )
+      }),
+      PlaceStat =
+        map(data,
+            function(df) {
+              df %>%
+                group_by(Place) %>%
+                summarize(TotalP = n())}),
+      MethodStat =
+        map(data,
+            function(df) {
+              df %>%
+                group_by(Method) %>%
+                summarize(TotalM = n())})
+    )
+
+  dat <- dat %>%
+    mutate(PlaceStat =
+             map(PlaceStat, function(df) {
+               pivot_wider(df, names_from = Place, values_from = c(TotalP))}),
+           MethodStat =
+             map(MethodStat, function(df) {
+               pivot_wider(df, names_from = Method, values_from = c(TotalM))})
+    ) %>%
+    unnest(cols = c(TotalStat, PlaceStat, MethodStat), names_repair = "unique") %>% select(-data) %>%
+    replace(., is.na(.), 0)
+
+  dat <-
+    if (!("TotalP_Ukendt" %in% names(dat))) dat <- dat %>% mutate(TotalP_Ukendt = 0, KilledP_Ukendt = 0)
+  dat <-
+    dat  %>%
+    ungroup() %>%
+    transmute(Year, Total,
+              Sex = paste0(round(100*Male/Total, 0), "/",
+                           round(100*Female/Total, 0), "/",
+                           round(100*SexUnknown/Total, 0)),
+              Place = paste0(round(100*Nedre/Total, 0), "/",
+                             round(100*Mellem/Total, 0), "/",
+                             round(100*`Øvre`/Total, 0), "/",
+                             round(100*`Haderis Å`/Total, 0), "/",
+                             round(100*(Total - Nedre - Mellem - `Øvre` - `Haderis Å`)/Total, 0)),
+              Method = paste0(round(100*Flue/Total, 0), "/",
+                              round(100*Spin/Total, 0), "/",
+                              round(100*Orm/Total, 0), "/",
+                              round(100*(Total - Flue - Spin - Orm)/Total, 0)),
+              Released = paste0(round(100*Released/Total, 0), "/",
+                                round(100*(Total - Released)/Total, 0)),
+              Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)),
+              Weight = paste0(round(WeightAvg,1), "/", round(WeightMax,1), "/", round(Kg,0)),
+              Fulton = paste0(round(FultonAvg,2), "/", round(FultonMax,2))) %>%
+    mutate_if(is.character, str_replace_all, pattern = "NaN|NA", replacement = "0") %>%
+    arrange(desc(Year))
 }
 
 #' Calculate monthly catch statistics for Karup
@@ -85,7 +332,99 @@ yearly_stat_karup <- function(dat_catch) {
 #' monthly_stat_karup(dat_catch, 2025)
 #' }
 monthly_stat_karup <- function(dat_catch, year) {
-  monthlyStatKarup(dat_catch, year)
+  dat <- dat_catch %>%
+    filter(year(Date) == year) %>%
+    mutate(Month = month(Date, label = TRUE)) %>% group_by(Month) %>% nest() %>%
+    mutate(keep = map_lgl(data, function(df) { # remove months where no weight or length
+      if_else(nrow(df) == sum(is.na(df$Length)) | nrow(df) == sum(is.na(df$Weight)), FALSE, TRUE)
+    })) %>%
+    filter(keep) %>%
+    mutate(
+      TotalStat = map(data, function(df) {
+        summarise(df, Total = n(),
+                  Female = sum(Sex == "Hun", na.rm = T),
+                  Male = sum(Sex == "Han", na.rm = T),
+                  SexUnknown = Total - Female - Male,
+                  Released = sum(!Killed, na.rm = T),
+                  Killed = sum(Killed, na.rm = T),
+                  KilledUnknown = Total - Released - Killed,
+                  LengthAvg = mean(Length, na.rm = T),
+                  LengthMax = max(Length, na.rm = T),
+                  WeightAvg = mean(Weight, na.rm = T),
+                  WeightMax = max(Weight, na.rm = T),
+                  Kg = sum(Weight, na.rm = T),
+                  FultonAvg = mean(Fulton, na.rm = T),
+                  FultonMax = max(Fulton, na.rm = T)
+        )
+      }),
+      PlaceStat =
+        map(data,
+            function(df) {
+              df %>%
+                group_by(Place) %>%
+                summarize(TotalP = n())}),
+      MethodStat =
+        map(data,
+            function(df) {
+              df %>%
+                group_by(Method) %>%
+                summarize(TotalM = n())})
+    )
+
+  dat <- dat %>%
+    mutate(PlaceStat =
+             map(PlaceStat, function(df) {
+               pivot_wider(df, names_from = Place, values_from = c(TotalP))}),
+           MethodStat =
+             map(MethodStat, function(df) {
+               pivot_wider(df, names_from = Method, values_from = c(TotalM))})
+    ) %>%
+    unnest(cols = c(TotalStat, PlaceStat, MethodStat)) %>% select(-data) %>%
+    replace(., is.na(.), 0)
+  if (nrow(dat) == 0) {
+    dat <-
+      tibble(
+        Month = month(now(), label = T),
+        Total = "0/0",
+        Sex = "0/0/0",
+        Place = "0/0/0/0/0",
+        Method = "0/0/0/0",
+        Released = "0/0",
+        Length = "0/0",
+        Weight = "0/0/0",
+        Fulton = "0/0"
+      )
+  } else {
+    cNames <- c("Month", "Total", "Male", "Female", "SexUnknown", "Nedre", "Mellem", "Øvre",
+                "Haderis Å", "Flue", "Spin", "Orm", "Released", "LengthAvg", "LengthMax",
+                "WeightAvg", "WeightMax", "FultonAvg", "FultonMax")
+    cNames <- cNames[!(cNames %in% names(dat))]
+    cols <- rep(0, length(cNames))
+    names(cols) = cNames
+    dat <- dat %>% add_column(!!!cols)
+    dat <-
+      dat  %>%
+      ungroup() %>%
+      transmute(Month, Total,
+                Sex = paste0(round(100*Male/Total, 0), "/",
+                             round(100*Female/Total, 0), "/",
+                             round(100*SexUnknown/Total, 0)),
+                Place = paste0(round(100*Nedre/Total, 0), "/",
+                               round(100*Mellem/Total, 0), "/",
+                               round(100*`Øvre`/Total, 0), "/",
+                               round(100*`Haderis Å`/Total, 0), "/",
+                               round(100*(Total - Nedre - Mellem - `Øvre` - `Haderis Å`)/Total, 0)),
+                Method = paste0(round(100*Flue/Total, 0), "/",
+                                round(100*Spin/Total, 0), "/",
+                                round(100*Orm/Total, 0), "/",
+                                round(100*(Total - Flue - Spin - Orm)/Total, 0)),
+                Released = paste0(round(100*Released/Total, 0), "/",
+                                  round(100*(Total - Released)/Total, 0)),
+                Length = paste0(round(LengthAvg,0), "/", round(LengthMax,0)),
+                Weight = paste0(round(WeightAvg,1), "/", round(WeightMax,1), "/", round(Kg,0)),
+                Fulton = paste0(round(FultonAvg,2), "/", round(FultonMax,2))) %>%
+      mutate_if(is.character, str_replace_all, pattern = "NaN|NA", replacement = "0")
+  }
 }
 
 #' Calculate relative water levels
@@ -100,7 +439,13 @@ monthly_stat_karup <- function(dat_catch, year) {
 #' calc_water_level_relative(dat, r_means, "data/data_karup")
 #' }
 calc_water_level_relative <- function(dat, r_means, prefix) {
-  calcWaterLevelRelative(dat, r_means, prefix)
+  message("Waterlevel: Calc relative values.")
+  dat <- dat %>%
+    mutate(Day = yday(Date)) %>%
+    left_join(r_means, by = c("Place", "Day")) %>%
+    mutate(Level = round(Value, 3), LevelRelative = round(Level - Level_rAvg90, 3)) %>%
+    select(-Day, -Level_rAvg90)
+  return(dat)
 }
 
 #' Parse KML map data into marker/line tables
@@ -121,5 +466,73 @@ strip_kml <- function(
     group_name_markers = NULL,
     group_name_lines = NULL
 ) {
-  stripKml(map_id, club, group_name_markers, group_name_lines)
+  kml <- read_xml(str_c("https://www.google.com/maps/d/u/0/kml?mid=", map_id, "&forcekml=1"))
+  xml_ns_strip(kml)
+  x <- xml_find_all(kml, "//Folder")
+
+  datMarkers <- NULL
+  if (length(xml_find_all(x, ".//Point")) > 0) {
+    datMarkers <- bind_rows(map(x, function(n) {  # for each Folder
+      folderName <- xml_text(xml_find_all(n, "./name"))  # Folder name
+      y <- xml_find_all(n, "./Placemark[Point]")
+      res <- tibble(Desc = xml_text(xml_find_first(y, "./name")),
+                    Text = xml_text(xml_find_first(y, "./description")),
+                    cord = xml_text(xml_find_first(y, ".//coordinates"), trim = TRUE) ) %>%
+        mutate(long = as.numeric(str_split_fixed(cord, ",", 3)[,1]), lat = as.numeric(str_split_fixed(cord, ",", 3)[,2])) %>%
+        select(-cord)
+      tibble(Group = folderName, Point = list(res))
+    })) %>%
+      filter(map_lgl(Point, function(df) nrow(df) > 0)) %>%
+      unnest(Point) %>% mutate(Club = club) %>%
+      mutate(Icon = case_when(
+        str_detect(Group, fixed("parkering", ignore_case = TRUE)) ~ "park.png",
+        str_detect(Group, fixed("standpladser", ignore_case = TRUE)) ~ "fish.png",
+        str_detect(Group, fixed("shelter", ignore_case = TRUE)) ~ "shelter.png",
+        str_detect(Group, fixed("sten", ignore_case = TRUE)) ~ "rock.png",
+        str_detect(Desc, fixed("hytte", ignore_case = TRUE)) ~ "cottage.png",
+        str_detect(Desc, fixed("indhegning", ignore_case = TRUE)) ~ "fence.png",
+        str_detect(Desc, regex("skarrildhus", ignore_case = TRUE)) ~ "infoplace.png",
+        str_detect(Desc, regex("hus", ignore_case = TRUE)) ~ "house.png",
+        str_detect(Desc, fixed("fiskekort", ignore_case = TRUE)) ~ "house.png",
+        str_detect(Desc, fixed("p-plads", ignore_case = TRUE)) ~ "park.png",
+        str_detect(Desc, fixed("parkering", ignore_case = TRUE)) ~ "park.png",
+        str_detect(Desc, fixed("spang", ignore_case = TRUE)) ~ "footbridge.png",
+        str_detect(Desc, fixed("toilet", ignore_case = TRUE)) ~ "wc.png",
+        str_detect(Desc, fixed("wc", ignore_case = TRUE)) ~ "wc.png",
+        str_detect(Desc, fixed("info", ignore_case = TRUE)) ~ "infoplace.png",
+        str_detect(Desc, fixed("shelter", ignore_case = TRUE)) ~ "shelter.png",
+        str_detect(Desc, fixed("bro", ignore_case = TRUE)) ~ "bridge.png",
+        str_detect(Desc, fixed("båd", ignore_case = TRUE)) ~ "boat.png",
+        str_detect(Desc, fixed("fiskeret", ignore_case = TRUE)) ~ "infoplace.png",
+        TRUE ~ NA_character_
+      ))
+    if (!is.null(group_name_markers)) datMarkers$Group <- group_name_markers
+  }
+
+  datLines <- NULL
+  if (length(xml_find_all(x, ".//LineString")) > 0) {
+    ctr <- 0
+    datLines <- bind_rows(map(x, function(n) {  # for each Folder
+      folderName <- xml_text(xml_find_all(n, "./name"))  # Folder name
+      y <- xml_find_all(n, "./Placemark[LineString]")
+      res <- bind_rows(map(y, function(n) {  # for each Placemark
+        lineName <- xml_text(xml_find_first(n, "./name"))
+        lineText <- xml_text(xml_find_first(n, "./description"))
+        txt <- xml_text(xml_find_all(n, "./LineString/coordinates"))
+        l <- suppressWarnings(
+          read_csv(txt, col_names = c("long", "lat", "h"), col_types = "ddd") %>%
+            select(-h) %>%
+            filter(!is.na(lat)))
+        ctr <<- ctr + 1
+        tibble(Desc = lineName, Text = lineText, LineCord = list(l), LineGroupId = ctr)
+      }))
+      tibble(Group = folderName, Line = list(res))
+    })) %>%
+      filter(map_lgl(Line, function(df) nrow(df) > 0)) %>%
+      unnest(col = c(Line)) %>%
+      unnest(col = c(LineCord)) %>%
+      mutate(Club = club)
+    if (!is.null(group_name_lines)) datLines$Group <- group_name_lines
+  }
+  return(list(datMarkers = datMarkers, datLines = datLines))
 }

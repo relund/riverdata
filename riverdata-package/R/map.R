@@ -88,4 +88,6 @@ map_add_lines <- function(map, group, data, color, useClub = TRUE) {
   return(list(map=map, groups=grp))
 }
 
+
+
   

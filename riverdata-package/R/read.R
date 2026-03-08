@@ -23,20 +23,49 @@ read_data <- function(
    return(dat)
 }
 
-#' Read and prepare catch records
+#' Read and prepare catch records for table
 #'
-#' Wrapper around legacy catch reader.
+#' @param prefix Prefix to csv files e.g. `"../../data/data_skjern_catch_salmon"`.
+#' @param dat_weight Weight estimates.
 #'
-#' @param prefix Prefix to csv files, e.g. `"data/data_skjern_catch_salmon"`.
-#' @param dat_weight Weight estimate table.
-#'
-#' @return Catch records.
+#' @return The catch records.
 #' @examples
 #' \dontrun{
 #' read_catch("data/data_karup_catch_seatrout", tibble::tibble())
 #' }
 read_catch <- function(prefix, dat_weight) {
-  readCatch(prefix, dat_weight)
+  f <- paste0(prefix, "_", 2004:year(now()), ".csv")
+  dat_catch <- read_csv(f, col_types = "Dddcfflclfl") %>%
+    mutate(
+      Weight = if_else(Killed, Weight, NA_real_),
+      Place = fct_na_value_to_level(Place, "Ukendt")
+    )
+
+  dat_catch <- dat_catch %>%
+    mutate(
+      Misc = paste0(
+        if_else(!Killed, "<img src=\"www/c_and_r.gif\" alt=\"C&R\">", "", ""),
+        if_else(Cut, "<img src=\"www/cut.gif\" alt=\"Finneklippet\">", "", ""),
+        if_else(Sex == "Han", '<img src="www/boy.gif" alt="Han">', "", ""),
+        if_else(Sex == "Hun", '<img src="www/girl.gif" alt="Hun">', "", ""),
+        if_else(!is.na(Foto), str_c("<a href=\"", Foto, "\", target=\"_blank\"><img src=\"www/foto.gif\" alt=\"Foto\"></a>"), "", "")
+      ),
+      Month = factor(month(Date, label = TRUE), ordered = FALSE),
+      MonthN = month(Date),
+      Week = isoweek(Date),
+      Year = year(Date),
+      NoWeight = 1 * is.na(Weight),
+      MDay = mday(Date),
+      DayStr = format(Date, "%d. %b"),
+      Day = str_c(formatC(MonthN, width = 2, flag = "0"), "-", formatC(MDay, width = 2, flag = "0"))
+    )
+
+  dat_catch <- left_join(dat_catch, dat_weight, by = c("Length", "MonthN")) %>%
+    mutate(Weight = if_else(is.na(Weight), round(Avg, 1), Weight)) %>%
+    mutate(Fulton = Weight * 100000 / Length^3) %>%
+    mutate(Month = month(Date, label = TRUE))
+
+  return(dat_catch)
 }
 
 #' Read yearly water temperature files
@@ -50,7 +79,12 @@ read_catch <- function(prefix, dat_weight) {
 #' read_w_temp("data/data_karup", 2020:2025)
 #' }
 read_w_temp <- function(prefix, years) {
-  readWTemp(prefix, years)
+  dat <- NULL
+  for (y in years) {
+    fn <- paste0(prefix, "_watertemp_", y, ".csv")
+    if (file.exists(fn)) dat <- bind_rows(dat, read_csv(fn, col_types = "Tfd"))
+  }
+  return(dat)
 }
 
 #' Read and combine data files by filename pattern
