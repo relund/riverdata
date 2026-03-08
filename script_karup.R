@@ -66,17 +66,17 @@ dat <- write_water_temp_web(dat, rMeans, prefix)
 
 #### Map ####
 # Places
-lst <- strip_kml("1XJoAUKY_-kbmhZgovPpLgi82Gn8")  
+lst <- map_strip_kml("1XJoAUKY_-kbmhZgovPpLgi82Gn8")  
 datMarkers <- lst$datMarkers
 datLines <- lst$datLines
 
 # MV-LF
-lst <- strip_kml("1A1Oi7hPeFbAU2ahS_zWgg6Fqcxa5Gbg", club = "MV-LF")
+lst <- map_strip_kml("1A1Oi7hPeFbAU2ahS_zWgg6Fqcxa5Gbg", club = "MV-LF")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)
 
 # LFSO - Use my own maps since otherwise cannot identify dagkort/medlem
-lst <- strip_kml("17UJPQS6LtN9BITZnTsUahZ9g1icjmGk", club = "LFSO")
+lst <- map_strip_kml("17UJPQS6LtN9BITZnTsUahZ9g1icjmGk", club = "LFSO")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)
 
@@ -90,7 +90,7 @@ mapIds <- c("1LI-ffNiZ8Dpsy1NpzFETFx2wDCE", # Karup by
             "1BRFJOIFKxM-zaHNc80HtjfN1cVc" # Estvad
 )
 for (i in 1:length(mapIds)) {
-  lst <- strip_kml(mapIds[i], club = "LF1926", group_name_lines = "medlem") 
+  lst <- map_strip_kml(mapIds[i], club = "LF1926", group_name_lines = "medlem") 
   lst$datLines$LineGroupId <- lst$datLines$LineGroupId + i*10
   datMarkers <- bind_rows(datMarkers, lst$datMarkers) %>% filter(!is.na(Icon))
   datLines <- bind_rows(datLines, lst$datLines)

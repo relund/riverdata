@@ -29,32 +29,32 @@ datCatch <- write_catch(url, prefix, yr, species = "all", club = TRUE)
 
 #### Map ####
 # Stednavne Karup
-lst <- strip_kml("1XJoAUKY_-kbmhZgovPpLgi82Gn8")  
+lst <- map_strip_kml("1XJoAUKY_-kbmhZgovPpLgi82Gn8")  
 datMarkers <- lst$datMarkers
 datLines <- lst$datLines
 
 # Stednavne Skjern
-lst <- strip_kml("135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ")  # Places
+lst <- map_strip_kml("135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ")  # Places
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)
 
 # Karup
-lst <- strip_kml("1A1Oi7hPeFbAU2ahS_zWgg6Fqcxa5Gbg", club = "MV-LF")
+lst <- map_strip_kml("1A1Oi7hPeFbAU2ahS_zWgg6Fqcxa5Gbg", club = "MV-LF")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)
 
 ## Skjern
-lst <- strip_kml("1NiY_55Mw_GUULepLXq6Wjt0Gtu2K2c0", club = "MV-LF")
+lst <- map_strip_kml("1NiY_55Mw_GUULepLXq6Wjt0Gtu2K2c0", club = "MV-LF")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)
 
 # Storå
-lst <- strip_kml("1_xtzzPTUUiecahNG71C_4rOY_izwVmU", club = "MV-LF") 
+lst <- map_strip_kml("1_xtzzPTUUiecahNG71C_4rOY_izwVmU", club = "MV-LF") 
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)
 
 # Lake 
-lst <- strip_kml("14vdqfI93frzgB0jmm44GPP3bIu5aVH8", club = "MV-LF") 
+lst <- map_strip_kml("14vdqfI93frzgB0jmm44GPP3bIu5aVH8", club = "MV-LF") 
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)
 

@@ -81,22 +81,22 @@ write_time_series_data(stations, prefix, prefix1 = "pressure", days = 15)
 
 
 #### Map ####
-lst <- strip_kml("135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ")  # Places
+lst <- map_strip_kml("135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ")  # Places
 datMarkers <- lst$datMarkers
 datLines <- lst$datLines
 
 ## MV-LF
-lst <- strip_kml("1NiY_55Mw_GUULepLXq6Wjt0Gtu2K2c0", club = "MV-LF")
+lst <- map_strip_kml("1NiY_55Mw_GUULepLXq6Wjt0Gtu2K2c0", club = "MV-LF")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)
 
 ## Skj-LF
-lst <- strip_kml("1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF", club = "Skj-LF")
+lst <- map_strip_kml("1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF", club = "Skj-LF")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers)
 datLines <- bind_rows(datLines, lst$datLines)
 
 ## BFF
-lst <- strip_kml("1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD", club = "BFF")
+lst <- map_strip_kml("1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD", club = "BFF")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers)
 datLines <- bind_rows(datLines, lst$datLines)
 
@@ -115,19 +115,19 @@ mapIds <- c("1d8I43tTbY5IyOjzTHpqlY8hd7F0", # Sdr. Felding
             "1Xoln0k9Xf7qS05QKrFzovBLkOk8" # Vorgod Å nedre
             )
 for (i in 1:length(mapIds)) {
-  lst <- strip_kml(mapIds[i], club = "LF1926", group_name_lines = "medlem") 
+  lst <- map_strip_kml(mapIds[i], club = "LF1926", group_name_lines = "medlem") 
   lst$datLines$LineGroupId <- lst$datLines$LineGroupId + i*10
   datMarkers <- bind_rows(datMarkers, lst$datMarkers) %>% filter(!is.na(Icon))
   datLines <- bind_rows(datLines, lst$datLines)
 }
-# lst <- strip_kml("1BxltqquXBJRRxj2_GVWzjA1TbhQ", club = "LF1926", group_name_markers = "parkering", group_name_lines = "medlem")  # Skarrild
+# lst <- map_strip_kml("1BxltqquXBJRRxj2_GVWzjA1TbhQ", club = "LF1926", group_name_markers = "parkering", group_name_lines = "medlem")  # Skarrild
 # lst$datLines <- lst$datLines %>% mutate(Group = if_else(str_detect(Text, fixed('clasonborg', ignore_case=TRUE)), "dagkort", Group))
 # datMarkers <- bind_rows(datMarkers, lst$datMarkers) %>% 
 #   filter(!is.na(Icon))
 # datLines <- bind_rows(datLines, lst$datLines)
 
 ## LFSO
-lst <- strip_kml("1epDPyEYZsmz3gGpgUZi5UbnnlPc", club = "LFSO")
+lst <- map_strip_kml("1epDPyEYZsmz3gGpgUZi5UbnnlPc", club = "LFSO")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers)
 datLines <- bind_rows(datLines, lst$datLines)
 
