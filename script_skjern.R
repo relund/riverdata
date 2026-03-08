@@ -15,29 +15,29 @@ conflicts_prefer(
   dplyr::lag
 )
 
-source("functions.R")
+library(riverdata)
 
 url <- "https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/catches/assoc/A97F957DD48AEDD4C1258814003E71FE/1/"
 prefix <- "data/data_skjern"
 yr <- year(now())
 
 #### Catch records ####
-datCatchSalmon <- writeCatch(url, prefix, yr, species = "Laks")
-datCatchSeatrout <- writeCatch(url, prefix, yr, species = "Havørred")
+datCatchSalmon <- write_catch(url, prefix, yr, species = "salmon")
+datCatchSeatrout <- write_catch(url, prefix, yr, species = "seatrout")
 
 
 #### Flow though lock at Hvide Sande ####
-dat <- writeLockSkjern(prefix)
-writeLockWeb(dat, prefix)
+dat <- write_lock_skjern(prefix)
+write_lock_web(dat, prefix)
 
 
 #### Weight ####
-writeWeightEstimates(prefix, seatrout = TRUE)
-writeWeightEstimates(prefix, seatrout = FALSE)
+write_weight_estimates(prefix, seatrout = TRUE)
+write_weight_estimates(prefix, seatrout = FALSE)
 
 
 #### Hobo station (Laksens hus) - Save data to hobo csv files ####
-saveHoboData()
+save_hobo_data()
 
 #### Waterlevel ####
 stations <-
@@ -50,53 +50,53 @@ stations <-
                    "Rind Å - Arnborg kirke",
                    "Omme Å - Sønderskov bro",
                    "Fjederholt Å - A18"))
-writeTimeSeriesData(stations, prefix, prefix1 = "waterlevel", days = 15)  
+write_time_series_data(stations, prefix, prefix1 = "waterlevel", days = 15)  
 # d <- as.integer(now() - ymd_hms("2017-01-01 12:00:00"))
-# writeTimeSeriesData(stations, prefix, prefix1 = "waterlevel", days = d)  # if update from 2017
+# write_time_series_data(stations, prefix, prefix1 = "waterlevel", days = d)  # if update from 2017
 
 ## Calc moving average 
-dat <- readDataFiles("data_skjern_waterlevel_[0-9]{4}")
-rMeans <- writeWaterMovAvg(dat, prefix)
+dat <- read_data_files("data_skjern_waterlevel_[0-9]{4}")
+rMeans <- write_water_mov_avg(dat, prefix)
 ## Relative datasets 
-dat <- calcWaterLevelRelative(dat, rMeans, prefix)
+dat <- calc_water_level_relative(dat, rMeans, prefix)
 ## Dataset for web 
-dat <- writeWaterLevelsWeb(dat, prefix)
+dat <- write_water_levels_web(dat, prefix)
 
 
 #### Water temperature ####
 stations <- NULL
-writeTimeSeriesData(stations, prefix, prefix1 = "watertemp", days = 15)  
+write_time_series_data(stations, prefix, prefix1 = "watertemp", days = 15)  
 
 ## Calc moving average 
-dat <- readWTemp(prefix, 2022:year(now()))
-rMeans <- writeWaterTempMovAvg(dat, prefix)
+dat <- read_w_temp(prefix, 2022:year(now()))
+rMeans <- write_water_temp_mov_avg(dat, prefix)
 
 ## Dataset for web 
-dat <- writeWaterTempWeb(dat, rMeans, prefix)
+dat <- write_water_temp_web(dat, rMeans, prefix)
 
 
 #### Pressure ####
 stations <- NULL
-writeTimeSeriesData(stations, prefix, prefix1 = "pressure", days = 15)  
+write_time_series_data(stations, prefix, prefix1 = "pressure", days = 15)  
 
 
 #### Map ####
-lst <- stripKml("135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ")  # Places
+lst <- strip_kml("135J9l0kVoBKkdIdG_0vc3U9WJeuUPWyJ")  # Places
 datMarkers <- lst$datMarkers
 datLines <- lst$datLines
 
 ## MV-LF
-lst <- stripKml("1NiY_55Mw_GUULepLXq6Wjt0Gtu2K2c0", Club = "MV-LF")
+lst <- strip_kml("1NiY_55Mw_GUULepLXq6Wjt0Gtu2K2c0", club = "MV-LF")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers) 
 datLines <- bind_rows(datLines, lst$datLines)
 
 ## Skj-LF
-lst <- stripKml("1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF", Club = "Skj-LF")
+lst <- strip_kml("1MzpHBDHJqemOQK81Z7z2CVwzdzrXGDlF", club = "Skj-LF")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers)
 datLines <- bind_rows(datLines, lst$datLines)
 
 ## BFF
-lst <- stripKml("1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD", Club = "BFF")
+lst <- strip_kml("1-B74S5cts6E4KNUyP2vxBpQ_r9pZcGSD", club = "BFF")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers)
 datLines <- bind_rows(datLines, lst$datLines)
 
@@ -115,19 +115,19 @@ mapIds <- c("1d8I43tTbY5IyOjzTHpqlY8hd7F0", # Sdr. Felding
             "1Xoln0k9Xf7qS05QKrFzovBLkOk8" # Vorgod Å nedre
             )
 for (i in 1:length(mapIds)) {
-  lst <- stripKml(mapIds[i], Club = "LF1926", GroupNameLines = "medlem") 
+  lst <- strip_kml(mapIds[i], club = "LF1926", group_name_lines = "medlem") 
   lst$datLines$LineGroupId <- lst$datLines$LineGroupId + i*10
   datMarkers <- bind_rows(datMarkers, lst$datMarkers) %>% filter(!is.na(Icon))
   datLines <- bind_rows(datLines, lst$datLines)
 }
-# lst <- stripKml("1BxltqquXBJRRxj2_GVWzjA1TbhQ", Club = "LF1926", GroupNameMarkers = "parkering", GroupNameLines = "medlem")  # Skarrild
+# lst <- strip_kml("1BxltqquXBJRRxj2_GVWzjA1TbhQ", club = "LF1926", group_name_markers = "parkering", group_name_lines = "medlem")  # Skarrild
 # lst$datLines <- lst$datLines %>% mutate(Group = if_else(str_detect(Text, fixed('clasonborg', ignore_case=TRUE)), "dagkort", Group))
 # datMarkers <- bind_rows(datMarkers, lst$datMarkers) %>% 
 #   filter(!is.na(Icon))
 # datLines <- bind_rows(datLines, lst$datLines)
 
 ## LFSO
-lst <- stripKml("1epDPyEYZsmz3gGpgUZi5UbnnlPc", Club = "LFSO")
+lst <- strip_kml("1epDPyEYZsmz3gGpgUZi5UbnnlPc", club = "LFSO")
 datMarkers <- bind_rows(datMarkers, lst$datMarkers)
 datLines <- bind_rows(datLines, lst$datLines)
 

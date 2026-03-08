@@ -30,7 +30,7 @@ library(flexdashboard)
 library(tidyverse)
 # library(lubridate)
 # library(fs)
-source("../functions.R")
+library(riverdata)
 
 
 Sys.setlocale("LC_ALL", "da_DK.UTF-8")

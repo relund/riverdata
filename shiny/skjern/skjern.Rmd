@@ -45,7 +45,7 @@ library(kableExtra)
 # library(zoo) 
 library(leaflet)
 library(fs)
-source("functions.R")
+library(riverdata)
 
 faIcon <- function (name, class = "", title = "", lib = "font-awesome") 
 {
@@ -163,17 +163,17 @@ datWeightSea<- read_csv(paste0(prefix, "data_skjern_weight_seatrout.csv"), col_t
 datWeightSal <- read_csv(paste0(prefix, "data_skjern_weight_salmon.csv"), col_types = "dfddd")
 
 # Catch - Records 
-datCatchSal <- readCatch(paste0(prefix, "data_skjern_catch_salmon"), datWeightSal) |> 
+datCatchSal <- read_catch(paste0(prefix, "data_skjern_catch_salmon"), datWeightSal) |> 
   mutate(`>73cm` = Length > 73)
-datCatchSea <- readCatch(paste0(prefix, "data_skjern_catch_seatrout"), datWeightSea)
+datCatchSea <- read_catch(paste0(prefix, "data_skjern_catch_seatrout"), datWeightSea)
 
 # Catch - Yearly statistics
-datStatYearSal <- yearlyStat(datCatchSal)
-datStatYearSea <- yearlyStat(datCatchSea)
+datStatYearSal <- yearly_stat(datCatchSal)
+datStatYearSea <- yearly_stat(datCatchSea)
 
 # Catch - Monthly statistics
-datStatMonthSal <- monthlyStat(datCatchSal, curYear)
-datStatMonthSea <- monthlyStat(datCatchSea, curYear)
+datStatMonthSal <- monthly_stat(datCatchSal, curYear)
+datStatMonthSea <- monthly_stat(datCatchSea, curYear)
 
 # Water levels 
 datWLevel <- 

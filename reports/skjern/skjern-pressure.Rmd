@@ -31,20 +31,13 @@ conflicts_prefer(
   )
 
 here::i_am("reports/skjern/skjern-pressure.Rmd")
-source(here::here("reports/functions.R"))
+library(riverdata)
 Sys.setlocale("LC_ALL", "da_DK.UTF-8")
 
 # prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
 prefix <- "../../data/"
-
-readDataFiles <- function(pattern) {
-  f <- fs::dir_ls(prefix, regexp = pattern)
-  dat <- read_csv(f, col_types = "Tfd") %>% 
-    arrange(Date)
-  return(dat)
-}
 curDay <- as.numeric(date(paste0(year(now()), "-", month(now()), "-", day(now()))))
-dat <- readDataFiles("data_skjern_pressure_[0-9]{4}") %>% 
+dat <- read_data_files("data_skjern_pressure_[0-9]{4}") %>% 
   mutate(DaysSince = as.numeric(date(Date))) %>% 
   filter(DaysSince >= curDay - 15) %>% 
   select(-DaysSince) 
@@ -84,4 +77,3 @@ Row
 ```{r}
 plotPlace("Skjern Å - Laksens hus")
 ```
-

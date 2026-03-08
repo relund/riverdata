@@ -24,11 +24,11 @@ library(tidyverse)
 library(kableExtra)
 library(here)
 i_am("reports/salmon-skjern.Rmd")
-source(here("./shiny/skjern/functions.R"))
+library(riverdata)
 prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/"
 curYear <- if_else(month(now())*100 + day(now()) < 416, year(now())-1, year(now()))   # assume previous year until season starts
 datWeightSal <- read_csv(paste0(prefix, "data_skjern_weight_salmon.csv"), col_types = "dfddd")
-datCatchSalAll <- readCatch(paste0(prefix, "data_skjern_catch_salmon"), datWeightSal) 
+datCatchSalAll <- read_catch(paste0(prefix, "data_skjern_catch_salmon"), datWeightSal) 
 datCatchSal <- datCatchSalAll %>% filter(Year == 2022)
 ```
 
@@ -441,7 +441,6 @@ ggplot(data = dat, aes(x = Date)) +
   labs(main = "Fangst af første laks uden fedtfinne", y = "Antal") +
   theme(legend.position="bottom") 
 ```
-
 
 
 
