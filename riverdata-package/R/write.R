@@ -71,6 +71,8 @@ write_catch <-
             dat1 <- dat1 |> dplyr::filter(str_detect(.data$Art, "Havørred"))
          if (species == "salmon")
             dat1 <- dat1 |> dplyr::filter(str_detect(.data$Art, "Laks"))
+         sex_col <- intersect(c("Køn...17", "Køn"), names(dat1))
+         dat1$SexTmp <- if (length(sex_col) > 0) dat1[[sex_col[1]]] else NA_character_
          if (!club)
             dat2 <- dat1 |>
             transmute(
@@ -83,7 +85,7 @@ write_catch <-
                "Cut" = NA_character_,
                "Foto" = .data$Foto,
                "Killed" = (.data$Hjemtaget == "Ja"),
-               "Sex" = .data$`Køn...17`,
+               "Sex" = .data$SexTmp,
                "Net" = .data$Garnskadet
             )
          if (club)
@@ -99,7 +101,7 @@ write_catch <-
                "Cut" = NA_character_,
                "Foto" = .data$Foto,
                "Killed" = (.data$Hjemtaget == "Ja"),
-               "Sex" = .data$`Køn`,
+               "Sex" = .data$SexTmp,
                "Net" = .data$Garnskadet
             )
          if ("Fedtfinne.klippet" %in% colnames(dat1))

@@ -56,13 +56,24 @@ read_w_temp <- function(prefix, years) {
 #' Read and combine data files by filename pattern
 #'
 #' @param pattern Regex pattern used to match files in `data/`.
+#' @param path Optional base data path. If `NULL`, a sensible relative path is
+#'   auto-detected from the current working directory.
 #'
 #' @return Combined data table.
 #' @examples
 #' \dontrun{
 #' read_data_files("data_karup_waterlevel_[0-9]{4}")
 #' }
-read_data_files <- function(pattern) {
-  readDataFiles(pattern)
+read_data_files <- function(pattern, path = NULL) {
+  if (is.null(path)) {
+    candidates <- c("data", "../data", "../../data")
+    path <- candidates[fs::dir_exists(candidates)][1]
+    if (is.na(path)) {
+      stop("Could not locate a data directory. Provide `path` explicitly.")
+    }
+  }
+  f <- fs::dir_ls(path, regexp = pattern)
+  dat <- read_csv(f, col_types = "Tfd") %>%
+    arrange(Date)
+  return(dat)
 }
-

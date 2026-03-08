@@ -88,8 +88,11 @@ datCatchSeaMvlf <-
   riverdata::read_data(
     file_prefix = "data_mv-lf_catch_all_",
     year = curYear,
-    path =  prefix) |> 
-  filter(Species %in% c("Havørred", "Laks"))
+    path =  prefix)
+if ("Species" %in% names(datCatchSeaMvlf)) {
+  datCatchSeaMvlf <- datCatchSeaMvlf |>
+    filter(Species %in% c("Havørred", "Laks"))
+}
 datCatchSeaMvlf <- riverdata::get_catch_table(datCatchSeaMvlf, datWeightSea)
 ```
 
@@ -409,4 +412,3 @@ ____
       # hovermode = "x unified"
   )
 ```
-
