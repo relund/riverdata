@@ -8,8 +8,7 @@ License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-Depends: R (>= 4.3.0)
-Imports:
+Depends: R (>= 4.3.0),
     dplyr,
     stringr,
     jsonlite,
@@ -29,4 +28,8 @@ Imports:
     fs,
     rmarkdown,
     RCurl,
-    rlang
+    rlang,
+    htmltools,
+    leaflet,
+    leaflet.extras    
+    

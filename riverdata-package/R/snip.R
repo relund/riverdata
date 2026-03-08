@@ -48,3 +48,109 @@ snip_plot_catch <- function(datCatch, .days = 30, .plotly = TRUE) {
       )
    return(pt)
 }
+
+
+
+snip_leaflet <- function(prefix) {
+   datMarkers <- read_csv(paste0(prefix, "mapmarkers.csv"), col_types = "fccddff") %>% 
+      mutate(Desc = str_c(if_else(!is.na(Desc), str_c("<b>", if_else(is.na(Club), "", str_c(Club, " - ")), Desc, "</b>"), "", ""), 
+                          if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
+      mutate(Desc = str_replace(Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>% 
+      mutate(Desc = map(Desc, HTML), Icon = str_c("www/", Icon), Id = 1:n()) %>% 
+      select(-Text) 
+   
+   datLines <- read_csv(paste0(prefix, "maplines.csv"), col_types = "fccddif")  %>%  
+      mutate(Desc = str_c("<b>", if_else(is.na(Club), "", str_c(Club, " - ")), if_else(!is.na(Desc), Desc, "", ""), "</b>",
+                          if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
+      mutate(Desc = str_replace(Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>% 
+      mutate(Desc = map(Desc, HTML)) %>% 
+      select(-Text) 
+   
+   # init map
+   maplet <- leaflet(width = "100%", height = "100vh") %>%
+      # Base groups
+      addTiles(group = "Kort", options = providerTileOptions(maxZoom = 19)) %>%
+      # addProviderTiles('MtbMap', group = "Kort") %>%
+      addProviderTiles('Esri.WorldImagery', group = "Luftfoto", options = providerTileOptions(maxZoom = 19)) %>%  
+      addProviderTiles("CartoDB.PositronOnlyLabels", group = "Luftfoto", options = providerTileOptions(maxZoom = 19))
+   # setView(9.016712672451805, 56.40970340006212,  zoom = 13)
+   
+   
+   grp <- NULL
+   groups <- c("Parkering", "Shelter", "Stednavne", "Bro/spang", "Info")
+   search_terms <- c("park", "shelter", "rock|fish", "bridge", "info|indhegning")
+   for (i in 1:length(groups)) {
+      group = groups[i]
+      search_term = search_terms[i]
+      if (group %in% c("Parkering", "Shelter", "Stednavne", "Bro/spang")) {
+         datIds <- datMarkers %>%
+            filter(
+               str_detect(Icon, regex(search_term, ignore_case = T))) 
+      } 
+      if (group %in% c("Info")) {
+         datIds <- datMarkers %>%
+            filter(
+               str_detect(Group, regex(search_term, ignore_case = T)) |
+                  str_detect(Desc, regex(search_term, ignore_case = T)))
+      }
+      if (group %in% c("Shelter", "Stednavne", "Bro/spang")) {
+         tmpIds <- datIds %>% filter(!is.na(Club)) %>% pull(Id)
+         datIds <- datIds %>% filter(is.na(Club))
+         datMarkers <- datMarkers %>% filter(!(Id %in% tmpIds))
+      }
+      Ids <- datIds %>% pull(Id)
+      # cat("Adding group ", group, " with ", length(Ids), " markers\n")
+      lst <- map_add_markers(maplet, group, datMarkers %>% filter(Id %in% Ids))
+      maplet <- lst$map
+      grp <- unique(c(grp, lst$groups))
+      datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+      # print(datMarkers)
+      # print(maplet)
+   }
+   
+   
+   # Lines
+   groups <- c("Parkering", "fiskevand", "medlem", "dagkort", "gæstekort")
+   colors <- c("#eb9834", "#3C8AE6", "#EBE053", "#000000", "#bf5656")
+   for (i in 1:length(groups)) {
+      group <- groups[i]
+      color <- colors[i]
+      datLinesGroup <- datLines %>% filter(str_detect(Group, regex(group, ignore_case = T)))
+      useClub = TRUE
+      if (group %in% c("Parkering")) {
+         useClub = FALSE
+      }
+      lst <- map_add_lines(maplet, group, datLinesGroup, color, useClub)
+      maplet <- lst$map
+      grp <- unique(c(grp, lst$groups))
+   }
+   # 
+   # 
+   # maplet <- mapAddLines(maplet, group = "Parkering", color = "#eb9834", useClub = FALSE,
+   #                       data = datLines %>% 
+   #                         filter(str_detect(Group, regex("parkering", ignore_case = T))))
+   # maplet <- mapAddLines(maplet, group = "fiskevand", color = "#3C8AE6",
+   #                       data = datLines %>% 
+   #                         filter(str_detect(Group, regex("fiskevand", ignore_case = T))))
+   # maplet <- mapAddLines(maplet, group = "medlem", color = "#EBE053",
+   #                       data = datLines %>% 
+   #                         filter(str_detect(Group, regex("medlem", ignore_case = T))))
+   # maplet <- mapAddLines(maplet, group = "dagkort", color = "#000000",
+   #                       data = datLines %>% 
+   #                         filter(str_detect(Group, regex("dagkort", ignore_case = T))))
+   # maplet <- mapAddLines(maplet, group = "gæstekort", color = "#bf5656",
+   #                       data = datLines %>% 
+   #                         filter(str_detect(Group, regex("gæstekort", ignore_case = T))))
+   maplet <- maplet %>%
+      # Layer control
+      addLayersControl(
+         baseGroups = c("Luftfoto", "Kort"),
+         overlayGroups = unique(grp),
+         options = layersControlOptions(collapsed = TRUE)
+      ) %>%
+      hideGroup(grp) %>%
+      showGroup("Stednavne") %>%
+      addFullscreenControl()
+   
+   return(maplet)
+}
