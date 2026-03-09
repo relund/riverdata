@@ -8,14 +8,15 @@ map_normalize_popup_links <- function(x) {
   )
 }
 
+map_wrap_popup_content <- function(x) {
+  HTML(str_c("<div style='max-width:180px;'>", x, "</div>"))
+}
+
 map_add_markers <- function(map, group, data) {
   if (nrow(data) == 0) return(list(map=map, groups=NULL))
   data <- data %>%
     mutate(
-      Label = map(
-        map_chr(as.character(Desc), map_normalize_popup_links),
-        HTML
-      ),
+      Label = map(map_chr(as.character(Desc), map_normalize_popup_links), map_wrap_popup_content),
       Pop = map_chr(as.character(Desc), map_normalize_popup_links)
     )
   if (group %in% c("Parkering", "Shelter")) {
@@ -57,18 +58,16 @@ map_add_markers <- function(map, group, data) {
         minWidth = 180,
         autoPan = TRUE
       ),
-      # labelOptions = labelOptions(
-      #   style = list(
-      #     "max-width" = "200px",
-      #     "width" = "200px",
-      #     "white-space" = "normal",
-      #     "word-break" = "break-word",
-      #     "overflow-wrap" = "break-word",
-      #     "font-size" = "13px",
-      #     "line-height" = "1.3"
-      #   ),
-      #   direction = "top"
-      # ),
+      labelOptions = labelOptions(
+        style = list(
+          "max-width" = "180px",
+          "width" = "180px",
+          "white-space" = "normal",
+          "word-break" = "break-word",
+          "overflow-wrap" = "break-word"
+        ),
+        direction = "top"
+      ),
       icon = ~icons(
         Icon,
         iconWidth = 32,
@@ -90,11 +89,32 @@ map_add_markers <- function(map, group, data) {
 
 map_add_lines <- function(map, group, data, color, useClub = TRUE) {
   if (nrow(data) == 0) return(list(map=map, groups=NULL))
-  dat <- data %>% group_by(LineGroupId, Desc, Club) %>% nest()
+  dat <- data %>%
+    mutate(
+      Label = map(map_chr(as.character(Desc), map_normalize_popup_links), map_wrap_popup_content),
+      Pop = map(map_chr(as.character(Desc), map_normalize_popup_links), map_wrap_popup_content)
+    ) %>%
+    group_by(LineGroupId, Desc, Club, Label, Pop) %>%
+    nest()
   grp <- map_chr(1:nrow(dat), function(i) {
     g <- if_else(useClub, str_c(dat$Club[i], " (", group, ")"), group)
     map <<- map %>%
-      addPolylines(~long, ~lat, label = ~Desc, popup = ~Desc,
+      addPolylines(~long, ~lat, label = ~Label, popup = ~Pop,
+                   popupOptions = popupOptions(
+                     maxWidth = 180,
+                     minWidth = 180,
+                     autoPan = TRUE
+                   ),
+                   labelOptions = labelOptions(
+                     style = list(
+                       "max-width" = "180px",
+                       "width" = "180px",
+                       "white-space" = "normal",
+                       "word-break" = "break-word",
+                       "overflow-wrap" = "break-word"
+                     ),
+                     direction = "top"
+                   ),
                    group = g, color = color, weight = 1.5, opacity = 0.75,
                    data = dat[i,] %>% unnest(col = c(data)))
     return(g)
