@@ -1,8 +1,23 @@
 # Functions for preparing data for map visualizations
 
+map_normalize_popup_links <- function(x) {
+  str_replace_all(
+    x,
+    "(<a\\b[^>]*>)(https?://[^<]+)(</a>)",
+    "\\1link\\3"
+  )
+}
+
 map_add_markers <- function(map, group, data) {
   if (nrow(data) == 0) return(list(map=map, groups=NULL))
-  data <-  data %>% mutate(Pop = Desc)
+  data <- data %>%
+    mutate(
+      Label = map(
+        map_chr(as.character(Desc), map_normalize_popup_links),
+        HTML
+      ),
+      Pop = map_chr(as.character(Desc), map_normalize_popup_links)
+    )
   if (group %in% c("Parkering", "Shelter")) {
     data <- data %>%
       mutate(
@@ -17,7 +32,7 @@ map_add_markers <- function(map, group, data) {
             HTML(
               str_c(
                 "<div style='max-width:180px;'>",
-                as.character(desc),
+                map_normalize_popup_links(as.character(desc)),
                 "<br/><br/>",
                 "<a href='", maps_url, "' target='_blank' rel='noopener noreferrer'>Rute i Google Maps</a>",
                 "<br/><div style='text-align:center; margin-top:8px;'>",
@@ -31,11 +46,11 @@ map_add_markers <- function(map, group, data) {
       ) %>%
       select(-MapsUrl, -MapsUrlEnc)
   }
-  
+
   map <- map %>%
     addMarkers(
       ~long, ~lat,
-      label = ~Desc,
+      label = ~Label,
       popup = ~Pop,
       popupOptions = popupOptions(
         maxWidth = 180,

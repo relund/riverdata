@@ -12,13 +12,7 @@ knit: (function(inputFile, encoding) {
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-# library(htmltools)
-# library(tidyverse)
-# library(leaflet)
-# library(leaflet.extras)
 library(riverdata)
-# library(conflicted)
-# conflicts_prefer(dplyr::filter)
 ```
 
 <style>
