@@ -4,12 +4,19 @@
 \alias{snip_plot_catch}
 \title{Plot of catches given current date}
 \usage{
-snip_plot_catch(datCatch, .days = 30, .plotly = TRUE)
+snip_plot_catch(
+  datCatch,
+  .look_back = 30,
+  .unit = c("days", "weeks"),
+  .plotly = TRUE
+)
 }
 \arguments{
 \item{datCatch}{Catch data.}
 
-\item{.days}{Number of days to plot.}
+\item{.look_back}{Number of time units to plot.}
+
+\item{.unit}{Time unit for the look-back window. One of \code{"days"} or \code{"weeks"}.}
 
 \item{.plotly}{Use plotly otherwise just ggplot.}
 }
