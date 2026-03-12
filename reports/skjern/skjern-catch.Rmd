@@ -276,7 +276,7 @@ snip_plot_catch(datCatchSea, .unit = "days", .look_back = 30)
   #     legend = list(orientation = 'h')
   #     # hovermode = "x unified"
   #   )
-  }
+  # }
 ```
 
 
