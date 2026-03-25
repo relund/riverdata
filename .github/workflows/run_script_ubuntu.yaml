@@ -58,8 +58,8 @@ jobs:
           
       - uses: r-lib/actions/setup-renv@v2
 
-      - name: Install local riverdata package
-        run: R CMD INSTALL riverdata-package
+      # - name: Install local riverdata package
+      #   run: R CMD INSTALL riverdata-package
           
       - name: Run R script Karup
         run: Rscript script_karup.R
