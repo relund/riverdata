@@ -51,9 +51,7 @@ jobs:
         run: |
           sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
           sudo apt-get -y update
-          sudo apt-get install -y libgdal-dev libgeos-dev libproj-dev libsqlite3-dev libfontconfig1-dev libcairo2-dev libharfbuzz-dev libfribidi-dev
-          # sudo apt-get update
-          # sudo apt-get install -y libproj-dev libgdal-dev
+          sudo apt-get install -y libgdal-dev libgeos-dev libproj-dev libsqlite3-dev libfontconfig1-dev libcairo2-dev libharfbuzz-dev libfribidi-dev libudunits2-dev
           # CLEAN APT CACHES & TEMP
           sudo apt-get clean
           sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
