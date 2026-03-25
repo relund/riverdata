@@ -29,10 +29,7 @@ read_data <- function(
 #' @param dat_weight Weight estimates.
 #'
 #' @return The catch records.
-#' @examples
-#' \dontrun{
-#' read_catch("data/data_karup_catch_seatrout", tibble::tibble())
-#' }
+#' @export
 read_catch <- function(prefix, dat_weight) {
   f <- paste0(prefix, "_", 2004:year(now()), ".csv")
   dat_catch <- read_csv(f, col_types = "Dddcfflclfl") %>%
