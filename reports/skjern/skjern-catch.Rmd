@@ -74,7 +74,7 @@ Row
 ### Fangster den seneste måned `r curYear`
 
 ```{r}
-snip_plot_catch(datCatchSal, .unit = "days", .look_back = 30)
+snip_plot_catch(datCatchSal, .unit = "cur_year_days", .look_back = 30)
   # dat <- datCatchSal %>%
   #   dplyr::filter(Date > now(tzone = "CET") - days(30)) %>%
   #   select(Date, Place) %>%
@@ -114,7 +114,7 @@ Row
 ### Ugentlige fangster `r curYear`
 
 ```{r}
-snip_plot_catch(datCatchSal, .unit = "weeks", .look_back = 30)
+snip_plot_catch(datCatchSal, .unit = "cur_year_weeks", .look_back = 30)
   # dat <- datCatchSal %>% 
   #   dplyr::filter(Date > ymd(paste0(curYear,"-01-01"))) %>% 
   #   select(Week, Place)
@@ -144,7 +144,7 @@ Måned {data-navmenu="Laks" #fangster-laks-maaned}
 ### Månedlige fangster `r curYear`
 
 ```{r}
-snip_plot_catch(datCatchSal, .unit = "months", .look_back = 12)
+snip_plot_catch(datCatchSal, .unit = "cur_year_months", .look_back = 12)
   # dat <- datCatchSal %>% 
   #   dplyr::filter(Date > ymd(paste0(curYear,"-01-01"))) %>% 
   #   select(Month, Place)
@@ -253,7 +253,7 @@ Row
 ### Fangster den seneste måned
 
 ```{r}
-snip_plot_catch(datCatchSea, .unit = "days", .look_back = 30)
+snip_plot_catch(datCatchSea, .unit = "cur_year_days", .look_back = 30)
   # dat <- datCatchSea %>% 
   #   dplyr::filter(Date > now(tzone = "CET") - days(30)) %>% 
   #   select(Date, Place) %>% 
@@ -289,7 +289,7 @@ Row
 ### Ugentlige fangster `r curYear`
 
 ```{r}
-snip_plot_catch(datCatchSea, .unit = "weeks", .look_back = 30)
+snip_plot_catch(datCatchSea, .unit = "cur_year_weeks", .look_back = 30)
   # dat <- datCatchSea %>% 
   #   dplyr::filter(Date > ymd(paste0(curYear,"-01-01"))) %>% 
   #   select(Week, Place)
@@ -317,7 +317,7 @@ Måned {data-navmenu="Havørred" #fangster-hav-maaned}
 ### Månedlige fangster `r curYear`
 
 ```{r}
-snip_plot_catch(datCatchSea, .unit = "months", .look_back = 12)
+snip_plot_catch(datCatchSea, .unit = "cur_year_months", .look_back = 12)
   # dat <- datCatchSea %>% 
   #   dplyr::filter(Date > ymd(paste0(curYear,"-01-01"))) %>% 
   #   select(Month, Place)
@@ -701,4 +701,3 @@ ____
       # hovermode = "x unified"
   )
 ```
-

@@ -71,7 +71,7 @@ Row
 ### Fangster den seneste måned `r curYear`
 
 ```{r}
-snip_plot_catch(datCatchSea, .unit = "days", .look_back = 30)
+snip_plot_catch(datCatchSea, .unit = "cur_year_days", .group = "Place", .look_back = 30)
 ```
 
 
@@ -84,7 +84,7 @@ Row
 ### Ugentlige fangster `r curYear`
 
 ```{r}
-snip_plot_catch(datCatchSea, .unit = "weeks", .look_back = 30)
+snip_plot_catch(datCatchSea, .unit = "cur_year_weeks", .look_back = 30)
   # dat <- datCatchSea %>% 
   #   dplyr::filter(Date > ymd(paste0(curYear,"-01-01"))) %>% 
   #   select(Week, Place)
@@ -112,7 +112,7 @@ Måned {data-navmenu="Havørred" #fangster-hav-maaned}
 ### Månedlige fangster `r curYear`
 
 ```{r}
-snip_plot_catch(datCatchSea, .unit = "months", .look_back = 12)
+snip_plot_catch(datCatchSea, .unit = "cur_year_months", .look_back = 12)
   # dat <- datCatchSea %>% 
   #   dplyr::filter(Date > ymd(paste0(curYear,"-01-01"))) %>% 
   #   select(Month, Place)
@@ -217,30 +217,33 @@ Column{ vertical_layout: scroll}
 ____
 
 ```{r}
-cNames <- c(paste0(faIcon("calendar-alt", title = "År")), 
-   "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
-   paste0(faIcon("mars", title = "Han"),"/",
-          faIcon("venus", title = "Hun"), "/",
-          faIcon("question", title = "Ukendt"), " (%)"),
-   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Haderis Å'>H</span>/<span title='Ukendt'>U</span> (%)",
-   "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Ukendt'>U</span> (%)",
-   paste0(faIcon("sync", title = "C&R"),"/",
-          faIcon("times", title = "Hjemtaget"), " (%)"),
-   paste0(faIcon("ruler-horizontal", title="Gens længde"), "/",
-          faIcon("ruler", title="Max længde")),
-   paste0(faIcon("balance-scale", title="Gens. vægt"), "/",
-          faIcon("weight-hanging", title="Max vægt"),
-          "/<i class=\"fas\" title=\"Total vægt\">&#x3A3;</i>"),
-   paste0(faIcon("heart", title="Gens kondition"), "/",
-          faIcon("gratipay", title="Max kondition"))
-   ) 
 
-datStatYearSea %>% 
-  arrange(desc(Year)) %>% 
-  kable(col.names = cNames, escape = F, align = "c", format = "html") %>% 
-  kable_styling(fixed_thead = T, font_size = 10,
-                bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
-  add_header_above(c(" " = 2, "Køn", "Område", "Metode", "Genudsat", "Længde", "Vægt", "Kondition"))
+snip_table(datCatchSea, .row_unit = c("Year")) 
+
+# cNames <- c(paste0(faIcon("calendar-alt", title = "År")), 
+#    "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
+#    paste0(faIcon("mars", title = "Han"),"/",
+#           faIcon("venus", title = "Hun"), "/",
+#           faIcon("question", title = "Ukendt"), " (%)"),
+#    "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Haderis Å'>H</span>/<span title='Ukendt'>U</span> (%)",
+#    "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Ukendt'>U</span> (%)",
+#    paste0(faIcon("sync", title = "C&R"),"/",
+#           faIcon("times", title = "Hjemtaget"), " (%)"),
+#    paste0(faIcon("ruler-horizontal", title="Gens længde"), "/",
+#           faIcon("ruler", title="Max længde")),
+#    paste0(faIcon("balance-scale", title="Gens. vægt"), "/",
+#           faIcon("weight-hanging", title="Max vægt"),
+#           "/<i class=\"fas\" title=\"Total vægt\">&#x3A3;</i>"),
+#    paste0(faIcon("heart", title="Gens kondition"), "/",
+#           faIcon("gratipay", title="Max kondition"))
+#    ) 
+# 
+# datStatYearSea %>% 
+#   arrange(desc(Year)) %>% 
+#   kable(col.names = cNames, escape = F, align = "c", format = "html") %>% 
+#   kable_styling(fixed_thead = T, font_size = 10,
+#                 bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
+#   add_header_above(c(" " = 2, "Køn", "Område", "Metode", "Genudsat", "Længde", "Vægt", "Kondition"))
 ```
 
 
@@ -249,17 +252,18 @@ datStatYearSea %>%
 ____
 
 ```{r}
-  titleFont <- list(size = 14)
-  dat <- datCatchSea %>% select(Year, Place)
-  p <- ggplot(data = dat, aes(x = Year, fill = Place)) +
-    geom_bar() +
-    labs(fill = "") + xlab(NULL) + ylab(NULL) + 
-    guides(fill = guide_legend(ncol = 6)) + 
-    theme(legend.position="bottom")  
-  ggplotly(p, tooltip = NULL) %>% 
-    layout(
-      legend = list(orientation = 'h')
-  )
+snip_plot_catch(datCatchSea, .unit = "years", .group = "Place", .look_back = 30)
+  # titleFont <- list(size = 14)
+  # dat <- datCatchSea %>% select(Year, Place)
+  # p <- ggplot(data = dat, aes(x = Year, fill = Place)) +
+  #   geom_bar() +
+  #   labs(fill = "") + xlab(NULL) + ylab(NULL) + 
+  #   guides(fill = guide_legend(ncol = 6)) + 
+  #   theme(legend.position="bottom")  
+  # ggplotly(p, tooltip = NULL) %>% 
+  #   layout(
+  #     legend = list(orientation = 'h')
+  # )
 ```
 
 
@@ -268,16 +272,17 @@ ____
 ____
 
 ```{r}
-  dat <- datCatchSea %>% select(Year, Method)
-  p <- ggplot(data = dat, aes(x = Year, fill = Method)) +
-    geom_bar() +
-    labs(fill = "") + xlab(NULL) + ylab(NULL) + 
-    guides(fill = guide_legend(ncol = 6)) + 
-    theme(legend.position="bottom")  
-  ggplotly(p, tooltip = NULL) %>% 
-    layout(
-      legend = list(orientation = 'h')
-  )
+snip_plot_catch(datCatchSea, .unit = "years", .group = "Method", .look_back = 30)
+  # dat <- datCatchSea %>% select(Year, Method)
+  # p <- ggplot(data = dat, aes(x = Year, fill = Method)) +
+  #   geom_bar() +
+  #   labs(fill = "") + xlab(NULL) + ylab(NULL) + 
+  #   guides(fill = guide_legend(ncol = 6)) + 
+  #   theme(legend.position="bottom")  
+  # ggplotly(p, tooltip = NULL) %>% 
+  #   layout(
+  #     legend = list(orientation = 'h')
+  # )
 ```
 
 
@@ -286,20 +291,21 @@ ____
 ____
 
 ```{r}
-  dat <- datCatchSea %>% select(Month, Place)
-  
-  p <- ggplot(data = dat, aes(x = Month)) +
-    geom_bar(aes(fill = Place, y = (after_stat(count))/sum(after_stat(count)))) + 
-    geom_text(aes(label = scales::percent(round((after_stat(count))/sum(after_stat(count)),2)),
-                   y = (after_stat(count))/sum(after_stat(count))), stat= "count", vjust = -.5) +
-    labs(fill = "") + xlab(NULL) + ylab(NULL) + 
-    scale_y_continuous(labels = scales::percent) + 
-    guides(fill = guide_legend(ncol = 6)) + 
-    theme(legend.position="bottom")  
-  ggplotly(p, tooltip = NULL) %>% 
-    layout(
-      legend = list(orientation = 'h')
-  )
+snip_plot_catch(datCatchSea, .unit = "months", .group = "Place", .look_back = 3000)
+  # dat <- datCatchSea %>% select(Month, Place)
+  # 
+  # p <- ggplot(data = dat, aes(x = Month)) +
+  #   geom_bar(aes(fill = Place, y = (after_stat(count))/sum(after_stat(count)))) + 
+  #   geom_text(aes(label = scales::percent(round((after_stat(count))/sum(after_stat(count)),2)),
+  #                  y = (after_stat(count))/sum(after_stat(count))), stat= "count", vjust = -.5) +
+  #   labs(fill = "") + xlab(NULL) + ylab(NULL) + 
+  #   scale_y_continuous(labels = scales::percent) + 
+  #   guides(fill = guide_legend(ncol = 6)) + 
+  #   theme(legend.position="bottom")  
+  # ggplotly(p, tooltip = NULL) %>% 
+  #   layout(
+  #     legend = list(orientation = 'h')
+  # )
 ```
 
 
@@ -308,22 +314,23 @@ ____
 ____
 
 ```{r}
-  dat <- datCatchSea %>% select(Month, Method)
-  
-  p <- ggplot(data = dat, aes(x = Month)) +
-    geom_bar(aes(fill = Method, y = (after_stat(count))/sum(after_stat(count)))) + 
-    geom_text(aes(label = scales::percent(round((after_stat(count))/sum(after_stat(count)),2)),
-                   y = (after_stat(count))/sum(after_stat(count))), stat= "count", vjust = -.5) +
-    labs(fill = "") + xlab(NULL) + ylab(NULL) + 
-    scale_y_continuous(labels = scales::percent) + 
-    guides(fill = guide_legend(ncol = 4)) + 
-    theme(legend.position="bottom")  # axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), 
-  ggplotly(p, tooltip = NULL) %>% 
-    layout(
-      # title = list(text = "Månedlige fangster givet metode",
-      #              y = 0.96, x = 0.09, font = titleFont,
-      #              xanchor = 'left', yanchor =  'top'),
-      legend = list(orientation = 'h')
-      # hovermode = "x unified"
-  )
+snip_plot_catch(datCatchSea, .unit = "months", .group = "Method", .look_back = 3000)
+  # dat <- datCatchSea %>% select(Month, Method)
+  # 
+  # p <- ggplot(data = dat, aes(x = Month)) +
+  #   geom_bar(aes(fill = Method, y = (after_stat(count))/sum(after_stat(count)))) + 
+  #   geom_text(aes(label = scales::percent(round((after_stat(count))/sum(after_stat(count)),2)),
+  #                  y = (after_stat(count))/sum(after_stat(count))), stat= "count", vjust = -.5) +
+  #   labs(fill = "") + xlab(NULL) + ylab(NULL) + 
+  #   scale_y_continuous(labels = scales::percent) + 
+  #   guides(fill = guide_legend(ncol = 4)) + 
+  #   theme(legend.position="bottom")  # axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), 
+  # ggplotly(p, tooltip = NULL) %>% 
+  #   layout(
+  #     # title = list(text = "Månedlige fangster givet metode",
+  #     #              y = 0.96, x = 0.09, font = titleFont,
+  #     #              xanchor = 'left', yanchor =  'top'),
+  #     legend = list(orientation = 'h')
+  #     # hovermode = "x unified"
+  # )
 ```
