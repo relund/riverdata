@@ -30,13 +30,14 @@ jobs:
     name: Run scripts
     runs-on: ubuntu-latest
     env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       GH_FTP: ${{ secrets.GH_FTP }}
       R_COMPILE_AND_INSTALL_PACKAGES: never
       
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 1
       
