@@ -34,7 +34,7 @@ write_catch <-
       cols <- dat$cols
       cols$label[is.na(cols$label)] <- "Unknown"
       rows <- dat$rows$c
-      if (is.null(rows)) {
+      if (is.null(rows)) { # no data for the year, get col names from last year
          fn <- paste0(prefix, "_catch_salmon_", yr - 1, ".csv")
          dat3 <- read_csv(fn, col_types = "Dddcfflclfl") |>
             slice_head(n = 0)  # get col names from last year
@@ -107,98 +107,73 @@ write_catch <-
          if ("Fedtfinne.klippet" %in% colnames(dat1))
             dat2$Cut = dat1$Fedtfinne.klippet
          dat2 <- suppressMessages(type_convert(dat2))
-
-         ### Merge and tidy
-         dat3 <-
-            dat2 |> mutate(Weight = if_else(.data$Length >= 40, .data$Weight, NA_real_)) |>
-            filter(.data$Length >= 40 | is.na(.data$Length))
-         # if (!club) {
-         #    ## Remove weight outliers
-         #    if (species == "Havørred")
-         #       res <-
-         #          read_csv(str_c(prefix, "_weight_seatrout.csv"),
-         #                   show_col_types = FALSE)
-         #    if (species == "Laks")
-         #       res <-
-         #          read_csv(str_c(prefix, "_weight_salmon.csv"),
-         #                   show_col_types = FALSE)
-         #    res <- res |>
-         #       group_by(.data$Length) |>
-         #       summarise("Lower" = min(.data$Lower),
-         #                 "Upper" = max(.data$Upper))
-         #    dat3 <- left_join(dat3, res, by = join_by(.data$Length))
-         #    #dat3 |> filter( !((Weight >= 0.8 * Lower & Weight <= 1.2 * Upper) | is.na(Weight) ))
-         #    dat3 <- dat3 |>
-         #       mutate(
-         #          Weight = if_else(
-         #             .data$Weight >= 0.8 * .data$Lower &
-         #                .data$Weight <= 1.2 * .data$Upper,
-         #             .data$Weight,
-         #             NA_real_,
-         #             NA_real_
-         #          )
-         #       ) |>
-         #       select(-.data$Upper,-.data$Lower)
-         # }
-         ## Fix custom errors
-         dat3 <- dat3 |>
-            mutate("Method" = str_replace_all(
-               .data$Method,
-               c(
-                  "Wobler" = "Spin",
-                  "Blink" = "Spin",
-                  "Spinner" = "Spin",
-                  "Jig" = "Spin",
-                  "Bombarda med flue" = "Spin",
-                  "Tørflue" = "Flue",
-                  "Pirk/Pilk" = "Spin",
-                  "Mede" = "Orm",
-                  "Spinflue" = "Spin",
-                  "Spin-flue" = "Spin",
-                  "Maddike" = "Orm",
-                  "Spin-flue" = "Spin",
-                  "Majs" = "Orm",
-                  "Flåd" = "Orm",
-                  "Orm, spinner" = "Orm",
-                  "Orm,spin" = "Orm"
-               )
-            ))
-         if (!club)
-            dat3 <- dat3 |>
-            mutate(
-               Place = case_when(
-                  str_detect(Place, "(Øvre.*)|(Skjern.*Rind)|(Skjern.*opstrøms)") ~ "Øvre",
-                  str_detect(Place, "(Mellem.*)|(Skjern.*Tarp.*Borris)") ~ "Mellem",
-                  str_detect(Place, "(Nedre.*)|(Skjern.*Borris.*Fjord)") ~ "Nedre",
-                  str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
-                  str_detect(Place, "Vorgod") ~ "Vorgod Å",
-                  str_detect(Place, "Omme") ~ "Omme Å",
-                  TRUE ~ Place
-               )
-            )
-         # dat3 <-dat3 |> mutate(Sex = str_replace_all(Sex, c("Han" = "Male", "Hun" = "Female", "Ved ikke" = NA)))
-         dat3 <-
-            dat3 |> mutate(Sex = str_replace_all(.data$Sex, c("Ved ikke" = NA_character_)))
-         dat3 <-
-            dat3 |> mutate("Cut" = if_else(.data$Cut == "Ja", TRUE, if_else(.data$Cut == "Nej", FALSE, NA)))
-         # unique(dat3$Sex)
-         dat3 <-
-            dat3 |> mutate(Name = str_to_title(str_replace_all(
-               .data$Name,
-               c(
-                  "Ikke oplyst" = NA,
-                  "Mogens Styhr Rasmussen" = "Mogens Styhr",
-                  "Ikke Oplyst" = NA,
-                  "Poul Godt Godt" = "Poul Godt",
-                  "KÅS [0-9 ]* " = "",
-                  "Kås [0-9 ]* " = "",
-                  ", Vridsted, 2017123" = "",
-                  "Xx Yy" = NA
-               )
-            )))
-         dat3 <-
-            dat3 |> mutate(Name = str_replace(.data$Name, fixed("**********"), NA)) |> mutate(Name = str_replace(.data$Name, "Xx Yy", NA_character_))
-         # unique(dat3$Place)
+         if (nrow(dat2) == 0) { # no data for the year
+            dat3 <- dat2
+         } else {
+           ### Merge and tidy
+           dat3 <-
+              dat2 |> mutate(Weight = if_else(.data$Length >= 40, .data$Weight, NA_real_)) |>
+              filter(.data$Length >= 40 | is.na(.data$Length))
+           ## Fix custom errors
+           dat3 <- dat3 |>
+              mutate("Method" = str_replace_all(
+                 .data$Method,
+                 c(
+                    "Wobler" = "Spin",
+                    "Blink" = "Spin",
+                    "Spinner" = "Spin",
+                    "Jig" = "Spin",
+                    "Bombarda med flue" = "Spin",
+                    "Tørflue" = "Flue",
+                    "Pirk/Pilk" = "Spin",
+                    "Mede" = "Orm",
+                    "Spinflue" = "Spin",
+                    "Spin-flue" = "Spin",
+                    "Maddike" = "Orm",
+                    "Spin-flue" = "Spin",
+                    "Majs" = "Orm",
+                    "Flåd" = "Orm",
+                    "Orm, spinner" = "Orm",
+                    "Orm,spin" = "Orm"
+                 )
+              ))
+           if (!club)
+              dat3 <- dat3 |>
+              mutate(
+                 Place = case_when(
+                    str_detect(Place, "(Øvre.*)|(Skjern.*Rind)|(Skjern.*opstrøms)") ~ "Øvre",
+                    str_detect(Place, "(Mellem.*)|(Skjern.*Tarp.*Borris)") ~ "Mellem",
+                    str_detect(Place, "(Nedre.*)|(Skjern.*Borris.*Fjord)") ~ "Nedre",
+                    str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
+                    str_detect(Place, "Vorgod") ~ "Vorgod Å",
+                    str_detect(Place, "Omme") ~ "Omme Å",
+                    TRUE ~ Place
+                 )
+              )
+           # dat3 <-dat3 |> mutate(Sex = str_replace_all(Sex, c("Han" = "Male", "Hun" = "Female", "Ved ikke" = NA)))
+           dat3 <-
+              dat3 |> mutate(Sex = str_replace_all(.data$Sex, c("Ved ikke" = NA_character_)))
+           dat3 <-
+              dat3 |> mutate("Cut" = if_else(.data$Cut == "Ja", TRUE, if_else(.data$Cut == "Nej", FALSE, NA)))
+           # unique(dat3$Sex)
+           dat3 <-
+              dat3 |> mutate(Name = str_to_title(str_replace_all(
+                 .data$Name,
+                 c(
+                    "Ikke oplyst" = NA,
+                    "Mogens Styhr Rasmussen" = "Mogens Styhr",
+                    "Ikke Oplyst" = NA,
+                    "Poul Godt Godt" = "Poul Godt",
+                    "KÅS [0-9 ]* " = "",
+                    "Kås [0-9 ]* " = "",
+                    ", Vridsted, 2017123" = "",
+                    "Xx Yy" = NA
+                 )
+              )))
+           dat3 <-
+              dat3 |> mutate(Name = str_replace(.data$Name, fixed("**********"), NA)) |> mutate(Name = str_replace(.data$Name, "Xx Yy", NA_character_))
+           # unique(dat3$Place)
+         }
       }
       ## Save to file
       if (write) {
