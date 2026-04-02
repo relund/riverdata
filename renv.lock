@@ -4971,7 +4971,7 @@
     },
     "riverdata": {
       "Package": "riverdata",
-      "Version": "0.0.6",
+      "Version": "0.0.7",
       "Source": "Local",
       "Title": "R package used by riverdata repo",
       "Authors@R": "person(\"Lars\", \"Relund Nielsen\", email = \"lars@relund.dk\", role = c(\"aut\", \"cre\"),  comment = c(ORCID = \"0000-0002-4802-3071\"))",

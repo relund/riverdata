@@ -28,7 +28,7 @@ write_catch <-
             species = "seatrout",
             club = FALSE,
             write = TRUE) {
-      message("Catch records: Write dataset for year ", yr)
+      message("Catch records: Get dataset for year ", yr)
       ## data to today
       dat <- jsonlite::fromJSON(str_c(url, yr))
       cols <- dat$cols
@@ -147,6 +147,7 @@ write_catch <-
                     str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
                     str_detect(Place, "Vorgod") ~ "Vorgod Å",
                     str_detect(Place, "Omme") ~ "Omme Å",
+                    str_detect(Place, "Ukendt") ~ NA,
                     TRUE ~ Place
                  )
               )
@@ -161,6 +162,7 @@ write_catch <-
                  .data$Name,
                  c(
                     "Ikke oplyst" = NA,
+                    "Ukendt" = NA,
                     "Mogens Styhr Rasmussen" = "Mogens Styhr",
                     "Ikke Oplyst" = NA,
                     "Poul Godt Godt" = "Poul Godt",
@@ -177,6 +179,7 @@ write_catch <-
       }
       ## Save to file
       if (write) {
+         message("Catch records: Write dataset for year ", yr)
          res <- tolower(species)
          if (species == "Havørred")
             res <- "seatrout"
