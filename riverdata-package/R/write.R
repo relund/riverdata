@@ -39,82 +39,68 @@ write_catch <-
          dat3 <- read_csv(fn, col_types = "Dddcfflclfl") |>
             slice_head(n = 0)  # get col names from last year
       } else {
-         rows <- lapply(
-            rows,
-            FUN = function(x) {
-               x[, 1]
-            }
+           rows <- lapply(
+              rows,
+              FUN = function(x) {
+                 x[, 1]
+              }
+           )
+           dat1 <-  suppressMessages(t(map_dfc(rows, ~ .x)))
+           colnames(dat1) <- cols$label
+           dat1 <-
+              suppressMessages(as_tibble(dat1, .name_repair = "universal"))
+           dateStr <-
+              dat1$Dato |> str_extract_all("(?<=\\().+?(?=\\))", simplify = T) |>
+              str_split(",", simplify = TRUE) |> as_tibble(.name_repair = "minimal")
+           colnames(dateStr) <- c("Year", "Month", "Day")
+           dateStr <- suppressMessages(type_convert(dateStr))
+           dateStr <- mutate(dateStr, "Month" = .data$Month + 1)
+           dateStr <-
+              str_c(
+                 dateStr$Year,
+                 "-",
+                 str_pad(dateStr$Month, 2, "left", pad = "0"),
+                 "-",
+                 str_pad(dateStr$Day, 2, "left", pad = "0")
+              )
+           dat1 <- suppressMessages(bind_cols(Date = dateStr, dat1))
+           sex_col <- intersect(c("Køn...17", "Køn"), names(dat1))
+           dat1$SexTmp <- if (length(sex_col) > 0) dat1[[sex_col[1]]] else NA_character_
+           dat2 <- dat1 |>
+           transmute(
+             "Date" = .data$Date,
+             "Species" = .data$Art,
+             "Length" = .data$`Længde`,
+             "Weight" = .data$`Vægt`,
+             "Name" = .data$Navn,
+             "River" = NA_character_,
+             "Place" = NA_character_,
+             "Method" = .data$Agn,
+             "Cut" = NA_character_,
+             "Foto" = .data$Foto,
+             "Killed" = (.data$Hjemtaget == "Ja"),
+             "Sex" = .data$SexTmp,
+             "Net" = .data$Garnskadet
          )
-         dat1 <-  suppressMessages(t(map_dfc(rows, ~ .x)))
-         colnames(dat1) <- cols$label
-         dat1 <-
-            suppressMessages(as_tibble(dat1, .name_repair = "universal"))
-         dateStr <-
-            dat1$Dato |> str_extract_all("(?<=\\().+?(?=\\))", simplify = T) |>
-            str_split(",", simplify = TRUE) |> as_tibble(.name_repair = "minimal")
-         colnames(dateStr) <- c("Year", "Month", "Day")
-         dateStr <- suppressMessages(type_convert(dateStr))
-         dateStr <- mutate(dateStr, "Month" = .data$Month + 1)
-         dateStr <-
-            str_c(
-               dateStr$Year,
-               "-",
-               str_pad(dateStr$Month, 2, "left", pad = "0"),
-               "-",
-               str_pad(dateStr$Day, 2, "left", pad = "0")
-            )
-         dat1 <- suppressMessages(bind_cols(Date = dateStr, dat1))
-         if (club)
-            dat1 <- dat1 |>
-            rename(River = .data$Fiskevand)
-         if (species == "seatrout")
-            dat1 <- dat1 |> dplyr::filter(str_detect(.data$Art, "Havørred"))
-         if (species == "salmon")
-            dat1 <- dat1 |> dplyr::filter(str_detect(.data$Art, "Laks"))
-         sex_col <- intersect(c("Køn...17", "Køn"), names(dat1))
-         dat1$SexTmp <- if (length(sex_col) > 0) dat1[[sex_col[1]]] else NA_character_
-         if (!club)
-            dat2 <- dat1 |>
-            transmute(
-               "Date" = .data$Date,
-               "Length" = .data$`Længde`,
-               "Weight" = .data$`Vægt`,
-               "Name" = .data$Navn,
-               "Place" = .data$Zone,
-               "Method" = .data$Agn,
-               "Cut" = NA_character_,
-               "Foto" = .data$Foto,
-               "Killed" = (.data$Hjemtaget == "Ja"),
-               "Sex" = .data$SexTmp,
-               "Net" = .data$Garnskadet
-            )
-         if (club)
-            dat2 <- dat1 |>
-            transmute(
-               "Date" = .data$Date,
-               "Length" = .data$`Længde`,
-               "Weight" = .data$`Vægt`,
-               "Name" = .data$Navn,
-               "River" = .data$River,
-               "Place" = .data$Strækning.sted,
-               "Method" = .data$Agn,
-               "Cut" = NA_character_,
-               "Foto" = .data$Foto,
-               "Killed" = (.data$Hjemtaget == "Ja"),
-               "Sex" = .data$SexTmp,
-               "Net" = .data$Garnskadet
-            )
          if ("Fedtfinne.klippet" %in% colnames(dat1))
-            dat2$Cut = dat1$Fedtfinne.klippet
-         dat2 <- suppressMessages(type_convert(dat2))
-         if (nrow(dat2) == 0) { # no data for the year
-            dat3 <- dat2
+           dat2$Cut = dat1$Fedtfinne.klippet
+         if ("Fiskevand" %in% colnames(dat1))
+           dat2$River = dat1$Fiskevand
+         if (club) {
+           dat2$Place = dat1$Strækning.sted
          } else {
-           ### Merge and tidy
-           dat3 <-
-              dat2 |> mutate(Weight = if_else(.data$Length >= 40, .data$Weight, NA_real_)) |>
-              filter(.data$Length >= 40 | is.na(.data$Length))
-           ## Fix custom errors
+           dat2$Place = dat1$Zone
+         }
+         dat2 <- suppressMessages(type_convert(dat2))
+         dat3 <- dat2
+         if (nrow(dat3) > 0) {  ## Tidy
+           if (species == "seatrout")
+             dat3 <- dat3 |> dplyr::filter(Species == "Havørred")
+           if (species == "salmon")
+             dat3 <- dat3 |> dplyr::filter(Species == "Laks")
+           dat3 <- dat3 |> # remove small fish 
+             filter(!(Species == "Havørred" & (Length < 40 & !is.na(Length)))) |> 
+             filter(!(Species == "Laks" & (Length < 40 & !is.na(Length))))
            dat3 <- dat3 |>
               mutate("Method" = str_replace_all(
                  .data$Method,
@@ -137,7 +123,6 @@ write_catch <-
                     "Orm,spin" = "Orm"
                  )
               ))
-           if (!club)
               dat3 <- dat3 |>
               mutate(
                  Place = case_when(
@@ -151,15 +136,12 @@ write_catch <-
                     TRUE ~ Place
                  )
               )
-           # dat3 <-dat3 |> mutate(Sex = str_replace_all(Sex, c("Han" = "Male", "Hun" = "Female", "Ved ikke" = NA)))
-           dat3 <-
-              dat3 |> mutate(Sex = str_replace_all(.data$Sex, c("Ved ikke" = NA_character_)))
-           dat3 <-
-              dat3 |> mutate("Cut" = if_else(.data$Cut == "Ja", TRUE, if_else(.data$Cut == "Nej", FALSE, NA)))
-           # unique(dat3$Sex)
-           dat3 <-
-              dat3 |> mutate(Name = str_to_title(str_replace_all(
-                 .data$Name,
+           dat3 <- dat3 |> 
+             mutate(Sex = str_replace_all(.data$Sex, c("Ved ikke" = NA_character_)))
+           dat3 <- dat3 |> 
+             mutate("Cut" = if_else(.data$Cut == "Ja", TRUE, if_else(.data$Cut == "Nej", FALSE, NA)))
+           dat3 <- dat3 |> 
+             mutate(Name = str_to_title(str_replace_all(.data$Name,
                  c(
                     "Ikke oplyst" = NA,
                     "Ukendt" = NA,
@@ -172,9 +154,12 @@ write_catch <-
                     "Xx Yy" = NA
                  )
               )))
-           dat3 <-
-              dat3 |> mutate(Name = str_replace(.data$Name, fixed("**********"), NA)) |> mutate(Name = str_replace(.data$Name, "Xx Yy", NA_character_))
-           # unique(dat3$Place)
+           dat3 <- dat3 |> 
+             mutate(Name = str_replace(.data$Name, fixed("**********"), NA)) |> 
+             mutate(Name = str_replace(.data$Name, "Xx Yy", NA_character_))
+         }
+         if (!club) { # remove Species and River
+           dat3 <- dat3 |> select(-Species, -River)
          }
       }
       ## Save to file
