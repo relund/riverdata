@@ -82,11 +82,11 @@ datPlaces <- tibble(River = river, Place = place)
 
 ```{r}
 ## Henter alle fangster for MV-LF
-prefix <- "https://raw.githubusercontent.com/relund/riverdata/master/data/data_mv-lf"
+prefix <- here("data/data_mv-lf")
 dat <- NULL
 for (y in 2016:yr) {
   fn <- paste0(prefix, "_catch_all_", y, ".csv")
-  if (urlFileExist(fn)) dat <- bind_rows(dat, read_csv(fn, col_types = "Tfd"))
+  if (fs::file_exists(fn)) dat <- bind_rows(dat, read_csv(fn))
 }
 datCatchMVLF <- dat %>% 
   mutate(Year = year(Date), Month = month(Date))
@@ -190,6 +190,9 @@ datCatchKarup <- datCatchMVLF |>
   left_join(dat, by = join_by(Month == MonthN, Length == Length)) |> 
   mutate(Weight = if_else(is.na(Weight), round(Avg,2), Weight)) 
 
+
+dat <- datCatchKarup; datPlace = datCatchMVLFPlaceSea
+
 getTableOverview <- function(dat, datPlace, rivers) {
   dat <- dat |> filter(Year == yr)
   dat1 <- dat |> 
@@ -218,7 +221,6 @@ getTableOverview <- function(dat, datPlace, rivers) {
   if (nrow(dat4 |> filter(Killed)) == 0) dat4 <- dat4 |> add_row(Killed = T)
   if (nrow(dat4 |> filter(!Killed)) == 0) dat4 <- dat4 |> add_row(Killed = F)
                                                                  
-  
   ## Summary table
   datTable <- dat |> 
     filter(Year == yr) |> 

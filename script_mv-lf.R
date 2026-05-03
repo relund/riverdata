@@ -28,7 +28,6 @@ yr <- year(now())
 #### Catch records ####
 datCatch <- write_catch(url, prefix, yr, species = "all", club = TRUE)
 
-
 #### Map ####
 datLines <- tibble()
 datMarkers <- tibble()

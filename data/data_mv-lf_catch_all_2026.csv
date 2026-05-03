@@ -1,10 +1,11 @@
-Date,Length,Weight,Name,River,Place,Method,Cut,Foto,Killed,Sex,Net
-2026-04-22,70,NA,Kim Mackenhausen Sørensen,Skjern Å,Skjernåvej 69,Flue,NA,NA,FALSE,NA,FALSE
-2026-04-21,45,NA,Catrine Thorup Andersen,Skjern Å,Tjæreovenene,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/BA66BD924CC107BAC1258DE0004D0606.jpg,FALSE,NA,FALSE
-2026-04-17,90,NA,Henrik Schmidt,Vorgod Å,Nr Vium - syd/øst,Flue,NA,NA,FALSE,NA,FALSE
-2026-04-16,95,8,Jørn Henriksen,Skjern Å,Øvig,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/5DB789F31591B973C1258DDB0068B85A.jpg,TRUE,Hun,FALSE
-2026-04-03,50,NA,Bjarke Therp Jensen,Karup Å,Karup Å (nedre øst),Flue,NA,NA,FALSE,NA,FALSE
-2026-03-07,40,NA,Søren Bøgh,Karup Å,Sdr. Resen (nedstrøms broen),Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/89D12488749CAA7FC1258DB300790BE5.jpg,FALSE,NA,FALSE
-2026-03-01,40,NA,Rene Nielsen,Karup Å,Hagebro (vest),Flue,NA,NA,FALSE,NA,FALSE
-2026-03-01,52,NA,Bjarke Therp Jensen,Karup Å,Karup Å (nedre øst),Spin,NA,NA,FALSE,NA,FALSE
-2026-03-01,66,NA,Bjarke Therp Jensen,Karup Å,Karup Å (nedre øst),Spin,NA,NA,FALSE,NA,FALSE
+Date,Species,Length,Weight,Name,River,Place,Method,Cut,Foto,Killed,Sex,Net
+2026-04-22,Stalling,30,NA,Henrik Lodahl,Skjern Å,Forvirringen,Spin,NA,NA,FALSE,NA,FALSE
+2026-04-22,Laks,70,NA,Kim Mackenhausen Sørensen,Skjern Å,Skjernåvej 69,Flue,NA,NA,FALSE,NA,FALSE
+2026-04-21,Bækørred,45,NA,Catrine Thorup Andersen,Skjern Å,Tjæreovenene,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/BA66BD924CC107BAC1258DE0004D0606.jpg,FALSE,NA,FALSE
+2026-04-17,Laks,90,NA,Henrik Schmidt,Vorgod Å,Nr Vium - syd/øst,Flue,NA,NA,FALSE,NA,FALSE
+2026-04-16,Laks,95,8,Jørn Henriksen,Skjern Å,Øvig,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/5DB789F31591B973C1258DDB0068B85A.jpg,TRUE,Hun,FALSE
+2026-04-03,Havørred,50,NA,Bjarke Therp Jensen,Karup Å,Karup Å (nedre øst),Flue,NA,NA,FALSE,NA,FALSE
+2026-03-07,Havørred,40,NA,Søren Bøgh,Karup Å,Sdr. Resen (nedstrøms broen),Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/89D12488749CAA7FC1258DB300790BE5.jpg,FALSE,NA,FALSE
+2026-03-01,Havørred,40,NA,Rene Nielsen,Karup Å,Hagebro (vest),Flue,NA,NA,FALSE,NA,FALSE
+2026-03-01,Havørred,52,NA,Bjarke Therp Jensen,Karup Å,Karup Å (nedre øst),Spin,NA,NA,FALSE,NA,FALSE
+2026-03-01,Havørred,66,NA,Bjarke Therp Jensen,Karup Å,Karup Å (nedre øst),Spin,NA,NA,FALSE,NA,FALSE
