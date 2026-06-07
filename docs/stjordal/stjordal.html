@@ -344,6 +344,20 @@
       box-shadow: var(--shadow);
     }
 
+    .map-frame:fullscreen {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      border: 0;
+      background: #000;
+      box-shadow: none;
+    }
+
+    .map-frame:fullscreen #riverMap {
+      height: 100vh;
+      min-height: 100vh;
+    }
+
     #riverMap {
       width: 100%;
       height: 68vh;
@@ -563,6 +577,23 @@
       min-height: auto;
       margin: 2px 4px 2px 0;
       padding: 0;
+    }
+
+    .leaflet-control-fullscreen {
+      width: 34px;
+      height: 34px;
+      border: 0;
+      background: #fff;
+      color: var(--ink);
+      font-size: 1.1rem;
+      font-weight: 900;
+      line-height: 34px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .leaflet-control-fullscreen:hover {
+      background: #f2f5ec;
     }
 
     .footer-status {
@@ -1145,6 +1176,7 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
     let mapIcons = null;
     let placeIndex = [];
     let catchOverlayLayers = new Map();
+    let fullscreenControlAdded = false;
     let infoLoaded = false;
     let waterlevelLoaded = false;
     let waterlevelLoadPromise = null;
@@ -1195,6 +1227,7 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
       waterMeasurementCharts: document.querySelector("#waterMeasurementCharts")
     };
     elements.riverMap = document.querySelector("#riverMap");
+    elements.riverMapFrame = document.querySelector(".map-frame");
     elements.mapStatus = document.querySelector("#mapStatus");
 
     document.title = `Stjørdalselven ${CURRENT_YEAR}`;
@@ -1649,6 +1682,57 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
         };
       }
       return mapIcons[layerName] ?? null;
+    }
+
+    function fullscreenElement() {
+      return document.fullscreenElement || document.webkitFullscreenElement || null;
+    }
+
+    function requestMapFullscreen() {
+      if (elements.riverMapFrame.requestFullscreen) {
+        return elements.riverMapFrame.requestFullscreen();
+      }
+      if (elements.riverMapFrame.webkitRequestFullscreen) {
+        return elements.riverMapFrame.webkitRequestFullscreen();
+      }
+      return Promise.reject(new Error("Fullscreen understøttes ikke i denne browser"));
+    }
+
+    function exitMapFullscreen() {
+      if (document.exitFullscreen) return document.exitFullscreen();
+      if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
+      return Promise.resolve();
+    }
+
+    function addFullscreenControl() {
+      if (fullscreenControlAdded || !riverMap) return;
+      const FullscreenControl = L.Control.extend({
+        options: { position: "topleft" },
+        onAdd() {
+          const button = L.DomUtil.create("button", "leaflet-control-fullscreen leaflet-bar");
+          button.type = "button";
+          button.title = "Vis kort i fuldskærm";
+          button.setAttribute("aria-label", "Vis kort i fuldskærm");
+          button.textContent = "⛶";
+          L.DomEvent.disableClickPropagation(button);
+          L.DomEvent.on(button, "click", async () => {
+            try {
+              if (fullscreenElement() === elements.riverMapFrame) {
+                await exitMapFullscreen();
+              } else {
+                await requestMapFullscreen();
+              }
+            } catch (error) {
+              elements.mapStatus.textContent = "Fuldskærm kunne ikke aktiveres i denne browser.";
+              console.error(error);
+            }
+          });
+          return button;
+        }
+      });
+
+      riverMap.addControl(new FullscreenControl());
+      fullscreenControlAdded = true;
     }
 
     function coordinatesFromText(value) {
@@ -2182,6 +2266,9 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
         satelliteLayer.addTo(riverMap);
 
         riverMap.on("overlayadd overlayremove", updateVisibleMapBounds);
+        document.addEventListener("fullscreenchange", () => window.setTimeout(() => riverMap.invalidateSize(), 80));
+        document.addEventListener("webkitfullscreenchange", () => window.setTimeout(() => riverMap.invalidateSize(), 80));
+        addFullscreenControl();
       }
 
       riverMap.invalidateSize();
