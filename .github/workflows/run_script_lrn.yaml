@@ -1,0 +1,63 @@
+name: Run Stjordal data script
+
+permissions:
+  contents: write
+
+concurrency:
+  group: run-script-lrn-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    paths:
+      - .github/workflows/run_script_lrn.yaml
+      - reports/stjordal/**
+      - script_lrn.R
+      - renv.lock
+
+  schedule:
+    - cron: '17 */4 * * *'  # every 4 hours
+
+jobs:
+  render:
+    name: Run Stjordal script
+    runs-on: ubuntu-24.04
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_COMPILE_AND_INSTALL_PACKAGES: never
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: renv
+          use-public-rspm: false
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get -y update
+          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
+          sudo apt-get clean
+          sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+      - uses: r-lib/actions/setup-renv@v2
+        with:
+          cache-version: 3
+
+      - name: Run Stjordal data script
+        run: Rscript script_lrn.R
+
+      - name: Commit results
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "gHA Stjordal data build: ${{ github.run_number }}"
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          file_pattern: "docs/stjordal/* reports/stjordal/stjordal-history.json reports/stjordal/stjordal-history.js"
+          skip_fetch: false
+          skip_dirty_check: false
