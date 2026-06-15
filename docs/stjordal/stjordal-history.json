@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T21:57:37Z",
+  "generated_at": "2026-06-15T05:45:28Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -36,9 +36,9 @@
       "released_catch": false,
       "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1781447268.png",
       "detail_url": "https://elveguiden.no/no/laksebors/catches/709789?riverId=13",
-      "flow_cms": 30.5937,
+      "flow_cms": 30.3813,
       "flow_trend": "faldende",
-      "water_level_m": 1.1053,
+      "water_level_m": 1.1028,
       "water_level_trend": "faldende"
     },
     {
@@ -58,9 +58,9 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/709774?riverId=13",
-      "flow_cms": 30.5937,
+      "flow_cms": 30.3813,
       "flow_trend": "faldende",
-      "water_level_m": 1.1053,
+      "water_level_m": 1.1028,
       "water_level_trend": "faldende"
     },
     {
@@ -80,9 +80,9 @@
       "released_catch": false,
       "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1781448145.png",
       "detail_url": "https://elveguiden.no/no/laksebors/catches/709798?riverId=13",
-      "flow_cms": 30.5937,
+      "flow_cms": 30.3813,
       "flow_trend": "faldende",
-      "water_level_m": 1.1053,
+      "water_level_m": 1.1028,
       "water_level_trend": "faldende"
     },
     {
@@ -102,9 +102,9 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/709696?riverId=13",
-      "flow_cms": 30.5937,
+      "flow_cms": 30.3813,
       "flow_trend": "faldende",
-      "water_level_m": 1.1053,
+      "water_level_m": 1.1028,
       "water_level_trend": "faldende"
     },
     {
@@ -316,7 +316,7 @@
       "fishing_spot": null,
       "fisher_name": "Kjell Nordbek",
       "species": "Laks",
-      "weight_kg": 9.62,
+      "weight_kg": 9.6,
       "length_cm": 99,
       "equipment": "Spinner",
       "released_catch": false,
@@ -128061,9 +128061,16 @@
     },
     {
       "date": "2026-06-14",
-      "flow_cms": 30.5937,
+      "flow_cms": 30.3813,
       "flow_trend": "faldende",
-      "water_level_m": 1.1053,
+      "water_level_m": 1.1028,
+      "water_level_trend": "faldende"
+    },
+    {
+      "date": "2026-06-15",
+      "flow_cms": 27.6472,
+      "flow_trend": "faldende",
+      "water_level_m": 1.0717,
       "water_level_trend": "faldende"
     }
   ]
