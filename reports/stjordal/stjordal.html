@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stjørdalselven</title>
+  <title>Stjørdal</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <style>
     :root {
@@ -51,12 +51,6 @@
       font-size: clamp(2rem, 5vw, 4.35rem);
       line-height: 1;
       letter-spacing: 0;
-    }
-
-    #pageTitle {
-      font-size: 1rem;
-      font-weight: 800;
-      line-height: 1.25;
     }
 
     .intro {
@@ -401,6 +395,20 @@
 
     .history-section {
       scroll-margin-top: 18px;
+    }
+
+    .history-section-charts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .history-chart-title {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
     }
 
     .bar-row {
@@ -750,6 +758,10 @@
         grid-template-columns: 1fr;
       }
 
+      .history-section-charts {
+        grid-template-columns: 1fr;
+      }
+
       .tabs {
         display: block;
         overflow: visible;
@@ -850,50 +862,44 @@
     <nav class="tabs" aria-label="Sektioner">
       <button class="tab-button" type="button" id="tab-overview" aria-controls="overview" aria-selected="true">Oversigt</button>
       <button class="tab-button" type="button" id="tab-catches" aria-controls="catches" aria-selected="false">Fangster</button>
-      <button class="tab-button" type="button" id="tab-stats" aria-controls="stats" aria-selected="false">Statistik</button>
       <button class="tab-button" type="button" id="tab-map" aria-controls="map" aria-selected="false">Kort</button>
       <button class="tab-button" type="button" id="tab-waterlevel" aria-controls="waterlevel" aria-selected="false">Vandmålinger</button>
-      <button class="tab-button" type="button" id="tab-history" aria-controls="history" aria-selected="false">H-Hvid</button>
-      <button class="tab-button" type="button" id="tab-history-all" aria-controls="historyAll" aria-selected="false">H-Alle</button>
-      <button class="tab-button" type="button" id="tab-info" aria-controls="info" aria-selected="false">Info</button>
+      <button class="tab-button" type="button" id="tab-history" aria-controls="history" aria-selected="false">Hvid vald</button>
+      <button class="tab-button" type="button" id="tab-history-all" aria-controls="historyAll" aria-selected="false">JFF vald</button>
+      <button class="tab-button" type="button" id="tab-info" aria-controls="info" aria-selected="false">Fluer</button>
       <button class="tab-button" type="button" id="tab-log" aria-controls="log" aria-selected="false">Log</button>
       <select class="tab-select" id="tabSelect" aria-label="Vælg sektion">
         <option value="overview">Oversigt</option>
         <option value="catches">Fangster</option>
-        <option value="stats">Statistik</option>
         <option value="map">Kort</option>
         <option value="waterlevel">Vandmålinger</option>
-        <option value="history">H-Hvid</option>
-        <option value="historyAll">H-Alle</option>
-        <option value="info">Info</option>
+        <option value="history">Hvid vald</option>
+        <option value="historyAll">JFF vald</option>
+        <option value="info">Fluer</option>
         <option value="log">Log</option>
       </select>
     </nav>
 
-    <header>
-      <h1 id="pageTitle">Stjørdalselven</h1>
-    </header>
-
     <section class="tab-panel active" id="overview" role="tabpanel" aria-labelledby="tab-overview">
-      <div class="metric-grid">
-        <article class="metric">
-          <span>Antal fangster</span>
-          <strong id="totalCatches">-</strong>
-        </article>
-        <article class="metric">
-          <span>Totalvægt</span>
-          <strong id="totalWeight">-</strong>
-        </article>
-        <article class="metric">
-          <span>Snitvægt</span>
-          <strong id="averageWeight">-</strong>
-        </article>
-        <article class="metric">
-          <span>Genudsat</span>
-          <strong id="releasedPercent">-</strong>
-        </article>
+      <div class="toolbar" aria-label="Statistikfiltre">
+        <label>
+          År
+          <select id="statsYearFilter">
+            <option value="">Alle</option>
+          </select>
+        </label>
       </div>
-      <div class="chart-list" id="speciesOverview"></div>
+      <h2>Gns. fangster pr. uge</h2>
+      <div class="chart-list" id="weekChart"></div>
+      <h2>Gns. vandføring pr. uge</h2>
+      <div class="chart-list" id="weekFlowChart"></div>
+      <h2>Gns. vægt pr. uge</h2>
+      <div class="chart-list" id="weekWeightChart"></div>
+      <h2>Redskab</h2>
+      <div class="chart-list" id="equipmentChart"></div>
+      <div id="overviewContent" class="info-content">
+        <p class="map-status">Oversigt indlæses...</p>
+      </div>
     </section>
 
     <section class="tab-panel" id="catches" role="tabpanel" aria-labelledby="tab-catches">
@@ -942,25 +948,6 @@
       <div id="emptyState" class="empty" hidden>Ingen fangster matcher filtrene.</div>
     </section>
 
-    <section class="tab-panel" id="stats" role="tabpanel" aria-labelledby="tab-stats">
-      <div class="toolbar" aria-label="Statistikfiltre">
-        <label>
-          År
-          <select id="statsYearFilter">
-            <option value="">Alle</option>
-          </select>
-        </label>
-      </div>
-      <h2>Gns. fangster pr. uge</h2>
-      <div class="chart-list" id="weekChart"></div>
-      <h2>Gns. vandføring pr. uge</h2>
-      <div class="chart-list" id="weekFlowChart"></div>
-      <h2>Gns. vægt pr. uge</h2>
-      <div class="chart-list" id="weekWeightChart"></div>
-      <h2>Redskab</h2>
-      <div class="chart-list" id="equipmentChart"></div>
-    </section>
-
     <section class="tab-panel" id="map" role="tabpanel" aria-labelledby="tab-map">
       <div class="map-frame">
         <div id="riverMap"></div>
@@ -986,8 +973,8 @@
     <section class="tab-panel" id="history" role="tabpanel" aria-labelledby="tab-history">
       <div class="waterlevel-head">
         <div>
-          <h2 class="waterlevel-title">H-Hvid</h2>
-          <p class="waterlevel-meta" id="historyStatus">H-Hvid for laks fanget på flue indlæses fra lokal JSON...</p>
+          <h2 class="waterlevel-title">Hvid vald</h2>
+          <p class="waterlevel-meta" id="historyStatus">Hvid vald for laks fanget på flue indlæses fra lokal JSON...</p>
         </div>
         <label>
           Uge
@@ -1002,13 +989,13 @@
           </select>
         </label>
       </div>
-      <div id="historyContent" class="empty">H-Hvid for laks fanget på flue indlæses, når fanen åbnes.</div>
+      <div id="historyContent" class="empty">Hvid vald for laks fanget på flue indlæses, når fanen åbnes.</div>
     </section>
 
     <section class="tab-panel" id="historyAll" role="tabpanel" aria-labelledby="tab-history-all">
       <div class="waterlevel-head">
         <div>
-          <h2 class="waterlevel-title">H-Alle</h2>
+          <h2 class="waterlevel-title">JFF vald</h2>
           <p class="waterlevel-meta" id="historyAllStatus">Historik for alle laks fanget på flue indlæses fra lokal JSON...</p>
         </div>
         <label>
@@ -1022,8 +1009,8 @@
     </section>
 
     <section class="tab-panel" id="info" role="tabpanel" aria-labelledby="tab-info">
-      <div id="infoContent" class="info-content">
-        <p class="map-status">Info indlæses...</p>
+      <div id="fliesContent" class="info-content">
+        <p class="map-status">Fluer indlæses...</p>
       </div>
     </section>
 
@@ -1033,21 +1020,12 @@
 
     <footer class="footer-status">
       <span id="dataStatus">Indlæser fangstdata...</span>
-      <button class="refresh-button" id="refreshData" type="button">Opdater nu</button>
     </footer>
   </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script type="text/plain" id="infoMarkdown">
-# Fiskepladser i Stjørdalselva - hvornår de fisker godt
-
-Udgangspunkt: fiskepladserne er læst ud af `norgeskart_drawing_883fb32d-fb6e-4519-a4b9-9c0dceaeeb54.kml`.
-
-Status: lavet 7. juni 2026. Tjek altid dagens regler, vandføring og eventuelle midtsæsontiltag før fiskeri.
-
-## Kort konklusion
-
-Stjørdalselva fisker generelt bedst, når der er bevægelse i vandet: stigende eller netop faldende elv efter regn, farvet vand, eller stabil medium vandføring. På helt lav og klar elv bliver de øvre/grundere stræk ofte mere tekniske og bedst i skumring/nat, mens høler, brek og dybe partier holder fisk bedre. Nedre og midtre dele får typisk tidligere opgang; de øvre Flora/Flornes-pladser bliver mere interessante når der er nok vand til at trække fisk op.
+# Info
 
 Brug Hegra bru som praktisk reference for vandføring:
 
@@ -1056,32 +1034,8 @@ Brug Hegra bru som praktisk reference for vandføring:
 - Høj/flomstor elv: ca. 70-150 m3/s. Prioriter kanter, indsøer, hvilepladser, brek og pladser tæt ved land.
 - Meget høj elv: over ca. 150 m3/s. Få pladser er praktisk gode; sikkerhed og vadning bliver vigtigere end fangstchance.
 
-Tallene er praktiske tommelfingerregler, ikke officielle grænser. Hembre Gård skriver for eksempel, at deres Stjørdalselva-vald holder meget laks på vandføringer fra 20 til 300 m3/s, hvilket viser hvor bredt elva kan fiske når man vælger rigtigt sted.
 
-## Fiskepladser
-
-| Nr. | Plads | Sone/område | Bedste uger | Vandføring ved Hegra bru | Når jeg ville prioritere den | Kilder og noter |
-|---:|---|---|---|---|---|---|
-| 10 | Vold | Nedre del, Sone 1 / nedenfor Hegra-området | Uge 23-29, med mulighed igen efter regn i august | 25-100 m3/s | Tidligt i sæsonen og på frisk vand. Som nedre/midtre plads bør den få fisk før de øvre Flora-pladser. Fisk kan stå tættere på land ved farvet/højere vand. | Vold er nævnt i Stjørdalsvassdragets driftsplan som fiskerettshaverområde. Brug generel Sone 1-logik og regler. |
-| 11 | Bjørgen | Nedre del / overgang mod Hegra | Uge 23-29 | 25-90 m3/s | God kandidat efter en lille vandstigning, især hvis fisk trækker videre fra nedre sone. | Ikke fundet særskilt offentlig pladsbeskrivelse; vurderet ud fra beliggenhed og generel Stjørdalselva-information. |
-| 12 | Håve | Nedre del / Hegra-nært | Uge 23-30 | 25-100 m3/s | Fiskes når der er nok fart og farve til at flytte fisk. Laksebørsen har registreret fangst på `12 - Håve nordre` 4. juli 2025, hvilket peger på tidlig juli som relevant vindue. | Elveguiden-fangst: `12 - Håve nordre`, 04.07.2025, laks 6,2 kg på mark. |
-| 15 | Øfsti søndre | Sone 1 / Øfsti-området | Uge 23-30, sensommer efter regn | 20-80 m3/s | Let tilgængeligt vald; god allround-plads ved normal og moderat faldende elv. På lav klar elv: morgen/kveld/nat. | Norske Lakseelver beskriver I. Øfsti som et ca. 130 m vald med flue, mark, sluk, gapahuk, parkering og let adgang. |
-| 16 | Mæla | Sone 1 / nedre-midtre | Uge 23-30 | 25-90 m3/s | Samme mønster som Øfsti: bedst med lidt vandbevægelse, regn eller faldende elv. | Ikke fundet særskilt pladsbeskrivelse; vurderet ud fra kortplacering i nedre sone og Sone 1-data. |
-| 18 | Kommunevaldet | Sone 1 | Uge 23-29, plus august efter regn | 25-100 m3/s | Godt når fisk går aktivt op i nedre sone. Prioriter efter regn og på farvet vand. | Norske Lakseelver lister Kommunevaldet i Sone 1. En artikel fra 2016 omtaler fiskere ved Kommunevaldet rett ned for bensinstasjonen i Hegra. |
-| 23 | Avelsgård Kringen, søndre side | Sone 2, Hegra bru - Færoset | Uge 24-31 | 25-80 m3/s | Midt-elv-plads: fisker godt når opgangen er i gang, og særligt efter vandstigning der får fisk til at passere Hegra. | Norske Lakseelver lister Avelsgård i Sone 2. Forvaltningstiltak omtaler et sideløb ved Avelsgård og observeret ungfisk/yngel i området. |
-| 31 | Kleivhølen | Sone 3 / Færoset - Austkil | Uge 25-32 | 25-70 m3/s | En høl der bør holde fisk, især når der er nok vand til at fisken står/stopper på vej op. Kan være god efter flom når vandet falder. | Norske Lakseelver har egen side for Kleivhølen. Elveguiden har eksempel på fangst i `31 - Kleivhølen` 29.07.2021, laks 2,5 kg på flue. |
-| 34 | Øvre Einang | Sone 3 | Uge 25-32 | 25-70 m3/s | Prioriter i juli og efter regn. Einang har både fiskepladsomtale og historiske fangsteksempler på Elveguiden. | Norske Lakseelver har side for Einang. Elveguiden-eksempler: Einang 30.06.2022, laks 2,5 kg på flue; 27.07.2023, laks 2,4 kg på wobbler. |
-| 42 | Svea | Øvre midtdel / nær Sone 4-start | Uge 26-33 | 30-90 m3/s | Bedst når der har været nok vand til at trække fisk videre op. På lav elv kan fisken være sky og koncentreret i dybere partier. | Ikke fundet særskilt offentlig pladsbeskrivelse; vurderet som øvre/midtre plads baseret på kortposition. |
-| 43 | Mølskhølen - Nebbhølen | Sone 4, Flora/Flornes | Uge 26-34 | 30-100 m3/s | Høler i øvre Flora-del: gode når fisk har trukket op efter regn eller stabil medium/høj elv. Bør være bedre på faldende vand end på knusktør lav elv. | Norske Lakseelver lister Mølskhølen og Nebbhølen under Sone 4. |
-| 44 | Megård | Sone 4 / Flora | Uge 26-34 | 30-90 m3/s | Fisk efter vandstigning og i perioder hvor øvre del ikke er for lav. Megård/Flormoen nævnes som nyt SJFF-vald i Flora i 2023. | Stjørdal JFF skrev i 2023, at de hadde nytt vald i Flora: Megård/Flormoen, på nordsiden nedenfor den gamle skolen. |
-| 46 | Bruhølen | Sone 4 / Flora | Uge 26-34 | 35-100 m3/s | En navngivet høl: prioriter ved medium eller faldende høj elv, især efter fisk har fået vand til at gå op. | Norske Lakseelver har egen side for Bruhølen som fiskeplass med middels tilgjengelighed og under 100 m fra bilvei. |
-| 47 | Flormoen-Megård | Sone 4 / Flora | Uge 26-34 | 30-90 m3/s | God efter regn og stabilt faldende vand. Nordside-strekket er kortere, så timing med vand og ro på plassen er vigtig. | SJFF skriver at Megård/Flormoen ligger i Flora, nordsiden, med parkering ved renseanlegget. SJFF-kortbilag nævner Flormoen/Megård som nordre side ca. 300 m. |
-| 48 | Flormoen | Sone 4 / Flora | Uge 26-34 | 30-90 m3/s | Samme som Flormoen-Megård: fisk når opgangen har nået Flora, særligt efter regn. | Samme kilder som Flormoen-Megård. |
-| 49 | Sørneshølen | Sone 4 / Flora | Uge 26-34 | 35-110 m3/s | Øvre høl/holdeplads: bedst når vandet er højt nok til at trække fisk op og stadig har farve/fart. | Ikke fundet særskilt pladsbeskrivelse; vurderet ud fra Sone 4 og høltype. |
-| 49 | Særneshølen | Sone 4 / Flora | Uge 26-34 | 35-110 m3/s | Sandsynligvis samme punkt/navnevariant som Sørneshølen i KML’en. Behandles som øvre Flora-høl. | KML’en indeholder både `Sørneshølen` og `Særneshølen` næsten på samme koordinat. |
-| 117 | Kommunevaldet | Sone 1 | Uge 23-29, plus august efter regn | 25-100 m3/s | Samme som `18 Kommunevaldet`; nummeret kan være en taste-/kortvariant. | Norske Lakseelver lister Kommunevaldet i Sone 1. |
-
-## Hvide vald fra Stjørdal JFF / Elveguiden
+## Fiskepladser - Hvid vald (Stjørdal JFF)
 
 Elveguiden-siden for Stjørdal JFF beskriver disse som `Kart Hvite vald` i valdoversigten for 2026. Det er den samme gruppe vald som lå til grund for Norgeskart/KML-filen. Vigtigt: Elveguiden skriver, at man skal gøre sig bekendt med skiltene langs elva før fiskeriet starter, og at skiltene langs elva gælder, hvis der er forskel mellem kort og skilt.
 
@@ -1147,16 +1101,6 @@ Kilde: Norske Lakseelver / Stjørdalsvassdragets Elveeierlag, `Laksefiske i Stj�
 
 Midtsæsonevalueringen er sat til 1. juli. Eventuelle forhåndsaftalte tiltak indføres 1. august til 15. august afhængig af situationen.
 
-| Gytebestandsmåloppnåelse | Tiltak |
-|---|---|
-| Over 130 % | Ingen ændring |
-| 90-130 % | Ingen ændring |
-| 50-90 % | Genudsætning af all laks over 65 cm / ca. 3 kg fra 15. august |
-| Under 50 % | Alt fiske stoppes fra 1. august |
-
-### Sanktioner
-
-Brud på reglerne kan medføre gebyr eller politianmeldelse. Norske Lakseelver angiver gebyr for brud på gældende fiskeregler som kr. 3000. Fiskeren kan også blive bortvist for indeværende og påfølgende sæson.
 
 ## Fluer og hvornår de skal fiskes
 
@@ -1209,57 +1153,6 @@ Bag Limit Destroyer Variant er stærk fra sankthans og utover, især på let far
 
 Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen ses og mærkes. Fisk den langsomt med synkesnøre over høler og brek, især på de pladser hvor laksen stopper på kanten af hård strøm.
 
-## Sæson og ugeplan
-
-| Periode | Uger | Praktisk strategi |
-|---|---:|---|
-| Åbning og tidlig storlaks | 23-24 | Prioriter nedre og Hegra-nære pladser: Vold, Bjørgen, Håve, Øfsti, Mæla, Kommunevaldet. Fisk efter vandstigning/farve. |
-| Tidlig/midtsæson | 25-27 | Udvid til Avelsgård, Kleivhølen og Einang, især hvis vandføringen er 25-70 m3/s og temperaturen stiger. |
-| Hovedvinduet for midtre/øvre pladser | 27-31 | Svea, Mølskhølen/Nebbhølen, Megård, Bruhølen, Flormoen og Sørneshølen bliver mere interessante, især efter regn. |
-| Sensommer | 32-35 | Fisk korte vinduer: regn, gråvejr, natt/morgen, faldende elv. Bemærk at regler kan ændres efter midtsæson, og særlige augustregler kan gælde. |
-
-## Hvad fangsthistorikken siger
-
-Jeg fandt ikke en komplet, offentlig eksport af fangster pr. hvert af de navngivne SJFF-/KML-vald. Elveguiden/Laksebørsen indekserer dog enkelte fangstsider, og de er nyttige som datapunkter:
-
-- `31 - Kleivhølen`: laks 2,5 kg, 29.07.2021, flue.
-- `Einang`: laks 2,5 kg, 30.06.2022, flue.
-- `Einang`: laks 2,4 kg, 27.07.2023, wobbler.
-- `12 - Håve nordre`: laks 6,2 kg, 04.07.2025, mark.
-
-På elveniveau er Stjørdalselva fortsat en betydelig lakseelv. Veterinærinstituttets rapport for 2025 viser 1092 avlivede laks i Stjørdalselva i den officielle fangststatistikken pr. 21.11.2025, og 98,3 % villfisk blandt de analyserede Stjørdalselva-prøver.
-
-## Kilder
-
-- Norske Lakseelver - Stjørdalselva hovedside og fiskesoner: https://lakseelver.no/nb/elver/stjordalselva
-- Norske Lakseelver - Fiskeregler Stjørdalselva 2026: https://lakseelver.no/nb/news/2026/04/fiskeregler-stjordalselva-2026
-- Norske Lakseelver - Laksefiske i Stjørdalselva: https://lakseelver.no/nb/elver/stjordalselva/about
-- Norske Lakseelver - Sone 1: https://lakseelver.no/nb/elver/stjordalselva/sone-1-stjordalselva
-- Norske Lakseelver - Sone 2: https://lakseelver.no/nb/elver/stjordalselva/sone-2-stjordalselva
-- Norske Lakseelver - Sone 3: https://lakseelver.no/nb/elver/stjordalselva/sone-3-stjordalselva
-- Norske Lakseelver - Sone 4: https://lakseelver.no/nb/elver/stjordalselva/sone-4-stjordalselva
-- Norske Lakseelver - Kleivhølen: https://lakseelver.no/nb/elver/stjordalselva/kleivholen-0
-- Norske Lakseelver - Einang: https://lakseelver.no/nb/elver/stjordalselva/einang
-- Norske Lakseelver - Bruhølen: https://lakseelver.no/nb/elver/stjordalselva/bruholen
-- Norske Lakseelver - I. Øfsti: https://lakseelver.no/nb/elver/stjordalselva/ofsti
-- Norske Lakseelver - Driftsplan for Stjørdalselva: https://lakseelver.no/nb/elver/stjordalselva/driftsplan/driftsplan-stjordalselva
-- Norske Lakseelver - Sideløp ved Avelsgård: https://lakseelver.no/nb/forvaltningstiltak/2022/sidelop-ved-avelsgard-nordside
-- Stjørdal JFF - Laksefiske i Stjørdalselva, 2023: https://www.njff.no/nord-trondelag/stjordal/aktuelt/laksefiske-i-stjordalselva
-- Stjørdal JFF - Fiske og kortpriser/valdinfo: https://www.njff.no/nord-trondelag/stjordal/fiske
-- RiverApp - Stjørdalselva, Hegra bru, NVE-data: https://www.riverapp.net/no/station/556a2282d4c605ea96d10c55
-- NVE Sildre: https://sildre.nve.no/
-- Hembre Gård - laksefiske, vandføring og fangstbeskrivelse: https://www.hembregard.no/laksefiske
-- Hembre Gård - anbefalte fluer for Hembre gård: https://www.hembregard.no/blogg/anbefalte-fluer-for-hembre-gard
-- Veterinærinstituttet - Sportsfiske Trondheimsfjorden og Åfjorden 2025: https://www.vetinst.no/rapporter-og-publikasjoner/rapporter/2025/sportsfiske-trondheimsfjorden-og-afjorden-2025-samarbeidsprosjektet-elvene-langs-trondheimsfjorden-og-salmar
-- Elveguiden/Laksebørs eksempel, Kleivhølen: https://elveguiden.no/en/laksebors/catches/179443
-- Elveguiden/Laksebørs eksempel, Einang 2022: https://elveguiden.no/en/laksebors/catches/284000
-- Elveguiden/Laksebørs eksempel, Einang 2023: https://elveguiden.no/en/laksebors/catches/594121
-- Elveguiden/Laksebørs eksempel, Håve nordre: https://elveguiden.no/no/laksebors/catches/663029
-- Elveguiden - Stjørdal JFF, Om valdet / Valdoversikt 2026, hvide vald: https://elveguiden.no/no/vald/stjordal-jff?tab=aboutbeat
-
-## Forbehold
-
-Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i KML-filen. Den er ikke en komplet statistisk analyse af alle historiske fangster. For den bedste version bør man supplere med en eksport/scrape fra Elveguiden pr. vald, hvis man kan få adgang til komplette data, og koble fangstdatoer mod historisk NVE-vandføring ved Hegra bru.
 
 </script>
   <script src="stjordal-history.js"></script>
@@ -1364,16 +1257,10 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
     });
 
     const elements = {
-      pageTitle: document.querySelector("#pageTitle"),
       tabSelect: document.querySelector("#tabSelect"),
       dataStatus: document.querySelector("#dataStatus"),
-      refreshData: document.querySelector("#refreshData"),
       loadError: document.querySelector("#loadError"),
-      totalCatches: document.querySelector("#totalCatches"),
-      totalWeight: document.querySelector("#totalWeight"),
-      averageWeight: document.querySelector("#averageWeight"),
-      releasedPercent: document.querySelector("#releasedPercent"),
-      speciesOverview: document.querySelector("#speciesOverview"),
+      overviewContent: document.querySelector("#overviewContent"),
       weekChart: document.querySelector("#weekChart"),
       weekFlowChart: document.querySelector("#weekFlowChart"),
       weekWeightChart: document.querySelector("#weekWeightChart"),
@@ -1385,7 +1272,7 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
       searchInput: document.querySelector("#searchInput"),
       speciesFilter: document.querySelector("#speciesFilter"),
       sortSelect: document.querySelector("#sortSelect"),
-      infoContent: document.querySelector("#infoContent"),
+      fliesContent: document.querySelector("#fliesContent"),
       logContent: document.querySelector("#logContent"),
       historyStatus: document.querySelector("#historyStatus"),
       historyContent: document.querySelector("#historyContent"),
@@ -1401,8 +1288,7 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
     elements.riverMapFrame = document.querySelector(".map-frame");
     elements.mapStatus = document.querySelector("#mapStatus");
 
-    document.title = `Stjørdalselven ${CURRENT_YEAR}`;
-    elements.pageTitle.textContent = `Stjørdalselven ${CURRENT_YEAR}`;
+    document.title = `Stjørdal ${CURRENT_YEAR}`;
 
     function activateTab(panelId) {
       document.querySelectorAll(".tab-button").forEach((item) => {
@@ -1427,7 +1313,7 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
       if (panelId === "historyAll") {
         window.setTimeout(loadHistoryAll, 0);
       }
-      if (panelId === "info") {
+      if (panelId === "overview" || panelId === "info") {
         window.setTimeout(loadInfo, 0);
       }
       if (panelId === "log") {
@@ -1455,7 +1341,6 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
     elements.historyWeekFilter.addEventListener("change", renderHistoryTable);
     elements.historyYearFilter.addEventListener("change", renderHistoryTable);
     elements.historyAllWeekFilter.addEventListener("change", renderHistoryAllTable);
-    elements.refreshData.addEventListener("click", () => loadData({ silent: false }));
     elements.catchTableHead.addEventListener("click", (event) => {
       const header = event.target.closest("[data-sort-key]");
       if (!header) return;
@@ -1537,15 +1422,17 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
         .replace(/[\u0300-\u036f]/g, "");
     }
 
+    function isPlainSalmonSpecies(item) {
+      return normalizeFilterText(item.species) === "laks";
+    }
+
     function isAllowedCatchSpecies(item) {
-      const species = normalizeFilterText(item.species);
-      return species.includes("laks") || species.includes("sjoorret") || species.includes("sjoaure");
+      return isPlainSalmonSpecies(item);
     }
 
     function isSalmonFlyCatch(item) {
-      const species = normalizeFilterText(item.species);
       const equipment = normalizeFilterText(item.equipment);
-      return species.includes("laks") && equipment.includes("flue");
+      return isPlainSalmonSpecies(item) && equipment.includes("flue");
     }
 
     function countBy(items, keyFn) {
@@ -1692,20 +1579,6 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
       renderBarEntries(elements.weekFlowChart, averageFlowEntries, "var(--water)", (value) => `${Math.round(Number(value) || 0)} m³/s`, "Gns. vandføring");
       renderBarEntries(elements.weekWeightChart, averageWeightEntries, "var(--accent)", (value) => `${Math.round(Number(value) || 0)} kg`, "Gns. vægt");
       renderBars(elements.equipmentChart, countBy(selectedCatches, (item) => item.equipment), "var(--rose)", "Antal fangster");
-    }
-
-    function renderSummary() {
-      const totalWeight = catches.reduce((sum, item) => sum + (Number(item.weight_kg) || 0), 0);
-      const averageWeight = catches.length ? totalWeight / catches.length : 0;
-      const released = catches.filter((item) => item.released_catch).length;
-      const equipmentCounts = countBy(catches, (item) => item.equipment);
-
-      elements.totalCatches.textContent = catches.length;
-      elements.totalWeight.textContent = kg(totalWeight);
-      elements.averageWeight.textContent = kg(averageWeight);
-      elements.releasedPercent.textContent = `${numberFormat.format((released / Math.max(catches.length, 1)) * 100)}%`;
-
-      renderBars(elements.speciesOverview, countBy(catches, (item) => item.species), "var(--water)", "Antal fangster");
     }
 
     function renderSpeciesFilter() {
@@ -2551,20 +2424,38 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
       return html.join("");
     }
 
+    function splitInfoMarkdown(markdown) {
+      const marker = "## Fluer og hvornår de skal fiskes";
+      const markerIndex = markdown.indexOf(marker);
+      if (markerIndex < 0) {
+        return {
+          overview: markdown.replace(/^# Info\s*/m, "# Oversigt\n\n"),
+          flies: "# Fluer\n\nIngen fluesektion fundet."
+        };
+      }
+      return {
+        overview: markdown.slice(0, markerIndex).replace(/^# Info\s*/m, "# Oversigt\n\n").trim(),
+        flies: markdown.slice(markerIndex).trim()
+      };
+    }
+
     function loadInfo() {
       if (infoLoaded) return;
       infoLoaded = true;
 
       try {
         const markdown = document.querySelector("#infoMarkdown")?.textContent ?? "";
-        elements.infoContent.innerHTML = renderMarkdown(markdown);
-        elements.infoContent.querySelectorAll("a").forEach((link) => {
+        const sections = splitInfoMarkdown(markdown);
+        elements.overviewContent.innerHTML = renderMarkdown(sections.overview);
+        elements.fliesContent.innerHTML = renderMarkdown(sections.flies);
+        [elements.overviewContent, elements.fliesContent].forEach((content) => content.querySelectorAll("a").forEach((link) => {
           link.target = "_blank";
           link.rel = "noreferrer";
-        });
+        }));
       } catch (error) {
         infoLoaded = false;
-        elements.infoContent.innerHTML = '<p class="error">Info kunne ikke indlæses.</p>';
+        elements.overviewContent.innerHTML = '<p class="error">Oversigt kunne ikke indlæses.</p>';
+        elements.fliesContent.innerHTML = '<p class="error">Fluer kunne ikke indlæses.</p>';
         console.error(error);
       }
     }
@@ -3063,7 +2954,7 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
             const json = response;
             const historicalCatches = (json.catches ?? [])
               .map(normalizeGeneratedCatch)
-              .filter((item) => normalizeFilterText(item.species).includes("laks"));
+              .filter(isPlainSalmonSpecies);
             const years = Array.isArray(json.years) && json.years.length
               ? json.years.map(Number).filter(Number.isFinite)
               : HISTORY_YEARS;
@@ -3183,6 +3074,22 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
         .map(([start, count]) => [`${numberFormat.format(start)}-${numberFormat.format(start + binSize)} m³/s`, count]);
     }
 
+    function flowTrendEntries(rows) {
+      const labels = new Map([
+        ["stigende", "Stigende"],
+        ["neutral", "Neutral"],
+        ["faldende", "Faldende"]
+      ]);
+      const counts = new Map([...labels.keys()].map((key) => [key, 0]));
+      rows.forEach((row) => {
+        const trend = normalizeFilterText(row.flowTrend);
+        if (counts.has(trend)) {
+          counts.set(trend, counts.get(trend) + 1);
+        }
+      });
+      return [...counts.entries()].map(([key, count]) => [labels.get(key), count]);
+    }
+
     function renderHvidHistorySections(sourceRows, weekFilter, yearFilter = null) {
       const rows = filteredHistoryRows(sourceRows, weekFilter, yearFilter);
       const groups = new Map();
@@ -3204,12 +3111,22 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
             .map((row) => Number(row.flowValue))
             .filter(Number.isFinite);
           const histogram = flowHistogramEntries(flowValues, sharedFlowBins);
+          const trendEntries = flowTrendEntries(beatRows);
           return `
             <section class="history-section" id="${escapeHtml(sectionId)}">
               <h3 class="history-section-title">${escapeHtml(beat)}</h3>
-              ${histogram.length
-                ? `<div class="chart-list">${plotHtml(histogram, "var(--water)", (value) => value, "Antal fangster")}</div>`
-                : '<div class="empty">Ingen vandføringsdata for fangsterne i dette valg.</div>'}
+              <div class="history-section-charts">
+                <div>
+                  <h4 class="history-chart-title">Vandføring</h4>
+                  ${histogram.length
+                    ? plotHtml(histogram, "var(--water)", (value) => value, "Antal fangster")
+                    : '<div class="empty">Ingen vandføringsdata for fangsterne i dette valg.</div>'}
+                </div>
+                <div>
+                  <h4 class="history-chart-title">Vandføringstrend</h4>
+                  ${plotHtml(trendEntries, "var(--accent)", (value) => value, "Antal fangster")}
+                </div>
+              </div>
             </section>
           `;
         })
@@ -3288,7 +3205,7 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
       if (historyLoaded) return;
       if (historyLoadPromise) return historyLoadPromise;
 
-      elements.historyStatus.textContent = "H-Hvid for laks fanget på flue indlæses fra lokal JSON...";
+      elements.historyStatus.textContent = "Hvid vald for laks fanget på flue indlæses fra lokal JSON...";
       elements.historyContent.className = "empty";
       elements.historyContent.textContent = "Henter kortlag, fangster og vandføring...";
       elements.historyWeekFilter.disabled = true;
@@ -3313,7 +3230,8 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
             beat: item.beat || feature.name,
             week: item.week,
             year: item.history_year,
-            flowValue: item.flow_cms
+            flowValue: item.flow_cms,
+            flowTrend: item.flow_trend
           });
         });
 
@@ -3324,7 +3242,7 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
         historyLoaded = true;
       })().catch((error) => {
         historyLoadPromise = null;
-        elements.historyStatus.textContent = "H-Hvid kunne ikke indlæses.";
+        elements.historyStatus.textContent = "Hvid vald kunne ikke indlæses.";
         elements.historyContent.className = "error";
         elements.historyContent.textContent = "Kunne ikke læse stjordal-history.json. Kør R-scriptet og genindlæs siden.";
         elements.historyWeekFilter.disabled = true;
@@ -3372,7 +3290,7 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
         historyAllLoaded = true;
       })().catch((error) => {
         historyAllLoadPromise = null;
-        elements.historyAllStatus.textContent = "H-Alle kunne ikke indlæses.";
+        elements.historyAllStatus.textContent = "JFF vald kunne ikke indlæses.";
         elements.historyAllContent.className = "error";
         elements.historyAllContent.textContent = "Kunne ikke læse stjordal-history.json. Kør R-scriptet og genindlæs siden.";
         elements.historyAllWeekFilter.disabled = true;
@@ -3384,7 +3302,6 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
 
     async function loadData({ silent = false } = {}) {
       try {
-        elements.refreshData.disabled = true;
         elements.loadError.hidden = true;
         if (!silent) {
           elements.dataStatus.textContent = "Indlæser fangstdata fra lokal JSON...";
@@ -3400,7 +3317,6 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
         }).format(Number.isNaN(generatedAt.getTime()) ? new Date() : generatedAt);
         elements.dataStatus.textContent = `${catches.length} laksefangster fra ${years.join("-")} indlæst fra JSON. Sidst opdateret ${updatedAt}.`;
         renderSpeciesFilter();
-        renderSummary();
         renderStatsYearFilter(years);
         renderStatsCharts();
         renderTable();
@@ -3413,11 +3329,10 @@ Dette er en praktisk fiskeguide baseret på offentlige kilder og placeringerne i
         elements.loadError.hidden = false;
         elements.loadError.textContent = "Kunne ikke læse stjordal-history.json. Kør R-scriptet og genindlæs siden.";
         console.error(error);
-      } finally {
-        elements.refreshData.disabled = false;
       }
     }
 
+    loadInfo();
     loadData();
     window.setInterval(() => loadData({ silent: true }), AUTO_REFRESH_MS);
   </script>

@@ -154,7 +154,7 @@ fetch_catches_for_year <- function(year) {
 
   catch_items %>%
     map_dfr(normalize_catch, year = year) %>%
-    filter(str_detect(normalize_text(species), "laks")) %>%
+    filter(normalize_text(species) == "laks") %>%
     mutate(date = as.Date(date))
 }
 
