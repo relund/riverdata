@@ -762,6 +762,41 @@
         grid-template-columns: 1fr;
       }
 
+      .history-section .plot-chart {
+        gap: 4px;
+        padding: 10px 8px 8px;
+        overflow-x: hidden;
+      }
+
+      .history-section .plot-y-label {
+        font-size: 0.58rem;
+      }
+
+      .history-section .plot-body {
+        min-width: 0;
+      }
+
+      .history-section .plot-bars {
+        grid-template-columns: repeat(var(--bar-count, 1), minmax(0, 1fr));
+        gap: 3px;
+        min-height: 160px;
+      }
+
+      .history-section .plot-x-labels {
+        grid-template-columns: repeat(var(--bar-count, 1), minmax(0, 1fr));
+        gap: 3px;
+      }
+
+      .history-section .plot-value,
+      .history-section .plot-x-label {
+        font-size: 0.52rem;
+        line-height: 1.05;
+      }
+
+      .history-section .plot-bar {
+        width: min(100%, 18px);
+      }
+
       .tabs {
         display: block;
         overflow: visible;
