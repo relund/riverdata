@@ -3414,6 +3414,32 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       return intervalHistogramData(values, binStarts, 1);
     }
 
+    function catchTimeValue(value) {
+      const match = String(value ?? "").match(/^(\d{1,2})(?::(\d{2}))?/);
+      if (!match) return null;
+      const hour = Number(match[1]);
+      const minute = Number(match[2] ?? 0);
+      if (!Number.isFinite(hour) || hour < 0 || hour > 23 || !Number.isFinite(minute)) return null;
+      return hour + Math.max(0, Math.min(59, minute)) / 60;
+    }
+
+    function timeHistogramBins(values) {
+      return intervalHistogramBins(values, 1);
+    }
+
+    function timeHistogramData(values, binStarts) {
+      const histogram = intervalHistogramData(values, binStarts, 1);
+      return {
+        ...histogram,
+        entries: histogram.entries.map(([label, count]) => [`${label} timer`, count]),
+        xTickLabels: histogram.xTickLabels.map((label) => {
+          if (!label) return "";
+          const hour = Number(label);
+          return Number.isFinite(hour) ? String(Math.trunc(hour)).padStart(2, "0") : label;
+        })
+      };
+    }
+
     function hasNumericValue(value) {
       return value !== null && value !== "" && Number.isFinite(Number(value));
     }
@@ -3494,6 +3520,10 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
             .map((row) => Number(row.temperatureValue));
           const temperatureHistogram = temperatureHistogramData(temperatureValues, temperatureHistogramBins(temperatureValues));
           const temperatureMarker = temperatureMarkerForHistogram(temperatureHistogram, latestTemperature);
+          const timeValues = beatRows
+            .map((row) => catchTimeValue(row.timeOfDay))
+            .filter((value) => value !== null);
+          const timeHistogram = timeHistogramData(timeValues, timeHistogramBins(timeValues));
           const trendEntries = flowTrendEntries(beatRows);
           return `
             <section class="history-section" id="${escapeHtml(sectionId)}">
@@ -3514,6 +3544,12 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
                   ${temperatureHistogram.entries.length
                     ? plotHtml(temperatureHistogram.entries, "var(--rose)", (value) => value, "Fangster", { yScale: true, xTickLabels: temperatureHistogram.xTickLabels, xMarker: temperatureMarker })
                     : '<div class="empty">Ingen vandtemperaturdata for fangsterne i dette valg.</div>'}
+                </div>
+                <div>
+                  <h4 class="history-chart-title">Fangsttidspunkt</h4>
+                  ${timeHistogram.entries.length
+                    ? plotHtml(timeHistogram.entries, "var(--sun)", (value) => value, "Fangster", { yScale: true, xTickLabels: timeHistogram.xTickLabels })
+                    : '<div class="empty">Ingen fangsttidspunkter for fangsterne i dette valg.</div>'}
                 </div>
               </div>
             </section>
@@ -3621,6 +3657,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
             beat: item.beat || feature.name,
             week: item.week,
             year: item.history_year,
+            timeOfDay: item.time_of_day,
             flowValue: item.flow_cms,
             flowTrend: item.flow_trend,
             temperatureValue: item.water_temperature_c
