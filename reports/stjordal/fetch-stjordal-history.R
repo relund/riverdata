@@ -134,6 +134,112 @@ empty_catches <- function() {
   )
 }
 
+empty_cached_catches <- function() {
+  tibble::tibble(
+    id = character(),
+    date = as.Date(character()),
+    time_of_day = character(),
+    week = numeric(),
+    year = integer(),
+    river = character(),
+    beat = character(),
+    fishing_spot = character(),
+    fisher_name = character(),
+    species = character(),
+    weight_kg = numeric(),
+    length_cm = numeric(),
+    equipment = character(),
+    released_catch = logical(),
+    image = character(),
+    detail_url = character(),
+    flow_cms = numeric(),
+    flow_trend = character(),
+    water_level_m = numeric(),
+    water_level_trend = character(),
+    water_temperature_c = numeric()
+  )
+}
+
+empty_daily_measurements <- function() {
+  tibble::tibble(
+    date = as.Date(character()),
+    flow_cms = numeric(),
+    flow_trend = character(),
+    water_level_m = numeric(),
+    water_level_trend = character(),
+    water_temperature_c = numeric()
+  )
+}
+
+read_existing_payload <- function() {
+  source_file <- dplyr::case_when(
+    file.exists(output_file) ~ output_file,
+    file.exists(docs_output_file) ~ docs_output_file,
+    TRUE ~ NA_character_
+  )
+  if (is.na(source_file)) return(NULL)
+  message("Reading cached history from ", source_file)
+  jsonlite::fromJSON(source_file, simplifyDataFrame = TRUE)
+}
+
+cached_years_from_payload <- function(payload) {
+  if (is.null(payload$years)) return(integer())
+  as.integer(payload$years)
+}
+
+normalize_cached_catches <- function(payload) {
+  if (is.null(payload$catches) || !is.data.frame(payload$catches) || !nrow(payload$catches)) {
+    return(empty_cached_catches())
+  }
+  catches <- tibble::as_tibble(payload$catches)
+  for (name in setdiff(names(empty_cached_catches()), names(catches))) {
+    catches[[name]] <- NA
+  }
+  catches %>%
+    transmute(
+      id = as.character(id),
+      date = as.Date(date),
+      time_of_day = as.character(time_of_day),
+      week = suppressWarnings(as.numeric(week)),
+      year = suppressWarnings(as.integer(year)),
+      river = as.character(river),
+      beat = as.character(beat),
+      fishing_spot = as.character(fishing_spot),
+      fisher_name = as.character(fisher_name),
+      species = as.character(species),
+      weight_kg = suppressWarnings(as.numeric(weight_kg)),
+      length_cm = suppressWarnings(as.numeric(length_cm)),
+      equipment = as.character(equipment),
+      released_catch = as.logical(released_catch),
+      image = as.character(image),
+      detail_url = as.character(detail_url),
+      flow_cms = suppressWarnings(as.numeric(flow_cms)),
+      flow_trend = as.character(flow_trend),
+      water_level_m = suppressWarnings(as.numeric(water_level_m)),
+      water_level_trend = as.character(water_level_trend),
+      water_temperature_c = suppressWarnings(as.numeric(water_temperature_c))
+    )
+}
+
+normalize_cached_daily_measurements <- function(payload) {
+  if (is.null(payload$daily_flow) || !is.data.frame(payload$daily_flow) || !nrow(payload$daily_flow)) {
+    return(empty_daily_measurements())
+  }
+  daily <- tibble::as_tibble(payload$daily_flow)
+  for (name in setdiff(names(empty_daily_measurements()), names(daily))) {
+    daily[[name]] <- NA
+  }
+  daily %>%
+    transmute(
+      date = as.Date(date),
+      flow_cms = suppressWarnings(as.numeric(flow_cms)),
+      flow_trend = as.character(flow_trend),
+      water_level_m = suppressWarnings(as.numeric(water_level_m)),
+      water_level_trend = as.character(water_level_trend),
+      water_temperature_c = suppressWarnings(as.numeric(water_temperature_c))
+    )
+}
+
 fetch_catches_for_year <- function(year) {
   message("Fetching catches for ", year)
   first_page <- fetch_catch_page(year, 1)
@@ -204,46 +310,93 @@ daily_direction <- function(value, previous_value, neutral_abs, neutral_relative
   )
 }
 
-catches <- map_dfr(years, fetch_catches_for_year)
+existing_payload <- read_existing_payload()
+cached_years <- cached_years_from_payload(existing_payload)
+years_to_fetch <- sort(unique(c(current_year, setdiff(years, cached_years))))
+cached_years_to_keep <- setdiff(years, years_to_fetch)
 
-daily_flow <- map_dfr(years, ~ fetch_measurement_for_year(.x, 1001, "flow")) %>%
+if (length(cached_years_to_keep)) {
+  message("Using cached data for ", paste(cached_years_to_keep, collapse = ", "))
+}
+message("Fetching fresh data for ", paste(years_to_fetch, collapse = ", "))
+
+cached_catches <- if (is.null(existing_payload)) {
+  empty_cached_catches()
+} else {
+  normalize_cached_catches(existing_payload) %>%
+    filter(year %in% cached_years_to_keep)
+}
+
+cached_daily_measurements <- if (is.null(existing_payload)) {
+  empty_daily_measurements()
+} else {
+  normalize_cached_daily_measurements(existing_payload) %>%
+    filter(as.integer(format(date, "%Y")) %in% cached_years_to_keep)
+}
+
+fetched_catches <- map_dfr(years_to_fetch, fetch_catches_for_year)
+
+fetched_daily_flow <- map_dfr(years_to_fetch, ~ fetch_measurement_for_year(.x, 1001, "flow")) %>%
   group_by(date) %>%
   summarise(flow_cms = mean(value, na.rm = TRUE), .groups = "drop") %>%
-  arrange(date) %>%
+  arrange(date)
+
+fetched_daily_stage <- map_dfr(years_to_fetch, ~ fetch_measurement_for_year(.x, 1000, "water level")) %>%
+  group_by(date) %>%
+  summarise(water_level_m = mean(value, na.rm = TRUE), .groups = "drop") %>%
+  arrange(date)
+
+fetched_daily_temperature <- map_dfr(years_to_fetch, ~ fetch_measurement_for_year(.x, 1003, "water temperature")) %>%
+  group_by(date) %>%
+  summarise(water_temperature_c = mean(value, na.rm = TRUE), .groups = "drop") %>%
+  arrange(date)
+
+daily_measurements_without_trends <- bind_rows(
+  cached_daily_measurements %>%
+    select(date, flow_cms, water_level_m, water_temperature_c),
+  fetched_daily_flow %>%
+    full_join(fetched_daily_stage, by = "date") %>%
+    full_join(fetched_daily_temperature, by = "date")
+) %>%
+  filter(as.integer(format(date, "%Y")) %in% years) %>%
+  group_by(date) %>%
+  summarise(
+    flow_cms = dplyr::last(na.omit(flow_cms), default = NA_real_),
+    water_level_m = dplyr::last(na.omit(water_level_m), default = NA_real_),
+    water_temperature_c = dplyr::last(na.omit(water_temperature_c), default = NA_real_),
+    .groups = "drop"
+  ) %>%
+  arrange(date)
+
+daily_flow_json <- daily_measurements_without_trends %>%
   mutate(
     previous_flow = lag(flow_cms),
     flow_trend = pmap_chr(
       list(flow_cms, previous_flow),
       ~ daily_direction(..1, ..2, neutral_abs_cms, neutral_rel)
-    )
-  ) %>%
-  select(date, flow_cms, flow_trend)
-
-daily_stage <- map_dfr(years, ~ fetch_measurement_for_year(.x, 1000, "water level")) %>%
-  group_by(date) %>%
-  summarise(water_level_m = mean(value, na.rm = TRUE), .groups = "drop") %>%
-  arrange(date) %>%
-  mutate(
+    ),
     previous_water_level = lag(water_level_m),
     water_level_trend = pmap_chr(
       list(water_level_m, previous_water_level),
       ~ daily_direction(..1, ..2, neutral_abs_stage_m, neutral_stage_rel)
     )
   ) %>%
-  select(date, water_level_m, water_level_trend)
+  select(date, flow_cms, flow_trend, water_level_m, water_level_trend, water_temperature_c)
 
-catches_with_flow <- catches %>%
-  left_join(daily_flow, by = "date") %>%
-  left_join(daily_stage, by = "date") %>%
+fetched_catches_with_flow <- fetched_catches %>%
+  left_join(daily_flow_json, by = "date")
+
+catches_with_flow <- bind_rows(cached_catches, fetched_catches_with_flow) %>%
+  filter(year %in% years) %>%
   arrange(desc(date), desc(time_of_day)) %>%
   mutate(
     date = format(date, "%Y-%m-%d"),
     flow_cms = if_else(is.nan(flow_cms), NA_real_, flow_cms),
-    water_level_m = if_else(is.nan(water_level_m), NA_real_, water_level_m)
+    water_level_m = if_else(is.nan(water_level_m), NA_real_, water_level_m),
+    water_temperature_c = if_else(is.nan(water_temperature_c), NA_real_, water_temperature_c)
   )
 
-daily_flow_json <- daily_flow %>%
-  left_join(daily_stage, by = "date") %>%
+daily_flow_json <- daily_flow_json %>%
   mutate(date = format(date, "%Y-%m-%d"))
 
 payload <- list(
@@ -265,6 +418,11 @@ payload <- list(
     trend_source = "daily average water level",
     neutral_abs_m = neutral_abs_stage_m,
     neutral_rel = neutral_stage_rel
+  ),
+  water_temperature = list(
+    parameter = 1003,
+    unit = "C",
+    source = "daily average water temperature"
   ),
   catches = catches_with_flow,
   daily_flow = daily_flow_json

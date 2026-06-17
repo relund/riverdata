@@ -309,7 +309,7 @@
       gap: 8px;
       margin-top: 14px;
       padding: 16px 14px 12px;
-      overflow-x: auto;
+      overflow-x: hidden;
       background: var(--panel);
       border: 1px solid var(--line);
     }
@@ -325,13 +325,37 @@
     }
 
     .plot-body {
-      min-width: max(100%, calc(var(--bar-count, 1) * 54px));
+      min-width: 0;
+    }
+
+    .plot-body.has-y-scale {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      grid-template-areas:
+        "scale bars"
+        ". labels";
+      column-gap: 8px;
+    }
+
+    .plot-y-scale {
+      grid-area: scale;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 230px;
+      padding: 8px 0 10px;
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-align: right;
     }
 
     .plot-bars {
+      grid-area: bars;
+      position: relative;
       display: grid;
-      grid-template-columns: repeat(var(--bar-count, 1), minmax(34px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(var(--bar-count, 1), minmax(0, 1fr));
+      gap: 5px;
       align-items: end;
       min-height: 230px;
       padding: 8px 0 10px;
@@ -340,35 +364,73 @@
         linear-gradient(to top, rgba(82, 94, 72, 0.12) 1px, transparent 1px) 0 0 / 100% 25%;
     }
 
+    .plot-body.has-y-scale .plot-bars {
+      border-left: 1px solid var(--line);
+      padding-left: 8px;
+    }
+
+    .plot-body.is-interval-plot .plot-bars {
+      gap: 1px;
+    }
+
+    .plot-body.is-interval-plot .plot-bar {
+      width: calc(100% - 1px);
+    }
+
+    .plot-x-marker {
+      position: absolute;
+      top: 8px;
+      bottom: 10px;
+      left: var(--marker-left);
+      z-index: 0;
+      width: 0;
+      border-left: 1.5px solid #f2d21b;
+      pointer-events: none;
+    }
+
     .plot-bar-item {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-rows: auto 1fr;
-      gap: 6px;
       align-items: end;
       min-width: 0;
       height: 100%;
     }
 
-    .plot-value {
-      color: var(--ink);
-      font-size: 0.74rem;
-      font-weight: 800;
-      text-align: center;
-      white-space: nowrap;
-    }
-
     .plot-bar {
-      width: min(100%, 30px);
+      width: min(100%, 22px);
       min-height: 3px;
       justify-self: center;
       background: var(--accent);
     }
 
+    .plot-bar.is-zero {
+      min-height: 0;
+    }
+
     .plot-x-labels {
+      grid-area: labels;
       display: grid;
-      grid-template-columns: repeat(var(--bar-count, 1), minmax(34px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(var(--bar-count, 1), minmax(0, 1fr));
+      gap: 5px;
       padding-top: 8px;
+    }
+
+    .plot-x-labels.is-interval-axis {
+      grid-template-columns: repeat(var(--tick-count, 2), minmax(0, 1fr));
+      gap: 0;
+    }
+
+    .plot-x-labels.is-interval-axis .plot-x-label {
+      white-space: nowrap;
+    }
+
+    .plot-x-labels.is-interval-axis .plot-x-label:first-child {
+      text-align: left;
+    }
+
+    .plot-x-labels.is-interval-axis .plot-x-label:last-child {
+      text-align: right;
     }
 
     .plot-x-label {
@@ -401,6 +463,24 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
+    }
+
+    .history-section .plot-chart {
+      overflow-x: hidden;
+    }
+
+    .history-section .plot-body {
+      min-width: 0;
+    }
+
+    .history-section .plot-bars,
+    .history-section .plot-x-labels {
+      grid-template-columns: repeat(var(--bar-count, 1), minmax(0, 1fr));
+      gap: 5px;
+    }
+
+    .history-section .plot-bar {
+      width: min(100%, 22px);
     }
 
     .history-chart-title {
@@ -638,6 +718,10 @@
       background: var(--panel);
     }
 
+    .info-content .markdown-table {
+      width: 100%;
+    }
+
     .info-content .table-frame {
       box-shadow: none;
     }
@@ -655,6 +739,18 @@
     .map-popup-description {
       margin: 0;
       color: var(--muted);
+    }
+
+    .map-popup-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--accent-strong);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .map-popup-link:hover {
+      text-decoration: underline;
     }
 
     .leaflet-control-layers {
@@ -762,38 +858,50 @@
         grid-template-columns: 1fr;
       }
 
-      .history-section .plot-chart {
+      .plot-chart {
         gap: 4px;
         padding: 10px 8px 8px;
         overflow-x: hidden;
       }
 
-      .history-section .plot-y-label {
+      .plot-y-label {
         font-size: 0.58rem;
       }
 
-      .history-section .plot-body {
+      .plot-body {
         min-width: 0;
       }
 
-      .history-section .plot-bars {
+      .plot-body.has-y-scale {
+        column-gap: 4px;
+      }
+
+      .plot-y-scale {
+        min-height: 160px;
+        font-size: 0.5rem;
+      }
+
+      .plot-bars {
         grid-template-columns: repeat(var(--bar-count, 1), minmax(0, 1fr));
         gap: 3px;
         min-height: 160px;
       }
 
-      .history-section .plot-x-labels {
+      .plot-body.is-interval-plot .plot-bars {
+        gap: 1px;
+      }
+
+      .plot-x-labels {
         grid-template-columns: repeat(var(--bar-count, 1), minmax(0, 1fr));
         gap: 3px;
       }
 
-      .history-section .plot-value,
-      .history-section .plot-x-label {
+      .plot-x-label {
         font-size: 0.52rem;
         line-height: 1.05;
       }
 
-      .history-section .plot-bar {
+      .plot-bar {
         width: min(100%, 18px);
       }
 
@@ -815,6 +923,44 @@
         border: 0;
         box-shadow: none;
         background: transparent;
+      }
+
+      .info-content table {
+        min-width: 0;
+      }
+
+      .info-content .markdown-table thead {
+        display: none;
+      }
+
+      .info-content .markdown-table tr,
+      .info-content .markdown-table td {
+        display: block;
+      }
+
+      .info-content .markdown-table tr {
+        margin-bottom: 12px;
+        border: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      .info-content .markdown-table td {
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .info-content .markdown-table td:last-child {
+        border-bottom: 0;
+      }
+
+      .info-content .markdown-table td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 3px;
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 800;
+        text-transform: uppercase;
       }
 
       .map-frame,
@@ -1325,7 +1471,61 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
 
     document.title = `Stjørdal ${CURRENT_YEAR}`;
 
-    function activateTab(panelId) {
+    const TAB_HASH_BY_PANEL = {
+      overview: "oversigt",
+      catches: "fangster",
+      map: "kort",
+      waterlevel: "vandmaalinger",
+      history: "hvid-vald",
+      historyAll: "jff-vald",
+      info: "fluer",
+      log: "log"
+    };
+
+    const TAB_PANEL_BY_HASH = new Map([
+      ["overview", "overview"],
+      ["oversigt", "overview"],
+      ["catches", "catches"],
+      ["fangster", "catches"],
+      ["map", "map"],
+      ["kort", "map"],
+      ["waterlevel", "waterlevel"],
+      ["vandstand", "waterlevel"],
+      ["vandmaalinger", "waterlevel"],
+      ["vandmålinger", "waterlevel"],
+      ["history", "history"],
+      ["hvid", "history"],
+      ["hvid-vald", "history"],
+      ["h-hvid", "history"],
+      ["historyall", "historyAll"],
+      ["history-all", "historyAll"],
+      ["jff", "historyAll"],
+      ["jff-vald", "historyAll"],
+      ["h-alle", "historyAll"],
+      ["info", "info"],
+      ["fluer", "info"],
+      ["log", "log"]
+    ]);
+
+    function normalizedHash(value) {
+      return decodeURIComponent(String(value ?? ""))
+        .replace(/^#/, "")
+        .trim()
+        .toLowerCase();
+    }
+
+    function panelIdFromHash(value) {
+      return TAB_PANEL_BY_HASH.get(normalizedHash(value)) ?? null;
+    }
+
+    function updateTabHash(panelId) {
+      const hash = TAB_HASH_BY_PANEL[panelId] ?? panelId;
+      if (!hash || normalizedHash(window.location.hash) === normalizedHash(hash)) return;
+      window.history.pushState(null, "", `#${encodeURIComponent(hash)}`);
+    }
+
+    function activateTab(panelId, { updateHash = false } = {}) {
+      if (!document.getElementById(panelId)?.classList.contains("tab-panel")) return false;
       document.querySelectorAll(".tab-button").forEach((item) => {
         item.setAttribute("aria-selected", String(item.getAttribute("aria-controls") === panelId));
       });
@@ -1333,6 +1533,9 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         panel.classList.toggle("active", panel.id === panelId);
       });
       elements.tabSelect.value = panelId;
+      if (updateHash) {
+        updateTabHash(panelId);
+      }
       if (panelId === "map") {
         window.setTimeout(async () => {
           await initMap();
@@ -1354,16 +1557,39 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       if (panelId === "log") {
         window.setTimeout(renderLinkLog, 0);
       }
+      return true;
+    }
+
+    async function openHashTarget() {
+      const hash = normalizedHash(window.location.hash || "");
+      if (!hash) return false;
+      const panelId = panelIdFromHash(hash);
+      if (panelId) {
+        activateTab(panelId);
+        return true;
+      }
+      if (hash.startsWith("hvid-")) {
+        activateTab("history");
+        await loadHistory();
+        window.setTimeout(() => {
+          document.getElementById(hash)?.scrollIntoView({ block: "start" });
+        }, 0);
+        return true;
+      }
+      return false;
     }
 
     document.querySelectorAll(".tab-button").forEach((button) => {
       button.addEventListener("click", () => {
-        activateTab(button.getAttribute("aria-controls"));
+        activateTab(button.getAttribute("aria-controls"), { updateHash: true });
       });
     });
 
+    window.addEventListener("hashchange", openHashTarget);
+    window.addEventListener("popstate", openHashTarget);
+
     elements.tabSelect.addEventListener("change", () => {
-      activateTab(elements.tabSelect.value);
+      activateTab(elements.tabSelect.value, { updateHash: true });
     });
 
     elements.searchInput.addEventListener("input", renderTable);
@@ -1478,36 +1704,60 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       }, new Map());
     }
 
-    function renderBars(container, counts, color = "var(--accent)", yLabel = "Antal") {
+    function renderBars(container, counts, color = "var(--accent)", yLabel = "Antal", options = {}) {
       const entries = [...counts.entries()].sort((a, b) => b[1] - a[1]);
-      renderBarEntries(container, entries, color, (value) => value, yLabel);
+      renderBarEntries(container, entries, color, (value) => value, yLabel, options);
     }
 
-    function renderBarEntries(container, entries, color = "var(--accent)", formatValue = (value) => value, yLabel = "Antal") {
-      container.innerHTML = plotHtml(entries, color, formatValue, yLabel);
+    function renderBarEntries(container, entries, color = "var(--accent)", formatValue = (value) => value, yLabel = "Antal", options = {}) {
+      container.innerHTML = plotHtml(entries, color, formatValue, yLabel, options);
     }
 
-    function plotHtml(entries, color = "var(--accent)", formatValue = (value) => value, yLabel = "Antal") {
-      const max = Math.max(...entries.map(([, value]) => Number(value) || 0), 1);
+    function yAxisTicks(maxValue) {
+      const step = Math.max(1, Math.ceil(maxValue / 4));
+      const top = Math.max(step, Math.ceil(maxValue / step) * step);
+      const ticks = [];
+      for (let value = top; value >= 0; value -= step) {
+        ticks.push(value);
+      }
+      if (ticks[ticks.length - 1] !== 0) ticks.push(0);
+      return ticks;
+    }
+
+    function plotHtml(entries, color = "var(--accent)", formatValue = (value) => value, yLabel = "Antal", options = {}) {
       const safeEntries = entries.filter(([, value]) => Number(value) || Number(value) === 0);
       if (!safeEntries.length) {
         return '<div class="empty">Ingen data.</div>';
       }
+      const rawMax = Math.max(...safeEntries.map(([, value]) => Number(value) || 0), 1);
+      const ticks = options.yScale ? yAxisTicks(rawMax) : [];
+      const max = ticks.length ? ticks[0] : rawMax;
+      const xTickLabels = Array.isArray(options.xTickLabels) ? options.xTickLabels : null;
+      const xMarker = options.xMarker && Number.isFinite(options.xMarker.percent)
+        ? {
+          percent: Math.max(0, Math.min(100, options.xMarker.percent)),
+          label: options.xMarker.label ?? "Reference"
+        }
+        : null;
 
       return `
-        <div class="plot-chart" style="--bar-count: ${safeEntries.length};">
+        <div class="plot-chart" style="--bar-count: ${safeEntries.length};${xTickLabels ? ` --tick-count: ${xTickLabels.length};` : ""}">
           <div class="plot-y-label">${escapeHtml(yLabel)}</div>
-          <div class="plot-body">
+          <div class="plot-body${ticks.length ? " has-y-scale" : ""}${xTickLabels ? " is-interval-plot" : ""}">
+            ${ticks.length ? `<div class="plot-y-scale">${ticks.map((tick) => `<span>${escapeHtml(numberFormat.format(tick))}</span>`).join("")}</div>` : ""}
             <div class="plot-bars">
-              ${safeEntries.map(([label, value]) => `
+              ${xMarker ? `<div class="plot-x-marker" title="${escapeHtml(xMarker.label)}" style="--marker-left: ${xMarker.percent}%;"></div>` : ""}
+              ${safeEntries.map(([label, value]) => {
+                const numericValue = Number(value) || 0;
+                return `
                 <div class="plot-bar-item" title="${escapeHtml(label)}: ${escapeHtml(formatValue(value))}">
-                  <div class="plot-value">${escapeHtml(formatValue(value))}</div>
-                  <div class="plot-bar" style="height: ${((Number(value) || 0) / max) * 100}%; background: ${color};"></div>
+                  <div class="plot-bar${numericValue === 0 ? " is-zero" : ""}" style="height: ${(numericValue / max) * 100}%; background: ${color};"></div>
                 </div>
-              `).join("")}
+              `;
+              }).join("")}
             </div>
-            <div class="plot-x-labels">
-              ${safeEntries.map(([label]) => `<div class="plot-x-label">${escapeHtml(label)}</div>`).join("")}
+            <div class="plot-x-labels${xTickLabels ? " is-interval-axis" : ""}">
+              ${(xTickLabels ?? safeEntries.map(([label]) => label)).map((label) => `<div class="plot-x-label">${escapeHtml(label)}</div>`).join("")}
             </div>
           </div>
         </div>
@@ -1610,10 +1860,10 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         .filter(([, value]) => value !== null)
         .map(([week, value]) => [`Uge ${week}`, value]);
 
-      renderBarEntries(elements.weekChart, averageCatchEntries, "var(--sun)", (value) => String(Math.round(Number(value) || 0)), "Gns. fangster");
-      renderBarEntries(elements.weekFlowChart, averageFlowEntries, "var(--water)", (value) => `${Math.round(Number(value) || 0)} m³/s`, "Gns. vandføring");
-      renderBarEntries(elements.weekWeightChart, averageWeightEntries, "var(--accent)", (value) => `${Math.round(Number(value) || 0)} kg`, "Gns. vægt");
-      renderBars(elements.equipmentChart, countBy(selectedCatches, (item) => item.equipment), "var(--rose)", "Antal fangster");
+      renderBarEntries(elements.weekChart, averageCatchEntries, "var(--sun)", (value) => String(Math.round(Number(value) || 0)), "Gns. fangster", { yScale: true });
+      renderBarEntries(elements.weekFlowChart, averageFlowEntries, "var(--water)", (value) => `${Math.round(Number(value) || 0)} m³/s`, "Gns. vandføring", { yScale: true });
+      renderBarEntries(elements.weekWeightChart, averageWeightEntries, "var(--accent)", (value) => `${Math.round(Number(value) || 0)} kg`, "Gns. vægt", { yScale: true });
+      renderBars(elements.equipmentChart, countBy(selectedCatches, (item) => item.equipment), "var(--rose)", "Antal fangster", { yScale: true });
     }
 
     function renderSpeciesFilter() {
@@ -2353,11 +2603,25 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       `;
     }
 
-    function popupHtml(name, description) {
+    function googleMapsDirectionsUrl(coords) {
+      if (!coords) return "";
+      const [lat, lng] = coords;
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return "";
+      return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${lat},${lng}`)}`;
+    }
+
+    function hasDirectionsLink(layerName) {
+      return ["Parkering", "Overnatning"].includes(layerName);
+    }
+
+    function popupHtml(name, description, actions = []) {
       const cleanDescription = stripHtml(description);
       return [
         `<p class="map-popup-title">${escapeHtml(name || "Fiskeplads")}</p>`,
-        cleanDescription ? `<p class="map-popup-description">${escapeHtml(cleanDescription)}</p>` : ""
+        cleanDescription ? `<p class="map-popup-description">${escapeHtml(cleanDescription)}</p>` : "",
+        ...actions
+          .filter((action) => action.href)
+          .map((action) => `<a class="map-popup-link" href="${escapeHtml(action.href)}" target="_blank" rel="noreferrer">${escapeHtml(action.label)}</a>`)
       ].join("");
     }
 
@@ -2411,7 +2675,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
             index += 1;
           }
           html.push([
-            '<div class="table-frame"><table><thead><tr>',
+            '<div class="table-frame"><table class="markdown-table"><thead><tr>',
             header.map((cell) => `<th>${inlineMarkdownWithLinks(cell)}</th>`).join(""),
             "</tr></thead><tbody>",
             rows.map((row) => `<tr>${row.map((cell, cellIndex) => (
@@ -2464,12 +2728,12 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       const markerIndex = markdown.indexOf(marker);
       if (markerIndex < 0) {
         return {
-          overview: markdown.replace(/^# Info\s*/m, "# Oversigt\n\n"),
+          overview: markdown.replace(/^# Info\s*/m, ""),
           flies: "# Fluer\n\nIngen fluesektion fundet."
         };
       }
       return {
-        overview: markdown.slice(0, markerIndex).replace(/^# Info\s*/m, "# Oversigt\n\n").trim(),
+        overview: markdown.slice(0, markerIndex).replace(/^# Info\s*/m, "").trim(),
         flies: markdown.slice(markerIndex).trim()
       };
     }
@@ -2528,7 +2792,6 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       const name = placemark.querySelector("name")?.textContent ?? "";
       const description = placemark.querySelector("description")?.textContent ?? "";
       const style = styles.get(placemark.querySelector("styleUrl")?.textContent) ?? {};
-      const popup = popupHtml(name, description);
       const point = placemark.querySelector("Point coordinates");
       const line = placemark.querySelector("LineString coordinates");
       const polygons = [...placemark.querySelectorAll("Polygon outerBoundaryIs LinearRing coordinates")];
@@ -2538,6 +2801,9 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         if (coords) {
           let marker = null;
           const icon = mapLayerIcon(layerName);
+          const popup = popupHtml(name, description, hasDirectionsLink(layerName)
+            ? [{ label: "Rutevejledning i Google Maps", href: googleMapsDirectionsUrl(coords) }]
+            : []);
           if (icon) {
             marker = L.marker(coords, { icon }).bindPopup(popup).addTo(layerGroup);
           } else {
@@ -2573,6 +2839,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       if (line) {
         const coords = coordinatesFromText(line.textContent);
         if (coords.length > 1) {
+          const popup = popupHtml(name, description);
           if (layerName === "Hvid zone") {
             hvidZoneLines.push(coords);
           }
@@ -2595,6 +2862,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       polygons.forEach((polygon) => {
         const coords = coordinatesFromText(polygon.textContent);
         if (coords.length > 2) {
+          const popup = popupHtml(name, description);
           L.polygon(coords, {
             color: mapLayerColor(layerName, style.lineColor),
             weight: 2,
@@ -2934,6 +3202,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       const length = Number(item.length_cm);
       const flowValue = Number(item.flow_cms);
       const waterLevelValue = Number(item.water_level_m);
+      const waterTemperatureValue = Number(item.water_temperature_c);
       return {
         id: item.id ?? "",
         date: item.date ?? "",
@@ -2954,7 +3223,8 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         flow_cms: Number.isFinite(flowValue) ? flowValue : null,
         flow_trend: item.flow_trend ?? "",
         water_level_m: Number.isFinite(waterLevelValue) ? waterLevelValue : null,
-        water_level_trend: item.water_level_trend ?? ""
+        water_level_trend: item.water_level_trend ?? "",
+        water_temperature_c: Number.isFinite(waterTemperatureValue) ? waterTemperatureValue : null
       };
     }
 
@@ -2962,6 +3232,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       const date = item.date ?? "";
       const flowValue = Number(item.flow_cms);
       const waterLevelValue = Number(item.water_level_m);
+      const waterTemperatureValue = Number(item.water_temperature_c);
       const year = Number(String(date).slice(0, 4));
       return {
         date,
@@ -2970,7 +3241,8 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         flow_cms: Number.isFinite(flowValue) ? flowValue : null,
         flow_trend: item.flow_trend ?? "",
         water_level_m: Number.isFinite(waterLevelValue) ? waterLevelValue : null,
-        water_level_trend: item.water_level_trend ?? ""
+        water_level_trend: item.water_level_trend ?? "",
+        water_temperature_c: Number.isFinite(waterTemperatureValue) ? waterTemperatureValue : null
       };
     }
 
@@ -3049,6 +3321,8 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
             catchCount: 0,
             flowSum: 0,
             flowCount: 0,
+            temperatureSum: 0,
+            temperatureCount: 0,
             years: new Set()
           });
         }
@@ -3060,6 +3334,10 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
           group.flowSum += item.flowValue;
           group.flowCount += 1;
         }
+        if (item.temperatureValue !== null) {
+          group.temperatureSum += item.temperatureValue;
+          group.temperatureCount += 1;
+        }
       });
 
       return [...groups.values()]
@@ -3067,6 +3345,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
           beat: group.beat,
           catchCount: group.catchCount,
           averageFlow: group.flowCount ? group.flowSum / group.flowCount : null,
+          averageTemperature: group.temperatureCount ? group.temperatureSum / group.temperatureCount : null,
           years: [...group.years].sort((a, b) => a - b)
         }))
         .sort((a, b) => b.catchCount - a.catchCount || a.beat.localeCompare(b.beat, "da-DK"));
@@ -3080,21 +3359,19 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       return `hvid-${normalizePlaceName(beat).replace(/[^a-z0-9]+/g, "-") || "vald"}`;
     }
 
-    function flowHistogramBins(values) {
-      const binSize = 5;
+    function intervalHistogramBins(values, binSize) {
       if (!values.length) return [];
       const min = Math.floor(Math.min(...values) / binSize) * binSize;
-      const max = Math.ceil(Math.max(...values) / binSize) * binSize;
+      const max = Math.floor(Math.max(...values) / binSize) * binSize;
       const bins = [];
-      for (let start = min; start < max + binSize; start += binSize) {
+      for (let start = min; start <= max; start += binSize) {
         bins.push(start);
       }
       return bins;
     }
 
-    function flowHistogramEntries(values, binStarts) {
-      if (!binStarts.length) return [];
-      const binSize = 5;
+    function intervalHistogramData(values, binStarts, binSize) {
+      if (!binStarts.length) return { entries: [], xTickLabels: [], minFlow: null, maxFlow: null };
       const bins = new Map();
       binStarts.forEach((start) => {
         bins.set(start, 0);
@@ -3105,8 +3382,76 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
           bins.set(start, (bins.get(start) || 0) + 1);
         }
       });
-      return [...bins.entries()]
-        .map(([start, count]) => [`${numberFormat.format(start)}-${numberFormat.format(start + binSize)} m³/s`, count]);
+      const starts = [...bins.keys()];
+      const rawTickLabels = starts.length
+        ? [...starts.map((start) => numberFormat.format(start)), numberFormat.format(starts[starts.length - 1] + binSize)]
+        : [];
+      const labelStep = Math.max(1, Math.ceil(rawTickLabels.length / 6));
+      return {
+        entries: [...bins.entries()]
+          .map(([start, count]) => [`${numberFormat.format(start)}-${numberFormat.format(start + binSize)}`, count]),
+        xTickLabels: rawTickLabels.map((label, index) => (
+          index === rawTickLabels.length - 1 ? "" : (index === 0 || index % labelStep === 0 ? label : "")
+        )),
+        minFlow: starts.length ? starts[0] : null,
+        maxFlow: starts.length ? starts[starts.length - 1] + binSize : null
+      };
+    }
+
+    function flowHistogramBins(values) {
+      return intervalHistogramBins(values, 5);
+    }
+
+    function flowHistogramData(values, binStarts) {
+      return intervalHistogramData(values, binStarts, 5);
+    }
+
+    function temperatureHistogramBins(values) {
+      return intervalHistogramBins(values, 1);
+    }
+
+    function temperatureHistogramData(values, binStarts) {
+      return intervalHistogramData(values, binStarts, 1);
+    }
+
+    function hasNumericValue(value) {
+      return value !== null && value !== "" && Number.isFinite(Number(value));
+    }
+
+    function latestDailyFlow() {
+      return dailyFlowRows
+        .filter((row) => row.date && hasNumericValue(row.flow_cms))
+        .sort((a, b) => String(b.date).localeCompare(String(a.date)))[0] ?? null;
+    }
+
+    function latestDailyTemperature() {
+      return dailyFlowRows
+        .filter((row) => row.date && hasNumericValue(row.water_temperature_c))
+        .sort((a, b) => String(b.date).localeCompare(String(a.date)))[0] ?? null;
+    }
+
+    function flowMarkerForHistogram(histogram, latestFlow) {
+      if (!latestFlow || histogram.minFlow === null || histogram.maxFlow === null) return null;
+      const flowValue = Number(latestFlow.flow_cms);
+      if (!Number.isFinite(flowValue) || flowValue < histogram.minFlow || flowValue > histogram.maxFlow) return null;
+      const range = histogram.maxFlow - histogram.minFlow;
+      if (range <= 0) return null;
+      return {
+        percent: ((flowValue - histogram.minFlow) / range) * 100,
+        label: `Seneste vandføring (${latestFlow.date}): ${numberFormat.format(flowValue)} m3/s`
+      };
+    }
+
+    function temperatureMarkerForHistogram(histogram, latestTemperature) {
+      if (!latestTemperature || histogram.minFlow === null || histogram.maxFlow === null) return null;
+      const temperatureValue = Number(latestTemperature.water_temperature_c);
+      if (!Number.isFinite(temperatureValue) || temperatureValue < histogram.minFlow || temperatureValue > histogram.maxFlow) return null;
+      const range = histogram.maxFlow - histogram.minFlow;
+      if (range <= 0) return null;
+      return {
+        percent: ((temperatureValue - histogram.minFlow) / range) * 100,
+        label: `Seneste vandtemperatur (${latestTemperature.date}): ${numberFormat.format(temperatureValue)} °C`
+      };
     }
 
     function flowTrendEntries(rows) {
@@ -3127,39 +3472,48 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
 
     function renderHvidHistorySections(sourceRows, weekFilter, yearFilter = null) {
       const rows = filteredHistoryRows(sourceRows, weekFilter, yearFilter);
+      const latestFlow = latestDailyFlow();
+      const latestTemperature = latestDailyTemperature();
       const groups = new Map();
       rows.forEach((row) => {
         if (!groups.has(row.beat)) groups.set(row.beat, []);
         groups.get(row.beat).push(row);
       });
-      const sharedFlowBins = flowHistogramBins(
-        rows
-          .map((row) => Number(row.flowValue))
-          .filter(Number.isFinite)
-      );
 
       return [...groups.entries()]
         .sort((a, b) => a[0].localeCompare(b[0], "da-DK", { numeric: true }))
         .map(([beat, beatRows]) => {
           const sectionId = historySectionId(beat);
           const flowValues = beatRows
-            .map((row) => Number(row.flowValue))
-            .filter(Number.isFinite);
-          const histogram = flowHistogramEntries(flowValues, sharedFlowBins);
+            .filter((row) => hasNumericValue(row.flowValue))
+            .map((row) => Number(row.flowValue));
+          const histogram = flowHistogramData(flowValues, flowHistogramBins(flowValues));
+          const flowMarker = flowMarkerForHistogram(histogram, latestFlow);
+          const temperatureValues = beatRows
+            .filter((row) => hasNumericValue(row.temperatureValue))
+            .map((row) => Number(row.temperatureValue));
+          const temperatureHistogram = temperatureHistogramData(temperatureValues, temperatureHistogramBins(temperatureValues));
+          const temperatureMarker = temperatureMarkerForHistogram(temperatureHistogram, latestTemperature);
           const trendEntries = flowTrendEntries(beatRows);
           return `
             <section class="history-section" id="${escapeHtml(sectionId)}">
               <h3 class="history-section-title">${escapeHtml(beat)}</h3>
               <div class="history-section-charts">
                 <div>
-                  <h4 class="history-chart-title">Vandføring</h4>
-                  ${histogram.length
-                    ? plotHtml(histogram, "var(--water)", (value) => value, "Antal fangster")
+                  <h4 class="history-chart-title">Vandføring (m<sup>3</sup>/s)</h4>
+                  ${histogram.entries.length
+                    ? plotHtml(histogram.entries, "var(--water)", (value) => value, "Fangster", { yScale: true, xTickLabels: histogram.xTickLabels, xMarker: flowMarker })
                     : '<div class="empty">Ingen vandføringsdata for fangsterne i dette valg.</div>'}
                 </div>
                 <div>
                   <h4 class="history-chart-title">Vandføringstrend</h4>
-                  ${plotHtml(trendEntries, "var(--accent)", (value) => value, "Antal fangster")}
+                  ${plotHtml(trendEntries, "var(--accent)", (value) => value, "Fangster", { yScale: true })}
+                </div>
+                <div>
+                  <h4 class="history-chart-title">Vandtemperatur (°C)</h4>
+                  ${temperatureHistogram.entries.length
+                    ? plotHtml(temperatureHistogram.entries, "var(--rose)", (value) => value, "Fangster", { yScale: true, xTickLabels: temperatureHistogram.xTickLabels, xMarker: temperatureMarker })
+                    : '<div class="empty">Ingen vandtemperaturdata for fangsterne i dette valg.</div>'}
                 </div>
               </div>
             </section>
@@ -3191,6 +3545,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
                 <th>Vald</th>
                 <th>Fangster</th>
                 <th>Gns. vandføring</th>
+                ${includeFlowSections ? "<th>Gns. vandtemp.</th>" : ""}
                 <th>År</th>
               </tr>
             </thead>
@@ -3200,6 +3555,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
                   <td data-label="Vald"><button class="beat-link" type="button" data-map-beat="${escapeHtml(row.beat)}">${escapeHtml(row.beat)}</button></td>
                   <td data-label="Fangster">${includeFlowSections ? `<a class="link" href="#${escapeHtml(historySectionId(row.beat))}">${row.catchCount}</a>` : row.catchCount}</td>
                   <td data-label="Gns. vandføring">${row.averageFlow === null ? "-" : `${numberFormat.format(row.averageFlow)} m³/s`}</td>
+                  ${includeFlowSections ? `<td data-label="Gns. vandtemp.">${row.averageTemperature === null ? "-" : `${numberFormat.format(row.averageTemperature)} °C`}</td>` : ""}
                   <td data-label="År">${escapeHtml(row.years.join(", "))}</td>
                 </tr>
               `).join("")}
@@ -3266,7 +3622,8 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
             week: item.week,
             year: item.history_year,
             flowValue: item.flow_cms,
-            flowTrend: item.flow_trend
+            flowTrend: item.flow_trend,
+            temperatureValue: item.water_temperature_c
           });
         });
 
@@ -3315,7 +3672,8 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
             beat: item.beat || feature.name,
             week: item.week,
             year: item.history_year,
-            flowValue: item.flow_cms
+            flowValue: item.flow_cms,
+            temperatureValue: item.water_temperature_c
           });
         });
 
@@ -3357,7 +3715,9 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         renderTable();
         renderLatestCatchCircles();
         renderLinkLog();
-        loadHistory();
+        if (!window.location.hash.startsWith("#hvid-")) {
+          loadHistory();
+        }
         loadHistoryAll();
       } catch (error) {
         elements.dataStatus.textContent = "Data kunne ikke indlæses";
@@ -3368,7 +3728,8 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
     }
 
     loadInfo();
-    loadData();
+    openHashTarget();
+    loadData().then(openHashTarget);
     window.setInterval(() => loadData({ silent: true }), AUTO_REFRESH_MS);
   </script>
 </body>
