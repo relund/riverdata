@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "generated_at": "2026-06-17T05:34:55Z",
-=======
-  "generated_at": "2026-06-17T08:30:53Z",
->>>>>>> ae051b5 (Update stat)
+  "generated_at": "2026-06-17T09:00:12Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -48,12 +44,8 @@
       "flow_cms": 33.4024,
       "flow_trend": "stigende",
       "water_level_m": 1.1356,
-<<<<<<< HEAD
-      "water_level_trend": "stigende"
-=======
       "water_level_trend": "stigende",
       "water_temperature_c": 11.8188
->>>>>>> ae051b5 (Update stat)
     },
     {
       "id": "710323",
@@ -75,12 +67,8 @@
       "flow_cms": 33.4024,
       "flow_trend": "stigende",
       "water_level_m": 1.1356,
-<<<<<<< HEAD
-      "water_level_trend": "stigende"
-=======
       "water_level_trend": "stigende",
       "water_temperature_c": 11.8188
->>>>>>> ae051b5 (Update stat)
     },
     {
       "id": "710358",
@@ -102,12 +90,8 @@
       "flow_cms": 33.4024,
       "flow_trend": "stigende",
       "water_level_m": 1.1356,
-<<<<<<< HEAD
-      "water_level_trend": "stigende"
-=======
       "water_level_trend": "stigende",
       "water_temperature_c": 11.8188
->>>>>>> ae051b5 (Update stat)
     },
     {
       "id": "710231",
@@ -129,12 +113,8 @@
       "flow_cms": 33.4024,
       "flow_trend": "stigende",
       "water_level_m": 1.1356,
-<<<<<<< HEAD
-      "water_level_trend": "stigende"
-=======
       "water_level_trend": "stigende",
       "water_temperature_c": 11.8188
->>>>>>> ae051b5 (Update stat)
     },
     {
       "id": "710133",
@@ -133910,16 +133890,6 @@
       "flow_cms": 33.4024,
       "flow_trend": "stigende",
       "water_level_m": 1.1356,
-<<<<<<< HEAD
-      "water_level_trend": "stigende"
-    },
-    {
-      "date": "2026-06-17",
-      "flow_cms": 28.7248,
-      "flow_trend": "faldende",
-      "water_level_m": 1.0842,
-      "water_level_trend": "faldende"
-=======
       "water_level_trend": "stigende",
       "water_temperature_c": 11.8188
     },
@@ -133930,7 +133900,6 @@
       "water_level_m": 1.0808,
       "water_level_trend": "faldende",
       "water_temperature_c": 11.7454
->>>>>>> ae051b5 (Update stat)
     }
   ]
 }
