@@ -37,7 +37,7 @@ output_file <- file.path(repo_dir, "data", "stjordal-history.json")
 
 neutral_abs_cms <- 1
 neutral_rel <- 0.03
-neutral_abs_stage_m <- 0.02
+neutral_abs_stage_m <- 0.05
 neutral_stage_rel <- 0
 release_flag_schema_version <- 2
 

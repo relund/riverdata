@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T08:01:08Z",
+  "generated_at": "2026-06-18T10:04:40Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -16,7 +16,7 @@
     "parameter": 1000,
     "unit": "m",
     "trend_source": "daily average water level",
-    "neutral_abs_m": 0.02,
+    "neutral_abs_m": 0.05,
     "neutral_rel": 0
   },
   "water_temperature": {
@@ -160,7 +160,7 @@
       "flow_cms": 33.4024,
       "flow_trend": "stigende",
       "water_level_m": 1.1356,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8188
     },
     {
@@ -183,7 +183,7 @@
       "flow_cms": 33.4024,
       "flow_trend": "stigende",
       "water_level_m": 1.1356,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8188
     },
     {
@@ -206,7 +206,7 @@
       "flow_cms": 33.4024,
       "flow_trend": "stigende",
       "water_level_m": 1.1356,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8188
     },
     {
@@ -229,7 +229,7 @@
       "flow_cms": 33.4024,
       "flow_trend": "stigende",
       "water_level_m": 1.1356,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8188
     },
     {
@@ -988,7 +988,7 @@
       "flow_cms": 27.8776,
       "flow_trend": "faldende",
       "water_level_m": 1.0744,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 13.7679
     },
     {
@@ -1011,7 +1011,7 @@
       "flow_cms": 27.8776,
       "flow_trend": "faldende",
       "water_level_m": 1.0744,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 13.7679
     },
     {
@@ -1034,7 +1034,7 @@
       "flow_cms": 30.2559,
       "flow_trend": "faldende",
       "water_level_m": 1.1016,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 12.4721
     },
     {
@@ -1057,7 +1057,7 @@
       "flow_cms": 30.2559,
       "flow_trend": "faldende",
       "water_level_m": 1.1016,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 12.4721
     },
     {
@@ -1080,7 +1080,7 @@
       "flow_cms": 30.2559,
       "flow_trend": "faldende",
       "water_level_m": 1.1016,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 12.4721
     },
     {
@@ -1103,7 +1103,7 @@
       "flow_cms": 30.2559,
       "flow_trend": "faldende",
       "water_level_m": 1.1016,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 12.4721
     },
     {
@@ -1724,7 +1724,7 @@
       "flow_cms": 64.4446,
       "flow_trend": "faldende",
       "water_level_m": 1.4141,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8525
     },
     {
@@ -1747,7 +1747,7 @@
       "flow_cms": 64.4446,
       "flow_trend": "faldende",
       "water_level_m": 1.4141,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8525
     },
     {
@@ -1770,7 +1770,7 @@
       "flow_cms": 64.4446,
       "flow_trend": "faldende",
       "water_level_m": 1.4141,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8525
     },
     {
@@ -1793,7 +1793,7 @@
       "flow_cms": 64.4446,
       "flow_trend": "faldende",
       "water_level_m": 1.4141,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8525
     },
     {
@@ -1816,7 +1816,7 @@
       "flow_cms": 64.4446,
       "flow_trend": "faldende",
       "water_level_m": 1.4141,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8525
     },
     {
@@ -1839,7 +1839,7 @@
       "flow_cms": 64.4446,
       "flow_trend": "faldende",
       "water_level_m": 1.4141,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8525
     },
     {
@@ -1862,7 +1862,7 @@
       "flow_cms": 64.4446,
       "flow_trend": "faldende",
       "water_level_m": 1.4141,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8525
     },
     {
@@ -1885,7 +1885,7 @@
       "flow_cms": 64.4446,
       "flow_trend": "faldende",
       "water_level_m": 1.4141,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8525
     },
     {
@@ -123918,7 +123918,7 @@
       "flow_cms": 74.1572,
       "flow_trend": "stigende",
       "water_level_m": 1.4849,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.0223
     },
     {
@@ -124014,7 +124014,7 @@
       "flow_cms": 45.1999,
       "flow_trend": "faldende",
       "water_level_m": 1.2528,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0
     },
     {
@@ -124022,7 +124022,7 @@
       "flow_cms": 42.6444,
       "flow_trend": "faldende",
       "water_level_m": 1.229,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0
     },
     {
@@ -124038,7 +124038,7 @@
       "flow_cms": 43.802,
       "flow_trend": "stigende",
       "water_level_m": 1.2394,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.0001
     },
     {
@@ -124046,7 +124046,7 @@
       "flow_cms": 40.5304,
       "flow_trend": "faldende",
       "water_level_m": 1.2084,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0
     },
     {
@@ -124054,7 +124054,7 @@
       "flow_cms": 37.5671,
       "flow_trend": "faldende",
       "water_level_m": 1.1793,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0
     },
     {
@@ -124166,7 +124166,7 @@
       "flow_cms": 41.2026,
       "flow_trend": "faldende",
       "water_level_m": 1.2152,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1
     },
     {
@@ -124174,7 +124174,7 @@
       "flow_cms": 38.2249,
       "flow_trend": "faldende",
       "water_level_m": 1.1859,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1
     },
     {
@@ -124190,7 +124190,7 @@
       "flow_cms": 73.3261,
       "flow_trend": "stigende",
       "water_level_m": 1.4667,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.0575
     },
     {
@@ -124214,7 +124214,7 @@
       "flow_cms": 30.5626,
       "flow_trend": "faldende",
       "water_level_m": 1.1051,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1595
     },
     {
@@ -124310,7 +124310,7 @@
       "flow_cms": 41.9437,
       "flow_trend": "faldende",
       "water_level_m": 1.2223,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0
     },
     {
@@ -124326,7 +124326,7 @@
       "flow_cms": 38.3809,
       "flow_trend": "faldende",
       "water_level_m": 1.1873,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0
     },
     {
@@ -124334,7 +124334,7 @@
       "flow_cms": 33.9701,
       "flow_trend": "faldende",
       "water_level_m": 1.1421,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.0207
     },
     {
@@ -124342,7 +124342,7 @@
       "flow_cms": 31.4098,
       "flow_trend": "faldende",
       "water_level_m": 1.1145,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.0942
     },
     {
@@ -124350,7 +124350,7 @@
       "flow_cms": 29.2982,
       "flow_trend": "faldende",
       "water_level_m": 1.0908,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1244
     },
     {
@@ -124382,7 +124382,7 @@
       "flow_cms": 123.8157,
       "flow_trend": "faldende",
       "water_level_m": 1.7974,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.2219
     },
     {
@@ -124422,7 +124422,7 @@
       "flow_cms": 67.8265,
       "flow_trend": "stigende",
       "water_level_m": 1.4402,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.0094
     },
     {
@@ -124430,7 +124430,7 @@
       "flow_cms": 62.2541,
       "flow_trend": "faldende",
       "water_level_m": 1.3974,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.0372
     },
     {
@@ -124438,7 +124438,7 @@
       "flow_cms": 58.9057,
       "flow_trend": "faldende",
       "water_level_m": 1.3707,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.0164
     },
     {
@@ -124446,7 +124446,7 @@
       "flow_cms": 54.6354,
       "flow_trend": "faldende",
       "water_level_m": 1.3356,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.0201
     },
     {
@@ -124470,7 +124470,7 @@
       "flow_cms": 50.8319,
       "flow_trend": "faldende",
       "water_level_m": 1.3031,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.0235
     },
     {
@@ -124534,7 +124534,7 @@
       "flow_cms": 38.7637,
       "flow_trend": "faldende",
       "water_level_m": 1.1913,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.3117
     },
     {
@@ -124606,7 +124606,7 @@
       "flow_cms": 37.5718,
       "flow_trend": "stigende",
       "water_level_m": 1.1789,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.0837
     },
     {
@@ -124630,7 +124630,7 @@
       "flow_cms": 30.235,
       "flow_trend": "faldende",
       "water_level_m": 1.1012,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.5326
     },
     {
@@ -124662,7 +124662,7 @@
       "flow_cms": 27.2134,
       "flow_trend": "faldende",
       "water_level_m": 1.0664,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.0291
     },
     {
@@ -124670,7 +124670,7 @@
       "flow_cms": 25.4274,
       "flow_trend": "faldende",
       "water_level_m": 1.0451,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.2967
     },
     {
@@ -124678,7 +124678,7 @@
       "flow_cms": 23.3713,
       "flow_trend": "faldende",
       "water_level_m": 1.0187,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.0233
     },
     {
@@ -124686,7 +124686,7 @@
       "flow_cms": 19.8112,
       "flow_trend": "faldende",
       "water_level_m": 0.9721,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.5961
     },
     {
@@ -124694,7 +124694,7 @@
       "flow_cms": 21.5107,
       "flow_trend": "stigende",
       "water_level_m": 0.9951,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.5004
     },
     {
@@ -124702,7 +124702,7 @@
       "flow_cms": 23.5938,
       "flow_trend": "stigende",
       "water_level_m": 1.0222,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.3977
     },
     {
@@ -124758,7 +124758,7 @@
       "flow_cms": 99.8406,
       "flow_trend": "stigende",
       "water_level_m": 1.6575,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.1302
     },
     {
@@ -124774,7 +124774,7 @@
       "flow_cms": 90.4178,
       "flow_trend": "stigende",
       "water_level_m": 1.5979,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.719
     },
     {
@@ -124782,7 +124782,7 @@
       "flow_cms": 97.8766,
       "flow_trend": "stigende",
       "water_level_m": 1.6451,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 3.022
     },
     {
@@ -124830,7 +124830,7 @@
       "flow_cms": 50.3272,
       "flow_trend": "faldende",
       "water_level_m": 1.2986,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.1225
     },
     {
@@ -124846,7 +124846,7 @@
       "flow_cms": 62.7005,
       "flow_trend": "stigende",
       "water_level_m": 1.4008,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.5973
     },
     {
@@ -124902,7 +124902,7 @@
       "flow_cms": 36.0422,
       "flow_trend": "faldende",
       "water_level_m": 1.1637,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 4.2527
     },
     {
@@ -125030,7 +125030,7 @@
       "flow_cms": 144.9756,
       "flow_trend": "faldende",
       "water_level_m": 1.9113,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 6.8553
     },
     {
@@ -125038,7 +125038,7 @@
       "flow_cms": 148.7614,
       "flow_trend": "neutral",
       "water_level_m": 1.9313,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 7.1027
     },
     {
@@ -125126,7 +125126,7 @@
       "flow_cms": 107.3887,
       "flow_trend": "faldende",
       "water_level_m": 1.7044,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 5.6027
     },
     {
@@ -125166,7 +125166,7 @@
       "flow_cms": 99.2692,
       "flow_trend": "faldende",
       "water_level_m": 1.6537,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 7.0764
     },
     {
@@ -125190,7 +125190,7 @@
       "flow_cms": 78.9529,
       "flow_trend": "stigende",
       "water_level_m": 1.5207,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 10.205
     },
     {
@@ -125198,7 +125198,7 @@
       "flow_cms": 75.0559,
       "flow_trend": "faldende",
       "water_level_m": 1.4928,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 10.7556
     },
     {
@@ -125214,7 +125214,7 @@
       "flow_cms": 62.0777,
       "flow_trend": "faldende",
       "water_level_m": 1.3956,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 12.5356
     },
     {
@@ -125222,7 +125222,7 @@
       "flow_cms": 57.1766,
       "flow_trend": "faldende",
       "water_level_m": 1.3559,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 12.8076
     },
     {
@@ -125238,7 +125238,7 @@
       "flow_cms": 47.2133,
       "flow_trend": "faldende",
       "water_level_m": 1.2709,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.4642
     },
     {
@@ -125278,7 +125278,7 @@
       "flow_cms": 40.8787,
       "flow_trend": "faldende",
       "water_level_m": 1.2119,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 17.527
     },
     {
@@ -125286,7 +125286,7 @@
       "flow_cms": 43.4982,
       "flow_trend": "stigende",
       "water_level_m": 1.2369,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 17.3195
     },
     {
@@ -125318,7 +125318,7 @@
       "flow_cms": 28.4635,
       "flow_trend": "faldende",
       "water_level_m": 1.0812,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 17.3768
     },
     {
@@ -125342,7 +125342,7 @@
       "flow_cms": 24.4237,
       "flow_trend": "faldende",
       "water_level_m": 1.0326,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 17.6058
     },
     {
@@ -125390,7 +125390,7 @@
       "flow_cms": 58.1513,
       "flow_trend": "faldende",
       "water_level_m": 1.3628,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 13.8021
     },
     {
@@ -125406,7 +125406,7 @@
       "flow_cms": 35.777,
       "flow_trend": "faldende",
       "water_level_m": 1.1586,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.7926
     },
     {
@@ -125438,7 +125438,7 @@
       "flow_cms": 30.8392,
       "flow_trend": "stigende",
       "water_level_m": 1.107,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 17.8889
     },
     {
@@ -125454,7 +125454,7 @@
       "flow_cms": 27.6976,
       "flow_trend": "stigende",
       "water_level_m": 1.0716,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 15.8598
     },
     {
@@ -125494,7 +125494,7 @@
       "flow_cms": 39.6386,
       "flow_trend": "stigende",
       "water_level_m": 1.1997,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 15.5564
     },
     {
@@ -125502,7 +125502,7 @@
       "flow_cms": 42.56,
       "flow_trend": "stigende",
       "water_level_m": 1.2279,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.8663
     },
     {
@@ -125510,7 +125510,7 @@
       "flow_cms": 38.6398,
       "flow_trend": "faldende",
       "water_level_m": 1.1898,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.2649
     },
     {
@@ -125558,7 +125558,7 @@
       "flow_cms": 25.7485,
       "flow_trend": "faldende",
       "water_level_m": 1.049,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 15.8074
     },
     {
@@ -125566,7 +125566,7 @@
       "flow_cms": 30.0751,
       "flow_trend": "stigende",
       "water_level_m": 1.0895,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 16.3299
     },
     {
@@ -125590,7 +125590,7 @@
       "flow_cms": 53.3409,
       "flow_trend": "stigende",
       "water_level_m": 1.3246,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.2841
     },
     {
@@ -125622,7 +125622,7 @@
       "flow_cms": 19.9658,
       "flow_trend": "faldende",
       "water_level_m": 0.9743,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 16.7859
     },
     {
@@ -125630,7 +125630,7 @@
       "flow_cms": 21.8704,
       "flow_trend": "stigende",
       "water_level_m": 0.9997,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 16.1707
     },
     {
@@ -125646,7 +125646,7 @@
       "flow_cms": 20.7356,
       "flow_trend": "faldende",
       "water_level_m": 0.9848,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 15.0426
     },
     {
@@ -125686,7 +125686,7 @@
       "flow_cms": 52.7392,
       "flow_trend": "faldende",
       "water_level_m": 1.3196,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.4008
     },
     {
@@ -125702,7 +125702,7 @@
       "flow_cms": 42.8274,
       "flow_trend": "faldende",
       "water_level_m": 1.2304,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.9342
     },
     {
@@ -125838,7 +125838,7 @@
       "flow_cms": 37.357,
       "flow_trend": "faldende",
       "water_level_m": 1.177,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 13.8489
     },
     {
@@ -125854,7 +125854,7 @@
       "flow_cms": 29.55,
       "flow_trend": "faldende",
       "water_level_m": 1.0937,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 13.7286
     },
     {
@@ -125870,7 +125870,7 @@
       "flow_cms": 25.1777,
       "flow_trend": "faldende",
       "water_level_m": 1.0416,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 12.8797
     },
     {
@@ -125982,7 +125982,7 @@
       "flow_cms": 40.7479,
       "flow_trend": "faldende",
       "water_level_m": 1.2107,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 10.2996
     },
     {
@@ -125990,7 +125990,7 @@
       "flow_cms": 35.8428,
       "flow_trend": "faldende",
       "water_level_m": 1.1616,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 9.9273
     },
     {
@@ -126054,7 +126054,7 @@
       "flow_cms": 69.907,
       "flow_trend": "faldende",
       "water_level_m": 1.4543,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 10.7893
     },
     {
@@ -126062,7 +126062,7 @@
       "flow_cms": 78.5406,
       "flow_trend": "stigende",
       "water_level_m": 1.4915,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 10.4783
     },
     {
@@ -126118,7 +126118,7 @@
       "flow_cms": 82.4941,
       "flow_trend": "faldende",
       "water_level_m": 1.5439,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 8.8522
     },
     {
@@ -126190,7 +126190,7 @@
       "flow_cms": 196.0848,
       "flow_trend": "neutral",
       "water_level_m": 2.1476,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 5.0817
     },
     {
@@ -126270,7 +126270,7 @@
       "flow_cms": 68.6792,
       "flow_trend": "faldende",
       "water_level_m": 1.4467,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 4.1434
     },
     {
@@ -126286,7 +126286,7 @@
       "flow_cms": 62.7391,
       "flow_trend": "faldende",
       "water_level_m": 1.4008,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 3.6254
     },
     {
@@ -126294,7 +126294,7 @@
       "flow_cms": 58.8664,
       "flow_trend": "faldende",
       "water_level_m": 1.3704,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.9081
     },
     {
@@ -126414,7 +126414,7 @@
       "flow_cms": 15.9302,
       "flow_trend": "faldende",
       "water_level_m": 0.9155,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.0338
     },
     {
@@ -126478,7 +126478,7 @@
       "flow_cms": 96.334,
       "flow_trend": "stigende",
       "water_level_m": 1.6364,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126486,7 +126486,7 @@
       "flow_cms": 101.95,
       "flow_trend": "stigende",
       "water_level_m": 1.6713,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126542,7 +126542,7 @@
       "flow_cms": 126.2363,
       "flow_trend": "stigende",
       "water_level_m": 1.813,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126558,7 +126558,7 @@
       "flow_cms": 148.1866,
       "flow_trend": "stigende",
       "water_level_m": 1.9295,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126566,7 +126566,7 @@
       "flow_cms": 157.2175,
       "flow_trend": "stigende",
       "water_level_m": 1.9754,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126590,7 +126590,7 @@
       "flow_cms": 164.35,
       "flow_trend": "faldende",
       "water_level_m": 2.0104,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126614,7 +126614,7 @@
       "flow_cms": 188.4011,
       "flow_trend": "stigende",
       "water_level_m": 2.1234,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126630,7 +126630,7 @@
       "flow_cms": 196.4622,
       "flow_trend": "neutral",
       "water_level_m": 2.1589,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126638,7 +126638,7 @@
       "flow_cms": 185.6744,
       "flow_trend": "faldende",
       "water_level_m": 2.1109,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126670,7 +126670,7 @@
       "flow_cms": 209.1803,
       "flow_trend": "faldende",
       "water_level_m": 2.2153,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126718,7 +126718,7 @@
       "flow_cms": 273.225,
       "flow_trend": "stigende",
       "water_level_m": 2.4717,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126782,7 +126782,7 @@
       "flow_cms": 143.7453,
       "flow_trend": "stigende",
       "water_level_m": 1.9068,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126806,7 +126806,7 @@
       "flow_cms": 111.3778,
       "flow_trend": "faldende",
       "water_level_m": 1.7282,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126822,7 +126822,7 @@
       "flow_cms": 103.5026,
       "flow_trend": "faldende",
       "water_level_m": 1.6809,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126830,7 +126830,7 @@
       "flow_cms": 99.3109,
       "flow_trend": "faldende",
       "water_level_m": 1.6551,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -126886,7 +126886,7 @@
       "flow_cms": 200.0179,
       "flow_trend": "stigende",
       "water_level_m": 2.1754,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -127046,7 +127046,7 @@
       "flow_cms": 109.3232,
       "flow_trend": "stigende",
       "water_level_m": 1.7143,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -127182,7 +127182,7 @@
       "flow_cms": 208.3577,
       "flow_trend": "stigende",
       "water_level_m": 2.2117,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -127190,7 +127190,7 @@
       "flow_cms": 219.7807,
       "flow_trend": "stigende",
       "water_level_m": 2.2607,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -127230,7 +127230,7 @@
       "flow_cms": 117.5793,
       "flow_trend": "faldende",
       "water_level_m": 1.763,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -127262,7 +127262,7 @@
       "flow_cms": 138.0366,
       "flow_trend": "faldende",
       "water_level_m": 1.8765,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -127294,7 +127294,7 @@
       "flow_cms": 85.8145,
       "flow_trend": "faldende",
       "water_level_m": 1.5678,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -127302,7 +127302,7 @@
       "flow_cms": 90.1087,
       "flow_trend": "stigende",
       "water_level_m": 1.5955,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -127326,7 +127326,7 @@
       "flow_cms": 139.0902,
       "flow_trend": "stigende",
       "water_level_m": 1.8825,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -127342,7 +127342,7 @@
       "flow_cms": 170.8065,
       "flow_trend": "stigende",
       "water_level_m": 2.0407,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.0688
     },
     {
@@ -127390,7 +127390,7 @@
       "flow_cms": 63.1417,
       "flow_trend": "faldende",
       "water_level_m": 1.4039,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0
     },
     {
@@ -127414,7 +127414,7 @@
       "flow_cms": 63.9887,
       "flow_trend": "stigende",
       "water_level_m": 1.4108,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0
     },
     {
@@ -127454,7 +127454,7 @@
       "flow_cms": 26.9897,
       "flow_trend": "faldende",
       "water_level_m": 1.0639,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.7087
     },
     {
@@ -127470,7 +127470,7 @@
       "flow_cms": 31.3496,
       "flow_trend": "stigende",
       "water_level_m": 1.1137,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.253
     },
     {
@@ -127478,7 +127478,7 @@
       "flow_cms": 35.1839,
       "flow_trend": "stigende",
       "water_level_m": 1.1548,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.319
     },
     {
@@ -127494,7 +127494,7 @@
       "flow_cms": 31.6822,
       "flow_trend": "faldende",
       "water_level_m": 1.1174,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.8081
     },
     {
@@ -127502,7 +127502,7 @@
       "flow_cms": 28.2145,
       "flow_trend": "faldende",
       "water_level_m": 1.0783,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.9748
     },
     {
@@ -127510,7 +127510,7 @@
       "flow_cms": 25.5412,
       "flow_trend": "faldende",
       "water_level_m": 1.0463,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.635
     },
     {
@@ -127550,7 +127550,7 @@
       "flow_cms": 52.253,
       "flow_trend": "stigende",
       "water_level_m": 1.3153,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.9992
     },
     {
@@ -127566,7 +127566,7 @@
       "flow_cms": 54.0674,
       "flow_trend": "faldende",
       "water_level_m": 1.3302,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.0297
     },
     {
@@ -127590,7 +127590,7 @@
       "flow_cms": 27.2608,
       "flow_trend": "faldende",
       "water_level_m": 1.0671,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.5645
     },
     {
@@ -127622,7 +127622,7 @@
       "flow_cms": 87.9781,
       "flow_trend": "stigende",
       "water_level_m": 1.5813,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.5995
     },
     {
@@ -127798,7 +127798,7 @@
       "flow_cms": 151.2022,
       "flow_trend": "neutral",
       "water_level_m": 1.9397,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 3.5909
     },
     {
@@ -127814,7 +127814,7 @@
       "flow_cms": 166.0705,
       "flow_trend": "faldende",
       "water_level_m": 2.015,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 4.1469
     },
     {
@@ -127902,7 +127902,7 @@
       "flow_cms": 145.5125,
       "flow_trend": "neutral",
       "water_level_m": 1.9149,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 7.3366
     },
     {
@@ -127926,7 +127926,7 @@
       "flow_cms": 107.8784,
       "flow_trend": "faldende",
       "water_level_m": 1.7061,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 9.3399
     },
     {
@@ -127958,7 +127958,7 @@
       "flow_cms": 64.1504,
       "flow_trend": "faldende",
       "water_level_m": 1.4119,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 9.2175
     },
     {
@@ -127966,7 +127966,7 @@
       "flow_cms": 70.3711,
       "flow_trend": "stigende",
       "water_level_m": 1.4588,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 10.5079
     },
     {
@@ -127974,7 +127974,7 @@
       "flow_cms": 64.5203,
       "flow_trend": "faldende",
       "water_level_m": 1.4142,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.3973
     },
     {
@@ -127990,7 +127990,7 @@
       "flow_cms": 58.9493,
       "flow_trend": "faldende",
       "water_level_m": 1.3704,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 12.7857
     },
     {
@@ -128014,7 +128014,7 @@
       "flow_cms": 52.7197,
       "flow_trend": "faldende",
       "water_level_m": 1.3189,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.6829
     },
     {
@@ -128022,7 +128022,7 @@
       "flow_cms": 47.3798,
       "flow_trend": "faldende",
       "water_level_m": 1.2725,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.7219
     },
     {
@@ -128030,7 +128030,7 @@
       "flow_cms": 43.3632,
       "flow_trend": "faldende",
       "water_level_m": 1.2343,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.4688
     },
     {
@@ -128046,7 +128046,7 @@
       "flow_cms": 32.5708,
       "flow_trend": "faldende",
       "water_level_m": 1.1268,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.1608
     },
     {
@@ -128054,7 +128054,7 @@
       "flow_cms": 28.1229,
       "flow_trend": "faldende",
       "water_level_m": 1.0772,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 13.7997
     },
     {
@@ -128078,7 +128078,7 @@
       "flow_cms": 32.072,
       "flow_trend": "stigende",
       "water_level_m": 1.1124,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8246
     },
     {
@@ -128118,7 +128118,7 @@
       "flow_cms": 31.0783,
       "flow_trend": "stigende",
       "water_level_m": 1.1087,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.849
     },
     {
@@ -128246,7 +128246,7 @@
       "flow_cms": 27.1653,
       "flow_trend": "faldende",
       "water_level_m": 1.066,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 16.4557
     },
     {
@@ -128262,7 +128262,7 @@
       "flow_cms": 23.5442,
       "flow_trend": "faldende",
       "water_level_m": 1.0216,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 17.8586
     },
     {
@@ -128294,7 +128294,7 @@
       "flow_cms": 46.2236,
       "flow_trend": "stigende",
       "water_level_m": 1.2613,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 12.9429
     },
     {
@@ -128302,7 +128302,7 @@
       "flow_cms": 43.4017,
       "flow_trend": "faldende",
       "water_level_m": 1.2352,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 12.9397
     },
     {
@@ -128398,7 +128398,7 @@
       "flow_cms": 27.1289,
       "flow_trend": "faldende",
       "water_level_m": 1.0655,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 17.2012
     },
     {
@@ -128406,7 +128406,7 @@
       "flow_cms": 23.6967,
       "flow_trend": "faldende",
       "water_level_m": 1.0235,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 18.0056
     },
     {
@@ -128414,7 +128414,7 @@
       "flow_cms": 21.2334,
       "flow_trend": "faldende",
       "water_level_m": 0.9915,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 17.9107
     },
     {
@@ -128550,7 +128550,7 @@
       "flow_cms": 47.2105,
       "flow_trend": "faldende",
       "water_level_m": 1.271,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.4532
     },
     {
@@ -128582,7 +128582,7 @@
       "flow_cms": 27.0775,
       "flow_trend": "faldende",
       "water_level_m": 1.065,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 17.0905
     },
     {
@@ -128598,7 +128598,7 @@
       "flow_cms": 19.9166,
       "flow_trend": "faldende",
       "water_level_m": 0.9736,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 15.9629
     },
     {
@@ -128814,7 +128814,7 @@
       "flow_cms": 35.9782,
       "flow_trend": "faldende",
       "water_level_m": 1.1624,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.1916
     },
     {
@@ -128830,7 +128830,7 @@
       "flow_cms": 26.7981,
       "flow_trend": "faldende",
       "water_level_m": 1.0616,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 15.2477
     },
     {
@@ -128838,7 +128838,7 @@
       "flow_cms": 24.73,
       "flow_trend": "faldende",
       "water_level_m": 1.0365,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.8193
     },
     {
@@ -128902,7 +128902,7 @@
       "flow_cms": 40.8375,
       "flow_trend": "faldende",
       "water_level_m": 1.2116,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.1119
     },
     {
@@ -128934,7 +128934,7 @@
       "flow_cms": 26.7253,
       "flow_trend": "faldende",
       "water_level_m": 1.0608,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.4991
     },
     {
@@ -128966,7 +128966,7 @@
       "flow_cms": 31.4613,
       "flow_trend": "stigende",
       "water_level_m": 1.1149,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 9.9501
     },
     {
@@ -128998,7 +128998,7 @@
       "flow_cms": 76.4593,
       "flow_trend": "faldende",
       "water_level_m": 1.5024,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 7.2326
     },
     {
@@ -129126,7 +129126,7 @@
       "flow_cms": 91.3653,
       "flow_trend": "stigende",
       "water_level_m": 1.6045,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 5.6792
     },
     {
@@ -129142,7 +129142,7 @@
       "flow_cms": 78.7894,
       "flow_trend": "faldende",
       "water_level_m": 1.5197,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 5.0393
     },
     {
@@ -129150,7 +129150,7 @@
       "flow_cms": 73.9182,
       "flow_trend": "faldende",
       "water_level_m": 1.4852,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 5.7117
     },
     {
@@ -129158,7 +129158,7 @@
       "flow_cms": 69.3533,
       "flow_trend": "faldende",
       "water_level_m": 1.4516,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 6.4629
     },
     {
@@ -129182,7 +129182,7 @@
       "flow_cms": 44.588,
       "flow_trend": "faldende",
       "water_level_m": 1.2469,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 8.0147
     },
     {
@@ -129246,7 +129246,7 @@
       "flow_cms": 58.0485,
       "flow_trend": "faldende",
       "water_level_m": 1.3637,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 4.1376
     },
     {
@@ -129438,7 +129438,7 @@
       "flow_cms": 67.6987,
       "flow_trend": "faldende",
       "water_level_m": 1.4393,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.4092
     },
     {
@@ -129446,7 +129446,7 @@
       "flow_cms": 63.4306,
       "flow_trend": "faldende",
       "water_level_m": 1.406,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.754
     },
     {
@@ -129470,7 +129470,7 @@
       "flow_cms": 36.8818,
       "flow_trend": "stigende",
       "water_level_m": 1.1724,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.1904
     },
     {
@@ -129502,7 +129502,7 @@
       "flow_cms": 59.7773,
       "flow_trend": "stigende",
       "water_level_m": 1.3757,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.7242
     },
     {
@@ -129678,7 +129678,7 @@
       "flow_cms": 39.4725,
       "flow_trend": "faldende",
       "water_level_m": 1.1982,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -129694,7 +129694,7 @@
       "flow_cms": 42.8591,
       "flow_trend": "stigende",
       "water_level_m": 1.2309,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.0161
     },
     {
@@ -129758,7 +129758,7 @@
       "flow_cms": 60.9836,
       "flow_trend": "stigende",
       "water_level_m": 1.3857,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.0972
     },
     {
@@ -129942,7 +129942,7 @@
       "flow_cms": 80.5412,
       "flow_trend": "faldende",
       "water_level_m": 1.532,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -129982,7 +129982,7 @@
       "flow_cms": 52.4557,
       "flow_trend": "faldende",
       "water_level_m": 1.3168,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.0285
     },
     {
@@ -129998,7 +129998,7 @@
       "flow_cms": 47.6414,
       "flow_trend": "faldende",
       "water_level_m": 1.2749,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.4204
     },
     {
@@ -130014,7 +130014,7 @@
       "flow_cms": 41.786,
       "flow_trend": "faldende",
       "water_level_m": 1.2208,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -130022,7 +130022,7 @@
       "flow_cms": 44.7547,
       "flow_trend": "stigende",
       "water_level_m": 1.2485,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -130030,7 +130030,7 @@
       "flow_cms": 47.1526,
       "flow_trend": "stigende",
       "water_level_m": 1.2706,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.0928
     },
     {
@@ -130070,7 +130070,7 @@
       "flow_cms": 40.8975,
       "flow_trend": "faldende",
       "water_level_m": 1.2122,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -130142,7 +130142,7 @@
       "flow_cms": 40.9503,
       "flow_trend": "faldende",
       "water_level_m": 1.2126,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.039
     },
     {
@@ -130150,7 +130150,7 @@
       "flow_cms": 37.6147,
       "flow_trend": "faldende",
       "water_level_m": 1.1798,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.0199
     },
     {
@@ -130158,7 +130158,7 @@
       "flow_cms": 40.2024,
       "flow_trend": "stigende",
       "water_level_m": 1.2055,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.1
     },
     {
@@ -130198,7 +130198,7 @@
       "flow_cms": 74.0503,
       "flow_trend": "stigende",
       "water_level_m": 1.4857,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.4921
     },
     {
@@ -130222,7 +130222,7 @@
       "flow_cms": 48.3605,
       "flow_trend": "faldende",
       "water_level_m": 1.2811,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.575
     },
     {
@@ -130326,7 +130326,7 @@
       "flow_cms": 59.725,
       "flow_trend": "faldende",
       "water_level_m": 1.3773,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.3633
     },
     {
@@ -130358,7 +130358,7 @@
       "flow_cms": 56.1118,
       "flow_trend": "faldende",
       "water_level_m": 1.3476,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.484
     },
     {
@@ -130406,7 +130406,7 @@
       "flow_cms": 72.6209,
       "flow_trend": "faldende",
       "water_level_m": 1.4756,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.721
     },
     {
@@ -130414,7 +130414,7 @@
       "flow_cms": 68.9019,
       "flow_trend": "faldende",
       "water_level_m": 1.4475,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.4287
     },
     {
@@ -130430,7 +130430,7 @@
       "flow_cms": 95.167,
       "flow_trend": "stigende",
       "water_level_m": 1.6232,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.7104
     },
     {
@@ -130518,7 +130518,7 @@
       "flow_cms": 93.4311,
       "flow_trend": "faldende",
       "water_level_m": 1.6178,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.4384
     },
     {
@@ -130646,7 +130646,7 @@
       "flow_cms": 122.0743,
       "flow_trend": "faldende",
       "water_level_m": 1.7894,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 3.9998
     },
     {
@@ -130806,7 +130806,7 @@
       "flow_cms": 118.8708,
       "flow_trend": "faldende",
       "water_level_m": 1.7706,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 7.1863
     },
     {
@@ -130814,7 +130814,7 @@
       "flow_cms": 112.0704,
       "flow_trend": "faldende",
       "water_level_m": 1.732,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 6.7069
     },
     {
@@ -130846,7 +130846,7 @@
       "flow_cms": 95.4947,
       "flow_trend": "stigende",
       "water_level_m": 1.6309,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 6.0078
     },
     {
@@ -130854,7 +130854,7 @@
       "flow_cms": 90.2696,
       "flow_trend": "faldende",
       "water_level_m": 1.5967,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 6.8961
     },
     {
@@ -130862,7 +130862,7 @@
       "flow_cms": 94.0796,
       "flow_trend": "stigende",
       "water_level_m": 1.6205,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 7.6241
     },
     {
@@ -130886,7 +130886,7 @@
       "flow_cms": 83.0239,
       "flow_trend": "faldende",
       "water_level_m": 1.5487,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 6.3715
     },
     {
@@ -130918,7 +130918,7 @@
       "flow_cms": 167.1174,
       "flow_trend": "stigende",
       "water_level_m": 2.016,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 7.1692
     },
     {
@@ -131086,7 +131086,7 @@
       "flow_cms": 80.9345,
       "flow_trend": "stigende",
       "water_level_m": 1.5326,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 12.0768
     },
     {
@@ -131110,7 +131110,7 @@
       "flow_cms": 140.6044,
       "flow_trend": "faldende",
       "water_level_m": 1.8889,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 10.8936
     },
     {
@@ -131158,7 +131158,7 @@
       "flow_cms": 158.5253,
       "flow_trend": "faldende",
       "water_level_m": 1.9811,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 10.456
     },
     {
@@ -131182,7 +131182,7 @@
       "flow_cms": 120.2461,
       "flow_trend": "neutral",
       "water_level_m": 1.778,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.1388
     },
     {
@@ -131230,7 +131230,7 @@
       "flow_cms": 118.9035,
       "flow_trend": "faldende",
       "water_level_m": 1.7679,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8197
     },
     {
@@ -131254,7 +131254,7 @@
       "flow_cms": 77.5101,
       "flow_trend": "faldende",
       "water_level_m": 1.5104,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 13.3099
     },
     {
@@ -131286,7 +131286,7 @@
       "flow_cms": 42.1203,
       "flow_trend": "faldende",
       "water_level_m": 1.224,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 15.6965
     },
     {
@@ -131294,7 +131294,7 @@
       "flow_cms": 37.3372,
       "flow_trend": "faldende",
       "water_level_m": 1.1767,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 16.2743
     },
     {
@@ -131302,7 +131302,7 @@
       "flow_cms": 34.6323,
       "flow_trend": "faldende",
       "water_level_m": 1.1491,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 16.8879
     },
     {
@@ -131342,7 +131342,7 @@
       "flow_cms": 30.5307,
       "flow_trend": "faldende",
       "water_level_m": 1.1047,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 17.5828
     },
     {
@@ -131358,7 +131358,7 @@
       "flow_cms": 28.5044,
       "flow_trend": "faldende",
       "water_level_m": 1.081,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 17.0196
     },
     {
@@ -131398,7 +131398,7 @@
       "flow_cms": 28.43,
       "flow_trend": "stigende",
       "water_level_m": 1.0808,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 16.2338
     },
     {
@@ -131414,7 +131414,7 @@
       "flow_cms": 30.6798,
       "flow_trend": "stigende",
       "water_level_m": 1.1061,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 13.7389
     },
     {
@@ -131422,7 +131422,7 @@
       "flow_cms": 33.2815,
       "flow_trend": "stigende",
       "water_level_m": 1.1344,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.6003
     },
     {
@@ -131446,7 +131446,7 @@
       "flow_cms": 57.7031,
       "flow_trend": "faldende",
       "water_level_m": 1.3577,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 16.0652
     },
     {
@@ -131462,7 +131462,7 @@
       "flow_cms": 36.0643,
       "flow_trend": "faldende",
       "water_level_m": 1.164,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 16.5595
     },
     {
@@ -131486,7 +131486,7 @@
       "flow_cms": 27.1556,
       "flow_trend": "faldende",
       "water_level_m": 1.0659,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 16.9997
     },
     {
@@ -131686,7 +131686,7 @@
       "flow_cms": 55.7163,
       "flow_trend": "stigende",
       "water_level_m": 1.3445,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 12.8275
     },
     {
@@ -131718,7 +131718,7 @@
       "flow_cms": 25.9027,
       "flow_trend": "faldende",
       "water_level_m": 1.0508,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 14.1764
     },
     {
@@ -131766,7 +131766,7 @@
       "flow_cms": 37.4466,
       "flow_trend": "faldende",
       "water_level_m": 1.1781,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 13.1892
     },
     {
@@ -131790,7 +131790,7 @@
       "flow_cms": 28.6796,
       "flow_trend": "faldende",
       "water_level_m": 1.0837,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 13.5022
     },
     {
@@ -131854,7 +131854,7 @@
       "flow_cms": 32.1211,
       "flow_trend": "stigende",
       "water_level_m": 1.1216,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.6397
     },
     {
@@ -131942,7 +131942,7 @@
       "flow_cms": 24.1408,
       "flow_trend": "faldende",
       "water_level_m": 1.0291,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 9.1617
     },
     {
@@ -131950,7 +131950,7 @@
       "flow_cms": 22.4327,
       "flow_trend": "faldende",
       "water_level_m": 1.0073,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 8.5218
     },
     {
@@ -132094,7 +132094,7 @@
       "flow_cms": 114.2068,
       "flow_trend": "faldende",
       "water_level_m": 1.7432,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 6.2536
     },
     {
@@ -132110,7 +132110,7 @@
       "flow_cms": 82.2112,
       "flow_trend": "faldende",
       "water_level_m": 1.5435,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 6.8049
     },
     {
@@ -132118,7 +132118,7 @@
       "flow_cms": 75.3385,
       "flow_trend": "faldende",
       "water_level_m": 1.4953,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 6.6882
     },
     {
@@ -132126,7 +132126,7 @@
       "flow_cms": 69.517,
       "flow_trend": "faldende",
       "water_level_m": 1.4529,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 6.6425
     },
     {
@@ -132150,7 +132150,7 @@
       "flow_cms": 61.4962,
       "flow_trend": "stigende",
       "water_level_m": 1.3895,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 6.6802
     },
     {
@@ -132206,7 +132206,7 @@
       "flow_cms": 26.6288,
       "flow_trend": "faldende",
       "water_level_m": 1.0596,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 3.8802
     },
     {
@@ -132222,7 +132222,7 @@
       "flow_cms": 27.9124,
       "flow_trend": "stigende",
       "water_level_m": 1.0747,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 4.7892
     },
     {
@@ -132302,7 +132302,7 @@
       "flow_cms": 46.8658,
       "flow_trend": "faldende",
       "water_level_m": 1.2678,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.2836
     },
     {
@@ -132326,7 +132326,7 @@
       "flow_cms": 62.7711,
       "flow_trend": "stigende",
       "water_level_m": 1.4003,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.1449
     },
     {
@@ -132334,7 +132334,7 @@
       "flow_cms": 65.7075,
       "flow_trend": "stigende",
       "water_level_m": 1.4242,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.3224
     },
     {
@@ -132342,7 +132342,7 @@
       "flow_cms": 62.1471,
       "flow_trend": "faldende",
       "water_level_m": 1.3966,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.3607
     },
     {
@@ -132350,7 +132350,7 @@
       "flow_cms": 58.9272,
       "flow_trend": "faldende",
       "water_level_m": 1.3708,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.1994
     },
     {
@@ -132374,7 +132374,7 @@
       "flow_cms": 69.8958,
       "flow_trend": "faldende",
       "water_level_m": 1.4556,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.2369
     },
     {
@@ -132398,7 +132398,7 @@
       "flow_cms": 37.7431,
       "flow_trend": "faldende",
       "water_level_m": 1.1811,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.7895
     },
     {
@@ -132486,7 +132486,7 @@
       "flow_cms": 47.9989,
       "flow_trend": "stigende",
       "water_level_m": 1.2775,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.1919
     },
     {
@@ -132494,7 +132494,7 @@
       "flow_cms": 53.1158,
       "flow_trend": "stigende",
       "water_level_m": 1.3226,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.3095
     },
     {
@@ -132502,7 +132502,7 @@
       "flow_cms": 50.6142,
       "flow_trend": "faldende",
       "water_level_m": 1.2997,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.5152
     },
     {
@@ -132526,7 +132526,7 @@
       "flow_cms": 69.6034,
       "flow_trend": "faldende",
       "water_level_m": 1.4489,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.4463
     },
     {
@@ -132582,7 +132582,7 @@
       "flow_cms": 95.4265,
       "flow_trend": "stigende",
       "water_level_m": 1.6218,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 2.0785
     },
     {
@@ -132750,7 +132750,7 @@
       "flow_cms": 260.2423,
       "flow_trend": "stigende",
       "water_level_m": 2.4237,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.0185
     },
     {
@@ -132822,7 +132822,7 @@
       "flow_cms": 109.7505,
       "flow_trend": "faldende",
       "water_level_m": 1.7186,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1
     },
     {
@@ -132838,7 +132838,7 @@
       "flow_cms": 95.4582,
       "flow_trend": "faldende",
       "water_level_m": 1.6308,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1
     },
     {
@@ -132846,7 +132846,7 @@
       "flow_cms": 90.2443,
       "flow_trend": "faldende",
       "water_level_m": 1.5972,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1
     },
     {
@@ -132902,7 +132902,7 @@
       "flow_cms": 249.126,
       "flow_trend": "stigende",
       "water_level_m": 2.3803,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1
     },
     {
@@ -132950,7 +132950,7 @@
       "flow_cms": 331.4178,
       "flow_trend": "neutral",
       "water_level_m": 2.6831,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1
     },
     {
@@ -132958,7 +132958,7 @@
       "flow_cms": 337.3981,
       "flow_trend": "neutral",
       "water_level_m": 2.7036,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1
     },
     {
@@ -132966,7 +132966,7 @@
       "flow_cms": 345.9168,
       "flow_trend": "neutral",
       "water_level_m": 2.7324,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1
     },
     {
@@ -132982,7 +132982,7 @@
       "flow_cms": 373.3047,
       "flow_trend": "stigende",
       "water_level_m": 2.8229,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1
     },
     {
@@ -133022,7 +133022,7 @@
       "flow_cms": 475.2622,
       "flow_trend": "neutral",
       "water_level_m": 3.1336,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0
     },
     {
@@ -133030,7 +133030,7 @@
       "flow_cms": 487.1997,
       "flow_trend": "neutral",
       "water_level_m": 3.1676,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.0323
     },
     {
@@ -133054,7 +133054,7 @@
       "flow_cms": 523.4454,
       "flow_trend": "neutral",
       "water_level_m": 3.2686,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": -0.0357
     },
     {
@@ -133070,7 +133070,7 @@
       "flow_cms": 552.5834,
       "flow_trend": "neutral",
       "water_level_m": 3.3477,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0
     },
     {
@@ -133078,7 +133078,7 @@
       "flow_cms": 539.906,
       "flow_trend": "neutral",
       "water_level_m": 3.3136,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0
     },
     {
@@ -133150,7 +133150,7 @@
       "flow_cms": 206.6858,
       "flow_trend": "faldende",
       "water_level_m": 2.2045,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1012
     },
     {
@@ -133158,7 +133158,7 @@
       "flow_cms": 199.2499,
       "flow_trend": "faldende",
       "water_level_m": 2.1712,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1
     },
     {
@@ -133166,7 +133166,7 @@
       "flow_cms": 205.9482,
       "flow_trend": "stigende",
       "water_level_m": 2.2004,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1
     },
     {
@@ -133174,7 +133174,7 @@
       "flow_cms": 216.4299,
       "flow_trend": "stigende",
       "water_level_m": 2.2456,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.0918
     },
     {
@@ -133190,7 +133190,7 @@
       "flow_cms": 209.7259,
       "flow_trend": "stigende",
       "water_level_m": 2.2166,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.0305
     },
     {
@@ -133198,7 +133198,7 @@
       "flow_cms": 201.032,
       "flow_trend": "faldende",
       "water_level_m": 2.1792,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.0688
     },
     {
@@ -133222,7 +133222,7 @@
       "flow_cms": 174.6644,
       "flow_trend": "neutral",
       "water_level_m": 2.0589,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.1686
     },
     {
@@ -133238,7 +133238,7 @@
       "flow_cms": 188.1329,
       "flow_trend": "faldende",
       "water_level_m": 2.122,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 0.0962
     },
     {
@@ -133342,7 +133342,7 @@
       "flow_cms": 43.6433,
       "flow_trend": "faldende",
       "water_level_m": 1.2382,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.2156
     },
     {
@@ -133358,7 +133358,7 @@
       "flow_cms": 50.184,
       "flow_trend": "stigende",
       "water_level_m": 1.297,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.099
     },
     {
@@ -133374,7 +133374,7 @@
       "flow_cms": 37.0127,
       "flow_trend": "faldende",
       "water_level_m": 1.1737,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.2982
     },
     {
@@ -133406,7 +133406,7 @@
       "flow_cms": 71.0499,
       "flow_trend": "stigende",
       "water_level_m": 1.4617,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.1873
     },
     {
@@ -133430,7 +133430,7 @@
       "flow_cms": 29.0691,
       "flow_trend": "faldende",
       "water_level_m": 1.0881,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.4666
     },
     {
@@ -133438,7 +133438,7 @@
       "flow_cms": 27.1796,
       "flow_trend": "faldende",
       "water_level_m": 1.0661,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 1.7948
     },
     {
@@ -133494,7 +133494,7 @@
       "flow_cms": 47.9345,
       "flow_trend": "faldende",
       "water_level_m": 1.275,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 3.0898
     },
     {
@@ -133526,7 +133526,7 @@
       "flow_cms": 76.5819,
       "flow_trend": "stigende",
       "water_level_m": 1.5019,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 3.7413
     },
     {
@@ -133534,7 +133534,7 @@
       "flow_cms": 82.3098,
       "flow_trend": "stigende",
       "water_level_m": 1.5418,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 3.7731
     },
     {
@@ -133590,7 +133590,7 @@
       "flow_cms": 144.9192,
       "flow_trend": "faldende",
       "water_level_m": 1.9077,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 3.5087
     },
     {
@@ -133614,7 +133614,7 @@
       "flow_cms": 70.1269,
       "flow_trend": "faldende",
       "water_level_m": 1.4574,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 3.7977
     },
     {
@@ -133670,7 +133670,7 @@
       "flow_cms": 51.4945,
       "flow_trend": "faldende",
       "water_level_m": 1.3088,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 4.7282
     },
     {
@@ -133686,7 +133686,7 @@
       "flow_cms": 54.7411,
       "flow_trend": "stigende",
       "water_level_m": 1.3363,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 4.8756
     },
     {
@@ -133702,7 +133702,7 @@
       "flow_cms": 51.4534,
       "flow_trend": "faldende",
       "water_level_m": 1.3068,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 6.1459
     },
     {
@@ -133726,7 +133726,7 @@
       "flow_cms": 39.7131,
       "flow_trend": "faldende",
       "water_level_m": 1.2007,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 6.1873
     },
     {
@@ -133774,7 +133774,7 @@
       "flow_cms": 50.3327,
       "flow_trend": "stigende",
       "water_level_m": 1.2986,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 8.4573
     },
     {
@@ -133782,7 +133782,7 @@
       "flow_cms": 53.3175,
       "flow_trend": "stigende",
       "water_level_m": 1.3239,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 9.1781
     },
     {
@@ -133806,7 +133806,7 @@
       "flow_cms": 58.9316,
       "flow_trend": "neutral",
       "water_level_m": 1.3701,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 10.1171
     },
     {
@@ -133894,7 +133894,7 @@
       "flow_cms": 64.4446,
       "flow_trend": "faldende",
       "water_level_m": 1.4141,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8525
     },
     {
@@ -133942,7 +133942,7 @@
       "flow_cms": 30.2559,
       "flow_trend": "faldende",
       "water_level_m": 1.1016,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 12.4721
     },
     {
@@ -133950,7 +133950,7 @@
       "flow_cms": 27.8776,
       "flow_trend": "faldende",
       "water_level_m": 1.0744,
-      "water_level_trend": "faldende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 13.7679
     },
     {
@@ -134006,7 +134006,7 @@
       "flow_cms": 33.4024,
       "flow_trend": "stigende",
       "water_level_m": 1.1356,
-      "water_level_trend": "stigende",
+      "water_level_trend": "neutral",
       "water_temperature_c": 11.8188
     },
     {
@@ -134019,11 +134019,11 @@
     },
     {
       "date": "2026-06-18",
-      "flow_cms": 24.7105,
+      "flow_cms": 24.6019,
       "flow_trend": "faldende",
-      "water_level_m": 1.0363,
-      "water_level_trend": "faldende",
-      "water_temperature_c": 13.9934
+      "water_level_m": 1.0349,
+      "water_level_trend": "neutral",
+      "water_temperature_c": 13.8932
     }
   ]
 }

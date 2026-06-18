@@ -404,7 +404,7 @@
       background: #f2d21b;
       box-shadow: 0 0 0 1px rgba(23, 35, 43, 0.25);
       transform: translateX(-50%);
-      pointer-events: none;
+      cursor: help;
     }
 
     .plot-bar-item {
@@ -1157,8 +1157,8 @@
           <strong id="currentTemperature">-</strong>
         </div>
         <div class="metric">
-          <span>Vandføringstrend</span>
-          <strong id="currentFlowTrend">-</strong>
+          <span>Vandstandstrend</span>
+          <strong id="currentWaterLevelTrend">-</strong>
         </div>
       </div>
       <div class="toolbar" aria-label="Statistikfiltre">
@@ -1383,18 +1383,15 @@ Kilde: Norske Lakseelver / Stjørdalsvassdragets Elveeierlag, `Laksefiske i Stj�
 
 Midtsæsonevalueringen er sat til 1. juli. Eventuelle forhåndsaftalte tiltak indføres 1. august til 15. august afhængig af situationen.
 
-### Vandføringstrend
+### Vandstandstrend
 
-Først beregnes den gennemsnitlige vandføring for hver dag. Dagens gennemsnit sammenlignes derefter med gennemsnittet for dagen før.
+Først beregnes den gennemsnitlige vandstand for hver dag. Dagens gennemsnit sammenlignes derefter med gennemsnittet for dagen før.
 
-**Neutral** vælges, når forskellen er så lille, at vandføringen betragtes som omtrent uændret. Grænsen er det største af:
+**Neutral** vælges, når forskellen er højst 0,05 m i enten positiv eller negativ retning. Det betyder, at vandstanden betragtes som omtrent uændret.
 
-- 1 m³/s
-- 3 % af den foregående dags gennemsnitlige vandføring
+Er dagens gennemsnit mere end 0,05 m højere end gårsdagens, vises **stigende**. Er det mere end 0,05 m lavere, vises **faldende**.
 
-Hvis ændringen ligger inden for denne grænse, vises trenden som **neutral**. Er dagens værdi højere end den øvre grænse, vises **stigende**. Er den lavere end den nedre grænse, vises **faldende**.
-
-Eksempel: Var gårsdagens gennemsnit 30 m³/s, er 3 % lig med 0,9 m³/s. Her bruges derfor grænsen 1 m³/s. En værdi fra 29 til 31 m³/s vises som neutral. En værdi over 31 vises som stigende, og en værdi under 29 vises som faldende. Hvis den foregående dags værdi mangler, vises trenden som neutral.
+Eksempel: Var gårsdagens gennemsnitlige vandstand 1,10 m, vises værdier fra 1,05 til 1,15 m som neutral. En værdi over 1,15 m vises som stigende, og en værdi under 1,05 m vises som faldende. Hvis den foregående dags værdi mangler, vises trenden som neutral.
 
 
 ## Fluer og hvornår de skal fiskes
@@ -1559,7 +1556,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       overviewContent: document.querySelector("#overviewContent"),
       currentFlow: document.querySelector("#currentFlow"),
       currentTemperature: document.querySelector("#currentTemperature"),
-      currentFlowTrend: document.querySelector("#currentFlowTrend"),
+      currentWaterLevelTrend: document.querySelector("#currentWaterLevelTrend"),
       weekChart: document.querySelector("#weekChart"),
       weekFlowChart: document.querySelector("#weekFlowChart"),
       weekWeightChart: document.querySelector("#weekWeightChart"),
@@ -1880,7 +1877,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
           <div class="plot-body${ticks.length ? " has-y-scale" : ""}${xTickLabels ? " is-interval-plot" : ""}">
             ${ticks.length ? `<div class="plot-y-scale">${ticks.map((tick) => `<span>${escapeHtml(numberFormat.format(tick))}</span>`).join("")}</div>` : ""}
             <div class="plot-bars">
-              ${xMarker ? `<div class="plot-x-marker" title="${escapeHtml(xMarker.label)}" style="--marker-left: ${xMarker.percent}%;"></div>` : ""}
+              ${xMarker ? `<div class="plot-x-marker" role="img" tabindex="0" aria-label="${escapeHtml(xMarker.label)}" title="${escapeHtml(xMarker.label)}" style="--marker-left: ${xMarker.percent}%;"></div>` : ""}
               ${safeEntries.map(([label, value]) => {
                 const numericValue = Number(value) || 0;
                 return `
@@ -3557,8 +3554,8 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       return hour + Math.max(0, Math.min(59, minute)) / 60;
     }
 
-    function timeHistogramBins(values) {
-      return intervalHistogramBins(values, 1);
+    function timeHistogramBins() {
+      return Array.from({ length: 24 }, (_, hour) => hour);
     }
 
     function timeHistogramData(values, binStarts) {
@@ -3566,11 +3563,9 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       return {
         ...histogram,
         entries: histogram.entries.map(([label, count]) => [`${label} timer`, count]),
-        xTickLabels: histogram.xTickLabels.map((label) => {
-          if (!label) return "";
-          const hour = Number(label);
-          return Number.isFinite(hour) ? String(Math.trunc(hour)).padStart(2, "0") : label;
-        })
+        xTickLabels: Array.from({ length: 25 }, (_, hour) => (
+          hour < 24 && hour % 4 === 0 ? String(hour) : ""
+        ))
       };
     }
 
@@ -3590,7 +3585,13 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         .sort((a, b) => String(b.date).localeCompare(String(a.date)))[0] ?? null;
     }
 
-    function flowTrendLabel(value) {
+    function latestDailyWaterLevel() {
+      return dailyFlowRows
+        .filter((row) => row.date && hasNumericValue(row.water_level_m))
+        .sort((a, b) => String(b.date).localeCompare(String(a.date)))[0] ?? null;
+    }
+
+    function waterLevelTrendLabel(value) {
       const labels = new Map([
         ["stigende", "Stigende"],
         ["neutral", "Neutral"],
@@ -3602,14 +3603,15 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
     function renderCurrentMeasurements() {
       const latestFlow = latestDailyFlow();
       const latestTemperature = latestDailyTemperature();
+      const latestWaterLevel = latestDailyWaterLevel();
       elements.currentFlow.textContent = latestFlow
         ? `${numberFormat.format(Number(latestFlow.flow_cms))} m³/s`
         : "-";
       elements.currentTemperature.textContent = latestTemperature
         ? `${numberFormat.format(Number(latestTemperature.water_temperature_c))} °C`
         : "-";
-      elements.currentFlowTrend.textContent = latestFlow
-        ? flowTrendLabel(latestFlow.flow_trend)
+      elements.currentWaterLevelTrend.textContent = latestWaterLevel
+        ? waterLevelTrendLabel(latestWaterLevel.water_level_trend)
         : "-";
     }
 
@@ -3635,17 +3637,17 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       };
     }
 
-    function trendMarkerForEntries(entries, latestFlow) {
-      const trend = flowTrendLabel(latestFlow?.flow_trend);
+    function trendMarkerForEntries(entries, latestWaterLevel) {
+      const trend = waterLevelTrendLabel(latestWaterLevel?.water_level_trend);
       const index = entries.findIndex(([label]) => label === trend);
       if (index < 0) return null;
       return {
         percent: ((index + 0.5) / entries.length) * 100,
-        label: `Seneste vandføringstrend (${latestFlow.date}): ${trend}`
+        label: `Seneste vandstandstrend (${latestWaterLevel.date}): ${trend}`
       };
     }
 
-    function flowTrendEntries(rows) {
+    function waterLevelTrendEntries(rows) {
       const labels = new Map([
         ["stigende", "Stigende"],
         ["neutral", "Neutral"],
@@ -3653,7 +3655,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       ]);
       const counts = new Map([...labels.keys()].map((key) => [key, 0]));
       rows.forEach((row) => {
-        const trend = normalizeFilterText(row.flowTrend);
+        const trend = normalizeFilterText(row.waterLevelTrend);
         if (counts.has(trend)) {
           counts.set(trend, counts.get(trend) + 1);
         }
@@ -3665,6 +3667,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       const rows = filteredHistoryRows(sourceRows, weekFilter, yearFilter);
       const latestFlow = latestDailyFlow();
       const latestTemperature = latestDailyTemperature();
+      const latestWaterLevel = latestDailyWaterLevel();
       const groups = new Map();
       rows.forEach((row) => {
         if (!groups.has(row.beat)) groups.set(row.beat, []);
@@ -3700,8 +3703,8 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
             .map((row) => catchTimeValue(row.timeOfDay))
             .filter((value) => value !== null);
           const timeHistogram = timeHistogramData(timeValues, timeHistogramBins(timeValues));
-          const trendEntries = flowTrendEntries(beatRows);
-          const trendMarker = trendMarkerForEntries(trendEntries, latestFlow);
+          const trendEntries = waterLevelTrendEntries(beatRows);
+          const trendMarker = trendMarkerForEntries(trendEntries, latestWaterLevel);
           return `
             <section class="history-section" id="${escapeHtml(sectionId)}">
               <h3 class="history-section-title">${escapeHtml(beat)}</h3>
@@ -3713,7 +3716,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
                     : '<div class="empty">Ingen vandføringsdata for fangsterne i dette valg.</div>'}
                 </div>
                 <div>
-                  <h4 class="history-chart-title">Vandføringstrend</h4>
+                  <h4 class="history-chart-title">Vandstandstrend</h4>
                   ${plotHtml(trendEntries, "var(--accent)", (value) => value, "Fangster", { yScale: true, xMarker: trendMarker })}
                 </div>
                 <div>
@@ -3756,7 +3759,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
           <p>Figurerne bygger på de laks, der er fanget på flue, matchet til et Hvidt vald og omfattet af de valgte uge- og årsfiltre. Y-aksen viser altid antal fangster.</p>
           <ul>
             <li><strong>Vandføring:</strong> X-aksen viser vandføring i intervaller på 5 m³/s. Hver søjle viser, hvor mange laks der blev fanget, mens vandføringen lå i intervallet. En manglende søjle betyder nul fangster i intervallet.</li>
-            <li><strong>Vandføringstrend:</strong> Fangsterne fordeles efter, om dagens gennemsnitlige vandføring var stigende, neutral eller faldende sammenlignet med dagen før.</li>
+            <li><strong>Vandstandstrend:</strong> Fangsterne fordeles efter, om dagens gennemsnitlige vandstand var stigende, neutral eller faldende sammenlignet med dagen før.</li>
             <li><strong>Vandtemperatur:</strong> X-aksen viser temperaturintervaller på 1 °C. Hver søjle viser antal fangster ved temperaturer i det pågældende interval.</li>
             <li><strong>Fangsttidspunkt:</strong> X-aksen viser døgnets timer. Søjlerne viser, hvornår på døgnet fangsterne blev registreret.</li>
           </ul>
@@ -3851,7 +3854,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
             year: item.history_year,
             timeOfDay: item.time_of_day,
             flowValue: item.flow_cms,
-            flowTrend: item.flow_trend,
+            waterLevelTrend: item.water_level_trend,
             temperatureValue: item.water_temperature_c
           });
         });
