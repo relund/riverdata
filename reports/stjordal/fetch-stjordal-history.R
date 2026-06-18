@@ -315,6 +315,18 @@ daily_direction <- function(value, previous_value, neutral_abs, neutral_relative
   )
 }
 
+windowed_daily_direction <- function(
+  value,
+  previous_value,
+  window_previous_value,
+  neutral_abs,
+  neutral_relative = 0
+) {
+  daily_trend <- daily_direction(value, previous_value, neutral_abs, neutral_relative)
+  if (daily_trend != "neutral") return(daily_trend)
+  daily_direction(value, window_previous_value, neutral_abs, neutral_relative)
+}
+
 existing_payload <- read_existing_payload()
 cached_years <- cached_years_from_payload(existing_payload)
 years_to_fetch <- sort(unique(c(current_year, setdiff(years, cached_years))))
@@ -381,17 +393,23 @@ daily_flow_json <- daily_measurements_without_trends %>%
       ~ daily_direction(..1, ..2, neutral_abs_cms, neutral_rel)
     ),
     previous_water_level = lag(water_level_m),
+    water_level_three_days_ago = lag(water_level_m, 3),
     water_level_trend = pmap_chr(
-      list(water_level_m, previous_water_level),
-      ~ daily_direction(..1, ..2, neutral_abs_stage_m, neutral_stage_rel)
+      list(water_level_m, previous_water_level, water_level_three_days_ago),
+      ~ windowed_daily_direction(..1, ..2, ..3, neutral_abs_stage_m, neutral_stage_rel)
     )
   ) %>%
   select(date, flow_cms, flow_trend, water_level_m, water_level_trend, water_temperature_c)
 
-fetched_catches_with_flow <- fetched_catches %>%
-  left_join(daily_flow_json, by = "date")
-
-catches_with_flow <- bind_rows(cached_catches, fetched_catches_with_flow) %>%
+catches_with_flow <- bind_rows(cached_catches, fetched_catches) %>%
+  select(-any_of(c(
+    "flow_cms",
+    "flow_trend",
+    "water_level_m",
+    "water_level_trend",
+    "water_temperature_c"
+  ))) %>%
+  left_join(daily_flow_json, by = "date") %>%
   filter(year %in% years) %>%
   arrange(desc(date), desc(time_of_day)) %>%
   mutate(
@@ -423,7 +441,8 @@ payload <- list(
     unit = "m",
     trend_source = "daily average water level",
     neutral_abs_m = neutral_abs_stage_m,
-    neutral_rel = neutral_stage_rel
+    neutral_rel = neutral_stage_rel,
+    window_days = 3
   ),
   water_temperature = list(
     parameter = 1003,

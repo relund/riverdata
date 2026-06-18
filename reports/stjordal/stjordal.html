@@ -1385,13 +1385,13 @@ Midtsæsonevalueringen er sat til 1. juli. Eventuelle forhåndsaftalte tiltak in
 
 ### Vandstandstrend
 
-Først beregnes den gennemsnitlige vandstand for hver dag. Dagens gennemsnit sammenlignes derefter med gennemsnittet for dagen før.
+Først beregnes den gennemsnitlige vandstand for hver dag. Dagens gennemsnit sammenlignes derefter med både dagen før og tre dage tidligere.
 
-**Neutral** vælges, når forskellen er højst 0,05 m i enten positiv eller negativ retning. Det betyder, at vandstanden betragtes som omtrent uændret.
+Hvis vandstanden er ændret mere end 0,05 m siden dagen før, vises trenden straks som **stigende** eller **faldende**.
 
-Er dagens gennemsnit mere end 0,05 m højere end gårsdagens, vises **stigende**. Er det mere end 0,05 m lavere, vises **faldende**.
+Er døgnændringen højst 0,05 m, sammenlignes dagens vandstand med vandstanden tre dage tidligere. Er denne forskel større end 0,05 m, vises også her **stigende** eller **faldende**. På den måde registreres et langsomt fald eller en langsom stigning over flere dage.
 
-Eksempel: Var gårsdagens gennemsnitlige vandstand 1,10 m, vises værdier fra 1,05 til 1,15 m som neutral. En værdi over 1,15 m vises som stigende, og en værdi under 1,05 m vises som faldende. Hvis den foregående dags værdi mangler, vises trenden som neutral.
+**Neutral** vælges kun, når både døgnændringen og tredagesændringen er højst 0,05 m. Eksempel: Falder vandstanden fra 1,10 til 1,08, 1,06 og 1,04 m, er hvert enkelt døgnfald mindre end 0,05 m. Det samlede tredagesfald er dog 0,06 m, så den sidste dag vises som faldende.
 
 
 ## Fluer og hvornår de skal fiskes
@@ -3759,7 +3759,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
           <p>Figurerne bygger på de laks, der er fanget på flue, matchet til et Hvidt vald og omfattet af de valgte uge- og årsfiltre. Y-aksen viser altid antal fangster.</p>
           <ul>
             <li><strong>Vandføring:</strong> X-aksen viser vandføring i intervaller på 5 m³/s. Hver søjle viser, hvor mange laks der blev fanget, mens vandføringen lå i intervallet. En manglende søjle betyder nul fangster i intervallet.</li>
-            <li><strong>Vandstandstrend:</strong> Fangsterne fordeles efter, om dagens gennemsnitlige vandstand var stigende, neutral eller faldende sammenlignet med dagen før.</li>
+            <li><strong>Vandstandstrend:</strong> Fangsterne fordeles efter dagens ændring i vandstand. Små døgnændringer kontrolleres også mod vandstanden tre dage tidligere, så langsomme stigninger og fald registreres.</li>
             <li><strong>Vandtemperatur:</strong> X-aksen viser temperaturintervaller på 1 °C. Hver søjle viser antal fangster ved temperaturer i det pågældende interval.</li>
             <li><strong>Fangsttidspunkt:</strong> X-aksen viser døgnets timer. Søjlerne viser, hvornår på døgnet fangsterne blev registreret.</li>
           </ul>
