@@ -106,6 +106,10 @@
       margin-bottom: 18px;
     }
 
+    .current-measurements {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .metric {
       min-width: 0;
       padding: 16px;
@@ -169,6 +173,36 @@
       border-collapse: collapse;
       min-width: 960px;
     }
+
+    #catches .table-frame {
+      overflow-x: hidden;
+    }
+
+    #catches table {
+      min-width: 0;
+      table-layout: fixed;
+    }
+
+    #catches th,
+    #catches td {
+      padding-right: 8px;
+      padding-left: 8px;
+      overflow: hidden;
+      font-size: 0.72rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    #catches th:nth-child(1) { width: 9%; }
+    #catches th:nth-child(2) { width: 6%; }
+    #catches th:nth-child(3) { width: 16%; }
+    #catches th:nth-child(4) { width: 14%; }
+    #catches th:nth-child(5) { width: 8%; }
+    #catches th:nth-child(6) { width: 8%; }
+    #catches th:nth-child(7) { width: 8%; }
+    #catches th:nth-child(8) { width: 10%; }
+    #catches th:nth-child(9) { width: 11%; }
+    #catches th:nth-child(10) { width: 10%; }
 
     th,
     td {
@@ -280,25 +314,6 @@
       box-shadow: 0 3px 10px rgba(23, 35, 43, 0.28);
     }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 68px;
-      min-height: 28px;
-      padding: 0 10px;
-      border: 1px solid var(--line);
-      background: #f7faf2;
-      font-size: 0.82rem;
-      font-weight: 800;
-    }
-
-    .pill.released {
-      border-color: rgba(47, 111, 130, 0.25);
-      background: rgba(47, 111, 130, 0.1);
-      color: var(--water);
-    }
-
     .chart-list {
       margin-top: 14px;
     }
@@ -379,12 +394,16 @@
 
     .plot-x-marker {
       position: absolute;
-      top: 8px;
-      bottom: 10px;
+      bottom: -5px;
       left: var(--marker-left);
-      z-index: 0;
-      width: 0;
-      border-left: 1.5px solid #f2d21b;
+      z-index: 2;
+      width: 10px;
+      height: 10px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background: #f2d21b;
+      box-shadow: 0 0 0 1px rgba(23, 35, 43, 0.25);
+      transform: translateX(-50%);
       pointer-events: none;
     }
 
@@ -447,6 +466,31 @@
       display: grid;
       gap: 22px;
       margin-top: 22px;
+    }
+
+    .history-guide {
+      max-width: 900px;
+      margin-top: 30px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .history-guide h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .history-guide p {
+      margin: 0 0 12px;
+    }
+
+    .history-guide ul {
+      margin: 0 0 12px;
+      padding-left: 20px;
+    }
+
+    .history-guide li + li {
+      margin-top: 8px;
     }
 
     .history-section-title {
@@ -840,10 +884,44 @@
       opacity: 0.62;
     }
 
+    .scroll-top-button {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1000;
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: var(--ink);
+      color: #fff;
+      font: inherit;
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+
+    .scroll-top-button:hover,
+    .scroll-top-button:focus-visible {
+      background: var(--accent-strong);
+    }
+
+    .scroll-top-button[hidden] {
+      display: none;
+    }
+
     @media (max-width: 800px) {
       .shell {
         width: min(100% - 20px, 1180px);
         padding-top: 20px;
+      }
+
+      .scroll-top-button {
+        right: 12px;
+        bottom: 12px;
       }
 
       .metric-grid {
@@ -945,6 +1023,10 @@
       }
 
       .info-content .markdown-table td {
+        display: grid;
+        grid-template-columns: max-content minmax(0, 1fr);
+        gap: 6px;
+        align-items: baseline;
         padding: 10px 12px;
         border-bottom: 1px solid var(--line);
       }
@@ -954,9 +1036,9 @@
       }
 
       .info-content .markdown-table td::before {
-        content: attr(data-label);
-        display: block;
-        margin-bottom: 3px;
+        content: attr(data-label) ":";
+        display: inline;
+        margin-bottom: 0;
         color: var(--muted);
         font-size: 0.72rem;
         font-weight: 800;
@@ -1003,17 +1085,25 @@
 
       td {
         display: grid;
-        grid-template-columns: minmax(110px, 38%) 1fr;
-        gap: 10px;
+        grid-template-columns: max-content minmax(0, 1fr);
+        gap: 6px;
+        align-items: baseline;
         white-space: normal;
       }
 
       td::before {
-        content: attr(data-label);
+        content: attr(data-label) ":";
         color: var(--muted);
         font-size: 0.74rem;
         font-weight: 800;
         text-transform: uppercase;
+      }
+
+      #catches td {
+        overflow: visible;
+        font-size: 0.88rem;
+        white-space: normal;
+        text-overflow: clip;
       }
 
       .bar-row {
@@ -1029,11 +1119,6 @@
     @media (max-width: 520px) {
       .metric-grid {
         grid-template-columns: 1fr;
-      }
-
-      td {
-        grid-template-columns: 1fr;
-        gap: 4px;
       }
     }
   </style>
@@ -1062,6 +1147,20 @@
     </nav>
 
     <section class="tab-panel active" id="overview" role="tabpanel" aria-labelledby="tab-overview">
+      <div class="metric-grid current-measurements" aria-label="Aktuelle vandmålinger">
+        <div class="metric">
+          <span>Nuværende vandføring</span>
+          <strong id="currentFlow">-</strong>
+        </div>
+        <div class="metric">
+          <span>Nuværende vandtemperatur</span>
+          <strong id="currentTemperature">-</strong>
+        </div>
+        <div class="metric">
+          <span>Vandføringstrend</span>
+          <strong id="currentFlowTrend">-</strong>
+        </div>
+      </div>
       <div class="toolbar" aria-label="Statistikfiltre">
         <label>
           År
@@ -1204,6 +1303,8 @@
     </footer>
   </main>
 
+  <button class="scroll-top-button" id="scrollTopButton" type="button" aria-label="Til toppen" title="Til toppen" hidden>↑</button>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script type="text/plain" id="infoMarkdown">
 # Info
@@ -1281,6 +1382,19 @@ Kilde: Norske Lakseelver / Stjørdalsvassdragets Elveeierlag, `Laksefiske i Stj�
 ### Midtsæsonevaluering
 
 Midtsæsonevalueringen er sat til 1. juli. Eventuelle forhåndsaftalte tiltak indføres 1. august til 15. august afhængig af situationen.
+
+### Vandføringstrend
+
+Først beregnes den gennemsnitlige vandføring for hver dag. Dagens gennemsnit sammenlignes derefter med gennemsnittet for dagen før.
+
+**Neutral** vælges, når forskellen er så lille, at vandføringen betragtes som omtrent uændret. Grænsen er det største af:
+
+- 1 m³/s
+- 3 % af den foregående dags gennemsnitlige vandføring
+
+Hvis ændringen ligger inden for denne grænse, vises trenden som **neutral**. Er dagens værdi højere end den øvre grænse, vises **stigende**. Er den lavere end den nedre grænse, vises **faldende**.
+
+Eksempel: Var gårsdagens gennemsnit 30 m³/s, er 3 % lig med 0,9 m³/s. Her bruges derfor grænsen 1 m³/s. En værdi fra 29 til 31 m³/s vises som neutral. En værdi over 31 vises som stigende, og en værdi under 29 vises som faldende. Hvis den foregående dags værdi mangler, vises trenden som neutral.
 
 
 ## Fluer og hvornår de skal fiskes
@@ -1442,6 +1556,9 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       dataStatus: document.querySelector("#dataStatus"),
       loadError: document.querySelector("#loadError"),
       overviewContent: document.querySelector("#overviewContent"),
+      currentFlow: document.querySelector("#currentFlow"),
+      currentTemperature: document.querySelector("#currentTemperature"),
+      currentFlowTrend: document.querySelector("#currentFlowTrend"),
       weekChart: document.querySelector("#weekChart"),
       weekFlowChart: document.querySelector("#weekFlowChart"),
       weekWeightChart: document.querySelector("#weekWeightChart"),
@@ -1465,9 +1582,19 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       waterlevelStatus: document.querySelector("#waterlevelStatus"),
       waterMeasurementCharts: document.querySelector("#waterMeasurementCharts")
     };
+    elements.scrollTopButton = document.querySelector("#scrollTopButton");
     elements.riverMap = document.querySelector("#riverMap");
     elements.riverMapFrame = document.querySelector(".map-frame");
     elements.mapStatus = document.querySelector("#mapStatus");
+
+    elements.scrollTopButton.addEventListener("click", () => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+
+    window.addEventListener("scroll", () => {
+      elements.scrollTopButton.hidden = window.scrollY < 320;
+    }, { passive: true });
 
     document.title = `Stjørdal ${CURRENT_YEAR}`;
 
@@ -1681,6 +1808,12 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         .replaceAll("å", "a")
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function booleanValue(value) {
+      if (value === true || value === 1) return true;
+      if (value === false || value === 0 || value === null || value === undefined || value === "") return false;
+      return ["1", "true", "ja", "yes"].includes(normalizeFilterText(value));
     }
 
     function isPlainSalmonSpecies(item) {
@@ -2033,7 +2166,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
           <td data-label="Vægt">${kg(item.weight_kg)}</td>
           <td data-label="Længde">${cm(item.length_cm)}</td>
           <td data-label="Redskab">${escapeHtml(item.equipment || "-")}</td>
-          <td data-label="Genudsat"><span class="pill ${item.released_catch ? "released" : ""}">${item.released_catch ? "Ja" : "Nej"}</span></td>
+          <td data-label="Genudsat">${item.released_catch ? "Ja" : "Nej"}</td>
           <td data-label="Detaljer"><a class="link" href="${escapeHtml(item.detail_url)}" target="_blank" rel="noreferrer">Åbn</a></td>
         </tr>
       `;
@@ -2626,7 +2759,9 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
     }
 
     function inlineMarkdown(value) {
-      return escapeHtml(value).replace(/`([^`]+)`/g, "<code>$1</code>");
+      return escapeHtml(value)
+        .replace(/`([^`]+)`/g, "<code>$1</code>")
+        .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
     }
 
     function inlineMarkdownWithLinks(value) {
@@ -3147,7 +3282,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         weight_kg: catchItem.weight ?? "",
         length_cm: catchItem.length ?? "",
         equipment: catchItem.equipment?.name_no ?? catchItem.equipment?.name ?? "",
-        released_catch: Boolean(catchItem.released_catch),
+        released_catch: booleanValue(catchItem.released_catch),
         image: catchItem.image ?? "",
         detail_url: `https://elveguiden.no/no/laksebors/catches/${catchItem.id}?riverId=13`
       };
@@ -3217,7 +3352,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         weight_kg: Number.isFinite(weight) ? weight : "",
         length_cm: Number.isFinite(length) ? length : "",
         equipment: item.equipment ?? "",
-        released_catch: Boolean(item.released_catch),
+        released_catch: booleanValue(item.released_catch),
         image: item.image ?? "",
         detail_url: item.detail_url ?? (item.id ? `https://elveguiden.no/no/laksebors/catches/${item.id}?riverId=13` : ""),
         flow_cms: Number.isFinite(flowValue) ? flowValue : null,
@@ -3456,14 +3591,36 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         .sort((a, b) => String(b.date).localeCompare(String(a.date)))[0] ?? null;
     }
 
+    function flowTrendLabel(value) {
+      const labels = new Map([
+        ["stigende", "Stigende"],
+        ["neutral", "Neutral"],
+        ["faldende", "Faldende"]
+      ]);
+      return labels.get(normalizeFilterText(value)) ?? "-";
+    }
+
+    function renderCurrentMeasurements() {
+      const latestFlow = latestDailyFlow();
+      const latestTemperature = latestDailyTemperature();
+      elements.currentFlow.textContent = latestFlow
+        ? `${numberFormat.format(Number(latestFlow.flow_cms))} m³/s`
+        : "-";
+      elements.currentTemperature.textContent = latestTemperature
+        ? `${numberFormat.format(Number(latestTemperature.water_temperature_c))} °C`
+        : "-";
+      elements.currentFlowTrend.textContent = latestFlow
+        ? flowTrendLabel(latestFlow.flow_trend)
+        : "-";
+    }
+
     function flowMarkerForHistogram(histogram, latestFlow) {
       if (!latestFlow || histogram.minFlow === null || histogram.maxFlow === null) return null;
       const flowValue = Number(latestFlow.flow_cms);
-      if (!Number.isFinite(flowValue) || flowValue < histogram.minFlow || flowValue > histogram.maxFlow) return null;
+      if (!Number.isFinite(flowValue)) return null;
       const range = histogram.maxFlow - histogram.minFlow;
-      if (range <= 0) return null;
       return {
-        percent: ((flowValue - histogram.minFlow) / range) * 100,
+        percent: range > 0 ? ((flowValue - histogram.minFlow) / range) * 100 : 50,
         label: `Seneste vandføring (${latestFlow.date}): ${numberFormat.format(flowValue)} m3/s`
       };
     }
@@ -3471,12 +3628,21 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
     function temperatureMarkerForHistogram(histogram, latestTemperature) {
       if (!latestTemperature || histogram.minFlow === null || histogram.maxFlow === null) return null;
       const temperatureValue = Number(latestTemperature.water_temperature_c);
-      if (!Number.isFinite(temperatureValue) || temperatureValue < histogram.minFlow || temperatureValue > histogram.maxFlow) return null;
+      if (!Number.isFinite(temperatureValue)) return null;
       const range = histogram.maxFlow - histogram.minFlow;
-      if (range <= 0) return null;
       return {
-        percent: ((temperatureValue - histogram.minFlow) / range) * 100,
+        percent: range > 0 ? ((temperatureValue - histogram.minFlow) / range) * 100 : 50,
         label: `Seneste vandtemperatur (${latestTemperature.date}): ${numberFormat.format(temperatureValue)} °C`
+      };
+    }
+
+    function trendMarkerForEntries(entries, latestFlow) {
+      const trend = flowTrendLabel(latestFlow?.flow_trend);
+      const index = entries.findIndex(([label]) => label === trend);
+      if (index < 0) return null;
+      return {
+        percent: ((index + 0.5) / entries.length) * 100,
+        label: `Seneste vandføringstrend (${latestFlow.date}): ${trend}`
       };
     }
 
@@ -3513,18 +3679,30 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
           const flowValues = beatRows
             .filter((row) => hasNumericValue(row.flowValue))
             .map((row) => Number(row.flowValue));
-          const histogram = flowHistogramData(flowValues, flowHistogramBins(flowValues));
+          const latestFlowValue = Number(latestFlow?.flow_cms);
+          const flowAxisValues = flowValues.length && Number.isFinite(latestFlowValue)
+            ? [...flowValues, latestFlowValue]
+            : flowValues;
+          const histogram = flowHistogramData(flowValues, flowHistogramBins(flowAxisValues));
           const flowMarker = flowMarkerForHistogram(histogram, latestFlow);
           const temperatureValues = beatRows
             .filter((row) => hasNumericValue(row.temperatureValue))
             .map((row) => Number(row.temperatureValue));
-          const temperatureHistogram = temperatureHistogramData(temperatureValues, temperatureHistogramBins(temperatureValues));
+          const latestTemperatureValue = Number(latestTemperature?.water_temperature_c);
+          const temperatureAxisValues = temperatureValues.length && Number.isFinite(latestTemperatureValue)
+            ? [...temperatureValues, latestTemperatureValue]
+            : temperatureValues;
+          const temperatureHistogram = temperatureHistogramData(
+            temperatureValues,
+            temperatureHistogramBins(temperatureAxisValues)
+          );
           const temperatureMarker = temperatureMarkerForHistogram(temperatureHistogram, latestTemperature);
           const timeValues = beatRows
             .map((row) => catchTimeValue(row.timeOfDay))
             .filter((value) => value !== null);
           const timeHistogram = timeHistogramData(timeValues, timeHistogramBins(timeValues));
           const trendEntries = flowTrendEntries(beatRows);
+          const trendMarker = trendMarkerForEntries(trendEntries, latestFlow);
           return `
             <section class="history-section" id="${escapeHtml(sectionId)}">
               <h3 class="history-section-title">${escapeHtml(beat)}</h3>
@@ -3537,7 +3715,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
                 </div>
                 <div>
                   <h4 class="history-chart-title">Vandføringstrend</h4>
-                  ${plotHtml(trendEntries, "var(--accent)", (value) => value, "Fangster", { yScale: true })}
+                  ${plotHtml(trendEntries, "var(--accent)", (value) => value, "Fangster", { yScale: true, xMarker: trendMarker })}
                 </div>
                 <div>
                   <h4 class="history-chart-title">Vandtemperatur (°C)</h4>
@@ -3573,6 +3751,20 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
 
       content.className = "";
       const sectionsHtml = includeFlowSections ? renderHvidHistorySections(sourceRows, weekFilter, yearFilter) : "";
+      const guideHtml = includeFlowSections && sectionsHtml ? `
+        <section class="history-guide" aria-labelledby="history-guide-title">
+          <h3 id="history-guide-title">Sådan læses figurerne</h3>
+          <p>Figurerne bygger på de laks, der er fanget på flue, matchet til et Hvidt vald og omfattet af de valgte uge- og årsfiltre. Y-aksen viser altid antal fangster.</p>
+          <ul>
+            <li><strong>Vandføring:</strong> X-aksen viser vandføring i intervaller på 5 m³/s. Hver søjle viser, hvor mange laks der blev fanget, mens vandføringen lå i intervallet. En manglende søjle betyder nul fangster i intervallet.</li>
+            <li><strong>Vandføringstrend:</strong> Fangsterne fordeles efter, om dagens gennemsnitlige vandføring var stigende, neutral eller faldende sammenlignet med dagen før.</li>
+            <li><strong>Vandtemperatur:</strong> X-aksen viser temperaturintervaller på 1 °C. Hver søjle viser antal fangster ved temperaturer i det pågældende interval.</li>
+            <li><strong>Fangsttidspunkt:</strong> X-aksen viser døgnets timer. Søjlerne viser, hvornår på døgnet fangsterne blev registreret.</li>
+          </ul>
+          <p>Det gule punkt på de tre første figurers x-akse viser den seneste måling eller trend i datasættet. Hvis den aktuelle vandføring eller temperatur ligger uden for fangsternes område, udvides x-aksen frem til punktet. Fangsttidspunkt har ikke et gult punkt.</p>
+          <p>Graferne beskriver de registrerede fangstforhold. De viser ikke i sig selv, at en bestemt vandføring, trend, temperatur eller tid på døgnet giver større fangstchance.</p>
+        </section>
+      ` : "";
       content.innerHTML = `
         <div class="table-frame">
           <table>
@@ -3599,6 +3791,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
           </table>
         </div>
         ${sectionsHtml ? `<div class="history-sections">${sectionsHtml}</div>` : ""}
+        ${guideHtml}
       `;
       const matchedCatches = rows.reduce((sum, row) => sum + row.catchCount, 0);
       status.textContent = `${rows.length} vald ${scopeLabel} · ${matchedCatches} laks på flue${weekText}${yearText} · ${HISTORY_YEARS.slice().reverse().join(", ")}`;
@@ -3748,6 +3941,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         elements.dataStatus.textContent = `${catches.length} laksefangster fra ${years.join("-")} indlæst fra JSON. Sidst opdateret ${updatedAt}.`;
         renderSpeciesFilter();
         renderStatsYearFilter(years);
+        renderCurrentMeasurements();
         renderStatsCharts();
         renderTable();
         renderLatestCatchCircles();

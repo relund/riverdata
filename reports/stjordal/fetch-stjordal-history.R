@@ -42,6 +42,7 @@ neutral_abs_cms <- 1
 neutral_rel <- 0.03
 neutral_abs_stage_m <- 0.02
 neutral_stage_rel <- 0
+release_flag_schema_version <- 2
 
 normalize_text <- function(x) {
   x %>%
@@ -61,6 +62,14 @@ pluck_chr <- function(x, ..., default = NA_character_) {
 
 pluck_num <- function(x, ..., default = NA_real_) {
   suppressWarnings(as.numeric(pluck_chr(x, ..., default = default)))
+}
+
+pluck_bool <- function(x, ..., default = FALSE) {
+  value <- purrr::pluck(x, ..., .default = default)
+  if (is.null(value) || length(value) == 0) return(default)
+  if (is.logical(value)) return(isTRUE(value[[1]]))
+  if (is.numeric(value)) return(!is.na(value[[1]]) && value[[1]] != 0)
+  normalize_text(value[[1]]) %in% c("1", "true", "ja", "yes")
 }
 
 fetch_catch_page <- function(year, page) {
@@ -107,7 +116,7 @@ normalize_catch <- function(item, year) {
     weight_kg = pluck_num(item, "weight"),
     length_cm = pluck_num(item, "length"),
     equipment = pluck_chr(item, "equipment", "name_no") %||% pluck_chr(item, "equipment", "name"),
-    released_catch = isTRUE(purrr::pluck(item, "released_catch", .default = FALSE)),
+    released_catch = pluck_bool(item, "released_catch"),
     image = pluck_chr(item, "image"),
     detail_url = paste0("https://elveguiden.no/no/laksebors/catches/", pluck_chr(item, "id"), "?riverId=", river_id)
   )
@@ -184,6 +193,10 @@ read_existing_payload <- function() {
 
 cached_years_from_payload <- function(payload) {
   if (is.null(payload$years)) return(integer())
+  if (is.null(payload$release_flag_schema_version) || payload$release_flag_schema_version < release_flag_schema_version) {
+    message("Cached release flags use an old schema; refreshing all years.")
+    return(integer())
+  }
   as.integer(payload$years)
 }
 
@@ -405,6 +418,7 @@ payload <- list(
   station_id = station_id,
   years = years,
   species_filter = "Laks",
+  release_flag_schema_version = release_flag_schema_version,
   flow = list(
     parameter = 1001,
     unit = "m3/s",
