@@ -33,10 +33,7 @@ repo_dir <- if (basename(report_dir) == "stjordal" && basename(dirname(report_di
 } else {
   cwd
 }
-output_file <- file.path(report_dir, "stjordal-history.json")
-output_js_file <- file.path(report_dir, "stjordal-history.js")
-docs_output_file <- file.path(repo_dir, "docs", "stjordal", "stjordal-history.json")
-docs_output_js_file <- file.path(repo_dir, "docs", "stjordal", "stjordal-history.js")
+output_file <- file.path(repo_dir, "data", "stjordal-history.json")
 
 neutral_abs_cms <- 1
 neutral_rel <- 0.03
@@ -181,14 +178,9 @@ empty_daily_measurements <- function() {
 }
 
 read_existing_payload <- function() {
-  source_file <- dplyr::case_when(
-    file.exists(output_file) ~ output_file,
-    file.exists(docs_output_file) ~ docs_output_file,
-    TRUE ~ NA_character_
-  )
-  if (is.na(source_file)) return(NULL)
-  message("Reading cached history from ", source_file)
-  jsonlite::fromJSON(source_file, simplifyDataFrame = TRUE)
+  if (!file.exists(output_file)) return(NULL)
+  message("Reading cached history from ", output_file)
+  jsonlite::fromJSON(output_file, simplifyDataFrame = TRUE)
 }
 
 cached_years_from_payload <- function(payload) {
@@ -444,28 +436,3 @@ payload <- list(
 
 jsonlite::write_json(payload, output_file, pretty = TRUE, auto_unbox = TRUE, na = "null")
 message("Wrote ", output_file)
-writeLines(
-  paste0(
-    "window.STJORDAL_HISTORY_DATA = ",
-    jsonlite::toJSON(payload, pretty = FALSE, auto_unbox = TRUE, na = "null"),
-    ";\n"
-  ),
-  output_js_file,
-  useBytes = TRUE
-)
-message("Wrote ", output_js_file)
-
-if (dir.exists(dirname(docs_output_file))) {
-  jsonlite::write_json(payload, docs_output_file, pretty = TRUE, auto_unbox = TRUE, na = "null")
-  message("Wrote ", docs_output_file)
-  writeLines(
-    paste0(
-      "window.STJORDAL_HISTORY_DATA = ",
-      jsonlite::toJSON(payload, pretty = FALSE, auto_unbox = TRUE, na = "null"),
-      ";\n"
-    ),
-    docs_output_js_file,
-    useBytes = TRUE
-  )
-  message("Wrote ", docs_output_js_file)
-}

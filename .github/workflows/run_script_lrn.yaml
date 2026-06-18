@@ -58,6 +58,6 @@ jobs:
           commit_message: "gHA Stjordal data build: ${{ github.run_number }}"
           commit_user_name: github-actions[bot]
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
-          file_pattern: "docs/stjordal/* reports/stjordal/stjordal-history.json reports/stjordal/stjordal-history.js"
+          file_pattern: "data/stjordal-history.json docs/stjordal/*"
           skip_fetch: false
           skip_dirty_check: false

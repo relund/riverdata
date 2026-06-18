@@ -14,9 +14,7 @@ dir.create(docs_dir, recursive = TRUE, showWarnings = FALSE)
 source(fetch_script, local = new.env(parent = globalenv()))
 
 files_to_copy <- c(
-  "stjordal.html",
-  "stjordal-history.json",
-  "stjordal-history.js"
+  "stjordal.html"
 )
 
 source_files <- file.path(report_dir, files_to_copy)

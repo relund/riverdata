@@ -1450,12 +1450,13 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
 
 
 </script>
-  <script src="stjordal-history.js"></script>
   <script>
     const CURRENT_YEAR = new Date().getFullYear();
     const API_URL = "https://api.elveguiden.no/api/v2/catches/latest-catches";
     const MAP_KML_URL = "https://www.google.com/maps/d/kml?mid=1VolBViDHbnVU3Y2QblVuM3aHwTmjWd0&forcekml=1";
-    const HISTORY_DATA_URL = "stjordal-history.json";
+    const HISTORY_DATA_URL = window.location.hostname === "relund.github.io"
+      ? "https://raw.githubusercontent.com/relund/riverdata/master/data/stjordal-history.json"
+      : "../../data/stjordal-history.json";
     const WATERLEVEL_API_KEY = "di1JUtpivkKyFZ1bGoXF5Q==";
     const HYDAPI_OBSERVATIONS_URL = "https://hydapi.nve.no/api/v1/Observations";
     const HISTORY_YEARS = Array.from({ length: 4 }, (_, index) => CURRENT_YEAR - 3 + index);
@@ -3383,15 +3384,13 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
 
     async function fetchHistoricalData() {
       if (!historicalDataPromise) {
-        const embeddedHistoryData = window.STJORDAL_HISTORY_DATA;
-        historicalDataPromise = (embeddedHistoryData
-          ? Promise.resolve(embeddedHistoryData)
-          : fetch(HISTORY_DATA_URL, { cache: "no-store" }).then(async (response) => {
+        historicalDataPromise = fetch(HISTORY_DATA_URL, { cache: "no-store" })
+          .then(async (response) => {
             if (!response.ok) {
               throw new Error(`${HISTORY_DATA_URL} svarede med HTTP ${response.status}`);
             }
             return response.json();
-          }))
+          })
           .then(async (response) => {
             const json = response;
             const historicalCatches = (json.catches ?? [])
