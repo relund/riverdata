@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T21:35:28Z",
+  "generated_at": "2026-06-20T04:57:00Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -43,11 +43,11 @@
       "released_catch": false,
       "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/6a35948168098-messenger_creation_e2d682a3-b728-412f-adc0-ffd532992cc6.jpeg",
       "detail_url": "https://elveguiden.no/no/laksebors/catches/711055?riverId=13",
-      "flow_cms": 25.1464,
+      "flow_cms": 25.021,
       "flow_trend": "neutral",
-      "water_level_m": 1.0416,
+      "water_level_m": 1.04,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.5313
+      "water_temperature_c": 13.6619
     },
     {
       "id": "710862",
@@ -134074,11 +134074,19 @@
     },
     {
       "date": "2026-06-19",
-      "flow_cms": 25.1464,
+      "flow_cms": 25.021,
       "flow_trend": "neutral",
-      "water_level_m": 1.0416,
+      "water_level_m": 1.04,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.5313
+      "water_temperature_c": 13.6619
+    },
+    {
+      "date": "2026-06-20",
+      "flow_cms": 23.2949,
+      "flow_trend": "faldende",
+      "water_level_m": 1.0185,
+      "water_level_trend": "neutral",
+      "water_temperature_c": 14.9469
     }
   ]
 }
