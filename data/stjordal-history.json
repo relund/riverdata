@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T18:04:41Z",
+  "generated_at": "2026-06-20T21:57:25Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -43,11 +43,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/711311?riverId=13",
-      "flow_cms": 23.1489,
+      "flow_cms": 23.567,
       "flow_trend": "faldende",
-      "water_level_m": 1.0166,
+      "water_level_m": 1.0218,
       "water_level_trend": "neutral",
-      "water_temperature_c": 14.5774
+      "water_temperature_c": 14.4937
     },
     {
       "id": "711251",
@@ -66,11 +66,11 @@
       "released_catch": false,
       "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1781958865.png",
       "detail_url": "https://elveguiden.no/no/laksebors/catches/711251?riverId=13",
-      "flow_cms": 23.1489,
+      "flow_cms": 23.567,
       "flow_trend": "faldende",
-      "water_level_m": 1.0166,
+      "water_level_m": 1.0218,
       "water_level_trend": "neutral",
-      "water_temperature_c": 14.5774
+      "water_temperature_c": 14.4937
     },
     {
       "id": "711308",
@@ -89,11 +89,11 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/711308?riverId=13",
-      "flow_cms": 23.1489,
+      "flow_cms": 23.567,
       "flow_trend": "faldende",
-      "water_level_m": 1.0166,
+      "water_level_m": 1.0218,
       "water_level_trend": "neutral",
-      "water_temperature_c": 14.5774
+      "water_temperature_c": 14.4937
     },
     {
       "id": "711302",
@@ -112,11 +112,11 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/711302?riverId=13",
-      "flow_cms": 23.1489,
+      "flow_cms": 23.567,
       "flow_trend": "faldende",
-      "water_level_m": 1.0166,
+      "water_level_m": 1.0218,
       "water_level_trend": "neutral",
-      "water_temperature_c": 14.5774
+      "water_temperature_c": 14.4937
     },
     {
       "id": "711055",
@@ -134174,11 +134174,11 @@
     },
     {
       "date": "2026-06-20",
-      "flow_cms": 23.1489,
+      "flow_cms": 23.567,
       "flow_trend": "faldende",
-      "water_level_m": 1.0166,
+      "water_level_m": 1.0218,
       "water_level_trend": "neutral",
-      "water_temperature_c": 14.5774
+      "water_temperature_c": 14.4937
     }
   ]
 }
