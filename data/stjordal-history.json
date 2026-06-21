@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21T05:35:25Z",
+  "generated_at": "2026-06-21T11:41:06Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -27,6 +27,29 @@
   },
   "catches": [
     {
+      "id": "711524",
+      "date": "2026-06-21",
+      "time_of_day": "08:41",
+      "week": 25,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "Hembre",
+      "fishing_spot": null,
+      "fisher_name": "Jaran Gustavsen",
+      "species": "Laks",
+      "weight_kg": 4.3,
+      "length_cm": 76,
+      "equipment": "Flue",
+      "released_catch": true,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/711524?riverId=13",
+      "flow_cms": 30.5404,
+      "flow_trend": "stigende",
+      "water_level_m": 1.1048,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 13.4376
+    },
+    {
       "id": "711472",
       "date": "2026-06-21",
       "time_of_day": "02:05",
@@ -43,11 +66,11 @@
       "released_catch": false,
       "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1782006770.png",
       "detail_url": "https://elveguiden.no/no/laksebors/catches/711472?riverId=13",
-      "flow_cms": 30.7024,
+      "flow_cms": 30.5404,
       "flow_trend": "stigende",
-      "water_level_m": 1.1066,
+      "water_level_m": 1.1048,
       "water_level_trend": "stigende",
-      "water_temperature_c": 13.6128
+      "water_temperature_c": 13.4376
     },
     {
       "id": "711311",
@@ -134205,11 +134228,11 @@
     },
     {
       "date": "2026-06-21",
-      "flow_cms": 30.7024,
+      "flow_cms": 30.5404,
       "flow_trend": "stigende",
-      "water_level_m": 1.1066,
+      "water_level_m": 1.1048,
       "water_level_trend": "stigende",
-      "water_temperature_c": 13.6128
+      "water_temperature_c": 13.4376
     }
   ]
 }
