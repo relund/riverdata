@@ -7,7 +7,8 @@
 snip_plot_catch(
   datCatch,
   .look_back = 30,
-  .unit = c("days", "weeks"),
+  .unit = c("cur_year_days", "cur_year_weeks", "cur_year_months", "months", "years"),
+  .group = c("Place", "Method"),
   .plotly = TRUE
 )
 }
@@ -16,7 +17,9 @@ snip_plot_catch(
 
 \item{.look_back}{Number of time units to plot.}
 
-\item{.unit}{Time unit for the look-back window. One of \code{"days"} or \code{"weeks"}.}
+\item{.unit}{Time unit for the look-back window. One of \code{"cur_year_days"}, \code{"cur_year_weeks"}, \code{"cur_year_months"}, \code{"months"} or \code{"years"}.}
+
+\item{.group}{Column name used for grouping and fill in the bar plot. One of \code{"Place"} or \code{"Method"}.}
 
 \item{.plotly}{Use plotly otherwise just ggplot.}
 }

@@ -11,5 +11,10 @@ Package for riverdata repo at Github.
 \author{
 \strong{Maintainer}: Lars Relund Nielsen \email{lars@relund.dk} (\href{https://orcid.org/0000-0002-4802-3071}{ORCID})
 
+Authors:
+\itemize{
+  \item Lars Relund Nielsen \email{lars@relund.dk} (\href{https://orcid.org/0000-0002-4802-3071}{ORCID})
+}
+
 }
 \keyword{internal}
