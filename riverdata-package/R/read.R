@@ -11,7 +11,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' read_data(file_prefix = "data_skjern_catch_salmon_", year = 2023:2024)
+#' }
 read_data <- function(
       file_prefix,
       year = NULL,

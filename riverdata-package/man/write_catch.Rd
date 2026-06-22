@@ -24,10 +24,12 @@ The data (tibble).
 Data is written to \code{str_c(prefix, "_catch_", res, "_", yr, ".csv")}.
 }
 \examples{
+\dontrun{
 url <- str_c("https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/",
              "catches/assoc/A97F957DD48AEDD4C1258814003E71FE/1/")
 prefix <- "tmp/data_skjern"
 yr <- 2023
 write_catch(url, prefix, yr, species = "Laks")
 
+}
 }

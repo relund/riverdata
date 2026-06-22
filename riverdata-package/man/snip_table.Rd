@@ -18,6 +18,8 @@ A formatted HTML table.
 Catch summary table
 }
 \examples{
+\dontrun{
 dat <- read_data("data_karup_catch_seatrout_", year = 2023)
 snip_table(dat)
+}
 }

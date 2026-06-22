@@ -13,8 +13,10 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dat <- read_data("data_karup_catch_seatrout_", year = 2023)
 #' snip_plot_catch(dat)
+#' }
 snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days", "cur_year_weeks", "cur_year_months", "months", "years"), .group = c("Place", "Method"), .plotly = TRUE) {
    .unit <- match.arg(.unit)
    .group <- match.arg(.group)
@@ -235,8 +237,10 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dat <- read_data("data_karup_catch_seatrout_", year = 2023)
 #' snip_table(dat)
+#' }
 snip_table <- function(datCatch, .row_unit = c("Year")) {
    .row_unit <- match.arg(.row_unit)
 

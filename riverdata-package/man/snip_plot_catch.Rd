@@ -30,6 +30,8 @@ The plot object.
 Plot of catches given current date
 }
 \examples{
+\dontrun{
 dat <- read_data("data_karup_catch_seatrout_", year = 2023)
 snip_plot_catch(dat)
+}
 }

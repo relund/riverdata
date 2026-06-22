@@ -24,5 +24,7 @@ The data (tibble).
 Read data files from the \code{data} subfolder
 }
 \examples{
+\dontrun{
 read_data(file_prefix = "data_skjern_catch_salmon_", year = 2023:2024)
+}
 }

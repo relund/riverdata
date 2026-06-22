@@ -15,11 +15,13 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' url <- str_c("https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/",
 #'              "catches/assoc/A97F957DD48AEDD4C1258814003E71FE/1/")
 #' prefix <- "tmp/data_skjern"
 #' yr <- 2023
 #' write_catch(url, prefix, yr, species = "Laks")
+#' }
 #'
 write_catch <-
    function(url,
@@ -520,8 +522,46 @@ save_hobo_data <- function() {
 #' \dontrun{
 #' write_time_series_data(stations, "data/data_karup", "waterlevel", 15)
 #' }
+.fetch_json_with_retry <- function(url, place, id, retry_delays = c(5, 15, 45),
+                                   fetch = jsonlite::fromJSON,
+                                   sleep = Sys.sleep) {
+  validate_response <- function(response) {
+    if (!is.list(response) || is.null(response$PlotRecs)) {
+      stop("response does not contain PlotRecs", call. = FALSE)
+    }
+    records <- response$PlotRecs
+    if (length(records) > 0 && (is.null(dim(records)) || ncol(records) < 2)) {
+      stop("PlotRecs does not contain the expected columns", call. = FALSE)
+    }
+    response
+  }
+
+  last_error <- NULL
+  attempts <- length(retry_delays) + 1
+  for (attempt in seq_len(attempts)) {
+    response <- tryCatch(
+      validate_response(fetch(url)),
+      error = function(error) {
+        last_error <<- error
+        NULL
+      }
+    )
+    if (!is.null(response)) return(response)
+    if (attempt <= length(retry_delays)) {
+      message("  Could not retrieve ", place, " (", id, "), attempt ",
+              attempt, ": ", conditionMessage(last_error), ". Retrying in ",
+              retry_delays[attempt], " seconds.")
+      sleep(retry_delays[attempt])
+    }
+  }
+
+  warning("Could not retrieve ", place, " (", id, ") after ", attempts,
+          " attempts: ", conditionMessage(last_error), call. = FALSE)
+  NULL
+}
+
 write_time_series_data <- function(stations = NULL, prefix, prefix1, days) {
-  message("Retrive ", prefix1, " time series data.")
+  message("Retrieve ", prefix1, " time series data.")
   dat2 <- NULL
   if (!is.null(stations)) {
     iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
@@ -531,27 +571,7 @@ write_time_series_data <- function(stations = NULL, prefix, prefix1, days) {
       place <- stations$place[i]
       url <- paste0("https://vandportalen.dk/api/hyd/getplotdata?tsid=", id,
                     "&enddate=", iso, "&days=", days, "&pw=10000000")
-      retry_delays <- c(5, 15, 45)
-      tmp <- NULL
-      for (attempt in seq_len(length(retry_delays) + 1)) {
-        tmp <- tryCatch(
-          fromJSON(url),
-          error = function(e) {
-            if (attempt <= length(retry_delays)) {
-              message("  Could not retrieve ", place, " (", id, "), attempt ",
-                      attempt, ": ", conditionMessage(e), ". Retrying in ",
-                      retry_delays[attempt], " seconds.")
-              Sys.sleep(retry_delays[attempt])
-            } else {
-              warning("Could not retrieve ", place, " (", id, ") after ",
-                      attempt, " attempts: ", conditionMessage(e),
-                      call. = FALSE)
-            }
-            NULL
-          }
-        )
-        if (!is.null(tmp)) break
-      }
+      tmp <- .fetch_json_with_retry(url, place, id)
       if (is.null(tmp)) next
       if (length(tmp$PlotRecs) == 0) next
       tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
@@ -606,7 +626,7 @@ write_time_series_data <- function(stations = NULL, prefix, prefix1, days) {
     message("  Write data to ", fn)
     write_csv(dat3, fn)
   }
-  return(invisible(dat))
+  invisible(max(dat2$Date, na.rm = TRUE))
 }
 
 #' Write Skjern lock flow data

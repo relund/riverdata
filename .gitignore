@@ -9,6 +9,8 @@ reports/karup_weight_files/
 tmp
 temp
 test*
+!riverdata-package/tests/
+!riverdata-package/tests/**
 .positai
 riverdata_0.0.8.tar.gz
 riverdata.Rcheck
