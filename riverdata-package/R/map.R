@@ -75,9 +75,10 @@ map_add_markers <- function(map, group, data) {
 
   map <- map %>%
     addMarkers(
-      ~.data$long, ~.data$lat,
-      label = ~.data$Label,
-      popup = ~.data$Pop,
+      lng = data$long,
+      lat = data$lat,
+      label = data$Label,
+      popup = data$Pop,
       popupOptions = popupOptions(
         maxWidth = 180,
         minWidth = 180,
@@ -93,8 +94,8 @@ map_add_markers <- function(map, group, data) {
         ),
         direction = "top"
       ),
-      icon = ~icons(
-        .data$Icon,
+      icon = icons(
+        data$Icon,
         iconWidth = 32,
         iconHeight = 32,
         iconAnchorX = 16,
@@ -136,8 +137,10 @@ map_add_lines <- function(map, group, data, color, useClub = TRUE) {
     nest()
   grp <- map_chr(1:nrow(dat), function(i) {
     g <- if_else(useClub, str_c(dat$Club[i], " (", group, ")"), group)
+    line_data <- dat[i,] %>% unnest(cols = all_of("data"))
     map <<- map %>%
-      addPolylines(~.data$long, ~.data$lat, label = ~.data$Label, popup = ~.data$Pop,
+      addPolylines(lng = line_data$long, lat = line_data$lat,
+                   label = line_data$Label, popup = line_data$Pop,
                    popupOptions = popupOptions(
                      maxWidth = 180,
                      minWidth = 180,
@@ -154,7 +157,7 @@ map_add_lines <- function(map, group, data, color, useClub = TRUE) {
                      direction = "top"
                    ),
                    group = g, color = color, weight = 1.5, opacity = 0.75,
-                   data = dat[i,] %>% unnest(cols = all_of("data")))
+                   data = line_data)
     return(g)
   })
   grp <- unique(grp)
