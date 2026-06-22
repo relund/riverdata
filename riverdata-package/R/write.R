@@ -529,13 +529,41 @@ write_time_series_data <- function(stations = NULL, prefix, prefix1, days) {
     for (i in 1:nrow(stations)) {
       id <- stations$id[i]
       place <- stations$place[i]
-      tmp <- fromJSON(paste0("https://vandportalen.dk/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=", days, "&pw=10000000"))
+      url <- paste0("https://vandportalen.dk/api/hyd/getplotdata?tsid=", id,
+                    "&enddate=", iso, "&days=", days, "&pw=10000000")
+      retry_delays <- c(5, 15, 45)
+      tmp <- NULL
+      for (attempt in seq_len(length(retry_delays) + 1)) {
+        tmp <- tryCatch(
+          fromJSON(url),
+          error = function(e) {
+            if (attempt <= length(retry_delays)) {
+              message("  Could not retrieve ", place, " (", id, "), attempt ",
+                      attempt, ": ", conditionMessage(e), ". Retrying in ",
+                      retry_delays[attempt], " seconds.")
+              Sys.sleep(retry_delays[attempt])
+            } else {
+              warning("Could not retrieve ", place, " (", id, ") after ",
+                      attempt, " attempts: ", conditionMessage(e),
+                      call. = FALSE)
+            }
+            NULL
+          }
+        )
+        if (!is.null(tmp)) break
+      }
+      if (is.null(tmp)) next
       if (length(tmp$PlotRecs) == 0) next
       tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
       tmp <- tmp %>% filter(!(is.nan(V) | is.na(V)))
       colnames(tmp) <- c("Date", "Value")
       tmp <- tmp %>% mutate(Place = place, Serie = i)
       dat <- bind_rows(dat, tmp)
+    }
+    if (is.null(dat)) {
+      warning("No ", prefix1, " time-series data could be retrieved. Existing data files are unchanged.",
+              call. = FALSE)
+      return(invisible(NULL))
     }
     dat <- dat %>%
       mutate(Date = ymd_hms(Date, tz = "UTC")) %>%
