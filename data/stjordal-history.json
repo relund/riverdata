@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21T21:58:23Z",
+  "generated_at": "2026-06-22T05:46:49Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -43,11 +43,11 @@
       "released_catch": false,
       "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1782076323.png",
       "detail_url": "https://elveguiden.no/no/laksebors/catches/711786?riverId=13",
-      "flow_cms": 30.0889,
+      "flow_cms": 30.2768,
       "flow_trend": "stigende",
-      "water_level_m": 1.0997,
+      "water_level_m": 1.1018,
       "water_level_trend": "stigende",
-      "water_temperature_c": 13.5766
+      "water_temperature_c": 13.6154
     },
     {
       "id": "711730",
@@ -66,11 +66,11 @@
       "released_catch": false,
       "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1782067429.png",
       "detail_url": "https://elveguiden.no/no/laksebors/catches/711730?riverId=13",
-      "flow_cms": 30.0889,
+      "flow_cms": 30.2768,
       "flow_trend": "stigende",
-      "water_level_m": 1.0997,
+      "water_level_m": 1.1018,
       "water_level_trend": "stigende",
-      "water_temperature_c": 13.5766
+      "water_temperature_c": 13.6154
     },
     {
       "id": "711524",
@@ -89,11 +89,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/711524?riverId=13",
-      "flow_cms": 30.0889,
+      "flow_cms": 30.2768,
       "flow_trend": "stigende",
-      "water_level_m": 1.0997,
+      "water_level_m": 1.1018,
       "water_level_trend": "stigende",
-      "water_temperature_c": 13.5766
+      "water_temperature_c": 13.6154
     },
     {
       "id": "711472",
@@ -112,11 +112,11 @@
       "released_catch": false,
       "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1782006770.png",
       "detail_url": "https://elveguiden.no/no/laksebors/catches/711472?riverId=13",
-      "flow_cms": 30.0889,
+      "flow_cms": 30.2768,
       "flow_trend": "stigende",
-      "water_level_m": 1.0997,
+      "water_level_m": 1.1018,
       "water_level_trend": "stigende",
-      "water_temperature_c": 13.5766
+      "water_temperature_c": 13.6154
     },
     {
       "id": "711311",
@@ -134274,11 +134274,19 @@
     },
     {
       "date": "2026-06-21",
-      "flow_cms": 30.0889,
+      "flow_cms": 30.2768,
       "flow_trend": "stigende",
-      "water_level_m": 1.0997,
+      "water_level_m": 1.1018,
       "water_level_trend": "stigende",
-      "water_temperature_c": 13.5766
+      "water_temperature_c": 13.6154
+    },
+    {
+      "date": "2026-06-22",
+      "flow_cms": 34.0284,
+      "flow_trend": "stigende",
+      "water_level_m": 1.1428,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 13.6394
     }
   ]
 }
