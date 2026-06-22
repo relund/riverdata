@@ -1,5 +1,12 @@
 # Functions for preparing data for map visualizations
 
+#' Normalize links in map popup text
+#'
+#' @param x Character vector containing popup HTML.
+#'
+#' @return A character vector with visible link text normalized.
+#' @examples
+#' map_normalize_popup_links("<a href='https://example.com'>https://example.com</a>")
 map_normalize_popup_links <- function(x) {
   str_replace_all(
     x,
@@ -8,27 +15,45 @@ map_normalize_popup_links <- function(x) {
   )
 }
 
+#' Wrap map popup content
+#'
+#' @param x Character vector containing popup HTML.
+#'
+#' @return HTML suitable for a Leaflet popup.
+#' @examples
+#' map_wrap_popup_content("Fishing area")
 map_wrap_popup_content <- function(x) {
   HTML(str_c("<div style='max-width:180px;'>", x, "</div>"))
 }
 
+#' Add marker data to a Leaflet map
+#'
+#' @param map A Leaflet map.
+#' @param group Layer group name.
+#' @param data Marker data containing coordinates and popup fields.
+#'
+#' @return A list containing the updated map and added group names.
+#' @examples
+#' \dontrun{
+#' map_add_markers(leaflet(), "Places", marker_data)
+#' }
 map_add_markers <- function(map, group, data) {
   if (nrow(data) == 0) return(list(map=map, groups=NULL))
   data <- data %>%
     mutate(
-      Label = map(map_chr(as.character(Desc), map_normalize_popup_links), map_wrap_popup_content),
-      Pop = map_chr(as.character(Desc), map_normalize_popup_links)
+      Label = map(map_chr(as.character(.data$Desc), map_normalize_popup_links), map_wrap_popup_content),
+      Pop = map_chr(as.character(.data$Desc), map_normalize_popup_links)
     )
   if (group %in% c("Parkering", "Shelter")) {
     data <- data %>%
       mutate(
         MapsUrl = str_c(
           "https://www.google.com/maps/dir/?api=1&destination=",
-          lat, ",", long
+          .data$lat, ",", .data$long
         ),
-        MapsUrlEnc = map_chr(MapsUrl, ~ URLencode(.x, reserved = TRUE)),
+        MapsUrlEnc = map_chr(.data$MapsUrl, ~ URLencode(.x, reserved = TRUE)),
         Pop = pmap(
-          list(Desc, MapsUrl, MapsUrlEnc),
+          list(.data$Desc, .data$MapsUrl, .data$MapsUrlEnc),
           function(desc, maps_url, maps_url_enc) {
             HTML(
               str_c(
@@ -45,14 +70,14 @@ map_add_markers <- function(map, group, data) {
           }
         )
       ) %>%
-      select(-MapsUrl, -MapsUrlEnc)
+      select(-all_of(c("MapsUrl", "MapsUrlEnc")))
   }
 
   map <- map %>%
     addMarkers(
-      ~long, ~lat,
-      label = ~Label,
-      popup = ~Pop,
+      ~.data$long, ~.data$lat,
+      label = ~.data$Label,
+      popup = ~.data$Pop,
       popupOptions = popupOptions(
         maxWidth = 180,
         minWidth = 180,
@@ -69,7 +94,7 @@ map_add_markers <- function(map, group, data) {
         direction = "top"
       ),
       icon = ~icons(
-        Icon,
+        .data$Icon,
         iconWidth = 32,
         iconHeight = 32,
         iconAnchorX = 16,
@@ -87,19 +112,32 @@ map_add_markers <- function(map, group, data) {
 }
 
 
+#' Add line data to a Leaflet map
+#'
+#' @param map A Leaflet map.
+#' @param group Layer group name.
+#' @param data Line data containing coordinates and popup fields.
+#' @param color Line color.
+#' @param useClub Whether club names should be included in layer names.
+#'
+#' @return A list containing the updated map and added group names.
+#' @examples
+#' \dontrun{
+#' map_add_lines(leaflet(), "Fishing water", line_data, "#3C8AE6")
+#' }
 map_add_lines <- function(map, group, data, color, useClub = TRUE) {
   if (nrow(data) == 0) return(list(map=map, groups=NULL))
   dat <- data %>%
     mutate(
-      Label = map(map_chr(as.character(Desc), map_normalize_popup_links), map_wrap_popup_content),
-      Pop = map(map_chr(as.character(Desc), map_normalize_popup_links), map_wrap_popup_content)
+      Label = map(map_chr(as.character(.data$Desc), map_normalize_popup_links), map_wrap_popup_content),
+      Pop = map(map_chr(as.character(.data$Desc), map_normalize_popup_links), map_wrap_popup_content)
     ) %>%
-    group_by(LineGroupId, Desc, Club, Label, Pop) %>%
+    group_by(.data$LineGroupId, .data$Desc, .data$Club, .data$Label, .data$Pop) %>%
     nest()
   grp <- map_chr(1:nrow(dat), function(i) {
     g <- if_else(useClub, str_c(dat$Club[i], " (", group, ")"), group)
     map <<- map %>%
-      addPolylines(~long, ~lat, label = ~Label, popup = ~Pop,
+      addPolylines(~.data$long, ~.data$lat, label = ~.data$Label, popup = ~.data$Pop,
                    popupOptions = popupOptions(
                      maxWidth = 180,
                      minWidth = 180,
@@ -116,7 +154,7 @@ map_add_lines <- function(map, group, data, color, useClub = TRUE) {
                      direction = "top"
                    ),
                    group = g, color = color, weight = 1.5, opacity = 0.75,
-                   data = dat[i,] %>% unnest(col = c(data)))
+                   data = dat[i,] %>% unnest(cols = all_of("data")))
     return(g)
   })
   grp <- unique(grp)
@@ -155,32 +193,32 @@ map_strip_kml <- function(
       res <- tibble(Desc = xml_text(xml_find_first(y, "./name")),
                     Text = xml_text(xml_find_first(y, "./description")),
                     cord = xml_text(xml_find_first(y, ".//coordinates"), trim = TRUE) ) %>%
-        mutate(long = as.numeric(str_split_fixed(cord, ",", 3)[,1]), lat = as.numeric(str_split_fixed(cord, ",", 3)[,2])) %>%
-        select(-cord)
+        mutate(long = as.numeric(str_split_fixed(.data$cord, ",", 3)[,1]), lat = as.numeric(str_split_fixed(.data$cord, ",", 3)[,2])) %>%
+        select(-all_of("cord"))
       tibble(Group = folderName, Point = list(res))
     })) %>%
-      filter(map_lgl(Point, function(df) nrow(df) > 0)) %>%
-      unnest(Point) %>% mutate(Club = club) %>%
+      filter(map_lgl(.data$Point, function(df) nrow(df) > 0)) %>%
+      unnest(cols = all_of("Point")) %>% mutate(Club = club) %>%
       mutate(Icon = case_when(
-        str_detect(Group, fixed("parkering", ignore_case = TRUE)) ~ "park.png",
-        str_detect(Group, fixed("standpladser", ignore_case = TRUE)) ~ "fish.png",
-        str_detect(Group, fixed("shelter", ignore_case = TRUE)) ~ "shelter.png",
-        str_detect(Group, fixed("sten", ignore_case = TRUE)) ~ "rock.png",
-        str_detect(Desc, fixed("hytte", ignore_case = TRUE)) ~ "cottage.png",
-        str_detect(Desc, fixed("indhegning", ignore_case = TRUE)) ~ "fence.png",
-        str_detect(Desc, regex("skarrildhus", ignore_case = TRUE)) ~ "infoplace.png",
-        str_detect(Desc, regex("hus", ignore_case = TRUE)) ~ "house.png",
-        str_detect(Desc, fixed("fiskekort", ignore_case = TRUE)) ~ "house.png",
-        str_detect(Desc, fixed("p-plads", ignore_case = TRUE)) ~ "park.png",
-        str_detect(Desc, fixed("parkering", ignore_case = TRUE)) ~ "park.png",
-        str_detect(Desc, fixed("spang", ignore_case = TRUE)) ~ "footbridge.png",
-        str_detect(Desc, fixed("toilet", ignore_case = TRUE)) ~ "wc.png",
-        str_detect(Desc, fixed("wc", ignore_case = TRUE)) ~ "wc.png",
-        str_detect(Desc, fixed("info", ignore_case = TRUE)) ~ "infoplace.png",
-        str_detect(Desc, fixed("shelter", ignore_case = TRUE)) ~ "shelter.png",
-        str_detect(Desc, fixed("bro", ignore_case = TRUE)) ~ "bridge.png",
-        str_detect(Desc, fixed("båd", ignore_case = TRUE)) ~ "boat.png",
-        str_detect(Desc, fixed("fiskeret", ignore_case = TRUE)) ~ "infoplace.png",
+        str_detect(.data$Group, fixed("parkering", ignore_case = TRUE)) ~ "park.png",
+        str_detect(.data$Group, fixed("standpladser", ignore_case = TRUE)) ~ "fish.png",
+        str_detect(.data$Group, fixed("shelter", ignore_case = TRUE)) ~ "shelter.png",
+        str_detect(.data$Group, fixed("sten", ignore_case = TRUE)) ~ "rock.png",
+        str_detect(.data$Desc, fixed("hytte", ignore_case = TRUE)) ~ "cottage.png",
+        str_detect(.data$Desc, fixed("indhegning", ignore_case = TRUE)) ~ "fence.png",
+        str_detect(.data$Desc, regex("skarrildhus", ignore_case = TRUE)) ~ "infoplace.png",
+        str_detect(.data$Desc, regex("hus", ignore_case = TRUE)) ~ "house.png",
+        str_detect(.data$Desc, fixed("fiskekort", ignore_case = TRUE)) ~ "house.png",
+        str_detect(.data$Desc, fixed("p-plads", ignore_case = TRUE)) ~ "park.png",
+        str_detect(.data$Desc, fixed("parkering", ignore_case = TRUE)) ~ "park.png",
+        str_detect(.data$Desc, fixed("spang", ignore_case = TRUE)) ~ "footbridge.png",
+        str_detect(.data$Desc, fixed("toilet", ignore_case = TRUE)) ~ "wc.png",
+        str_detect(.data$Desc, fixed("wc", ignore_case = TRUE)) ~ "wc.png",
+        str_detect(.data$Desc, fixed("info", ignore_case = TRUE)) ~ "infoplace.png",
+        str_detect(.data$Desc, fixed("shelter", ignore_case = TRUE)) ~ "shelter.png",
+        str_detect(.data$Desc, fixed("bro", ignore_case = TRUE)) ~ "bridge.png",
+        str_detect(.data$Desc, fixed("båd", ignore_case = TRUE)) ~ "boat.png",
+        str_detect(.data$Desc, fixed("fiskeret", ignore_case = TRUE)) ~ "infoplace.png",
         TRUE ~ NA_character_
       ))
     if (!is.null(group_name_markers)) datMarkers$Group <- group_name_markers
@@ -198,16 +236,16 @@ map_strip_kml <- function(
         txt <- xml_text(xml_find_all(n, "./LineString/coordinates"))
         l <- suppressWarnings(
           read_csv(txt, col_names = c("long", "lat", "h"), col_types = "ddd") %>%
-            select(-h) %>%
-            filter(!is.na(lat)))
+            select(-all_of("h")) %>%
+            filter(!is.na(.data$lat)))
         ctr <<- ctr + 1
         tibble(Desc = lineName, Text = lineText, LineCord = list(l), LineGroupId = ctr)
       }))
       tibble(Group = folderName, Line = list(res))
     })) %>%
-      filter(map_lgl(Line, function(df) nrow(df) > 0)) %>%
-      unnest(col = c(Line)) %>%
-      unnest(col = c(LineCord)) %>%
+      filter(map_lgl(.data$Line, function(df) nrow(df) > 0)) %>%
+      unnest(cols = all_of("Line")) %>%
+      unnest(cols = all_of("LineCord")) %>%
       mutate(Club = club)
     if (!is.null(group_name_lines)) datLines$Group <- group_name_lines
   }

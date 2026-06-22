@@ -48,9 +48,9 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
             .data$Year == current_year & Date > filter_threshold
          }
       ) %>%
-      dplyr::select(Date, dplyr::all_of(.group)) %>%
+      dplyr::select(dplyr::all_of(c("Date", .group))) %>%
       dplyr::rename(Place = dplyr::all_of(.group)) %>%
-      arrange(desc(Date))
+      arrange(desc(.data$Date))
 
    if (.unit == "cur_year_weeks") {
       lastDate <- floor_date(current_date, unit = "week", week_start = 1) + weeks(1)
@@ -78,9 +78,9 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
                   }
             }
          ) %>%
-         dplyr::select(Date, dplyr::all_of(.group)) %>%
+         dplyr::select(dplyr::all_of(c("Date", .group))) %>%
          dplyr::rename(Place = dplyr::all_of(.group)) %>%
-         arrange(desc(Date))
+         arrange(desc(.data$Date))
 
       if (.unit == "cur_year_weeks") {
          lastDate <- floor_date(max(dat$Date), unit = "week", week_start = 1) + weeks(1)
@@ -95,10 +95,10 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
 
    if (.unit == "cur_year_weeks") {
       dat <- dat %>%
-         mutate(Date = floor_date(Date, unit = "week", week_start = 1))
+         mutate(Date = floor_date(.data$Date, unit = "week", week_start = 1))
    } else if (.unit == "cur_year_months") {
       dat <- dat %>%
-         mutate(Date = floor_date(Date, unit = "month"))
+         mutate(Date = floor_date(.data$Date, unit = "month"))
    } else if (.unit == "months") {
       month_levels <- month(as.Date("2000-01-01") + months(0:11), label = TRUE, abbr = TRUE)
       month_values <- month(dat$Date, label = TRUE, abbr = TRUE)
@@ -106,7 +106,7 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
          mutate(Date = factor(month_values, levels = month_levels[month_levels %in% month_values], ordered = TRUE))
    } else if (.unit == "years") {
       dat <- dat %>%
-         mutate(Date = floor_date(Date, unit = "year"))
+         mutate(Date = floor_date(.data$Date, unit = "year"))
    }
 
    if (.unit == "months") {
@@ -310,7 +310,7 @@ snip_table <- function(datCatch, .row_unit = c("Year")) {
       }
 
       dat_stat %>%
-         arrange(desc(Year)) %>%
+         arrange(desc(.data$Year)) %>%
          knitr::kable(col.names = c_names, escape = FALSE, align = "c", format = "html") %>%
          kableExtra::kable_styling(
             fixed_thead = TRUE,
@@ -320,23 +320,30 @@ snip_table <- function(datCatch, .row_unit = c("Year")) {
          kableExtra::add_header_above(header_names)
    }
 }
-
-
-
+#' Build an interactive river map
+#'
+#' @param prefix File prefix for the map marker and line CSV files.
+#' @param show_groups Layer groups shown when the map opens.
+#'
+#' @return A Leaflet map.
+#' @examples
+#' \dontrun{
+#' snip_leaflet("data/data_karup_", show_groups = "Stednavne")
+#' }
 snip_leaflet <- function(prefix, show_groups = "Stednavne") {
-   datMarkers <- read_csv(paste0(prefix, "mapmarkers.csv"), col_types = "fccddff") %>% 
-      mutate(Desc = str_c(if_else(!is.na(Desc), str_c("<b>", if_else(is.na(Club), "", str_c(Club, " - ")), Desc, "</b>"), "", ""), 
-                          if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
-      mutate(Desc = str_replace(Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>% 
-      mutate(Desc = map(Desc, HTML), Icon = str_c("www/", Icon), Id = 1:n()) %>% 
-      select(-Text) 
+   datMarkers <- read_csv(paste0(prefix, "mapmarkers.csv"), col_types = "fccddff") %>%
+      mutate(Desc = str_c(if_else(!is.na(.data$Desc), str_c("<b>", if_else(is.na(.data$Club), "", str_c(.data$Club, " - ")), .data$Desc, "</b>"), "", ""),
+                          if_else(!is.na(.data$Text), str_c("<br/><br/>", .data$Text), "", ""))) %>%
+      mutate(Desc = str_replace(.data$Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>%
+      mutate(Desc = map(.data$Desc, HTML), Icon = str_c("www/", .data$Icon), Id = seq_len(n())) %>%
+      select(-all_of("Text"))
    
-   datLines <- read_csv(paste0(prefix, "maplines.csv"), col_types = "fccddif")  %>%  
-      mutate(Desc = str_c("<b>", if_else(is.na(Club), "", str_c(Club, " - ")), if_else(!is.na(Desc), Desc, "", ""), "</b>",
-                          if_else(!is.na(Text), str_c("<br/><br/>", Text), "", ""))) %>% 
-      mutate(Desc = str_replace(Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>% 
-      mutate(Desc = map(Desc, HTML)) %>% 
-      select(-Text) 
+   datLines <- read_csv(paste0(prefix, "maplines.csv"), col_types = "fccddif")  %>%
+      mutate(Desc = str_c("<b>", if_else(is.na(.data$Club), "", str_c(.data$Club, " - ")), if_else(!is.na(.data$Desc), .data$Desc, "", ""), "</b>",
+                          if_else(!is.na(.data$Text), str_c("<br/><br/>", .data$Text), "", ""))) %>%
+      mutate(Desc = str_replace(.data$Desc, "^(.*?)(http.*)([\\s$]*.*)", "\\1<a href='\\2'>\\2</a>\\3")) %>%
+      mutate(Desc = map(.data$Desc, HTML)) %>%
+      select(-all_of("Text"))
    
    # init map
    maplet <- leaflet(width = "100%", height = "100vh") %>%
@@ -357,25 +364,25 @@ snip_leaflet <- function(prefix, show_groups = "Stednavne") {
       if (group %in% c("Parkering", "Shelter", "Stednavne", "Bro/spang")) {
          datIds <- datMarkers %>%
             filter(
-               str_detect(Icon, regex(search_term, ignore_case = T))) 
+               str_detect(.data$Icon, regex(search_term, ignore_case = T)))
       } 
       if (group %in% c("Info")) {
          datIds <- datMarkers %>%
             filter(
-               str_detect(Group, regex(search_term, ignore_case = T)) |
-                  str_detect(Desc, regex(search_term, ignore_case = T)))
+               str_detect(.data$Group, regex(search_term, ignore_case = T)) |
+                  str_detect(.data$Desc, regex(search_term, ignore_case = T)))
       }
       if (group %in% c("Shelter", "Stednavne", "Bro/spang")) {
-         tmpIds <- datIds %>% filter(!is.na(Club)) %>% pull(Id)
-         datIds <- datIds %>% filter(is.na(Club))
-         datMarkers <- datMarkers %>% filter(!(Id %in% tmpIds))
+         tmpIds <- datIds %>% filter(!is.na(.data$Club)) %>% pull(.data$Id)
+         datIds <- datIds %>% filter(is.na(.data$Club))
+         datMarkers <- datMarkers %>% filter(!(.data$Id %in% tmpIds))
       }
-      Ids <- datIds %>% pull(Id)
+      Ids <- datIds %>% pull(.data$Id)
       # cat("Adding group ", group, " with ", length(Ids), " markers\n")
-      lst <- map_add_markers(maplet, group, datMarkers %>% filter(Id %in% Ids))
+      lst <- map_add_markers(maplet, group, datMarkers %>% filter(.data$Id %in% Ids))
       maplet <- lst$map
       grp <- unique(c(grp, lst$groups))
-      datMarkers <- datMarkers %>% filter(!(Id %in% Ids))
+      datMarkers <- datMarkers %>% filter(!(.data$Id %in% Ids))
       # print(datMarkers)
       # print(maplet)
    }
@@ -387,7 +394,7 @@ snip_leaflet <- function(prefix, show_groups = "Stednavne") {
    for (i in 1:length(groups)) {
       group <- groups[i]
       color <- colors[i]
-      datLinesGroup <- datLines %>% filter(str_detect(Group, regex(group, ignore_case = T)))
+      datLinesGroup <- datLines %>% filter(str_detect(.data$Group, regex(group, ignore_case = T)))
       useClub = TRUE
       if (group %in% c("Parkering")) {
          useClub = FALSE

@@ -10,6 +10,7 @@
 #' @param prefix Prefix path for the csv file.
 #' @param species Species. Either "seatrout" or "salmon".
 #' @param club False if consider association. True if consider club.
+#' @param write Whether to write the result to a CSV file.
 #'
 #' @return The data (tibble).
 #' @export
@@ -97,12 +98,12 @@ write_catch <-
          dat3 <- dat2
          if (nrow(dat3) > 0) {  ## Tidy
            if (species == "seatrout")
-             dat3 <- dat3 |> dplyr::filter(Species == "Havørred")
+             dat3 <- dat3 |> dplyr::filter(.data$Species == "Havørred")
            if (species == "salmon")
-             dat3 <- dat3 |> dplyr::filter(Species == "Laks")
-           dat3 <- dat3 |> # remove small fish 
-             filter(!(Species == "Havørred" & (Length < 40 & !is.na(Length)))) |> 
-             filter(!(Species == "Laks" & (Length < 40 & !is.na(Length))))
+             dat3 <- dat3 |> dplyr::filter(.data$Species == "Laks")
+           dat3 <- dat3 |> # remove small fish
+             filter(!(.data$Species == "Havørred" & (.data$Length < 40 & !is.na(.data$Length)))) |>
+             filter(!(.data$Species == "Laks" & (.data$Length < 40 & !is.na(.data$Length))))
            dat3 <- dat3 |>
               mutate("Method" = str_replace_all(
                  .data$Method,
@@ -128,14 +129,14 @@ write_catch <-
               dat3 <- dat3 |>
               mutate(
                  Place = case_when(
-                    str_detect(Place, "(Øvre.*)|(Skjern.*Rind)|(Skjern.*opstrøms)") ~ "Øvre",
-                    str_detect(Place, "(Mellem.*)|(Skjern.*Tarp.*Borris)") ~ "Mellem",
-                    str_detect(Place, "(Nedre.*)|(Skjern.*Borris.*Fjord)") ~ "Nedre",
-                    str_detect(Place, "Haderup|Haderis") ~ "Haderis Å",
-                    str_detect(Place, "Vorgod") ~ "Vorgod Å",
-                    str_detect(Place, "Omme") ~ "Omme Å",
-                    str_detect(Place, "Ukendt") ~ NA,
-                    TRUE ~ Place
+                    str_detect(.data$Place, "(Øvre.*)|(Skjern.*Rind)|(Skjern.*opstrøms)") ~ "Øvre",
+                    str_detect(.data$Place, "(Mellem.*)|(Skjern.*Tarp.*Borris)") ~ "Mellem",
+                    str_detect(.data$Place, "(Nedre.*)|(Skjern.*Borris.*Fjord)") ~ "Nedre",
+                    str_detect(.data$Place, "Haderup|Haderis") ~ "Haderis Å",
+                    str_detect(.data$Place, "Vorgod") ~ "Vorgod Å",
+                    str_detect(.data$Place, "Omme") ~ "Omme Å",
+                    str_detect(.data$Place, "Ukendt") ~ NA,
+                    TRUE ~ .data$Place
                  )
               )
            dat3 <- dat3 |> 
@@ -161,7 +162,7 @@ write_catch <-
              mutate(Name = str_replace(.data$Name, "Xx Yy", NA_character_))
          }
          if (!club) { # remove Species and River
-           dat3 <- dat3 |> select(-Species, -River)
+           dat3 <- dat3 |> select(-all_of(c("Species", "River")))
          }
       }
       ## Save to file
@@ -235,8 +236,8 @@ write_lock_web <- function(dat, prefix) {
   }
 
   dat <- dat %>%
-    dplyr::filter(DateTime > now() - days(14)) %>%
-    mutate(Open = set_avg_flow(Flow))
+    dplyr::filter(.data$DateTime > now() - days(14)) %>%
+    mutate(Open = set_avg_flow(.data$Flow))
   message("  Write data to ", fn)
   write_csv(dat, fn)
   return(invisible(dat))
@@ -261,20 +262,20 @@ write_water_mov_avg <- function(dat, prefix) {
     stats::filter(x, rep(1 / n, n), sides = 2, circular = T)
   }
   tmp <- dat %>%
-    select(Date, Place, Value) %>%
-    mutate(Day = yday(Date)) %>%
-    group_by(Day, Place) %>%
+    select(all_of(c("Date", "Place", "Value"))) %>%
+    mutate(Day = yday(.data$Date)) %>%
+    group_by(.data$Day, .data$Place) %>%
     summarise_if(is.numeric, mean, na.rm = TRUE) %>%
-    group_by(Place) %>%
+    group_by(.data$Place) %>%
     nest() %>%
     mutate(data = map(data, function(df) {
-      df %>% mutate(Value = if_else(Day == 366, lag(Value), Value))
+      df %>% mutate(Value = if_else(.data$Day == 366, lag(.data$Value), .data$Value))
     })) %>%
     mutate(data = map(data, function(df) {
-      df %>% mutate(Value = mov_avg(Value))
+      df %>% mutate(Value = mov_avg(.data$Value))
     })) %>%
     unnest(cols = c(data)) %>%
-    rename(Level_rAvg90 = Value)
+    rename(Level_rAvg90 = all_of("Value"))
   message("  Write data to ", fn)
   write_csv(tmp, fn)
   return(tmp)
@@ -299,20 +300,20 @@ write_water_temp_mov_avg <- function(dat, prefix) {
   }
 
   tmp <- dat %>%
-    select(Date, Place, Value) %>%
-    mutate(Day = yday(Date)) %>%
-    group_by(Day, Place) %>%
+    select(all_of(c("Date", "Place", "Value"))) %>%
+    mutate(Day = yday(.data$Date)) %>%
+    group_by(.data$Day, .data$Place) %>%
     summarise_if(is.numeric, mean, na.rm = TRUE) %>%
-    group_by(Place) %>%
+    group_by(.data$Place) %>%
     nest() %>%
     mutate(data = map(data, function(df) {
-      df %>% mutate(Value = if_else(Day == 366, lag(Value), Value))
+      df %>% mutate(Value = if_else(.data$Day == 366, lag(.data$Value), .data$Value))
     })) %>%
     mutate(data = map(data, function(df) {
-      df %>% mutate(Value = mov_avg(Value))
+      df %>% mutate(Value = mov_avg(.data$Value))
     })) %>%
     unnest(cols = c(data)) %>%
-    rename(Avg = Value)
+    rename(Avg = all_of("Value"))
   message("  Write data to ", fn)
   write_csv(tmp, fn)
   return(tmp)
@@ -332,47 +333,47 @@ write_water_temp_mov_avg <- function(dat, prefix) {
 write_water_temp_web <- function(dat, r_means, prefix) {
   message("Water temperature: Calc dataset for web.")
   dat <- dat %>%
-    mutate(Day = yday(Date)) %>%
+    mutate(Day = yday(.data$Date)) %>%
     left_join(r_means, by = c("Place", "Day")) %>%
-    select(-Day)
+    select(-all_of("Day"))
   fn <- paste0(prefix, "_watertemp_web.csv")
   dat <- dat %>%
-    rename(Temp = Value) %>%
-    mutate(DaysSince = as.numeric(date(Date))) %>%
-    group_by(Place) %>%
-    arrange(desc(Date)) %>%
+    rename(Temp = all_of("Value")) %>%
+    mutate(DaysSince = as.numeric(date(.data$Date))) %>%
+    group_by(.data$Place) %>%
+    arrange(desc(.data$Date)) %>%
     nest() %>%
     mutate(data =
              map(data,
                  function(df) {
                    tmp <- NULL
-                   for (y in df %>% distinct(year(Date)) %>% pull()) {
+                   for (y in df %>% distinct(year(.data$Date)) %>% pull()) {
                      dayS <- as.numeric(date(paste0(y, "-", month(now()), "-", day(now()))))
-                     tmp1 <- df %>% filter(DaysSince <= dayS & DaysSince >= dayS - 15) %>%
-                       arrange(Date) %>% mutate(YGroup = as.character(y))
+                     tmp1 <- df %>% filter(.data$DaysSince <= dayS & .data$DaysSince >= dayS - 15) %>%
+                       arrange(.data$Date) %>% mutate(YGroup = as.character(y))
                      if (nrow(tmp1) == 0) next
                      tmp <- bind_rows(tmp, tmp1)
                    }
                    return(tmp)
                  })) %>%
     unnest(cols = "data") %>%
-    mutate(Hour = hour(Date), DateDay = date(Date)) %>%
-    group_by(Hour, Place, DateDay, YGroup) %>%
-    summarise(Date = median(Date),
-              Temp = round(mean(Temp),1),
-              Avg = round(mean(Avg),3),
+    mutate(Hour = hour(.data$Date), DateDay = date(.data$Date)) %>%
+    group_by(.data$Hour, .data$Place, .data$DateDay, .data$YGroup) %>%
+    summarise(Date = median(.data$Date),
+              Temp = round(mean(.data$Temp),1),
+              Avg = round(mean(.data$Avg),3),
               .groups = "drop") %>%
-    select(-Hour, -DateDay) %>%
-    mutate(Date = ymd_hms(format(Date, "2020-%m-%d %H-%M-%S"))) %>%
-    relocate(Date) %>%
-    arrange(Place, YGroup, Date)
+    select(-all_of(c("Hour", "DateDay"))) %>%
+    mutate(Date = ymd_hms(format(.data$Date, "2020-%m-%d %H-%M-%S"))) %>%
+    relocate(all_of("Date")) %>%
+    arrange(.data$Place, .data$YGroup, .data$Date)
   dat <- dat %>%
     bind_rows(dat,
               dat %>%
-                filter(YGroup == year(now())) %>%
-                group_by(Place) %>%
-                transmute(Date, YGroup = "Gens", Temp = Avg)) %>%
-    select(-Avg)
+                filter(.data$YGroup == year(now())) %>%
+                group_by(.data$Place) %>%
+                transmute(Date = .data$Date, YGroup = "Gens", Temp = .data$Avg)) %>%
+    select(-all_of("Avg"))
   message("  Write data to ", fn)
   write_csv(dat, fn)
   return(dat)
@@ -392,40 +393,40 @@ write_water_levels_web <- function(dat, prefix) {
   message("Waterlevel: Calc dataset for web.")
   fn <- paste0(prefix, "_waterlevel_web.csv")
   dat <- dat %>%
-    mutate(DaysSince = as.numeric(date(Date))) %>%
-    group_by(Place) %>%
-    arrange(desc(Date)) %>%
+    mutate(DaysSince = as.numeric(date(.data$Date))) %>%
+    group_by(.data$Place) %>%
+    arrange(desc(.data$Date)) %>%
     nest() %>%
     mutate(data =
              map(data,
                  function(df) {
                    tmp <- NULL
-                   for (y in df %>% distinct(year(Date)) %>% pull()) {
+                   for (y in df %>% distinct(year(.data$Date)) %>% pull()) {
                      dayS <- as.numeric(date(paste0(y, "-", month(now()), "-", day(now()))))
-                     tmp1 <- df %>% filter(DaysSince <= dayS & DaysSince >= dayS - 15) %>%
-                       arrange(Date) %>% mutate(YGroup = y)
+                     tmp1 <- df %>% filter(.data$DaysSince <= dayS & .data$DaysSince >= dayS - 15) %>%
+                       arrange(.data$Date) %>% mutate(YGroup = y)
                      if (nrow(tmp1) == 0) next
                      tmp <- bind_rows(tmp, tmp1)
                    }
                    return(tmp)
                  })) %>%
     unnest(cols = "data")
-  datLastObs <- dat %>% group_by(Place) %>% summarize(LastObs = max(Date), .groups = "drop")
+  datLastObs <- dat %>% group_by(.data$Place) %>% summarize(LastObs = max(.data$Date), .groups = "drop")
   dat <- dat %>%
-    mutate(Hour = hour(Date), DateDay = date(Date)) %>%
-    group_by(Hour, Place, DateDay, YGroup) %>%
-    summarise(Date = median(Date),
-              Level = round(100*mean(Value),1),
-              LevelRelative = round(100*mean(LevelRelative),1),
+    mutate(Hour = hour(.data$Date), DateDay = date(.data$Date)) %>%
+    group_by(.data$Hour, .data$Place, .data$DateDay, .data$YGroup) %>%
+    summarise(Date = median(.data$Date),
+              Level = round(100*mean(.data$Value),1),
+              LevelRelative = round(100*mean(.data$LevelRelative),1),
               .groups = "drop") %>%
-    select(-Hour, -DateDay) %>%
+    select(-all_of(c("Hour", "DateDay"))) %>%
     left_join(datLastObs, by = "Place") %>%
-    mutate(Date = ymd_hms(format(Date, "2020-%m-%d %H-%M-%S")),
-           LastObs = ymd_hms(format(LastObs, "2020-%m-%d %H-%M-%S"))) %>%
-    filter(Date <= LastObs) %>%
-    select(-LastObs) %>%
-    relocate(Date) %>%
-    arrange(Place, YGroup, Date)
+    mutate(Date = ymd_hms(format(.data$Date, "2020-%m-%d %H-%M-%S")),
+           LastObs = ymd_hms(format(.data$LastObs, "2020-%m-%d %H-%M-%S"))) %>%
+    filter(.data$Date <= .data$LastObs) %>%
+    select(-all_of("LastObs")) %>%
+    relocate(all_of("Date")) %>%
+    arrange(.data$Place, .data$YGroup, .data$Date)
   message("  Write data to ", fn)
   write_csv(dat, fn)
   return(dat)
@@ -447,23 +448,23 @@ write_weight_estimates <- function(prefix, seatrout = TRUE) {
   pfx <- str_c(str_remove(prefix, ".*/"), "_catch_", species)
   f <- dir_ls("data", regexp = str_c(pfx, "_[0-9]{4}"))
   dat <- read_csv(f, col_types = "Dddcfflclcl") %>%
-    arrange(Date)
+    arrange(.data$Date)
   minLength <- 40
   maxLength <- max(dat$Length, na.rm = TRUE)
   dat <- dat %>%
-    filter(Length > minLength - 1 & Killed) %>%
-    mutate(Period = factor(month(Date, label = T), ordered = F), MonthN = month(Date)) %>%
-    group_by(Period) %>% filter(n() > 5)
+    filter(.data$Length > minLength - 1 & .data$Killed) %>%
+    mutate(Period = factor(month(.data$Date, label = T), ordered = F), MonthN = month(.data$Date)) %>%
+    group_by(.data$Period) %>% filter(n() > 5)
   mod <- lm(log(Weight) ~ Period*log(Length), dat)
   datP <- expand_grid(Length = minLength:maxLength, Period = unique(dat$Period))
   res <- predict(mod, datP, interval = "prediction", level = 0.95)
   res <- exp(res)
   res <- res %>% as_tibble()
-  res <- bind_cols(datP, res) %>% group_by(Period)
+  res <- bind_cols(datP, res) %>% group_by(.data$Period)
   colnames(res) <- c("Length", "Period", "Avg", "Lower", "Upper")
   res <- res %>%
-    mutate(Avg = round(Avg,3), Lower = round(Lower, 3), Upper = round(Upper, 3))
-  res <- left_join(res, dat %>% ungroup() %>% distinct(Period, MonthN))
+    mutate(Avg = round(.data$Avg,3), Lower = round(.data$Lower, 3), Upper = round(.data$Upper, 3))
+  res <- left_join(res, dat %>% ungroup() %>% distinct(.data$Period, .data$MonthN))
   fn <- str_c(prefix, "_weight_", species, ".csv")
   message("  Write data to ", fn)
   write_csv(res, fn)
@@ -490,14 +491,14 @@ save_hobo_data <- function() {
     dat <- bind_rows(dat, read_csv(str))
   }
   dat <- dat %>%
-    transmute(Date = dmy_hms(Date),
-              TempCelcius = `Water Temperature (M-WT 21143788:20833130-3), *C, Laksens Hus`,
-              LevelMeters = `Water Level (M-WL04 21143788:20833130-4), meters, Laksens Hus`,
-              PressureKPA = `Barometric Pressure (M-BP 21143788:21143788-1), kPa, Laksens Hus`) %>%
-    mutate(Date = Date - hours(1))
-  dat1 <- dat %>% transmute(Date, Place = "Skjern Å - Laksens hus", Value = LevelMeters)
-  dat2 <- dat %>% transmute(Date, Place = "Skjern Å - Laksens hus", Value = PressureKPA)
-  dat3 <- dat %>% transmute(Date, Place = "Skjern Å - Laksens hus", Value = TempCelcius)
+    transmute(Date = dmy_hms(.data$Date),
+              TempCelcius = .data[["Water Temperature (M-WT 21143788:20833130-3), *C, Laksens Hus"]],
+              LevelMeters = .data[["Water Level (M-WL04 21143788:20833130-4), meters, Laksens Hus"]],
+              PressureKPA = .data[["Barometric Pressure (M-BP 21143788:21143788-1), kPa, Laksens Hus"]]) %>%
+    mutate(Date = .data$Date - hours(1))
+  dat1 <- dat %>% transmute(Date = .data$Date, Place = "Skjern Å - Laksens hus", Value = .data$LevelMeters)
+  dat2 <- dat %>% transmute(Date = .data$Date, Place = "Skjern Å - Laksens hus", Value = .data$PressureKPA)
+  dat3 <- dat %>% transmute(Date = .data$Date, Place = "Skjern Å - Laksens hus", Value = .data$TempCelcius)
   prefix <- "data/data_skjern"
   write_csv(dat1, str_c(prefix, "_waterlevel_hobo.csv"), append = T)
   write_csv(dat2, str_c(prefix, "_pressure_hobo.csv"), append = T)
@@ -510,18 +511,6 @@ save_hobo_data <- function() {
   return(TRUE)
 }
 
-#' Write time-series data
-#'
-#' @param stations Station table or `NULL`.
-#' @param prefix File prefix.
-#' @param prefix1 Type suffix, e.g. `"waterlevel"` or `"watertemp"`.
-#' @param days Number of days to read.
-#'
-#' @return Invisibly returns the latest datetime.
-#' @examples
-#' \dontrun{
-#' write_time_series_data(stations, "data/data_karup", "waterlevel", 15)
-#' }
 .fetch_json_with_retry <- function(url, place, id, retry_delays = c(5, 15, 45),
                                    fetch = jsonlite::fromJSON,
                                    sleep = Sys.sleep) {
@@ -560,6 +549,18 @@ save_hobo_data <- function() {
   NULL
 }
 
+#' Write time-series data
+#'
+#' @param stations Station table or `NULL`.
+#' @param prefix File prefix.
+#' @param prefix1 Type suffix, e.g. `"waterlevel"` or `"watertemp"`.
+#' @param days Number of days to read.
+#'
+#' @return Invisibly returns the latest datetime.
+#' @examples
+#' \dontrun{
+#' write_time_series_data(stations, "data/data_karup", "waterlevel", 15)
+#' }
 write_time_series_data <- function(stations = NULL, prefix, prefix1, days) {
   message("Retrieve ", prefix1, " time series data.")
   dat2 <- NULL
@@ -575,7 +576,7 @@ write_time_series_data <- function(stations = NULL, prefix, prefix1, days) {
       if (is.null(tmp)) next
       if (length(tmp$PlotRecs) == 0) next
       tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
-      tmp <- tmp %>% filter(!(is.nan(V) | is.na(V)))
+      tmp <- tmp %>% filter(!(is.nan(.data$V) | is.na(.data$V)))
       colnames(tmp) <- c("Date", "Value")
       tmp <- tmp %>% mutate(Place = place, Serie = i)
       dat <- bind_rows(dat, tmp)
@@ -586,42 +587,42 @@ write_time_series_data <- function(stations = NULL, prefix, prefix1, days) {
       return(invisible(NULL))
     }
     dat <- dat %>%
-      mutate(Date = ymd_hms(Date, tz = "UTC")) %>%
-      arrange(Place, desc(Date)) |>
-      distinct(Date, Value, Place, Serie)
-    dat1 <- as_tsibble(dat, key = Serie, index = Date) %>%
+      mutate(Date = ymd_hms(.data$Date, tz = "UTC")) %>%
+      arrange(.data$Place, desc(.data$Date)) |>
+      distinct(.data$Date, .data$Value, .data$Place, .data$Serie)
+    dat1 <- as_tsibble(dat, key = all_of("Serie"), index = all_of("Date")) %>%
       group_by_key() %>%
-      mutate(Value = tsclean(Value, replace.missing = FALSE)) %>%
+      mutate(Value = tsclean(.data$Value, replace.missing = FALSE)) %>%
       as_tibble()
     dat2 <- dat1 %>%
-      filter(!is.na(Value)) %>%
-      group_by(Date, Place) %>%
-      mutate(Value = mean(Value)) %>%
+      filter(!is.na(.data$Value)) %>%
+      group_by(.data$Date, .data$Place) %>%
+      mutate(Value = mean(.data$Value)) %>%
       ungroup() %>%
-      select(Date, Place, Value)
+      select(all_of(c("Date", "Place", "Value")))
   }
   fn <- paste0(prefix, "_", prefix1, "_hobo.csv")
   if (fs::file_exists(fn)) {
     hobo <- read_csv(fn, col_types = "Tcd")
     dat2 <- bind_rows(dat2, hobo) %>%
-      arrange(Place, desc(Date))
+      arrange(.data$Place, desc(.data$Date))
     hobo <- hobo %>% slice_head(n = 0)
     write_csv(hobo, paste0(prefix, "_", prefix1, "_hobo.csv"))
   }
 
-  for (y in distinct(dat2, year(Date)) %>% pull()) {
-    dat3 <- dat2 %>% filter(year(Date) == y)
+  for (y in distinct(dat2, year(.data$Date)) %>% pull()) {
+    dat3 <- dat2 %>% filter(year(.data$Date) == y)
     fn <- paste0(prefix, "_", prefix1, "_", y, ".csv")
     if (file.exists(fn)) {
       datOld <- read_csv(fn, col_types = "Tcd") %>% mutate(sort = "b")
       dat3 <- bind_rows(datOld, dat3 %>% mutate(sort = "a")) %>%
-        filter(!is.na(Value)) %>%
-        arrange(Place, Date) %>%
-        group_by(Place, Date) %>%
-        arrange(sort, .by_group = TRUE) %>%
+        filter(!is.na(.data$Value)) %>%
+        arrange(.data$Place, .data$Date) %>%
+        group_by(.data$Place, .data$Date) %>%
+        arrange(.data$sort, .by_group = TRUE) %>%
         slice_head(n = 1) %>%
-        select(Date, Place, Value) %>%
-        arrange(Place, desc(Date))
+        select(all_of(c("Date", "Place", "Value"))) %>%
+        arrange(.data$Place, desc(.data$Date))
     }
     message("  Write data to ", fn)
     write_csv(dat3, fn)

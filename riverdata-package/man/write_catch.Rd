@@ -16,6 +16,8 @@ write_catch(url, prefix, yr, species = "seatrout", club = FALSE, write = TRUE)
 \item{species}{Species. Either "seatrout" or "salmon".}
 
 \item{club}{False if consider association. True if consider club.}
+
+\item{write}{Whether to write the result to a CSV file.}
 }
 \value{
 The data (tibble).
@@ -30,6 +32,6 @@ url <- str_c("https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/",
 prefix <- "tmp/data_skjern"
 yr <- 2023
 write_catch(url, prefix, yr, species = "Laks")
-
 }
+
 }

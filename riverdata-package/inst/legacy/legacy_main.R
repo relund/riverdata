@@ -1,13 +1,9 @@
 ### Functions for scripts
 
 
-#' Estimate weight given dat
-#'
-#' @param fn The csv file to save to.
-#' @param dat The data set with column Period
-#' @param minLength 
-#'
-#' @return
+# Estimate weight given dat
+#
+# The implementation below is retained for reference only.
 # estimateWeightOld <- function(fn, dat, minLength = 40, maxLength = max(dat$Length, na.rm = TRUE)) {
 #   message("Weight: Estimate weight")
 #   dat <- dat %>% 
@@ -111,13 +107,8 @@ writeLockWeb <- function(dat, prefix) {
 
 
 
-#' Update and save water level data for current year
-#'
-#' @param stations Stations under consideration.
-#' @param prefix Path prefix (e.g. data/data_skjern).
-#'
-#' @note Stations can be found at http://www.hydrometri.dk/hyd/. Get obs for the last 100 days
-#' @return Range of dates.
+# Update and save water level data for current year.
+# The implementation below is retained for reference only.
 # updateWaterLevelOld <- function(stations, prefix, days = 100) {
 #   yr <- year(now())
 #   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
@@ -167,72 +158,12 @@ writeLockWeb <- function(dat, prefix) {
 # }
 
 
-#' Update and save water level data for current year
-#'
-#' @param stations Stations under consideration.
-#' @param prefix Path prefix (e.g. data/data_skjern).
-#' @param days Number of days back to read.
-#'
-#' @note Stations can be found at https://vandportalen.dk/.
-#' #' @return Range of dates.
-#' updateWaterLevel_new <- function(stations, prefix, days = 100) {
-#'   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
-#'   dat <- NULL
-#'   for (i in 1:nrow(stations)) {
-#'     id <- stations$id[i]
-#'     place <- stations$place[i]
-#'     # get obs for last 100 days
-#'     tmp <- fromJSON(paste0("https://vandportalen.dk/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=", days, "&pw=100000000&inclraw=true"))
-#'     offset <- as.numeric(tmp$tsh$Offset)
-#'     tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
-#'     tmp$V <- tmp$V - rep(offset, length(tmp$V))
-#'     colnames(tmp) <- c("Date", place)
-#'     if (is.null(dat)) {
-#'       dat <- tmp
-#'     } else {
-#'       dat <- full_join(dat, tmp, by = "Date")
-#'     }
-#'   }
-#'   dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
-#'   dat <- dat %>% 
-#'     pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Level') %>% 
-#'     filter(!is.na(Level))
-#'   # save to files
-#'   for (y in unique(year(dat$Date))) {
-#'     fn <- paste0(prefix, "_waterlevel_", y, ".csv")
-#'     # if (file.exists(fn)) {
-#'     #   datOld <- read_csv(fn, col_types = "Tcd") 
-#'     # } else 
-#'     datOld <- NULL
-#'     message("Waterlevel: Update dataset for year ", y)
-#'     dat1 <- dat %>% dplyr::filter(year(Date) == y) %>%
-#'       arrange_all(desc) %>%
-#'       distinct(Date, .keep_all = T)
-#'     # combine with old data
-#'     dat1 <- bind_rows(datOld, dat1) %>% 
-#'       arrange_all(desc) %>%
-#'       distinct(Date, Place, .keep_all = T) %>% 
-#'       select(Date, Place, Level)
-#'     # remove outliers
-#'     dat1 <- as_tsibble(dat1, key = Place, index = Date) %>% 
-#'       group_by_key() %>%
-#'       mutate(Level = tsclean(Level, replace.missing = FALSE)) %>% 
-#'       as_tibble()
-#'     # save
-#'     message("Write data to ", fn)
-#'     write_csv(dat1, fn)
-#'   }
-#'   return(range(dat$Date))
-#' }
+# Update and save water level data for current year.
+# The implementation below is retained for reference only.
 
 
-#' Get and save all water level data for 2012 until now
-#'
-#' @param stations Stations under consideration.
-#' @param prefix Path prefix (e.g. data/data_skjern).
-#'
-#' @note Stations can be found at https://vandportalen.dk/ (look at the url). 
-#' @return The dataset.
+# Get and save all water level data for 2012 until now.
+# The implementation below is retained for reference only.
 # getWaterLevels <- function(stations, prefix) {
 #   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
 #   message("Waterlevel: Get and save datasets.")
@@ -280,26 +211,8 @@ writeLockWeb <- function(dat, prefix) {
 
 
 
-#' #' Read water level files
-#' #'
-#' #' @param prefix Path prefix (e.g. data/data_skjern). 
-#' #' @param years Years to load.
-#' #'
-#' #' @return The data set.
-#' readWLevels <- function(prefix, years) {
-#'   dat <- NULL
-#'   for (y in years) {
-#'     fn <- paste0(prefix, "_waterlevel_", y, ".csv")
-#'     dat <- 
-#'       bind_rows(dat, 
-#'                 read_csv(fn, col_types = cols(
-#'                   Date = col_datetime(format = ""),
-#'                   Place = col_character(),
-#'                   Value = col_double()
-#'                 )))
-#'   }
-#'   return(dat)
-#' }
+# Read water level files.
+# The implementation below is retained for reference only.
 
 #' Read water temperature files
 #'
@@ -421,6 +334,7 @@ findPeaks <- function (x, thresh = 0) {
 #' Calculate dataset for web
 #'
 #' @param dat Water level data set.
+#' @param rMeans Average water temperatures by place and day.
 #' @param prefix Path prefix (e.g. data/data_skjern).
 #'
 #' @return The data set
@@ -606,13 +520,8 @@ writeCatchKarup <- function() {
 
 
 
-#' Update water temperature data for current year 
-#'
-#' @param stations Stations under consideration.
-#' @param prefix Path prefix (e.g. data/data_karup).
-#'
-#' @note Stations can be found at http://www.hydrometri.dk/hyd/.
-#' @return The dataset.
+# Update water temperature data for current year.
+# The implementation below is retained for reference only.
 # updateWaterTempKarup <- function(stations, prefix, days = 100) {
 #   year <- year(now())
 #   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
@@ -656,57 +565,23 @@ writeCatchKarup <- function() {
 # }
 
 
-#' #' Update water temperature data for current year 
-#' #'
-#' #' @param stations Stations under consideration.
-#' #' @param prefix Path prefix (e.g. data/data_karup).
-#' #'
-#' #' @note Stations can be found at http://www.hydrometri.dk/hyd/. Get obs for the last 100 days
-#' #' @return The dataset.
-#' updateWaterTempSkjern <- function(stations, prefix) {
-#'   year <- year(now())
-#'   iso <- format(now(), format = "%Y-%m-%dT%T.111Z", tz = "GMT")
-#'   fn <- paste0(prefix, "_watertemp_", year, ".csv")
-#'   message("Water temperature: Update datasets.")
-#'   # read data for last 100 days
-#'   if (file.exists(fn)) {
-#'     datOld <- read_csv(fn, col_types = "Tcdd") 
-#'   } else datOld <- NULL
-#'   dat <- NULL
-#'   for (i in 1:nrow(stations)) {
-#'     id <- stations$id[i]
-#'     place <- stations$place[i]
-#'     # get obs for last 100 days
-#'     tmp <- fromJSON(paste0("http://hydrometri.azurewebsites.net/api/hyd/getplotdata?tsid=", id, "&enddate=", iso, "&days=100&pw=100000000&inclraw=true"))
-#'     offset <- as.numeric(tmp$tsh$Offset)
-#'     tmp <- as_tibble(tmp$PlotRecs[,1:2]) %>% mutate(V = sapply(tmp$PlotRecs[,2], function(x) {x[1]}))
-#'     tmp$V <- tmp$V - rep(offset, length(tmp$V))
-#'     colnames(tmp) <- c("Date", paste0(place, " (", id, ")"))
-#'     if (is.null(dat)) {
-#'       dat <- tmp
-#'     } else {
-#'       dat <- full_join(dat, tmp, by = "Date")
-#'     }
-#'   }
-#'   dat$Date <- ymd_hms(dat$Date, tz = "UTC") # %>% with_tz("CET") # from UTC to CET
-#'   dat <- dat %>% dplyr::filter(year(Date) == year) %>%
-#'     arrange_all(desc) %>%
-#'     distinct(Date, .keep_all = T)
-#'   dat <- dat %>% 
-#'     pivot_longer(cols = 2:ncol(dat), names_to = 'Place', values_to = 'Temp') %>% 
-#'     filter(!is.na(Temp))
-#'   # combine with old data
-#'   dat <- bind_rows(datOld, dat) %>% 
-#'     arrange_all(desc) %>%
-#'     distinct(Date, Place, .keep_all = T)
-#'   # save
-#'   message("  Write data to ", fn)
-#'   write_csv(dat, fn)
-#'   return(invisible(dat))
+# Update water temperature data for current year.
+# The implementation below is retained for reference only.
+
+
+
+#' Parse legacy KML map data
+#'
+#' @param mapId Google map ID.
+#' @param Club Optional club label.
+#' @param GroupNameMarkers Optional marker group name filter.
+#' @param GroupNameLines Optional line group name filter.
+#'
+#' @return A list containing marker and line data.
+#' @examples
+#' \dontrun{
+#' stripKml("1XJoAUKY_-kbmhZgovPpLgi82Gn8")
 #' }
-
-
-
 stripKml <- function(mapId, Club = NA, GroupNameMarkers = NULL, GroupNameLines = NULL) {
   kml <- read_xml(str_c("https://www.google.com/maps/d/u/0/kml?mid=", mapId, "&forcekml=1"))
   xml_ns_strip(kml)
@@ -1138,7 +1013,7 @@ writeLockSkjern <- function(prefix) {
 
 #' Read data files from the `data` subfolder
 #'
-#' @param pattern File to search for (can use regexp) (e.g. 'data_karup_catch_seatrout_[0-9]{4}').
+#' @param pattern Regular expression used to select data files, for example files ending in a four-digit year.
 #'
 #' @return The data (tibble).
 readDataFiles <- function(pattern) {

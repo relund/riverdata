@@ -21,7 +21,7 @@ read_data <- function(
 ) {
    if (is.null(year)) path <- str_c(path, file_prefix,".csv") else path <- str_c(path, file_prefix, year, ".csv")
    dat <- read_csv(path, show_col_types = FALSE) %>%
-      arrange(Date)
+      arrange(.data$Date)
    return(dat)
 }
 
@@ -36,33 +36,33 @@ read_catch <- function(prefix, dat_weight) {
   f <- paste0(prefix, "_", 2004:year(now()), ".csv")
   dat_catch <- read_csv(f, col_types = "Dddcfflclfl") %>%
     mutate(
-      Weight = if_else(Killed, Weight, NA_real_),
-      Place = fct_na_value_to_level(Place, "Ukendt")
+      Weight = if_else(.data$Killed, .data$Weight, NA_real_),
+      Place = fct_na_value_to_level(.data$Place, "Ukendt")
     )
 
   dat_catch <- dat_catch %>%
     mutate(
       Misc = paste0(
-        if_else(!Killed, "<img src=\"www/c_and_r.gif\" alt=\"C&R\">", "", ""),
-        if_else(Cut, "<img src=\"www/cut.gif\" alt=\"Finneklippet\">", "", ""),
-        if_else(Sex == "Han", '<img src="www/boy.gif" alt="Han">', "", ""),
-        if_else(Sex == "Hun", '<img src="www/girl.gif" alt="Hun">', "", ""),
-        if_else(!is.na(Foto), str_c("<a href=\"", Foto, "\", target=\"_blank\"><img src=\"www/foto.gif\" alt=\"Foto\"></a>"), "", "")
+        if_else(!.data$Killed, "<img src=\"www/c_and_r.gif\" alt=\"C&R\">", "", ""),
+        if_else(.data$Cut, "<img src=\"www/cut.gif\" alt=\"Finneklippet\">", "", ""),
+        if_else(.data$Sex == "Han", '<img src="www/boy.gif" alt="Han">', "", ""),
+        if_else(.data$Sex == "Hun", '<img src="www/girl.gif" alt="Hun">', "", ""),
+        if_else(!is.na(.data$Foto), str_c("<a href=\"", .data$Foto, "\", target=\"_blank\"><img src=\"www/foto.gif\" alt=\"Foto\"></a>"), "", "")
       ),
-      Month = factor(month(Date, label = TRUE), ordered = FALSE),
-      MonthN = month(Date),
-      Week = isoweek(Date),
-      Year = year(Date),
-      NoWeight = 1 * is.na(Weight),
-      MDay = mday(Date),
-      DayStr = format(Date, "%d. %b"),
-      Day = str_c(formatC(MonthN, width = 2, flag = "0"), "-", formatC(MDay, width = 2, flag = "0"))
+      Month = factor(month(.data$Date, label = TRUE), ordered = FALSE),
+      MonthN = month(.data$Date),
+      Week = isoweek(.data$Date),
+      Year = year(.data$Date),
+      NoWeight = 1 * is.na(.data$Weight),
+      MDay = mday(.data$Date),
+      DayStr = format(.data$Date, "%d. %b"),
+      Day = str_c(formatC(.data$MonthN, width = 2, flag = "0"), "-", formatC(.data$MDay, width = 2, flag = "0"))
     )
 
   dat_catch <- left_join(dat_catch, dat_weight, by = c("Length", "MonthN")) %>%
-    mutate(Weight = if_else(is.na(Weight), round(Avg, 1), Weight)) %>%
-    mutate(Fulton = Weight * 100000 / Length^3) %>%
-    mutate(Month = month(Date, label = TRUE))
+    mutate(Weight = if_else(is.na(.data$Weight), round(.data$Avg, 1), .data$Weight)) %>%
+    mutate(Fulton = .data$Weight * 100000 / .data$Length^3) %>%
+    mutate(Month = month(.data$Date, label = TRUE))
 
   return(dat_catch)
 }
@@ -107,6 +107,6 @@ read_data_files <- function(pattern, path = NULL) {
   }
   f <- fs::dir_ls(path, regexp = pattern)
   dat <- read_csv(f, col_types = "Tfd") %>%
-    arrange(Date)
+    arrange(.data$Date)
   return(dat)
 }
