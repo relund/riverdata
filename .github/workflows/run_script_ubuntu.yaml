@@ -18,6 +18,7 @@ on:
       - script_karup.R
       - script_mv-lf.R
       - script_skjern.R
+      - riverdata-package/**
       - functions.R
       - renv.lock
       
