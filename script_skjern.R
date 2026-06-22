@@ -17,6 +17,12 @@
 
 here::i_am("script_skjern.R")
 library(riverdata)
+library(dplyr)
+library(lubridate)
+library(readr)
+library(rmarkdown)
+library(stringr)
+library(tibble)
 
 url <- "https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/catches/assoc/A97F957DD48AEDD4C1258814003E71FE/1/"
 prefix <- "data/data_skjern"

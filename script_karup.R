@@ -17,6 +17,12 @@
 
 here::i_am("script_karup.R")
 library(riverdata)
+library(dplyr)
+library(lubridate)
+library(readr)
+library(rmarkdown)
+library(stringr)
+library(tibble)
 
 url <- "https://fangstjournalen.dtu.dk/fangst.nsf/xsp/app/v3/catches/assoc/49F1767931B31CD0C1258398007953C0/1/"
 prefix <- "data/data_karup"
@@ -120,4 +126,3 @@ render(here::here("reports/karup/karup-kort.Rmd"), output_dir = "docs/karup")
 render(here::here("reports/karup/karup-salmometer.Rmd"), output_dir = "docs/karup")
 render(here::here("reports/karup/karup-catch.Rmd"), output_dir = "docs/karup")
 render(here::here("docs/index.md"), output_dir = "docs/")
-

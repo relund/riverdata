@@ -17,6 +17,12 @@
 
 here::i_am("script_mv-lf.R")
 library(riverdata)
+library(dplyr)
+library(lubridate)
+library(readr)
+library(rmarkdown)
+library(stringr)
+library(tibble)
 
 
 #### Catch ####
