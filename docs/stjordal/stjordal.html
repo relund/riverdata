@@ -1161,6 +1161,8 @@
           <strong id="currentWaterLevelTrend">-</strong>
         </div>
       </div>
+      <h2>Fangster de seneste 7 dage</h2>
+      <div class="chart-list" id="recentCatchChart"></div>
       <div class="toolbar" aria-label="Statistikfiltre">
         <label>
           År
@@ -1557,6 +1559,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       currentFlow: document.querySelector("#currentFlow"),
       currentTemperature: document.querySelector("#currentTemperature"),
       currentWaterLevelTrend: document.querySelector("#currentWaterLevelTrend"),
+      recentCatchChart: document.querySelector("#recentCatchChart"),
       weekChart: document.querySelector("#weekChart"),
       weekFlowChart: document.querySelector("#weekFlowChart"),
       weekWeightChart: document.querySelector("#weekWeightChart"),
@@ -1902,6 +1905,45 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         `<option value="${year}">${year}</option>`
       )).join(""));
       elements.statsYearFilter.value = years.map(String).includes(currentValue) ? currentValue : "";
+    }
+
+    function renderRecentCatchChart() {
+      const catchDates = catches
+        .map((item) => parseDate(item.date))
+        .filter((date) => date && !Number.isNaN(date.getTime()))
+        .sort((a, b) => b - a);
+      if (!catchDates.length) {
+        elements.recentCatchChart.innerHTML = '<div class="empty">Ingen fangster.</div>';
+        return;
+      }
+
+      const endDate = new Date(catchDates[0]);
+      const startDate = new Date(endDate);
+      startDate.setDate(startDate.getDate() - 6);
+      const dateKey = (date) => [
+        date.getFullYear(),
+        String(date.getMonth() + 1).padStart(2, "0"),
+        String(date.getDate()).padStart(2, "0")
+      ].join("-");
+      const counts = countBy(
+        catches.filter((item) => {
+          const date = parseDate(item.date);
+          return date && date >= startDate && date <= endDate;
+        }),
+        (item) => item.date
+      );
+      const labelFormat = new Intl.DateTimeFormat("da-DK", {
+        weekday: "short",
+        day: "2-digit",
+        month: "2-digit"
+      });
+      const entries = Array.from({ length: 7 }, (_, index) => {
+        const date = new Date(startDate);
+        date.setDate(startDate.getDate() + index);
+        return [labelFormat.format(date), counts.get(dateKey(date)) || 0];
+      });
+
+      renderBarEntries(elements.recentCatchChart, entries, "var(--sun)", (value) => String(value), "Fangster", { yScale: true });
     }
 
     function selectedStatsYears() {
@@ -3944,6 +3986,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         renderSpeciesFilter();
         renderStatsYearFilter(years);
         renderCurrentMeasurements();
+        renderRecentCatchChart();
         renderStatsCharts();
         renderTable();
         renderLatestCatchCircles();
