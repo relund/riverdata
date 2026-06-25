@@ -1023,12 +1023,10 @@
       }
 
       .info-content .markdown-table td {
-        display: grid;
-        grid-template-columns: max-content minmax(0, 1fr);
-        gap: 6px;
-        align-items: baseline;
+        display: block;
         padding: 10px 12px;
         border-bottom: 1px solid var(--line);
+        overflow-wrap: anywhere;
       }
 
       .info-content .markdown-table td:last-child {
@@ -1038,7 +1036,7 @@
       .info-content .markdown-table td::before {
         content: attr(data-label) ":";
         display: inline;
-        margin-bottom: 0;
+        margin-right: 4px;
         color: var(--muted);
         font-size: 0.72rem;
         font-weight: 800;
@@ -1084,15 +1082,15 @@
       }
 
       td {
-        display: grid;
-        grid-template-columns: max-content minmax(0, 1fr);
-        gap: 6px;
-        align-items: baseline;
+        display: block;
         white-space: normal;
+        overflow-wrap: anywhere;
       }
 
       td::before {
         content: attr(data-label) ":";
+        display: inline;
+        margin-right: 4px;
         color: var(--muted);
         font-size: 0.74rem;
         font-weight: 800;
