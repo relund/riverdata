@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T04:16:39Z",
+  "generated_at": "2026-06-27T07:28:47Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -26,6 +26,29 @@
     "source": "daily average water temperature"
   },
   "catches": [
+    {
+      "id": "714167",
+      "date": "2026-06-27",
+      "time_of_day": "08:05",
+      "week": 26,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "Midtkil",
+      "fishing_spot": null,
+      "fisher_name": "Karlheinz Schütz",
+      "species": "Laks",
+      "weight_kg": 2.5,
+      "length_cm": 64,
+      "equipment": "Flue",
+      "released_catch": true,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/714167?riverId=13",
+      "flow_cms": 54.7083,
+      "flow_trend": "faldende",
+      "water_level_m": 1.3362,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 12.7848
+    },
     {
       "id": "714110",
       "date": "2026-06-26",
@@ -136093,11 +136116,11 @@
     },
     {
       "date": "2026-06-27",
-      "flow_cms": 55.8052,
+      "flow_cms": 54.7083,
       "flow_trend": "faldende",
-      "water_level_m": 1.3454,
+      "water_level_m": 1.3362,
       "water_level_trend": "stigende",
-      "water_temperature_c": 12.9125
+      "water_temperature_c": 12.7848
     }
   ]
 }
