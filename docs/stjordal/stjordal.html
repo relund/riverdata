@@ -603,6 +603,27 @@
       min-height: 100vh;
     }
 
+    .map-frame.map-frame-expanded {
+      position: fixed;
+      inset: 0;
+      z-index: 4000;
+      width: 100vw;
+      height: 100dvh;
+      min-height: 100dvh;
+      border: 0;
+      background: #000;
+      box-shadow: none;
+    }
+
+    .map-frame.map-frame-expanded #riverMap {
+      height: 100dvh;
+      min-height: 100dvh;
+    }
+
+    body.map-expanded {
+      overflow: hidden;
+    }
+
     #riverMap {
       width: 100%;
       height: 68vh;
@@ -857,20 +878,27 @@
       padding: 0;
     }
 
-    .leaflet-control-fullscreen {
+    .leaflet-control-map-button {
       width: 34px;
       height: 34px;
       border: 0;
       background: #fff;
       color: var(--ink);
+      -webkit-appearance: none;
+      appearance: none;
       font-size: 1.1rem;
       font-weight: 900;
       line-height: 34px;
       text-align: center;
+      touch-action: manipulation;
       cursor: pointer;
     }
 
-    .leaflet-control-fullscreen:hover {
+    .leaflet-control-map-button + .leaflet-control-map-button {
+      border-top: 1px solid #ccc;
+    }
+
+    .leaflet-control-map-button:hover {
       background: #f2f5ec;
     }
 
@@ -1591,6 +1619,9 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
     let hvidZoneLines = [];
     let catchOverlayLayers = new Map();
     let fullscreenControlAdded = false;
+    let locateControlAdded = false;
+    let userLocationMarker = null;
+    let userLocationCircle = null;
     let infoLoaded = false;
     let waterlevelLoaded = false;
     let waterlevelLoadPromise = null;
@@ -2499,6 +2530,16 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       return document.fullscreenElement || document.webkitFullscreenElement || null;
     }
 
+    function isMapExpanded() {
+      return fullscreenElement() === elements.riverMapFrame || elements.riverMapFrame.classList.contains("map-frame-expanded");
+    }
+
+    function setMapExpanded(expanded) {
+      elements.riverMapFrame.classList.toggle("map-frame-expanded", expanded);
+      document.body.classList.toggle("map-expanded", expanded);
+      window.setTimeout(() => riverMap?.invalidateSize(), 120);
+    }
+
     function requestMapFullscreen() {
       if (elements.riverMapFrame.requestFullscreen) {
         return elements.riverMapFrame.requestFullscreen();
@@ -2506,12 +2547,22 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       if (elements.riverMapFrame.webkitRequestFullscreen) {
         return elements.riverMapFrame.webkitRequestFullscreen();
       }
-      return Promise.reject(new Error("Fullscreen understøttes ikke i denne browser"));
+      setMapExpanded(true);
+      return Promise.resolve();
     }
 
     function exitMapFullscreen() {
       if (document.exitFullscreen) return document.exitFullscreen();
       if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
+      setMapExpanded(false);
+      return Promise.resolve();
+    }
+
+    function closeMapFullscreen() {
+      if (fullscreenElement() === elements.riverMapFrame) {
+        return exitMapFullscreen();
+      }
+      setMapExpanded(false);
       return Promise.resolve();
     }
 
@@ -2520,16 +2571,17 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       const FullscreenControl = L.Control.extend({
         options: { position: "topleft" },
         onAdd() {
-          const button = L.DomUtil.create("button", "leaflet-control-fullscreen leaflet-bar");
+          const container = L.DomUtil.create("div", "leaflet-bar");
+          const button = L.DomUtil.create("button", "leaflet-control-map-button", container);
           button.type = "button";
           button.title = "Vis kort i fuldskærm";
           button.setAttribute("aria-label", "Vis kort i fuldskærm");
           button.textContent = "⛶";
-          L.DomEvent.disableClickPropagation(button);
+          L.DomEvent.disableClickPropagation(container);
           L.DomEvent.on(button, "click", async () => {
             try {
-              if (fullscreenElement() === elements.riverMapFrame) {
-                await exitMapFullscreen();
+              if (isMapExpanded()) {
+                await closeMapFullscreen();
               } else {
                 await requestMapFullscreen();
               }
@@ -2538,12 +2590,81 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
               console.error(error);
             }
           });
-          return button;
+          return container;
         }
       });
 
       riverMap.addControl(new FullscreenControl());
       fullscreenControlAdded = true;
+    }
+
+    function addLocateControl() {
+      if (locateControlAdded || !riverMap) return;
+      const LocateControl = L.Control.extend({
+        options: { position: "topleft" },
+        onAdd() {
+          const container = L.DomUtil.create("div", "leaflet-bar");
+          const button = L.DomUtil.create("button", "leaflet-control-map-button", container);
+          button.type = "button";
+          button.title = "Vis nuværende placering";
+          button.setAttribute("aria-label", "Vis nuværende placering");
+          button.textContent = "◎";
+          L.DomEvent.disableClickPropagation(container);
+          L.DomEvent.on(button, "click", () => {
+            if (!navigator.geolocation) {
+              elements.mapStatus.textContent = "Nuværende placering understøttes ikke i denne browser.";
+              return;
+            }
+            elements.mapStatus.textContent = "Finder nuværende placering...";
+            navigator.geolocation.getCurrentPosition(
+              (position) => {
+                const coords = [position.coords.latitude, position.coords.longitude];
+                const accuracy = Number(position.coords.accuracy);
+                if (userLocationMarker) {
+                  userLocationMarker.setLatLng(coords);
+                } else {
+                  userLocationMarker = L.marker(coords, {
+                    title: "Nuværende placering",
+                    zIndexOffset: 1000
+                  }).addTo(riverMap);
+                }
+                userLocationMarker.bindPopup("Nuværende placering").openPopup();
+                if (Number.isFinite(accuracy)) {
+                  if (userLocationCircle) {
+                    userLocationCircle.setLatLng(coords).setRadius(accuracy);
+                  } else {
+                    userLocationCircle = L.circle(coords, {
+                      radius: accuracy,
+                      color: "#f2c94c",
+                      weight: 2,
+                      fillColor: "#f2c94c",
+                      fillOpacity: 0.16
+                    }).addTo(riverMap);
+                  }
+                }
+                riverMap.setView(coords, Math.max(riverMap.getZoom(), 15), { animate: true });
+                elements.mapStatus.textContent = Number.isFinite(accuracy)
+                  ? `Nuværende placering vist. Nøjagtighed ca. ${Math.round(accuracy)} m.`
+                  : "Nuværende placering vist.";
+              },
+              (error) => {
+                elements.mapStatus.textContent = error.code === error.PERMISSION_DENIED
+                  ? "Placering blev ikke tilladt i browseren."
+                  : "Nuværende placering kunne ikke findes.";
+              },
+              {
+                enableHighAccuracy: true,
+                timeout: 12000,
+                maximumAge: 60000
+              }
+            );
+          });
+          return container;
+        }
+      });
+
+      riverMap.addControl(new LocateControl());
+      locateControlAdded = true;
     }
 
     function coordinatesFromText(value) {
@@ -3349,9 +3470,20 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         satelliteLayer.addTo(riverMap);
 
         riverMap.on("overlayadd overlayremove", updateVisibleMapBounds);
-        document.addEventListener("fullscreenchange", () => window.setTimeout(() => riverMap.invalidateSize(), 80));
-        document.addEventListener("webkitfullscreenchange", () => window.setTimeout(() => riverMap.invalidateSize(), 80));
+        document.addEventListener("fullscreenchange", () => {
+          if (fullscreenElement() !== elements.riverMapFrame) {
+            setMapExpanded(false);
+          }
+          window.setTimeout(() => riverMap.invalidateSize(), 80);
+        });
+        document.addEventListener("webkitfullscreenchange", () => {
+          if (fullscreenElement() !== elements.riverMapFrame) {
+            setMapExpanded(false);
+          }
+          window.setTimeout(() => riverMap.invalidateSize(), 80);
+        });
         addFullscreenControl();
+        addLocateControl();
       }
 
       riverMap.invalidateSize();
