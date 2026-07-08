@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T09:40:07Z",
+  "generated_at": "2026-07-08T12:00:10Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -26,6 +26,75 @@
     "source": "daily average water temperature"
   },
   "catches": [
+    {
+      "id": "722446",
+      "date": "2026-07-08",
+      "time_of_day": "10:04",
+      "week": 28,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "602 - Lauphølen",
+      "fishing_spot": null,
+      "fisher_name": "J.P. Johannessen",
+      "species": "Laks",
+      "weight_kg": 5.2,
+      "length_cm": 82,
+      "equipment": "Flue",
+      "released_catch": true,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/722446?riverId=13",
+      "flow_cms": 259.9038,
+      "flow_trend": "stigende",
+      "water_level_m": 2.4002,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 10.2482
+    },
+    {
+      "id": "722397",
+      "date": "2026-07-08",
+      "time_of_day": "09:46",
+      "week": 28,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "Bjertem Forra",
+      "fishing_spot": null,
+      "fisher_name": "Tore Aalberg",
+      "species": "Laks",
+      "weight_kg": 2,
+      "length_cm": 60,
+      "equipment": "Flue",
+      "released_catch": true,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/722397?riverId=13",
+      "flow_cms": 259.9038,
+      "flow_trend": "stigende",
+      "water_level_m": 2.4002,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 10.2482
+    },
+    {
+      "id": "722475",
+      "date": "2026-07-08",
+      "time_of_day": "08:00",
+      "week": 28,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "Storflor",
+      "fishing_spot": null,
+      "fisher_name": "Per Aaltvedt",
+      "species": "Laks",
+      "weight_kg": 1.3,
+      "length_cm": 52,
+      "equipment": "Flue",
+      "released_catch": true,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/722475?riverId=13",
+      "flow_cms": 259.9038,
+      "flow_trend": "stigende",
+      "water_level_m": 2.4002,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 10.2482
+    },
     {
       "id": "722175",
       "date": "2026-07-07",
@@ -141839,11 +141908,11 @@
     },
     {
       "date": "2026-07-08",
-      "flow_cms": 243.3815,
+      "flow_cms": 259.9038,
       "flow_trend": "stigende",
-      "water_level_m": 2.336,
+      "water_level_m": 2.4002,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.3378
+      "water_temperature_c": 10.2482
     }
   ]
 }
