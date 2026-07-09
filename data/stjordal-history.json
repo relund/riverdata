@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T22:20:13Z",
+  "generated_at": "2026-07-09T01:05:15Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -43,11 +43,57 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/723049?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
+    },
+    {
+      "id": "723095",
+      "date": "2026-07-08",
+      "time_of_day": "23:50",
+      "week": 28,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "43a - Mølskhølen",
+      "fishing_spot": null,
+      "fisher_name": "Svein Tore Støa",
+      "species": "Laks",
+      "weight_kg": 5.6,
+      "length_cm": 81,
+      "equipment": "Flue",
+      "released_catch": false,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/723095?riverId=13",
+      "flow_cms": 251.6885,
+      "flow_trend": "stigende",
+      "water_level_m": 2.3729,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 10.3122
+    },
+    {
+      "id": "723069",
+      "date": "2026-07-08",
+      "time_of_day": "23:45",
+      "week": 28,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "Hembre",
+      "fishing_spot": null,
+      "fisher_name": "Johan Jardelid",
+      "species": "Laks",
+      "weight_kg": 2.5,
+      "length_cm": 64,
+      "equipment": "Flue",
+      "released_catch": true,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/723069?riverId=13",
+      "flow_cms": 251.6885,
+      "flow_trend": "stigende",
+      "water_level_m": 2.3729,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 10.3122
     },
     {
       "id": "723026",
@@ -66,11 +112,11 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/723026?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722922",
@@ -89,11 +135,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722922?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722894",
@@ -112,11 +158,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722894?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722943",
@@ -135,11 +181,11 @@
       "released_catch": false,
       "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1783543112.png",
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722943?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722797",
@@ -158,11 +204,11 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722797?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722895",
@@ -181,11 +227,11 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722895?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "723013",
@@ -204,11 +250,11 @@
       "released_catch": true,
       "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1783545890.png",
       "detail_url": "https://elveguiden.no/no/laksebors/catches/723013?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722780",
@@ -227,11 +273,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722780?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722708",
@@ -250,11 +296,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722708?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722712",
@@ -273,11 +319,11 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722712?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722714",
@@ -296,11 +342,11 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722714?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722710",
@@ -319,11 +365,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722710?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722703",
@@ -342,11 +388,11 @@
       "released_catch": false,
       "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/6a4e81e35d0e7-1000033542.jpg",
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722703?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722798",
@@ -365,11 +411,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722798?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722636",
@@ -388,11 +434,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722636?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722870",
@@ -411,11 +457,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722870?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722446",
@@ -434,11 +480,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722446?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722397",
@@ -457,11 +503,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722397?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722779",
@@ -480,11 +526,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722779?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722475",
@@ -503,11 +549,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722475?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722711",
@@ -526,11 +572,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/722711?riverId=13",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
     },
     {
       "id": "722175",
@@ -142345,11 +142391,19 @@
     },
     {
       "date": "2026-07-08",
-      "flow_cms": 259.2075,
+      "flow_cms": 251.6885,
       "flow_trend": "stigende",
-      "water_level_m": 2.4039,
+      "water_level_m": 2.3729,
       "water_level_trend": "stigende",
-      "water_temperature_c": 10.277
+      "water_temperature_c": 10.3122
+    },
+    {
+      "date": "2026-07-09",
+      "flow_cms": 154.5169,
+      "flow_trend": "faldende",
+      "water_level_m": 1.962,
+      "water_level_trend": "faldende",
+      "water_temperature_c": 10.7
     }
   ]
 }
