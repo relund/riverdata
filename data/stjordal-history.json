@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T00:14:17Z",
+  "generated_at": "2026-07-16T03:39:52Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -43,11 +43,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/728858?riverId=13",
-      "flow_cms": null,
-      "flow_trend": null,
-      "water_level_m": null,
-      "water_level_trend": null,
-      "water_temperature_c": null
+      "flow_cms": 26.0354,
+      "flow_trend": "faldende",
+      "water_level_m": 1.0525,
+      "water_level_trend": "faldende",
+      "water_temperature_c": 15.5558
     },
     {
       "id": "728868",
@@ -70,7 +70,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728838",
@@ -93,7 +93,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728862",
@@ -116,7 +116,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728816",
@@ -139,7 +139,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728815",
@@ -162,7 +162,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728702",
@@ -185,7 +185,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728687",
@@ -208,7 +208,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728636",
@@ -231,7 +231,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728666",
@@ -254,7 +254,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728478",
@@ -277,7 +277,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728492",
@@ -300,7 +300,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728458",
@@ -323,7 +323,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728849",
@@ -346,7 +346,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728416",
@@ -369,7 +369,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728420",
@@ -392,7 +392,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728357",
@@ -415,7 +415,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728540",
@@ -438,7 +438,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728269",
@@ -461,7 +461,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728477",
@@ -484,7 +484,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728270",
@@ -507,7 +507,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728285",
@@ -530,7 +530,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728288",
@@ -553,7 +553,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728291",
@@ -576,7 +576,7 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
     },
     {
       "id": "728587",
@@ -150317,7 +150317,15 @@
       "flow_trend": "faldende",
       "water_level_m": 1.0778,
       "water_level_trend": "faldende",
-      "water_temperature_c": 15.1914
+      "water_temperature_c": 15.1912
+    },
+    {
+      "date": "2026-07-16",
+      "flow_cms": 26.0354,
+      "flow_trend": "faldende",
+      "water_level_m": 1.0525,
+      "water_level_trend": "faldende",
+      "water_temperature_c": 15.5558
     }
   ]
 }
