@@ -8,6 +8,7 @@
 #' @param .unit Time unit for the look-back window. One of `"cur_year_days"`, `"cur_year_weeks"`, `"cur_year_months"`, `"months"` or `"years"`.
 #' @param .group Column name used for grouping and fill in the bar plot. One of `"Place"` or `"Method"`.
 #' @param .plotly Use plotly otherwise just ggplot.
+#' @param legend_pos Legend position. One of `"top"`, `"right"`, `"bottom"`, `"left"` or `"none"`.
 #'
 #' @return The plot object.
 #' @export
@@ -17,9 +18,10 @@
 #' dat <- read_data("data_karup_catch_seatrout_", year = 2023)
 #' snip_plot_catch(dat)
 #' }
-snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days", "cur_year_weeks", "cur_year_months", "months", "years"), .group = c("Place", "Method"), .plotly = TRUE) {
+snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days", "cur_year_weeks", "cur_year_months", "months", "years"), .group = c("Place", "Method"), .plotly = TRUE, legend_pos = c("top", "right", "bottom", "left", "none")) {
    .unit <- match.arg(.unit)
    .group <- match.arg(.group)
+   legend_pos <- match.arg(legend_pos)
    is_multi_year <- .unit %in% c("months", "years")
 
    if (!.group %in% names(datCatch)) {
@@ -122,7 +124,7 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
          ) +
          labs(fill = "") + xlab("") + ylab("") +
          scale_y_continuous(labels = scales::percent) +
-         theme(legend.position = "bottom")
+         theme(legend.position = legend_pos)
    } else {
       pt <- ggplot(data = dat, aes(x = Date)) +
          geom_bar(aes(fill = .data$Place)) +
@@ -133,7 +135,7 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
             position = position_dodge(width = 1)
          ) +
          labs(fill = "") + xlab("") + ylab("") +
-         theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
+         theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position = legend_pos)
    }
 
    if (.unit == "cur_year_weeks") {
@@ -190,31 +192,93 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
    }
 
    if (.plotly) {
-      pt <- ggplotly(pt, tooltip = c("count", "fill"))
+      pt <- ggplotly(pt, dynamicTicks = TRUE, tooltip = c("count", "fill"))
+      plotly_bar_width <- switch(
+         .unit,
+         cur_year_days = 0.75 * 24 * 60 * 60 * 1000,
+         cur_year_weeks = 0.75 * 7 * 24 * 60 * 60 * 1000,
+         cur_year_months = 0.75 * 30 * 24 * 60 * 60 * 1000,
+         years = 0.75 * 365 * 24 * 60 * 60 * 1000,
+         NULL
+      )
+      plotly_format_date <- function(x) {
+         if (.unit == "cur_year_days") {
+            return(trimws(format(as.Date(x), "%e. %b %Y")))
+         }
+         if (.unit == "cur_year_weeks") {
+            return(paste0("Uge ", isoweek(as.Date(x)), " (", trimws(format(as.Date(x), "%e. %b %Y")), ")"))
+         }
+         if (.unit == "cur_year_months") {
+            return(format(as.Date(x), "%b %Y"))
+         }
+         if (.unit == "years") {
+            return(format(as.Date(x), "%Y"))
+         }
+         as.character(x)
+      }
 
       for (i in seq_along(pt$x$data)) {
          trace <- pt$x$data[[i]]
-         if (!identical(trace$type, "bar")) next
-         if (is.null(trace$x) || is.null(trace$y) || is.null(trace$name)) next
+         if (identical(trace$type, "bar")) {
+            if (is.null(trace$x) || is.null(trace$y) || is.null(trace$name)) next
+            if (!is.null(plotly_bar_width)) {
+               pt$x$data[[i]]$width <- plotly_bar_width
+            }
 
-         if (.unit == "months") {
-            pt$x$data[[i]]$hovertext <- paste0(
-               "Andel: ", scales::percent(trace$y, accuracy = 1),
-               "<br>Gruppe: ", trace$name
-            )
-         } else {
-            pt$x$data[[i]]$hovertext <- paste0(
-               "Antal: ", trace$y,
-               "<br>Område: ", trace$name
+            if (.unit == "months") {
+               pt$x$data[[i]]$hovertemplate <- paste0(
+                  "Andel: ", scales::percent(trace$y, accuracy = 1),
+                  "<br>Gruppe: ", trace$name,
+                  "<extra></extra>"
+               )
+            } else {
+               pt$x$data[[i]]$hovertemplate <- paste0(
+                  "Antal: ", trace$y,
+                  "<br>Område: ", trace$name,
+                  "<extra></extra>"
+               )
+            }
+         } else if (identical(trace$type, "scatter") && identical(trace$mode, "text")) {
+            if (is.null(trace$x) || is.null(trace$text)) next
+            pt$x$data[[i]]$hovertemplate <- paste0(
+               "Total: ", trace$text,
+               "<br>Date: ", plotly_format_date(trace$x),
+               "<extra></extra>"
             )
          }
-         pt$x$data[[i]]$hovertemplate <- "%{hovertext}<extra></extra>"
+      }
+
+      plotly_legend <- switch(
+         legend_pos,
+         top = list(orientation = "h", x = 0, y = 1.08, xanchor = "left", yanchor = "bottom"),
+         bottom = list(orientation = "h", x = 0, y = -0.2, xanchor = "left", yanchor = "top"),
+         left = list(orientation = "v", x = -0.1, y = 1, xanchor = "right", yanchor = "top"),
+         right = list(orientation = "v", x = 1.02, y = 1, xanchor = "left", yanchor = "top"),
+         none = list()
+      )
+      plotly_xaxis_range <- pt$x$layout$xaxis$range
+      if (length(plotly_xaxis_range) >= 1) {
+         plotly_xaxis_range <- c(plotly_xaxis_range[[1]], as.character(as.Date(lastDate)))
+      }
+      plotly_xaxis <- switch(
+         .unit,
+         cur_year_days = list(type = "date", autorange = FALSE, range = plotly_xaxis_range, tickmode = "auto", nticks = 8, tickformat = "%e. %b"),
+         cur_year_weeks = list(type = "date", autorange = FALSE, range = plotly_xaxis_range, tickmode = "auto", nticks = 8, tickformat = "Uge %V"),
+         cur_year_months = list(type = "date", autorange = FALSE, range = plotly_xaxis_range, tickmode = "auto", nticks = 6, tickformat = "%b"),
+         years = list(type = "date", autorange = FALSE, range = plotly_xaxis_range, tickmode = "auto", nticks = 8, tickformat = "%Y"),
+         list()
+      )
+      if (length(plotly_xaxis) > 0) {
+         pt$x$layout$xaxis$tickvals <- NULL
+         pt$x$layout$xaxis$ticktext <- NULL
       }
 
       pt <- pt %>%
          layout(
             # yaxis = list(title = "Relativ vandstand"),
-            legend = list(orientation = 'h'),
+            xaxis = plotly_xaxis,
+            legend = plotly_legend,
+            showlegend = legend_pos != "none",
             #hovermode = "x unified",
             dragmode = "orbit"
          ) |>
@@ -223,6 +287,10 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
             displaylogo = FALSE,
             modeBarButtonsToRemove = c("lasso2d", "toImage", "select2d", "hoverClosestCartesian", "hoverCompareCartesian")
          )
+      if (length(plotly_xaxis) > 0) {
+         pt$x$layout$xaxis$autorange <- FALSE
+         pt$x$layout$xaxis$range <- plotly_xaxis_range
+      }
    }
    return(pt)
 }

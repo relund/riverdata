@@ -9,7 +9,8 @@ snip_plot_catch(
   .look_back = 30,
   .unit = c("cur_year_days", "cur_year_weeks", "cur_year_months", "months", "years"),
   .group = c("Place", "Method"),
-  .plotly = TRUE
+  .plotly = TRUE,
+  legend_pos = c("top", "right", "bottom", "left", "none")
 )
 }
 \arguments{
@@ -22,6 +23,8 @@ snip_plot_catch(
 \item{.group}{Column name used for grouping and fill in the bar plot. One of \code{"Place"} or \code{"Method"}.}
 
 \item{.plotly}{Use plotly otherwise just ggplot.}
+
+\item{legend_pos}{Legend position. One of \code{"top"}, \code{"right"}, \code{"bottom"}, \code{"left"} or \code{"none"}.}
 }
 \value{
 The plot object.
