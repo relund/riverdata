@@ -6,9 +6,10 @@
 #' @param datCatch Catch data.
 #' @param .look_back Number of time units to plot.
 #' @param .unit Time unit for the look-back window. One of `"cur_year_days"`, `"cur_year_weeks"`, `"cur_year_months"`, `"months"` or `"years"`.
-#' @param .group Column name used for grouping and fill in the bar plot. One of `"Place"` or `"Method"`.
+#' @param .group Column name used for grouping and fill in the bar plot. One of `"Place"`, `"Method"`, `"Size"` or `"None"`.
 #' @param .plotly Use plotly otherwise just ggplot.
 #' @param legend_pos Legend position. One of `"top"`, `"right"`, `"bottom"`, `"left"` or `"none"`.
+#' @param up_to_curday Filter multi-year plots to catches up to the current day-of-year.
 #'
 #' @return The plot object.
 #' @export
@@ -18,13 +19,14 @@
 #' dat <- read_data("data_karup_catch_seatrout_", year = 2023)
 #' snip_plot_catch(dat)
 #' }
-snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days", "cur_year_weeks", "cur_year_months", "months", "years"), .group = c("Place", "Method"), .plotly = TRUE, legend_pos = c("top", "right", "bottom", "left", "none")) {
+snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days", "cur_year_weeks", "cur_year_months", "months", "years"), .group = c("Place", "Method", "Size", "None"), .plotly = TRUE, legend_pos = c("top", "right", "bottom", "left", "none"), up_to_curday = FALSE) {
    .unit <- match.arg(.unit)
    .group <- match.arg(.group)
    legend_pos <- match.arg(legend_pos)
    is_multi_year <- .unit %in% c("months", "years")
+   is_grouped <- .group != "None"
 
-   if (!.group %in% names(datCatch)) {
+   if (is_grouped && !.group %in% names(datCatch)) {
       stop("`.group` must be a column in `datCatch`.", call. = FALSE)
    }
 
@@ -42,16 +44,28 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
    } else {
       current_date - days(.look_back)
    }
-   dat <- datCatch %>%
+   dat_source <- datCatch
+   if (up_to_curday && is_multi_year) {
+      dat_source <- dat_source %>%
+         dplyr::filter(yday(.data$Date) <= yday(current_date))
+   }
+   dat <- dat_source %>%
       dplyr::filter(
          if (is_multi_year) {
             Date > filter_threshold
          } else {
             .data$Year == current_year & Date > filter_threshold
          }
-      ) %>%
-      dplyr::select(dplyr::all_of(c("Date", .group))) %>%
-      dplyr::rename(Place = dplyr::all_of(.group)) %>%
+      )
+   dat <- if (is_grouped) {
+      dat %>%
+         dplyr::select(dplyr::all_of(c("Date", .group))) %>%
+         dplyr::rename(Place = dplyr::all_of(.group))
+   } else {
+      dat %>%
+         dplyr::select(dplyr::all_of("Date"))
+   }
+   dat <- dat %>%
       arrange(desc(.data$Date))
 
    if (.unit == "cur_year_weeks") {
@@ -65,7 +79,7 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
    }
 
    if (nrow(dat) == 0) {  # find last days with catches
-      dat <- datCatch %>%
+      dat <- dat_source %>%
          dplyr::filter(
             if (is_multi_year) {
                Date > max(Date) - years(.look_back)
@@ -79,9 +93,16 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
                      days(.look_back)
                   }
             }
-         ) %>%
-         dplyr::select(dplyr::all_of(c("Date", .group))) %>%
-         dplyr::rename(Place = dplyr::all_of(.group)) %>%
+         )
+      dat <- if (is_grouped) {
+         dat %>%
+            dplyr::select(dplyr::all_of(c("Date", .group))) %>%
+            dplyr::rename(Place = dplyr::all_of(.group))
+      } else {
+         dat %>%
+            dplyr::select(dplyr::all_of("Date"))
+      }
+      dat <- dat %>%
          arrange(desc(.data$Date))
 
       if (.unit == "cur_year_weeks") {
@@ -112,30 +133,54 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
    }
 
    if (.unit == "months") {
-      pt <- ggplot(data = dat, aes(x = Date)) +
-         geom_bar(aes(fill = .data$Place, y = after_stat(count) / sum(after_stat(count)))) +
-         geom_text(
-            aes(
-               y = after_stat(count) / sum(after_stat(count)),
-               label = scales::percent(round(after_stat(count) / sum(after_stat(count)), 2))
-            ),
-            stat = "count",
-            vjust = -0.5
-         ) +
-         labs(fill = "") + xlab("") + ylab("") +
-         scale_y_continuous(labels = scales::percent) +
-         theme(legend.position = legend_pos)
+      if (is_grouped) {
+         pt <- ggplot(data = dat, aes(x = Date)) +
+            geom_bar(aes(fill = .data$Place, y = after_stat(count) / sum(after_stat(count)))) +
+            geom_text(
+               aes(
+                  y = after_stat(count) / sum(after_stat(count)),
+                  label = scales::percent(round(after_stat(count) / sum(after_stat(count)), 2))
+               ),
+               stat = "count",
+               vjust = -0.5
+            ) +
+            labs(fill = "") + xlab("") + ylab("") +
+            scale_y_continuous(labels = scales::percent) +
+            theme(legend.position = legend_pos)
+      } else {
+         pt <- ggplot(data = dat, aes(x = Date)) +
+            geom_bar() +
+            geom_text(
+               stat = "count",
+               aes(y = after_stat(count), label = after_stat(count)),
+               vjust = -0.2
+            ) +
+            labs(fill = "") + xlab("") + ylab("") +
+            theme(legend.position = "none")
+      }
    } else {
-      pt <- ggplot(data = dat, aes(x = Date)) +
-         geom_bar(aes(fill = .data$Place)) +
-         geom_text(
-            stat = "count",
-            aes(y = after_stat(count), label = after_stat(count)),
-            vjust = -0.2,
-            position = position_dodge(width = 1)
-         ) +
-         labs(fill = "") + xlab("") + ylab("") +
-         theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position = legend_pos)
+      if (is_grouped) {
+         pt <- ggplot(data = dat, aes(x = Date)) +
+            geom_bar(aes(fill = .data$Place)) +
+            geom_text(
+               stat = "count",
+               aes(y = after_stat(count), label = after_stat(count)),
+               vjust = -0.2,
+               position = position_dodge(width = 1)
+            ) +
+            labs(fill = "") + xlab("") + ylab("") +
+            theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position = legend_pos)
+      } else {
+         pt <- ggplot(data = dat, aes(x = Date)) +
+            geom_bar() +
+            geom_text(
+               stat = "count",
+               aes(y = after_stat(count), label = after_stat(count)),
+               vjust = -0.2
+            ) +
+            labs(fill = "") + xlab("") + ylab("") +
+            theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position = "none")
+      }
    }
 
    if (.unit == "cur_year_weeks") {
@@ -192,7 +237,7 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
    }
 
    if (.plotly) {
-      pt <- ggplotly(pt, dynamicTicks = TRUE, tooltip = c("count", "fill"))
+      pt <- ggplotly(pt, dynamicTicks = TRUE, tooltip = if (is_grouped) c("count", "fill") else "count")
       plotly_bar_width <- switch(
          .unit,
          cur_year_days = 0.75 * 24 * 60 * 60 * 1000,
@@ -220,23 +265,37 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
       for (i in seq_along(pt$x$data)) {
          trace <- pt$x$data[[i]]
          if (identical(trace$type, "bar")) {
-            if (is.null(trace$x) || is.null(trace$y) || is.null(trace$name)) next
+            if (is.null(trace$x) || is.null(trace$y)) next
             if (!is.null(plotly_bar_width)) {
                pt$x$data[[i]]$width <- plotly_bar_width
             }
 
             if (.unit == "months") {
-               pt$x$data[[i]]$hovertemplate <- paste0(
-                  "Andel: ", scales::percent(trace$y, accuracy = 1),
-                  "<br>Gruppe: ", trace$name,
-                  "<extra></extra>"
-               )
+               if (is_grouped) {
+                  pt$x$data[[i]]$hovertemplate <- paste0(
+                     "Andel: ", scales::percent(trace$y, accuracy = 1),
+                     "<br>Gruppe: ", trace$name,
+                     "<extra></extra>"
+                  )
+               } else {
+                  pt$x$data[[i]]$hovertemplate <- paste0(
+                     "Antal: ", trace$y,
+                     "<extra></extra>"
+                  )
+               }
             } else {
-               pt$x$data[[i]]$hovertemplate <- paste0(
-                  "Antal: ", trace$y,
-                  "<br>Område: ", trace$name,
-                  "<extra></extra>"
-               )
+               if (is_grouped) {
+                  pt$x$data[[i]]$hovertemplate <- paste0(
+                     "Antal: ", trace$y,
+                     "<br>Område: ", trace$name,
+                     "<extra></extra>"
+                  )
+               } else {
+                  pt$x$data[[i]]$hovertemplate <- paste0(
+                     "Antal: ", trace$y,
+                     "<extra></extra>"
+                  )
+               }
             }
          } else if (identical(trace$type, "scatter") && identical(trace$mode, "text")) {
             if (is.null(trace$x) || is.null(trace$text)) next
@@ -278,7 +337,7 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
             # yaxis = list(title = "Relativ vandstand"),
             xaxis = plotly_xaxis,
             legend = plotly_legend,
-            showlegend = legend_pos != "none",
+            showlegend = is_grouped && legend_pos != "none",
             #hovermode = "x unified",
             dragmode = "orbit"
          ) |>
@@ -299,7 +358,7 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
 #' Catch summary table
 #'
 #' @param datCatch Catch data.
-#' @param .row_unit Row unit for the summary table.
+#' @param .row_unit Row unit for the summary table. One of `"Year"` or `"Month"`.
 #'
 #' @return A formatted HTML table.
 #' @export
@@ -307,87 +366,192 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
 #' @examples
 #' \dontrun{
 #' dat <- read_data("data_karup_catch_seatrout_", year = 2023)
-#' snip_table(dat)
+#' snip_summary_table(dat)
 #' }
-snip_table <- function(datCatch, .row_unit = c("Year")) {
+snip_summary_table <- function(datCatch, .row_unit = c("Year", "Month")) {
    .row_unit <- match.arg(.row_unit)
+   tooltip_attrs <- 'data-toggle="tooltip" data-placement="top" data-container="body" style="cursor: help;"'
 
    fa_icon <- function(name, title = "") {
-      as.character(htmltools::tags$i(class = paste("fa", paste0("fa-", name)), title = title))
+      as.character(htmltools::tags$i(
+         class = paste("fa", paste0("fa-", name)),
+         title = title,
+         `data-toggle` = "tooltip",
+         `data-placement` = "top",
+         `data-container` = "body",
+         style = "cursor: help;"
+      ))
    }
 
-   if (.row_unit == "Year") {
-      yearly_summary_cols <- c("Year", "Total", "Sex", "Place", "Method", "Released", "Length", "Weight", "Fulton")
+   tooltip_span <- function(text, title) {
+      paste0("<span title='", title, "' ", tooltip_attrs, ">", text, "</span>")
+   }
 
+   summary_cols <- c("Total", "Sex", "Place", "Method", "Released", "Length", "Weight", "Fulton")
+   row_col <- .row_unit
+   summary_table_cols <- c(row_col, summary_cols)
+
+   if (.row_unit == "Year") {
       if ("Date" %in% names(datCatch)) {
          is_skjern <- "Place" %in% names(datCatch) &&
             any(unique(datCatch$Place) %in% c("Vorgod Å", "Omme Å"))
          dat_stat <- if (is_skjern) yearly_stat(datCatch) else yearly_stat_karup(datCatch)
-      } else if (all(yearly_summary_cols %in% names(datCatch))) {
+      } else if (all(summary_table_cols %in% names(datCatch))) {
          dat_stat <- datCatch
          is_skjern <- "PlaceK" %in% names(dat_stat)
       } else {
          stop(
             "`datCatch` must contain raw catch data with a `Date` column or a yearly summary table with columns ",
-            paste(yearly_summary_cols, collapse = ", "),
+            paste(summary_table_cols, collapse = ", "),
             ".",
             call. = FALSE
          )
       }
-
-      c_names <- c(
-         paste0(fa_icon("calendar-alt", title = "År")),
-         "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
-         paste0(
-            fa_icon("mars", title = "Han"), "/",
-            fa_icon("venus", title = "Hun"), "/",
-            fa_icon("question", title = "Ukendt"), " (%)"
-         ),
-         if (is_skjern) {
-            "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Ukendt'>U</span> (%)"
-         } else {
-            "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Haderis Å'>H</span>/<span title='Ukendt'>U</span> (%)"
-         },
-         if (is_skjern) {
-            "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Vorgod Å'>V</span>/<span title='Omme Å'>O</span>/<span title='Ukendt'>U</span> (%)"
-         },
-         "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Ukendt'>U</span> (%)",
-         paste0(
-            fa_icon("sync", title = "C&R"), "/",
-            fa_icon("times", title = "Hjemtaget"), " (%)"
-         ),
-         paste0(
-            fa_icon("ruler-horizontal", title = "Gens længde"), "/",
-            fa_icon("ruler", title = "Max længde")
-         ),
-         paste0(
-            fa_icon("balance-scale", title = "Gens. vægt"), "/",
-            fa_icon("weight-hanging", title = "Max vægt"),
-            "/<i class=\"fas\" title=\"Total vægt\">&#x3A3;</i>"
-         ),
-         paste0(
-            fa_icon("heart", title = "Gens kondition"), "/",
-            fa_icon("gratipay", title = "Max kondition")
-         )
-      )
-
-      header_names <- if (is_skjern) {
-         c(" " = 2, "Køn", "Område (alle fangster/hjemtaget)" = 2, "Metode", "Genudsat", "Længde", "Vægt", "Kondition")
+   } else {
+      if ("Date" %in% names(datCatch)) {
+         is_skjern <- "Place" %in% names(datCatch) &&
+            any(unique(datCatch$Place) %in% c("Vorgod Å", "Omme Å"))
+         table_year <- lubridate::year(max(datCatch$Date, na.rm = TRUE))
+         dat_stat <- if (is_skjern) monthly_stat(datCatch, table_year) else monthly_stat_karup(datCatch, table_year)
+      } else if (all(summary_table_cols %in% names(datCatch))) {
+         dat_stat <- datCatch
+         is_skjern <- "PlaceK" %in% names(dat_stat)
       } else {
-         c(" " = 2, "Køn", "Område", "Metode", "Genudsat", "Længde", "Vægt", "Kondition")
+         stop(
+            "`datCatch` must contain raw catch data with a `Date` column or a monthly summary table with columns ",
+            paste(summary_table_cols, collapse = ", "),
+            ".",
+            call. = FALSE
+         )
       }
-
-      dat_stat %>%
-         arrange(desc(.data$Year)) %>%
-         knitr::kable(col.names = c_names, escape = FALSE, align = "c", format = "html") %>%
-         kableExtra::kable_styling(
-            fixed_thead = TRUE,
-            font_size = 10,
-            bootstrap_options = c("striped", "hover", "condensed", "responsive")
-         ) %>%
-         kableExtra::add_header_above(header_names)
    }
+
+   c_names <- c(
+      paste0(fa_icon("calendar-alt", title = if (.row_unit == "Year") "År" else "Måned")),
+      paste0("<i class=\"fas\" title=\"Total antal\" ", tooltip_attrs, ">&#x3A3;</i>"),
+      paste0(
+         fa_icon("mars", title = "Han"), "/",
+         fa_icon("venus", title = "Hun"), "/",
+         fa_icon("question", title = "Ukendt"), " (%)"
+      ),
+      if (is_skjern) {
+         paste0(
+            tooltip_span("N", "Nedre"), "/",
+            tooltip_span("M", "Mellem"), "/",
+            tooltip_span("Ø", "Øvre"), "/",
+            tooltip_span("V", "Vorgod Å"), "/",
+            tooltip_span("O", "Omme Å"), "/",
+            tooltip_span("U", "Ukendt"), " (%)"
+         )
+      } else {
+         paste0(
+            tooltip_span("N", "Nedre"), "/",
+            tooltip_span("M", "Mellem"), "/",
+            tooltip_span("Ø", "Øvre"), "/",
+            tooltip_span("H", "Haderis Å"), "/",
+            tooltip_span("U", "Ukendt"), " (%)"
+         )
+      },
+      if (is_skjern) {
+         paste0(
+            tooltip_span("N", "Nedre"), "/",
+            tooltip_span("M", "Mellem"), "/",
+            tooltip_span("Ø", "Øvre"), "/",
+            tooltip_span("V", "Vorgod Å"), "/",
+            tooltip_span("O", "Omme Å"), "/",
+            tooltip_span("U", "Ukendt"), " (%)"
+         )
+      },
+      paste0(
+         tooltip_span("F", "Flue"), "/",
+         tooltip_span("S", "Spin"), "/",
+         tooltip_span("O", "Orm"), "/",
+         tooltip_span("U", "Ukendt"), " (%)"
+      ),
+      paste0(
+         fa_icon("sync", title = "C&R"), "/",
+         fa_icon("times", title = "Hjemtaget"), " (%)"
+      ),
+      paste0(
+         fa_icon("ruler-horizontal", title = "Gens længde"), "/",
+         fa_icon("ruler", title = "Max længde")
+      ),
+      paste0(
+         fa_icon("balance-scale", title = "Gens. vægt"), "/",
+         fa_icon("weight-hanging", title = "Max vægt"),
+         "/<i class=\"fas\" title=\"Total vægt\" ", tooltip_attrs, ">&#x3A3;</i>"
+      ),
+      paste0(
+         fa_icon("heart", title = "Gens kondition"), "/",
+         fa_icon("gratipay", title = "Max kondition")
+      )
+   )
+
+   header_names <- if (is_skjern) {
+      c(" " = 2, "Køn", "Område (alle fangster/hjemtaget)" = 2, "Metode", "Genudsat", "Længde", "Vægt", "Kondition")
+   } else {
+      c(" " = 2, "Køn", "Område", "Metode", "Genudsat", "Længde", "Vægt", "Kondition")
+   }
+
+   if (.row_unit == "Year") {
+      dat_stat <- dplyr::arrange(dat_stat, desc(.data$Year))
+   }
+
+   dat_stat %>%
+      knitr::kable(col.names = c_names, escape = FALSE, align = "c", format = "html") %>%
+      kableExtra::kable_styling(
+         fixed_thead = TRUE,
+         font_size = 10,
+         bootstrap_options = c("striped", "hover", "condensed", "responsive")
+      ) %>%
+      kableExtra::add_header_above(header_names)
 }
+
+#' Catch records table
+#'
+#' @param datCatch Catch data.
+#' @param years Years to show.
+#' @param page_length Number of rows shown on each page.
+#'
+#' @return A formatted DT table.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' dat <- read_data("data_karup_catch_seatrout_", year = 2023)
+#' snip_catch_table(dat, years = c(2023, 2022))
+#' }
+snip_catch_table <- function(datCatch, years, page_length = 25) {
+   DT::datatable(
+      datCatch %>%
+         dplyr::select(Date:Weight, Place, Method, Fulton, Misc, NoWeight) %>%
+         dplyr::filter(lubridate::year(.data$Date) %in% years),
+      class = "stripe row-border order-column nowrap compact",
+      rownames = FALSE,
+      filter = "bottom",
+      escape = FALSE,
+      options = list(
+         pageLength = page_length,
+         order = list(list(0, "desc")),
+         list(visible = FALSE, targets = "NoWeight"),
+         columnDefs = list(
+            list(className = "dt-center", targets = 0:6),
+            list(visible = FALSE, targets = c(7))
+         )
+      ),
+      colnames = c("Dato", "Længde", "Vægt", "Sted", "Metode", "Kondition", "Diverse", "NoWeight"),
+      extensions = c("Responsive")
+   ) %>%
+      DT::formatStyle(
+         columns = "Weight",
+         valueColumns = "NoWeight",
+         color = DT::styleEqual(c(0, 1), c("black", "green"))
+      ) %>%
+      DT::formatRound(c("Length"), digits = 0) %>%
+      DT::formatRound(c("Weight"), digits = 1) %>%
+      DT::formatRound(c("Fulton"), digits = 2)
+}
+
 #' Build an interactive river map
 #'
 #' @param prefix File prefix for the map marker and line CSV files.

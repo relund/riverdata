@@ -62,7 +62,7 @@ datStatMonthSea <- monthly_stat_karup(datCatchSea, curYear)
 ```
 
 
-Dag {data-navmenu="Havørred" #fangster-hav-dag}
+Dag {#fangster-hav-dag}
 =======================================================================
 
 Row 
@@ -75,7 +75,7 @@ snip_plot_catch(datCatchSea, .unit = "cur_year_days", .group = "Place", .look_ba
 ```
 
 
-Uge {data-navmenu="Havørred" #fangster-hav-uge}
+Uge {#fangster-hav-uge}
 =======================================================================
 
 Row
@@ -85,56 +85,20 @@ Row
 
 ```{r}
 snip_plot_catch(datCatchSea, .unit = "cur_year_weeks", .look_back = 30)
-  # dat <- datCatchSea %>% 
-  #   dplyr::filter(Date > ymd(paste0(curYear,"-01-01"))) %>% 
-  #   select(Week, Place)
-  # 
-  # p <- ggplot(data = dat, aes(x = .data[["Week"]])) +
-  #   geom_bar(aes(fill = Place)) + 
-  #   geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) +
-  #   expand_limits(x = isoweek(now())) + 
-  #   labs(fill = "") + xlab(NULL) + ylab(NULL) + 
-  #   theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
-  # ggplotly(p, tooltip = c("x", "y", "fill")) %>% 
-  #   layout(
-  #     # title = place,
-  #     # xaxis = list(domain = c(0, 1), title = NA, tickformat = "%d %b"),
-  #     # yaxis = list(title = "Relativ vandstand"),
-  #     legend = list(orientation = 'h')
-  #     # hovermode = "x unified"
-  # )
 ```
 
 
-Måned {data-navmenu="Havørred" #fangster-hav-maaned}
+Måned {#fangster-hav-maaned}
 =======================================================================
 
 ### Månedlige fangster `r curYear`
 
 ```{r}
 snip_plot_catch(datCatchSea, .unit = "cur_year_months", .look_back = 12)
-  # dat <- datCatchSea %>% 
-  #   dplyr::filter(Date > ymd(paste0(curYear,"-01-01"))) %>% 
-  #   select(Month, Place)
-  # 
-  # p <- ggplot(dat, aes(x = Month)) + 
-  #    geom_bar(aes(fill = Place), stat="count") +
-  #    geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) +
-  #    #expand_limits(x = month(now(), label = T)) + 
-  #    labs(fill = "") + xlab(NULL) + ylab(NULL) + 
-  #    theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
-  # ggplotly(p, tooltip = c("x", "y", "fill")) %>% 
-  #   layout(
-  #     # title = place,
-  #     # xaxis = list(domain = c(0, 1), title = NA, tickformat = "%d %b"),
-  #     # yaxis = list(title = "Relativ vandstand"),
-  #     legend = list(orientation = 'h')
-  #     # hovermode = "x unified"
-  # )
 ```
 
 
-Tabel `r curYear` {data-navmenu="Havørred" #fangster-hav-tabel}
+Tabel `r curYear` {#fangster-hav-tabel}
 =======================================================================
 
 Row
@@ -143,34 +107,12 @@ Row
 ### Tabel for `r curYear`
 
 ```{r}
-cNames <- c(paste0(faIcon("calendar-alt", title = "Måned")), 
-   "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
-   paste0(faIcon("mars", title = "Han"),"/",
-          faIcon("venus", title = "Hun"), "/",
-          faIcon("question", title = "Ukendt"), " (%)"),
-   "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Haderis Å'>H</span>/<span title='Ukendt'>U</span> (%)",
-   "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Ukendt'>U</span> (%)",
-   paste0(faIcon("sync", title = "C&R"),"/",
-          faIcon("times", title = "Hjemtaget"), " (%)"),
-   paste0(faIcon("ruler-horizontal", title="Gens længde"), "/",
-          faIcon("ruler", title="Max længde")),
-   paste0(faIcon("balance-scale", title="Gens. vægt"), "/",
-          faIcon("weight-hanging", title="Max vægt"),
-          "/<i class=\"fas\" title=\"Total vægt\">&#x3A3;</i>"),
-   paste0(faIcon("heart", title="Gens kondition"), "/",
-          faIcon("gratipay", title="Max kondition"))
-   ) 
-
-datStatMonthSea %>%
-  kable(col.names = cNames, escape = F, align = "c", format = "html") %>%
-  kable_styling(fixed_thead = T, font_size = 10,
-                bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
-  add_header_above(c(" " = 2, "Køn", "Område", "Metode", "Genudsat", "Længde", "Vægt", "Kondition"))
+snip_summary_table(datStatMonthSea, .row_unit = "Month")
 ```
 
 
 
-Fangsttabel {data-navmenu="Havørred"}
+Fangsttabel
 =======================================================================
 
 Row {data-height=850}
@@ -179,34 +121,11 @@ Row {data-height=850}
 ### Fangster de seneste 2 år
 
 ```{r}
-  DT::datatable(
-    datCatchSea %>% 
-      select(Date:Weight, Place, Method, Fulton, Misc, NoWeight) %>% 
-      filter(year(Date) %in% c(curYear, curYear-1)),
-    class = 'stripe row-border order-column nowrap compact', # nowrap display compact
-    rownames = FALSE,
-    filter = 'bottom',
-    escape = FALSE,
-    options = list(pageLength = 20, order = list(list(0, 'desc')),
-                   list(visible=FALSE, targets="NoWeight"),
-                   # autoWidth = TRUE,
-                   columnDefs = list(
-                     list(className = 'dt-center', targets = 0:6),
-                     list(visible=FALSE, targets=c(7))
-                   )
-              ),
-    colnames = c('Dato', 'Længde', 'Vægt', 'Sted', 'Metode', 'Kondition', 'Diverse', 'NoWeight'),
-    extensions = c('Responsive')  #,'FixedHeader','RowGroup'
-  ) %>%
-  formatStyle(columns = 'Weight', valueColumns = 'NoWeight', color = styleEqual(c(0, 1), c("black","green"))) %>%
-  # formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>%
-  formatRound(c('Length'), digits = 0) %>%
-  formatRound(c('Weight'), digits = 1) %>%
-  formatRound(c('Fulton'), digits = 2)
+snip_catch_table(datCatchSea, years = c(curYear, curYear - 1))
 ```
 
 
-Statistik over år {data-orientation=columns data-navmenu="Havørred" }
+Statistik over år {data-orientation=columns }
 =======================================================================
 
 Column{ vertical_layout: scroll}
@@ -214,123 +133,39 @@ Column{ vertical_layout: scroll}
 
 ##### Statistik over år 
 
-____
-
 ```{r}
-
-snip_table(datCatchSea, .row_unit = c("Year")) 
-
-# cNames <- c(paste0(faIcon("calendar-alt", title = "År")), 
-#    "<i class=\"fas\" title=\"Total antal\">&#x3A3;</i>",
-#    paste0(faIcon("mars", title = "Han"),"/",
-#           faIcon("venus", title = "Hun"), "/",
-#           faIcon("question", title = "Ukendt"), " (%)"),
-#    "<span title='Nedre'>N</span>/<span title='Mellem'>M</span>/<span title='Øvre'>Ø</span>/<span title='Haderis Å'>H</span>/<span title='Ukendt'>U</span> (%)",
-#    "<span title='Flue'>F</span>/<span title='Spin'>S</span>/<span title='Orm'>O</span>/<span title='Ukendt'>U</span> (%)",
-#    paste0(faIcon("sync", title = "C&R"),"/",
-#           faIcon("times", title = "Hjemtaget"), " (%)"),
-#    paste0(faIcon("ruler-horizontal", title="Gens længde"), "/",
-#           faIcon("ruler", title="Max længde")),
-#    paste0(faIcon("balance-scale", title="Gens. vægt"), "/",
-#           faIcon("weight-hanging", title="Max vægt"),
-#           "/<i class=\"fas\" title=\"Total vægt\">&#x3A3;</i>"),
-#    paste0(faIcon("heart", title="Gens kondition"), "/",
-#           faIcon("gratipay", title="Max kondition"))
-#    ) 
-# 
-# datStatYearSea %>% 
-#   arrange(desc(Year)) %>% 
-#   kable(col.names = cNames, escape = F, align = "c", format = "html") %>% 
-#   kable_styling(fixed_thead = T, font_size = 10,
-#                 bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
-#   add_header_above(c(" " = 2, "Køn", "Område", "Metode", "Genudsat", "Længde", "Vægt", "Kondition"))
+snip_summary_table(datCatchSea, .row_unit = c("Year"))
 ```
 
 
 ##### Fangster over år givet sted
 
-____
-
 ```{r}
 snip_plot_catch(datCatchSea, .unit = "years", .group = "Place", .look_back = 30)
-  # titleFont <- list(size = 14)
-  # dat <- datCatchSea %>% select(Year, Place)
-  # p <- ggplot(data = dat, aes(x = Year, fill = Place)) +
-  #   geom_bar() +
-  #   labs(fill = "") + xlab(NULL) + ylab(NULL) + 
-  #   guides(fill = guide_legend(ncol = 6)) + 
-  #   theme(legend.position="bottom")  
-  # ggplotly(p, tooltip = NULL) %>% 
-  #   layout(
-  #     legend = list(orientation = 'h')
-  # )
 ```
 
 
 ##### Fangster over år givet metode
 
-____
-
 ```{r}
 snip_plot_catch(datCatchSea, .unit = "years", .group = "Method", .look_back = 30)
-  # dat <- datCatchSea %>% select(Year, Method)
-  # p <- ggplot(data = dat, aes(x = Year, fill = Method)) +
-  #   geom_bar() +
-  #   labs(fill = "") + xlab(NULL) + ylab(NULL) + 
-  #   guides(fill = guide_legend(ncol = 6)) + 
-  #   theme(legend.position="bottom")  
-  # ggplotly(p, tooltip = NULL) %>% 
-  #   layout(
-  #     legend = list(orientation = 'h')
-  # )
 ```
 
+##### Fangster over år (til dato)
+
+```{r}
+snip_plot_catch(datCatchSea, .unit = "years", .group = "None", .look_back = 30, up_to_curday = TRUE)
+```
 
 ##### Månedlige fangster givet sted
 
-____
-
 ```{r}
 snip_plot_catch(datCatchSea, .unit = "months", .group = "Place", .look_back = 3000)
-  # dat <- datCatchSea %>% select(Month, Place)
-  # 
-  # p <- ggplot(data = dat, aes(x = Month)) +
-  #   geom_bar(aes(fill = Place, y = (after_stat(count))/sum(after_stat(count)))) + 
-  #   geom_text(aes(label = scales::percent(round((after_stat(count))/sum(after_stat(count)),2)),
-  #                  y = (after_stat(count))/sum(after_stat(count))), stat= "count", vjust = -.5) +
-  #   labs(fill = "") + xlab(NULL) + ylab(NULL) + 
-  #   scale_y_continuous(labels = scales::percent) + 
-  #   guides(fill = guide_legend(ncol = 6)) + 
-  #   theme(legend.position="bottom")  
-  # ggplotly(p, tooltip = NULL) %>% 
-  #   layout(
-  #     legend = list(orientation = 'h')
-  # )
 ```
 
 
 ##### Månedlige fangster givet metode
 
-____
-
 ```{r}
 snip_plot_catch(datCatchSea, .unit = "months", .group = "Method", .look_back = 3000)
-  # dat <- datCatchSea %>% select(Month, Method)
-  # 
-  # p <- ggplot(data = dat, aes(x = Month)) +
-  #   geom_bar(aes(fill = Method, y = (after_stat(count))/sum(after_stat(count)))) + 
-  #   geom_text(aes(label = scales::percent(round((after_stat(count))/sum(after_stat(count)),2)),
-  #                  y = (after_stat(count))/sum(after_stat(count))), stat= "count", vjust = -.5) +
-  #   labs(fill = "") + xlab(NULL) + ylab(NULL) + 
-  #   scale_y_continuous(labels = scales::percent) + 
-  #   guides(fill = guide_legend(ncol = 4)) + 
-  #   theme(legend.position="bottom")  # axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), 
-  # ggplotly(p, tooltip = NULL) %>% 
-  #   layout(
-  #     # title = list(text = "Månedlige fangster givet metode",
-  #     #              y = 0.96, x = 0.09, font = titleFont,
-  #     #              xanchor = 'left', yanchor =  'top'),
-  #     legend = list(orientation = 'h')
-  #     # hovermode = "x unified"
-  # )
 ```
