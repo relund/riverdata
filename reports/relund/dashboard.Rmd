@@ -1,5 +1,5 @@
 ---
-title: "Karup Å - Fangster"
+title: "Karup Å - Fangster (havørred)"
 author: ''
 output:
   flexdashboard::flex_dashboard:
@@ -13,12 +13,21 @@ editor_options:
 
 <script>
 $(".selectize-input input").prop('readonly','readonly');
+
+function updateCatchTablePageState() {
+  var isCatchTablePage = $(".dashboard-page-wrapper.active").attr("id") === "fangsttabel";
+  var isMobileLayout = $("#dashboard-container").hasClass("mobile-layout");
+  $("body").toggleClass("catch-table-page-active", isCatchTablePage && isMobileLayout);
+}
+
+$(document).on("shown.bs.tab", updateCatchTablePageState);
+$(window).on("load resize hashchange", updateCatchTablePageState);
 </script>
 
 ```{r, include=FALSE}
 library(knitr)
-knitr::opts_chunk$set(echo = FALSE, 
-                      fig.height = 3.5, 
+knitr::opts_chunk$set(echo = FALSE,
+                      fig.height = 4.5,
                       out.width = "100%",
                       out.height = "500px")
 # library(directlabels)
@@ -26,6 +35,7 @@ library(plotly)
 library(flexdashboard)
 library(tidyverse)
 library(DT)
+library(reactable)
 # library(formattable)
 # library(flextable)
 library(kableExtra)
@@ -82,7 +92,6 @@ datCatchSeaLfso <- riverdata::get_catch_table(datCatchSeaLfso, datWeightSea)
 
 
 # MV-LF
-
 # Catch - Records 
 datCatchSeaMvlf <-
   riverdata::read_data(
@@ -94,51 +103,109 @@ if ("Species" %in% names(datCatchSeaMvlf)) {
     filter(Species %in% c("Havørred", "Laks"))
 }
 datCatchSeaMvlf <- riverdata::get_catch_table(datCatchSeaMvlf, datWeightSea)
+
+karup_system_rivers <- c("Karup Å", "Haderup Å", "Haderup/Haderis Å")
+dat_catch_sea_clubs <- bind_rows(
+  datCatchSeaLfso |> mutate(Club = "LFSO"),
+  datCatchSeaMvlf |> mutate(Club = "MV-LF")
+) |>
+  filter(River %in% karup_system_rivers)
+dat_catch_sea_recent <- dat_catch_sea_clubs |>
+  filter(
+    Date >= today(tzone = "CET") - days(3),
+    Date <= today(tzone = "CET")
+  )
+avg_weight_recent <- dat_catch_sea_recent |>
+  summarise(Value = mean(Weight, na.rm = TRUE)) |>
+  pull(Value)
+max_weight_recent <- dat_catch_sea_recent |>
+  summarise(Value = max(Weight, na.rm = TRUE)) |>
+  pull(Value)
+
+# Waterleves and temp
+
 ```
 
 
-Dag {data-navmenu="Havørred" #fangster-hav-dag}
+Forside {#fangster-hav-dag}
 =======================================================================
 
-Row 
+Row
+-----------------------------------------------------------------------
+
+###
+
+```{r}
+valueBox(
+  if_else(is.nan(avg_weight_recent), "-", paste0(format(round(avg_weight_recent, 1), decimal.mark = ","), " kg")),
+  caption = "Gens. vægt seneste 4 dage",
+  icon = "fa-balance-scale",
+  color = "primary"
+)
+```
+
+###
+
+```{r}
+valueBox(
+  if_else(is.infinite(max_weight_recent), "-", paste0(format(round(max_weight_recent, 1), decimal.mark = ","), " kg")),
+  caption = "Max vægt seneste 4 dage",
+  icon = "fa-weight-hanging",
+  color = "primary"
+)
+```
+
+Row {data-height=210}
+-----------------------------------------------------------------------
+
+### Seneste fangster
+
+```{r}
+recent_catches_table <- dat_catch_sea_recent |>
+  arrange(desc(Date)) |>
+  slice_head(n = 5) |>
+  transmute(
+    Dato = format(Date, "%d-%m-%Y"),
+    Længde = if_else(
+      is.na(Length),
+      "-",
+      paste0(format(round(Length, 0), decimal.mark = ","), " cm")
+    ),
+    Kilo = if_else(
+      is.na(Weight),
+      "-",
+      paste0(format(round(Weight, 1), decimal.mark = ","), " kg")
+    ),
+    Navn = coalesce(Name, "-"),
+    Sted = coalesce(Place, "-")
+  )
+
+if (nrow(recent_catches_table) == 0) {
+  recent_catches_table <- tibble(
+    Dato = "-",
+    Længde = "-",
+    Kilo = "-",
+    Navn = "-",
+    Sted = "-"
+  )
+}
+
+recent_catches_table |>
+  kable(escape = TRUE, align = "c", format = "html") |>
+  kable_styling(
+    bootstrap_options = c("striped", "condensed"),
+    full_width = TRUE,
+    font_size = 12
+  )
+```
+
+Row
 -----------------------------------------------------------------------
 
 ### Fangster den seneste måned `r curYear`
 
 ```{r}
 riverdata::snip_plot_catch(datCatchSea)
-  # dat <- datCatchSea %>% 
-  #   dplyr::filter(Date > now(tzone = "CET") - days(30)) %>%
-  #   select(Date, Place) %>%
-  #   arrange(desc(Date))
-  # lastDate <- date(now())  #  + ddays(1)
-  # if (nrow(dat) == 0) {
-  #   dat <- datCatchSea %>%
-  #     mutate(DayCtr = max(Date) - Date) %>% 
-  #     dplyr::filter(DayCtr <= 30) %>% 
-  #     arrange(desc(Date)) 
-  #   lastDate <- max(dat$Date) + ddays(1)
-  # }
-  # p <- ggplot(data = dat, aes(x = Date)) +
-  #   geom_bar(aes(fill = Place), width = 0.75) + 
-  #   geom_text(aes(label = after_stat(count), y= after_stat(count) ), stat= "count", position = position_dodge(width = 1)) + #  vjust = -0.5
-  #   scale_x_date(date_labels = "%e. %b", date_breaks = "2 days", 
-  #                limits = c(NA_Date_, lastDate)) + # date(now()+ddays(1))
-  #   labs(fill = "") + xlab("") + ylab("") + 
-  #   theme(axis.text.x  = element_text(angle=45, hjust = 1, vjust = 1), legend.position="bottom")
-  # ggplotly(p, dynamicTicks = TRUE, tooltip = NULL) %>% 
-  #     layout(
-  #       xaxis = list(domain = c(0, 1), title = NA, tickformat = "%d %b"),
-  #       # yaxis = list(title = "Relativ vandstand"),
-  #       legend = list(orientation = 'h'),
-  #       #hovermode = "x unified",
-  #       dragmode = "orbit"
-  #   ) |> 
-  # config(
-  #   displayModeBar = FALSE,
-  #   displaylogo = FALSE, 
-  #   modeBarButtonsToRemove = c("lasso2d", "toImage", "select2d", "hoverClosestCartesian", "hoverCompareCartesian")
-  # )
 ```
 
 
@@ -147,7 +214,7 @@ riverdata::snip_plot_catch(datCatchSea)
 ```{r}
 riverdata::snip_plot_catch(
   datCatchSeaLfso |> 
-    filter(River %in% c("Karup Å", "Haderup Å"))
+    filter(River %in% karup_system_rivers)
 )
 ```
 
@@ -157,12 +224,12 @@ riverdata::snip_plot_catch(
 ```{r}
 riverdata::snip_plot_catch(
   datCatchSeaMvlf |> 
-    filter(River %in% c("Karup Å", "Haderup Å"))
+    filter(River %in% karup_system_rivers)
 )
 ```
 
 
-Uge {data-navmenu="Havørred" #fangster-hav-uge}
+Uge {#fangster-hav-uge}
 =======================================================================
 
 Row
@@ -192,7 +259,7 @@ Row
 ```
 
 
-Måned {data-navmenu="Havørred" #fangster-hav-maaned}
+Måned {#fangster-hav-maaned}
 =======================================================================
 
 ### Månedlige fangster `r curYear`
@@ -219,7 +286,7 @@ Måned {data-navmenu="Havørred" #fangster-hav-maaned}
 ```
 
 
-Tabel `r curYear` {data-navmenu="Havørred" #fangster-hav-tabel}
+Tabel `r curYear` {#fangster-hav-tabel}
 =======================================================================
 
 Row
@@ -255,51 +322,85 @@ datStatMonthSea %>%
 
 
 
-Fangsttabel {data-navmenu="Havørred"}
+Fangsttabel {}
 =======================================================================
 
-Row {data-height=850}
+Row
 -----------------------------------------------------------------------
 
-### Fangster de seneste 2 år
+### Fangster de seneste 2 år {.catch-table-section}
 
 ```{r}
-  DT::datatable(
-    datCatchSea %>% 
-      select(Date:Weight, Place, Method, Fulton, Misc, NoWeight) %>% 
-      filter(year(Date) %in% c(curYear, curYear-1)),
-    class = 'stripe row-border order-column nowrap compact', # nowrap display compact
-    rownames = FALSE,
-    filter = 'bottom',
-    escape = FALSE,
-    options = list(pageLength = 20, order = list(list(0, 'desc')),
-                   list(visible=FALSE, targets="NoWeight"),
-                   # autoWidth = TRUE,
-                   columnDefs = list(
-                     list(className = 'dt-center', targets = 0:6),
-                     list(visible=FALSE, targets=c(7))
-                   )
-              ),
-    colnames = c('Dato', 'Længde', 'Vægt', 'Sted', 'Metode', 'Kondition', 'Diverse', 'NoWeight'),
-    extensions = c('Responsive')  #,'FixedHeader','RowGroup'
-  ) %>%
-  formatStyle(columns = 'Weight', valueColumns = 'NoWeight', color = styleEqual(c(0, 1), c("black","green"))) %>%
-  # formatDate('Date', 'toLocaleDateString', params = list('da-DK')) %>%
-  formatRound(c('Length'), digits = 0) %>%
-  formatRound(c('Weight'), digits = 1) %>%
-  formatRound(c('Fulton'), digits = 2)
+dat_table <- datCatchSea %>%
+  select(Date:Weight, Place, Method, Fulton, Misc, NoWeight) %>%
+  filter(year(Date) %in% c(curYear, curYear-1))
+
+reactable(
+  dat_table,
+  class = "catch-table",
+  searchable = TRUE,
+  filterable = TRUE,
+  pagination = FALSE,
+  defaultSorted = "Date",
+  defaultSortOrder = "desc",
+  striped = TRUE,
+  highlight = TRUE,
+  compact = TRUE,
+  resizable = FALSE,
+  wrap = FALSE,
+  fullWidth = TRUE,
+  height = "100%",
+  defaultColDef = colDef(
+    align = "center",
+    minWidth = 90
+  ),
+  columns = list(
+    Date = colDef(
+      name = "Dato",
+      minWidth = 105,
+      format = colFormat(date = TRUE, locales = "da-DK")
+    ),
+    Length = colDef(
+      name = "Længde",
+      format = colFormat(digits = 0)
+    ),
+    Weight = colDef(
+      name = "Vægt",
+      format = colFormat(digits = 1),
+      style = function(value, index) {
+        if (dat_table$NoWeight[index] == 1) list(color = "green")
+      }
+    ),
+    Place = colDef(
+      name = "Sted",
+      minWidth = 150
+    ),
+    Method = colDef(
+      name = "Metode"
+    ),
+    Fulton = colDef(
+      name = "Kondition",
+      format = colFormat(digits = 2)
+    ),
+    Misc = colDef(
+      name = "Diverse",
+      html = TRUE,
+      filterable = FALSE,
+      minWidth = 110
+    ),
+    NoWeight = colDef(show = FALSE)
+  )
+)
 ```
 
 
-Statistik over år {data-orientation=columns data-navmenu="Havørred" }
+Statistik over år {data-orientation=columns}
 =======================================================================
 
-Column{ vertical_layout: scroll}
+Column{vertical_layout: scroll}
 -----------------------------------------------------------------------
 
 ##### Statistik over år 
-
-____
 
 ```{r}
 cNames <- c(paste0(faIcon("calendar-alt", title = "År")), 
@@ -331,8 +432,6 @@ datStatYearSea %>%
 
 ##### Fangster over år givet sted
 
-____
-
 ```{r}
   titleFont <- list(size = 14)
   dat <- datCatchSea %>% select(Year, Place)
@@ -350,8 +449,6 @@ ____
 
 ##### Fangster over år givet metode
 
-____
-
 ```{r}
   dat <- datCatchSea %>% select(Year, Method)
   p <- ggplot(data = dat, aes(x = Year, fill = Method)) +
@@ -367,8 +464,6 @@ ____
 
 
 ##### Månedlige fangster givet sted
-
-____
 
 ```{r}
   dat <- datCatchSea %>% select(Month, Place)
@@ -389,8 +484,6 @@ ____
 
 
 ##### Månedlige fangster givet metode
-
-____
 
 ```{r}
   dat <- datCatchSea %>% select(Month, Method)

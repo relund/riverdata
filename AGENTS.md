@@ -24,3 +24,7 @@ Run the data/report pipelines with `Rscript script_skjern.R`, `Rscript script_ka
 Treat `docs/`, `riverdata-package/man/`, and many files in `data/` as generated artifacts. Edit source code in `reports/`, `riverdata-package/R/`, or `script_*.R` first, then regenerate outputs instead of patching rendered files by hand.
 
 Do not run `roxygen2` or update generated package documentation unless explicitly requested by the user.
+
+
+## In file commands
+Files may contain placeholders with instructions for you: [To do: <instructions>] or [AI: <instructions>] (multiple lines are possible).
