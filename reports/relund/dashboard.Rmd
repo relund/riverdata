@@ -155,7 +155,7 @@ valueBox(
 )
 ```
 
-Row {data-height=210}
+Row {data-height=140}
 -----------------------------------------------------------------------
 
 ### Seneste fangster
@@ -452,6 +452,25 @@ datStatYearSea %>%
 ```{r}
   dat <- datCatchSea %>% select(Year, Method)
   p <- ggplot(data = dat, aes(x = Year, fill = Method)) +
+    geom_bar() +
+    labs(fill = "") + xlab(NULL) + ylab(NULL) + 
+    guides(fill = guide_legend(ncol = 6)) + 
+    theme(legend.position="bottom")  
+  ggplotly(p, tooltip = NULL) %>% 
+    layout(
+      legend = list(orientation = 'h')
+  )
+```
+
+##### Fangster over år (til dato)
+
+```{r}
+  cur_yday <- yday(today(tzone = "CET"))
+  
+  dat <- datCatchSea |>
+    filter(yday(Date) <= cur_yday) |> 
+    select(Year, Method) 
+  p <- ggplot(data = dat, aes(x = Year)) +
     geom_bar() +
     labs(fill = "") + xlab(NULL) + ylab(NULL) + 
     guides(fill = guide_legend(ncol = 6)) + 
