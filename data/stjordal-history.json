@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T00:14:45Z",
+  "generated_at": "2026-07-20T04:08:03Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -47,7 +47,7 @@
       "flow_trend": "faldende",
       "water_level_m": 0.9578,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.4588
+      "water_temperature_c": 13.4585
     },
     {
       "id": "731805",
@@ -70,7 +70,7 @@
       "flow_trend": "faldende",
       "water_level_m": 0.9578,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.4588
+      "water_temperature_c": 13.4585
     },
     {
       "id": "731830",
@@ -93,7 +93,7 @@
       "flow_trend": "faldende",
       "water_level_m": 0.9578,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.4588
+      "water_temperature_c": 13.4585
     },
     {
       "id": "731716",
@@ -116,7 +116,7 @@
       "flow_trend": "faldende",
       "water_level_m": 0.9578,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.4588
+      "water_temperature_c": 13.4585
     },
     {
       "id": "731717",
@@ -139,7 +139,7 @@
       "flow_trend": "faldende",
       "water_level_m": 0.9578,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.4588
+      "water_temperature_c": 13.4585
     },
     {
       "id": "731600",
@@ -162,7 +162,7 @@
       "flow_trend": "faldende",
       "water_level_m": 0.9578,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.4588
+      "water_temperature_c": 13.4585
     },
     {
       "id": "731311",
@@ -185,7 +185,7 @@
       "flow_trend": "faldende",
       "water_level_m": 0.9578,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.4588
+      "water_temperature_c": 13.4585
     },
     {
       "id": "731313",
@@ -208,7 +208,7 @@
       "flow_trend": "faldende",
       "water_level_m": 0.9578,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.4588
+      "water_temperature_c": 13.4585
     },
     {
       "id": "731331",
@@ -231,7 +231,7 @@
       "flow_trend": "faldende",
       "water_level_m": 0.9578,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.4588
+      "water_temperature_c": 13.4585
     },
     {
       "id": "731223",
@@ -254,7 +254,7 @@
       "flow_trend": "faldende",
       "water_level_m": 0.9578,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.4588
+      "water_temperature_c": 13.4585
     },
     {
       "id": "731315",
@@ -277,7 +277,7 @@
       "flow_trend": "faldende",
       "water_level_m": 0.9578,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.4588
+      "water_temperature_c": 13.4585
     },
     {
       "id": "731474",
@@ -152281,7 +152281,15 @@
       "flow_trend": "faldende",
       "water_level_m": 0.9578,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.4588
+      "water_temperature_c": 13.4585
+    },
+    {
+      "date": "2026-07-20",
+      "flow_cms": 18.1046,
+      "flow_trend": "neutral",
+      "water_level_m": 0.948,
+      "water_level_trend": "faldende",
+      "water_temperature_c": 14.4017
     }
   ]
 }
