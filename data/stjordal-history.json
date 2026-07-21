@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T06:43:55Z",
+  "generated_at": "2026-07-21T09:42:49Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -27,6 +27,29 @@
   },
   "catches": [
     {
+      "id": "732604",
+      "date": "2026-07-21",
+      "time_of_day": "10:05",
+      "week": 30,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "31 - Kleivhølen",
+      "fishing_spot": null,
+      "fisher_name": "François REGUS",
+      "species": "Laks",
+      "weight_kg": 1.6,
+      "length_cm": 55,
+      "equipment": "Flue",
+      "released_catch": true,
+      "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1784622609.png",
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/732604?riverId=13",
+      "flow_cms": 16.8822,
+      "flow_trend": "neutral",
+      "water_level_m": 0.93,
+      "water_level_trend": "neutral",
+      "water_temperature_c": 14.5689
+    },
+    {
       "id": "732478",
       "date": "2026-07-21",
       "time_of_day": "03:05",
@@ -43,11 +66,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/732478?riverId=13",
-      "flow_cms": 16.9108,
+      "flow_cms": 16.8822,
       "flow_trend": "neutral",
-      "water_level_m": 0.9304,
+      "water_level_m": 0.93,
       "water_level_trend": "neutral",
-      "water_temperature_c": 14.683
+      "water_temperature_c": 14.5689
     },
     {
       "id": "732364",
@@ -152615,11 +152638,11 @@
     },
     {
       "date": "2026-07-21",
-      "flow_cms": 16.9108,
+      "flow_cms": 16.8822,
       "flow_trend": "neutral",
-      "water_level_m": 0.9304,
+      "water_level_m": 0.93,
       "water_level_trend": "neutral",
-      "water_temperature_c": 14.683
+      "water_temperature_c": 14.5689
     }
   ]
 }
