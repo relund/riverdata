@@ -7294,6 +7294,7 @@ Dagkort,Zone 2a,NA,8.979864,56.51161,125,LFSO
 Dagkort,Zone 2a,NA,8.979049,56.510852,125,LFSO
 Dagkort,Zone 2a,NA,8.978577,56.510212,125,LFSO
 Dagkort,Zone 2a,NA,8.978276,56.509502,125,LFSO
+Dagkort,Zone 2a,NA,8.9786778,56.5092,125,LFSO
 Dagkort,Zone 2b,NA,8.988683,56.488046,126,LFSO
 Dagkort,Zone 2b,NA,8.98879,56.487283,126,LFSO
 Dagkort,Zone 2b,NA,8.988651,56.486371,126,LFSO
@@ -7851,6 +7852,7 @@ Dagkort,Zone 4,NA,8.999584,56.412643,135,LFSO
 Dagkort,Zone 4,NA,8.999927,56.412299,135,LFSO
 Dagkort,Zone 4,NA,9.000184,56.411978,135,LFSO
 Dagkort,Zone 4,NA,9.000313,56.411492,135,LFSO
+Dagkort,Zone 4,NA,9.0008399,56.4114722,136,LFSO
 Dagkort,Zone 4,NA,9.000834,56.411343,136,LFSO
 Dagkort,Zone 4,NA,9.000801,56.411088,136,LFSO
 Dagkort,Zone 4,NA,9.000769,56.41091,136,LFSO
@@ -8107,683 +8109,771 @@ Dagkort,Zone 3,NA,8.988662,56.450426,140,LFSO
 Dagkort,Zone 3,NA,8.98849,56.450224,140,LFSO
 Dagkort,Zone 3,NA,8.988372,56.449999,140,LFSO
 Dagkort,Zone 3,NA,8.988297,56.449922,140,LFSO
-Medlem,Zone 2b,NA,8.983952,56.477502,141,LFSO
-Medlem,Zone 2b,NA,8.9840627,56.4776196,141,LFSO
-Medlem,Zone 2b,NA,8.9843685,56.4778743,141,LFSO
-Medlem,Zone 2b,NA,8.9846582,56.4780728,141,LFSO
-Medlem,Zone 2b,NA,8.9852858,56.478176499999996,141,LFSO
-Medlem,Zone 2b,NA,8.9860422,56.4782624,141,LFSO
-Medlem,Zone 2b,NA,8.9863319,56.4784402,141,LFSO
-Medlem,Zone 2b,NA,8.9864338,56.4786416,141,LFSO
-Medlem,Zone 2b,NA,8.9865035,56.4788668,141,LFSO
-Medlem,Zone 2b,NA,8.9868737,56.4794119,141,LFSO
-Medlem,Zone 2b,NA,8.9873189,56.4797762,141,LFSO
-Medlem,Zone 2b,NA,8.9876086,56.4800399,141,LFSO
-Medlem,Zone 2b,NA,8.9875388,56.480345,141,LFSO
-Medlem,Zone 2b,NA,8.9873565,56.4806827,141,LFSO
-Medlem,Zone 2b,NA,8.9873135,56.4811004,141,LFSO
-Medlem,Zone 2b,NA,8.9876247,56.4813552,141,LFSO
-Medlem,Zone 2b,NA,8.9880538,56.4816159,141,LFSO
-Medlem,Zone 2b,NA,8.9878607,56.4818943,141,LFSO
-Medlem,Zone 2b,NA,8.9873994,56.4824808,141,LFSO
-Medlem,Zone 2b,NA,8.9872492,56.4827533,141,LFSO
-Medlem,Zone 2b,NA,8.987267,56.483166,141,LFSO
-Medlem,Zone 2b,NA,8.987396,56.483415,141,LFSO
-Medlem,Zone 2b,NA,8.987675,56.483806,141,LFSO
-Medlem,Zone 2b,NA,8.987911,56.484226,141,LFSO
-Medlem,Zone 2b,NA,8.988211,56.484677,141,LFSO
-Medlem,Zone 2b,NA,8.988436,56.484937,141,LFSO
-Medlem,Zone 2b,NA,8.988426,56.485328,141,LFSO
-Medlem,Zone 2b,NA,8.988394,56.485672,141,LFSO
-Medlem,Zone 2b,NA,8.988351,56.48598,141,LFSO
-Medlem,Zone 2b,NA,8.988318,56.486288,141,LFSO
-Medlem,Zone 2b,NA,8.988329,56.486643,141,LFSO
-Medlem,Zone 2b,NA,8.988372,56.486999,141,LFSO
-Medlem,Zone 2b,NA,8.988404,56.487283,141,LFSO
-Medlem,Zone 2b,NA,8.988415,56.487952,141,LFSO
-Medlem,Zone 5,NA,9.0305234,56.4015106,142,LFSO
-Medlem,Zone 5,NA,9.030341,56.4014513,142,LFSO
-Medlem,Zone 5,NA,9.0300299,56.4015106,142,LFSO
-Medlem,Zone 5,NA,9.0297563,56.4016561,142,LFSO
-Medlem,Zone 5,NA,9.0292145,56.4019796,142,LFSO
-Medlem,Zone 5,NA,9.028793,56.402172,142,LFSO
-Medlem,Zone 5,NA,9.028417,56.402302,142,LFSO
-Medlem,Zone 5,NA,9.028122,56.402362,142,LFSO
-Medlem,Zone 5,NA,9.027784,56.402415,142,LFSO
-Medlem,Zone 5,NA,9.0275,56.402427,142,LFSO
-Medlem,Zone 5,NA,9.0271438,56.4024398,142,LFSO
-Medlem,Zone 5,NA,9.0267951,56.4023715,142,LFSO
-Medlem,Zone 5,NA,9.0266288,56.4023121,142,LFSO
-Medlem,Zone 5,NA,9.0264303,56.4022231,142,LFSO
-Medlem,Zone 5,NA,9.021664,56.404363,143,LFSO
-Medlem,Zone 5,NA,9.021363,56.404505,143,LFSO
-Medlem,Zone 5,NA,9.021299,56.40479,143,LFSO
-Medlem,Zone 5,NA,9.021245,56.405134,143,LFSO
-Medlem,Zone 5,NA,9.021127,56.405419,143,LFSO
-Medlem,Zone 5,NA,9.020913,56.405579,143,LFSO
-Medlem,Zone 5,NA,9.020591,56.405639,143,LFSO
-Medlem,Zone 5,NA,9.02014,56.405698,143,LFSO
-Medlem,Zone 5,NA,9.019808,56.405775,143,LFSO
-Medlem,Zone 5,NA,9.019625,56.405971,143,LFSO
-Medlem,Zone 5,NA,9.019722,56.406149,143,LFSO
-Medlem,Zone 5,NA,9.019969,56.406238,143,LFSO
-Medlem,Zone 5,NA,9.020151,56.406268,143,LFSO
-Medlem,Zone 5,NA,9.019829,56.406304,143,LFSO
-Medlem,Zone 5,NA,9.019378,56.40628,143,LFSO
-Medlem,Zone 5,NA,9.019067,56.406238,143,LFSO
-Medlem,Zone 5,NA,9.01881,56.406197,143,LFSO
-Medlem,Zone 5,NA,9.018735,56.406179,143,LFSO
-Medlem,Zone 5,NA,9.018703,56.406108,143,LFSO
-Medlem,Zone 5,NA,9.018778,56.405965,143,LFSO
-Medlem,Zone 5,NA,9.018767,56.40574,143,LFSO
-Medlem,Zone 5,NA,9.018584,56.40555,143,LFSO
-Medlem,Zone 5,NA,9.018284,56.405401,143,LFSO
-Medlem,Zone 5,NA,9.017823,56.405205,143,LFSO
-Medlem,Zone 5,NA,9.017286,56.404956,143,LFSO
-Medlem,Zone 5,NA,9.016889,56.40479,143,LFSO
-Medlem,Zone 5,NA,9.016267,56.404725,143,LFSO
-Medlem,Zone 5,NA,9.015827,56.40479,143,LFSO
-Medlem,Zone 5,NA,9.034104,56.399791,144,LFSO
-Medlem,Zone 5,NA,9.034023,56.400052,144,LFSO
-Medlem,Zone 5,NA,9.03397,56.400322,144,LFSO
-Medlem,Zone 5,NA,9.033937,56.400486,144,LFSO
-Medlem,Zone 5,NA,9.034055,56.400616,144,LFSO
-Medlem,Zone 5,NA,9.034227,56.400685,144,LFSO
-Medlem,Zone 5,NA,9.034533,56.400726,144,LFSO
-Medlem,Zone 5,NA,9.034705,56.400786,144,LFSO
-Medlem,Zone 5,NA,9.034694,56.400866,144,LFSO
-Medlem,Zone 5,NA,9.034544,56.400967,144,LFSO
-Medlem,Zone 5,NA,9.034356,56.401029,144,LFSO
-Medlem,Zone 5,NA,9.034082,56.401035,144,LFSO
-Medlem,Zone 5,NA,9.033691,56.401002,144,LFSO
-Medlem,Zone 5,NA,9.033251,56.400931,144,LFSO
-Medlem,Zone 5,NA,9.032902,56.400895,144,LFSO
-Medlem,Zone 5,NA,9.032677,56.400913,144,LFSO
-Medlem,Zone 5,NA,9.03257,56.400967,144,LFSO
-Medlem,Zone 5,NA,9.032462,56.401056,144,LFSO
-Medlem,Zone 5,NA,9.032553,56.401166,144,LFSO
-Medlem,Zone 5,NA,9.03272,56.401314,144,LFSO
-Medlem,Zone 5,NA,9.033004,56.401453,144,LFSO
-Medlem,Zone 5,NA,9.033235,56.401548,144,LFSO
-Medlem,Zone 5,NA,9.033492,56.401602,144,LFSO
-Medlem,Zone 5,NA,9.033707,56.401649,144,LFSO
-Medlem,Zone 5,NA,9.033948,56.401655,144,LFSO
-Medlem,Zone 5,NA,9.034179,56.401605000000004,144,LFSO
-Medlem,Zone 5,NA,9.033685,56.401667,144,LFSO
-Medlem,Zone 5,NA,9.033288,56.401623,144,LFSO
-Medlem,Zone 5,NA,9.032881,56.40159,144,LFSO
-Medlem,Zone 5,NA,9.032473,56.401557,144,LFSO
-Medlem,Zone 5,NA,9.031963,56.401513,144,LFSO
-Medlem,Zone 5,NA,9.031652,56.40148,144,LFSO
-Medlem,Zone 5,NA,9.031411,56.401501,144,LFSO
-Medlem,Zone 5,NA,9.031186,56.401551,144,LFSO
-Medlem,Zone 5,NA,9.031014,56.401543,144,LFSO
-Medlem,Zone 5,NA,9.030815,56.401442,144,LFSO
-Medlem,Zone 5,NA,9.030644,56.401353,144,LFSO
-Medlem,Zone 5,NA,9.030413,56.401317,144,LFSO
-Medlem,Zone 5,NA,9.03007,56.401329,144,LFSO
-Medlem,Zone 4,NA,9.002652,56.40907,145,LFSO
-Medlem,Zone 4,NA,9.003596,56.408951,145,LFSO
-Medlem,Zone 4,NA,9.004712,56.408856,145,LFSO
-Medlem,Zone 4,NA,9.00542,56.408868,145,LFSO
-Medlem,Zone 4,NA,9.005764,56.408642,145,LFSO
-Medlem,Zone 4,NA,9.005656,56.408524,145,LFSO
-Medlem,Zone 4,NA,9.004798,56.408476,145,LFSO
-Medlem,Zone 4,NA,9.004326,56.40831,145,LFSO
-Medlem,Zone 4,NA,9.004326,56.407883,145,LFSO
-Medlem,Zone 4,NA,9.004519,56.407384,145,LFSO
-Medlem,Zone 4,NA,9.004884,56.407123,145,LFSO
-Medlem,Zone 4,NA,9.005656,56.407147,145,LFSO
-Medlem,Zone 4,NA,9.006643,56.407384,145,LFSO
-Medlem,Zone 4,NA,9.00718,56.407396,145,LFSO
-Medlem,Zone 4,NA,9.007502,56.407064,145,LFSO
-Medlem,Zone 4,NA,9.013059,56.406075,146,LFSO
-Medlem,Zone 4,NA,9.012737,56.406126,146,LFSO
-Medlem,Zone 4,NA,9.012131,56.406159,146,LFSO
-Medlem,Zone 4,NA,9.011396,56.406369,146,LFSO
-Medlem,Zone 4,NA,9.010913,56.406417,146,LFSO
-Medlem,Zone 4,NA,9.010388,56.406387,146,LFSO
-Medlem,Zone 4,NA,9.010141,56.406286,146,LFSO
-Medlem,Zone 4,NA,9.009894,56.406143,146,LFSO
-Medlem,Zone 4,NA,9.009658,56.405858,146,LFSO
-Medlem,Zone 4,NA,9.009551,56.405651,146,LFSO
-Medlem,Zone 4,NA,9.009358,56.405574,146,LFSO
-Medlem,Zone 4,NA,9.009025,56.405627,146,LFSO
-Medlem,Zone 4,NA,9.008757,56.405764,146,LFSO
-Medlem,Zone 4,NA,9.008564,56.406019,146,LFSO
-Medlem,Zone 4,NA,9.008403,56.406316,146,LFSO
-Medlem,Zone 4,NA,9.008317,56.406571,146,LFSO
-Medlem,Zone 4,NA,9.008113,56.406957,146,LFSO
-Medlem,Zone 3,NA,9.001107,56.435638,147,LFSO
-Medlem,Zone 3,NA,9.001118,56.435831,147,LFSO
-Medlem,Zone 3,NA,9.001193,56.436122,147,LFSO
-Medlem,Zone 3,NA,9.001333,56.436341,147,LFSO
-Medlem,Zone 3,NA,9.001762,56.436768,147,LFSO
-Medlem,Zone 3,NA,9.002105,56.437201,147,LFSO
-Medlem,Zone 3,NA,9.002502,56.437682,147,LFSO
-Medlem,Zone 3,NA,9.002523,56.438109,147,LFSO
-Medlem,Zone 3,NA,9.002309,56.438518,147,LFSO
-Medlem,Zone 3,NA,9.002041,56.438791,147,LFSO
-Medlem,Zone 3,NA,9.001869,56.439188,147,LFSO
-Medlem,Zone 3,NA,9.001783,56.439414,147,LFSO
-Medlem,Zone 3,NA,9.001944,56.439752,147,LFSO
-Medlem,Zone 3,NA,9.001998,56.440078,147,LFSO
-Medlem,Zone 3,NA,9.001998,56.440327,147,LFSO
-Medlem,Zone 3,NA,9.001901,56.440647,147,LFSO
-Medlem,Zone 3,NA,9.001762,56.440902,147,LFSO
-Medlem,Zone 3,NA,9.001526,56.441217,147,LFSO
-Medlem,Zone 3,NA,9.001451,56.441448,147,LFSO
-Medlem,Zone 3,NA,9.001547,56.441786,147,LFSO
-Medlem,Zone 3,NA,9.001676,56.441994,147,LFSO
-Medlem,Zone 3,NA,9.001837,56.442403,147,LFSO
-Medlem,Zone 3,NA,9.00159,56.436122,148,LFSO
-Medlem,Zone 3,NA,9.001826,56.43643,148,LFSO
-Medlem,Zone 3,NA,9.002395,56.437041,148,LFSO
-Medlem,Zone 3,NA,9.002824,56.437611,148,LFSO
-Medlem,Zone 3,NA,9.002899,56.437978,148,LFSO
-Medlem,Zone 3,NA,9.002781,56.438352,148,LFSO
-Medlem,Zone 3,NA,9.002631,56.438619,148,LFSO
-Medlem,Zone 3,NA,9.002373,56.43891,148,LFSO
-Medlem,Zone 3,NA,9.002159,56.439194,148,LFSO
-Medlem,Zone 3,NA,9.002202,56.439485,148,LFSO
-Medlem,Zone 3,NA,9.002373,56.440066,148,LFSO
-Medlem,Zone 3,NA,9.002244,56.440724,148,LFSO
-Medlem,Zone 3,NA,9.002051,56.441045,148,LFSO
-Medlem,Zone 3,NA,9.001826,56.441347,148,LFSO
-Medlem,Zone 3,NA,9.001794,56.441596,148,LFSO
-Medlem,Zone 3,NA,9.001998,56.442,148,LFSO
-Medlem,Zone 3,NA,9.00218,56.442391,148,LFSO
-Medlem,Zone 3,NA,9.002137,56.442462,148,LFSO
-Medlem,Zone 2a,NA,8.988425,56.48803,149,LFSO
-Medlem,Zone 2a,NA,8.988265,56.488882,149,LFSO
-Medlem,Zone 2a,NA,8.988329,56.489119,149,LFSO
-Medlem,Zone 2a,NA,8.987868,56.490055,149,LFSO
-Medlem,Zone 2a,NA,8.987836,56.490452,149,LFSO
-Medlem,Zone 2a,NA,8.987525,56.491033,149,LFSO
-Medlem,Zone 2a,NA,8.986988,56.491962,149,LFSO
-Medlem,Zone 2a,NA,8.986377,56.493076,149,LFSO
-Medlem,Zone 2a,NA,8.985722,56.493905,149,LFSO
-Medlem,Zone 2a,NA,8.985829,56.494189,149,LFSO
-Medlem,Zone 2a,NA,8.986173,56.494403,149,LFSO
-Medlem,Zone 2a,NA,8.986194,56.494592,149,LFSO
-Medlem,Zone 2a,NA,8.985958,56.494817,149,LFSO
-Medlem,Zone 2a,NA,8.985701,56.495161,149,LFSO
-Medlem,Zone 2a,NA,8.985722,56.495575,149,LFSO
-Medlem,Zone 2a,NA,8.986237,56.496321,149,LFSO
-Medlem,Zone 2a,NA,8.98643,56.496937,149,LFSO
-Medlem,Zone 2a,NA,8.986709,56.497411,149,LFSO
-Medlem,Zone 2a,NA,8.986666,56.497766,149,LFSO
-Medlem,Zone 2a,NA,8.986344,56.498157,149,LFSO
-Medlem,Zone 2a,NA,8.983297,56.502279,149,LFSO
-Medlem,Zone 2a,NA,8.983061,56.502646,149,LFSO
-Medlem,Zone 2a,NA,8.982375,56.503084,149,LFSO
-Medlem,Zone 2a,NA,8.981881,56.503392,149,LFSO
-Medlem,Zone 2a,NA,8.981602,56.503688,149,LFSO
-Medlem,Zone 2a,NA,8.981109,56.503972,149,LFSO
-Medlem,Zone 2a,NA,8.980508,56.504292,149,LFSO
-Medlem,Zone 2a,NA,8.980014,56.504659,149,LFSO
-Medlem,Zone 2a,NA,8.979886,56.505073,149,LFSO
-Medlem,Zone 2a,NA,8.979907,56.505512,149,LFSO
-Medlem,Zone 2a,NA,8.980079,56.505808,149,LFSO
-Medlem,Zone 2a,NA,8.980551,56.506033,149,LFSO
-Medlem,Zone 2a,NA,8.980765,56.506471,149,LFSO
-Medlem,Zone 2a,NA,8.981044,56.506921,149,LFSO
-Medlem,Zone 2a,NA,8.981044,56.507276,149,LFSO
-Medlem,Zone 2a,NA,8.98083,56.507536,149,LFSO
-Medlem,Zone 2a,NA,8.980186,56.507903,149,LFSO
-Medlem,Zone 2a,NA,8.979435,56.508389,149,LFSO
-Medlem,Zone 2a,NA,8.97922,56.508661,149,LFSO
-Medlem,Zone 2a,NA,8.979049,56.508851,149,LFSO
-Medlem,Zone 2a,NA,8.978748,56.509123,149,LFSO
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.158354,56.306024,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.158542,56.306027,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.158703,56.305977,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.158837,56.305893,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.158875,56.305798,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.158923,56.305625,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.15895,56.305503,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.159014,56.305408,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.159181,56.305286,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.159379,56.305158,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.159588,56.305033,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.159776,56.304899,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.159948,56.304724,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.160007,56.304631,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.160076,56.304521,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.16013,56.304438,160,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.160125,56.304435,160,LF1926
-medlem,Linje 4,NA,9.1577322,56.3058418,161,LF1926
-medlem,Linje 4,NA,9.1578824,56.3057317,161,LF1926
-medlem,Linje 4,NA,9.1580487,56.3057049,161,LF1926
-medlem,Linje 4,NA,9.1582311,56.3057347,161,LF1926
-medlem,Linje 4,NA,9.1583544,56.3057704,161,LF1926
-medlem,Linje 4,NA,9.1584349,56.3057645,161,LF1926
-medlem,Linje 4,NA,9.1584993,56.3056871,161,LF1926
-medlem,Linje 4,NA,9.1585851,56.3055056,161,LF1926
-medlem,Linje 4,NA,9.1585744,56.3053657,161,LF1926
-medlem,Linje 4,NA,9.1586602,56.3052675,161,LF1926
-medlem,Linje 4,NA,9.1588319,56.3051336,161,LF1926
-medlem,Linje 4,NA,9.1590143,56.3050294,161,LF1926
-medlem,Linje 4,NA,9.1591859,56.3049133,161,LF1926
-medlem,Linje 4,NA,9.1593469,56.3047913,161,LF1926
-medlem,Linje 4,NA,9.1594863,56.3046544,161,LF1926
-medlem,Linje 4,NA,9.1595668,56.3045532,161,LF1926
-medlem,Linje 4,NA,9.1598028,56.3043151,161,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10632,56.346318,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106325,56.346143,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106271,56.346048,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106153,56.345923,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106041,56.34589,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105853,56.345869,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10567,56.345866,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105719,56.345795,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105783,56.345637,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105837,56.345539,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105896,56.345432,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105955,56.345411,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106073,56.345462,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106261,56.345566,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106352,56.345584,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106529,56.345554,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106679,56.345506,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106722,56.345456,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106754,56.345376,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106733,56.345251,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106711,56.345171,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106711,56.345093,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106818,56.345013,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106953,56.344968,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107146,56.344921,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107221,56.344873,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107291,56.344734,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107285,56.344641,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10728,56.34457,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107221,56.344505,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106974,56.344487,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106566,56.344499,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106105,56.344511,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105826,56.344511,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105874,56.344442,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106325,56.344294,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106727,56.344139,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107044,56.343993,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107296,56.343854,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107527,56.343699,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107752,56.34355,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107838,56.343461,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107902,56.343378,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107875,56.343274,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.1078,56.34314,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107757,56.342959,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107698,56.34284,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107789,56.342762,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108009,56.342685,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108127,56.342575,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108138,56.342447,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108106,56.342319,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107891,56.342322,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107623,56.342337,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108063,56.342269,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10809,56.342192,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10817,56.34207,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108117,56.341924,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107924,56.341862,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10773,56.341826,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107553,56.34176,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107532,56.341659,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10765,56.341564,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107881,56.341534,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108197,56.341573,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108353,56.341591,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108573,56.34163,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108685,56.341653,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108884,56.341633,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.1092,56.341594,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109329,56.341475,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109383,56.341341,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109367,56.341199,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109302,56.341133,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109238,56.340871,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109082,56.340747,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108776,56.340696,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108487,56.340693,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108294,56.340761,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108283,56.340857,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108074,56.340702,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107816,56.34061,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107752,56.340595,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108106,56.340494,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108133,56.340399,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108197,56.340277,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108176,56.340152,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108117,56.34006,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108101,56.339881,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108224,56.339846,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10831,56.339908,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10831,56.340015,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108358,56.34017,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108385,56.340256,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108519,56.340312,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108755,56.340372,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108868,56.340333,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109029,56.340259,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109383,56.340089999999996,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109463,56.339953,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10957,56.339792,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109613,56.339679,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109624,56.339581,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10957,56.339536,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109324,56.339531,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109066,56.339584,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108798,56.339626,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108535,56.339599,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108256,56.339533,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10809,56.339441,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107966,56.339299,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10794,56.339203,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107956,56.339064,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108074,56.338986,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108315,56.338936,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108535,56.3389,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10883,56.338906,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108948,56.338963,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10905,56.33901,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109152,56.339046,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109393,56.339153,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109645,56.339218,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109849,56.339239,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.11015,56.339233,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.110337,56.339135,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.110557,56.33901,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.110649,56.33882,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.110552,56.33871,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.110305,56.33857,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109892,56.338463,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109586,56.33841,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109238,56.338288,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108986,56.338157,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108798,56.338023,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108771,56.337907,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108803,56.337711,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108894,56.337509,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109002,56.337416,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109431,56.337324,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109753,56.337336,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.110187,56.337342,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.110515,56.337315,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.11081,56.3373,182,LF1926
-medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.111255,56.337277,182,LF1926
-medlem,Fiskeri tilladt,NA,9.0772283,56.3710497,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0773249,56.3709666,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0774107,56.3708893,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0773892,56.3708121,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0773356,56.3706457,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0773034,56.3704377,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0772605,56.3702832,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0772283,56.3699624,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0772176000000009,56.3698183,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0771693,56.369646,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0772605,56.3695821,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0775314,56.3694172,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0777648,56.3692761,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0778828,56.3691662,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0779364,56.3690889,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0779149,56.3689782,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0778559,56.3688854,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0777862,56.3687561,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0777514,56.36867,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0777232,56.3686084,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0777835,56.3685705,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0780008,56.3684858,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0782208,56.3684293,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0784138,56.3684472,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0786016,56.3685006,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0787491,56.3685927,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0788323,56.3686893,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0788913,56.3687859,213,LF1926
-medlem,Fiskeri tilladt,NA,9.078902,56.3689032,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0789181,56.3689834,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0789289,56.3690636,213,LF1926
-medlem,Fiskeri tilladt,NA,9.078957,56.3691468,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0789958,56.3692181,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0791193,56.3693384,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0792467,56.3694216,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0793372,56.3694543,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0794277,56.3694692,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0796959,56.3695108,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0799132,56.3695509,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0801036,56.3696251,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0803048,56.3697277,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0804336,56.3697841,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0805435,56.3698138,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0806508,56.3697663,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0807581,56.3696772,213,LF1926
-medlem,Fiskeri tilladt,NA,9.0807795,56.3696341,213,LF1926
-medlem,Fiskeret,NA,9.0772283,56.3710497,214,LF1926
-medlem,Fiskeret,NA,9.0770325,56.3712295,214,LF1926
-medlem,Fiskeret,NA,9.0767509,56.3713899,214,LF1926
-medlem,Fiskeret,NA,9.0762118,56.3715548,214,LF1926
-medlem,Fiskeret,NA,9.0759543,56.3715311,214,LF1926
-medlem,Fiskeret,NA,9.0756646,56.3714954,214,LF1926
-medlem,Fiskeret,NA,9.0753964,56.3714598,214,LF1926
-medlem,Fiskeret,NA,9.0751282,56.3714241,214,LF1926
-medlem,Fiskeret,NA,9.0749029,56.3713766,214,LF1926
-medlem,Fiskeret,NA,9.0747848,56.3712577,214,LF1926
-medlem,Fiskeret,NA,9.0747097,56.3711389,214,LF1926
-medlem,Fiskeret,NA,9.0746883,56.3710379,214,LF1926
-medlem,Fiskeret,NA,9.0747097,56.3709428,214,LF1926
-medlem,Fiskeret,NA,9.0746775,56.3708715,214,LF1926
-medlem,Fiskeret,NA,9.0746668,56.3707943,214,LF1926
-medlem,Fiskeret,NA,9.0744522,56.370824,214,LF1926
-medlem,Fiskeret,NA,9.0742377,56.3708834,214,LF1926
-medlem,Fiskeret,NA,9.0741518,56.3709725,214,LF1926
-medlem,Fiskeret,NA,9.0741196,56.3711508,214,LF1926
-medlem,Fiskeret,NA,9.0741733,56.371335,214,LF1926
-medlem,Fiskeret,NA,9.0743128,56.3714835,214,LF1926
-medlem,Fiskeret,NA,9.0745059,56.3716261,214,LF1926
-medlem,Fiskeret,NA,9.074699,56.3718044,214,LF1926
-medlem,Fiskeret,NA,9.0750852,56.3719232,214,LF1926
-medlem,Fiskeret,NA,9.0755788,56.3720836,214,LF1926
-medlem,Fiskeret,NA,9.075965,56.3722025,214,LF1926
-medlem,Fiskeret,NA,9.0761474,56.3722203,214,LF1926
-medlem,Fiskeret,NA,9.0763405,56.3722025,214,LF1926
-medlem,Fiskeret,NA,9.0764263,56.3721252,214,LF1926
-medlem,Fiskeret,NA,9.0764907,56.3719589,214,LF1926
-medlem,Fiskeret,NA,9.0765658,56.3717984,214,LF1926
-medlem,Fiskeret,NA,9.076598,56.3717153,214,LF1926
-medlem,Fiskeret,NA,9.076834,56.3716677,214,LF1926
-medlem,Fiskeret,NA,9.0770486,56.3716261,214,LF1926
-medlem,Fiskeret,NA,9.0772847,56.3717034,214,LF1926
-medlem,Fiskeret,NA,9.0773919,56.3717747,214,LF1926
-medlem,Fiskeret,NA,9.0773598,56.3718816,214,LF1926
-medlem,Fiskeret,NA,9.0773383,56.372042,214,LF1926
-medlem,Fiskeret,NA,9.0772632,56.3721371,214,LF1926
-medlem,Fiskeret,NA,9.0771881,56.3722381,214,LF1926
-medlem,Fiskeret,NA,9.0767053,56.3725768,214,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056779,56.393966,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056886,56.393853,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056822,56.393794,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056629,56.393735,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056522,56.393675,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056479,56.39358,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056479,56.393503,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056543,56.393408,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056693,56.393307,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.05694,56.393218,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057101,56.393164,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057251,56.393111,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057401,56.393081,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057562,56.392998,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.05753,56.392879,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057477,56.392713,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057444,56.392612,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057208,56.392493,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057037,56.392398,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.05708,56.392339,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057369,56.392315,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057949,56.392339,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.058206,56.392286,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.058517,56.392208,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.058721,56.392185,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059279,56.392173,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059644,56.392185,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059912,56.392143,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060277,56.39209,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060545,56.391965,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.06076,56.391846,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.06077,56.391745,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060674,56.391668,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060255,56.391549,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059891,56.391377,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059676,56.391294,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059408,56.391175,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059204,56.391104,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059129,56.391027,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059225,56.39089,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059322,56.390795,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059386,56.390682,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.05944,56.390563,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059654,56.39054,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059998,56.390593,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060169,56.390658,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060416,56.390753,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.06047,56.390872,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060502,56.390997,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.06062,56.391175,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060845,56.391234,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061199,56.391193,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061564,56.391092,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061693,56.391021,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061779,56.390914,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061747,56.390765,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061736,56.390611,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.06165,56.390457,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061543,56.390403,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061328,56.39035,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061135,56.390338,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060867,56.390338,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060609,56.390302,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060448,56.390166,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060405,56.390017,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060513,56.389928,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060631,56.389827,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060974,56.38975,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061178,56.389714,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061371,56.389637,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061478,56.389572,255,LF1926
-medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061511,56.389477,255,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988812,56.481584,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988791,56.481543,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988833,56.481519,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988823,56.481525,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988812,56.481584,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988769,56.481584,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988801,56.481513,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988791,56.48156,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988823,56.481531,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988844,56.481531,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988844,56.481513,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988844,56.481531,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988823,56.481531,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988844,56.481525,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988748,56.481448,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98883,56.48154,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98861,56.48131,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98827,56.48114,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.9881,56.48095,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98823,56.48036,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98823,56.48005,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98806,56.47972,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.9875,56.47929,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98716,56.47894,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98681,56.47827,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.9865100000000009,56.47804,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98613,56.47787,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98479,56.47766,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98428,56.47728,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98394,56.47676,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98381,56.47642,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98394,56.47597,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98394,56.47548,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98381,56.47529,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98351,56.47503,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98329,56.47493,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98355,56.47465,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98376,56.47429,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98381,56.47403,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98381,56.47363,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98355,56.47327,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.9834599999999991,56.47294,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98359,56.47261,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98334,56.4724,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98316,56.47216,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98364,56.47081,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98359,56.4701,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.9840699999999991,56.46986,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98454,56.46938,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98449,56.46901,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98467,56.46825,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98505,56.46763,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98492,56.46728,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98445,56.46692,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98368,56.46659,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98329,56.46633,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.9834599999999991,56.46611,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98398,56.46588,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98428,56.46554,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98428,56.46528,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98419,56.46495,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.9840699999999991,56.46469,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98428,56.46355,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98432,56.46275,306,LF1926
-medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98479,56.46194,306,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.982139,56.514214,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.982096,56.514664,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.982139,56.515256,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.982224,56.515611,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.982396,56.516321,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.982611,56.516653,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.983126,56.517245,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.983426,56.517434,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.984199,56.517789,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.985057,56.518073,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.986044,56.518523,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.986902,56.518902,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.98746,56.519186,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.987932,56.519636,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.988662,56.520251,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.988962,56.520772,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.989692,56.52153,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.990207,56.521956,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.99128,56.522571,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.993983,56.52385,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.995485,56.524607,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.997674,56.525483,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.998661,56.526075,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.999519,56.526596,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.999991,56.527211,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,9.00012,56.528075,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.999519,56.528773,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.997931,56.530525,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996301,56.532536,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.995786,56.532986,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.995228,56.533909,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.995142,56.534216,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.995271,56.534784,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.995957,56.535376,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996429,56.53637,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996644,56.537435,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996773,56.53921,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996558,56.540795,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996215,56.541528,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996129,56.542214,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996215,56.542782,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996601,56.543445,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.997159,56.543871,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.997288,56.544084,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.997245,56.544013,367,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.997481,56.544297,368,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.998661,56.545432,368,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.999734,56.546473,368,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,9.00085,56.547325,368,LF1926
-medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,9.002244,56.548111,368,LF1926
+Dagkort,Zone 3,NA,8.9883757,56.4494928,140,LFSO
+Dagkort,Zone 3,NA,8.9886547,56.4491573,140,LFSO
+Dagkort,Zone 3,NA,8.9890838,56.4490624,140,LFSO
+Dagkort,Zone 3,NA,8.989638,56.449096,140,LFSO
+Dagkort,Zone 4,NA,8.9985896,56.4208746,141,LFSO
+Dagkort,Zone 4,NA,8.9990402,56.4207084,141,LFSO
+Dagkort,Zone 4,NA,8.9991045,56.4205067,141,LFSO
+Dagkort,Zone 4,NA,8.9989222,56.4202278,141,LFSO
+Dagkort,Zone 4,NA,8.9986217,56.4200794,141,LFSO
+Dagkort,Zone 4,NA,8.9982892,56.4199548,141,LFSO
+Dagkort,Zone 4,NA,8.9982784,56.4198895,141,LFSO
+Dagkort,Zone 4,NA,8.9995981,56.4192071,141,LFSO
+Dagkort,Zone 4,NA,8.9996624,56.4189341,141,LFSO
+Dagkort,Zone 4,NA,9.0000701,56.4185484,141,LFSO
+Dagkort,Zone 4,NA,9.0005422,56.4182932,141,LFSO
+Dagkort,Zone 4,NA,9.0011859,56.4182754,141,LFSO
+Dagkort,Zone 4,NA,9.0013254,56.4181033,141,LFSO
+Dagkort,Zone 4,NA,9.0012932,56.4179846,141,LFSO
+Dagkort,Zone 4,NA,9.0000916,56.4175158,141,LFSO
+Dagkort,Zone 4,NA,9.0003491,56.4168452,141,LFSO
+Dagkort,Zone 4,NA,9.0005637,56.4164238,141,LFSO
+Dagkort,Zone 4,NA,9.0004027,56.4162398,141,LFSO
+Dagkort,Zone 4,NA,9.0001238,56.4161508,141,LFSO
+Dagkort,Zone 4,NA,8.9984823,56.4158125,141,LFSO
+Dagkort,Zone 4,NA,8.9983428,56.415409,141,LFSO
+Dagkort,Zone 4,NA,8.9983213,56.4151834,141,LFSO
+Dagkort,Zone 4,NA,8.9983643,56.4150707,141,LFSO
+Dagkort,Zone 4,NA,8.9990724,56.4152131,141,LFSO
+Dagkort,Zone 4,NA,8.999362,56.4150944,141,LFSO
+Dagkort,Zone 4,NA,8.9999307,56.4143822,141,LFSO
+Dagkort,Zone 4,NA,9.0001238,56.4141626,141,LFSO
+Dagkort,Zone 4,NA,9.0005851,56.4139549,141,LFSO
+Dagkort,Zone 4,NA,9.0007675,56.4138006,141,LFSO
+Dagkort,Zone 4,NA,9.0006495,56.4136463,141,LFSO
+Dagkort,Zone 4,NA,8.9996946,56.413302,141,LFSO
+Dagkort,Zone 4,NA,8.9995444,56.4131833,141,LFSO
+Dagkort,Zone 4,NA,9.0004349,56.4123405,141,LFSO
+Dagkort,Zone 4,NA,9.0008641,56.4117648,141,LFSO
+Dagkort,Zone 4,NA,9.0008963,56.4115096,141,LFSO
+Dagkort,Zone 5,NA,9.0306932,56.4016937,142,LFSO
+Dagkort,Zone 5,NA,9.0310901,56.401759,142,LFSO
+Dagkort,Zone 5,NA,9.0319592,56.4016996,142,LFSO
+Dagkort,Zone 5,NA,9.0341908,56.4018955,142,LFSO
+Dagkort,Zone 5,NA,9.0344804,56.4018421,142,LFSO
+Dagkort,Zone 5,NA,9.034695,56.4015868,142,LFSO
+Dagkort,Zone 5,NA,9.0345555,56.4015037,142,LFSO
+Dagkort,Zone 5,NA,9.0344268,56.4014384,142,LFSO
+Dagkort,Zone 5,NA,9.0336007,56.4014562,142,LFSO
+Dagkort,Zone 5,NA,9.0329033,56.4011653,142,LFSO
+Dagkort,Zone 5,NA,9.0329784,56.4010703,142,LFSO
+Dagkort,Zone 5,NA,9.0335578,56.4011949,142,LFSO
+Dagkort,Zone 5,NA,9.0340513,56.4012721,142,LFSO
+Dagkort,Zone 5,NA,9.0345234,56.4012603,142,LFSO
+Dagkort,Zone 5,NA,9.0348452,56.4010643,142,LFSO
+Dagkort,Zone 5,NA,9.0350276,56.4007942,142,LFSO
+Dagkort,Zone 5,NA,9.034974,56.4005745,142,LFSO
+Dagkort,Zone 5,NA,9.0346682,56.4004617,142,LFSO
+Dagkort,Zone 5,NA,9.0342283,56.4004795,142,LFSO
+Dagkort,Zone 5,NA,9.0344965,56.399773,142,LFSO
+Dagkort,Zone 5,NA,9.0348023,56.4000491,142,LFSO
+Dagkort,Zone 5,NA,9.0349579,56.400343,142,LFSO
+Dagkort,Zone 5,NA,9.0351295,56.4005656,142,LFSO
+Dagkort,Zone 5,NA,9.035548,56.4006784,142,LFSO
+Dagkort,Zone 5,NA,9.0357947,56.4006873,142,LFSO
+Dagkort,Zone 5,NA,9.0359932,56.4010614,142,LFSO
+Dagkort,Zone 5,NA,9.0362024,56.4013196,142,LFSO
+Dagkort,Zone 5,NA,9.0364706,56.4014413,142,LFSO
+Dagkort,Zone 5,NA,9.0367979,56.4014176,142,LFSO
+Dagkort,Zone 5,NA,9.0373343,56.4010614,142,LFSO
+Dagkort,Zone 5,NA,9.0376294,56.4005597,142,LFSO
+Dagkort,Zone 5,NA,9.0375811,56.4004202,142,LFSO
+Dagkort,Zone 5,NA,9.037168,56.4001352,142,LFSO
+Dagkort,Zone 5,NA,9.0373558,56.4000966,142,LFSO
+Dagkort,Zone 5,NA,9.0385896,56.3998502,142,LFSO
+Dagkort,Zone 5,NA,9.0388524,56.3997403,142,LFSO
+Dagkort,Zone 5,NA,9.0395659,56.3998502,142,LFSO
+Dagkort,Zone 5,NA,9.0399843,56.3999392,142,LFSO
+Dagkort,Zone 5,NA,9.0402794,56.3999689,142,LFSO
+Dagkort,Zone 5,NA,9.0419944,56.3975308,143,LFSO
+Dagkort,Zone 5,NA,9.0424504,56.397605,143,LFSO
+Dagkort,Zone 5,NA,9.0426221000000009,56.3977356,143,LFSO
+Dagkort,Zone 5,NA,9.0427079,56.3980622,143,LFSO
+Dagkort,Zone 5,NA,9.042665,56.3984481,143,LFSO
+Dagkort,Zone 5,NA,9.0427401,56.398653,143,LFSO
+Dagkort,Zone 5,NA,9.0429547,56.398653,143,LFSO
+Dagkort,Zone 5,NA,9.043121,56.3984838,143,LFSO
+Dagkort,Zone 5,NA,9.0433248,56.3979019,143,LFSO
+Dagkort,Zone 5,NA,9.0436574,56.397602,143,LFSO
+Dagkort,Zone 5,NA,9.0442743,56.3973289,143,LFSO
+Dagkort,Zone 5,NA,9.0446015,56.3974803,143,LFSO
+Dagkort,Zone 5,NA,9.0452453,56.3979761,143,LFSO
+Dagkort,Zone 5,NA,9.0456208,56.3981038,143,LFSO
+Dagkort,Zone 5,NA,9.0460446,56.3982166,143,LFSO
+Dagkort,Zone 5,NA,9.0458783,56.3980147,143,LFSO
+Dagkort,Zone 5,NA,9.0457388,56.3978039,143,LFSO
+Dagkort,Zone 5,NA,9.0457442,56.3976199,143,LFSO
+Dagkort,Zone 5,NA,9.0460231,56.397317,143,LFSO
+Dagkort,Zone 5,NA,9.0470048,56.3966609,143,LFSO
+Medlem,Zone 2b,NA,8.983952,56.477502,144,LFSO
+Medlem,Zone 2b,NA,8.9840627,56.4776196,144,LFSO
+Medlem,Zone 2b,NA,8.9843685,56.4778743,144,LFSO
+Medlem,Zone 2b,NA,8.9846582,56.4780728,144,LFSO
+Medlem,Zone 2b,NA,8.9852858,56.478176499999996,144,LFSO
+Medlem,Zone 2b,NA,8.9860422,56.4782624,144,LFSO
+Medlem,Zone 2b,NA,8.9863319,56.4784402,144,LFSO
+Medlem,Zone 2b,NA,8.9864338,56.4786416,144,LFSO
+Medlem,Zone 2b,NA,8.9865035,56.4788668,144,LFSO
+Medlem,Zone 2b,NA,8.9868737,56.4794119,144,LFSO
+Medlem,Zone 2b,NA,8.9873189,56.4797762,144,LFSO
+Medlem,Zone 2b,NA,8.9876086,56.4800399,144,LFSO
+Medlem,Zone 2b,NA,8.9875388,56.480345,144,LFSO
+Medlem,Zone 2b,NA,8.9873565,56.4806827,144,LFSO
+Medlem,Zone 2b,NA,8.9873135,56.4811004,144,LFSO
+Medlem,Zone 2b,NA,8.9876247,56.4813552,144,LFSO
+Medlem,Zone 2b,NA,8.9880538,56.4816159,144,LFSO
+Medlem,Zone 2b,NA,8.9878607,56.4818943,144,LFSO
+Medlem,Zone 2b,NA,8.9873994,56.4824808,144,LFSO
+Medlem,Zone 2b,NA,8.9872492,56.4827533,144,LFSO
+Medlem,Zone 2b,NA,8.987267,56.483166,144,LFSO
+Medlem,Zone 2b,NA,8.987396,56.483415,144,LFSO
+Medlem,Zone 2b,NA,8.987675,56.483806,144,LFSO
+Medlem,Zone 2b,NA,8.987911,56.484226,144,LFSO
+Medlem,Zone 2b,NA,8.988211,56.484677,144,LFSO
+Medlem,Zone 2b,NA,8.988436,56.484937,144,LFSO
+Medlem,Zone 2b,NA,8.988426,56.485328,144,LFSO
+Medlem,Zone 2b,NA,8.988394,56.485672,144,LFSO
+Medlem,Zone 2b,NA,8.988351,56.48598,144,LFSO
+Medlem,Zone 2b,NA,8.988318,56.486288,144,LFSO
+Medlem,Zone 2b,NA,8.988329,56.486643,144,LFSO
+Medlem,Zone 2b,NA,8.988372,56.486999,144,LFSO
+Medlem,Zone 2b,NA,8.988404,56.487283,144,LFSO
+Medlem,Zone 2b,NA,8.988415,56.487952,144,LFSO
+Medlem,Zone 5,NA,9.02014,56.405698,145,LFSO
+Medlem,Zone 5,NA,9.019808,56.405775,145,LFSO
+Medlem,Zone 5,NA,9.019625,56.405971,145,LFSO
+Medlem,Zone 5,NA,9.019722,56.406149,145,LFSO
+Medlem,Zone 5,NA,9.019969,56.406238,145,LFSO
+Medlem,Zone 5,NA,9.020151,56.406268,145,LFSO
+Medlem,Zone 5,NA,9.019829,56.406304,145,LFSO
+Medlem,Zone 5,NA,9.019378,56.40628,145,LFSO
+Medlem,Zone 5,NA,9.019067,56.406238,145,LFSO
+Medlem,Zone 5,NA,9.01881,56.406197,145,LFSO
+Medlem,Zone 5,NA,9.018735,56.406179,145,LFSO
+Medlem,Zone 5,NA,9.018703,56.406108,145,LFSO
+Medlem,Zone 5,NA,9.018778,56.405965,145,LFSO
+Medlem,Zone 5,NA,9.018767,56.40574,145,LFSO
+Medlem,Zone 5,NA,9.018584,56.40555,145,LFSO
+Medlem,Zone 5,NA,9.018284,56.405401,145,LFSO
+Medlem,Zone 5,NA,9.017823,56.405205,145,LFSO
+Medlem,Zone 5,NA,9.017286,56.404956,145,LFSO
+Medlem,Zone 5,NA,9.016889,56.40479,145,LFSO
+Medlem,Zone 5,NA,9.016267,56.404725,145,LFSO
+Medlem,Zone 5,NA,9.015827,56.40479,145,LFSO
+Medlem,Zone 5,NA,9.034104,56.399791,146,LFSO
+Medlem,Zone 5,NA,9.034023,56.400052,146,LFSO
+Medlem,Zone 5,NA,9.03397,56.400322,146,LFSO
+Medlem,Zone 5,NA,9.033937,56.400486,146,LFSO
+Medlem,Zone 5,NA,9.034055,56.400616,146,LFSO
+Medlem,Zone 5,NA,9.034227,56.400685,146,LFSO
+Medlem,Zone 5,NA,9.034533,56.400726,146,LFSO
+Medlem,Zone 5,NA,9.034705,56.400786,146,LFSO
+Medlem,Zone 5,NA,9.034694,56.400866,146,LFSO
+Medlem,Zone 5,NA,9.034544,56.400967,146,LFSO
+Medlem,Zone 5,NA,9.034356,56.401029,146,LFSO
+Medlem,Zone 5,NA,9.034082,56.401035,146,LFSO
+Medlem,Zone 5,NA,9.033691,56.401002,146,LFSO
+Medlem,Zone 5,NA,9.033251,56.400931,146,LFSO
+Medlem,Zone 5,NA,9.032902,56.400895,146,LFSO
+Medlem,Zone 5,NA,9.032677,56.400913,146,LFSO
+Medlem,Zone 5,NA,9.03257,56.400967,146,LFSO
+Medlem,Zone 5,NA,9.032462,56.401056,146,LFSO
+Medlem,Zone 5,NA,9.032553,56.401166,146,LFSO
+Medlem,Zone 5,NA,9.03272,56.401314,146,LFSO
+Medlem,Zone 5,NA,9.033004,56.401453,146,LFSO
+Medlem,Zone 5,NA,9.033235,56.401548,146,LFSO
+Medlem,Zone 5,NA,9.033492,56.401602,146,LFSO
+Medlem,Zone 5,NA,9.033707,56.401649,146,LFSO
+Medlem,Zone 5,NA,9.033948,56.401655,146,LFSO
+Medlem,Zone 5,NA,9.034179,56.401605000000004,146,LFSO
+Medlem,Zone 5,NA,9.033685,56.401667,146,LFSO
+Medlem,Zone 5,NA,9.033288,56.401623,146,LFSO
+Medlem,Zone 5,NA,9.032881,56.40159,146,LFSO
+Medlem,Zone 5,NA,9.032473,56.401557,146,LFSO
+Medlem,Zone 5,NA,9.031963,56.401513,146,LFSO
+Medlem,Zone 5,NA,9.031652,56.40148,146,LFSO
+Medlem,Zone 5,NA,9.031411,56.401501,146,LFSO
+Medlem,Zone 5,NA,9.031186,56.401551,146,LFSO
+Medlem,Zone 5,NA,9.031014,56.401543,146,LFSO
+Medlem,Zone 5,NA,9.030815,56.401442,146,LFSO
+Medlem,Zone 5,NA,9.030644,56.401353,146,LFSO
+Medlem,Zone 5,NA,9.030413,56.401317,146,LFSO
+Medlem,Zone 5,NA,9.03007,56.401329,146,LFSO
+Medlem,Zone 4,NA,9.0053319,56.4071527,147,LFSO
+Medlem,Zone 4,NA,9.005656,56.407147,147,LFSO
+Medlem,Zone 4,NA,9.006643,56.407384,147,LFSO
+Medlem,Zone 4,NA,9.00718,56.407396,147,LFSO
+Medlem,Zone 4,NA,9.007502,56.407064,147,LFSO
+Medlem,Zone 4,NA,9.013059,56.406075,148,LFSO
+Medlem,Zone 4,NA,9.012737,56.406126,148,LFSO
+Medlem,Zone 4,NA,9.012131,56.406159,148,LFSO
+Medlem,Zone 4,NA,9.011396,56.406369,148,LFSO
+Medlem,Zone 4,NA,9.010913,56.406417,148,LFSO
+Medlem,Zone 4,NA,9.010388,56.406387,148,LFSO
+Medlem,Zone 4,NA,9.010141,56.406286,148,LFSO
+Medlem,Zone 4,NA,9.009894,56.406143,148,LFSO
+Medlem,Zone 4,NA,9.009658,56.405858,148,LFSO
+Medlem,Zone 4,NA,9.009551,56.405651,148,LFSO
+Medlem,Zone 4,NA,9.009358,56.405574,148,LFSO
+Medlem,Zone 4,NA,9.009025,56.405627,148,LFSO
+Medlem,Zone 4,NA,9.008757,56.405764,148,LFSO
+Medlem,Zone 4,NA,9.008564,56.406019,148,LFSO
+Medlem,Zone 4,NA,9.008403,56.406316,148,LFSO
+Medlem,Zone 4,NA,9.008317,56.406571,148,LFSO
+Medlem,Zone 4,NA,9.008113,56.406957,148,LFSO
+Medlem,Zone 3,NA,9.001107,56.435638,149,LFSO
+Medlem,Zone 3,NA,9.001118,56.435831,149,LFSO
+Medlem,Zone 3,NA,9.001193,56.436122,149,LFSO
+Medlem,Zone 3,NA,9.001333,56.436341,149,LFSO
+Medlem,Zone 3,NA,9.001762,56.436768,149,LFSO
+Medlem,Zone 3,NA,9.002105,56.437201,149,LFSO
+Medlem,Zone 3,NA,9.002502,56.437682,149,LFSO
+Medlem,Zone 3,NA,9.002523,56.438109,149,LFSO
+Medlem,Zone 3,NA,9.002309,56.438518,149,LFSO
+Medlem,Zone 3,NA,9.002041,56.438791,149,LFSO
+Medlem,Zone 3,NA,9.001869,56.439188,149,LFSO
+Medlem,Zone 3,NA,9.001783,56.439414,149,LFSO
+Medlem,Zone 3,NA,9.001944,56.439752,149,LFSO
+Medlem,Zone 3,NA,9.001998,56.440078,149,LFSO
+Medlem,Zone 3,NA,9.001998,56.440327,149,LFSO
+Medlem,Zone 3,NA,9.001901,56.440647,149,LFSO
+Medlem,Zone 3,NA,9.001762,56.440902,149,LFSO
+Medlem,Zone 3,NA,9.001526,56.441217,149,LFSO
+Medlem,Zone 3,NA,9.001451,56.441448,149,LFSO
+Medlem,Zone 3,NA,9.001547,56.441786,149,LFSO
+Medlem,Zone 3,NA,9.001676,56.441994,149,LFSO
+Medlem,Zone 3,NA,9.001837,56.442403,149,LFSO
+Medlem,Zone 3,NA,9.00159,56.436122,150,LFSO
+Medlem,Zone 3,NA,9.001826,56.43643,150,LFSO
+Medlem,Zone 3,NA,9.002395,56.437041,150,LFSO
+Medlem,Zone 3,NA,9.002824,56.437611,150,LFSO
+Medlem,Zone 3,NA,9.002899,56.437978,150,LFSO
+Medlem,Zone 3,NA,9.002781,56.438352,150,LFSO
+Medlem,Zone 3,NA,9.002631,56.438619,150,LFSO
+Medlem,Zone 3,NA,9.002373,56.43891,150,LFSO
+Medlem,Zone 3,NA,9.002159,56.439194,150,LFSO
+Medlem,Zone 3,NA,9.002202,56.439485,150,LFSO
+Medlem,Zone 3,NA,9.002373,56.440066,150,LFSO
+Medlem,Zone 3,NA,9.002244,56.440724,150,LFSO
+Medlem,Zone 3,NA,9.002051,56.441045,150,LFSO
+Medlem,Zone 3,NA,9.001826,56.441347,150,LFSO
+Medlem,Zone 3,NA,9.001794,56.441596,150,LFSO
+Medlem,Zone 3,NA,9.001998,56.442,150,LFSO
+Medlem,Zone 3,NA,9.00218,56.442391,150,LFSO
+Medlem,Zone 3,NA,9.002137,56.442462,150,LFSO
+Medlem,Zone 2a,NA,8.988425,56.48803,151,LFSO
+Medlem,Zone 2a,NA,8.988265,56.488882,151,LFSO
+Medlem,Zone 2a,NA,8.988329,56.489119,151,LFSO
+Medlem,Zone 2a,NA,8.987868,56.490055,151,LFSO
+Medlem,Zone 2a,NA,8.987836,56.490452,151,LFSO
+Medlem,Zone 2a,NA,8.987525,56.491033,151,LFSO
+Medlem,Zone 2a,NA,8.986988,56.491962,151,LFSO
+Medlem,Zone 2a,NA,8.986377,56.493076,151,LFSO
+Medlem,Zone 2a,NA,8.985722,56.493905,151,LFSO
+Medlem,Zone 2a,NA,8.985829,56.494189,151,LFSO
+Medlem,Zone 2a,NA,8.986173,56.494403,151,LFSO
+Medlem,Zone 2a,NA,8.986194,56.494592,151,LFSO
+Medlem,Zone 2a,NA,8.985958,56.494817,151,LFSO
+Medlem,Zone 2a,NA,8.985701,56.495161,151,LFSO
+Medlem,Zone 2a,NA,8.985722,56.495575,151,LFSO
+Medlem,Zone 2a,NA,8.986237,56.496321,151,LFSO
+Medlem,Zone 2a,NA,8.98643,56.496937,151,LFSO
+Medlem,Zone 2a,NA,8.986709,56.497411,151,LFSO
+Medlem,Zone 2a,NA,8.986666,56.497766,151,LFSO
+Medlem,Zone 2a,NA,8.986344,56.498157,151,LFSO
+Medlem,Zone 2a,NA,8.983297,56.502279,151,LFSO
+Medlem,Zone 2a,NA,8.983061,56.502646,151,LFSO
+Medlem,Zone 2a,NA,8.982375,56.503084,151,LFSO
+Medlem,Zone 2a,NA,8.981881,56.503392,151,LFSO
+Medlem,Zone 2a,NA,8.981602,56.503688,151,LFSO
+Medlem,Zone 2a,NA,8.981109,56.503972,151,LFSO
+Medlem,Zone 2a,NA,8.980508,56.504292,151,LFSO
+Medlem,Zone 2a,NA,8.980014,56.504659,151,LFSO
+Medlem,Zone 2a,NA,8.979886,56.505073,151,LFSO
+Medlem,Zone 2a,NA,8.979907,56.505512,151,LFSO
+Medlem,Zone 2a,NA,8.980079,56.505808,151,LFSO
+Medlem,Zone 2a,NA,8.980551,56.506033,151,LFSO
+Medlem,Zone 2a,NA,8.980765,56.506471,151,LFSO
+Medlem,Zone 2a,NA,8.981044,56.506921,151,LFSO
+Medlem,Zone 2a,NA,8.981044,56.507276,151,LFSO
+Medlem,Zone 2a,NA,8.98083,56.507536,151,LFSO
+Medlem,Zone 2a,NA,8.980186,56.507903,151,LFSO
+Medlem,Zone 2a,NA,8.979435,56.508389,151,LFSO
+Medlem,Zone 2a,NA,8.97922,56.508661,151,LFSO
+Medlem,Zone 2a,NA,8.979049,56.508851,151,LFSO
+Medlem,Zone 2a,NA,8.978748,56.509123,151,LFSO
+Medlem,Zone 4,NA,9.0025523,56.4091598,152,LFSO
+Medlem,Zone 4,NA,9.0031719,56.4090485,152,LFSO
+Medlem,Zone 5,NA,9.0131015,56.4060756,153,LFSO
+Medlem,Zone 5,NA,9.0136486,56.4060934,153,LFSO
+Medlem,Zone 5,NA,9.0142495,56.4061854,153,LFSO
+Medlem,Zone 5,NA,9.0147698,56.4061795,153,LFSO
+Medlem,Zone 5,NA,9.0150058,56.4061112,153,LFSO
+Medlem,Zone 5,NA,9.0153545,56.4056838,153,LFSO
+Medlem,Zone 5,NA,9.0159875,56.4051287,153,LFSO
+Medlem,Zone 5,NA,9.016127,56.4049388,153,LFSO
+Medlem,Zone 5,NA,9.0164435,56.4049091,153,LFSO
+Medlem,Zone 5,NA,9.0167117,56.4049388,153,LFSO
+Medlem,Zone 5,NA,9.0170014,56.4050367,153,LFSO
+Medlem,Zone 5,NA,9.0179134,56.4055087,153,LFSO
+Medlem,Zone 5,NA,9.0182674,56.4056393,153,LFSO
+Medlem,Zone 5,NA,9.0183962,56.4057788,153,LFSO
+Medlem,Zone 5,NA,9.0183747,56.4059479,153,LFSO
+Medlem,Zone 5,NA,9.0182245,56.4060904,153,LFSO
+Medlem,Zone 5,NA,9.0183425,56.4063219,153,LFSO
+Medlem,Zone 5,NA,9.0187824,56.4064407,153,LFSO
+Medlem,Zone 5,NA,9.019233,56.4064674,153,LFSO
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.158354,56.306024,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.158542,56.306027,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.158703,56.305977,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.158837,56.305893,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.158875,56.305798,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.158923,56.305625,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.15895,56.305503,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.159014,56.305408,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.159181,56.305286,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.159379,56.305158,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.159588,56.305033,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.159776,56.304899,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.159948,56.304724,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.160007,56.304631,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.160076,56.304521,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.16013,56.304438,164,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926 på den nordøstlige side af Karup Å, mellem broen ved Åvej og den gamle jernbanebro.",9.160125,56.304435,164,LF1926
+medlem,Linje 4,NA,9.1577322,56.3058418,165,LF1926
+medlem,Linje 4,NA,9.1578824,56.3057317,165,LF1926
+medlem,Linje 4,NA,9.1580487,56.3057049,165,LF1926
+medlem,Linje 4,NA,9.1582311,56.3057347,165,LF1926
+medlem,Linje 4,NA,9.1583544,56.3057704,165,LF1926
+medlem,Linje 4,NA,9.1584349,56.3057645,165,LF1926
+medlem,Linje 4,NA,9.1584993,56.3056871,165,LF1926
+medlem,Linje 4,NA,9.1585851,56.3055056,165,LF1926
+medlem,Linje 4,NA,9.1585744,56.3053657,165,LF1926
+medlem,Linje 4,NA,9.1586602,56.3052675,165,LF1926
+medlem,Linje 4,NA,9.1588319,56.3051336,165,LF1926
+medlem,Linje 4,NA,9.1590143,56.3050294,165,LF1926
+medlem,Linje 4,NA,9.1591859,56.3049133,165,LF1926
+medlem,Linje 4,NA,9.1593469,56.3047913,165,LF1926
+medlem,Linje 4,NA,9.1594863,56.3046544,165,LF1926
+medlem,Linje 4,NA,9.1595668,56.3045532,165,LF1926
+medlem,Linje 4,NA,9.1598028,56.3043151,165,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10632,56.346318,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106325,56.346143,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106271,56.346048,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106153,56.345923,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106041,56.34589,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105853,56.345869,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10567,56.345866,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105719,56.345795,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105783,56.345637,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105837,56.345539,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105896,56.345432,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105955,56.345411,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106073,56.345462,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106261,56.345566,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106352,56.345584,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106529,56.345554,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106679,56.345506,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106722,56.345456,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106754,56.345376,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106733,56.345251,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106711,56.345171,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106711,56.345093,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106818,56.345013,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106953,56.344968,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107146,56.344921,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107221,56.344873,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107291,56.344734,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107285,56.344641,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10728,56.34457,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107221,56.344505,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106974,56.344487,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106566,56.344499,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106105,56.344511,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105826,56.344511,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.105874,56.344442,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106325,56.344294,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.106727,56.344139,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107044,56.343993,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107296,56.343854,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107527,56.343699,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107752,56.34355,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107838,56.343461,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107902,56.343378,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107875,56.343274,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.1078,56.34314,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107757,56.342959,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107698,56.34284,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107789,56.342762,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108009,56.342685,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108127,56.342575,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108138,56.342447,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108106,56.342319,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107891,56.342322,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107623,56.342337,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108063,56.342269,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10809,56.342192,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10817,56.34207,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108117,56.341924,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107924,56.341862,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10773,56.341826,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107553,56.34176,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107532,56.341659,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10765,56.341564,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107881,56.341534,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108197,56.341573,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108353,56.341591,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108573,56.34163,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108685,56.341653,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108884,56.341633,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.1092,56.341594,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109329,56.341475,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109383,56.341341,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109367,56.341199,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109302,56.341133,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109238,56.340871,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109082,56.340747,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108776,56.340696,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108487,56.340693,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108294,56.340761,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108283,56.340857,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108074,56.340702,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107816,56.34061,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107752,56.340595,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108106,56.340494,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108133,56.340399,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108197,56.340277,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108176,56.340152,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108117,56.34006,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108101,56.339881,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108224,56.339846,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10831,56.339908,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10831,56.340015,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108358,56.34017,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108385,56.340256,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108519,56.340312,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108755,56.340372,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108868,56.340333,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109029,56.340259,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109383,56.340089999999996,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109463,56.339953,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10957,56.339792,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109613,56.339679,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109624,56.339581,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10957,56.339536,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109324,56.339531,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109066,56.339584,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108798,56.339626,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108535,56.339599,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108256,56.339533,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10809,56.339441,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107966,56.339299,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10794,56.339203,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.107956,56.339064,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108074,56.338986,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108315,56.338936,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108535,56.3389,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10883,56.338906,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108948,56.338963,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.10905,56.33901,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109152,56.339046,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109393,56.339153,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109645,56.339218,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109849,56.339239,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.11015,56.339233,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.110337,56.339135,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.110557,56.33901,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.110649,56.33882,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.110552,56.33871,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.110305,56.33857,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109892,56.338463,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109586,56.33841,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109238,56.338288,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108986,56.338157,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108798,56.338023,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108771,56.337907,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108803,56.337711,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.108894,56.337509,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109002,56.337416,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109431,56.337324,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.109753,56.337336,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.110187,56.337342,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.110515,56.337315,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.11081,56.3373,186,LF1926
+medlem,Fiskeret,"Fiskeret for medlemmer af Lystfiskerforeningen af 1926. På øst-siden af Karup Å fra Høgild bro og 2,6 km opstrøms.",9.111255,56.337277,186,LF1926
+medlem,Fiskeri tilladt,NA,9.0772283,56.3710497,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0773249,56.3709666,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0774107,56.3708893,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0773892,56.3708121,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0773356,56.3706457,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0773034,56.3704377,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0772605,56.3702832,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0772283,56.3699624,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0772176000000009,56.3698183,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0771693,56.369646,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0772605,56.3695821,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0775314,56.3694172,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0777648,56.3692761,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0778828,56.3691662,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0779364,56.3690889,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0779149,56.3689782,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0778559,56.3688854,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0777862,56.3687561,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0777514,56.36867,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0777232,56.3686084,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0777835,56.3685705,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0780008,56.3684858,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0782208,56.3684293,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0784138,56.3684472,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0786016,56.3685006,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0787491,56.3685927,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0788323,56.3686893,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0788913,56.3687859,217,LF1926
+medlem,Fiskeri tilladt,NA,9.078902,56.3689032,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0789181,56.3689834,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0789289,56.3690636,217,LF1926
+medlem,Fiskeri tilladt,NA,9.078957,56.3691468,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0789958,56.3692181,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0791193,56.3693384,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0792467,56.3694216,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0793372,56.3694543,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0794277,56.3694692,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0796959,56.3695108,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0799132,56.3695509,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0801036,56.3696251,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0803048,56.3697277,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0804336,56.3697841,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0805435,56.3698138,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0806508,56.3697663,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0807581,56.3696772,217,LF1926
+medlem,Fiskeri tilladt,NA,9.0807795,56.3696341,217,LF1926
+medlem,Fiskeret,NA,9.0772283,56.3710497,218,LF1926
+medlem,Fiskeret,NA,9.0770325,56.3712295,218,LF1926
+medlem,Fiskeret,NA,9.0767509,56.3713899,218,LF1926
+medlem,Fiskeret,NA,9.0762118,56.3715548,218,LF1926
+medlem,Fiskeret,NA,9.0759543,56.3715311,218,LF1926
+medlem,Fiskeret,NA,9.0756646,56.3714954,218,LF1926
+medlem,Fiskeret,NA,9.0753964,56.3714598,218,LF1926
+medlem,Fiskeret,NA,9.0751282,56.3714241,218,LF1926
+medlem,Fiskeret,NA,9.0749029,56.3713766,218,LF1926
+medlem,Fiskeret,NA,9.0747848,56.3712577,218,LF1926
+medlem,Fiskeret,NA,9.0747097,56.3711389,218,LF1926
+medlem,Fiskeret,NA,9.0746883,56.3710379,218,LF1926
+medlem,Fiskeret,NA,9.0747097,56.3709428,218,LF1926
+medlem,Fiskeret,NA,9.0746775,56.3708715,218,LF1926
+medlem,Fiskeret,NA,9.0746668,56.3707943,218,LF1926
+medlem,Fiskeret,NA,9.0744522,56.370824,218,LF1926
+medlem,Fiskeret,NA,9.0742377,56.3708834,218,LF1926
+medlem,Fiskeret,NA,9.0741518,56.3709725,218,LF1926
+medlem,Fiskeret,NA,9.0741196,56.3711508,218,LF1926
+medlem,Fiskeret,NA,9.0741733,56.371335,218,LF1926
+medlem,Fiskeret,NA,9.0743128,56.3714835,218,LF1926
+medlem,Fiskeret,NA,9.0745059,56.3716261,218,LF1926
+medlem,Fiskeret,NA,9.074699,56.3718044,218,LF1926
+medlem,Fiskeret,NA,9.0750852,56.3719232,218,LF1926
+medlem,Fiskeret,NA,9.0755788,56.3720836,218,LF1926
+medlem,Fiskeret,NA,9.075965,56.3722025,218,LF1926
+medlem,Fiskeret,NA,9.0761474,56.3722203,218,LF1926
+medlem,Fiskeret,NA,9.0763405,56.3722025,218,LF1926
+medlem,Fiskeret,NA,9.0764263,56.3721252,218,LF1926
+medlem,Fiskeret,NA,9.0764907,56.3719589,218,LF1926
+medlem,Fiskeret,NA,9.0765658,56.3717984,218,LF1926
+medlem,Fiskeret,NA,9.076598,56.3717153,218,LF1926
+medlem,Fiskeret,NA,9.076834,56.3716677,218,LF1926
+medlem,Fiskeret,NA,9.0770486,56.3716261,218,LF1926
+medlem,Fiskeret,NA,9.0772847,56.3717034,218,LF1926
+medlem,Fiskeret,NA,9.0773919,56.3717747,218,LF1926
+medlem,Fiskeret,NA,9.0773598,56.3718816,218,LF1926
+medlem,Fiskeret,NA,9.0773383,56.372042,218,LF1926
+medlem,Fiskeret,NA,9.0772632,56.3721371,218,LF1926
+medlem,Fiskeret,NA,9.0771881,56.3722381,218,LF1926
+medlem,Fiskeret,NA,9.0767053,56.3725768,218,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056779,56.393966,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056886,56.393853,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056822,56.393794,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056629,56.393735,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056522,56.393675,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056479,56.39358,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056479,56.393503,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056543,56.393408,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.056693,56.393307,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.05694,56.393218,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057101,56.393164,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057251,56.393111,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057401,56.393081,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057562,56.392998,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.05753,56.392879,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057477,56.392713,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057444,56.392612,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057208,56.392493,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057037,56.392398,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.05708,56.392339,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057369,56.392315,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.057949,56.392339,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.058206,56.392286,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.058517,56.392208,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.058721,56.392185,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059279,56.392173,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059644,56.392185,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059912,56.392143,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060277,56.39209,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060545,56.391965,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.06076,56.391846,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.06077,56.391745,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060674,56.391668,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060255,56.391549,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059891,56.391377,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059676,56.391294,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059408,56.391175,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059204,56.391104,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059129,56.391027,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059225,56.39089,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059322,56.390795,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059386,56.390682,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.05944,56.390563,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059654,56.39054,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.059998,56.390593,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060169,56.390658,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060416,56.390753,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.06047,56.390872,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060502,56.390997,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.06062,56.391175,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060845,56.391234,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061199,56.391193,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061564,56.391092,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061693,56.391021,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061779,56.390914,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061747,56.390765,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061736,56.390611,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.06165,56.390457,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061543,56.390403,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061328,56.39035,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061135,56.390338,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060867,56.390338,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060609,56.390302,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060448,56.390166,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060405,56.390017,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060513,56.389928,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060631,56.389827,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.060974,56.38975,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061178,56.389714,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061371,56.389637,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061478,56.389572,259,LF1926
+medlem,Fiskeret,"Fiskeret på 1250 meter af Karup Å ved Koldkur, på østsiden af åen.",9.061511,56.389477,259,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988812,56.481584,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988791,56.481543,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988833,56.481519,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988823,56.481525,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988812,56.481584,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988769,56.481584,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988801,56.481513,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988791,56.48156,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988823,56.481531,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988844,56.481531,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988844,56.481513,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988844,56.481531,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988823,56.481531,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988844,56.481525,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.988748,56.481448,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98883,56.48154,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98861,56.48131,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98827,56.48114,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.9881,56.48095,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98823,56.48036,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98823,56.48005,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98806,56.47972,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.9875,56.47929,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98716,56.47894,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98681,56.47827,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.9865100000000009,56.47804,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98613,56.47787,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98479,56.47766,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98428,56.47728,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98394,56.47676,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98381,56.47642,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98394,56.47597,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98394,56.47548,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98381,56.47529,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98351,56.47503,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98329,56.47493,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98355,56.47465,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98376,56.47429,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98381,56.47403,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98381,56.47363,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98355,56.47327,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.9834599999999991,56.47294,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98359,56.47261,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98334,56.4724,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98316,56.47216,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98364,56.47081,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98359,56.4701,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.9840699999999991,56.46986,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98454,56.46938,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98449,56.46901,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98467,56.46825,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98505,56.46763,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98492,56.46728,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98445,56.46692,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98368,56.46659,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98329,56.46633,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.9834599999999991,56.46611,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98398,56.46588,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98428,56.46554,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98428,56.46528,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98419,56.46495,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.9840699999999991,56.46469,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98428,56.46355,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98432,56.46275,310,LF1926
+medlem,Fiskeret,"Fiskeret ved Åkjær, Fly på øst-siden af Karup Å fra Trevad Bro og 2,6 km nedstrøms – forbi Mogenstrup Spang til Drikkestedet.",8.98479,56.46194,310,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.982139,56.514214,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.982096,56.514664,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.982139,56.515256,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.982224,56.515611,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.982396,56.516321,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.982611,56.516653,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.983126,56.517245,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.983426,56.517434,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.984199,56.517789,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.985057,56.518073,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.986044,56.518523,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.986902,56.518902,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.98746,56.519186,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.987932,56.519636,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.988662,56.520251,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.988962,56.520772,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.989692,56.52153,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.990207,56.521956,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.99128,56.522571,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.993983,56.52385,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.995485,56.524607,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.997674,56.525483,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.998661,56.526075,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.999519,56.526596,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.999991,56.527211,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,9.00012,56.528075,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.999519,56.528773,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.997931,56.530525,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996301,56.532536,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.995786,56.532986,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.995228,56.533909,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.995142,56.534216,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.995271,56.534784,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.995957,56.535376,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996429,56.53637,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996644,56.537435,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996773,56.53921,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996558,56.540795,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996215,56.541528,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996129,56.542214,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996215,56.542782,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.996601,56.543445,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.997159,56.543871,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.997288,56.544084,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.997245,56.544013,371,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.997481,56.544297,372,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.998661,56.545432,372,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,8.999734,56.546473,372,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,9.00085,56.547325,372,LF1926
+medlem,Fiskeret,Fiskeret Lystfiskerforeningen af 196 og Lystfiskerforeningen for Skive og Omegn.,9.002244,56.548111,372,LF1926
