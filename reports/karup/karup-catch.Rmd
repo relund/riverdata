@@ -32,13 +32,13 @@ library(fontawesome)
 fa_html_dependency()
 library(riverdata)
 
-faIcon <- function (name, prefix = "fa", title = "") 
-{
-    prefix_class <- prefix
-    iconClass <- paste0(prefix_class, " ", prefix, "-", name)
-    iconTag <- tags$i(class = iconClass, title = title)
-    htmltools::browsable(iconTag)
-}
+# faIcon <- function (name, prefix = "fa", title = "") 
+# {
+#     prefix_class <- prefix
+#     iconClass <- paste0(prefix_class, " ", prefix, "-", name)
+#     iconTag <- tags$i(class = iconClass, title = title)
+#     htmltools::browsable(iconTag)
+# }
 Sys.setlocale("LC_ALL", "da_DK.UTF-8")
 ```
 
@@ -68,10 +68,10 @@ Dag {#fangster-hav-dag}
 Row 
 -----------------------------------------------------------------------
 
-### Fangster den seneste måned `r curYear`
+### Fangster de seneste 14 dage (`r curYear`)
 
 ```{r}
-snip_plot_catch(datCatchSea, .unit = "cur_year_days", .group = "Place", .look_back = 30)
+snip_plot_catch(datCatchSea, .unit = "cur_year_days", .group = "Place", .look_back = 14)
 ```
 
 

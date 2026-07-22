@@ -71,10 +71,10 @@ Dag {data-navmenu="Laks" #fangster-laks-dag}
 Row
 -----------------------------------------------------------------------
 
-### Fangster den seneste måned `r curYear`
+### Fangster de seneste 14 dage `r curYear`
 
 ```{r}
-snip_plot_catch(datCatchSal, .unit = "cur_year_days", .look_back = 30)
+snip_plot_catch(datCatchSal, .unit = "cur_year_days", .look_back = 14)
 ```
 
 
@@ -134,10 +134,10 @@ Dag {data-navmenu="Havørred" #fangster-hav-dag}
 Row
 -----------------------------------------------------------------------
 
-### Fangster den seneste måned
+### Fangster de seneste 14 dage `r curYear`
 
 ```{r}
-snip_plot_catch(datCatchSea, .unit = "cur_year_days", .look_back = 30)
+snip_plot_catch(datCatchSea, .unit = "cur_year_days", .look_back = 14)
 ```
 
 

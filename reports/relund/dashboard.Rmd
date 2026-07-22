@@ -27,7 +27,7 @@ $(window).on("load resize hashchange", updateCatchTablePageState);
 ```{r, include=FALSE}
 library(knitr)
 knitr::opts_chunk$set(echo = FALSE,
-                      fig.height = 4.5,
+                      fig.height = 5,
                       out.width = "100%",
                       out.height = "500px")
 # library(directlabels)

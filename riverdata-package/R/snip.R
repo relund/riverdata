@@ -359,6 +359,7 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
 #'
 #' @param datCatch Catch data.
 #' @param .row_unit Row unit for the summary table. One of `"Year"` or `"Month"`.
+#' @param type Output table type. One of `"reactable"` or `"kable"`.
 #'
 #' @return A formatted HTML table.
 #' @export
@@ -368,8 +369,9 @@ snip_plot_catch <- function(datCatch, .look_back = 30, .unit = c("cur_year_days"
 #' dat <- read_data("data_karup_catch_seatrout_", year = 2023)
 #' snip_summary_table(dat)
 #' }
-snip_summary_table <- function(datCatch, .row_unit = c("Year", "Month")) {
+snip_summary_table <- function(datCatch, .row_unit = c("Year", "Month"), type = c("reactable", "kable")) {
    .row_unit <- match.arg(.row_unit)
+   type <- match.arg(type)
    tooltip_attrs <- 'data-toggle="tooltip" data-placement="top" data-container="body" style="cursor: help;"'
 
    fa_icon <- function(name, title = "") {
@@ -382,9 +384,40 @@ snip_summary_table <- function(datCatch, .row_unit = c("Year", "Month")) {
          style = "cursor: help;"
       ))
    }
+   fa_icon_tag <- function(name, title = "") {
+      htmltools::tags$i(
+         class = paste("fa", paste0("fa-", name)),
+         title = title,
+         `data-toggle` = "tooltip",
+         `data-placement` = "top",
+         `data-container` = "body",
+         style = "cursor: help;"
+      )
+   }
 
    tooltip_span <- function(text, title) {
       paste0("<span title='", title, "' ", tooltip_attrs, ">", text, "</span>")
+   }
+   tooltip_span_tag <- function(text, title) {
+      htmltools::tags$span(
+         title = title,
+         `data-toggle` = "tooltip",
+         `data-placement` = "top",
+         `data-container` = "body",
+         style = "cursor: help;",
+         text
+      )
+   }
+   sigma_icon_tag <- function(title = "") {
+      htmltools::tags$i(
+         class = "fas",
+         title = title,
+         `data-toggle` = "tooltip",
+         `data-placement` = "top",
+         `data-container` = "body",
+         style = "cursor: help;",
+         "Σ"
+      )
    }
 
    summary_cols <- c("Total", "Sex", "Place", "Method", "Released", "Length", "Weight", "Fulton")
@@ -497,14 +530,255 @@ snip_summary_table <- function(datCatch, .row_unit = c("Year", "Month")) {
       dat_stat <- dplyr::arrange(dat_stat, desc(.data$Year))
    }
 
-   dat_stat %>%
-      knitr::kable(col.names = c_names, escape = FALSE, align = "c", format = "html") %>%
-      kableExtra::kable_styling(
-         fixed_thead = TRUE,
-         font_size = 10,
-         bootstrap_options = c("striped", "hover", "condensed", "responsive")
-      ) %>%
-      kableExtra::add_header_above(header_names)
+   if (type == "kable") {
+      return(
+         dat_stat %>%
+            knitr::kable(col.names = c_names, escape = FALSE, align = "c", format = "html") %>%
+            kableExtra::kable_styling(
+               fixed_thead = TRUE,
+               font_size = 10,
+               bootstrap_options = c("striped", "hover", "condensed", "responsive")
+            ) %>%
+            kableExtra::add_header_above(header_names)
+      )
+   }
+
+   column_names <- names(dat_stat)
+   cell_labels <- c(
+      if (.row_unit == "Year") "År" else "Måned",
+      "Total",
+      "Køn",
+      if (is_skjern) c("Område", "Område hjemtaget") else "Område",
+      "Metode",
+      "Genudsat",
+      "Længde",
+      "Vægt",
+      "Kondition"
+   )
+   names(cell_labels) <- column_names
+   skjern_place_header <- htmltools::tagList(
+      tooltip_span_tag("N", "Nedre"), "/",
+      tooltip_span_tag("M", "Mellem"), "/",
+      tooltip_span_tag("Ø", "Øvre"), "/",
+      tooltip_span_tag("V", "Vorgod Å"), "/",
+      tooltip_span_tag("O", "Omme Å"), "/",
+      tooltip_span_tag("U", "Ukendt"), " (%)"
+   )
+   karup_place_header <- htmltools::tagList(
+      tooltip_span_tag("N", "Nedre"), "/",
+      tooltip_span_tag("M", "Mellem"), "/",
+      tooltip_span_tag("Ø", "Øvre"), "/",
+      tooltip_span_tag("H", "Haderis Å"), "/",
+      tooltip_span_tag("U", "Ukendt"), " (%)"
+   )
+   common_headers <- list(
+      htmltools::tagList(
+         tooltip_span_tag("F", "Flue"), "/",
+         tooltip_span_tag("S", "Spin"), "/",
+         tooltip_span_tag("O", "Orm"), "/",
+         tooltip_span_tag("U", "Ukendt"), " (%)"
+      ),
+      htmltools::tagList(
+         fa_icon_tag("sync", title = "C&R"), "/",
+         fa_icon_tag("times", title = "Hjemtaget"), " (%)"
+      ),
+      htmltools::tagList(
+         fa_icon_tag("ruler-horizontal", title = "Gens længde"), "/",
+         fa_icon_tag("ruler", title = "Max længde")
+      ),
+      htmltools::tagList(
+         fa_icon_tag("balance-scale", title = "Gens. vægt"), "/",
+         fa_icon_tag("weight-hanging", title = "Max vægt"), "/",
+         sigma_icon_tag("Total vægt")
+      ),
+      htmltools::tagList(
+         fa_icon_tag("heart", title = "Gens kondition"), "/",
+         fa_icon_tag("gratipay", title = "Max kondition")
+      )
+   )
+   mobile_headers <- c(
+      list(
+         fa_icon_tag("calendar-alt", title = if (.row_unit == "Year") "År" else "Måned"),
+         sigma_icon_tag("Total antal"),
+         htmltools::tagList(
+            fa_icon_tag("mars", title = "Han"), "/",
+            fa_icon_tag("venus", title = "Hun"), "/",
+            fa_icon_tag("question", title = "Ukendt"), " (%)"
+         ),
+         if (is_skjern) skjern_place_header else karup_place_header
+      ),
+      if (is_skjern) list(skjern_place_header),
+      common_headers
+   )
+   names(mobile_headers) <- column_names
+   table_css <- htmltools::tags$style(htmltools::HTML("
+.summary-table-container,
+.summary-table-container .reactable,
+.summary-table-container .Reactable,
+.summary-table-container .rt-table {
+  height: 100% !important;
+}
+.summary-table-container .rt-tbody {
+  overflow-y: auto;
+}
+.summary-table .summary-table-label {
+  display: none;
+}
+@media (max-width: 767px) {
+  .summary-table-container,
+  .summary-table-container .reactable,
+  .summary-table-container .Reactable,
+  .summary-table-container .rt-table,
+  .summary-table-container .rt-tbody {
+    height: 100% !important;
+  }
+  .summary-table-container {
+    height: calc(100dvh - 24px) !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  .summary-table-container .reactable,
+  .summary-table-container .Reactable,
+  .summary-table {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  .summary-table .rt-thead {
+    display: none;
+  }
+  .summary-table .rt-table,
+  .summary-table .rt-tbody {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+  }
+  .summary-table .rt-tr-group {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+    margin: 0 0 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+  }
+  .summary-table .rt-tr {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  .summary-table .rt-td {
+    display: flex !important;
+    justify-content: flex-start;
+    align-items: baseline;
+    text-align: left !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+    padding: 3px 6px !important;
+    border-right: 0 !important;
+    white-space: normal !important;
+  }
+  .summary-table .rt-td > .rt-td-inner,
+  .summary-table .summary-table-cell {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    white-space: normal !important;
+  }
+  .summary-table .summary-table-label {
+    display: inline;
+    flex: 0 1 auto;
+    margin-right: 4px;
+    font-weight: 600;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .summary-table .summary-table-value {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+"))
+   columns <- stats::setNames(
+      lapply(column_names, function(column_name) {
+         column_index <- match(column_name, column_names)
+         reactable::colDef(
+            name = htmltools::HTML(c_names[[column_index]]),
+            align = "center",
+            html = TRUE,
+            cell = function(value) {
+               htmltools::tags$span(
+                  class = "summary-table-cell",
+                  htmltools::tags$span(
+                     class = "summary-table-label",
+                     cell_labels[[column_name]],
+                     " - ",
+                     mobile_headers[[column_name]],
+                     ":"
+                  ),
+                  htmltools::tags$span(class = "summary-table-value", as.character(value))
+               )
+            }
+         )
+      }),
+      column_names
+   )
+   column_groups <- if (is_skjern) {
+      list(
+         reactable::colGroup(name = " ", columns = column_names[1:2]),
+         reactable::colGroup(name = "Køn", columns = "Sex"),
+         reactable::colGroup(name = "Område (alle fangster/hjemtaget)", columns = c("Place", "PlaceK")),
+         reactable::colGroup(name = "Metode", columns = "Method"),
+         reactable::colGroup(name = "Genudsat", columns = "Released"),
+         reactable::colGroup(name = "Længde", columns = "Length"),
+         reactable::colGroup(name = "Vægt", columns = "Weight"),
+         reactable::colGroup(name = "Kondition", columns = "Fulton")
+      )
+   } else {
+      list(
+         reactable::colGroup(name = " ", columns = column_names[1:2]),
+         reactable::colGroup(name = "Køn", columns = "Sex"),
+         reactable::colGroup(name = "Område", columns = "Place"),
+         reactable::colGroup(name = "Metode", columns = "Method"),
+         reactable::colGroup(name = "Genudsat", columns = "Released"),
+         reactable::colGroup(name = "Længde", columns = "Length"),
+         reactable::colGroup(name = "Vægt", columns = "Weight"),
+         reactable::colGroup(name = "Kondition", columns = "Fulton")
+      )
+   }
+
+   htmltools::tagList(
+      table_css,
+      htmltools::tags$div(
+         class = "summary-table-container",
+         reactable::reactable(
+            dat_stat,
+            class = "summary-table",
+            columns = columns,
+            columnGroups = column_groups,
+            pagination = FALSE,
+            striped = TRUE,
+            highlight = TRUE,
+            compact = TRUE,
+            fullWidth = TRUE,
+            height = "100%",
+            wrap = FALSE,
+            defaultColDef = reactable::colDef(
+               align = "center",
+               minWidth = 70
+            )
+         )
+      )
+   )
 }
 
 #' Catch records table

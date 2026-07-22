@@ -33,6 +33,7 @@ Imports:
     rlang,
     htmltools,
     DT,
+    reactable,
     kableExtra,
     knitr,
     leaflet,
