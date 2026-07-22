@@ -625,6 +625,20 @@ snip_summary_table <- function(datCatch, .row_unit = c("Year", "Month"), type = 
   display: none;
 }
 @media (max-width: 767px) {
+  body {
+    padding-top: 65px !important;
+  }
+  body.navbar-mobile-no-padding {
+    padding-top: 0 !important;
+  }
+  .navbar {
+    transform: translateY(0);
+    transition: transform 160ms ease;
+    will-change: transform;
+  }
+  .navbar.navbar-mobile-hidden {
+    transform: translateY(-100%);
+  }
   .summary-table-container,
   .summary-table-container .reactable,
   .summary-table-container .Reactable,
@@ -708,6 +722,87 @@ snip_summary_table <- function(datCatch, .row_unit = c("Year", "Month"), type = 
   }
 }
 "))
+   navbar_script <- htmltools::tags$script(htmltools::HTML("
+(function () {
+  if (window.__riverdataMobileNavbarAutohide) return;
+  window.__riverdataMobileNavbarAutohide = true;
+
+  var mediaQuery = window.matchMedia('(max-width: 767px)');
+  var lastWindowScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+  var lastTouchY = null;
+  var lastScrollTops = new WeakMap();
+
+  function setNavbarVisible(visible) {
+    var navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+
+    if (!mediaQuery.matches) {
+      navbar.classList.remove('navbar-mobile-hidden');
+      document.body.classList.remove('navbar-mobile-no-padding');
+      return;
+    }
+
+    navbar.classList.toggle('navbar-mobile-hidden', !visible);
+    document.body.classList.toggle('navbar-mobile-no-padding', !visible);
+  }
+
+  function updateNavbar() {
+    setNavbarVisible(mediaQuery.matches);
+  }
+
+  function handleWindowScroll() {
+    var scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+    setNavbarVisible(scrollY < lastWindowScrollY && scrollY > 24);
+    lastWindowScrollY = Math.max(scrollY, 0);
+  }
+
+  function handleCapturedScroll(event) {
+    var target = event.target;
+    if (!target || target === document || target === window) return;
+    if (typeof target.scrollTop !== 'number') return;
+
+    var previousScrollTop = lastScrollTops.get(target);
+    var currentScrollTop = target.scrollTop;
+    if (previousScrollTop !== undefined) {
+      setNavbarVisible(currentScrollTop < previousScrollTop && currentScrollTop > 8);
+    }
+    lastScrollTops.set(target, currentScrollTop);
+  }
+
+  function handleWheel(event) {
+    setNavbarVisible(event.deltaY < 0);
+  }
+
+  function handleTouchStart(event) {
+    if (!event.touches || event.touches.length === 0) return;
+    lastTouchY = event.touches[0].clientY;
+  }
+
+  function handleTouchMove(event) {
+    if (!event.touches || event.touches.length === 0 || lastTouchY === null) return;
+    var touchY = event.touches[0].clientY;
+    setNavbarVisible(touchY > lastTouchY + 2);
+    lastTouchY = touchY;
+  }
+
+  window.addEventListener('scroll', handleWindowScroll, { passive: true });
+  document.addEventListener('scroll', handleCapturedScroll, { passive: true, capture: true });
+  document.addEventListener('wheel', handleWheel, { passive: true });
+  document.addEventListener('touchstart', handleTouchStart, { passive: true });
+  document.addEventListener('touchmove', handleTouchMove, { passive: true });
+  window.addEventListener('resize', updateNavbar);
+  if (mediaQuery.addEventListener) {
+    mediaQuery.addEventListener('change', updateNavbar);
+  } else if (mediaQuery.addListener) {
+    mediaQuery.addListener(updateNavbar);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateNavbar);
+  } else {
+    updateNavbar();
+  }
+})();
+"))
    columns <- stats::setNames(
       lapply(column_names, function(column_name) {
          column_index <- match(column_name, column_names)
@@ -758,6 +853,7 @@ snip_summary_table <- function(datCatch, .row_unit = c("Year", "Month"), type = 
 
    htmltools::tagList(
       table_css,
+      navbar_script,
       htmltools::tags$div(
          class = "summary-table-container",
          reactable::reactable(

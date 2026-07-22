@@ -279,7 +279,11 @@ snip_plot_catch(datCatchSea, .unit = "years", .group = "Place", .look_back = 30)
 snip_plot_catch(datCatchSea, .unit = "years", .group = "Method", .look_back = 30)
 ```
 
+##### Fangster over år (til dato)
 
+```{r}
+snip_plot_catch(datCatchSea, .unit = "years", .group = "None", .look_back = 30, up_to_curday = TRUE)
+```
 
 
 ##### Månedlige fangster givet sted
