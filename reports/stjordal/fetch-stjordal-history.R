@@ -15,8 +15,9 @@ suppressPackageStartupMessages({
 
 river_id <- 13
 station_id <- "124.12.0"
+history_start_year <- 2023L
 current_year <- as.integer(format(Sys.Date(), "%Y"))
-years <- seq(current_year - 3L, current_year)
+years <- seq(history_start_year, current_year)
 
 elveguiden_url <- "https://api.elveguiden.no/api/v2/catches/latest-catches"
 hydapi_url <- "https://hydapi.nve.no/api/v1/Observations"
