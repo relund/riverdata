@@ -1220,6 +1220,8 @@
       <div class="chart-list" id="weekChart"></div>
       <h2>Gns. vandføring pr. uge</h2>
       <div class="chart-list" id="weekFlowChart"></div>
+      <h2>Gns. vandtemperatur pr. uge</h2>
+      <div class="chart-list" id="weekTemperatureChart"></div>
       <h2>Gns. vægt pr. uge</h2>
       <div class="chart-list" id="weekWeightChart"></div>
       <h2>Redskab</h2>
@@ -1359,6 +1361,18 @@
         <label>
           Uge
           <select id="historyAllWeekFilter" disabled>
+            <option value="">Alle</option>
+          </select>
+        </label>
+        <label>
+          År
+          <select id="historyAllYearFilter" disabled>
+            <option value="">Alle</option>
+          </select>
+        </label>
+        <label>
+          Zone
+          <select id="historyAllLayerFilter" disabled>
             <option value="">Alle</option>
           </select>
         </label>
@@ -1527,6 +1541,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
 </script>
   <script>
     const CURRENT_YEAR = new Date().getFullYear();
+    const HISTORY_START_YEAR = 2023;
     const API_URL = "https://api.elveguiden.no/api/v2/catches/latest-catches";
     const MAP_KML_URL = "https://www.google.com/maps/d/kml?mid=1VolBViDHbnVU3Y2QblVuM3aHwTmjWd0&forcekml=1";
     const HISTORY_DATA_URL = window.location.hostname === "relund.github.io"
@@ -1534,9 +1549,12 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       : "../../data/stjordal-history.json";
     const WATERLEVEL_API_KEY = "di1JUtpivkKyFZ1bGoXF5Q==";
     const HYDAPI_OBSERVATIONS_URL = "https://hydapi.nve.no/api/v1/Observations";
-    const HISTORY_YEARS = Array.from({ length: 4 }, (_, index) => CURRENT_YEAR - 3 + index);
+    const HISTORY_YEARS = Array.from({ length: CURRENT_YEAR - HISTORY_START_YEAR + 1 }, (_, index) => HISTORY_START_YEAR + index);
     const CATCH_YEARS = HISTORY_YEARS;
     const HVID_ZONE_DISTANCE_METERS = 200;
+    const MAX_PLOT_WEEK = 36;
+    const LIVE_CURRENT_STATION_ID = "124.12.0";
+    const WATER_LEVEL_NEUTRAL_THRESHOLD_M = 0.05;
     const WATER_MEASUREMENT_STATIONS = [
       {
         id: "hegra",
@@ -1661,6 +1679,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       recentCatchChart: document.querySelector("#recentCatchChart"),
       weekChart: document.querySelector("#weekChart"),
       weekFlowChart: document.querySelector("#weekFlowChart"),
+      weekTemperatureChart: document.querySelector("#weekTemperatureChart"),
       weekWeightChart: document.querySelector("#weekWeightChart"),
       equipmentChart: document.querySelector("#equipmentChart"),
       statsYearFilter: document.querySelector("#statsYearFilter"),
@@ -1679,6 +1698,8 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       historyAllStatus: document.querySelector("#historyAllStatus"),
       historyAllContent: document.querySelector("#historyAllContent"),
       historyAllWeekFilter: document.querySelector("#historyAllWeekFilter"),
+      historyAllYearFilter: document.querySelector("#historyAllYearFilter"),
+      historyAllLayerFilter: document.querySelector("#historyAllLayerFilter"),
       waterlevelStatus: document.querySelector("#waterlevelStatus"),
       waterMeasurementCharts: document.querySelector("#waterMeasurementCharts")
     };
@@ -1798,9 +1819,14 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         activateTab(panelId);
         return true;
       }
-      if (hash.startsWith("hvid-")) {
-        activateTab("history");
-        await loadHistory();
+      if (hash.startsWith("hvid-") || hash.startsWith("jff-")) {
+        const historyPanelId = hash.startsWith("jff-") ? "historyAll" : "history";
+        activateTab(historyPanelId);
+        if (historyPanelId === "historyAll") {
+          await loadHistoryAll();
+        } else {
+          await loadHistory();
+        }
         window.setTimeout(() => {
           document.getElementById(hash)?.scrollIntoView({ block: "start" });
         }, 0);
@@ -1832,6 +1858,8 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
     elements.historyWeekFilter.addEventListener("change", renderHistoryTable);
     elements.historyYearFilter.addEventListener("change", renderHistoryTable);
     elements.historyAllWeekFilter.addEventListener("change", renderHistoryAllTable);
+    elements.historyAllYearFilter.addEventListener("change", renderHistoryAllTable);
+    elements.historyAllLayerFilter.addEventListener("change", renderHistoryAllTable);
     elements.catchTableHead.addEventListener("click", (event) => {
       const header = event.target.closest("[data-sort-key]");
       if (!header) return;
@@ -2068,7 +2096,10 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
     function renderStatsCharts() {
       const years = selectedStatsYears();
       const yearSet = new Set(years);
-      const selectedCatches = catches.filter((item) => yearSet.has(Number(item.history_year)));
+      const selectedCatches = catches.filter((item) => (
+        yearSet.has(Number(item.history_year))
+        && Number(item.week) <= MAX_PLOT_WEEK
+      ));
       const catchWeeks = [...new Set(selectedCatches.map((item) => Number(item.week)).filter(Number.isFinite))]
         .sort((a, b) => a - b);
       const firstCatchWeek = catchWeeks[0] ?? null;
@@ -2076,6 +2107,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       const flowWeeks = [...new Set(dailyFlowRows
         .filter((item) => (
           yearSet.has(item.year)
+          && item.week <= MAX_PLOT_WEEK
           && (firstCatchWeek === null || item.week >= firstCatchWeek)
           && (lastCatchWeek === null || item.week <= lastCatchWeek)
         ))
@@ -2090,7 +2122,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         catchCountsByWeek.set(week, (catchCountsByWeek.get(week) || 0) + 1);
       });
       const averageCatchEntries = catchWeeks.map((week) => [
-        `Uge ${week}`,
+        String(week),
         (catchCountsByWeek.get(week) || 0) / Math.max(years.length, 1)
       ]);
 
@@ -2099,6 +2131,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         .filter((item) => (
           yearSet.has(item.year)
           && Number.isFinite(item.week)
+          && item.week <= MAX_PLOT_WEEK
           && Number.isFinite(item.flow_cms)
           && (firstCatchWeek === null || item.week >= firstCatchWeek)
           && (lastCatchWeek === null || item.week <= lastCatchWeek)
@@ -2115,7 +2148,31 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
           return [week, group?.count ? group.sum / group.count : null];
         })
         .filter(([, value]) => value !== null)
-        .map(([week, value]) => [`Uge ${week}`, value]);
+        .map(([week, value]) => [String(week), value]);
+
+      const temperatureGroups = new Map();
+      dailyFlowRows
+        .filter((item) => (
+          yearSet.has(item.year)
+          && Number.isFinite(item.week)
+          && item.week <= MAX_PLOT_WEEK
+          && Number.isFinite(item.water_temperature_c)
+          && (firstCatchWeek === null || item.week >= firstCatchWeek)
+          && (lastCatchWeek === null || item.week <= lastCatchWeek)
+        ))
+        .forEach((item) => {
+          const group = temperatureGroups.get(item.week) ?? { sum: 0, count: 0 };
+          group.sum += item.water_temperature_c;
+          group.count += 1;
+          temperatureGroups.set(item.week, group);
+        });
+      const averageTemperatureEntries = flowWeeks
+        .map((week) => {
+          const group = temperatureGroups.get(week);
+          return [week, group?.count ? group.sum / group.count : null];
+        })
+        .filter(([, value]) => value !== null)
+        .map(([week, value]) => [String(week), value]);
 
       const weightGroups = new Map();
       selectedCatches.forEach((item) => {
@@ -2133,10 +2190,11 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
           return [week, group?.count ? group.sum / group.count : null];
         })
         .filter(([, value]) => value !== null)
-        .map(([week, value]) => [`Uge ${week}`, value]);
+        .map(([week, value]) => [String(week), value]);
 
       renderBarEntries(elements.weekChart, averageCatchEntries, "var(--sun)", (value) => String(Math.round(Number(value) || 0)), "Gns. fangster", { yScale: true });
       renderBarEntries(elements.weekFlowChart, averageFlowEntries, "var(--water)", (value) => `${Math.round(Number(value) || 0)} m³/s`, "Gns. vandføring", { yScale: true });
+      renderBarEntries(elements.weekTemperatureChart, averageTemperatureEntries, "var(--rose)", (value) => `${Math.round(Number(value) || 0)} °C`, "Gns. vandtemperatur", { yScale: true });
       renderBarEntries(elements.weekWeightChart, averageWeightEntries, "var(--accent)", (value) => `${Math.round(Number(value) || 0)} kg`, "Gns. vægt", { yScale: true });
       renderBars(elements.equipmentChart, countBy(selectedCatches, (item) => item.equipment), "var(--rose)", "Antal fangster", { yScale: true });
     }
@@ -2733,7 +2791,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         .replaceAll("å", "a")
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
-        .replace(/^\s*\d+\s*[-.]?\s*/, "")
+        .replace(/^\s*\d{1,3}\s*[a-z]?\s*[-.]?\s*/, "")
         .replace(/\b(nordre|sondre|søndre|nord|sor|sør|side|sida)\b/g, " ")
         .replace(/\bgaard\b/g, "gard")
         .replace(/[^a-z0-9]+/g, " ")
@@ -2786,7 +2844,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       const query = mapFeatureQuery(beat);
       if (!query.text) return null;
       const alias = PLACE_ALIASES.get(query.text);
-      const candidates = alias ? [mapFeatureQuery(alias, query.number), query] : [query];
+      const candidates = alias ? [mapFeatureQuery(alias, query.number, query.code), query] : [query];
       const byKind = (kind) => mapFeatureIndex
         .filter((feature) => feature.kind === kind && featureFilter(feature))
         .map((feature) => {
@@ -2798,8 +2856,12 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       return byKind("line") ?? byKind("marker");
     }
 
+    function isNumberedValdFeature(feature) {
+      return /^\s*\d{1,3}[a-zæøå]?(?:\s{0,2}-|\s+)/i.test(String(feature?.name ?? ""));
+    }
+
     function findHvidZoneFeatureForBeat(beat) {
-      return findMapFeatureForBeat(beat, (feature) => feature.layerName === "Hvid zone");
+      return findMapFeatureForBeat(beat, (feature) => feature.layerName === "Hvid zone" && isNumberedValdFeature(feature));
     }
 
     function mapFeatureAnchorCoords(feature) {
@@ -2809,21 +2871,47 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       return bounds.isValid() ? bounds.getCenter() : null;
     }
 
-    function mapFeatureQuery(value, fallbackNumber = "") {
-      const raw = String(value ?? "");
+    function leadingValdParts(value) {
+      const raw = String(value ?? "").trim();
+      const match = raw.match(/^(\d{1,3})([a-zæøå])?(?:\s{0,2}-\s*|\s+)(.+)$/i);
+      if (!match) {
+        return {
+          number: raw.match(/\d+/)?.[0] ?? "",
+          code: raw.match(/\d+/)?.[0] ?? "",
+          text: normalizePlaceName(raw)
+        };
+      }
+      const letter = String(match[2] ?? "")
+        .toLowerCase()
+        .replaceAll("æ", "ae")
+        .replaceAll("ø", "o")
+        .replaceAll("å", "a");
       return {
-        number: raw.match(/\d+/)?.[0] ?? fallbackNumber,
-        text: normalizePlaceName(raw),
-        tokens: normalizePlaceName(raw).split(" ").filter((token) => token.length > 1)
+        number: match[1],
+        code: `${match[1]}${letter}`,
+        text: normalizePlaceName(match[3])
+      };
+    }
+
+    function mapFeatureQuery(value, fallbackNumber = "", fallbackCode = fallbackNumber) {
+      const parts = leadingValdParts(value);
+      const text = parts.text || normalizePlaceName(value);
+      return {
+        number: parts.number || fallbackNumber,
+        code: parts.code || fallbackCode,
+        text,
+        tokens: text.split(" ").filter((token) => token.length > 1)
       };
     }
 
     function mapFeatureTitleParts(feature) {
-      const raw = String(feature.name ?? "");
+      const parts = leadingValdParts(feature.name);
+      const text = parts.text || normalizePlaceName(feature.name);
       return {
-        number: raw.match(/\d+/)?.[0] ?? "",
-        text: normalizePlaceName(raw),
-        tokens: normalizePlaceName(raw).split(" ").filter((token) => token.length > 1)
+        number: parts.number,
+        code: parts.code,
+        text,
+        tokens: text.split(" ").filter((token) => token.length > 1)
       };
     }
 
@@ -2873,7 +2961,9 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       if (!score) return 0;
       if (feature.kind === "line") {
         if (query.number) {
-          return title.number === query.number ? 2000 + score : 0;
+          const sameNumber = title.number === query.number;
+          const sameCode = !query.code || !title.code || title.code === query.code;
+          return sameNumber && sameCode ? 2000 + score : 0;
         }
         return score >= 900 ? 1500 + score : 0;
       }
@@ -3675,17 +3765,31 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       yearFilter.disabled = false;
     }
 
-    function historyFilterRows(sourceRows, weekFilter, yearFilter = null) {
+    function renderHistoryLayerOptions(rows, layerFilter) {
+      const selectedLayer = layerFilter.value;
+      const layers = [...new Set(rows.map((row) => row.layerName).filter(Boolean))]
+        .sort((a, b) => a.localeCompare(b, "da-DK", { numeric: true }));
+      layerFilter.innerHTML = '<option value="">Alle</option>';
+      layerFilter.insertAdjacentHTML("beforeend", layers.map((layerName) => (
+        `<option value="${escapeHtml(layerName)}">${escapeHtml(layerName)}</option>`
+      )).join(""));
+      layerFilter.value = layers.includes(selectedLayer) ? selectedLayer : "";
+      layerFilter.disabled = false;
+    }
+
+    function historyFilterRows(sourceRows, weekFilter, yearFilter = null, layerFilter = null) {
       const selectedWeek = weekFilter.value;
       const selectedYear = yearFilter?.value ?? "";
+      const selectedLayer = layerFilter?.value ?? "";
       return sourceRows.filter((row) => (
         (!selectedWeek || String(row.week) === selectedWeek)
         && (!selectedYear || String(row.year) === selectedYear)
+        && (!selectedLayer || row.layerName === selectedLayer)
       ));
     }
 
-    function groupedHistoryRows(sourceRows, weekFilter, yearFilter = null) {
-      const rows = historyFilterRows(sourceRows, weekFilter, yearFilter);
+    function groupedHistoryRows(sourceRows, weekFilter, yearFilter = null, layerFilter = null) {
+      const rows = historyFilterRows(sourceRows, weekFilter, yearFilter, layerFilter);
       const groups = new Map();
 
       rows.forEach((item) => {
@@ -3726,12 +3830,12 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         .sort((a, b) => b.catchCount - a.catchCount || a.beat.localeCompare(b.beat, "da-DK"));
     }
 
-    function filteredHistoryRows(sourceRows, weekFilter, yearFilter = null) {
-      return historyFilterRows(sourceRows, weekFilter, yearFilter);
+    function filteredHistoryRows(sourceRows, weekFilter, yearFilter = null, layerFilter = null) {
+      return historyFilterRows(sourceRows, weekFilter, yearFilter, layerFilter);
     }
 
-    function historySectionId(beat) {
-      return `hvid-${normalizePlaceName(beat).replace(/[^a-z0-9]+/g, "-") || "vald"}`;
+    function historySectionId(beat, prefix = "hvid") {
+      return `${prefix}-${normalizePlaceName(beat).replace(/[^a-z0-9]+/g, "-") || "vald"}`;
     }
 
     function intervalHistogramBins(values, binSize) {
@@ -3844,7 +3948,52 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       return labels.get(normalizeFilterText(value)) ?? "-";
     }
 
-    function renderCurrentMeasurements() {
+    function liveMeasurementConfig(typeId) {
+      const station = WATER_MEASUREMENT_STATIONS.find((item) => item.stationId === LIVE_CURRENT_STATION_ID) ?? WATER_MEASUREMENT_STATIONS[0];
+      const type = WATER_MEASUREMENT_TYPES.find((item) => item.id === typeId);
+      return type && station ? {
+        ...type,
+        id: `${station.id}-${type.id}`,
+        stationId: station.stationId,
+        stationLabel: station.stationLabel
+      } : null;
+    }
+
+    function trendFromValues(value, previousValue) {
+      if (!Number.isFinite(value) || !Number.isFinite(previousValue)) return "neutral";
+      const delta = value - previousValue;
+      if (delta > WATER_LEVEL_NEUTRAL_THRESHOLD_M) return "stigende";
+      if (delta < -WATER_LEVEL_NEUTRAL_THRESHOLD_M) return "faldende";
+      return "neutral";
+    }
+
+    function pointClosestToHoursBefore(points, hoursBefore) {
+      if (!points?.length) return null;
+      const latest = points[points.length - 1];
+      const targetTime = latest.time.getTime() - (hoursBefore * 60 * 60 * 1000);
+      return points
+        .filter((point) => point.time.getTime() <= latest.time.getTime())
+        .reduce((best, point) => {
+          const distance = Math.abs(point.time.getTime() - targetTime);
+          if (!best || distance < best.distance) {
+            return { point, distance };
+          }
+          return best;
+        }, null)?.point ?? null;
+    }
+
+    function liveWaterLevelTrend(points) {
+      if (!points?.length) return "neutral";
+      const latest = points[points.length - 1];
+      const previousDay = pointClosestToHoursBefore(points, 24);
+      const threeDaysAgo = pointClosestToHoursBefore(points, 72);
+      const dailyTrend = trendFromValues(latest.value, previousDay?.value);
+      return dailyTrend === "neutral"
+        ? trendFromValues(latest.value, threeDaysAgo?.value)
+        : dailyTrend;
+    }
+
+    function renderCurrentMeasurementsFromDailyData() {
       const latestFlow = latestDailyFlow();
       const latestTemperature = latestDailyTemperature();
       const latestWaterLevel = latestDailyWaterLevel();
@@ -3857,6 +4006,40 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       elements.currentWaterLevelTrend.textContent = latestWaterLevel
         ? waterLevelTrendLabel(latestWaterLevel.water_level_trend)
         : "-";
+    }
+
+    async function renderCurrentMeasurements() {
+      const flowConfig = liveMeasurementConfig("discharge");
+      const temperatureConfig = liveMeasurementConfig("temperature");
+      const stageConfig = liveMeasurementConfig("stage");
+      if (!flowConfig || !temperatureConfig || !stageConfig) {
+        renderCurrentMeasurementsFromDailyData();
+        return;
+      }
+
+      elements.currentFlow.textContent = "Henter...";
+      elements.currentTemperature.textContent = "Henter...";
+      elements.currentWaterLevelTrend.textContent = "Henter...";
+
+      try {
+        const [flow, temperature, stage] = await Promise.all([
+          fetchWaterMeasurement(flowConfig),
+          fetchWaterMeasurement(temperatureConfig),
+          fetchWaterMeasurement(stageConfig)
+        ]);
+        const latestFlow = flow.points[flow.points.length - 1];
+        const latestTemperature = temperature.points[temperature.points.length - 1];
+        elements.currentFlow.textContent = latestFlow
+          ? `${formatMeasurementValue(latestFlow.value, flow.config.decimals)} ${flow.unit}`
+          : "-";
+        elements.currentTemperature.textContent = latestTemperature
+          ? `${formatMeasurementValue(latestTemperature.value, temperature.config.decimals)} ${temperature.unit}`
+          : "-";
+        elements.currentWaterLevelTrend.textContent = waterLevelTrendLabel(liveWaterLevelTrend(stage.points));
+      } catch (error) {
+        console.warn("Kunne ikke hente live nøgletal fra NVE. Bruger lokal JSON som fallback.", error);
+        renderCurrentMeasurementsFromDailyData();
+      }
     }
 
     function flowMarkerForHistogram(histogram, latestFlow) {
@@ -3907,8 +4090,9 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       return [...counts.entries()].map(([key, count]) => [labels.get(key), count]);
     }
 
-    function renderHvidHistorySections(sourceRows, weekFilter, yearFilter = null) {
-      const rows = filteredHistoryRows(sourceRows, weekFilter, yearFilter);
+    function renderHistorySections(sourceRows, weekFilter, yearFilter = null, sectionPrefix = "hvid", layerFilter = null) {
+      const rows = filteredHistoryRows(sourceRows, weekFilter, yearFilter, layerFilter)
+        .filter((row) => Number(row.week) <= MAX_PLOT_WEEK);
       const latestFlow = latestDailyFlow();
       const latestTemperature = latestDailyTemperature();
       const latestWaterLevel = latestDailyWaterLevel();
@@ -3921,7 +4105,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       return [...groups.entries()]
         .sort((a, b) => a[0].localeCompare(b[0], "da-DK", { numeric: true }))
         .map(([beat, beatRows]) => {
-          const sectionId = historySectionId(beat);
+          const sectionId = historySectionId(beat, sectionPrefix);
           const flowValues = beatRows
             .filter((row) => hasNumericValue(row.flowValue))
             .map((row) => Number(row.flowValue));
@@ -3982,25 +4166,28 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         .join("");
     }
 
-    function renderHistoryTableFor({ rows: sourceRows, weekFilter, yearFilter = null, content, status, scopeLabel, emptyLabel, includeFlowSections = false }) {
-      const rows = groupedHistoryRows(sourceRows, weekFilter, yearFilter);
+    function renderHistoryTableFor({ rows: sourceRows, weekFilter, yearFilter = null, layerFilter = null, content, status, scopeLabel, emptyLabel, includeFlowSections = false, sectionPrefix = "hvid", sectionScopeLabel = "et Hvidt vald" }) {
+      const rows = groupedHistoryRows(sourceRows, weekFilter, yearFilter, layerFilter);
       const selectedWeek = weekFilter.value;
       const selectedYear = yearFilter?.value ?? "";
+      const selectedLayer = layerFilter?.value ?? "";
       const weekText = selectedWeek ? ` · uge ${selectedWeek}` : "";
       const yearText = selectedYear ? ` · ${selectedYear}` : "";
+      const layerText = selectedLayer ? ` · ${selectedLayer}` : "";
       if (!rows.length) {
         content.className = "empty";
-        content.textContent = `${emptyLabel}${weekText}${yearText}.`;
-        status.textContent = `0 vald · 0 laks på flue${weekText}${yearText} · ${HISTORY_YEARS.slice().reverse().join(", ")}`;
+        content.textContent = `${emptyLabel}${weekText}${yearText}${layerText}.`;
+        status.textContent = `0 vald · 0 laks på flue${weekText}${yearText}${layerText} · ${HISTORY_YEARS.slice().reverse().join(", ")}`;
         return;
       }
 
       content.className = "";
-      const sectionsHtml = includeFlowSections ? renderHvidHistorySections(sourceRows, weekFilter, yearFilter) : "";
+      const sectionsHtml = includeFlowSections ? renderHistorySections(sourceRows, weekFilter, yearFilter, sectionPrefix, layerFilter) : "";
+      const guideTitleId = `${sectionPrefix}-history-guide-title`;
       const guideHtml = includeFlowSections && sectionsHtml ? `
-        <section class="history-guide" aria-labelledby="history-guide-title">
-          <h3 id="history-guide-title">Sådan læses figurerne</h3>
-          <p>Figurerne bygger på de laks, der er fanget på flue, matchet til et Hvidt vald og omfattet af de valgte uge- og årsfiltre. Y-aksen viser altid antal fangster.</p>
+        <section class="history-guide" aria-labelledby="${escapeHtml(guideTitleId)}">
+          <h3 id="${escapeHtml(guideTitleId)}">Sådan læses figurerne</h3>
+          <p>Figurerne bygger på de laks, der er fanget på flue, matchet til ${escapeHtml(sectionScopeLabel)} og omfattet af de valgte filtre. Y-aksen viser altid antal fangster.</p>
           <ul>
             <li><strong>Vandføring:</strong> X-aksen viser vandføring i intervaller på 5 m³/s. Hver søjle viser, hvor mange laks der blev fanget, mens vandføringen lå i intervallet. En manglende søjle betyder nul fangster i intervallet.</li>
             <li><strong>Vandstandstrend:</strong> Fangsterne fordeles efter dagens ændring i vandstand. Små døgnændringer kontrolleres også mod vandstanden tre dage tidligere, så langsomme stigninger og fald registreres.</li>
@@ -4027,7 +4214,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
               ${rows.map((row) => `
                 <tr>
                   <td data-label="Vald"><button class="beat-link" type="button" data-map-beat="${escapeHtml(row.beat)}">${escapeHtml(row.beat)}</button></td>
-                  <td data-label="Fangster">${includeFlowSections ? `<a class="link" href="#${escapeHtml(historySectionId(row.beat))}">${row.catchCount}</a>` : row.catchCount}</td>
+                  <td data-label="Fangster">${includeFlowSections ? `<a class="link" href="#${escapeHtml(historySectionId(row.beat, sectionPrefix))}">${row.catchCount}</a>` : row.catchCount}</td>
                   <td data-label="Gns. vandføring">${row.averageFlow === null ? "-" : `${numberFormat.format(row.averageFlow)} m³/s`}</td>
                   ${includeFlowSections ? `<td data-label="Gns. vandtemp.">${row.averageTemperature === null ? "-" : `${numberFormat.format(row.averageTemperature)} °C`}</td>` : ""}
                   <td data-label="År">${escapeHtml(row.years.join(", "))}</td>
@@ -4040,7 +4227,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         ${guideHtml}
       `;
       const matchedCatches = rows.reduce((sum, row) => sum + row.catchCount, 0);
-      status.textContent = `${rows.length} vald ${scopeLabel} · ${matchedCatches} laks på flue${weekText}${yearText} · ${HISTORY_YEARS.slice().reverse().join(", ")}`;
+      status.textContent = `${rows.length} vald ${scopeLabel} · ${matchedCatches} laks på flue${weekText}${yearText}${layerText} · ${HISTORY_YEARS.slice().reverse().join(", ")}`;
     }
 
     function renderHistoryTable() {
@@ -4052,7 +4239,9 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         status: elements.historyStatus,
         scopeLabel: "i Hvid zone",
         emptyLabel: "Ingen laks fanget på flue kunne matches til Hvid zone",
-        includeFlowSections: true
+        includeFlowSections: true,
+        sectionPrefix: "hvid",
+        sectionScopeLabel: "et Hvidt vald"
       });
     }
 
@@ -4060,10 +4249,15 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       renderHistoryTableFor({
         rows: historyAllRows,
         weekFilter: elements.historyAllWeekFilter,
+        yearFilter: elements.historyAllYearFilter,
+        layerFilter: elements.historyAllLayerFilter,
         content: elements.historyAllContent,
         status: elements.historyAllStatus,
         scopeLabel: "i alle lag",
-        emptyLabel: "Ingen laks fanget på flue kunne matches til kortlag"
+        emptyLabel: "Ingen laks fanget på flue kunne matches til kortlag",
+        includeFlowSections: true,
+        sectionPrefix: "jff",
+        sectionScopeLabel: "et JFF vald"
       });
     }
 
@@ -4093,7 +4287,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
           const feature = findHvidZoneFeatureForBeat(item.beat);
           if (!feature) return;
           rows.push({
-            beat: item.beat || feature.name,
+            beat: feature.name || item.beat,
             week: item.week,
             year: item.history_year,
             timeOfDay: item.time_of_day,
@@ -4130,6 +4324,10 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       elements.historyAllContent.textContent = "Henter kortlag, fangster og vandføring...";
       elements.historyAllWeekFilter.disabled = true;
       elements.historyAllWeekFilter.innerHTML = '<option value="">Alle</option>';
+      elements.historyAllYearFilter.disabled = true;
+      elements.historyAllYearFilter.innerHTML = '<option value="">Alle</option>';
+      elements.historyAllLayerFilter.disabled = true;
+      elements.historyAllLayerFilter.innerHTML = '<option value="">Alle</option>';
 
       historyAllLoadPromise = (async () => {
         await initMap();
@@ -4142,19 +4340,24 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         const rows = [];
 
         historicalCatches.forEach((item) => {
-          const feature = findMapFeatureForBeat(item.beat);
+          const feature = findMapFeatureForBeat(item.beat, isNumberedValdFeature);
           if (!feature) return;
           rows.push({
-            beat: item.beat || feature.name,
+            beat: feature.name || item.beat,
+            layerName: feature.layerName,
             week: item.week,
             year: item.history_year,
+            timeOfDay: item.time_of_day,
             flowValue: item.flow_cms,
+            waterLevelTrend: item.water_level_trend,
             temperatureValue: item.water_temperature_c
           });
         });
 
         historyAllRows = rows;
         renderHistoryWeekOptions(historyAllRows, elements.historyAllWeekFilter);
+        renderHistoryYearOptions(historyAllRows, elements.historyAllYearFilter);
+        renderHistoryLayerOptions(historyAllRows, elements.historyAllLayerFilter);
         renderHistoryAllTable();
         historyAllLoaded = true;
       })().catch((error) => {
@@ -4163,6 +4366,8 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         elements.historyAllContent.className = "error";
         elements.historyAllContent.textContent = "Kunne ikke læse stjordal-history.json. Kør R-scriptet og genindlæs siden.";
         elements.historyAllWeekFilter.disabled = true;
+        elements.historyAllYearFilter.disabled = true;
+        elements.historyAllLayerFilter.disabled = true;
         console.error(error);
       });
 
