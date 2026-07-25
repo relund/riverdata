@@ -1,0 +1,1696 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gaula</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8f3;
+      --ink: #17232b;
+      --muted: #64717a;
+      --line: #dbe0d3;
+      --panel: #ffffff;
+      --accent: #5c8f2b;
+      --accent-strong: #315e28;
+      --water: #2f6f82;
+      --sun: #d39b28;
+      --rose: #b34d55;
+      --green: #5c8f2b;
+      --shadow: 0 12px 30px rgba(23, 35, 43, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 44px;
+    }
+
+    .topbar {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 4.35rem);
+      line-height: 1;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 6px;
+      margin: 0 0 22px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .tab-button {
+      flex: 0 0 auto;
+      min-height: 42px;
+      border: 0;
+      padding: 0 16px;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .tab-button[aria-selected="true"] {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .tab-select-wrap {
+      display: none;
+      margin-bottom: 16px;
+    }
+
+    .tab-select-wrap select,
+    .controls input,
+    .controls select,
+    .panel-head select {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: #fff;
+      color: var(--ink);
+      padding: 0 12px;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .metric-value {
+      margin-top: 6px;
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    .section,
+    .table-frame,
+    .weather-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0 0 12px;
+      line-height: 1.15;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+    }
+
+    .muted,
+    .status {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .chart-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .chart-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 16px 14px 12px;
+      min-width: 0;
+    }
+
+    .history-sections {
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .history-section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      scroll-margin-top: 18px;
+    }
+
+    .history-section-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .history-section-charts {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .plot-chart {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 8px;
+      margin-top: 14px;
+      padding: 16px 14px 12px;
+      overflow-x: hidden;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .plot-y-label {
+      align-self: center;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+
+    .plot-body {
+      min-width: 0;
+    }
+
+    .plot-body.has-y-scale {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      grid-template-areas:
+        "scale bars"
+        ". labels";
+      column-gap: 8px;
+    }
+
+    .plot-y-scale {
+      grid-area: scale;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 230px;
+      padding: 8px 0 10px;
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .plot-bars {
+      grid-area: bars;
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(var(--bar-count, 1), minmax(0, 1fr));
+      gap: 5px;
+      align-items: end;
+      min-height: 230px;
+      padding: 8px 0 10px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(to top, rgba(82, 94, 72, 0.12) 1px, transparent 1px) 0 0 / 100% 25%;
+    }
+
+    .plot-body.has-y-scale .plot-bars {
+      border-left: 1px solid var(--line);
+      padding-left: 8px;
+    }
+
+    .plot-body.is-interval-plot .plot-bars {
+      gap: 1px;
+    }
+
+    .plot-body.is-interval-plot .plot-bar {
+      width: calc(100% - 1px);
+    }
+
+    .plot-bar-item {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      align-items: end;
+      min-width: 0;
+      height: 100%;
+    }
+
+    .plot-bar {
+      width: min(100%, 22px);
+      min-height: 3px;
+      justify-self: center;
+      background: var(--accent);
+    }
+
+    .plot-bar.is-zero {
+      min-height: 0;
+    }
+
+    .plot-x-labels {
+      grid-area: labels;
+      display: grid;
+      grid-template-columns: repeat(var(--bar-count, 1), minmax(0, 1fr));
+      gap: 5px;
+      padding-top: 8px;
+    }
+
+    .plot-x-labels.is-interval-axis {
+      grid-template-columns: repeat(var(--tick-count, 2), minmax(0, 1fr));
+      gap: 0;
+    }
+
+    .plot-x-labels.is-interval-axis .plot-x-label {
+      white-space: nowrap;
+    }
+
+    .plot-x-labels.is-interval-axis .plot-x-label:first-child {
+      text-align: left;
+    }
+
+    .plot-x-labels.is-interval-axis .plot-x-label:last-child {
+      text-align: right;
+    }
+
+    .plot-x-label {
+      min-width: 0;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+      line-height: 1.15;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
+
+    .waterlevel-layout {
+      display: grid;
+      gap: 18px;
+    }
+
+    .waterlevel-card {
+      display: grid;
+      gap: 12px;
+      padding: 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .waterlevel-head {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: end;
+      justify-content: space-between;
+    }
+
+    .waterlevel-title {
+      margin: 0;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      line-height: 1.1;
+    }
+
+    .waterlevel-meta {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .waterlevel-latest {
+      min-width: 160px;
+      text-align: right;
+    }
+
+    .waterlevel-latest span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .waterlevel-latest strong {
+      display: block;
+      margin-top: 4px;
+      font-size: clamp(1.55rem, 4vw, 2.4rem);
+      line-height: 1;
+    }
+
+    .waterlevel-chart {
+      min-height: 360px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .waterlevel-chart svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-height: 360px;
+    }
+
+    .waterlevel-axis {
+      fill: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .waterlevel-grid {
+      stroke: rgba(76, 88, 94, 0.18);
+      stroke-width: 1;
+    }
+
+    .waterlevel-line {
+      fill: none;
+      stroke: var(--water);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .waterlevel-fill {
+      fill: rgba(33, 118, 174, 0.12);
+    }
+
+    .waterlevel-dot {
+      fill: var(--water);
+      stroke: #fff;
+      stroke-width: 3;
+    }
+
+    .controls,
+    .panel-head {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) 180px 180px;
+      gap: 10px;
+      align-items: end;
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .table-frame {
+      overflow-x: auto;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 960px;
+    }
+
+    #catches .table-frame {
+      overflow-x: hidden;
+    }
+
+    #catches table {
+      min-width: 0;
+      table-layout: fixed;
+    }
+
+    #catches th,
+    #catches td {
+      padding-right: 8px;
+      padding-left: 8px;
+      overflow: hidden;
+      font-size: 0.72rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    #catches th:nth-child(1) { width: 9%; }
+    #catches th:nth-child(2) { width: 6%; }
+    #catches th:nth-child(3) { width: 16%; }
+    #catches th:nth-child(4) { width: 14%; }
+    #catches th:nth-child(5) { width: 8%; }
+    #catches th:nth-child(6) { width: 8%; }
+    #catches th:nth-child(7) { width: 8%; }
+    #catches th:nth-child(8) { width: 10%; }
+    #catches th:nth-child(9) { width: 11%; }
+    #catches th:nth-child(10) { width: 10%; }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #eef2e7;
+      color: #39444b;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    td {
+      font-size: 0.93rem;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .link {
+      color: var(--water);
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .weather-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .weather-card {
+      padding: 16px;
+      min-width: 0;
+    }
+
+    .weather-plot {
+      width: 100%;
+      max-width: 100%;
+      display: block;
+      border: 0;
+    }
+
+    .error {
+      color: #9f2d2d;
+      background: #fff0f0;
+      border: 1px solid #efc7c7;
+      padding: 10px;
+    }
+
+    .empty {
+      color: var(--muted);
+      padding: 14px;
+    }
+
+    footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        width: min(100% - 20px, 1180px);
+        padding-top: 20px;
+      }
+
+      .tabs {
+        display: block;
+        overflow: visible;
+      }
+
+      .tab-button {
+        display: none;
+      }
+
+      .tab-select-wrap {
+        display: block;
+      }
+
+      .topbar,
+      .controls,
+      .panel-head {
+        grid-template-columns: 1fr;
+        display: grid;
+        align-items: stretch;
+      }
+
+      .metrics,
+      .chart-grid,
+      .weather-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .plot-chart {
+        gap: 4px;
+        padding: 10px 8px 8px;
+        overflow-x: hidden;
+      }
+
+      .plot-y-label {
+        font-size: 0.58rem;
+      }
+
+      .plot-body {
+        min-width: 0;
+      }
+
+      .plot-body.has-y-scale {
+        column-gap: 4px;
+      }
+
+      .plot-y-scale {
+        min-height: 160px;
+        font-size: 0.5rem;
+      }
+
+      .plot-bars {
+        grid-template-columns: repeat(var(--bar-count, 1), minmax(0, 1fr));
+        gap: 3px;
+        min-height: 160px;
+      }
+
+      .plot-body.is-interval-plot .plot-bars {
+        gap: 1px;
+      }
+
+      .plot-x-labels {
+        grid-template-columns: repeat(var(--bar-count, 1), minmax(0, 1fr));
+        gap: 3px;
+      }
+
+      .plot-x-label {
+        font-size: 0.52rem;
+        line-height: 1.05;
+      }
+
+      .plot-bar {
+        width: min(100%, 18px);
+      }
+
+      .table-frame {
+        overflow: visible;
+        border: 0;
+        box-shadow: none;
+        background: transparent;
+      }
+
+      table,
+      thead,
+      tbody,
+      tr,
+      th,
+      td {
+        display: block;
+      }
+
+      table {
+        min-width: 0;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 12px;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      td {
+        display: block;
+        border-bottom: 0;
+        padding: 10px 12px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+
+      #catches td {
+        overflow: visible;
+        font-size: 0.88rem;
+        white-space: normal;
+        text-overflow: clip;
+      }
+
+      td::before {
+        content: attr(data-label) ":";
+        display: inline;
+        margin-right: 4px;
+        font-weight: 800;
+        color: var(--muted);
+        font-size: 0.74rem;
+        text-transform: uppercase;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">Gaula <span id="currentYear"></span></div>
+      <div class="status" id="dataStatus">Indlæser Gaula-data...</div>
+    </header>
+
+    <nav class="tabs" aria-label="Faner">
+      <button class="tab-button" type="button" id="tab-overview" aria-controls="overview" aria-selected="true">Oversigt</button>
+      <button class="tab-button" type="button" id="tab-catches" aria-controls="catches" aria-selected="false">Fangster</button>
+      <button class="tab-button" type="button" id="tab-vald" aria-controls="vald" aria-selected="false">Vald</button>
+      <button class="tab-button" type="button" id="tab-waterlevel" aria-controls="waterlevel" aria-selected="false">Vandmålinger</button>
+      <button class="tab-button" type="button" id="tab-weather" aria-controls="weather" aria-selected="false">Vejr</button>
+      <button class="tab-button" type="button" id="tab-log" aria-controls="log" aria-selected="false">Log</button>
+    </nav>
+
+    <div class="tab-select-wrap">
+      <label>
+        Fane
+        <select id="tabSelect">
+          <option value="overview">Oversigt</option>
+          <option value="catches">Fangster</option>
+          <option value="vald">Vald</option>
+          <option value="waterlevel">Vandmålinger</option>
+          <option value="weather">Vejr</option>
+          <option value="log">Log</option>
+        </select>
+      </label>
+    </div>
+
+    <section class="tab-panel active" id="overview" role="tabpanel" aria-labelledby="tab-overview">
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Nuværende vandføring</div>
+          <div class="metric-value" id="metricFlow">-</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Nuværende vandtemp.</div>
+          <div class="metric-value" id="metricTemp">-</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Vandstandstrend</div>
+          <div class="metric-value" id="metricTrend">-</div>
+        </div>
+      </div>
+
+      <div class="chart-panel">
+        <h3>Fangster de seneste 7 dage</h3>
+        <div id="recentCatchChart"></div>
+      </div>
+
+      <div class="section">
+        <div class="panel-head">
+          <div>
+            <h2>Statistik</h2>
+            <p class="muted">Fangster er laks fra 2023 til aktuelt år. Grafer viser uger til og med uge 36.</p>
+          </div>
+          <label>
+            År
+            <select id="statsYearFilter">
+              <option value="">Alle</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="chart-grid">
+        <div class="chart-panel">
+          <h3>Gns. fangster pr. uge</h3>
+          <div id="weekCatchChart"></div>
+        </div>
+        <div class="chart-panel">
+          <h3>Gns. vandføring pr. uge</h3>
+          <div id="weekFlowChart"></div>
+        </div>
+        <div class="chart-panel">
+          <h3>Gns. vandtemperatur pr. uge</h3>
+          <div id="weekTempChart"></div>
+        </div>
+        <div class="chart-panel">
+          <h3>Gns. vægt pr. uge</h3>
+          <div id="weekWeightChart"></div>
+        </div>
+        <div class="chart-panel">
+          <h3>Redskab</h3>
+          <div id="equipmentChart"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="catches" role="tabpanel" aria-labelledby="tab-catches">
+      <div class="section">
+        <div class="controls">
+          <label>
+            Søg
+            <input id="searchInput" type="search" placeholder="Søg i vald, fisker, redskab...">
+          </label>
+          <label>
+            År
+            <select id="catchYearFilter">
+              <option value="">Alle</option>
+            </select>
+          </label>
+          <label>
+            Redskab
+            <select id="equipmentFilter">
+              <option value="">Alle</option>
+            </select>
+          </label>
+        </div>
+        <div class="table-frame">
+          <table>
+            <thead>
+              <tr id="catchTableHead"></tr>
+            </thead>
+            <tbody id="catchRows"></tbody>
+          </table>
+        </div>
+        <div class="empty" id="catchEmpty" hidden>Ingen fangster matcher filtrene.</div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="vald" role="tabpanel" aria-labelledby="tab-vald">
+      <div class="section">
+        <div class="panel-head">
+          <div>
+            <h2>Vald</h2>
+            <p class="muted" id="valdStatus">Alle vald fra fangstdata grupperes her.</p>
+          </div>
+          <label>
+            Uge
+            <select id="valdWeekFilter">
+              <option value="">Alle</option>
+            </select>
+          </label>
+          <label>
+            År
+            <select id="valdYearFilter">
+              <option value="">Alle</option>
+            </select>
+          </label>
+        </div>
+        <div id="valdContent" class="empty">Vald indlæses sammen med fangstdata.</div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="waterlevel" role="tabpanel" aria-labelledby="tab-waterlevel">
+      <div class="section">
+        <h2>Vandmålinger</h2>
+        <p class="muted" id="waterStatus">Vandmålinger hentes fra NVE HydAPI for Gaulfoss og Eggafoss.</p>
+      </div>
+      <div id="waterCharts"></div>
+    </section>
+
+    <section class="tab-panel" id="weather" role="tabpanel" aria-labelledby="tab-weather">
+      <div class="section">
+        <h2>Vejr</h2>
+        <p class="muted">Yr meteogrammer for lokationer i Gauldalen.</p>
+      </div>
+      <div class="weather-grid">
+        <article class="weather-card">
+          <h2>Hovin</h2>
+          <a class="link" href="https://www.yr.no/en/forecast/daily-table/1-205591/Norway/Tr%C3%B8ndelag/Melhus/Hovin" target="_blank" rel="noreferrer">Åbn på Yr</a>
+          <img class="weather-plot" src="https://www.yr.no/en/content/1-205591/meteogram.svg" alt="Yr meteogram for Hovin" loading="lazy">
+        </article>
+        <article class="weather-card">
+          <h2>Melhus</h2>
+          <a class="link" href="https://www.yr.no/en/forecast/daily-table/1-211851/Norway/Tr%C3%B8ndelag/Melhus/Melhus" target="_blank" rel="noreferrer">Åbn på Yr</a>
+          <img class="weather-plot" src="https://www.yr.no/en/content/1-211851/meteogram.svg" alt="Yr meteogram for Melhus" loading="lazy">
+        </article>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="log" role="tabpanel" aria-labelledby="tab-log">
+      <div class="section">
+        <h2>Log</h2>
+        <div id="logContent" class="muted">Log indlæses sammen med data.</div>
+      </div>
+    </section>
+
+    <footer id="footerStatus">Gaula-data indlæses...</footer>
+  </main>
+
+  <script>
+    const CURRENT_YEAR = new Date().getFullYear();
+    const HISTORY_START_YEAR = 2023;
+    const HISTORY_YEARS = Array.from({ length: CURRENT_YEAR - HISTORY_START_YEAR + 1 }, (_, index) => HISTORY_START_YEAR + index);
+    const HISTORY_DATA_URL = window.location.hostname === "relund.github.io"
+      ? "https://raw.githubusercontent.com/relund/riverdata/master/data/gaula-history.json"
+      : "../../data/gaula-history.json";
+    const HYDAPI_OBSERVATIONS_URL = "https://hydapi.nve.no/api/v1/Observations";
+    const WATERLEVEL_API_KEY = "di1JUtpivkKyFZ1bGoXF5Q==";
+    const MAX_PLOT_WEEK = 36;
+    const WATER_LEVEL_NEUTRAL_THRESHOLD_M = 0.05;
+    const WATER_STATIONS = [
+      { id: "gaulfoss", label: "Gaulfoss", stationId: "122.9.0" },
+      { id: "eggafoss", label: "Eggafoss", stationId: "122.11.0" }
+    ];
+    const WATER_TYPES = [
+      { id: "flow", label: "Vandføring", parameter: 1001, unit: "m³/s", decimals: 1, color: "var(--water)", fill: "rgba(33, 118, 174, 0.12)" },
+      { id: "level", label: "Vandstand", parameter: 1000, unit: "m", decimals: 2, color: "var(--green)", fill: "rgba(47, 125, 91, 0.12)" },
+      { id: "temp", label: "Vandtemperatur", parameter: 1003, unit: "°C", decimals: 1, color: "var(--rose)", fill: "rgba(201, 95, 114, 0.12)" }
+    ];
+
+    const numberFormat = new Intl.NumberFormat("da-DK", { maximumFractionDigits: 1 });
+    const dateFormat = new Intl.DateTimeFormat("da-DK", { day: "2-digit", month: "2-digit", year: "numeric" });
+    const dateTimeFormat = new Intl.DateTimeFormat("da-DK", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+    const waterlevelDateTimeFormat = new Intl.DateTimeFormat("da-DK", {
+      day: "2-digit",
+      month: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+
+    let catches = [];
+    let dailyRows = [];
+    let metadata = {};
+    let sortState = { key: "date", direction: "desc" };
+    let waterLoaded = false;
+
+    const elements = {
+      currentYear: document.querySelector("#currentYear"),
+      dataStatus: document.querySelector("#dataStatus"),
+      footerStatus: document.querySelector("#footerStatus"),
+      metricFlow: document.querySelector("#metricFlow"),
+      metricTemp: document.querySelector("#metricTemp"),
+      metricTrend: document.querySelector("#metricTrend"),
+      statsYearFilter: document.querySelector("#statsYearFilter"),
+      weekCatchChart: document.querySelector("#weekCatchChart"),
+      weekFlowChart: document.querySelector("#weekFlowChart"),
+      weekTempChart: document.querySelector("#weekTempChart"),
+      weekWeightChart: document.querySelector("#weekWeightChart"),
+      equipmentChart: document.querySelector("#equipmentChart"),
+      recentCatchChart: document.querySelector("#recentCatchChart"),
+      searchInput: document.querySelector("#searchInput"),
+      catchYearFilter: document.querySelector("#catchYearFilter"),
+      equipmentFilter: document.querySelector("#equipmentFilter"),
+      catchTableHead: document.querySelector("#catchTableHead"),
+      catchRows: document.querySelector("#catchRows"),
+      catchEmpty: document.querySelector("#catchEmpty"),
+      valdStatus: document.querySelector("#valdStatus"),
+      valdContent: document.querySelector("#valdContent"),
+      valdWeekFilter: document.querySelector("#valdWeekFilter"),
+      valdYearFilter: document.querySelector("#valdYearFilter"),
+      tabSelect: document.querySelector("#tabSelect"),
+      waterStatus: document.querySelector("#waterStatus"),
+      waterCharts: document.querySelector("#waterCharts"),
+      logContent: document.querySelector("#logContent")
+    };
+
+    elements.currentYear.textContent = CURRENT_YEAR;
+    document.title = `Gaula ${CURRENT_YEAR}`;
+
+    const tabHashes = {
+      overview: "oversigt",
+      catches: "fangster",
+      vald: "vald",
+      waterlevel: "vandmaalinger",
+      weather: "vejr",
+      log: "log"
+    };
+    const hashPanels = new Map([
+      ["oversigt", "overview"],
+      ["overview", "overview"],
+      ["fangster", "catches"],
+      ["catches", "catches"],
+      ["vald", "vald"],
+      ["vandmaalinger", "waterlevel"],
+      ["vandmålinger", "waterlevel"],
+      ["waterlevel", "waterlevel"],
+      ["vejr", "weather"],
+      ["weather", "weather"],
+      ["log", "log"]
+    ]);
+
+    function normalizedHash(hash) {
+      return decodeURIComponent(String(hash || "").replace(/^#/, "")).toLowerCase();
+    }
+
+    function panelFromHash() {
+      return hashPanels.get(normalizedHash(window.location.hash));
+    }
+
+    function openHashTarget() {
+      const hash = normalizedHash(window.location.hash);
+      if (hash.startsWith("vald-")) {
+        activateTab("vald", false);
+        window.setTimeout(() => {
+          document.getElementById(hash)?.scrollIntoView({ block: "start" });
+        }, 0);
+        return true;
+      }
+      const panel = panelFromHash();
+      if (panel) {
+        activateTab(panel, false);
+        return true;
+      }
+      return false;
+    }
+
+    function activateTab(panelId, updateHash = true) {
+      document.querySelectorAll(".tab-button").forEach((button) => {
+        const active = button.getAttribute("aria-controls") === panelId;
+        button.setAttribute("aria-selected", String(active));
+      });
+      document.querySelectorAll(".tab-panel").forEach((panel) => {
+        panel.classList.toggle("active", panel.id === panelId);
+      });
+      elements.tabSelect.value = panelId;
+      if (updateHash) {
+        window.history.pushState(null, "", `#${tabHashes[panelId] || panelId}`);
+      }
+      if (panelId === "waterlevel") loadWaterMeasurements();
+    }
+
+    document.querySelectorAll(".tab-button").forEach((button) => {
+      button.addEventListener("click", () => activateTab(button.getAttribute("aria-controls")));
+    });
+    elements.tabSelect.addEventListener("change", () => activateTab(elements.tabSelect.value));
+    window.addEventListener("hashchange", openHashTarget);
+
+    function normalizeText(value) {
+      return String(value ?? "")
+        .toLowerCase()
+        .replaceAll("æ", "ae")
+        .replaceAll("ø", "o")
+        .replaceAll("å", "a")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+    }
+
+    function parseDate(value) {
+      const date = new Date(`${value}T00:00:00`);
+      return Number.isNaN(date.getTime()) ? null : date;
+    }
+
+    function formatDate(value) {
+      const date = parseDate(value);
+      return date ? dateFormat.format(date) : "-";
+    }
+
+    function formatNumber(value, suffix = "") {
+      const number = Number(value);
+      return Number.isFinite(number) ? `${numberFormat.format(number)}${suffix}` : "-";
+    }
+
+    function trendLabel(value) {
+      const normalized = normalizeText(value);
+      if (normalized === "stigende") return "Stigende";
+      if (normalized === "faldende") return "Faldende";
+      if (normalized === "neutral") return "Neutral";
+      return "-";
+    }
+
+    function normalizeCatch(item) {
+      const year = Number(item.year || item.history_year || String(item.date || "").slice(0, 4));
+      return {
+        id: item.id ?? "",
+        date: item.date ?? "",
+        time_of_day: item.time_of_day ?? "",
+        week: Number(item.week),
+        history_year: Number.isFinite(year) ? year : "",
+        beat: item.beat ?? "",
+        fishing_spot: item.fishing_spot ?? "",
+        fisher_name: item.fisher_name ?? "",
+        species: item.species ?? "",
+        weight_kg: Number(item.weight_kg),
+        length_cm: Number(item.length_cm),
+        equipment: item.equipment ?? "",
+        released_catch: item.released_catch === true,
+        detail_url: item.detail_url ?? "",
+        flow_cms: Number(item.flow_cms),
+        water_level_trend: item.water_level_trend ?? "",
+        water_temperature_c: Number(item.water_temperature_c)
+      };
+    }
+
+    function normalizeDaily(row) {
+      const year = Number(String(row.date || "").slice(0, 4));
+      const date = parseDate(row.date);
+      const week = date ? Math.ceil((((date - new Date(date.getFullYear(), 0, 1)) / 86400000) + 1) / 7) : null;
+      return {
+        date: row.date ?? "",
+        year,
+        week,
+        flow_cms: Number(row.flow_cms),
+        flow_trend: row.flow_trend ?? "",
+        water_level_m: Number(row.water_level_m),
+        water_level_trend: row.water_level_trend ?? "",
+        water_temperature_c: Number(row.water_temperature_c)
+      };
+    }
+
+    function selectedStatsYears() {
+      const year = Number(elements.statsYearFilter.value);
+      if (Number.isFinite(year) && year) return [year];
+      return [...new Set(catches.map((item) => item.history_year).filter(Number.isFinite))]
+        .sort((a, b) => a - b);
+    }
+
+    function countBy(rows, getter) {
+      const counts = new Map();
+      rows.forEach((row) => {
+        const key = getter(row) || "-";
+        counts.set(key, (counts.get(key) || 0) + 1);
+      });
+      return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "da-DK"));
+    }
+
+    function yAxisTicks(maxValue) {
+      const step = Math.max(1, Math.ceil(maxValue / 4));
+      const top = Math.max(step, Math.ceil(maxValue / step) * step);
+      const ticks = [];
+      for (let value = top; value >= 0; value -= step) ticks.push(value);
+      if (ticks[ticks.length - 1] !== 0) ticks.push(0);
+      return ticks;
+    }
+
+    function plotHtml(entries, color = "var(--accent)", formatValue = (value) => value, yLabel = "Antal", options = {}) {
+      const safeEntries = entries.filter(([, value]) => Number(value) || Number(value) === 0);
+      if (!safeEntries.length) return '<div class="empty">Ingen data.</div>';
+      const rawMax = Math.max(...safeEntries.map(([, value]) => Number(value) || 0), 1);
+      const ticks = options.yScale ? yAxisTicks(rawMax) : [];
+      const max = ticks.length ? ticks[0] : rawMax;
+      const xTickLabels = Array.isArray(options.xTickLabels) ? options.xTickLabels : null;
+      return `
+        <div class="plot-chart" style="--bar-count: ${safeEntries.length};${xTickLabels ? ` --tick-count: ${xTickLabels.length};` : ""}">
+          <div class="plot-y-label">${escapeHtml(yLabel)}</div>
+          <div class="plot-body${ticks.length ? " has-y-scale" : ""}${xTickLabels ? " is-interval-plot" : ""}">
+            ${ticks.length ? `<div class="plot-y-scale">${ticks.map((tick) => `<span>${escapeHtml(numberFormat.format(tick))}</span>`).join("")}</div>` : ""}
+            <div class="plot-bars">
+              ${safeEntries.map(([label, value]) => {
+                const numericValue = Number(value) || 0;
+                return `
+                <div class="plot-bar-item" title="${escapeHtml(label)}: ${escapeHtml(formatValue(value))}">
+                  <div class="plot-bar${numericValue === 0 ? " is-zero" : ""}" style="height: ${(numericValue / max) * 100}%; background: ${color};"></div>
+                </div>
+              `;
+              }).join("")}
+            </div>
+            <div class="plot-x-labels${xTickLabels ? " is-interval-axis" : ""}">
+              ${(xTickLabels ?? safeEntries.map(([label]) => label)).map((label) => `<div class="plot-x-label">${escapeHtml(label)}</div>`).join("")}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderPlot(target, entries, color, formatter = (value) => String(value), yLabel = "Antal", options = {}) {
+      target.innerHTML = plotHtml(entries, color, formatter, yLabel, options);
+    }
+
+    function renderStats() {
+      const years = selectedStatsYears();
+      const yearSet = new Set(years);
+      const selected = catches.filter((item) => yearSet.has(item.history_year) && item.week <= MAX_PLOT_WEEK);
+      const weeks = [...new Set(selected.map((item) => item.week).filter(Number.isFinite))].sort((a, b) => a - b);
+      const firstWeek = weeks[0] ?? null;
+      const lastWeek = weeks[weeks.length - 1] ?? null;
+      const daily = dailyRows.filter((row) => (
+        yearSet.has(row.year)
+        && row.week <= MAX_PLOT_WEEK
+        && (firstWeek === null || row.week >= firstWeek)
+        && (lastWeek === null || row.week <= lastWeek)
+      ));
+
+      const catchCounts = new Map();
+      selected.forEach((item) => catchCounts.set(item.week, (catchCounts.get(item.week) || 0) + 1));
+      renderPlot(elements.weekCatchChart, weeks.map((week) => [String(week), (catchCounts.get(week) || 0) / Math.max(years.length, 1)]), "var(--sun)", (value) => String(Math.round(value)), "Gns. fangster", { yScale: true });
+
+      const averageByWeek = (rows, getter) => {
+        const groups = new Map();
+        rows.forEach((row) => {
+          const value = Number(getter(row));
+          if (!Number.isFinite(value)) return;
+          const group = groups.get(row.week) ?? { sum: 0, count: 0 };
+          group.sum += value;
+          group.count += 1;
+          groups.set(row.week, group);
+        });
+        return [...groups.entries()]
+          .sort((a, b) => a[0] - b[0])
+          .map(([week, group]) => [String(week), group.sum / group.count]);
+      };
+
+      renderPlot(elements.weekFlowChart, averageByWeek(daily, (row) => row.flow_cms), "var(--water)", (value) => `${Math.round(value)} m³/s`, "Gns. vandføring", { yScale: true });
+      renderPlot(elements.weekTempChart, averageByWeek(daily, (row) => row.water_temperature_c), "var(--rose)", (value) => `${Math.round(value)} °C`, "Gns. vandtemperatur", { yScale: true });
+      renderPlot(elements.weekWeightChart, averageByWeek(selected, (row) => row.weight_kg), "var(--green)", (value) => `${Math.round(value)} kg`, "Gns. vægt", { yScale: true });
+      renderPlot(elements.equipmentChart, countBy(selected, (row) => row.equipment).slice(0, 12), "var(--rose)", (value) => String(Math.round(value)), "Antal fangster", { yScale: true });
+
+      const latestDate = catches.map((item) => parseDate(item.date)).filter(Boolean).sort((a, b) => b - a)[0];
+      const recent = latestDate
+        ? catches.filter((item) => {
+          const date = parseDate(item.date);
+          return date && (latestDate - date) / 86400000 <= 7;
+        })
+        : [];
+      const recentCounts = new Map();
+      recent.forEach((item) => {
+        if (!item.date) return;
+        recentCounts.set(item.date, (recentCounts.get(item.date) || 0) + 1);
+      });
+      const recentEntries = [...recentCounts.entries()]
+        .sort((a, b) => String(a[0]).localeCompare(String(b[0])))
+        .map(([date, count]) => [formatDate(date), count]);
+      renderPlot(elements.recentCatchChart, recentEntries, "var(--sun)", (value) => String(Math.round(value)), "Fangster", { yScale: true });
+    }
+
+    function renderMetrics() {
+      const latestFlow = dailyRows.filter((row) => Number.isFinite(row.flow_cms)).sort((a, b) => String(b.date).localeCompare(String(a.date)))[0];
+      const latestTemp = dailyRows.filter((row) => Number.isFinite(row.water_temperature_c)).sort((a, b) => String(b.date).localeCompare(String(a.date)))[0];
+      const latestTrend = dailyRows.filter((row) => row.water_level_trend).sort((a, b) => String(b.date).localeCompare(String(a.date)))[0];
+      elements.metricFlow.textContent = latestFlow ? formatNumber(latestFlow.flow_cms, " m³/s") : "-";
+      elements.metricTemp.textContent = latestTemp ? formatNumber(latestTemp.water_temperature_c, " °C") : "-";
+      elements.metricTrend.textContent = latestTrend ? trendLabel(latestTrend.water_level_trend) : "-";
+    }
+
+    const columns = [
+      ["date", "Dato", (item) => formatDate(item.date)],
+      ["time_of_day", "Tid", (item) => escapeHtml(item.time_of_day || "-")],
+      ["beat", "Vald", (item) => escapeHtml(item.beat || "-")],
+      ["fisher_name", "Fisker", (item) => escapeHtml(item.fisher_name || "-")],
+      ["species", "Art", (item) => escapeHtml(item.species || "-")],
+      ["weight_kg", "Vægt", (item) => formatNumber(item.weight_kg, " kg")],
+      ["length_cm", "Længde", (item) => formatNumber(item.length_cm, " cm")],
+      ["equipment", "Redskab", (item) => escapeHtml(item.equipment || "-")],
+      ["released_catch", "Genudsat", (item) => item.released_catch ? "Ja" : "Nej"],
+      ["detail_url", "Detaljer", (item) => item.detail_url ? `<a class="link" href="${escapeHtml(item.detail_url)}" target="_blank" rel="noreferrer">Åbn</a>` : "-"]
+    ];
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[char]));
+    }
+
+    function sortValue(item, key) {
+      if (key === "date") return `${item.date || ""} ${item.time_of_day || ""}`;
+      if (key === "time_of_day") return item.time_of_day || "";
+      if (key === "weight_kg" || key === "length_cm") return Number(item[key]) || 0;
+      if (key === "released_catch") return item.released_catch ? 1 : 0;
+      const value = item[key];
+      return String(value || "").toLocaleLowerCase("da-DK");
+    }
+
+    function filteredCatches() {
+      const query = normalizeText(elements.searchInput.value);
+      const year = elements.catchYearFilter.value;
+      const equipment = elements.equipmentFilter.value;
+      return catches.filter((item) => {
+        const haystack = normalizeText([item.beat, item.fishing_spot, item.fisher_name, item.equipment].join(" "));
+        return (!query || haystack.includes(query))
+          && (!year || String(item.history_year) === year)
+          && (!equipment || item.equipment === equipment);
+      }).sort((a, b) => {
+        const av = sortValue(a, sortState.key);
+        const bv = sortValue(b, sortState.key);
+        const direction = sortState.direction === "asc" ? 1 : -1;
+        if (av < bv) return -1 * direction;
+        if (av > bv) return 1 * direction;
+        return 0;
+      });
+    }
+
+    function renderCatchTable() {
+      elements.catchTableHead.innerHTML = columns.map(([key, label]) => (
+        `<th data-sort-key="${key}">${label}${sortState.key === key ? (sortState.direction === "asc" ? " ↑" : " ↓") : ""}</th>`
+      )).join("");
+      const rows = filteredCatches();
+      elements.catchRows.innerHTML = rows.map((item) => `
+        <tr>
+          ${columns.map(([, label, render]) => `<td data-label="${label}">${render(item)}</td>`).join("")}
+        </tr>
+      `).join("");
+      elements.catchEmpty.hidden = rows.length > 0;
+    }
+
+    function renderOptions(select, values) {
+      const selected = select.value;
+      select.innerHTML = '<option value="">Alle</option>';
+      select.insertAdjacentHTML("beforeend", values.map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join(""));
+      select.value = values.map(String).includes(selected) ? selected : "";
+    }
+
+    function renderWeekOptions(select, rows) {
+      const weeks = [...new Set(rows.map((row) => row.week).filter(Number.isFinite))]
+        .sort((a, b) => a - b);
+      const selected = select.value;
+      select.innerHTML = '<option value="">Alle</option>';
+      select.insertAdjacentHTML("beforeend", weeks.map((week) => `<option value="${week}">Uge ${week}</option>`).join(""));
+      select.value = weeks.map(String).includes(selected) ? selected : "";
+    }
+
+    function renderFilters() {
+      const years = [...new Set(catches.map((item) => item.history_year).filter(Number.isFinite))].sort((a, b) => b - a);
+      const equipment = [...new Set(catches.map((item) => item.equipment).filter(Boolean))].sort((a, b) => a.localeCompare(b, "da-DK"));
+      renderOptions(elements.catchYearFilter, years);
+      renderOptions(elements.statsYearFilter, years);
+      renderOptions(elements.valdYearFilter, years);
+      renderWeekOptions(elements.valdWeekFilter, catches);
+      renderOptions(elements.equipmentFilter, equipment);
+    }
+
+    function slug(value) {
+      return normalizeText(value)
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "") || "vald";
+    }
+
+    function catchTimeValue(value) {
+      const match = String(value ?? "").match(/^(\d{1,2})(?::(\d{2}))?/);
+      if (!match) return null;
+      const hour = Number(match[1]);
+      const minute = Number(match[2] ?? 0);
+      if (!Number.isFinite(hour) || hour < 0 || hour > 23 || !Number.isFinite(minute)) return null;
+      return hour + Math.max(0, Math.min(59, minute)) / 60;
+    }
+
+    function intervalHistogram(values, binSize, fixedStarts = null) {
+      if (!values.length && !fixedStarts) return { entries: [], labels: [] };
+      const starts = fixedStarts ?? (() => {
+        const min = Math.floor(Math.min(...values) / binSize) * binSize;
+        const max = Math.floor(Math.max(...values) / binSize) * binSize;
+        const bins = [];
+        for (let start = min; start <= max; start += binSize) bins.push(start);
+        return bins;
+      })();
+      const counts = new Map(starts.map((start) => [start, 0]));
+      values.forEach((value) => {
+        const start = Math.floor(value / binSize) * binSize;
+        if (counts.has(start)) counts.set(start, counts.get(start) + 1);
+      });
+      const labels = starts.map((start, index) => (index % Math.max(1, Math.ceil(starts.length / 7)) === 0 ? String(start) : ""));
+      return {
+        entries: starts.map((start) => [`${start}-${start + binSize}`, counts.get(start) || 0]),
+        labels
+      };
+    }
+
+    function trendEntries(rows) {
+      const labels = new Map([
+        ["stigende", "Stigende"],
+        ["neutral", "Neutral"],
+        ["faldende", "Faldende"]
+      ]);
+      const counts = new Map([...labels.keys()].map((key) => [key, 0]));
+      rows.forEach((row) => {
+        const key = normalizeText(row.water_level_trend);
+        if (counts.has(key)) counts.set(key, counts.get(key) + 1);
+      });
+      return [...counts.entries()].map(([key, count]) => [labels.get(key), count]);
+    }
+
+    function filteredValdRows() {
+      const selectedWeek = elements.valdWeekFilter.value;
+      const selectedYear = elements.valdYearFilter.value;
+      return catches.filter((item) => (
+        item.beat
+        && (!selectedWeek || String(item.week) === selectedWeek)
+        && (!selectedYear || String(item.history_year) === selectedYear)
+      ));
+    }
+
+    function groupedValdRows(rows) {
+      const groups = new Map();
+      rows.forEach((item) => {
+        const key = item.beat || "-";
+        const group = groups.get(key) ?? {
+          beat: key,
+          catchCount: 0,
+          flowSum: 0,
+          flowCount: 0,
+          tempSum: 0,
+          tempCount: 0,
+          years: new Set(),
+          rows: []
+        };
+        group.catchCount += 1;
+        group.years.add(item.history_year);
+        group.rows.push(item);
+        if (Number.isFinite(item.flow_cms)) {
+          group.flowSum += item.flow_cms;
+          group.flowCount += 1;
+        }
+        if (Number.isFinite(item.water_temperature_c)) {
+          group.tempSum += item.water_temperature_c;
+          group.tempCount += 1;
+        }
+        groups.set(key, group);
+      });
+      return [...groups.values()]
+        .map((group) => ({
+          ...group,
+          averageFlow: group.flowCount ? group.flowSum / group.flowCount : null,
+          averageTemp: group.tempCount ? group.tempSum / group.tempCount : null,
+          yearsText: [...group.years].filter(Number.isFinite).sort((a, b) => a - b).join(", ")
+        }))
+        .sort((a, b) => b.catchCount - a.catchCount || a.beat.localeCompare(b.beat, "da-DK", { numeric: true }));
+    }
+
+    function renderValdSections(groups) {
+      return groups.map((group) => {
+        const flowValues = group.rows.filter((row) => Number.isFinite(row.flow_cms)).map((row) => row.flow_cms);
+        const tempValues = group.rows.filter((row) => Number.isFinite(row.water_temperature_c)).map((row) => row.water_temperature_c);
+        const timeValues = group.rows.map((row) => catchTimeValue(row.time_of_day)).filter((value) => value !== null);
+        const flowHistogram = intervalHistogram(flowValues, 5);
+        const tempHistogram = intervalHistogram(tempValues, 1);
+        const timeHistogram = intervalHistogram(timeValues, 1, Array.from({ length: 24 }, (_, index) => index));
+        return `
+          <section class="history-section" id="vald-${escapeHtml(slug(group.beat))}">
+            <h3 class="history-section-title">${escapeHtml(group.beat)}</h3>
+            <div class="history-section-charts">
+              <div class="chart-panel">
+                <h3>Vandføring (m<sup>3</sup>/s)</h3>
+                ${plotHtml(flowHistogram.entries, "var(--water)", (value) => String(Math.round(value)), "Fangster", { yScale: true, xTickLabels: flowHistogram.labels })}
+              </div>
+              <div class="chart-panel">
+                <h3>Vandstandstrend</h3>
+                ${plotHtml(trendEntries(group.rows), "var(--green)", (value) => String(Math.round(value)), "Fangster", { yScale: true })}
+              </div>
+              <div class="chart-panel">
+                <h3>Vandtemperatur (°C)</h3>
+                ${tempHistogram.entries.length ? plotHtml(tempHistogram.entries, "var(--rose)", (value) => String(Math.round(value)), "Fangster", { yScale: true, xTickLabels: tempHistogram.labels }) : '<div class="empty">Ingen vandtemperaturdata for fangsterne.</div>'}
+              </div>
+              <div class="chart-panel">
+                <h3>Fangsttidspunkt</h3>
+                ${plotHtml(timeHistogram.entries, "var(--sun)", (value) => String(Math.round(value)), "Fangster", { yScale: true, xTickLabels: Array.from({ length: 24 }, (_, hour) => (hour % 4 === 0 ? String(hour) : "")) })}
+              </div>
+            </div>
+          </section>
+        `;
+      }).join("");
+    }
+
+    function renderVald() {
+      const rows = filteredValdRows();
+      const groups = groupedValdRows(rows);
+      const selectedWeek = elements.valdWeekFilter.value;
+      const selectedYear = elements.valdYearFilter.value;
+      const filterText = `${selectedWeek ? ` · uge ${selectedWeek}` : ""}${selectedYear ? ` · ${selectedYear}` : ""}`;
+      elements.valdStatus.textContent = `${groups.length} vald · ${rows.length} fangster${filterText}`;
+      if (!groups.length) {
+        elements.valdContent.className = "empty";
+        elements.valdContent.textContent = `Ingen vald matcher filtrene${filterText}.`;
+        return;
+      }
+      elements.valdContent.className = "";
+      elements.valdContent.innerHTML = `
+        <div class="table-frame">
+          <table>
+            <thead>
+              <tr>
+                <th>Vald</th>
+                <th>Fangster</th>
+                <th>Gns. vandføring</th>
+                <th>Gns. vandtemp.</th>
+                <th>År</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${groups.map((group) => `
+                <tr>
+                  <td data-label="Vald">${escapeHtml(group.beat)}</td>
+                  <td data-label="Fangster"><a class="link" href="#vald-${escapeHtml(slug(group.beat))}">${group.catchCount}</a></td>
+                  <td data-label="Gns. vandføring">${group.averageFlow === null ? "-" : formatNumber(group.averageFlow, " m³/s")}</td>
+                  <td data-label="Gns. vandtemp.">${group.averageTemp === null ? "-" : formatNumber(group.averageTemp, " °C")}</td>
+                  <td data-label="År">${escapeHtml(group.yearsText || "-")}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        </div>
+        <div class="history-sections">${renderValdSections(groups)}</div>
+      `;
+    }
+
+    function renderLog() {
+      const missingBeat = catches.filter((item) => !item.beat);
+      const missingFlow = catches.filter((item) => !Number.isFinite(item.flow_cms));
+      const missingTemp = catches.filter((item) => !Number.isFinite(item.water_temperature_c));
+      elements.logContent.innerHTML = `
+        <p>JSON-fil: ${escapeHtml(HISTORY_DATA_URL)}</p>
+        <p>År i datasæt: ${escapeHtml((metadata.years || HISTORY_YEARS).join(", "))}</p>
+        <p>Fangster uden vald: ${missingBeat.length}</p>
+        <p>Fangster uden daglig vandføring: ${missingFlow.length}</p>
+        <p>Fangster uden daglig vandtemperatur: ${missingTemp.length}</p>
+      `;
+    }
+
+    async function fetchWaterSeries(station, type) {
+      const end = new Date();
+      const start = new Date(end.getTime() - 30 * 86400000);
+      const params = new URLSearchParams({
+        StationId: station.stationId,
+        Parameter: type.parameter,
+        ResolutionTime: 60,
+        ReferenceTime: `${start.toISOString()}/${end.toISOString()}`
+      });
+      const response = await fetch(`${HYDAPI_OBSERVATIONS_URL}?${params}`, {
+        headers: { Accept: "application/json", "X-API-Key": WATERLEVEL_API_KEY }
+      });
+      if (!response.ok) throw new Error(`NVE ${station.label} ${type.label}: ${response.status}`);
+      const json = await response.json();
+      const stationData = json.data?.[0] ?? {};
+      const observations = stationData.observations ?? [];
+      const points = observations
+        .map((point) => ({ time: new Date(point.time), value: Number(point.value) }))
+        .filter((point) => !Number.isNaN(point.time.getTime()) && Number.isFinite(point.value))
+        .sort((a, b) => a.time - b.time);
+      return {
+        stationName: stationData.stationName ?? station.label,
+        parameterName: stationData.parameterName ?? type.label,
+        unit: stationData.unit ?? type.unit,
+        createdAt: json.createdAt ? new Date(json.createdAt) : new Date(),
+        station,
+        type,
+        points
+      };
+    }
+
+    function waterMeasurementCard(data) {
+      const { points, type } = data;
+      if (!points.length) return "";
+      const width = 960;
+      const height = 420;
+      const pad = { left: 66, right: 26, top: 28, bottom: 54 };
+      const plotWidth = width - pad.left - pad.right;
+      const plotHeight = height - pad.top - pad.bottom;
+      const minTime = points[0].time.getTime();
+      const maxTime = points[points.length - 1].time.getTime();
+      const values = points.map((point) => point.value);
+      const minValue = Math.min(...values);
+      const maxValue = Math.max(...values);
+      const valuePadding = Math.max((maxValue - minValue) * 0.12, 0.02);
+      const yMin = minValue - valuePadding;
+      const yMax = maxValue + valuePadding;
+      const timeRange = Math.max(maxTime - minTime, 1);
+      const valueRange = Math.max(yMax - yMin, 0.01);
+      const x = (time) => pad.left + ((time.getTime() - minTime) / timeRange) * plotWidth;
+      const y = (value) => pad.top + ((yMax - value) / valueRange) * plotHeight;
+      const linePoints = points.map((point) => `${x(point.time).toFixed(1)},${y(point.value).toFixed(1)}`).join(" ");
+      const areaPoints = [
+        `${x(points[0].time).toFixed(1)},${pad.top + plotHeight}`,
+        linePoints,
+        `${x(points[points.length - 1].time).toFixed(1)},${pad.top + plotHeight}`
+      ].join(" ");
+      const yTicks = Array.from({ length: 5 }, (_, index) => yMin + ((yMax - yMin) / 4) * index).reverse();
+      const xTicks = Array.from({ length: 5 }, (_, index) => new Date(minTime + (timeRange / 4) * index));
+      const latest = points[points.length - 1];
+      return `
+        <article class="waterlevel-card">
+          <div class="waterlevel-head">
+            <div>
+              <h3 class="waterlevel-title">${escapeHtml(type.label)}</h3>
+              <p class="waterlevel-meta">${escapeHtml(data.stationName)} · ${escapeHtml(data.parameterName)} · ${points.length} timeværdier · opdateret ${waterlevelDateTimeFormat.format(data.createdAt)}</p>
+            </div>
+            <div class="waterlevel-latest">
+              <span>Seneste måling</span>
+              <strong>${formatNumber(latest.value, ` ${data.unit}`)}</strong>
+            </div>
+          </div>
+          <div class="waterlevel-chart">
+            <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(type.label)} ved ${escapeHtml(data.stationName)} de seneste 30 dage">
+              <rect width="${width}" height="${height}" fill="transparent"></rect>
+              ${yTicks.map((tick) => {
+                const tickY = y(tick);
+                return `
+                  <line class="waterlevel-grid" x1="${pad.left}" y1="${tickY.toFixed(1)}" x2="${width - pad.right}" y2="${tickY.toFixed(1)}"></line>
+                  <text class="waterlevel-axis" x="${pad.left - 12}" y="${(tickY + 4).toFixed(1)}" text-anchor="end">${formatNumber(tick)}</text>
+                `;
+              }).join("")}
+              ${xTicks.map((tick) => {
+                const tickX = x(tick);
+                return `
+                  <line class="waterlevel-grid" x1="${tickX.toFixed(1)}" y1="${pad.top}" x2="${tickX.toFixed(1)}" y2="${pad.top + plotHeight}"></line>
+                  <text class="waterlevel-axis" x="${tickX.toFixed(1)}" y="${height - 20}" text-anchor="middle">${waterlevelDateTimeFormat.format(tick)}</text>
+                `;
+              }).join("")}
+              <polygon class="waterlevel-fill" points="${areaPoints}" style="fill:${type.fill || "rgba(33, 118, 174, 0.12)"}"></polygon>
+              <polyline class="waterlevel-line" points="${linePoints}" style="stroke:${type.color}"></polyline>
+              <circle class="waterlevel-dot" cx="${x(latest.time).toFixed(1)}" cy="${y(latest.value).toFixed(1)}" r="6" style="fill:${type.color}"></circle>
+              <text class="waterlevel-axis" x="${pad.left}" y="20">${escapeHtml(data.unit)}</text>
+            </svg>
+          </div>
+        </article>
+      `;
+    }
+
+    async function loadWaterMeasurements() {
+      if (waterLoaded) return;
+      elements.waterStatus.textContent = "Henter vandmålinger fra NVE...";
+      elements.waterCharts.innerHTML = '<div class="empty">Vandmålinger indlæses...</div>';
+      const results = await Promise.all(WATER_STATIONS.flatMap((station) => WATER_TYPES.map(async (type) => {
+        try {
+          return await fetchWaterSeries(station, type);
+        } catch (error) {
+          console.warn(error);
+          return null;
+        }
+      })));
+      const loaded = results.filter((item) => item?.points?.length);
+      elements.waterCharts.innerHTML = loaded.map(waterMeasurementCard).join("");
+      const stationCount = new Set(loaded.map((item) => item.stationName)).size;
+      elements.waterStatus.textContent = `${stationCount} stationer · ${loaded.length} af ${WATER_STATIONS.length * WATER_TYPES.length} måleserier · seneste 30 dage`;
+      waterLoaded = true;
+    }
+
+    function waterLevelTrendFromDailyRows() {
+      const rows = dailyRows.filter((row) => Number.isFinite(row.water_level_m)).sort((a, b) => String(a.date).localeCompare(String(b.date)));
+      if (rows.length < 2) return "neutral";
+      const latest = rows[rows.length - 1];
+      const previous = rows[rows.length - 2];
+      const threeDaysAgo = rows[Math.max(0, rows.length - 4)];
+      const trendFrom = (a, b) => {
+        const delta = a - b;
+        if (delta > WATER_LEVEL_NEUTRAL_THRESHOLD_M) return "stigende";
+        if (delta < -WATER_LEVEL_NEUTRAL_THRESHOLD_M) return "faldende";
+        return "neutral";
+      };
+      const dailyTrend = trendFrom(latest.water_level_m, previous.water_level_m);
+      return dailyTrend === "neutral" ? trendFrom(latest.water_level_m, threeDaysAgo.water_level_m) : dailyTrend;
+    }
+
+    function renderAll() {
+      renderMetrics();
+      renderFilters();
+      renderStats();
+      renderCatchTable();
+      renderVald();
+      renderLog();
+      elements.metricTrend.textContent = trendLabel(waterLevelTrendFromDailyRows());
+      openHashTarget();
+    }
+
+    async function loadData() {
+      try {
+        const response = await fetch(`${HISTORY_DATA_URL}?v=${Date.now()}`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        metadata = await response.json();
+        catches = (metadata.catches ?? []).map(normalizeCatch);
+        dailyRows = (metadata.daily_flow ?? []).map(normalizeDaily);
+        renderAll();
+        const updated = metadata.generated_at ? dateTimeFormat.format(new Date(metadata.generated_at)) : "-";
+        const years = metadata.years?.length ? metadata.years : HISTORY_YEARS;
+        elements.dataStatus.textContent = `${catches.length} laksefangster fra ${years.join("-")} indlæst.`;
+        elements.footerStatus.textContent = `Sidst opdateret ${updated}. Datakilde: Elveguiden Gaula og NVE HydAPI.`;
+      } catch (error) {
+        elements.dataStatus.textContent = "Gaula-data kunne ikke indlæses.";
+        elements.footerStatus.textContent = "Kunne ikke læse data/gaula-history.json.";
+        document.querySelector("#overview").insertAdjacentHTML("afterbegin", '<p class="error">Kunne ikke læse gaula-history.json. Kør R-scriptet og genindlæs siden.</p>');
+        console.error(error);
+      }
+    }
+
+    elements.searchInput.addEventListener("input", renderCatchTable);
+    elements.catchYearFilter.addEventListener("change", renderCatchTable);
+    elements.equipmentFilter.addEventListener("change", renderCatchTable);
+    elements.statsYearFilter.addEventListener("change", renderStats);
+    elements.valdWeekFilter.addEventListener("change", renderVald);
+    elements.valdYearFilter.addEventListener("change", renderVald);
+    elements.catchTableHead.addEventListener("click", (event) => {
+      const header = event.target.closest("[data-sort-key]");
+      if (!header) return;
+      const key = header.dataset.sortKey;
+      sortState = {
+        key,
+        direction: sortState.key === key && sortState.direction === "asc" ? "desc" : "asc"
+      };
+      renderCatchTable();
+    });
+
+    openHashTarget() || activateTab("overview", false);
+    loadData();
+  </script>
+</body>
+</html>
