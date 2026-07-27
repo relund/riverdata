@@ -4,8 +4,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: run-script-gaula-${{ github.ref }}
-  cancel-in-progress: true
+  group: riverdata-auto-commit-${{ github.ref }}
+  cancel-in-progress: false
 
 on:
   push:
