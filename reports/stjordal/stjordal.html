@@ -1553,6 +1553,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
     const CATCH_YEARS = HISTORY_YEARS;
     const HVID_ZONE_DISTANCE_METERS = 200;
     const MAX_PLOT_WEEK = 36;
+    const HISTORY_WEIGHT_START_WEEK = 22;
     const LIVE_CURRENT_STATION_ID = "124.12.0";
     const WATER_LEVEL_NEUTRAL_THRESHOLD_M = 0.05;
     const WATER_MEASUREMENT_STATIONS = [
@@ -3798,6 +3799,8 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
           groups.set(key, {
             beat: key,
             catchCount: 0,
+            weightSum: 0,
+            weightCount: 0,
             flowSum: 0,
             flowCount: 0,
             temperatureSum: 0,
@@ -3809,6 +3812,10 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         const group = groups.get(key);
         group.catchCount += 1;
         group.years.add(item.year);
+        if (item.weightValue !== null) {
+          group.weightSum += item.weightValue;
+          group.weightCount += 1;
+        }
         if (item.flowValue !== null) {
           group.flowSum += item.flowValue;
           group.flowCount += 1;
@@ -3823,6 +3830,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
         .map((group) => ({
           beat: group.beat,
           catchCount: group.catchCount,
+          averageWeight: group.weightCount ? group.weightSum / group.weightCount : null,
           averageFlow: group.flowCount ? group.flowSum / group.flowCount : null,
           averageTemperature: group.temperatureCount ? group.temperatureSum / group.temperatureCount : null,
           years: [...group.years].sort((a, b) => a - b)
@@ -4090,6 +4098,30 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       return [...counts.entries()].map(([key, count]) => [labels.get(key), count]);
     }
 
+    function averageWeightByWeekEntries(rows) {
+      const groups = new Map();
+      rows.forEach((row) => {
+        const week = Number(row.week);
+        const weight = Number(row.weightValue);
+        if (!Number.isFinite(week) || !Number.isFinite(weight)) return;
+        const group = groups.get(week) ?? { sum: 0, count: 0 };
+        group.sum += weight;
+        group.count += 1;
+        groups.set(week, group);
+      });
+      return [...groups.entries()]
+        .sort((a, b) => a[0] - b[0]);
+    }
+
+    function averageWeightByWeekPlotEntries(rows) {
+      const groups = new Map(averageWeightByWeekEntries(rows));
+      return Array.from({ length: MAX_PLOT_WEEK - HISTORY_WEIGHT_START_WEEK + 1 }, (_, index) => {
+        const week = HISTORY_WEIGHT_START_WEEK + index;
+        const group = groups.get(week);
+        return [String(week), group ? group.sum / group.count : 0];
+      });
+    }
+
     function renderHistorySections(sourceRows, weekFilter, yearFilter = null, sectionPrefix = "hvid", layerFilter = null) {
       const rows = filteredHistoryRows(sourceRows, weekFilter, yearFilter, layerFilter)
         .filter((row) => Number(row.week) <= MAX_PLOT_WEEK);
@@ -4133,6 +4165,8 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
           const timeHistogram = timeHistogramData(timeValues, timeHistogramBins(timeValues));
           const trendEntries = waterLevelTrendEntries(beatRows);
           const trendMarker = trendMarkerForEntries(trendEntries, latestWaterLevel);
+          const weightEntries = averageWeightByWeekPlotEntries(beatRows);
+          const hasWeightEntries = weightEntries.some(([, value]) => Number(value) > 0);
           return `
             <section class="history-section" id="${escapeHtml(sectionId)}">
               <h3 class="history-section-title">${escapeHtml(beat)}</h3>
@@ -4158,6 +4192,12 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
                   ${timeHistogram.entries.length
                     ? plotHtml(timeHistogram.entries, "var(--sun)", (value) => value, "Fangster", { yScale: true, xTickLabels: timeHistogram.xTickLabels })
                     : '<div class="empty">Ingen fangsttidspunkter for fangsterne i dette valg.</div>'}
+                </div>
+                <div>
+                  <h4 class="history-chart-title">Gns. vægt pr. uge</h4>
+                  ${hasWeightEntries
+                    ? plotHtml(weightEntries, "var(--accent)", (value) => kg(value), "Gns. vægt", { yScale: true })
+                    : '<div class="empty">Ingen vægtdata for fangsterne i dette valg.</div>'}
                 </div>
               </div>
             </section>
@@ -4187,14 +4227,15 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       const guideHtml = includeFlowSections && sectionsHtml ? `
         <section class="history-guide" aria-labelledby="${escapeHtml(guideTitleId)}">
           <h3 id="${escapeHtml(guideTitleId)}">Sådan læses figurerne</h3>
-          <p>Figurerne bygger på de laks, der er fanget på flue, matchet til ${escapeHtml(sectionScopeLabel)} og omfattet af de valgte filtre. Y-aksen viser altid antal fangster.</p>
+          <p>Figurerne bygger på de laks, der er fanget på flue, matchet til ${escapeHtml(sectionScopeLabel)} og omfattet af de valgte filtre. Y-aksen viser antal fangster, undtagen vægtfiguren hvor y-aksen viser gennemsnitlig vægt.</p>
           <ul>
             <li><strong>Vandføring:</strong> X-aksen viser vandføring i intervaller på 5 m³/s. Hver søjle viser, hvor mange laks der blev fanget, mens vandføringen lå i intervallet. En manglende søjle betyder nul fangster i intervallet.</li>
             <li><strong>Vandstandstrend:</strong> Fangsterne fordeles efter dagens ændring i vandstand. Små døgnændringer kontrolleres også mod vandstanden tre dage tidligere, så langsomme stigninger og fald registreres.</li>
             <li><strong>Vandtemperatur:</strong> X-aksen viser temperaturintervaller på 1 °C. Hver søjle viser antal fangster ved temperaturer i det pågældende interval.</li>
             <li><strong>Fangsttidspunkt:</strong> X-aksen viser døgnets timer. Søjlerne viser, hvornår på døgnet fangsterne blev registreret.</li>
+            <li><strong>Gns. vægt pr. uge:</strong> X-aksen viser ugenummer. Hver søjle viser gennemsnitsvægten for de fangster, der er registreret i ugen.</li>
           </ul>
-          <p>Det gule punkt på de tre første figurers x-akse viser den seneste måling eller trend i datasættet. Hvis den aktuelle vandføring eller temperatur ligger uden for fangsternes område, udvides x-aksen frem til punktet. Fangsttidspunkt har ikke et gult punkt.</p>
+          <p>Det gule punkt på miljøfigurernes x-akse viser den seneste måling eller trend i datasættet. Hvis den aktuelle vandføring eller temperatur ligger uden for fangsternes område, udvides x-aksen frem til punktet. Fangsttidspunkt og vægtfiguren har ikke et gult punkt.</p>
           <p>Graferne beskriver de registrerede fangstforhold. De viser ikke i sig selv, at en bestemt vandføring, trend, temperatur eller tid på døgnet giver større fangstchance.</p>
         </section>
       ` : "";
@@ -4205,6 +4246,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
               <tr>
                 <th>Vald</th>
                 <th>Fangster</th>
+                <th>Gns. vægt</th>
                 <th>Gns. vandføring</th>
                 ${includeFlowSections ? "<th>Gns. vandtemp.</th>" : ""}
                 <th>År</th>
@@ -4215,6 +4257,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
                 <tr>
                   <td data-label="Vald"><button class="beat-link" type="button" data-map-beat="${escapeHtml(row.beat)}">${escapeHtml(row.beat)}</button></td>
                   <td data-label="Fangster">${includeFlowSections ? `<a class="link" href="#${escapeHtml(historySectionId(row.beat, sectionPrefix))}">${row.catchCount}</a>` : row.catchCount}</td>
+                  <td data-label="Gns. vægt">${row.averageWeight === null ? "-" : kg(row.averageWeight)}</td>
                   <td data-label="Gns. vandføring">${row.averageFlow === null ? "-" : `${numberFormat.format(row.averageFlow)} m³/s`}</td>
                   ${includeFlowSections ? `<td data-label="Gns. vandtemp.">${row.averageTemperature === null ? "-" : `${numberFormat.format(row.averageTemperature)} °C`}</td>` : ""}
                   <td data-label="År">${escapeHtml(row.years.join(", "))}</td>
@@ -4291,6 +4334,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
             week: item.week,
             year: item.history_year,
             timeOfDay: item.time_of_day,
+            weightValue: Number.isFinite(Number(item.weight_kg)) ? Number(item.weight_kg) : null,
             flowValue: item.flow_cms,
             waterLevelTrend: item.water_level_trend,
             temperatureValue: item.water_temperature_c
@@ -4348,6 +4392,7 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
             week: item.week,
             year: item.history_year,
             timeOfDay: item.time_of_day,
+            weightValue: Number.isFinite(Number(item.weight_kg)) ? Number(item.weight_kg) : null,
             flowValue: item.flow_cms,
             waterLevelTrend: item.water_level_trend,
             temperatureValue: item.water_temperature_c

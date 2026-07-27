@@ -564,10 +564,44 @@
       font-size: 0.78rem;
     }
 
+    .scroll-top-button {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1000;
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: var(--ink);
+      color: #fff;
+      font: inherit;
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+
+    .scroll-top-button:hover,
+    .scroll-top-button:focus-visible {
+      background: var(--accent-strong);
+    }
+
+    .scroll-top-button[hidden] {
+      display: none;
+    }
+
     @media (max-width: 760px) {
       .shell {
         width: min(100% - 20px, 1180px);
         padding-top: 20px;
+      }
+
+      .scroll-top-button {
+        right: 12px;
+        bottom: 12px;
       }
 
       .tabs {
@@ -890,6 +924,8 @@
     <footer id="footerStatus">Gaula-data indlæses...</footer>
   </main>
 
+  <button class="scroll-top-button" id="scrollTopButton" type="button" aria-label="Til toppen" title="Til toppen" hidden>↑</button>
+
   <script>
     const CURRENT_YEAR = new Date().getFullYear();
     const HISTORY_START_YEAR = 2023;
@@ -900,6 +936,7 @@
     const HYDAPI_OBSERVATIONS_URL = "https://hydapi.nve.no/api/v1/Observations";
     const WATERLEVEL_API_KEY = "di1JUtpivkKyFZ1bGoXF5Q==";
     const MAX_PLOT_WEEK = 36;
+    const VALD_WEIGHT_START_WEEK = 22;
     const WATER_LEVEL_NEUTRAL_THRESHOLD_M = 0.05;
     const WATER_STATIONS = [
       { id: "gaulfoss", label: "Gaulfoss", stationId: "122.9.0" },
@@ -960,11 +997,21 @@
       tabSelect: document.querySelector("#tabSelect"),
       waterStatus: document.querySelector("#waterStatus"),
       waterCharts: document.querySelector("#waterCharts"),
-      logContent: document.querySelector("#logContent")
+      logContent: document.querySelector("#logContent"),
+      scrollTopButton: document.querySelector("#scrollTopButton")
     };
 
     elements.currentYear.textContent = CURRENT_YEAR;
     document.title = `Gaula ${CURRENT_YEAR}`;
+
+    elements.scrollTopButton.addEventListener("click", () => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+
+    window.addEventListener("scroll", () => {
+      elements.scrollTopButton.hidden = window.scrollY < 320;
+    }, { passive: true });
 
     const tabHashes = {
       overview: "oversigt",
@@ -1336,10 +1383,11 @@
       return hour + Math.max(0, Math.min(59, minute)) / 60;
     }
 
-    function intervalHistogram(values, binSize, fixedStarts = null) {
+    function intervalHistogram(values, binSize, fixedStarts = null, minStart = null) {
       if (!values.length && !fixedStarts) return { entries: [], labels: [] };
       const starts = fixedStarts ?? (() => {
-        const min = Math.floor(Math.min(...values) / binSize) * binSize;
+        const rawMin = Math.floor(Math.min(...values) / binSize) * binSize;
+        const min = Number.isFinite(minStart) ? Math.max(minStart, rawMin) : rawMin;
         const max = Math.floor(Math.max(...values) / binSize) * binSize;
         const bins = [];
         for (let start = min; start <= max; start += binSize) bins.push(start);
@@ -1388,6 +1436,8 @@
         const group = groups.get(key) ?? {
           beat: key,
           catchCount: 0,
+          weightSum: 0,
+          weightCount: 0,
           flowSum: 0,
           flowCount: 0,
           tempSum: 0,
@@ -1398,6 +1448,10 @@
         group.catchCount += 1;
         group.years.add(item.history_year);
         group.rows.push(item);
+        if (Number.isFinite(item.weight_kg)) {
+          group.weightSum += item.weight_kg;
+          group.weightCount += 1;
+        }
         if (Number.isFinite(item.flow_cms)) {
           group.flowSum += item.flow_cms;
           group.flowCount += 1;
@@ -1411,6 +1465,7 @@
       return [...groups.values()]
         .map((group) => ({
           ...group,
+          averageWeight: group.weightCount ? group.weightSum / group.weightCount : null,
           averageFlow: group.flowCount ? group.flowSum / group.flowCount : null,
           averageTemp: group.tempCount ? group.tempSum / group.tempCount : null,
           yearsText: [...group.years].filter(Number.isFinite).sort((a, b) => a - b).join(", ")
@@ -1418,14 +1473,36 @@
         .sort((a, b) => b.catchCount - a.catchCount || a.beat.localeCompare(b.beat, "da-DK", { numeric: true }));
     }
 
+    function averageWeightByWeekEntries(rows) {
+      const groups = new Map();
+      rows.forEach((row) => {
+        const week = Number(row.week);
+        const weight = Number(row.weight_kg);
+        if (!Number.isFinite(week) || !Number.isFinite(weight)) return;
+        const group = groups.get(week) ?? { sum: 0, count: 0 };
+        group.sum += weight;
+        group.count += 1;
+        groups.set(week, group);
+      });
+      return Array.from({ length: MAX_PLOT_WEEK - VALD_WEIGHT_START_WEEK + 1 }, (_, index) => {
+        const week = VALD_WEIGHT_START_WEEK + index;
+        const group = groups.get(week);
+        return [String(week), group ? group.sum / group.count : 0];
+      });
+    }
+
     function renderValdSections(groups) {
       return groups.map((group) => {
         const flowValues = group.rows.filter((row) => Number.isFinite(row.flow_cms)).map((row) => row.flow_cms);
-        const tempValues = group.rows.filter((row) => Number.isFinite(row.water_temperature_c)).map((row) => row.water_temperature_c);
+        const tempValues = group.rows
+          .filter((row) => Number.isFinite(row.water_temperature_c) && row.water_temperature_c >= 3)
+          .map((row) => row.water_temperature_c);
         const timeValues = group.rows.map((row) => catchTimeValue(row.time_of_day)).filter((value) => value !== null);
         const flowHistogram = intervalHistogram(flowValues, 5);
-        const tempHistogram = intervalHistogram(tempValues, 1);
+        const tempHistogram = intervalHistogram(tempValues, 1, null, 3);
         const timeHistogram = intervalHistogram(timeValues, 1, Array.from({ length: 24 }, (_, index) => index));
+        const weightEntries = averageWeightByWeekEntries(group.rows);
+        const hasWeightEntries = weightEntries.some(([, value]) => Number(value) > 0);
         return `
           <section class="history-section" id="vald-${escapeHtml(slug(group.beat))}">
             <h3 class="history-section-title">${escapeHtml(group.beat)}</h3>
@@ -1445,6 +1522,10 @@
               <div class="chart-panel">
                 <h3>Fangsttidspunkt</h3>
                 ${plotHtml(timeHistogram.entries, "var(--sun)", (value) => String(Math.round(value)), "Fangster", { yScale: true, xTickLabels: Array.from({ length: 24 }, (_, hour) => (hour % 4 === 0 ? String(hour) : "")) })}
+              </div>
+              <div class="chart-panel">
+                <h3>Gns. vægt pr. uge</h3>
+                ${hasWeightEntries ? plotHtml(weightEntries, "var(--green)", (value) => formatNumber(value, " kg"), "Gns. vægt", { yScale: true }) : '<div class="empty">Ingen vægtdata for fangsterne.</div>'}
               </div>
             </div>
           </section>
@@ -1472,6 +1553,7 @@
               <tr>
                 <th>Vald</th>
                 <th>Fangster</th>
+                <th>Gns. vægt</th>
                 <th>Gns. vandføring</th>
                 <th>Gns. vandtemp.</th>
                 <th>År</th>
@@ -1482,6 +1564,7 @@
                 <tr>
                   <td data-label="Vald">${escapeHtml(group.beat)}</td>
                   <td data-label="Fangster"><a class="link" href="#vald-${escapeHtml(slug(group.beat))}">${group.catchCount}</a></td>
+                  <td data-label="Gns. vægt">${group.averageWeight === null ? "-" : formatNumber(group.averageWeight, " kg")}</td>
                   <td data-label="Gns. vandføring">${group.averageFlow === null ? "-" : formatNumber(group.averageFlow, " m³/s")}</td>
                   <td data-label="Gns. vandtemp.">${group.averageTemp === null ? "-" : formatNumber(group.averageTemp, " °C")}</td>
                   <td data-label="År">${escapeHtml(group.yearsText || "-")}</td>
