@@ -4,8 +4,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: riverdata-auto-commit-${{ github.ref }}
-  cancel-in-progress: false
+  group: run-script-lrn-${{ github.ref }}
+  cancel-in-progress: true
 
 on:
   push:
@@ -53,11 +53,25 @@ jobs:
         run: Rscript script_lrn.R
 
       - name: Commit results
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "gHA Stjordal data build: ${{ github.run_number }}"
-          commit_user_name: github-actions[bot]
-          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
-          file_pattern: "data/stjordal-history.json docs/stjordal/*"
-          skip_fetch: false
-          skip_dirty_check: false
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/stjordal-history.json docs/stjordal/*
+          if git diff --cached --quiet; then
+            echo "No Stjordal data changes to commit."
+            exit 0
+          fi
+          git commit -m "gHA Stjordal data build: ${{ github.run_number }}"
+          for attempt in 1 2 3; do
+            git fetch --depth=20 origin master
+            git rebase origin/master
+            if git push origin HEAD:master; then
+              exit 0
+            fi
+            echo "Push failed on attempt ${attempt}; retrying after rebase..."
+            sleep 5
+          done
+          echo "Could not push Stjordal data commit after retries."
+          exit 1
