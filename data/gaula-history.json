@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T11:06:36Z",
+  "generated_at": "2026-07-28T12:24:34Z",
   "river_id": 25,
   "station_id": "122.9.0",
   "temperature_station_id": "122.11.0",
@@ -29,6 +29,29 @@
   },
   "catches": [
     {
+      "id": "738425",
+      "date": "2026-07-28",
+      "time_of_day": "13:00",
+      "week": 31,
+      "year": 2026,
+      "river": "Gaula",
+      "beat": "Flaskhølen - Forset - Osøy - Hovstad",
+      "fishing_spot": null,
+      "fisher_name": "Torgeir Lunde",
+      "species": "Laks",
+      "weight_kg": 1.9,
+      "length_cm": 58,
+      "equipment": "Flue",
+      "released_catch": true,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/738425?riverId=25",
+      "flow_cms": 8.4093,
+      "flow_trend": "neutral",
+      "water_level_m": 0.8059,
+      "water_level_trend": "neutral",
+      "water_temperature_c": 13.3797
+    },
+    {
       "id": "738286",
       "date": "2026-07-28",
       "time_of_day": "11:45",
@@ -45,11 +68,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/738286?riverId=25",
-      "flow_cms": 8.3781,
+      "flow_cms": 8.4093,
       "flow_trend": "neutral",
-      "water_level_m": 0.803,
+      "water_level_m": 0.8059,
       "water_level_trend": "neutral",
-      "water_temperature_c": 13.3651
+      "water_temperature_c": 13.3797
     },
     {
       "id": "738283",
@@ -68,11 +91,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/738283?riverId=25",
-      "flow_cms": 8.3781,
+      "flow_cms": 8.4093,
       "flow_trend": "neutral",
-      "water_level_m": 0.803,
+      "water_level_m": 0.8059,
       "water_level_trend": "neutral",
-      "water_temperature_c": 13.3651
+      "water_temperature_c": 13.3797
     },
     {
       "id": "738303",
@@ -91,11 +114,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/738303?riverId=25",
-      "flow_cms": 8.3781,
+      "flow_cms": 8.4093,
       "flow_trend": "neutral",
-      "water_level_m": 0.803,
+      "water_level_m": 0.8059,
       "water_level_trend": "neutral",
-      "water_temperature_c": 13.3651
+      "water_temperature_c": 13.3797
     },
     {
       "id": "738230",
@@ -114,11 +137,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/738230?riverId=25",
-      "flow_cms": 8.3781,
+      "flow_cms": 8.4093,
       "flow_trend": "neutral",
-      "water_level_m": 0.803,
+      "water_level_m": 0.8059,
       "water_level_trend": "neutral",
-      "water_temperature_c": 13.3651
+      "water_temperature_c": 13.3797
     },
     {
       "id": "738294",
@@ -137,11 +160,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/738294?riverId=25",
-      "flow_cms": 8.3781,
+      "flow_cms": 8.4093,
       "flow_trend": "neutral",
-      "water_level_m": 0.803,
+      "water_level_m": 0.8059,
       "water_level_trend": "neutral",
-      "water_temperature_c": 13.3651
+      "water_temperature_c": 13.3797
     },
     {
       "id": "738239",
@@ -160,11 +183,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/738239?riverId=25",
-      "flow_cms": 8.3781,
+      "flow_cms": 8.4093,
       "flow_trend": "neutral",
-      "water_level_m": 0.803,
+      "water_level_m": 0.8059,
       "water_level_trend": "neutral",
-      "water_temperature_c": 13.3651
+      "water_temperature_c": 13.3797
     },
     {
       "id": "738033",
@@ -235680,11 +235703,11 @@
     },
     {
       "date": "2026-07-28",
-      "flow_cms": 8.3781,
+      "flow_cms": 8.4093,
       "flow_trend": "neutral",
-      "water_level_m": 0.803,
+      "water_level_m": 0.8059,
       "water_level_trend": "neutral",
-      "water_temperature_c": 13.3651
+      "water_temperature_c": 13.3797
     }
   ]
 }
