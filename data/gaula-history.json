@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T03:51:42Z",
+  "generated_at": "2026-07-28T07:18:30Z",
   "river_id": 25,
   "station_id": "122.9.0",
   "temperature_station_id": "122.11.0",
@@ -6270,7 +6270,7 @@
       "river": "Gaula",
       "beat": "Tislauan Fiskevald Søndre/Tisløv, Melhus",
       "fishing_spot": null,
-      "fisher_name": "Runar Bergsmyr",
+      "fisher_name": "Runar Løvseth Bergsmyr",
       "species": "Laks",
       "weight_kg": 1.8,
       "length_cm": 56,
@@ -6316,7 +6316,7 @@
       "river": "Gaula",
       "beat": "Tislauan Fiskevald Søndre/Tisløv, Melhus",
       "fishing_spot": null,
-      "fisher_name": "Runar Bergsmyr",
+      "fisher_name": "Runar Løvseth Bergsmyr",
       "species": "Laks",
       "weight_kg": 1.2,
       "length_cm": 50,
@@ -235542,11 +235542,11 @@
     },
     {
       "date": "2026-07-28",
-      "flow_cms": 8.2241,
+      "flow_cms": 8.2939,
       "flow_trend": "neutral",
-      "water_level_m": 0.7955,
+      "water_level_m": 0.7989,
       "water_level_trend": "neutral",
-      "water_temperature_c": 13.2966
+      "water_temperature_c": 13.2923
     }
   ]
 }
