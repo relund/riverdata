@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T04:39:51Z",
+  "generated_at": "2026-07-30T07:57:22Z",
   "river_id": 25,
   "station_id": "122.9.0",
   "temperature_station_id": "122.11.0",
@@ -28,6 +28,29 @@
     "source": "daily average water temperature"
   },
   "catches": [
+    {
+      "id": "740258",
+      "date": "2026-07-30",
+      "time_of_day": "05:30",
+      "week": 31,
+      "year": 2026,
+      "river": "Gaula",
+      "beat": "Tranmæl",
+      "fishing_spot": null,
+      "fisher_name": "Thomas Martin",
+      "species": "Laks",
+      "weight_kg": 1.9,
+      "length_cm": 58,
+      "equipment": "Flue",
+      "released_catch": true,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/740258?riverId=25",
+      "flow_cms": 8.5767,
+      "flow_trend": "faldende",
+      "water_level_m": 0.8126,
+      "water_level_trend": "faldende",
+      "water_temperature_c": 14.9586
+    },
     {
       "id": "740166",
       "date": "2026-07-29",
@@ -236708,11 +236731,11 @@
     },
     {
       "date": "2026-07-30",
-      "flow_cms": 8.7049,
+      "flow_cms": 8.5767,
       "flow_trend": "faldende",
-      "water_level_m": 0.8188,
+      "water_level_m": 0.8126,
       "water_level_trend": "faldende",
-      "water_temperature_c": 14.9738
+      "water_temperature_c": 14.9586
     }
   ]
 }
