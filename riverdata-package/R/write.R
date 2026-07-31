@@ -478,37 +478,80 @@ write_weight_estimates <- function(prefix, seatrout = TRUE) {
 #' \dontrun{
 #' save_hobo_data()
 #' }
-save_hobo_data <- function() {
-  url <- "ftp://web9.gigahost.dk/hobo/"
-  user <- Sys.getenv("GH_FTP")
-  files <- getURL(url, userpwd = user, dirlistonly = TRUE)
-  files <- str_split(files, "\n")[[1]] %>% str_subset("Skjern")
-  if (length(files) == 0) return(FALSE)
-  dat <- NULL
-  for (f in files) {
-    urlF <- str_c(url, f)
-    str <- getURL(urlF, userpwd = user, ftp.use.epsv = FALSE)
-    dat <- bind_rows(dat, read_csv(str))
-  }
-  dat <- dat %>%
-    transmute(Date = dmy_hms(.data$Date),
-              TempCelcius = .data[["Water Temperature (M-WT 21143788:20833130-3), *C, Laksens Hus"]],
-              LevelMeters = .data[["Water Level (M-WL04 21143788:20833130-4), meters, Laksens Hus"]],
-              PressureKPA = .data[["Barometric Pressure (M-BP 21143788:21143788-1), kPa, Laksens Hus"]]) %>%
-    mutate(Date = .data$Date - hours(1))
-  dat1 <- dat %>% transmute(Date = .data$Date, Place = "Skjern Å - Laksens hus", Value = .data$LevelMeters)
-  dat2 <- dat %>% transmute(Date = .data$Date, Place = "Skjern Å - Laksens hus", Value = .data$PressureKPA)
-  dat3 <- dat %>% transmute(Date = .data$Date, Place = "Skjern Å - Laksens hus", Value = .data$TempCelcius)
-  prefix <- "data/data_skjern"
-  write_csv(dat1, str_c(prefix, "_waterlevel_hobo.csv"), append = T)
-  write_csv(dat2, str_c(prefix, "_pressure_hobo.csv"), append = T)
-  write_csv(dat3, str_c(prefix, "_watertemp_hobo.csv"), append = T)
+.ftp_with_retry <- function(fetch, what, retry_delays = c(5, 15, 45), sleep = Sys.sleep) {
+  attempts <- length(retry_delays) + 1
+  last_error <- NULL
 
-  for (f in files) {
-    tmp <- str_c("DELE ", "hobo/", f)
-    curlPerform(url = "ftp://web9.gigahost.dk/", quote = tmp, userpwd = user)
+  for (attempt in seq_len(attempts)) {
+    res <- tryCatch(
+      fetch(),
+      error = function(e) {
+        last_error <<- e
+        NULL
+      }
+    )
+    if (!is.null(res)) {
+      return(res)
+    }
+
+    if (attempt <= length(retry_delays)) {
+      warning("HOBO FTP ", what, " failed on attempt ", attempt, " of ", attempts,
+              ": ", conditionMessage(last_error), ". Retrying in ",
+              retry_delays[attempt], " seconds.", call. = FALSE)
+      sleep(retry_delays[attempt])
+    }
   }
-  return(TRUE)
+
+  stop("HOBO FTP ", what, " failed after ", attempts, " attempts: ",
+       conditionMessage(last_error), call. = FALSE)
+}
+
+save_hobo_data <- function() {
+  tryCatch({
+    url <- "ftp://web9.gigahost.dk/hobo/"
+    user <- Sys.getenv("GH_FTP")
+    opts <- list(connecttimeout = 10, timeout = 30)
+    files <- .ftp_with_retry(
+      function() getURL(url, userpwd = user, dirlistonly = TRUE, .opts = opts),
+      "file listing"
+    )
+    files <- str_split(files, "\n")[[1]] %>% str_subset("Skjern")
+    if (length(files) == 0) return(FALSE)
+    dat <- NULL
+    for (f in files) {
+      urlF <- str_c(url, f)
+      str <- .ftp_with_retry(
+        function() getURL(urlF, userpwd = user, ftp.use.epsv = FALSE, .opts = opts),
+        str_c("download of ", f)
+      )
+      dat <- bind_rows(dat, read_csv(str))
+    }
+    dat <- dat %>%
+      transmute(Date = dmy_hms(.data$Date),
+                TempCelcius = .data[["Water Temperature (M-WT 21143788:20833130-3), *C, Laksens Hus"]],
+                LevelMeters = .data[["Water Level (M-WL04 21143788:20833130-4), meters, Laksens Hus"]],
+                PressureKPA = .data[["Barometric Pressure (M-BP 21143788:21143788-1), kPa, Laksens Hus"]]) %>%
+      mutate(Date = .data$Date - hours(1))
+    dat1 <- dat %>% transmute(Date = .data$Date, Place = "Skjern Å - Laksens hus", Value = .data$LevelMeters)
+    dat2 <- dat %>% transmute(Date = .data$Date, Place = "Skjern Å - Laksens hus", Value = .data$PressureKPA)
+    dat3 <- dat %>% transmute(Date = .data$Date, Place = "Skjern Å - Laksens hus", Value = .data$TempCelcius)
+    prefix <- "data/data_skjern"
+    write_csv(dat1, str_c(prefix, "_waterlevel_hobo.csv"), append = T)
+    write_csv(dat2, str_c(prefix, "_pressure_hobo.csv"), append = T)
+    write_csv(dat3, str_c(prefix, "_watertemp_hobo.csv"), append = T)
+
+    for (f in files) {
+      tmp <- str_c("DELE ", "hobo/", f)
+      .ftp_with_retry(
+        function() curlPerform(url = "ftp://web9.gigahost.dk/", quote = tmp, userpwd = user, .opts = opts),
+        str_c("delete of ", f)
+      )
+    }
+    return(TRUE)
+  }, error = function(e) {
+    warning("HOBO data update skipped: ", conditionMessage(e), call. = FALSE)
+    return(FALSE)
+  })
 }
 
 .fetch_json_with_retry <- function(url, place, id, retry_delays = c(5, 15, 45),

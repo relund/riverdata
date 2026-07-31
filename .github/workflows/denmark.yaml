@@ -10,7 +10,7 @@ concurrency:
 on: 
   push:
     paths:
-      - .github/workflows/run_script_ubuntu.yaml
+      - .github/workflows/denmark.yaml
       - reports/karup/**
       - reports/skjern/**
       - reports/mv-lf/**
@@ -96,7 +96,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           files=(data/*.csv docs/**/*.html)
           if ((${#files[@]})); then
-            git add "${files[@]}"
+            git add -f "${files[@]}"
           fi
           if git diff --cached --quiet; then
             echo "No generated report changes to commit."
