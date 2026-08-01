@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T04:46:15Z",
+  "generated_at": "2026-08-01T07:25:25Z",
   "river_id": 25,
   "station_id": "122.9.0",
   "temperature_station_id": "122.11.0",
@@ -528,6 +528,29 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/741823?riverId=25",
+      "flow_cms": 35.5887,
+      "flow_trend": "stigende",
+      "water_level_m": 1.9835,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 14.946
+    },
+    {
+      "id": "742424",
+      "date": "2026-07-31",
+      "time_of_day": "14:00",
+      "week": 31,
+      "year": 2026,
+      "river": "Gaula",
+      "beat": "Gaula Flyfishing Lodge, Hage, Hovin",
+      "fishing_spot": null,
+      "fisher_name": "Juha  Kaartinen",
+      "species": "Laks",
+      "weight_kg": 2.3,
+      "length_cm": 62,
+      "equipment": "Flue",
+      "released_catch": false,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/742424?riverId=25",
       "flow_cms": 35.5887,
       "flow_trend": "stigende",
       "water_level_m": 1.9835,
@@ -238058,11 +238081,11 @@
     },
     {
       "date": "2026-08-01",
-      "flow_cms": 32.8678,
+      "flow_cms": 31.8654,
       "flow_trend": "faldende",
-      "water_level_m": 1.8688,
+      "water_level_m": 1.8353,
       "water_level_trend": "faldende",
-      "water_temperature_c": 13.512
+      "water_temperature_c": 13.1237
     }
   ]
 }
