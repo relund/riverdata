@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T01:59:59Z",
+  "generated_at": "2026-08-03T05:45:20Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -3224,22 +3224,22 @@
       "water_temperature_c": 14.4437
     },
     {
-      "id": "740475",
+      "id": "740521",
       "date": "2026-07-30",
       "time_of_day": "10:15",
       "week": 31,
       "year": 2026,
       "river": "Stjørdalselva",
-      "beat": "10 - Vold",
+      "beat": "111 - Øfsti",
       "fishing_spot": null,
-      "fisher_name": "Frank Wågsæther",
+      "fisher_name": "Johan Jahren",
       "species": "Laks",
-      "weight_kg": 1.5,
-      "length_cm": 54,
+      "weight_kg": 3,
+      "length_cm": 68,
       "equipment": "Flue",
       "released_catch": true,
-      "image": null,
-      "detail_url": "https://elveguiden.no/no/laksebors/catches/740475?riverId=13",
+      "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1785406084-1.png",
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/740521?riverId=13",
       "flow_cms": 35.1672,
       "flow_trend": "faldende",
       "water_level_m": 1.1547,
@@ -163805,11 +163805,11 @@
     },
     {
       "date": "2026-08-03",
-      "flow_cms": 51.774,
+      "flow_cms": 68.5119,
       "flow_trend": "stigende",
-      "water_level_m": 1.311,
+      "water_level_m": 1.4408,
       "water_level_trend": "stigende",
-      "water_temperature_c": 13.8338
+      "water_temperature_c": 13.5446
     }
   ]
 }
