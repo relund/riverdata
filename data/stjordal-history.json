@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T05:05:17Z",
+  "generated_at": "2026-08-07T06:50:58Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -26,6 +26,29 @@
     "source": "daily average water temperature"
   },
   "catches": [
+    {
+      "id": "747535",
+      "date": "2026-08-07",
+      "time_of_day": "07:00",
+      "week": 32,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "Hylla",
+      "fishing_spot": null,
+      "fisher_name": "Magnus Persson",
+      "species": "Laks",
+      "weight_kg": 2.4,
+      "length_cm": 63,
+      "equipment": "Flue",
+      "released_catch": true,
+      "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1786082039.png",
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/747535?riverId=13",
+      "flow_cms": 184.4757,
+      "flow_trend": "stigende",
+      "water_level_m": 2.0999,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 12.6918
+    },
     {
       "id": "747364",
       "date": "2026-08-06",
@@ -167425,11 +167448,11 @@
     },
     {
       "date": "2026-08-07",
-      "flow_cms": 199.3949,
+      "flow_cms": 184.4757,
       "flow_trend": "stigende",
-      "water_level_m": 2.17,
+      "water_level_m": 2.0999,
       "water_level_trend": "stigende",
-      "water_temperature_c": 12.764
+      "water_temperature_c": 12.6918
     }
   ]
 }
