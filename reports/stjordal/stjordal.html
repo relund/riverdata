@@ -1477,6 +1477,10 @@ Midtsæsonevalueringen er sat til 1. juli. Eventuelle forhåndsaftalte tiltak in
 
 ### Vandstandstrend
 
+Nøgletallet på Oversigt viser den aktuelle live-trend fra NVE ved Hegra bru. Her sammenlignes den seneste timeværdi med timeværdien lige før. Er ændringen større end 0,05 m, vises den som **stigende** eller **faldende**; ellers vises **neutral**.
+
+I historik- og valdfigurerne bruges en daglig trend:
+
 Først beregnes den gennemsnitlige vandstand for hver dag. Dagens gennemsnit sammenlignes derefter med både dagen før og tre dage tidligere.
 
 Hvis vandstanden er ændret mere end 0,05 m siden dagen før, vises trenden straks som **stigende** eller **faldende**.
@@ -3975,30 +3979,11 @@ Phatagrova Kinahatt er flomfluen. Når elva er høj, farvet og tung, skal fluen 
       return "neutral";
     }
 
-    function pointClosestToHoursBefore(points, hoursBefore) {
-      if (!points?.length) return null;
-      const latest = points[points.length - 1];
-      const targetTime = latest.time.getTime() - (hoursBefore * 60 * 60 * 1000);
-      return points
-        .filter((point) => point.time.getTime() <= latest.time.getTime())
-        .reduce((best, point) => {
-          const distance = Math.abs(point.time.getTime() - targetTime);
-          if (!best || distance < best.distance) {
-            return { point, distance };
-          }
-          return best;
-        }, null)?.point ?? null;
-    }
-
     function liveWaterLevelTrend(points) {
       if (!points?.length) return "neutral";
       const latest = points[points.length - 1];
-      const previousDay = pointClosestToHoursBefore(points, 24);
-      const threeDaysAgo = pointClosestToHoursBefore(points, 72);
-      const dailyTrend = trendFromValues(latest.value, previousDay?.value);
-      return dailyTrend === "neutral"
-        ? trendFromValues(latest.value, threeDaysAgo?.value)
-        : dailyTrend;
+      const previous = points[points.length - 2];
+      return trendFromValues(latest.value, previous?.value);
     }
 
     function renderCurrentMeasurementsFromDailyData() {
