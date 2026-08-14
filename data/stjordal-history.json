@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T06:09:00Z",
+  "generated_at": "2026-08-14T07:41:28Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -26,6 +26,29 @@
     "source": "daily average water temperature"
   },
   "catches": [
+    {
+      "id": "753348",
+      "date": "2026-08-14",
+      "time_of_day": "06:14",
+      "week": 33,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "109 - Slungård",
+      "fishing_spot": null,
+      "fisher_name": "Aslak Mundal",
+      "species": "Laks",
+      "weight_kg": 2.4,
+      "length_cm": 63,
+      "equipment": "Flue",
+      "released_catch": false,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/753348?riverId=13",
+      "flow_cms": 108.4831,
+      "flow_trend": "neutral",
+      "water_level_m": 1.71,
+      "water_level_trend": "neutral",
+      "water_temperature_c": 12.9479
+    },
     {
       "id": "753264",
       "date": "2026-08-13",
@@ -158,6 +181,29 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753185?riverId=13",
+      "flow_cms": 109.5915,
+      "flow_trend": "stigende",
+      "water_level_m": 1.701,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 12.0877
+    },
+    {
+      "id": "753338",
+      "date": "2026-08-13",
+      "time_of_day": "21:00",
+      "week": 33,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "310 - Holmene",
+      "fishing_spot": null,
+      "fisher_name": "Max Pinther",
+      "species": "Laks",
+      "weight_kg": 1.4,
+      "length_cm": 59,
+      "equipment": "Flue",
+      "released_catch": true,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/753338?riverId=13",
       "flow_cms": 109.5915,
       "flow_trend": "stigende",
       "water_level_m": 1.701,
@@ -174519,11 +174565,11 @@
     },
     {
       "date": "2026-08-14",
-      "flow_cms": 112.5273,
+      "flow_cms": 108.4831,
       "flow_trend": "neutral",
-      "water_level_m": 1.7345,
-      "water_level_trend": "stigende",
-      "water_temperature_c": 12.9638
+      "water_level_m": 1.71,
+      "water_level_trend": "neutral",
+      "water_temperature_c": 12.9479
     }
   ]
 }
