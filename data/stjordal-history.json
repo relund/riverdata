@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T14:42:19Z",
+  "generated_at": "2026-08-14T17:03:14Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -27,6 +27,29 @@
   },
   "catches": [
     {
+      "id": "753636",
+      "date": "2026-08-14",
+      "time_of_day": "16:40",
+      "week": 33,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "18 - Kommunevaldet nordre side",
+      "fishing_spot": null,
+      "fisher_name": "Robin Brende",
+      "species": "Laks",
+      "weight_kg": 1.9,
+      "length_cm": 58,
+      "equipment": "Mark",
+      "released_catch": false,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/753636?riverId=13",
+      "flow_cms": 96.7506,
+      "flow_trend": "faldende",
+      "water_level_m": 1.6365,
+      "water_level_trend": "faldende",
+      "water_temperature_c": 12.9966
+    },
+    {
       "id": "753592",
       "date": "2026-08-14",
       "time_of_day": "15:30",
@@ -43,11 +66,34 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753592?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
+    },
+    {
+      "id": "753626",
+      "date": "2026-08-14",
+      "time_of_day": "15:30",
+      "week": 33,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "12 - Håve nordre",
+      "fishing_spot": null,
+      "fisher_name": "Tor Arne Heia",
+      "species": "Laks",
+      "weight_kg": 1.3,
+      "length_cm": 52,
+      "equipment": "Mark",
+      "released_catch": true,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/753626?riverId=13",
+      "flow_cms": 96.7506,
+      "flow_trend": "faldende",
+      "water_level_m": 1.6365,
+      "water_level_trend": "faldende",
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753564",
@@ -66,11 +112,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753564?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753557",
@@ -89,11 +135,11 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753557?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753516",
@@ -112,11 +158,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753516?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753522",
@@ -135,11 +181,11 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753522?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753565",
@@ -158,11 +204,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753565?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753525",
@@ -181,11 +227,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753525?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753484",
@@ -204,11 +250,11 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753484?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753571",
@@ -227,11 +273,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753571?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753483",
@@ -250,11 +296,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753483?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753497",
@@ -273,11 +319,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753497?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753482",
@@ -296,11 +342,11 @@
       "released_catch": true,
       "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/6a7eef3e7ed63-img_1301.jpeg",
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753482?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753568",
@@ -319,11 +365,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753568?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753476",
@@ -342,11 +388,11 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753476?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753348",
@@ -365,11 +411,11 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/753348?riverId=13",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     },
     {
       "id": "753264",
@@ -947,6 +993,29 @@
       "water_temperature_c": 12.0877
     },
     {
+      "id": "753657",
+      "date": "2026-08-13",
+      "time_of_day": "14:00",
+      "week": 33,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "Einang",
+      "fishing_spot": null,
+      "fisher_name": "Rune Hansen",
+      "species": "Laks",
+      "weight_kg": 2.8,
+      "length_cm": 64,
+      "equipment": "Flue",
+      "released_catch": false,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/753657?riverId=13",
+      "flow_cms": 109.5915,
+      "flow_trend": "stigende",
+      "water_level_m": 1.701,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 12.0877
+    },
+    {
       "id": "753125",
       "date": "2026-08-13",
       "time_of_day": "12:45",
@@ -1407,29 +1476,6 @@
       "water_temperature_c": 11.4811
     },
     {
-      "id": "752607",
-      "date": "2026-08-12",
-      "time_of_day": "18:30",
-      "week": 33,
-      "year": 2026,
-      "river": "Stjørdalselva",
-      "beat": "602 - Lauphølen",
-      "fishing_spot": null,
-      "fisher_name": "Jonny Nordaune",
-      "species": "Laks",
-      "weight_kg": 2.3,
-      "length_cm": 62,
-      "equipment": "Flue",
-      "released_catch": false,
-      "image": null,
-      "detail_url": "https://elveguiden.no/no/laksebors/catches/752607?riverId=13",
-      "flow_cms": 87.3065,
-      "flow_trend": "faldende",
-      "water_level_m": 1.577,
-      "water_level_trend": "faldende",
-      "water_temperature_c": 11.4811
-    },
-    {
       "id": "752830",
       "date": "2026-08-12",
       "time_of_day": "18:30",
@@ -1446,6 +1492,29 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/752830?riverId=13",
+      "flow_cms": 87.3065,
+      "flow_trend": "faldende",
+      "water_level_m": 1.577,
+      "water_level_trend": "faldende",
+      "water_temperature_c": 11.4811
+    },
+    {
+      "id": "752607",
+      "date": "2026-08-12",
+      "time_of_day": "18:30",
+      "week": 33,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "602 - Lauphølen",
+      "fishing_spot": null,
+      "fisher_name": "Jonny Nordaune",
+      "species": "Laks",
+      "weight_kg": 2.3,
+      "length_cm": 62,
+      "equipment": "Flue",
+      "released_catch": false,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/752607?riverId=13",
       "flow_cms": 87.3065,
       "flow_trend": "faldende",
       "water_level_m": 1.577,
@@ -1844,6 +1913,29 @@
       "water_temperature_c": 11.4811
     },
     {
+      "id": "753649",
+      "date": "2026-08-12",
+      "time_of_day": "11:00",
+      "week": 33,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "Einang",
+      "fishing_spot": null,
+      "fisher_name": "Rune Hansen",
+      "species": "Laks",
+      "weight_kg": 5.2,
+      "length_cm": 82,
+      "equipment": "Sluk",
+      "released_catch": false,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/753649?riverId=13",
+      "flow_cms": 87.3065,
+      "flow_trend": "faldende",
+      "water_level_m": 1.577,
+      "water_level_trend": "faldende",
+      "water_temperature_c": 11.4811
+    },
+    {
       "id": "752627",
       "date": "2026-08-12",
       "time_of_day": "11:00",
@@ -2235,29 +2327,6 @@
       "water_temperature_c": 11.8623
     },
     {
-      "id": "752238",
-      "date": "2026-08-11",
-      "time_of_day": "21:00",
-      "week": 33,
-      "year": 2026,
-      "river": "Stjørdalselva",
-      "beat": "48 - Flormoen",
-      "fishing_spot": null,
-      "fisher_name": "Kenneth Gamlem",
-      "species": "Laks",
-      "weight_kg": 5.6,
-      "length_cm": 85,
-      "equipment": "Flue",
-      "released_catch": false,
-      "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1786550608.png",
-      "detail_url": "https://elveguiden.no/no/laksebors/catches/752238?riverId=13",
-      "flow_cms": 102.6947,
-      "flow_trend": "stigende",
-      "water_level_m": 1.676,
-      "water_level_trend": "stigende",
-      "water_temperature_c": 11.8623
-    },
-    {
       "id": "751634",
       "date": "2026-08-11",
       "time_of_day": "21:00",
@@ -2274,6 +2343,29 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/751634?riverId=13",
+      "flow_cms": 102.6947,
+      "flow_trend": "stigende",
+      "water_level_m": 1.676,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 11.8623
+    },
+    {
+      "id": "752238",
+      "date": "2026-08-11",
+      "time_of_day": "21:00",
+      "week": 33,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "48 - Flormoen",
+      "fishing_spot": null,
+      "fisher_name": "Kenneth Gamlem",
+      "species": "Laks",
+      "weight_kg": 5.6,
+      "length_cm": 85,
+      "equipment": "Flue",
+      "released_catch": false,
+      "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1786550608.png",
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/752238?riverId=13",
       "flow_cms": 102.6947,
       "flow_trend": "stigende",
       "water_level_m": 1.676,
@@ -3109,22 +3201,22 @@
       "water_temperature_c": 12.8338
     },
     {
-      "id": "750866",
+      "id": "751347",
       "date": "2026-08-10",
       "time_of_day": "20:00",
       "week": 33,
       "year": 2026,
       "river": "Stjørdalselva",
-      "beat": "12 - Håve nordre",
+      "beat": "Nesseøra",
       "fishing_spot": null,
-      "fisher_name": "Emil Hauglid Svendsen",
+      "fisher_name": "Arild Borten",
       "species": "Laks",
-      "weight_kg": 1.8,
-      "length_cm": 57,
+      "weight_kg": 2.5,
+      "length_cm": 63,
       "equipment": "Flue",
-      "released_catch": true,
-      "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1786395052.png",
-      "detail_url": "https://elveguiden.no/no/laksebors/catches/750866?riverId=13",
+      "released_catch": false,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/751347?riverId=13",
       "flow_cms": 73.4578,
       "flow_trend": "stigende",
       "water_level_m": 1.4808,
@@ -4213,22 +4305,22 @@
       "water_temperature_c": 13.2828
     },
     {
-      "id": "749531",
+      "id": "751087",
       "date": "2026-08-09",
       "time_of_day": "11:30",
       "week": 32,
       "year": 2026,
       "river": "Stjørdalselva",
-      "beat": "206 - Lerfald nedre",
+      "beat": "Austkilskogen",
       "fishing_spot": null,
-      "fisher_name": "Sondre Nygård",
+      "fisher_name": "- -",
       "species": "Laks",
-      "weight_kg": 2.7,
-      "length_cm": 66,
+      "weight_kg": 2.9,
+      "length_cm": 67,
       "equipment": "Flue",
-      "released_catch": true,
-      "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/6a787e21b2149-20260809_112828.jpg",
-      "detail_url": "https://elveguiden.no/no/laksebors/catches/749531?riverId=13",
+      "released_catch": false,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/751087?riverId=13",
       "flow_cms": 48.4485,
       "flow_trend": "faldende",
       "water_level_m": 1.2821,
@@ -174956,11 +175048,11 @@
     },
     {
       "date": "2026-08-14",
-      "flow_cms": 98.6307,
+      "flow_cms": 96.7506,
       "flow_trend": "faldende",
-      "water_level_m": 1.6485,
+      "water_level_m": 1.6365,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9572
+      "water_temperature_c": 12.9966
     }
   ]
 }
