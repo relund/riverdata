@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T01:21:11Z",
+  "generated_at": "2026-08-19T02:48:47Z",
   "river_id": 25,
   "station_id": "122.9.0",
   "temperature_station_id": "122.11.0",
@@ -238240,7 +238240,7 @@
     },
     {
       "date": "2026-08-18",
-      "flow_cms": 83.1072,
+      "flow_cms": 83.1027,
       "flow_trend": "neutral",
       "water_level_m": 3.0713,
       "water_level_trend": "faldende",
@@ -238248,11 +238248,11 @@
     },
     {
       "date": "2026-08-19",
-      "flow_cms": null,
-      "flow_trend": "neutral",
-      "water_level_m": 3.0343,
+      "flow_cms": 80.3195,
+      "flow_trend": "faldende",
+      "water_level_m": 3.0235,
       "water_level_trend": "faldende",
-      "water_temperature_c": 10.79
+      "water_temperature_c": 10.6533
     }
   ]
 }
