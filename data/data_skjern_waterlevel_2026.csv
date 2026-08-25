@@ -698,7 +698,7 @@ Date,Place,Value
 2026-08-20T18:00:00Z,Karstoft Å - Fiskedamme,15.388
 2026-08-20T17:50:00Z,Karstoft Å - Fiskedamme,15.388
 2026-08-20T17:40:00Z,Karstoft Å - Fiskedamme,15.389000000000001
-2026-08-20T17:30:00Z,Karstoft Å - Fiskedamme,15.388000000000002
+2026-08-20T17:30:00Z,Karstoft Å - Fiskedamme,15.391
 2026-08-20T17:20:00Z,Karstoft Å - Fiskedamme,15.387
 2026-08-20T17:10:00Z,Karstoft Å - Fiskedamme,15.388
 2026-08-20T17:00:00Z,Karstoft Å - Fiskedamme,15.385
@@ -2143,9 +2143,9 @@ Date,Place,Value
 2026-08-10T17:10:00Z,Karstoft Å - Fiskedamme,15.357000000000001
 2026-08-10T17:00:00Z,Karstoft Å - Fiskedamme,15.356
 2026-08-10T16:50:00Z,Karstoft Å - Fiskedamme,15.355
-2026-08-10T16:40:00Z,Karstoft Å - Fiskedamme,15.357000000000001
+2026-08-10T16:40:00Z,Karstoft Å - Fiskedamme,15.357
 2026-08-10T16:30:00Z,Karstoft Å - Fiskedamme,15.358
-2026-08-10T16:20:00Z,Karstoft Å - Fiskedamme,15.357000000000001
+2026-08-10T16:20:00Z,Karstoft Å - Fiskedamme,15.357
 2026-08-10T16:10:00Z,Karstoft Å - Fiskedamme,15.356
 2026-08-10T16:00:00Z,Karstoft Å - Fiskedamme,15.358
 2026-08-10T15:50:00Z,Karstoft Å - Fiskedamme,15.358
@@ -33995,23 +33995,29 @@ Date,Place,Value
 2026-01-01T00:20:00Z,Karstoft Å - Fiskedamme,15.508
 2026-01-01T00:10:00Z,Karstoft Å - Fiskedamme,15.499
 2026-01-01T00:00:00Z,Karstoft Å - Fiskedamme,15.503
-2026-08-25T15:00:00Z,Omme Å - Sønderskov bro,2.708
-2026-08-25T14:50:00Z,Omme Å - Sønderskov bro,2.708
-2026-08-25T14:40:00Z,Omme Å - Sønderskov bro,2.708
-2026-08-25T14:30:00Z,Omme Å - Sønderskov bro,2.708
-2026-08-25T14:20:00Z,Omme Å - Sønderskov bro,2.708
-2026-08-25T14:10:00Z,Omme Å - Sønderskov bro,2.708
-2026-08-25T14:00:00Z,Omme Å - Sønderskov bro,2.708
-2026-08-25T13:50:00Z,Omme Å - Sønderskov bro,2.708
-2026-08-25T13:40:00Z,Omme Å - Sønderskov bro,2.708
-2026-08-25T13:30:00Z,Omme Å - Sønderskov bro,2.708
-2026-08-25T13:20:00Z,Omme Å - Sønderskov bro,2.708
-2026-08-25T13:10:00Z,Omme Å - Sønderskov bro,2.708
+2026-08-25T16:00:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T15:50:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T15:40:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T15:30:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T15:20:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T15:10:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T15:00:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T14:50:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T14:40:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T14:30:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T14:20:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T14:10:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T14:00:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T13:50:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T13:40:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T13:30:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T13:20:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T13:10:00Z,Omme Å - Sønderskov bro,2.7085
 2026-08-25T13:00:00Z,Omme Å - Sønderskov bro,2.708
 2026-08-25T12:50:00Z,Omme Å - Sønderskov bro,2.708
-2026-08-25T12:40:00Z,Omme Å - Sønderskov bro,2.70825
-2026-08-25T12:30:00Z,Omme Å - Sønderskov bro,2.7085
-2026-08-25T12:20:00Z,Omme Å - Sønderskov bro,2.7087499999999998
+2026-08-25T12:40:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T12:30:00Z,Omme Å - Sønderskov bro,2.7089999999999996
+2026-08-25T12:20:00Z,Omme Å - Sønderskov bro,2.7089999999999996
 2026-08-25T12:10:00Z,Omme Å - Sønderskov bro,2.7089999999999996
 2026-08-25T12:00:00Z,Omme Å - Sønderskov bro,2.7089999999999996
 2026-08-25T11:50:00Z,Omme Å - Sønderskov bro,2.7089999999999996
@@ -34563,10 +34569,10 @@ Date,Place,Value
 2026-08-21T16:50:00Z,Omme Å - Sønderskov bro,2.767
 2026-08-21T16:40:00Z,Omme Å - Sønderskov bro,2.767
 2026-08-21T16:30:00Z,Omme Å - Sønderskov bro,2.767
-2026-08-21T16:20:00Z,Omme Å - Sønderskov bro,2.767
-2026-08-21T16:10:00Z,Omme Å - Sønderskov bro,2.767
-2026-08-21T16:00:00Z,Omme Å - Sønderskov bro,2.767
-2026-08-21T15:50:00Z,Omme Å - Sønderskov bro,2.767
+2026-08-21T16:20:00Z,Omme Å - Sønderskov bro,2.7672499999999998
+2026-08-21T16:10:00Z,Omme Å - Sønderskov bro,2.7675
+2026-08-21T16:00:00Z,Omme Å - Sønderskov bro,2.7677500000000004
+2026-08-21T15:50:00Z,Omme Å - Sønderskov bro,2.7680000000000002
 2026-08-21T15:40:00Z,Omme Å - Sønderskov bro,2.767
 2026-08-21T15:30:00Z,Omme Å - Sønderskov bro,2.7680000000000002
 2026-08-21T15:20:00Z,Omme Å - Sønderskov bro,2.7680000000000002
@@ -34717,47 +34723,47 @@ Date,Place,Value
 2026-08-20T15:10:00Z,Omme Å - Sønderskov bro,2.7710000000000004
 2026-08-20T15:00:00Z,Omme Å - Sønderskov bro,2.7710000000000004
 2026-08-20T14:50:00Z,Omme Å - Sønderskov bro,2.7710000000000004
-2026-08-20T14:40:00Z,Omme Å - Sønderskov bro,2.7710000000000004
-2026-08-20T14:30:00Z,Omme Å - Sønderskov bro,2.7707560975609757
-2026-08-20T14:20:00Z,Omme Å - Sønderskov bro,2.7705121951219516
-2026-08-20T14:10:00Z,Omme Å - Sønderskov bro,2.770268292682927
-2026-08-20T14:00:00Z,Omme Å - Sønderskov bro,2.770024390243903
-2026-08-20T13:50:00Z,Omme Å - Sønderskov bro,2.769780487804878
-2026-08-20T13:40:00Z,Omme Å - Sønderskov bro,2.769536585365854
-2026-08-20T13:30:00Z,Omme Å - Sønderskov bro,2.7692926829268294
-2026-08-20T13:20:00Z,Omme Å - Sønderskov bro,2.7690487804878052
-2026-08-20T13:10:00Z,Omme Å - Sønderskov bro,2.7688048780487806
-2026-08-20T13:00:00Z,Omme Å - Sønderskov bro,2.7685609756097564
-2026-08-20T12:50:00Z,Omme Å - Sønderskov bro,2.768317073170732
-2026-08-20T12:40:00Z,Omme Å - Sønderskov bro,2.7680731707317077
-2026-08-20T12:30:00Z,Omme Å - Sønderskov bro,2.767829268292683
-2026-08-20T12:20:00Z,Omme Å - Sønderskov bro,2.767585365853659
-2026-08-20T12:10:00Z,Omme Å - Sønderskov bro,2.7673414634146343
-2026-08-20T12:00:00Z,Omme Å - Sønderskov bro,2.76709756097561
-2026-08-20T11:50:00Z,Omme Å - Sønderskov bro,2.7668536585365855
-2026-08-20T11:40:00Z,Omme Å - Sønderskov bro,2.7666097560975613
-2026-08-20T11:30:00Z,Omme Å - Sønderskov bro,2.7663658536585367
-2026-08-20T11:20:00Z,Omme Å - Sønderskov bro,2.7661219512195125
-2026-08-20T11:10:00Z,Omme Å - Sønderskov bro,2.765878048780488
-2026-08-20T11:00:00Z,Omme Å - Sønderskov bro,2.7656341463414638
-2026-08-20T10:50:00Z,Omme Å - Sønderskov bro,2.765390243902439
-2026-08-20T10:40:00Z,Omme Å - Sønderskov bro,2.765146341463415
-2026-08-20T10:30:00Z,Omme Å - Sønderskov bro,2.7649024390243904
-2026-08-20T10:20:00Z,Omme Å - Sønderskov bro,2.764658536585366
-2026-08-20T10:10:00Z,Omme Å - Sønderskov bro,2.7644146341463416
-2026-08-20T10:00:00Z,Omme Å - Sønderskov bro,2.7641707317073174
-2026-08-20T09:50:00Z,Omme Å - Sønderskov bro,2.763926829268293
-2026-08-20T09:40:00Z,Omme Å - Sønderskov bro,2.7636829268292686
-2026-08-20T09:30:00Z,Omme Å - Sønderskov bro,2.763439024390244
-2026-08-20T09:20:00Z,Omme Å - Sønderskov bro,2.76319512195122
-2026-08-20T09:10:00Z,Omme Å - Sønderskov bro,2.7629512195121952
-2026-08-20T09:00:00Z,Omme Å - Sønderskov bro,2.762707317073171
-2026-08-20T08:50:00Z,Omme Å - Sønderskov bro,2.7624634146341465
-2026-08-20T08:40:00Z,Omme Å - Sønderskov bro,2.7622195121951223
-2026-08-20T08:30:00Z,Omme Å - Sønderskov bro,2.7619756097560977
-2026-08-20T08:20:00Z,Omme Å - Sønderskov bro,2.7617317073170735
-2026-08-20T08:10:00Z,Omme Å - Sønderskov bro,2.761487804878049
-2026-08-20T08:00:00Z,Omme Å - Sønderskov bro,2.7612439024390247
+2026-08-20T14:40:00Z,Omme Å - Sønderskov bro,2.770761904761905
+2026-08-20T14:30:00Z,Omme Å - Sønderskov bro,2.77052380952381
+2026-08-20T14:20:00Z,Omme Å - Sønderskov bro,2.7702857142857145
+2026-08-20T14:10:00Z,Omme Å - Sønderskov bro,2.7700476190476193
+2026-08-20T14:00:00Z,Omme Å - Sønderskov bro,2.769809523809524
+2026-08-20T13:50:00Z,Omme Å - Sønderskov bro,2.769571428571429
+2026-08-20T13:40:00Z,Omme Å - Sønderskov bro,2.769333333333334
+2026-08-20T13:30:00Z,Omme Å - Sønderskov bro,2.7690952380952383
+2026-08-20T13:20:00Z,Omme Å - Sønderskov bro,2.768857142857143
+2026-08-20T13:10:00Z,Omme Å - Sønderskov bro,2.768619047619048
+2026-08-20T13:00:00Z,Omme Å - Sønderskov bro,2.768380952380953
+2026-08-20T12:50:00Z,Omme Å - Sønderskov bro,2.7681428571428572
+2026-08-20T12:40:00Z,Omme Å - Sønderskov bro,2.767904761904762
+2026-08-20T12:30:00Z,Omme Å - Sønderskov bro,2.767666666666667
+2026-08-20T12:20:00Z,Omme Å - Sønderskov bro,2.767428571428572
+2026-08-20T12:10:00Z,Omme Å - Sønderskov bro,2.7671904761904766
+2026-08-20T12:00:00Z,Omme Å - Sønderskov bro,2.766952380952381
+2026-08-20T11:50:00Z,Omme Å - Sønderskov bro,2.766714285714286
+2026-08-20T11:40:00Z,Omme Å - Sønderskov bro,2.7664761904761908
+2026-08-20T11:30:00Z,Omme Å - Sønderskov bro,2.7662380952380956
+2026-08-20T11:20:00Z,Omme Å - Sønderskov bro,2.766
+2026-08-20T11:10:00Z,Omme Å - Sønderskov bro,2.765761904761905
+2026-08-20T11:00:00Z,Omme Å - Sønderskov bro,2.7655238095238097
+2026-08-20T10:50:00Z,Omme Å - Sønderskov bro,2.7652857142857146
+2026-08-20T10:40:00Z,Omme Å - Sønderskov bro,2.7650476190476194
+2026-08-20T10:30:00Z,Omme Å - Sønderskov bro,2.764809523809524
+2026-08-20T10:20:00Z,Omme Å - Sønderskov bro,2.7645714285714287
+2026-08-20T10:10:00Z,Omme Å - Sønderskov bro,2.7643333333333335
+2026-08-20T10:00:00Z,Omme Å - Sønderskov bro,2.7640952380952384
+2026-08-20T09:50:00Z,Omme Å - Sønderskov bro,2.7638571428571432
+2026-08-20T09:40:00Z,Omme Å - Sønderskov bro,2.7636190476190476
+2026-08-20T09:30:00Z,Omme Å - Sønderskov bro,2.7633809523809525
+2026-08-20T09:20:00Z,Omme Å - Sønderskov bro,2.7631428571428573
+2026-08-20T09:10:00Z,Omme Å - Sønderskov bro,2.762904761904762
+2026-08-20T09:00:00Z,Omme Å - Sønderskov bro,2.762666666666667
+2026-08-20T08:50:00Z,Omme Å - Sønderskov bro,2.7624285714285715
+2026-08-20T08:40:00Z,Omme Å - Sønderskov bro,2.7621904761904763
+2026-08-20T08:30:00Z,Omme Å - Sønderskov bro,2.761952380952381
+2026-08-20T08:20:00Z,Omme Å - Sønderskov bro,2.761714285714286
+2026-08-20T08:10:00Z,Omme Å - Sønderskov bro,2.7614761904761904
+2026-08-20T08:00:00Z,Omme Å - Sønderskov bro,2.7612380952380953
 2026-08-20T07:50:00Z,Omme Å - Sønderskov bro,2.761
 2026-08-20T07:40:00Z,Omme Å - Sønderskov bro,2.7600000000000002
 2026-08-20T07:30:00Z,Omme Å - Sønderskov bro,2.7600000000000002
@@ -102042,6 +102048,12 @@ Date,Place,Value
 2026-01-01T00:20:00Z,Rind Å - Arnborg kirke,24.84
 2026-01-01T00:10:00Z,Rind Å - Arnborg kirke,24.841
 2026-01-01T00:00:00Z,Rind Å - Arnborg kirke,24.841
+2026-08-25T16:00:00Z,Skjern Å - Alergaard,6.3020000000000005
+2026-08-25T15:50:00Z,Skjern Å - Alergaard,6.303
+2026-08-25T15:40:00Z,Skjern Å - Alergaard,6.301
+2026-08-25T15:30:00Z,Skjern Å - Alergaard,6.3020000000000005
+2026-08-25T15:20:00Z,Skjern Å - Alergaard,6.303
+2026-08-25T15:10:00Z,Skjern Å - Alergaard,6.304
 2026-08-25T15:00:00Z,Skjern Å - Alergaard,6.303
 2026-08-25T14:50:00Z,Skjern Å - Alergaard,6.306
 2026-08-25T14:40:00Z,Skjern Å - Alergaard,6.301
@@ -136031,6 +136043,12 @@ Date,Place,Value
 2026-01-01T00:20:00Z,Skjern Å - Alergaard,6.68
 2026-01-01T00:10:00Z,Skjern Å - Alergaard,6.682
 2026-01-01T00:00:00Z,Skjern Å - Alergaard,6.679
+2026-08-25T16:00:00Z,Skjern Å - Gjaldbæk bro,4.066000000000001
+2026-08-25T15:50:00Z,Skjern Å - Gjaldbæk bro,4.067
+2026-08-25T15:40:00Z,Skjern Å - Gjaldbæk bro,4.066000000000001
+2026-08-25T15:30:00Z,Skjern Å - Gjaldbæk bro,4.066000000000001
+2026-08-25T15:20:00Z,Skjern Å - Gjaldbæk bro,4.066000000000001
+2026-08-25T15:10:00Z,Skjern Å - Gjaldbæk bro,4.066000000000001
 2026-08-25T15:00:00Z,Skjern Å - Gjaldbæk bro,4.065
 2026-08-25T14:50:00Z,Skjern Å - Gjaldbæk bro,4.066000000000001
 2026-08-25T14:40:00Z,Skjern Å - Gjaldbæk bro,4.066000000000001
@@ -136038,17 +136056,17 @@ Date,Place,Value
 2026-08-25T14:20:00Z,Skjern Å - Gjaldbæk bro,4.066000000000001
 2026-08-25T14:10:00Z,Skjern Å - Gjaldbæk bro,4.067
 2026-08-25T14:00:00Z,Skjern Å - Gjaldbæk bro,4.0680000000000005
-2026-08-25T13:50:00Z,Skjern Å - Gjaldbæk bro,4.067
+2026-08-25T13:50:00Z,Skjern Å - Gjaldbæk bro,4.071000000000001
 2026-08-25T13:40:00Z,Skjern Å - Gjaldbæk bro,4.066000000000001
 2026-08-25T13:30:00Z,Skjern Å - Gjaldbæk bro,4.067
 2026-08-25T13:20:00Z,Skjern Å - Gjaldbæk bro,4.067
 2026-08-25T13:10:00Z,Skjern Å - Gjaldbæk bro,4.067
-2026-08-25T13:00:00Z,Skjern Å - Gjaldbæk bro,4.068
+2026-08-25T13:00:00Z,Skjern Å - Gjaldbæk bro,4.07
 2026-08-25T12:50:00Z,Skjern Å - Gjaldbæk bro,4.069
 2026-08-25T12:40:00Z,Skjern Å - Gjaldbæk bro,4.069
 2026-08-25T12:30:00Z,Skjern Å - Gjaldbæk bro,4.065
-2026-08-25T12:20:00Z,Skjern Å - Gjaldbæk bro,4.0616666666666665
-2026-08-25T12:10:00Z,Skjern Å - Gjaldbæk bro,4.058333333333334
+2026-08-25T12:20:00Z,Skjern Å - Gjaldbæk bro,4.071000000000001
+2026-08-25T12:10:00Z,Skjern Å - Gjaldbæk bro,4.063000000000001
 2026-08-25T12:00:00Z,Skjern Å - Gjaldbæk bro,4.055
 2026-08-25T11:50:00Z,Skjern Å - Gjaldbæk bro,4.055
 2026-08-25T11:40:00Z,Skjern Å - Gjaldbæk bro,4.055
@@ -171940,11 +171958,11 @@ Date,Place,Value
 2026-08-10T18:10:00Z,Skjern Å - Sandfeldvej,27.39
 2026-08-10T18:00:00Z,Skjern Å - Sandfeldvej,27.395
 2026-08-10T17:50:00Z,Skjern Å - Sandfeldvej,27.396
-2026-08-10T17:40:00Z,Skjern Å - Sandfeldvej,27.398000000000003
-2026-08-10T17:30:00Z,Skjern Å - Sandfeldvej,27.399
-2026-08-10T17:20:00Z,Skjern Å - Sandfeldvej,27.400000000000002
-2026-08-10T17:10:00Z,Skjern Å - Sandfeldvej,27.401
-2026-08-10T17:00:00Z,Skjern Å - Sandfeldvej,27.405
+2026-08-10T17:40:00Z,Skjern Å - Sandfeldvej,27.396
+2026-08-10T17:30:00Z,Skjern Å - Sandfeldvej,27.396
+2026-08-10T17:20:00Z,Skjern Å - Sandfeldvej,27.396
+2026-08-10T17:10:00Z,Skjern Å - Sandfeldvej,27.396
+2026-08-10T17:00:00Z,Skjern Å - Sandfeldvej,27.396
 2026-08-10T16:50:00Z,Skjern Å - Sandfeldvej,27.405
 2026-08-10T16:40:00Z,Skjern Å - Sandfeldvej,27.405
 2026-08-10T16:30:00Z,Skjern Å - Sandfeldvej,27.405
