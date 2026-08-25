@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T11:41:52Z",
+  "generated_at": "2026-08-25T12:37:16Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -43,11 +43,11 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/759279?riverId=13",
-      "flow_cms": 51.2074,
+      "flow_cms": 50.9673,
       "flow_trend": "faldende",
-      "water_level_m": 1.3063,
+      "water_level_m": 1.3042,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.2572
+      "water_temperature_c": 12.2547
     },
     {
       "id": "759251",
@@ -66,11 +66,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/759251?riverId=13",
-      "flow_cms": 51.2074,
+      "flow_cms": 50.9673,
       "flow_trend": "faldende",
-      "water_level_m": 1.3063,
+      "water_level_m": 1.3042,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.2572
+      "water_temperature_c": 12.2547
     },
     {
       "id": "759274",
@@ -89,11 +89,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/759274?riverId=13",
-      "flow_cms": 51.2074,
+      "flow_cms": 50.9673,
       "flow_trend": "faldende",
-      "water_level_m": 1.3063,
+      "water_level_m": 1.3042,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.2572
+      "water_temperature_c": 12.2547
     },
     {
       "id": "759198",
@@ -112,11 +112,11 @@
       "released_catch": true,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/759198?riverId=13",
-      "flow_cms": 51.2074,
+      "flow_cms": 50.9673,
       "flow_trend": "faldende",
-      "water_level_m": 1.3063,
+      "water_level_m": 1.3042,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.2572
+      "water_temperature_c": 12.2547
     },
     {
       "id": "759150",
@@ -183025,11 +183025,11 @@
     },
     {
       "date": "2026-08-25",
-      "flow_cms": 51.2074,
+      "flow_cms": 50.9673,
       "flow_trend": "faldende",
-      "water_level_m": 1.3063,
+      "water_level_m": 1.3042,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.2572
+      "water_temperature_c": 12.2547
     }
   ]
 }
