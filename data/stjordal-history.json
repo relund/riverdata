@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T06:56:24Z",
+  "generated_at": "2026-08-26T08:52:50Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -26,6 +26,52 @@
     "source": "daily average water temperature"
   },
   "catches": [
+    {
+      "id": "759521",
+      "date": "2026-08-26",
+      "time_of_day": "08:05",
+      "week": 35,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "Bjertem Forra",
+      "fishing_spot": null,
+      "fisher_name": "Andreas Herstad",
+      "species": "Laks",
+      "weight_kg": 2.1,
+      "length_cm": 60,
+      "equipment": "Flue",
+      "released_catch": true,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/759521?riverId=13",
+      "flow_cms": 41.7711,
+      "flow_trend": "faldende",
+      "water_level_m": 1.2206,
+      "water_level_trend": "faldende",
+      "water_temperature_c": 12.8357
+    },
+    {
+      "id": "759526",
+      "date": "2026-08-25",
+      "time_of_day": "22:00",
+      "week": 35,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "Kilnes",
+      "fishing_spot": null,
+      "fisher_name": "guro storli aune",
+      "species": "Laks",
+      "weight_kg": 5.4,
+      "length_cm": 83.5,
+      "equipment": "Mark",
+      "released_catch": false,
+      "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/6a8ea586c1685-66fd6e52-adce-496b-afd0-6a5ff93c5019.jpeg",
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/759526?riverId=13",
+      "flow_cms": 48.5314,
+      "flow_trend": "faldende",
+      "water_level_m": 1.2825,
+      "water_level_trend": "faldende",
+      "water_temperature_c": 12.6308
+    },
     {
       "id": "759452",
       "date": "2026-08-25",
@@ -183309,11 +183355,11 @@
     },
     {
       "date": "2026-08-26",
-      "flow_cms": 42.1751,
+      "flow_cms": 41.7711,
       "flow_trend": "faldende",
-      "water_level_m": 1.2245,
+      "water_level_m": 1.2206,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.9619
+      "water_temperature_c": 12.8357
     }
   ]
 }
