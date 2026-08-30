@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T13:38:39Z",
+  "generated_at": "2026-08-30T18:30:27Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -27,6 +27,52 @@
   },
   "catches": [
     {
+      "id": "760861",
+      "date": "2026-08-30",
+      "time_of_day": "16:11",
+      "week": 35,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "Gudå",
+      "fishing_spot": null,
+      "fisher_name": "Hans Aleksander Myhrum",
+      "species": "Laks",
+      "weight_kg": 2.5,
+      "length_cm": 64,
+      "equipment": "Flue",
+      "released_catch": true,
+      "image": "https://elveguiden.icdn.no/media/var/www/html/public/catch-images/app_upload_1788102726.png",
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/760861?riverId=13",
+      "flow_cms": 60.5713,
+      "flow_trend": "stigende",
+      "water_level_m": 1.3734,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 13.7051
+    },
+    {
+      "id": "760907",
+      "date": "2026-08-30",
+      "time_of_day": "16:00",
+      "week": 35,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "206 - Lerfald nedre",
+      "fishing_spot": null,
+      "fisher_name": "Carl-Markus Lund",
+      "species": "Laks",
+      "weight_kg": 2.4,
+      "length_cm": 64,
+      "equipment": "Wobbler",
+      "released_catch": false,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/760907?riverId=13",
+      "flow_cms": 60.5713,
+      "flow_trend": "stigende",
+      "water_level_m": 1.3734,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 13.7051
+    },
+    {
       "id": "760805",
       "date": "2026-08-30",
       "time_of_day": "13:30",
@@ -43,11 +89,34 @@
       "released_catch": false,
       "image": null,
       "detail_url": "https://elveguiden.no/no/laksebors/catches/760805?riverId=13",
-      "flow_cms": 50.2315,
+      "flow_cms": 60.5713,
       "flow_trend": "stigende",
-      "water_level_m": 1.2954,
+      "water_level_m": 1.3734,
       "water_level_trend": "stigende",
-      "water_temperature_c": 13.798
+      "water_temperature_c": 13.7051
+    },
+    {
+      "id": "760872",
+      "date": "2026-08-30",
+      "time_of_day": "13:00",
+      "week": 35,
+      "year": 2026,
+      "river": "Stjørdalselva",
+      "beat": "114 - Holm",
+      "fishing_spot": null,
+      "fisher_name": "Einar Almli",
+      "species": "Laks",
+      "weight_kg": 1.5,
+      "length_cm": 54,
+      "equipment": "Sluk",
+      "released_catch": false,
+      "image": null,
+      "detail_url": "https://elveguiden.no/no/laksebors/catches/760872?riverId=13",
+      "flow_cms": 60.5713,
+      "flow_trend": "stigende",
+      "water_level_m": 1.3734,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 13.7051
     },
     {
       "id": "760831",
@@ -184629,11 +184698,11 @@
     },
     {
       "date": "2026-08-30",
-      "flow_cms": 50.2315,
+      "flow_cms": 60.5713,
       "flow_trend": "stigende",
-      "water_level_m": 1.2954,
+      "water_level_m": 1.3734,
       "water_level_trend": "stigende",
-      "water_temperature_c": 13.798
+      "water_temperature_c": 13.7051
     }
   ]
 }
