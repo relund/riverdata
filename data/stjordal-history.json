@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T22:18:48Z",
+  "generated_at": "2026-09-07T00:44:33Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -185490,11 +185490,19 @@
     },
     {
       "date": "2026-09-06",
-      "flow_cms": 51.3205,
+      "flow_cms": 52.3175,
       "flow_trend": "faldende",
-      "water_level_m": 1.3062,
+      "water_level_m": 1.3145,
       "water_level_trend": "faldende",
-      "water_temperature_c": 12.1388
+      "water_temperature_c": 12.1344
+    },
+    {
+      "date": "2026-09-07",
+      "flow_cms": 62.1987,
+      "flow_trend": "stigende",
+      "water_level_m": 1.397,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 11.9241
     }
   ]
 }
