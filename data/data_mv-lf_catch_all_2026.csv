@@ -1,4 +1,5 @@
 Date,Species,Length,Weight,Name,River,Place,Method,Cut,Foto,Killed,Sex,Net
+2026-09-10,Bækørred,25,NA,Søren Rasmussen,Skjern Å,Hesselvig,Flue,NA,NA,FALSE,NA,FALSE
 2026-09-09,Havørred,50,NA,Anonymt Medlem,Vorgod Å,Nr Vium - nord/vest,Spin,NA,NA,FALSE,Hun,FALSE
 2026-09-09,Havørred,56,NA,Jan Mark,Karup Å,Sdr. Resen Naturpark,Flue,NA,NA,FALSE,Hun,FALSE
 2026-09-09,Havørred,45,NA,Thitiwut Suwaphet,Storå,Bur,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/983E34804E4160F1C1258E6D0063BE7E.jpg,FALSE,Hun,FALSE
@@ -104,9 +105,6 @@ Date,Species,Length,Weight,Name,River,Place,Method,Cut,Foto,Killed,Sex,Net
 2026-08-02,Havørred,54,NA,Bruno Broberg,Karup Å,Vormstrup,Flue,NA,NA,FALSE,Hun,FALSE
 2026-08-02,Havørred,57,NA,Kristian Søndergård Andersen,Karup Å,Over/neder Torp,Flue,NA,NA,TRUE,Hun,FALSE
 2026-08-02,Havørred,68,3.5,Bo Fomsgaard,Karup Å,Rensningsanlægget,Flue,NA,NA,TRUE,NA,FALSE
-2026-08-02,Rimte,40,NA,Kurt Jensen,Skjern Å,Hesselvig,Orm,NA,NA,FALSE,NA,FALSE
-2026-08-02,Bækørred,25,NA,Allan Corvinius,Skjern Å,Øvig,Flue,NA,NA,FALSE,NA,FALSE
-2026-08-02,Skalle,25,NA,Allan Corvinius,Skjern Å,Øvig,Flue,NA,NA,FALSE,NA,FALSE
 2026-08-01,Havørred,55,NA,Peter Eg,Skjern Å,Sdr Felding (v den gule gård),Flue,NA,NA,FALSE,Hun,FALSE
 2026-08-01,Havørred,55,NA,Viktor Schnuchel,Karup Å,Koldkur,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/822F33062BA237A4C1258E46003BC703.jpg,FALSE,NA,FALSE
 2026-08-01,Regnbueørred,38,NA,Allan Corvinius,Karup Å,Høgildbro (opstrøms),Flue,NA,NA,TRUE,NA,FALSE
@@ -187,7 +185,6 @@ Date,Species,Length,Weight,Name,River,Place,Method,Cut,Foto,Killed,Sex,Net
 2026-06-14,Regnbueørred,54,2.2,Thomas Christensen,Karup Å,Ålykke,Flue,NA,NA,TRUE,NA,FALSE
 2026-06-12,Regnbueørred,34,0.35,Oskar Kiilerich,Karup Å,Hessellund,Spin,NA,NA,TRUE,NA,FALSE
 2026-06-11,Havørred,52,NA,Claus Bertelse,Karup Å,Sdr. Resen (nedstrøms broen),Flue,NA,NA,FALSE,Han,FALSE
-2026-06-10,Ål,65,NA,Jeppe Risum,Haderup/Haderis Å,Barslundstykket,Orm,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8DDE53826BF5E099C1258E1300129128.jpg,FALSE,NA,FALSE
 2026-06-07,Bækørred,24,NA,Mads Knudsen,Karup Å,Fårbæk,Orm,NA,NA,FALSE,NA,FALSE
 2026-06-07,Regnbueørred,51,NA,Thomas Andersen,Haderup/Haderis Å,Barslundstykket,Orm,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/CDA61F78266FB15EC1258E0F006CC4DF.jpg,TRUE,NA,FALSE
 2026-06-07,Bækørred,28,NA,Mads Knudsen,Karup Å,Fårbæk,Orm,NA,NA,FALSE,NA,FALSE
@@ -210,8 +207,6 @@ Date,Species,Length,Weight,Name,River,Place,Method,Cut,Foto,Killed,Sex,Net
 2026-05-16,Laks,88,NA,Thitiwut Suwaphet,Storå,Bur,Spin,NA,NA,FALSE,Hun,FALSE
 2026-05-15,Havørred,79,6.2,Bruno Broberg,Karup Å,Hagebro (øst),Spin,NA,NA,TRUE,Han,FALSE
 2026-05-09,Laks,87,NA,Malte Vestergaard Andersen,Storå,Bur,Spin,NA,NA,FALSE,Han,TRUE
-2026-05-07,Bækørred,12,NA,Ivan Anton Jørgensen,Haderup/Haderis Å,Haderis Å,Orm,NA,NA,FALSE,NA,FALSE
-2026-05-07,Bækørred,14,NA,Ivan Jørgensen,Haderup/Haderis Å,Haderis Å,Orm,NA,NA,FALSE,NA,FALSE
 2026-05-05,Laks,92,7.9,Henrik Barslev,Skjern Å,Sdr Felding (v den gule gård),Flue,NA,NA,TRUE,Han,FALSE
 2026-04-22,Stalling,30,NA,Henrik Lodahl,Skjern Å,Forvirringen,Spin,NA,NA,FALSE,NA,FALSE
 2026-04-22,Laks,70,NA,Kim Mackenhausen Sørensen,Skjern Å,Skjernåvej 69,Flue,NA,NA,FALSE,NA,FALSE
@@ -223,3 +218,10 @@ Date,Species,Length,Weight,Name,River,Place,Method,Cut,Foto,Killed,Sex,Net
 2026-03-01,Havørred,40,NA,Rene Nielsen,Karup Å,Hagebro (vest),Flue,NA,NA,FALSE,NA,FALSE
 2026-03-01,Havørred,52,NA,Bjarke Therp Jensen,Karup Å,Karup Å (nedre øst),Spin,NA,NA,FALSE,NA,FALSE
 2026-03-01,Havørred,66,NA,Bjarke Therp Jensen,Karup Å,Karup Å (nedre øst),Spin,NA,NA,FALSE,NA,FALSE
+2025-09-19,Havørred,55,NA,Mogens Kornbech,Storå,Bur,Spin,NA,NA,FALSE,Hun,FALSE
+2026-08-02,Rimte,40,NA,Kurt Jensen,Skjern Å,Hesselvig,Orm,NA,NA,FALSE,NA,FALSE
+2026-08-02,Bækørred,25,NA,Allan Corvinius,Skjern Å,Øvig,Flue,NA,NA,FALSE,NA,FALSE
+2026-08-02,Skalle,25,NA,Allan Corvinius,Skjern Å,Øvig,Flue,NA,NA,FALSE,NA,FALSE
+2026-06-10,Ål,65,NA,Jeppe Risum,Haderup/Haderis Å,Barslundstykket,Orm,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/8DDE53826BF5E099C1258E1300129128.jpg,FALSE,NA,FALSE
+2026-05-07,Bækørred,12,NA,Ivan Anton Jørgensen,Haderup/Haderis Å,Haderis Å,Orm,NA,NA,FALSE,NA,FALSE
+2026-05-07,Bækørred,14,NA,Ivan Jørgensen,Haderup/Haderis Å,Haderis Å,Orm,NA,NA,FALSE,NA,FALSE
