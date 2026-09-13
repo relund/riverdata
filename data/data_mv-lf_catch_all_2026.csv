@@ -1,4 +1,5 @@
 Date,Species,Length,Weight,Name,River,Place,Method,Cut,Foto,Killed,Sex,Net
+2026-09-13,Havørred,60,NA,Jesper Moesgaard,Karup Å,Lille Phillip,Spin,NA,NA,FALSE,Han,FALSE
 2026-09-12,Havørred,82,6.6,Ole Bernth,Haderup/Haderis Å,Barslundstykket,Spin,NA,NA,TRUE,Han,FALSE
 2026-09-12,Havørred,68,3.7,Mogens Skaarup,Karup Å,Fårbæk,Spin,NA,NA,TRUE,Han,FALSE
 2026-09-12,Havørred,55,NA,Bjarke Therp Jensen,Vorgod Å,Nedre,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/83F093A79F10B8FBC1258E70005C302C.jpg,FALSE,NA,FALSE
@@ -55,6 +56,7 @@ Date,Species,Length,Weight,Name,River,Place,Method,Cut,Foto,Killed,Sex,Net
 2026-08-24,Havørred,68,NA,Elvin Frølund,Karup Å,Karup Å (nedre vest),Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/E871D5FB9FAE688EC1258E5E0046BE12.jpg,FALSE,Han,FALSE
 2026-08-24,Havørred,50,NA,Elvin Frølund,Karup Å,Karup Å (nedre vest),Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B5968E490B713E8DC1258E5E00466697.jpg,FALSE,NA,FALSE
 2026-08-24,Havørred,70,NA,Johannes Kahrs,Karup Å,NA,Flue,NA,NA,FALSE,Han,FALSE
+2026-08-22,Skalle,20,NA,Steen Lange Jensen,Karup Å,Vormstrup,Orm,NA,NA,FALSE,NA,FALSE
 2026-08-22,Havørred,59,2.5,Per Laursen,Karup Å,Rensningsanlægget,Flue,NA,NA,TRUE,Han,FALSE
 2026-08-22,Havørred,75,NA,Kasper Olsen,Haderup/Haderis Å,Barslundstykket,Spin,NA,NA,TRUE,NA,FALSE
 2026-08-21,Havørred,60,2,Lars Johansen,Karup Å,Koldkur,Spin,NA,NA,TRUE,Han,FALSE
@@ -156,7 +158,6 @@ Date,Species,Length,Weight,Name,River,Place,Method,Cut,Foto,Killed,Sex,Net
 2026-07-21,Havørred,50,NA,Jørgen Buch,Vorgod Å,Nedre,Spin,NA,NA,FALSE,Han,FALSE
 2026-07-20,Havørred,55,NA,Brian Pedersen,Skjern Å,Transformatoren,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/17FFFA3F38E15436C1258E3A006D332E.jpg,FALSE,Hun,FALSE
 2026-07-20,Havørred,63,2.4,Julius,Karup Å,Sdr. Resen (nedstrøms broen),Spin,NA,NA,TRUE,Hun,FALSE
-2026-07-20,Havørred,55,NA,Brian Pedersen,Skjern Å,Transformatoren,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/18B405118A8C42A0C1258E3A0047A487.jpg,FALSE,Hun,FALSE
 2026-07-19,Havørred,43,NA,Peter Bjerregaard,Haderup/Haderis Å,Barslundstykket,Orm,NA,NA,FALSE,Hun,FALSE
 2026-07-19,Havørred,64,3.4,Jeppe Risum,Haderup/Haderis Å,Barslundstykket,Orm,NA,NA,TRUE,Hun,FALSE
 2026-07-19,Havørred,76,5.92,Peter Bjerregaard,Haderup/Haderis Å,Barslundstykket,Orm,NA,NA,TRUE,Hun,FALSE
