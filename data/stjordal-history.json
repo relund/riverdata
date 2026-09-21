@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T07:34:50Z",
+  "generated_at": "2026-09-21T15:29:55Z",
   "river_id": 13,
   "station_id": "124.12.0",
   "years": [2023, 2024, 2025, 2026],
@@ -185570,11 +185570,51 @@
     },
     {
       "date": "2026-09-16",
-      "flow_cms": 50.9115,
+      "flow_cms": 74.397,
+      "flow_trend": "stigende",
+      "water_level_m": 1.4652,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 11.1282
+    },
+    {
+      "date": "2026-09-17",
+      "flow_cms": 116.3334,
+      "flow_trend": "stigende",
+      "water_level_m": 1.7521,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 10.3948
+    },
+    {
+      "date": "2026-09-18",
+      "flow_cms": 73.922,
       "flow_trend": "faldende",
-      "water_level_m": 1.3034,
+      "water_level_m": 1.4847,
       "water_level_trend": "faldende",
-      "water_temperature_c": 11.2016
+      "water_temperature_c": 9.901
+    },
+    {
+      "date": "2026-09-19",
+      "flow_cms": 65.2044,
+      "flow_trend": "faldende",
+      "water_level_m": 1.4147,
+      "water_level_trend": "faldende",
+      "water_temperature_c": 10.0656
+    },
+    {
+      "date": "2026-09-20",
+      "flow_cms": 102.5736,
+      "flow_trend": "stigende",
+      "water_level_m": 1.6689,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 9.5635
+    },
+    {
+      "date": "2026-09-21",
+      "flow_cms": 317.0504,
+      "flow_trend": "stigende",
+      "water_level_m": 2.61,
+      "water_level_trend": "stigende",
+      "water_temperature_c": 9.5406
     }
   ]
 }
