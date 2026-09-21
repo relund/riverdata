@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T15:28:38Z",
+  "generated_at": "2026-09-21T21:42:35Z",
   "river_id": 25,
   "station_id": "122.9.0",
   "temperature_station_id": "122.11.0",
@@ -238512,11 +238512,11 @@
     },
     {
       "date": "2026-09-21",
-      "flow_cms": 436.3379,
+      "flow_cms": 444.9389,
       "flow_trend": "stigende",
-      "water_level_m": 6.6158,
+      "water_level_m": 6.763,
       "water_level_trend": "stigende",
-      "water_temperature_c": 8.1878
+      "water_temperature_c": 8.2803
     }
   ]
 }
