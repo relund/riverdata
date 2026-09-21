@@ -10,9 +10,9 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2026-09-18,50,NA,Ole Thalund,Vorgod Å,Spin,NA,NA,FALSE,NA,FALSE
 2026-09-18,45,NA,Bjarke Therp Jensen,Vorgod Å,Flue,NA,NA,FALSE,NA,FALSE
 2026-09-18,53,NA,Bo Søndergård Jensen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
-2026-09-17,57,NA,Svend Lund Larsen,"Holtum Å, (Ejstrup Sø til udløb)",Spin,NA,NA,FALSE,Han,FALSE
-2026-09-17,43,NA,Svend Lund Larsen,"Holtum Å, (Ejstrup Sø til udløb)",Spin,NA,NA,FALSE,Hun,FALSE
-2026-09-17,55,NA,Jesper Kjeldsen,Karstoft Å (opstrøms Clasonsborg) B-VAND,Spin,FALSE,NA,FALSE,Hun,FALSE
+2026-09-17,57,NA,Svend Lund Larsen,Holtum Å (Ejstrup Sø til udløb),Spin,NA,NA,FALSE,Han,FALSE
+2026-09-17,43,NA,Svend Lund Larsen,Holtum Å (Ejstrup Sø til udløb),Spin,NA,NA,FALSE,Hun,FALSE
+2026-09-17,55,NA,Jesper Kjeldsen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
 2026-09-17,45,NA,Alan Bringsholdt Vang,Mellem,Flue,TRUE,NA,FALSE,Han,FALSE
 2026-09-17,60,NA,Poul Lund Larsen,Vorgod Å,Spin,NA,NA,FALSE,Han,FALSE
 2026-09-17,49,NA,Ronald Patzer,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
@@ -20,7 +20,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2026-09-17,52,NA,Frederik Cornelius Nielsen,Øvre,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/472497E5DD1D316AC1258E7500282365.jpg,FALSE,NA,FALSE
 2026-09-16,54,NA,Stefan Mahlau,Mellem,Spin,FALSE,NA,FALSE,Hun,FALSE
 2026-09-16,55,NA,Sven Berggreen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
-2026-09-16,43,NA,Poul Lund Larsen,"Holtum Å, (Ejstrup Sø til udløb)",Spin,NA,NA,FALSE,Han,FALSE
+2026-09-16,43,NA,Poul Lund Larsen,Holtum Å (Ejstrup Sø til udløb),Spin,NA,NA,FALSE,Han,FALSE
 2026-09-15,45,NA,Kristian Nøreng,Øvre,Flue,NA,NA,FALSE,Hun,FALSE
 2026-09-15,59,NA,Kristian Nøreng,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2026-09-15,58,NA,Daan Scheltes,Mellem,Spin,NA,NA,FALSE,Han,FALSE
@@ -32,11 +32,11 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2026-09-13,57,NA,Lars Erik Olsen,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2026-09-12,55,NA,Emil Fænø,Mellem,Spin,FALSE,NA,FALSE,NA,TRUE
 2026-09-12,55,NA,Andreas Dysager,Nedre,Flue,FALSE,NA,FALSE,Han,FALSE
-2026-09-12,54,NA,Svend Lund Larsen,"Holtum Å, (Ejstrup Sø til udløb)",Spin,NA,NA,FALSE,Han,FALSE
-2026-09-12,51,NA,Svend Lund Larsen,"Holtum Å, (Ejstrup Sø til udløb)",Spin,NA,NA,FALSE,Hun,FALSE
-2026-09-12,49,NA,Svend Lund Larsen,"Holtum Å, (Ejstrup Sø til udløb)",Spin,NA,NA,FALSE,Hun,FALSE
-2026-09-12,52,NA,Svend Lund Larsen,"Holtum Å, (Ejstrup Sø til udløb)",Spin,NA,NA,FALSE,Hun,FALSE
-2026-09-12,58,NA,Svend Lund Larsen,"Holtum Å, (Ejstrup Sø til udløb)",Spin,NA,NA,FALSE,Han,FALSE
+2026-09-12,54,NA,Svend Lund Larsen,Holtum Å (Ejstrup Sø til udløb),Spin,NA,NA,FALSE,Han,FALSE
+2026-09-12,51,NA,Svend Lund Larsen,Holtum Å (Ejstrup Sø til udløb),Spin,NA,NA,FALSE,Hun,FALSE
+2026-09-12,49,NA,Svend Lund Larsen,Holtum Å (Ejstrup Sø til udløb),Spin,NA,NA,FALSE,Hun,FALSE
+2026-09-12,52,NA,Svend Lund Larsen,Holtum Å (Ejstrup Sø til udløb),Spin,NA,NA,FALSE,Hun,FALSE
+2026-09-12,58,NA,Svend Lund Larsen,Holtum Å (Ejstrup Sø til udløb),Spin,NA,NA,FALSE,Han,FALSE
 2026-09-12,55,NA,Bjarke Therp Jensen,Vorgod Å,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/83F093A79F10B8FBC1258E70005C302C.jpg,FALSE,NA,FALSE
 2026-09-12,48,NA,Bjarke Therp Jensen,Vorgod Å,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/E4E6B523C7E75F9AC1258E70004F7AA4.jpg,FALSE,NA,FALSE
 2026-09-11,44,NA,Svend Lund Larsen,Vorgod Å,Spin,NA,NA,FALSE,Hun,FALSE
@@ -51,7 +51,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2026-09-09,50,NA,Anonym,Vorgod Å,Spin,NA,NA,FALSE,Hun,FALSE
 2026-09-09,45,NA,Jesper Kjeldsen,Omme Å,Spin,NA,NA,FALSE,Hun,FALSE
 2026-09-09,47,NA,Mario Laaser,Mellem,Flue,FALSE,NA,FALSE,Han,FALSE
-2026-09-09,43,NA,Jesper Kjeldsen,Karstoft Å (opstrøms Clasonsborg) B-VAND,Spin,FALSE,NA,FALSE,Hun,FALSE
+2026-09-09,43,NA,Jesper Kjeldsen,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
 2026-09-09,70,NA,Kenny Frost,Nedre,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/01B9A0458EF4C155C1258E6D00197600.jpg,FALSE,Hun,FALSE
 2026-09-08,47,NA,Mario Laaser,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2026-09-07,67,NA,Hendrik Weiner,Nedre,Flue,FALSE,NA,FALSE,Hun,FALSE
@@ -70,7 +70,7 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2026-09-05,60,NA,Christoffer Kvivesen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
 2026-09-05,63,NA,Carl-Johan Tolver,Nedre,Spin,FALSE,NA,FALSE,NA,FALSE
 2026-09-05,62,NA,John A. Pedersen,Mellem,Flue,NA,NA,FALSE,Hun,FALSE
-2026-09-05,50,NA,Jesper Kjeldsen,Karstoft Å (opstrøms Clasonsborg) B-VAND,Spin,FALSE,NA,FALSE,Han,FALSE
+2026-09-05,50,NA,Jesper Kjeldsen,Omme Å,Spin,FALSE,NA,FALSE,Han,FALSE
 2026-09-05,45,NA,René Hansen,Mellem,Flue,FALSE,NA,FALSE,NA,FALSE
 2026-09-04,55,NA,René Hansen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2026-09-04,50,NA,Lars Kjøngerskov,Øvre,Spin,FALSE,NA,FALSE,NA,FALSE
@@ -82,18 +82,18 @@ Date,Length,Weight,Name,Place,Method,Cut,Foto,Killed,Sex,Net
 2026-09-02,76,NA,Wolfgang Wohlers,Øvre,Spin,FALSE,NA,FALSE,Hun,FALSE
 2026-09-02,47,NA,Anonym,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2026-09-02,55,NA,Anders Peter Skærbæk,Øvre,Flue,NA,NA,FALSE,NA,FALSE
-2026-09-01,56,NA,Poul Lund Larsen,"Holtum Å, (Ejstrup Sø til udløb)",Spin,NA,NA,FALSE,Han,FALSE
-2026-09-01,45,NA,Wolfgang Wohlers,Karstoft Å (opstrøms Clasonsborg) B-VAND,Spin,FALSE,NA,FALSE,Hun,FALSE
+2026-09-01,56,NA,Poul Lund Larsen,Holtum Å (Ejstrup Sø til udløb),Spin,NA,NA,FALSE,Han,FALSE
+2026-09-01,45,NA,Wolfgang Wohlers,Omme Å,Spin,FALSE,NA,FALSE,Hun,FALSE
 2026-09-01,48,NA,Steen Jørgen Mortensen,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
 2026-09-01,48,NA,Mads Staulund,Mellem,Spin,TRUE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/EAEE80D2C766B369C1258E65004E3D5B.jpg,FALSE,NA,FALSE
 2026-09-01,66,NA,Torben Bjørn,Nedre,Flue,NA,NA,FALSE,Hun,FALSE
-2026-09-01,52,NA,Poul Lund Larsen,"Holtum Å, (Ejstrup Sø til udløb)",Spin,NA,NA,FALSE,Han,FALSE
-2026-09-01,52,NA,Poul Lund Larsen,"Holtum Å, (Ejstrup Sø til udløb)",Spin,NA,NA,FALSE,Han,FALSE
-2026-09-01,54,NA,Poul Lund Larsen,"Holtum Å, (Ejstrup Sø til udløb)",Spinder,NA,NA,FALSE,Hun,FALSE
+2026-09-01,52,NA,Poul Lund Larsen,Holtum Å (Ejstrup Sø til udløb),Spin,NA,NA,FALSE,Han,FALSE
+2026-09-01,52,NA,Poul Lund Larsen,Holtum Å (Ejstrup Sø til udløb),Spin,NA,NA,FALSE,Han,FALSE
+2026-09-01,54,NA,Poul Lund Larsen,Holtum Å (Ejstrup Sø til udløb),Spinder,NA,NA,FALSE,Hun,FALSE
 2026-08-31,72,NA,Emil Fænø,Mellem,Spin,FALSE,NA,FALSE,Han,FALSE
 2026-08-31,58,NA,Frank Severit,Mellem,Flue,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/303BF3D10712F14EC1258E64006700F0.jpg,FALSE,Han,FALSE
 2026-08-31,54,NA,Thomas Witt,Mellem,Flue,FALSE,NA,FALSE,Hun,FALSE
-2026-08-31,56,NA,Poul Lund Larsen,Karstoft Å (opstrøms Clasonsborg) B-VAND,Spin,NA,NA,FALSE,Han,FALSE
+2026-08-31,56,NA,Poul Lund Larsen,Omme Å,Spin,NA,NA,FALSE,Han,FALSE
 2026-08-31,65,NA,David Andrei Daringa,Vorgod Å,Spin,FALSE,https://fangstjournalen.dtu.dk/fangst.nsf/photos/B97268F723A9C34CC1258E64005E15F5.jpg,FALSE,Han,FALSE
 2026-08-31,62,NA,Torben Albertsen,Øvre,Flue,FALSE,NA,FALSE,Hun,FALSE
 2026-08-31,42,NA,Torben Albertsen,Øvre,Flue,FALSE,NA,FALSE,Han,FALSE
