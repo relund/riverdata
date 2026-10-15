@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T14:36:15Z",
+  "generated_at": "2026-10-15T19:07:24Z",
   "river_id": 25,
   "station_id": "122.9.0",
   "temperature_station_id": "122.11.0",
@@ -238704,11 +238704,11 @@
     },
     {
       "date": "2026-10-15",
-      "flow_cms": 34.4198,
+      "flow_cms": 34.669,
       "flow_trend": "neutral",
-      "water_level_m": 1.944,
+      "water_level_m": 1.9558,
       "water_level_trend": "stigende",
-      "water_temperature_c": 4.5552
+      "water_temperature_c": 4.7757
     }
   ]
 }
