@@ -103,6 +103,13 @@ jobs:
             exit 0
           fi
           git commit -m "gHA build: ${{ github.run_number }}"
+          # Other build side effects must not block rebase or enter the report commit.
+          # Leave them stashed in this disposable runner; only the commit is pushed.
+          if ! git diff --quiet; then
+            echo "Stashing remaining tracked build changes before rebase:"
+            git diff --name-status
+            git stash push -m "Unpublished build changes: ${{ github.run_number }}"
+          fi
           for attempt in 1 2 3; do
             git fetch --depth=20 origin master
             git rebase origin/master
