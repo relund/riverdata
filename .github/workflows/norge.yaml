@@ -9,13 +9,15 @@ concurrency:
 
 on:
   push:
-    paths:
-      - .github/workflows/norge.yaml
-      - reports/gaula/**
-      - reports/stjordal/**
-      - script_gaula.R
-      - script_lrn.R
-      - renv.lock
+    branches-ignore:
+      - '**'
+    # paths:
+    #   - .github/workflows/norge.yaml
+    #   - reports/gaula/**
+    #   - reports/stjordal/**
+    #   - script_gaula.R
+    #   - script_lrn.R
+    #   - renv.lock
 
   schedule:
     - cron: '17 * * * *'  # every hour
