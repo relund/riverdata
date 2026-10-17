@@ -673,7 +673,123 @@ write_time_series_data <- function(stations = NULL, prefix, prefix1, days) {
   invisible(max(dat2$Date, na.rm = TRUE))
 }
 
+#' Parse Hyde lock flow records
+#'
+#' @param html Page HTML containing the chartData JSON array.
+#' @return A table with UTC DateTime and numeric Flow columns.
+#' @examples
+#' \dontrun{
+#' .parse_lock_flow(readLines("sluse-flow.html"))
+#' }
+#' @noRd
+.parse_lock_flow <- function(html) {
+  webpage <- read_html(paste(html, collapse = "\n"))
+  scripts <- html_text(html_nodes(webpage, "script"))
+  matches <- str_match(scripts, "(?s)\\bconst\\s+chartData\\s*=\\s*(\\[.*?\\])\\s*;")
+  arrays <- matches[!is.na(matches[, 2]), 2]
+  if (length(arrays) != 1) {
+    stop("Lock flow: expected exactly one chartData JSON array.", call. = FALSE)
+  }
+  records <- fromJSON(arrays[[1]], simplifyVector = FALSE)
+  if (!is.list(records) || length(records) == 0) {
+    stop("Lock flow: chartData contains no records.", call. = FALSE)
+  }
+  dates <- map_chr(records, function(record) {
+    if (!is.list(record) || !all(c("datetime", "sflow") %in% names(record)) ||
+        !is.character(record$datetime) || length(record$datetime) != 1 ||
+        !str_detect(record$datetime, "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$")) {
+      stop("Lock flow: invalid datetime or missing datetime/sflow fields.", call. = FALSE)
+    }
+    record$datetime
+  })
+  flows <- map_dbl(records, function(record) {
+    value <- record$sflow
+    if (is.null(value)) return(NA_real_)
+    if (length(value) != 1 || !(is.numeric(value) || is.character(value))) {
+      stop("Lock flow: sflow must be numeric or null.", call. = FALSE)
+    }
+    flow <- suppressWarnings(as.numeric(value))
+    if (!is.finite(flow)) stop("Lock flow: invalid sflow value.", call. = FALSE)
+    flow
+  })
+  # Parse wall times first, then reject nonexistent or ambiguous Danish DST times.
+  wall_times <- ymd_hms(dates, tz = "UTC", quiet = TRUE)
+  date_times <- force_tz(wall_times, "Europe/Copenhagen", roll_dst = c("NA", "NA"))
+  if (anyNA(date_times)) {
+    stop("Lock flow: invalid or ambiguous Danish local timestamp.", call. = FALSE)
+  }
+  tibble(DateTime = with_tz(date_times, "UTC"), Flow = flows)
+}
+
+#' Fetch and validate Hyde lock flow with retries
+#'
+#' @param url Flow page URL.
+#' @param retry_delays Delays between attempts, in seconds.
+#' @param fetch Function retrieving HTML from a URL.
+#' @param sleep Function waiting between attempts.
+#' @return Parsed lock flow table.
+#' @examples
+#' \dontrun{
+#' .fetch_lock_flow()
+#' }
+#' @noRd
+.fetch_lock_flow <- function(url = "http://hyde.dk/sluse-flow", retry_delays = c(2, 5),
+                             fetch = function(url) getURL(url, .opts = list(
+                               connecttimeout = 10, timeout = 30,
+                               followlocation = TRUE, failonerror = TRUE)),
+                             sleep = Sys.sleep) {
+  last_error <- NULL
+  attempts <- length(retry_delays) + 1
+  for (attempt in seq_len(attempts)) {
+    result <- tryCatch(.parse_lock_flow(fetch(url)), error = function(error) {
+      last_error <<- error
+      NULL
+    })
+    if (!is.null(result)) return(result)
+    if (attempt <= length(retry_delays)) {
+      message("  Lock flow attempt ", attempt, " failed: ", conditionMessage(last_error),
+              ". Retrying in ", retry_delays[attempt], " seconds.")
+      sleep(retry_delays[attempt])
+    }
+  }
+  stop("Lock flow: failed after ", attempts, " attempts: ",
+       conditionMessage(last_error), call. = FALSE)
+}
+
+#' Merge new lock flow readings into an archive
+#'
+#' @param fresh Newly fetched readings.
+#' @param previous Archived readings.
+#' @return Merged readings, newest first.
+#' @examples
+#' \dontrun{
+#' .merge_lock_flow(fresh, previous)
+#' }
+#' @noRd
+.merge_lock_flow <- function(fresh, previous) {
+  for (records in list(fresh, previous)) {
+    conflicts <- records %>%
+      filter(!is.na(.data$DateTime), !is.na(.data$Flow)) %>%
+      distinct(.data$DateTime, .data$Flow) %>%
+      count(.data$DateTime) %>%
+      filter(.data$n > 1)
+    if (nrow(conflicts) > 0) {
+      stop("Lock flow: conflicting duplicate timestamps in fetched data or archive.", call. = FALSE)
+    }
+  }
+  bind_rows(fresh, previous) %>%
+    filter(!is.na(.data$DateTime)) %>%
+    arrange(is.na(.data$Flow)) %>%
+    distinct(.data$DateTime, .keep_all = TRUE) %>%
+    bind_rows(previous %>% filter(is.na(.data$DateTime))) %>%
+    arrange(desc(.data$DateTime))
+}
+
 #' Write Skjern lock flow data
+#'
+#' Reads Hyde's Danish local timestamps and stores UTC timestamps in the archive.
+#' Valid fetched readings replace archived readings at matching timestamps.
+#' Failed retrieval or validation leaves the existing file unchanged.
 #'
 #' @param prefix File prefix.
 #'
@@ -685,36 +801,40 @@ write_time_series_data <- function(stations = NULL, prefix, prefix1, days) {
 write_lock_skjern <- function(prefix) {
   message("Lock flow: Update dataset.")
   fn <- paste0(prefix, "_flow_lock.csv")
-  url <- "http://hyde.dk/Sflow/default_flow.asp"
-  webpage <- read_html(url)
-  dat <- html_nodes(webpage, xpath = "/html/body/div[2]/div[3]/script/text()")
-  dat <- html_text(dat)
-  dat <- str_replace_all(dat, "[\r\n\t]", "")
-
-  dates <- str_replace(dat, "^.*labels:", "{\n'labels' :")
-  dates <- str_replace(dates, "].*$", "]\n}")
-  dates <- str_replace_all(dates, "'", "\"")
-  dates <- fromJSON(dates)$labels
-
-  flow <- str_replace(dat, "^.*data:", "{\n'data' :")
-  flow <- str_replace(flow, "].*$", "]\n}")
-  flow <- str_replace_all(flow, "'", "\"")
-  flow <- fromJSON(flow)$data
-
-  if (length(dates) == length(flow)) {
-    dat <- tibble(DateTime = dmy_hm(dates, tz = "CET"), Flow = flow) %>%
-      arrange_all(desc) %>% distinct()
-    if (!file.exists(fn)) {
-      write_csv(dat, fn)
-      dat
-    } else {
-      datOld <- read_csv(fn, col_types = "Ti", locale = locale(tz = "CET"))
-      dat <- bind_rows(datOld, dat) %>%
-        arrange_all(desc) %>%
-        distinct()
-      message("  Write data to ", fn)
-      write_csv(dat, fn)
+  fresh <- .fetch_lock_flow()
+  previous <- fresh[0, ]
+  if (file.exists(fn)) {
+    previous <- read_csv(fn, col_types = "Td", locale = locale(tz = "UTC"),
+                         show_col_types = FALSE)
+    if (!identical(names(previous), c("DateTime", "Flow")) ||
+        nrow(problems(previous)) > 0 || any(is.infinite(previous$Flow))) {
+      stop("Lock flow: invalid archive; existing file is unchanged.", call. = FALSE)
     }
   }
-  return(invisible(dat))
+  if (anyNA(previous$DateTime)) {
+    warning("Lock flow: preserving ", sum(is.na(previous$DateTime)),
+            " archived row(s) without a timestamp.", call. = FALSE)
+  }
+  old_dates <- previous$DateTime[!is.na(previous$DateTime)]
+  if (length(old_dates) > 0 && (min(fresh$DateTime) > max(old_dates) ||
+                               max(fresh$DateTime) < min(old_dates))) {
+    warning("Lock flow: fetched period does not overlap the archive; gaps are not backfilled.",
+            call. = FALSE)
+  }
+  dat <- .merge_lock_flow(fresh, previous)
+  added <- sum(!dat$DateTime %in% previous$DateTime & !is.na(dat$DateTime))
+  old_flow <- previous$Flow[match(dat$DateTime, previous$DateTime)]
+  revised <- sum(dat$DateTime %in% old_dates & !is.na(dat$Flow) &
+                   (is.na(old_flow) | dat$Flow != old_flow), na.rm = TRUE)
+  message("  Fetched ", nrow(fresh), " readings: ", min(fresh$DateTime), " to ",
+          max(fresh$DateTime), " UTC; added ", added, ", revised ", revised,
+          ". Latest measurement: ", max(dat$DateTime, na.rm = TRUE), " UTC.")
+  temporary <- tempfile(pattern = ".lock-flow-", tmpdir = dirname(fn))
+  on.exit(unlink(temporary), add = TRUE)
+  write_csv(dat, temporary)
+  if (!file.rename(temporary, fn)) {
+    stop("Lock flow: could not replace archive; existing file is unchanged.", call. = FALSE)
+  }
+  message("  Write data to ", fn)
+  invisible(dat)
 }
