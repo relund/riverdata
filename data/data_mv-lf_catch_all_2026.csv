@@ -1,4 +1,28 @@
 Date,Species,Length,Weight,Name,River,Place,Method,Cut,Foto,Killed,Sex,Net
+2026-10-17,Havørred,51,NA,Niels Otto Andersen,Karup Å,Hagebro (øst),Flue,NA,NA,TRUE,Hun,FALSE
+2026-10-15,Havørred,48,NA,Bjarke Therp Jensen,Skjern Å,Hesselvig,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/60BB7108DB72150FC1258E9100617EDF.jpg,FALSE,NA,FALSE
+2026-10-15,Havørred,45,NA,Bjarke Therp Jensen,Skjern Å,Hesselvig,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/977E40DC4B5C4400C1258E9100615D2D.jpg,FALSE,NA,FALSE
+2026-10-14,Havørred,82,6.9,Bruno Broberg,Karup Å,Hagebro (øst),Spin,NA,NA,TRUE,Han,FALSE
+2026-10-14,Havørred,72,4.5,Steen Nørskov Jensen,Karup Å,Sandvilhus,Flue,NA,NA,TRUE,Han,FALSE
+2026-10-14,Havørred,49,NA,Michael Broberg,Karup Å,Karup Å (nedre øst),Spin,NA,NA,FALSE,Hun,FALSE
+2026-10-14,Laks,110,NA,Tommy Hoelgaard,Skjern Å,Transformatoren,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/E3A4B7E96DBE92F0C1258E9000642757.jpg,FALSE,Han,FALSE
+2026-10-14,Havørred,50,NA,Jesper Kjeldsen,Karstoft Å,NA,Spin,NA,NA,FALSE,Han,FALSE
+2026-10-14,Havørred,48,NA,Jesper Kjeldsen,Karstoft Å,NA,Spin,NA,NA,FALSE,Han,FALSE
+2026-10-12,Stalling,30,NA,Bjarke Therp Jensen,Skjern Å,Tjæreovenene,Flue,NA,NA,FALSE,NA,FALSE
+2026-10-11,Havørred,60,NA,Asbjørn Schlosser,Skjern Å,Transformatoren,Spin,NA,NA,FALSE,Hun,FALSE
+2026-10-11,Havørred,45,NA,Thitiwut Suwaphet,Storå,Bur,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/C0A5C65F254C5180C1258E8D00532A3C.jpg,FALSE,NA,FALSE
+2026-10-11,Havørred,52,NA,Poul Lund Larsen,Karstoft Å,NA,Spin,NA,NA,FALSE,Hun,FALSE
+2026-10-11,Havørred,48,NA,Frederik Taastrøm,Karup Å,Hessellund,Spin,NA,NA,FALSE,NA,FALSE
+2026-10-11,Laks,86,NA,Anders Graae Westergaard,Storå,Bur,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/224DA515094262CAC1258E8D003EF43C.jpg,FALSE,Hun,FALSE
+2026-10-10,Havørred,47,NA,Thomas Marcussen,Skjern Å,Skjernåvej 115,Flue,NA,NA,FALSE,Hun,FALSE
+2026-10-10,Havørred,52,NA,Thomas Stjernegaard Jeppesen,Skjern Å,Skjernåvej 137,Flue,NA,NA,FALSE,Hun,FALSE
+2026-10-10,Bækørred,37,NA,Bent Winkler,Karup Å,Over/neder Torp,Spin,NA,NA,FALSE,NA,FALSE
+2026-10-09,Havørred,55,NA,Kristian Søndergård Andersen,Karup Å,Høgildbro (opstrøms),Orm,NA,NA,FALSE,Hun,FALSE
+2026-10-09,Havørred,45,NA,Bjarke Therp Jensen,Skjern Å,Skjernåvej 69,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/4FB46EE0989E550FC1258E8B004B89A2.jpg,FALSE,NA,FALSE
+2026-10-08,Havørred,66,NA,Frederik Cornelius Nielsen,Skjern Å,Transformatoren,Spin,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/3B60410E933E5D64C1258E8A00348A48.jpg,FALSE,NA,FALSE
+2026-10-07,Laks,65,NA,Dennis Nielsen,Storå,Bur,Spin,NA,NA,TRUE,Hun,FALSE
+2026-10-07,Laks,75,NA,Dennis Nielsen,Storå,Bur,Spin,NA,NA,FALSE,Hun,FALSE
+2026-10-06,Havørred,40,NA,Karl-Ole Frandsen,Karup Å,Ålykke,Flue,NA,NA,FALSE,Hun,FALSE
 2026-10-06,Havørred,47,NA,Bent Winkler,Skjern Å,Skarrild (nordsiden af Øvig),Spin,NA,NA,FALSE,Han,FALSE
 2026-10-05,Bækørred,25,NA,Frederik Cnornelius Nielsen,Skjern Å,Forvirringen,Spin,NA,NA,FALSE,NA,FALSE
 2026-10-04,Havørred,45,NA,Kristian Søndergård Andersen,Karup Å,Over/neder Torp,Flue,NA,NA,FALSE,Hun,FALSE
@@ -6,6 +30,7 @@ Date,Species,Length,Weight,Name,River,Place,Method,Cut,Foto,Killed,Sex,Net
 2026-10-04,Havørred,45,NA,Bjarke Therp Jensen,Skjern Å,Forvirringen,Flue,NA,https://fangstjournalen.dtu.dk/fangst.nsf/photos/F819070B018A3E6CC1258E860050B186.jpg,FALSE,NA,FALSE
 2026-10-04,Havørred,55,NA,Christoffer Kvivesen,Skjern Å,Sdr Felding (v den gule gård),Flue,NA,NA,FALSE,Hun,FALSE
 2026-10-04,Havørred,81,6.35,Robert Pedersen,Karup Å,Hagebro (øst),Spin,NA,NA,TRUE,Han,FALSE
+2026-10-03,Havørred,45,NA,Kasper Olsen,Haderup/Haderis Å,Barslundstykket,Spin,NA,NA,FALSE,NA,FALSE
 2026-10-03,Havørred,85,NA,Michael Vigsø Skov Pedersen,Karup Å,Sdr. Resen (øvre),Flue,NA,NA,FALSE,Hun,FALSE
 2026-10-03,Havørred,44,NA,Jenspeder Kristensen,Skjern Å,Forvirringen,Spin,NA,NA,FALSE,Hun,FALSE
 2026-10-02,Stalling,25,NA,Olav Hansen,Skjern Å,Forvirringen,Spin,NA,NA,FALSE,NA,FALSE
