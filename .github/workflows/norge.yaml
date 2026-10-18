@@ -9,6 +9,8 @@ concurrency:
 
 on:
   push:
+  # schedule:
+  #   - cron: '17 * * * *'  # every hour
     branches-ignore:
       - '**'
     # paths:
@@ -19,8 +21,7 @@ on:
     #   - script_lrn.R
     #   - renv.lock
 
-  schedule:
-    - cron: '17 * * * *'  # every hour
+
 
 jobs:
   render:
