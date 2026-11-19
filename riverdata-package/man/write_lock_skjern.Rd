@@ -13,7 +13,9 @@ write_lock_skjern(prefix)
 Lock flow table.
 }
 \description{
-Write Skjern lock flow data
+Reads Hyde's Danish local timestamps and stores UTC timestamps in the archive.
+Valid fetched readings replace archived readings at matching timestamps.
+Failed retrieval or validation leaves the existing file unchanged.
 }
 \examples{
 \dontrun{

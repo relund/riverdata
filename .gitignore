@@ -6,7 +6,7 @@ README.html
 reports/karup_weight_files/
 *cache*
 .DS_Store
-tmp
+tmp*
 temp
 test*
 !riverdata-package/tests/
@@ -14,3 +14,4 @@ test*
 .positai
 riverdata_0.0.8.tar.gz
 riverdata.Rcheck
+*tmp
