@@ -74,6 +74,7 @@ Lokale vejrudsigter
 
   * [Oversigt over MV-LFs fiskevande](mv-lf/mv-lf-kort.html){target="_blank"}
   * [Fangster (mobil venlig)](mv-lf/mv-lf-catch-table.html){target="_blank"}
+  * Du kan også se årsstatistik på `https://relund.github.io/riverdata/mv-lf/mv-lf-report-[årstal].html` (indsæt selv årstal).
 
 Links til statistik lavet af Lars Relund. Forslag til forbedringer kan sendes til lars.relund[at]gmail[dot]com. Alt laves på ikke kommerciel basis. 
 
